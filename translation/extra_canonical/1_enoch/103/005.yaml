@@ -13,21 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you[a], dead sinners, when you die in the wealth of your sins, and those like you say about you, ‘Blessed are these sinners[d][c][b]; they have seen all their days.’
-  philosophy: optimal-equivalence
+  text: Woe to you, dead sinners, when you die with wealth gained through your sins[a] and those like you say about you, “Blessed are these sinners! They have lived out all their days.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez clause rendered 'in your sins' is difficult in the OCR witness; the sense is that the sinners die in connection with their sinfulness.
-    reason: textual_variant
-  - marker: b
-    text: Or 'they have lived to see all their days,' that is, they are judged fortunate because they seemed to enjoy a full span of life.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'Woe to you, sinners, when you die'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'in your sins'.
-    reason: previous_rendering
+    text: The Ge’ez phrase is unclear; it may simply mean “in your sins.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -167,12 +158,18 @@ revisions:
   from: in your sins
   to: in the wealth of your sins
   rationale: 'The OCR reading በብዕሲ is a visual misrecognition of በብዕለ ("in the wealth of"). The author''s phrase "in the wealth of your sins" is essential to the argument, setting up the critique of worldly prosperity that continues in verse 6 ("died in prosperity and in wealth"). Flattening this to "in your sins" loses the author''s specific economic critique. | Adjudicator: The reviewer correctly identifies an OCR error in the Ge''ez base text: `በብዕሲ` is a visual misrecognition of `በብዕለ` (ba-bəʿla, "in the wealth of"). The construct phrase `በብዕለ፡ ኃጢአትክሙ` literally means "'
+- timestamp: '2026-11-09T20:05:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you[a], dead sinners, when you die in the wealth of your sins, and those like you say about you, ‘Blessed are these sinners[d][c][b]; they have seen all their days.’
+  to: Woe to you, dead sinners, when you die with wealth gained through your sins[a] and those like you say about you, “Blessed are these sinners! They have lived out all their days.
+  rationale: The explicit address to dead sinners is important to the contrast with the righteous dead and remains intact. The history supports the wealth reading, but the supplied Ge’ez form remains uncertain, so the economic sense is qualified in a reader’s note; the quotation continues into verse 6.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:54Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -192,3 +189,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/005.job-72946.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:47Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch pronounces woe on dead sinners whose sinful wealth and full lifespan lead people like them to call them blessed.
+  meaning_decisions:
+  - source_phrase: በብዕሲ፡ ኃጢአትክሙ
+    prior_rendering: in the wealth of your sins
+    new_rendering: with wealth gained through your sins
+    rationale: The context and the earlier reading discussion support a connection between wealth and sin. The new wording conveys that connection rather than suggesting that sins themselves constitute wealth, while a note acknowledges the uncertain source phrase.
+  - source_phrase: ኵሎ፡ መዋዕሎሙ፡ ርእዩ
+    prior_rendering: they have seen all their days
+    new_rendering: They have lived out all their days
+    rationale: The idiom means that they enjoyed a full span of life. Their peers regard that apparent completeness as evidence of blessedness.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The explicit address to dead sinners is important to the contrast with the righteous dead and remains intact. The history supports the wealth reading, but the supplied Ge’ez form remains uncertain, so the economic sense is qualified in a reader’s note; the quotation continues into verse 6.

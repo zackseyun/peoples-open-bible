@@ -11,24 +11,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch43.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 43, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw the balances of righteousness[a], how they are weighed according to their lights, the width of their places, and the day of their appearing; and their revolution brings forth lightning, and their revolution is according to the number of the angels[e][d][c][b], and they keep faith with one another.
-  philosophy: optimal-equivalence
+  text: I saw the scales of righteousness[a] and how the stars are weighed according to their brightness, the extent of their places[b], and the day they appear. Their turning brings forth lightning; their turning accords with the number of the angels, and they keep faith with one another.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The opening clause is difficult. The Ge'ez likely describes the heavenly luminaries as being divided or apportioned in an ordered way.
-    reason: textual_variant
-  - marker: b
-    text: The repeated temporal term rendered 'seasons' may also be understood as 'times' or 'courses.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final clause may mean either that the heavenly bodies keep faith with one another or that their order is maintained in accordance with the angels' reckoning.
+    text: The opening words about the scales and weighing are uncertain.
     reason: alternative_reading
-  - marker: d
-    text: Or 'how the luminaries of righteousness were apportioned, and how the places of their dwelling rested in their lights; and their days'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'and their seasons bring forth lightning. And their seasons were counted by'.
-    reason: previous_rendering
+  - marker: b
+    text: The Ge'ez word translated “extent” is unclear.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: መዳልወ
   chosen: were apportioned
@@ -204,12 +195,18 @@ revisions:
   from: And I saw the balances of righteousness, how they are weighed according to their lights, the width of their places, and the day of their appearing, of their appearing, and their revolution brings forth lightning; and their revolution is according to the number of the angels, and they keep faith with one another.
   to: And I saw the balances of righteousness, how they are weighed according to their lights, the width of their places, and the day of their appearing; and their revolution brings forth lightning, and their revolution is according to the number of the angels, and they keep faith with one another.
   rationale: Removed the duplicated phrase 'of their appearing,' and adjusted punctuation for clearer, more natural English while preserving the source sense.
+- timestamp: '2026-11-09T19:51:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw the balances of righteousness[a], how they are weighed according to their lights, the width of their places, and the day of their appearing; and their revolution brings forth lightning, and their revolution is according to the number of the angels[e][d][c][b], and they keep faith with one another.
+  to: I saw the scales of righteousness[a] and how the stars are weighed according to their brightness, the extent of their places[b], and the day they appear. Their turning brings forth lightning; their turning accords with the number of the angels, and they keep faith with one another.
+  rationale: The later revisions give stronger support for scales, weighing, and turning than the earlier wording about luminaries and seasons. I preserved those gains and the mutual faithfulness of the final clause, while replacing the accumulated notes with brief warnings about the genuinely uncertain wording.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:20Z'
   unchanged: false
   changes_summary: Removed the duplicated phrase 'of their appearing,' and adjusted punctuation for clearer, more natural English while preserving the source sense.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -229,3 +226,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/043/002.job-72366.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:51:32Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch sees the heavenly lights weighed in righteousness, bringing forth lightning through their turning and keeping faith within an order related to the number of the angels.
+  meaning_decisions:
+  - source_phrase: ወርኢክዎ፡ ለመዳልወ፡ ጽድቅ፡ ከመ፡ ይደለው
+    prior_rendering: And I saw the balances of righteousness, how they are weighed
+    new_rendering: I saw the scales of righteousness and how the stars are weighed
+    rationale: “Scales” makes the weighing image readily recognizable, and naming the stars makes the implied subject explicit rather than allowing “they” to appear to refer to the scales.
+  - source_phrase: በብርሃናቲሆሙ
+    prior_rendering: according to their lights
+    new_rendering: according to their brightness
+    rationale: The weighing concerns the light the heavenly bodies give, rather than separate lights belonging to them.
+  - source_phrase: ሰረኃበ፡ መካናቲሆሙ
+    prior_rendering: the width of their places
+    new_rendering: the extent of their places
+    rationale: The spatial sense remains the best-supported reading, but “extent” conveys it without specifying a particular dimension more narrowly than the uncertain wording warrants.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The later revisions give stronger support for scales, weighing, and turning than the earlier wording about luminaries and seasons. I preserved those gains and the mutual faithfulness of the final clause, while replacing the accumulated notes with brief warnings about the genuinely uncertain wording.

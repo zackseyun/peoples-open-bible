@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw in the vision until that sheep became a man[a], and built a house for the Lord of the sheep[c][b], and he placed all the sheep in that house.
-  philosophy: optimal-equivalence
+  text: And I watched in the vision until that sheep became a man and built a house[a] for the Lord of the sheep, and he placed all the sheep in that house.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: '''House'' likely carries sanctuary or temple overtones here, but the Ge''ez wording itself is simply ''house.'''
-    reason: lexical_alternative
-  - marker: b
-    text: The sheep's becoming 'a man' is part of the vision's symbolic transformation; the translation leaves the figure unidentified rather than supplying an interpretation.
+    text: The house represents the sanctuary built during Israel’s wilderness journey.
     reason: cultural_note
-  - marker: c
-    text: Or 'he made all the sheep stand'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: በግዕ
   chosen: sheep
@@ -144,12 +138,18 @@ revisions:
   from: he made all the sheep stand
   to: he placed all the sheep
   rationale: 'While ''አቀሞሙ'' (ʾaqamomu) is the causative of ''ቆመ'' (to stand), its standard semantic range includes ''to place, set, establish'' (Dillmann: statuit, collocavit). ''Placed'' or ''stationed'' is more natural in English for putting the flock in the house, avoiding the overly literal ''made stand''.'
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw in the vision until that sheep became a man[a], and built a house for the Lord of the sheep[c][b], and he placed all the sheep in that house.
+  to: And I watched in the vision until that sheep became a man and built a house[a] for the Lord of the sheep, and he placed all the sheep in that house.
+  rationale: The revision from “made all the sheep stand” to “placed all the sheep” correctly conveys the verb’s meaning here. The transformation and house remain part of the vision rather than being replaced with historical names.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:07Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -169,3 +169,18 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/036.job-72762.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The leading sheep becomes a man, builds a house for the Lord of the sheep, and places the whole flock there.
+  meaning_decisions: []
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The revision from “made all the sheep stand” to “placed all the sheep” correctly conveys the verb’s meaning here. The transformation and house remain part of the vision rather than being replaced with historical names.

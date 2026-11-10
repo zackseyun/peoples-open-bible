@@ -13,21 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch71.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 71, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And after this it happened: my spirit was taken up[a], and it ascended into the heavens; and I saw the sons of the holy angels walking upon a flame of fire, and their garments were white[d][c][b], and their faces shone like snow.'
-  philosophy: optimal-equivalence
+  text: After this my spirit was hidden away and ascended into the heavens. I saw the sons of the holy angels[a] walking on a flame of fire. Their garments and cloaks were white, and their faces shone like snow.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase 'the sons of the holy angels' is unusual and may be understood more broadly as angelic beings associated with the holy angels. The Ge'ez wording is retained rather than simplified.
-    reason: lexical_alternative
-  - marker: b
-    text: The bracketed word in the source line is textually uncertain. The translation reflects the clear sense of radiance in the clause as a whole without pressing that uncertain form too far.
-    reason: textual_variant
-  - marker: c
-    text: '''Like snow'' renders the comparison naturally in context as an image of dazzling whiteness and brightness.'
-    reason: cultural_note
-  - marker: d
-    text: Or 'and their garments were white, and their faces shone like snow.'.
-    reason: previous_rendering
+    text: This unusual expression may describe heavenly beings rather than literal offspring.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እምድኅረዝ
   chosen: after this
@@ -173,7 +164,14 @@ revisions:
   category: doctrine_realignment
   from: 'And after this it happened: my spirit was taken up[a], and it ascended into the heavens; and I saw the sons of the holy angels walking upon a flame of fire, and their garments were white[d][c][b], and their faces bright like snow.'
   to: 'And after this it happened: my spirit was taken up[a], and it ascended into the heavens; and I saw the sons of the holy angels walking upon a flame of fire, and their garments were white[d][c][b], and their faces shone like snow.'
-  rationale: 'Drafter chose ''shone like snow'' over ''bright like snow'' (first listed alternative) to preserve luminosity in idiomatic English; azure''s substitution ''their faces bright like snow'' is grammatically incomplete (no copula) and lifts the rejected alternative citing only ''naturally to match the source''.'
+  rationale: Drafter chose 'shone like snow' over 'bright like snow' (first listed alternative) to preserve luminosity in idiomatic English; azure's substitution 'their faces bright like snow' is grammatically incomplete (no copula) and lifts the rejected alternative citing only 'naturally to match the source'.
+- timestamp: '2026-11-09T20:01:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And after this it happened: my spirit was taken up[a], and it ascended into the heavens; and I saw the sons of the holy angels walking upon a flame of fire, and their garments were white[d][c][b], and their faces shone like snow.'
+  to: After this my spirit was hidden away and ascended into the heavens. I saw the sons of the holy angels[a] walking on a flame of fire. Their garments and cloaks were white, and their faces shone like snow.
+  rationale: The earlier wording rightly preserved the unusual angelic family expression and the snowy radiance. The revision history identified the cloak reference, but its awkward English arrangement need not be preserved; the hiding verb is also distinguished from the subsequent ascent.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:25:27Z'
@@ -198,3 +196,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/071/001.job-72557.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:59Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Enoch’s spirit is hidden away and ascends into the heavens, where he sees radiant heavenly beings walking on fire.
+  meaning_decisions:
+  - source_phrase: ትትከበት፡ መንፈስየ
+    prior_rendering: my spirit was taken up
+    new_rendering: my spirit was hidden away
+    rationale: The verb carries the sense of hiding or concealment, while the following verb separately describes the ascent.
+  - source_phrase: ወአልባሶሙ፡ ጻዓዳ፡ [ወዐጸፎሙ፡]
+    prior_rendering: their garments were white
+    new_rendering: Their garments and cloaks were white
+    rationale: The cloak reference can be incorporated naturally under the description of white clothing without reproducing the disrupted word order.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier wording rightly preserved the unusual angelic family expression and the snowy radiance. The revision history identified the cloak reference, but its awkward English arrangement need not be preserved; the hiding verb is also distinguished from the subsequent ascent.

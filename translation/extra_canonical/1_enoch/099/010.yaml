@@ -13,21 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And in those days[a], blessed are all those who accept the word of wisdom, and understand it, and do it, and follow the way of the Most High, and walk in the way of his righteousness, and do not act wickedly with those who act wickedly[d][c][b]; for they shall be saved.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'receive the message of wisdom.' The Ge'ez expression can mean 'word,' 'matter,' or 'message' of wisdom.
-    reason: lexical_alternative
-  - marker: b
-    text: The repeated verb rendered 'become corrupt' may also be understood as 'perish' or 'go astray,' depending on how the Ge'ez is construed in this line.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and do it in the way of the Most High'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'do not become corrupt with those who become corrupt'.
-    reason: previous_rendering
+  text: In those days, blessed are all who accept the word of wisdom and understand it, follow the way of the Most High, walk in the way of his righteousness, and do not join the wicked in their wickedness, for they will be saved.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ብፁዓን
   chosen: blessed
@@ -168,12 +155,18 @@ revisions:
   from: And in those days, blessed are all those who accept the word of wisdom, and understand it, and observe the way of the Most High, and walk in the way of his righteousness, and do not act wickedly with those who act wickedly; for they shall be saved.
   to: And in those days, blessed are all those who accept the word of wisdom, and understand it, and do it, and follow the way of the Most High, and walk in the way of his righteousness, and do not act wickedly with those who act wickedly; for they shall be saved.
   rationale: Added 'and do it' to reflect the source verb meaning 'do/perform' after 'understand it.' Changed 'observe the way of the Most High' to 'follow the way of the Most High' for more natural English while preserving the sense of walking in that way.
+- timestamp: '2026-11-09T20:08:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in those days[a], blessed are all those who accept the word of wisdom, and understand it, and do it, and follow the way of the Most High, and walk in the way of his righteousness, and do not act wickedly with those who act wickedly[d][c][b]; for they shall be saved.
+  to: In those days, blessed are all who accept the word of wisdom and understand it, follow the way of the Most High, walk in the way of his righteousness, and do not join the wicked in their wickedness, for they will be saved.
+  rationale: The current wording rightly preserves wisdom, righteousness, and salvation, but a later revision translated the single observance construction twice. The history’s identification of the repeated verb as acting wickedly is stronger than the older notes suggesting corruption or perishing.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:46Z'
   unchanged: false
   changes_summary: Added 'and do it' to reflect the source verb meaning 'do/perform' after 'understand it.' Changed 'observe the way of the Most High' to 'follow the way of the Most High' for more natural English while preserving the sense of walking in that way.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -193,3 +186,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/010.job-72913.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Those who receive and understand wisdom, live according to the Most High’s righteousness, and refuse to participate in wickedness are blessed because they will be saved.
+  meaning_decisions:
+  - source_phrase: ወይገብርዎን፡ ለፍኖተ፡ ልዑል
+    prior_rendering: and do it, and follow the way of the Most High
+    new_rendering: follow the way of the Most High
+    rationale: This is one verbal construction expressing practical observance of the Most High’s way, not two separate actions. Following that way conveys the ethical force without translating the verb twice.
+  - source_phrase: ወኢይረሰዑ፡ ምስለ፡ እለ፡ ይረሰዑ
+    prior_rendering: and do not act wickedly with those who act wickedly
+    new_rendering: and do not join the wicked in their wickedness
+    rationale: The clause concerns participation in wicked conduct, not merely association with wicked people. The new wording preserves that distinction in natural English.
+  footnote_kinds: {}
+  history_weighed: The current wording rightly preserves wisdom, righteousness, and salvation, but a later revision translated the single observance construction twice. The history’s identification of the repeated verb as acting wickedly is stronger than the older notes suggesting corruption or perishing.

@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch05.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 5, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Observe how the trees are covered with green leaves and bear fruit[c][b][a], and understand concerning everything that the Ever-Living One has made all these things.
-  philosophy: optimal-equivalence
+  text: Observe how the trees are covered with green leaves and bear fruit. Consider all these things and know that the Ever-Living One made them all[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez in the latter half of the verse is difficult. The clause rendered 'all of them know concerning themselves that they have made all these things' may reflect a corrupt or uncertain transmission; the general sense is that the trees themselves testify to the ordered pattern of creation.
+    text: 'The Ge’ez wording is damaged here: the verb reads “you made,” though the context points to the Ever-Living One as the maker.'
     reason: textual_variant
-  - marker: b
-    text: The final phrase could also be understood as referring to 'the Ever-Living One' rather than 'the living forever.'
-    reason: alternative_reading
-  - marker: c
-    text: 'Or ''But ask, please, the trees: when they have put forth green leaves, and are covered and bear fruit, all of them know concerning themselves that they have made all these things for the living forever.''.'
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ጠይቁ
   chosen: ask
@@ -177,12 +171,18 @@ revisions:
   from: Observe how the trees are covered with green leaves and bear fruit; and understand concerning everything, and know that He who lives forever has made all these things.
   to: Observe how the trees are covered with green leaves and bear fruit, and understand concerning everything that the Ever-Living One has made all these things.
   rationale: Removed the redundant second command 'and know' for smoother English and to avoid overrepresenting the source; rendered the final phrase more directly as 'the Ever-Living One' and linked it to 'understand concerning everything' for a more natural and faithful flow.
+- timestamp: '2026-11-09T19:43:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Observe how the trees are covered with green leaves and bear fruit[c][b][a], and understand concerning everything that the Ever-Living One has made all these things.
+  to: Observe how the trees are covered with green leaves and bear fruit. Consider all these things and know that the Ever-Living One made them all[a].
+  rationale: The revisions correctly recovered commands addressed to the observers rather than statements about the trees. I retain that gain and the contextual identification of the maker, while replacing the conflicting earlier notes with one note about the damaged wording.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:35:29Z'
   unchanged: false
   changes_summary: Removed the redundant second command 'and know' for smoother English and to avoid overrepresenting the source; rendered the final phrase more directly as 'the Ever-Living One' and linked it to 'understand concerning everything' for a more natural and faithful flow.
-
 cross_check:
   status: needs_review
   agreement: 0.2
@@ -202,3 +202,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/005/001.job-72166.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:43:08Z'
+  change_level: refined
+  confidence: low
+  meaning: The trees’ growth and fruitfulness call the hearers to recognize the Ever-Living One as the maker of all creation.
+  meaning_decisions:
+  - source_phrase: ወለበዉ፡ በእንተ፡ ኵሉ፡ ወአእምሩ፡ በከመ
+    prior_rendering: and understand concerning everything that
+    new_rendering: Consider all these things and know that
+    rationale: The two commands invite the hearers to reflect on what they observe and recognize its maker; separating them makes that movement clear.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The revisions correctly recovered commands addressed to the observers rather than statements about the trees. I retain that gain and the contextual identification of the maker, while replacing the conflicting earlier notes with one note about the damaged wording.

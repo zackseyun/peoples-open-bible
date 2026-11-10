@@ -14,18 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: those who[a], from the time they came to be, did not desire the food that is on the earth, but regarded their souls as a passing breath, and kept this, and the Lord tested them greatly, and their spirits were found pure[c][b], so that they might bless his name.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'like a spirit that passes away'; the Ge'ez word can denote spirit, wind, or breath.
-    reason: lexical_alternative
-  - marker: b
-    text: The clause 'gave up their souls' is difficult and may express severe self-denial, even to the point of risking life.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'gave up their souls'.
-    reason: previous_rendering
+  text: From the beginning of their lives they did not desire the food of the earth, but regarded their lives as a passing breath and remained steadfast in this. The Lord tested them greatly, and their spirits were found pure, so that they might bless his name.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ኢፈተዉ
   chosen: did not desire
@@ -165,12 +155,18 @@ revisions:
   from: those who, from the time they came to be, did not desire the food that is on the earth, but regarded their lives as a passing breath, and they kept this; and the Lord tested them greatly, and their spirits were found pure, so that they might bless his name.
   to: those who, from the time they came to be, did not desire the food that is on the earth, but regarded their souls as a passing breath, and kept this, and the Lord tested them greatly, and their spirits were found pure, so that they might bless his name.
   rationale: Changed 'lives' to 'souls' for closer lexical correspondence to nefsatōmu; smoothed the coordination by changing 'and they kept this; and' to 'and kept this, and' while preserving the source sequence.
+- timestamp: '2026-11-09T20:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: those who[a], from the time they came to be, did not desire the food that is on the earth, but regarded their souls as a passing breath, and kept this, and the Lord tested them greatly, and their spirits were found pure[c][b], so that they might bless his name.
+  to: From the beginning of their lives they did not desire the food of the earth, but regarded their lives as a passing breath and remained steadfast in this. The Lord tested them greatly, and their spirits were found pure, so that they might bless his name.
+  rationale: I preserved the correction from 'gave up' to 'regarded' and restored the earlier recognition that the comparison concerns their lives. The obsolete notes about giving up their souls do not explain the supplied Ge’ez and have been removed.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:07Z'
   unchanged: false
   changes_summary: Changed 'lives' to 'souls' for closer lexical correspondence to nefsatōmu; smoothed the coordination by changing 'and they kept this; and' to 'and kept this, and' while preserving the source sequence.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -190,3 +186,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/009.job-72988.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:18Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Those who renounced earthly food and regarded their mortal lives as fleeting remained steadfast, passed the Lord’s tests, and were found pure to bless his name.
+  meaning_decisions:
+  - source_phrase: ረሰዩ፡ ነፍሳቶሙ፡ ከመ፡ መንፈስ፡ እንተ፡ ተሐልፍ
+    prior_rendering: regarded their souls as a passing breath
+    new_rendering: regarded their lives as a passing breath
+    rationale: The comparison concerns the brevity of their mortal existence. 'Lives' conveys that meaning without suggesting that the passage describes their spirits passing away.
+  - source_phrase: ወዘንተ፡ ዐቀቡ
+    prior_rendering: and kept this
+    new_rendering: and remained steadfast in this
+    rationale: The phrase refers back to the renunciation just described; it does not introduce an unidentified object or command that they guarded.
+  footnote_kinds: {}
+  history_weighed: I preserved the correction from 'gave up' to 'regarded' and restored the earlier recognition that the comparison concerns their lives. The obsolete notes about giving up their souls do not explain the supplied Ge’ez and have been removed.

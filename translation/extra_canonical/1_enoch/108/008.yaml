@@ -14,15 +14,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Ge'ez ሥጋ can be rendered 'flesh' or 'body'; 'bodies' is chosen here for clearer English, but the wording still emphasizes embodied suffering.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'any of the good things that are in the world' is textually awkward in the OCR witness; it likely refers broadly to the world's desirable goods.
-    reason: textual_variant
+  text: those who love God and did not love gold or silver or any of the good things in the world, but gave their bodies over to affliction.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እለ
   chosen: those who
@@ -136,14 +129,20 @@ revisions:
   from: those who love God, and did not love gold or silver or any of the good things that are in the world, but gave their bodies over to affliction.
   to: those who love God, and did not love gold or silver or any of the good things that are in the world, but gave their bodies over to affliction.
   rationale: Removed 'over' from 'gave their bodies over to affliction' for a more formal, literal rendering while preserving the sense. The rest of the draft is accurate and complete.
-
 - timestamp: '2026-05-18T03:01:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.'
-  to: 'those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.'
+  from: those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.
+  to: those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''gave their bodies over''].'
+- timestamp: '2026-11-09T20:04:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: those who love God[a], and did not love gold or silver or any of the good things that are in the world[b], but gave their bodies to affliction.
+  to: those who love God and did not love gold or silver or any of the good things in the world, but gave their bodies over to affliction.
+  rationale: The recorded contrast between love for God and love for wealth, together with bodily self-surrender, fits the continuing description of the righteous. The wording about the world’s good things is intelligible in context, and “gave their bodies over” restores a natural English idiom without changing its meaning.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -163,3 +162,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/008.job-72987.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:20Z'
+  change_level: refined
+  confidence: high
+  meaning: These righteous sufferers love God rather than wealth or the world’s good things and have surrendered their bodies to affliction.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The recorded contrast between love for God and love for wealth, together with bodily self-surrender, fits the continuing description of the righteous. The wording about the world’s good things is intelligible in context, and “gave their bodies over” restores a natural English idiom without changing its meaning.

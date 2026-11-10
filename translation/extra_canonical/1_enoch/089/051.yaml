@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And again I saw those sheep[a], how they went astray and walked in many paths, and they abandoned that house of their Lord. And the Lord of the sheep called some from among the sheep and sent them to the sheep[c][b], but the sheep began to kill them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'their master'; the Ge'ez term can denote a lord or master. 'Lord' is chosen because the figure in the vision represents God as ruler of the flock.
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause may also be understood more concretely as 'the sheep seized them in order to kill them.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And again I saw those sheep again'.
-    reason: previous_rendering
+  text: And again I saw those sheep go astray and walk along many paths, abandoning their house. The Lord of the sheep called some sheep from among them and sent them to the sheep, but the sheep began to kill them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወርኢክዎሙ ካዕበ
   chosen: And again I saw
@@ -156,12 +146,18 @@ revisions:
   from: And again I saw those sheep again
   to: And again I saw those sheep
   rationale: The Ge'ez text repeats 'ካዕበ' (ka'ba, 'again'), which is a common stylistic repetition or scribal dittography in Ethiopic manuscripts. Rendering it twice in English ('And again... again') is unnecessarily clunky and does not add semantic value or emphasis that the original audience would have perceived as distinct from a single 'again'.
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again I saw those sheep[a], how they went astray and walked in many paths, and they abandoned that house of their Lord. And the Lord of the sheep called some from among the sheep and sent them to the sheep[c][b], but the sheep began to kill them.
+  to: And again I saw those sheep go astray and walk along many paths, abandoning their house. The Lord of the sheep called some sheep from among them and sent them to the sheep, but the sheep began to kill them.
+  rationale: The removal of a redundant English 'again' made the visionary formula clearer without losing its recurrence. The inceptive sense 'began to kill' fits the construction and the following verse, but the house's possessive needed correction.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:40Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -181,3 +177,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/051.job-72777.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sheep stray from their house and begin killing the sheep their Lord sends to them.
+  meaning_decisions:
+  - source_phrase: ወሐደጉ፡ ዝኩ፡ ቤተ፡ ዚአሆሙ
+    prior_rendering: and they abandoned that house of their Lord
+    new_rendering: abandoning their house
+    rationale: The possessive here means 'theirs'; the Lord is named as the subject of the following clause, not as the possessor in this phrase.
+  footnote_kinds: {}
+  history_weighed: The removal of a redundant English 'again' made the visionary formula clearer without losing its recurrence. The inceptive sense 'began to kill' fits the construction and the following verse, but the house's possessive needed correction.

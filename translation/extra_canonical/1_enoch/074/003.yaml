@@ -13,15 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In fifteen parts it completes all its light in the east[b][a], and in fifteen parts it completes all its darkness in the west.
-  philosophy: optimal-equivalence
+  text: In fifteen[a] parts the moon reaches its full light in the east, and in fifteen parts it reaches complete darkness in the west.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The numeral phrase is somewhat uncertain in the OCR, but the verse appears to repeat the same count for both clauses: fifty-seven days.'
+    text: The number here is unclear; fifteen fits the surrounding description of the moon’s cycle.
     reason: textual_variant
-  - marker: b
-    text: Or 'In fifty-seven days all its light is completed in the east, and in fifty-seven days all its darkness is completed in the west.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: በ፭*፷፯ እደ
   chosen: in fifty-seven days
@@ -125,12 +122,18 @@ revisions:
   from: In fifty-seven days all its light is completed in the east, and in fifty-seven days all its darkness is completed in the west.
   to: In fifteen parts it completes all its light in the east, and in fifteen parts it completes all its darkness in the west.
   rationale: 'The draft mistranslates the OCR error `፷፯` (67) as ''fifty-seven''. The OCR is a visual error for `፲፭` (15), as ፲ (10) resembles ፷ (60) and ፭ (5) resembles ፯ (7). The lunar cycle in 1 Enoch is reckoned in 14 or 15 parts. Additionally, `እደ` means ''parts'' or ''portions'' (literally ''hands''), not ''days'' (`መዋዕል`). Finally, `ይፌጽም` is active (''it completes''), not passive. | Adjudicator: The reviewer correctly identifies a severe OCR error and multiple translation mistakes. The Ge''ez numeral ፲፭ (15) was misread by the OCR as ፷፯ (67), which the draft then inexplicably translated as ''fi'
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In fifteen parts it completes all its light in the east[b][a], and in fifteen parts it completes all its darkness in the west.
+  to: In fifteen[a] parts the moon reaches its full light in the east, and in fifteen parts it reaches complete darkness in the west.
+  rationale: The earlier correction to fifteen parts is supported by the lunar context and the preceding fifteen-day period, while the supplied numeral sequence remains unclear. The older alternatives involving fifty-seven days are unsupported, but the numerical uncertainty still requires a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:25Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -150,3 +153,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/003.job-72612.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: refined
+  confidence: low
+  meaning: The moon reaches full light in the east and complete darkness in the west, each measured in fifteen parts, though the number is uncertain.
+  meaning_decisions:
+  - source_phrase: ይፌጽም፡ ኵሎ፡ ብርሃኖ
+    prior_rendering: it completes all its light
+    new_rendering: the moon reaches its full light
+    rationale: The completion concerns the moon’s light becoming full, not its finishing a task involving light.
+  - source_phrase: ይፌጽም፡ ኵሎ፡ ጽልመተ
+    prior_rendering: it completes all its darkness
+    new_rendering: it reaches complete darkness
+    rationale: This is the corresponding completion of the moon’s darkening, preserving the parallel between light and darkness.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction to fifteen parts is supported by the lunar context and the preceding fifteen-day period, while the supplied numeral sequence remains unclear. The older alternatives involving fifty-seven days are unsupported, but the numerical uncertainty still requires a short note.

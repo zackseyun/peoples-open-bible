@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the sun rises so that the day grows shorter and the night lengthens[a], and the sun returns to the east and enters into the sixth gate[c][b], and rises from it and sets for thirty mornings.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The final clause is textually difficult in the OCR witness. 'For thirty mornings' likely refers to a thirty-day segment of the sun's course while it uses this gate.
-    reason: textual_variant
-  - marker: b
-    text: The repeated language of gates is part of the Astronomical Book's cosmic schema and should be read literally within the vision's world, not reduced to a mere metaphor for seasons.
-    reason: cultural_note
-  - marker: c
-    text: Or 'enters in the morning and goes into'.
-    reason: previous_rendering
+  text: The sun then rises as the day begins to shorten and the night to lengthen. It returns to the east and enters the sixth gate; for thirty mornings it rises from that gate and sets.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ይትነሣእ
   chosen: rises
@@ -136,12 +126,18 @@ revisions:
   from: enters in the morning and goes into
   to: returns to the east and enters into
   rationale: The verb ይገብእ (yegabbe', from gab'a) means 'returns', not 'enters' (which is ይበውእ, yebawwe', used immediately after). Furthermore, in the spatial cosmology of the Astronomical Book, በጽባሕ (ba-ṣebaḥ) here means 'to the east' (the place of morning/sunrise), not just 'in the morning'. The sun sets in the west and must return to the east to enter the eastern gates. The draft obscures this spatial movement by rendering it as a temporal entry rather than a spatial return.
+- timestamp: '2026-11-09T20:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sun rises so that the day grows shorter and the night lengthens[a], and the sun returns to the east and enters into the sixth gate[c][b], and rises from it and sets for thirty mornings.
+  to: The sun then rises as the day begins to shorten and the night to lengthen. It returns to the east and enters the sixth gate; for thirty mornings it rises from that gate and sets.
+  rationale: The revision distinguishing 'returns' from 'enters' and identifying the destination as the east is supported by the sun's circuit. The restored ending gives a complete thirty-morning interval, so the older note about a difficult ending is unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:17Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -161,3 +157,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/015.job-72584.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sun continues through the sixth gate for thirty mornings as daylight begins to shorten and the nights lengthen.
+  meaning_decisions:
+  - source_phrase: ወይትነሣእ፡ ፀሐይ፡ ከመ፡ ትሕጽር፡ ዕለት፡ ወትኑኅ፡ ሌሊት
+    prior_rendering: And the sun rises so that the day grows shorter and the night lengthens
+    new_rendering: The sun then rises as the day begins to shorten and the night to lengthen
+    rationale: The surrounding sequence marks the turn from increasing to decreasing daylight. 'As' conveys that seasonal transition without suggesting that an individual sunrise deliberately shortens the day.
+  - source_phrase: ወይሠርቅ፡ እምኔሃ፡ ወየዓርብ፡ ሠላሳ፡ ጽባሐ
+    prior_rendering: and rises from it and sets for thirty mornings
+    new_rendering: for thirty mornings it rises from that gate and sets
+    rationale: Placing the duration first makes clear that thirty mornings describe the repeated rising-and-setting cycle, not sunsets occurring in the morning.
+  footnote_kinds: {}
+  history_weighed: The revision distinguishing 'returns' from 'enters' and identifying the destination as the east is supported by the sun's circuit. The restored ending gives a complete thirty-morning interval, so the older note about a difficult ending is unnecessary.

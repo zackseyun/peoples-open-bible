@@ -13,15 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch106.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 106, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And now[a], my father, I am here asking you and petitioning you, that you should go to Henok our father and hear from him the truth[b], for his dwelling is with the angels.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hanok is the Ge'ez form of the name more commonly rendered 'Enoch.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Hanok our father'.
-    reason: previous_rendering
+  text: Now, my father, I am here pleading with you and asking you to go to Henok our father and hear the truth from him, for he dwells with the angels.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወይእዜኒ
   chosen: And now
@@ -157,12 +150,18 @@ revisions:
   from: And now, my father, I am asking you and petitioning you that you should go to Henok our father and hear the truth from him, for his dwelling is with the angels.
   to: And now, my father, I am here asking you and petitioning you, that you should go to Henok our father and hear from him the truth, for his dwelling is with the angels.
   rationale: Reverted azure-gpt-5.4 stylistic overrides of two accurate lexical decisions. (1) 'I am here' restores ሀለውኩ (halewku), a genuine Geʿez lexical unit expressing present-scene presence that the drafter documented and azure dismissed as 'unnecessary' without engaging the rationale. (2) 'hear from him the truth' restores the drafter's chosen word order for ትስማዕ እምኀቤሁ አማነ, which mirrors the Geʿez clause structure; azure's reorder to 'hear the truth from him' is English-smoothing only and carries no lexical justification.
+- timestamp: '2026-11-09T20:03:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now[a], my father, I am here asking you and petitioning you, that you should go to Henok our father and hear from him the truth[b], for his dwelling is with the angels.
+  to: Now, my father, I am here pleading with you and asking you to go to Henok our father and hear the truth from him, for he dwells with the angels.”
+  rationale: The current name Henok and the explicit statement of Lamech’s presence are retained. The earlier objections to reordered English and a verbal expression for dwelling concern sentence shape rather than meaning; the obsolete name alternatives are dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:02Z'
   unchanged: false
   changes_summary: Removed 'I am here' as unnecessary for the source, smoothed word order to 'hear the truth from him,' and retained the formal tone and full sense of the verse.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -182,3 +181,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/106/007.job-72971.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Lamech urgently asks Methuselah to consult Henok about the truth because Henok dwells with the angels.
+  meaning_decisions:
+  - source_phrase: አስተበቍዐከ፡ ወእስእል፡ እምኀቤከ
+    prior_rendering: asking you and petitioning you
+    new_rendering: pleading with you and asking you
+    rationale: The paired requests express an earnest personal appeal; 'pleading' carries its urgency more clearly than the administrative-sounding 'petitioning.'
+  footnote_kinds: {}
+  history_weighed: The current name Henok and the explicit statement of Lamech’s presence are retained. The earlier objections to reordered English and a verbal expression for dwelling concern sentence shape rather than meaning; the obsolete name alternatives are dropped.

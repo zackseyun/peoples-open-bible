@@ -275,13 +275,25 @@ def verse_context(path: pathlib.Path) -> dict[str, Any]:
             "alternatives": item.get("alternative_readings") or [],
             "rationale": clip(item.get("rationale"), 450),
         })
+    src = rec.get("source") or {}
+    source: dict[str, Any] = {"edition": src.get("edition"), "text": src.get("text")}
+    # Extra-canonical records (1 Enoch) carry notes on unclear, damaged or
+    # disputed readings. Canonical records have none, so their context is unchanged.
+    if src.get("note"):
+        source["reading_note"] = clip(src["note"], 700)
+    if src.get("confidence"):
+        source["reading_confidence"] = src["confidence"]
+    uncertain = [
+        {k: clip(u.get(k), 300) for k in ("token", "location", "issue", "treatment") if u.get(k)}
+        for u in (src.get("transcription_uncertainties") or []) + (src.get("uncertainties") or [])
+        if isinstance(u, dict)
+    ]
+    if uncertain:
+        source["uncertain_readings"] = uncertain
     ctx: dict[str, Any] = {
         "id": rec.get("id"),
         "reference": rec.get("reference"),
-        "source": {
-            "edition": (rec.get("source") or {}).get("edition"),
-            "text": (rec.get("source") or {}).get("text"),
-        },
+        "source": {k: v for k, v in source.items() if v},
         "current_pob": {
             "text": tr.get("text"),
             "footnotes": [
@@ -405,6 +417,9 @@ def usage_cost(usage: dict[str, Any], tier: str) -> float:
 
 def validate_verse(v: dict[str, Any]) -> list[str]:
     v["text"] = normalize_text(v.get("text") or "")
+    for note in v.get("footnotes") or []:
+        # The model sometimes writes the note's marker as "[a]" instead of "a".
+        note["marker"] = str(note.get("marker") or "").strip().strip("[]")
     problems = []
     text = (v.get("text") or "").strip()
     if not text:
@@ -765,7 +780,11 @@ def cmd_apply(args: argparse.Namespace) -> int:
             if tr["text"] != old_text.strip() or [(n["marker"], n["text"]) for n in footnotes] != old_notes:
                 rec.setdefault("revisions", []).append({
                     "timestamp": res["timestamp"],
-                    "adjudicator": res.get("adjudicator") or "gpt-6.1-sol-meaning-pass",
+                    # Verses Azure's content filter blocked may be translated by another
+                    # model under the same prompt; record which one wrote them.
+                    "adjudicator": res.get("adjudicator") or (
+                        "claude-opus-5-5-meaning-pass"
+                        if str(res.get("model") or "").startswith("claude") else "gpt-6.1-sol-meaning-pass"),
                     "reviewer_model": res.get("model"),
                     "category": "meaning_retranslation",
                     "from": old_text,

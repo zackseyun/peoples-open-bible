@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the Lord of the sheep came to them[a], and while they were striking those wolves, and the wolves were crying out, the sheep became silent[c][b], and from that time they cried out no more.
-  philosophy: optimal-equivalence
+  text: And the Lord of the sheep came to them. While those wolves were being struck and were crying out, the sheep fell silent, and from that time they cried out[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The closing clause is difficult in the Ethiopic sequence: after ''the sheep became silent,'' the text reads literally something like ''and from that time they cried out.'' The subject of the final verb may be resumptive or reflect a textual disturbance.'
-    reason: textual_variant
-  - marker: b
-    text: Or 'while the wolves were trampling those sheep, the wolves cried out'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'and from that time they cried out.'.
-    reason: previous_rendering
+    text: The final Ge'ez verb is unclear; it may mean that the sheep stopped crying out from that time on.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እግዚኦሙ
   chosen: the Lord of them / the Lord of the sheep
@@ -169,12 +163,18 @@ revisions:
   from: And the Lord of the sheep came to them, and while they were striking those wolves, and the wolves were crying out, but the sheep became silent, and from that time they ceased.
   to: And the Lord of the sheep came to them, and while they were striking those wolves, and the wolves were crying out, the sheep became silent, and from that time they cried out no more.
   rationale: Replaced 'but' with simple coordination for smoother flow, and revised 'from that time they ceased' to 'from that time they cried out no more' to reflect the likely implied subject and action more clearly and naturally.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the Lord of the sheep came to them[a], and while they were striking those wolves, and the wolves were crying out, the sheep became silent[c][b], and from that time they cried out no more.
+  to: And the Lord of the sheep came to them. While those wolves were being struck and were crying out, the sheep fell silent, and from that time they cried out[a].
+  rationale: The history rightly makes the wolves the ones struck. Its proposed correction of the closing verb differs from the supplied source, so the contradiction remains visible and the possible sense of cessation is given in a note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
   changes_summary: Replaced 'but' with simple coordination for smoother flow, and revised 'from that time they ceased' to 'from that time they cried out no more' to reflect the likely implied subject and action more clearly and naturally.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -194,3 +194,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/020.job-72746.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The Lord's arrival reverses the situation as the wolves are struck and cry out while the sheep fall silent, though the closing words are unclear.
+  meaning_decisions:
+  - source_phrase: እንዘ፡ ይዝብጥዎሙ፡ ለእልኩ፡ አዝእብት
+    prior_rendering: while they were striking those wolves
+    new_rendering: While those wolves were being struck
+    rationale: The wolves are clearly the objects of the blows, but the plural strikers are not identified; passive English preserves that uncertainty without a misleading pronoun.
+  - source_phrase: ወእምሶቤሃ፡ አፀርኁ
+    prior_rendering: and from that time they cried out no more
+    new_rendering: and from that time they cried out
+    rationale: The supplied source has the disputed verb understood as crying out; the history proposes a different reading meaning cessation. The supplied wording is translated without silently substituting that correction, and the alternative is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history rightly makes the wolves the ones struck. Its proposed correction of the closing verb differs from the supplied source, so the contradiction remains visible and the possible sense of cessation is given in a note.

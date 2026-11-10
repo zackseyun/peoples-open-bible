@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when the sun rises from the sky[a], it goes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it goes down exactly.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for thirty days'; the Ge'ez reads literally 'for thirty mornings,' a time-unit used in this astronomical sequence.
-    reason: lexical_alternative
-  - marker: b
-    text: The adverb rendered 'straightway' may also mean 'directly' or 'in a straight course.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And when the sun rises from the sky, it goes out through that fourth gate for thirty mornings, and through the fourth gate in the west of the sky it goes down straightway.'.
-    reason: previous_rendering
+  text: For thirty mornings the sun rises out of heaven through that fourth gate and goes down through the fourth gate in the west of heaven, directly opposite the eastern gate.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ይሠርቅ
   chosen: rises
@@ -153,9 +143,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the sun rises from the sky[a], it comes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it sets straight down.'
-  to: 'And when the sun rises from the sky[a], it goes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it goes down exactly.'
+  from: And when the sun rises from the sky[a], it comes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it sets straight down.
+  to: And when the sun rises from the sky[a], it goes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it goes down exactly.
   rationale: 'Drafter chose ''goes out'' for ይወፅእ to preserve the concrete exit-motion through the gate central to the luminary schema; azure substituted ''comes out'' citing only naturalness. Also: ''sets straight down'' weakens both the Gemini-adjudicated ''exactly'' (Dillmann-grounded spatial precision) and the literal-descent ''goes down'' the drafter preserved.'
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the sun rises from the sky[a], it goes out through that fourth gate for thirty mornings[c][b], and through the fourth gate in the west of the sky it goes down exactly.
+  to: For thirty mornings the sun rises out of heaven through that fourth gate and goes down through the fourth gate in the west of heaven, directly opposite the eastern gate.
+  rationale: I retain the counted mornings and the sun’s emergence from heaven. The earlier rejection of straightway was sound; directly opposite gives the spatial precision a clear referent in English.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -180,3 +177,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/008.job-72577.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: For thirty mornings the sun emerges through the fourth eastern gate and descends through the corresponding fourth western gate.
+  meaning_decisions:
+  - source_phrase: ወበራብዕት፡ ኆኅት፡ እንተ፡ ምዕራበ፡ ሰማይ፡ ርቱዐ፡ ይወርድ
+    prior_rendering: and through the fourth gate in the west of the sky it goes down exactly
+    new_rendering: and goes down through the fourth gate in the west of heaven, directly opposite the eastern gate
+    rationale: The exactness concerns the correspondence of the numbered eastern and western gates, not immediate descent or a vertically downward path.
+  footnote_kinds: {}
+  history_weighed: I retain the counted mornings and the sun’s emergence from heaven. The earlier rejection of straightway was sound; directly opposite gives the spatial precision a clear referent in English.

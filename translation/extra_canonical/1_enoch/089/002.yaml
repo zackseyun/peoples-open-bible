@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And again I lifted up my eyes toward heaven[a], and I saw a lofty roof, and seven streams upon it[c][b]; and those streams flowed into an enclosure with much water.
-  philosophy: optimal-equivalence
+  text: Again I lifted my eyes toward heaven and saw a lofty roof with seven streams on it. Those streams poured abundant water into seven enclosures[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez noun rendered 'roof' may also denote a covering or upper structure; the exact architectural image is uncertain.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'into an enclosed place' may more specifically mean 'into a courtyard' or 'into an enclosure.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'into an enclosed place'.
-    reason: previous_rendering
+    text: 'The wording is uncertain: the Ge’ez has “seven” here, but the following verses describe a single enclosure.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ካዕበ
   chosen: and again
@@ -159,12 +153,18 @@ revisions:
   from: And again I lifted up my eyes toward heaven, and I saw a lofty roof, and seven streams upon it; and those streams flowed with much water into an enclosure.
   to: And again I lifted up my eyes toward heaven, and I saw a lofty roof, and seven streams upon it; and those streams flowed into an enclosure with much water.
   rationale: 'Adjusted the final clause for more natural English word order while preserving the source sense: the streams flowed into an enclosure with much water.'
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again I lifted up my eyes toward heaven[a], and I saw a lofty roof, and seven streams upon it[c][b]; and those streams flowed into an enclosure with much water.
+  to: Again I lifted my eyes toward heaven and saw a lofty roof with seven streams on it. Those streams poured abundant water into seven enclosures[a].
+  rationale: The established roof and enclosure imagery remains appropriate. The current wording does not account for the second numeral in the supplied source, whose conflict with the next verses requires a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:58Z'
   unchanged: false
   changes_summary: 'Adjusted the final clause for more natural English word order while preserving the source sense: the streams flowed into an enclosure with much water.'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -184,3 +184,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/002.job-72728.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Seven streams on the heavenly roof pour abundant water into enclosures below.
+  meaning_decisions:
+  - source_phrase: በ፯*ዐጸድ
+    prior_rendering: into an enclosure
+    new_rendering: into seven enclosures
+    rationale: The supplied source includes the numeral seven before the noun; I preserve it rather than silently omit it, while noting the conflict with the following singular references.
+  - source_phrase: ይውሕዙ፡ ... ማየ፡ ብዙሐ
+    prior_rendering: flowed into an enclosure with much water
+    new_rendering: poured abundant water into seven enclosures
+    rationale: Makes clear that the streams carry abundant water into the enclosure, rather than merely entering a place that already contains much water.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The established roof and enclosure imagery remains appropriate. The current wording does not account for the second numeral in the supplied source, whose conflict with the next verses requires a short note.

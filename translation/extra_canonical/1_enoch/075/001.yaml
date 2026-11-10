@@ -12,24 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch75.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 75, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.
-  philosophy: optimal-equivalence
+  text: The leaders of the chiefs of thousands, who are over all creation and all the stars, continue in their service according to the yearly reckoning, together with those four that are added. These four serve on the four days not counted in the reckoning of the year[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'are joined' instead of 'are added'; the Ge'ez can suggest attachment to the ordered system of the year.
-    reason: lexical_alternative
-  - marker: b
-    text: The 'four days that are not counted' are the extra calendrical days associated with the turning points of the year in the Astronomical Book's 364-day scheme.
+    text: These are the four additional days at the turning points of the seasons, outside the twelve thirty-day months.
     reason: cultural_note
-  - marker: c
-    text: The verb rendered 'render service' is difficult and may also carry the sense of taking turns or alternating in function.
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'And their leaders, the chiefs of thousands'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'together with those four, are added and do not separate'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: መራሕያኒሆሙ
   chosen: their leaders
@@ -183,9 +171,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.'
-  to: 'And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.'
+  from: And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.
+  to: And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the chiefs of thousands''].'
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the leaders of the heads of thousands[a], who are over all creation and over all the stars, together with those four that are added and do not separate from their service[e][d][c][b], according to the reckoning of the year—and these render service on the four days that are not counted in the reckoning of the year.
+  to: The leaders of the chiefs of thousands, who are over all creation and all the stars, continue in their service according to the yearly reckoning, together with those four that are added. These four serve on the four days not counted in the reckoning of the year[a].
+  rationale: The earlier grammatical revisions support distinguishing the leaders from the chiefs they lead, but the current sentence lacks a clear main predicate. I retain the service interpretation and leave the identity of the added four open, explaining only their calendrical role.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:51Z'
@@ -210,3 +205,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/075/001.job-72624.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The heavenly leaders and the four additional figures continue their appointed service, including service on the four days excluded from the ordinary yearly reckoning.
+  meaning_decisions:
+  - source_phrase: አርእስተ፡ አእላፍ
+    prior_rendering: heads of thousands
+    new_rendering: chiefs of thousands
+    rationale: Chiefs makes the rank of these heavenly officials clearer without changing the hierarchy.
+  - source_phrase: ምስለ፡ እሉ፡ ፬፡ እለ፡ ይትዌሰኩ፡ ኢይትሌለዩ፡ እምነ፡ ምግባሮሙ
+    prior_rendering: together with those four that are added and do not separate from their service
+    new_rendering: continue in their service ... together with those four that are added
+    rationale: The leaders need a main predicate; remaining in service applies to them together with the added four, rather than leaving the opening description grammatically unfinished.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier grammatical revisions support distinguishing the leaders from the chiefs they lead, but the current sentence lacks a clear main predicate. I retain the service interpretation and leave the identity of the added four open, explaining only their calendrical role.

@@ -15,18 +15,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch60.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 60, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the treasuries of the spirits[a], and how the spirits are divided, and how they are weighed out, and the portals of the spirits are reckoned, each according to the power of the spirit, and their powers for the light of the moon, and according to the power of righteousness[c][b], and the divisions of the stars by their names—every division shall be apportioned.
-  philosophy: optimal-equivalence
+  text: He showed me the treasuries of the spirits[a], how the spirits are divided and weighed out, and how their portals are counted according to each spirit’s power. He also showed me their powers for the moon’s light, in accordance with the power of righteousness[b], and the divisions of the stars, each by name. Every division is apportioned.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Several clauses in this verse are textually and syntactically difficult in the Ge'ez-only witness of the Parables. Terms rendered 'weighed out,' 'reckoned,' and 'chambers' may also be understood more generally as measured, counted, or compartments/storehouses.
-    reason: textual_variant
+    text: The Ge’ez word for 'spirits' can also mean 'winds.'
+    reason: alternative_reading
   - marker: b
-    text: '''Spirits'' may also be read as ''winds''; the Ge''ez term can carry both senses, and the verse may intentionally blur cosmic powers and atmospheric forces.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and of the clouds shall be divided, and the spirits and the clouds shall be weighed out and reckoned; and the chambers of the spirits, by the power of the spirit'.
-    reason: previous_rendering
+    text: The connection between the spirits’ powers, the moon’s light, and the power of righteousness is unclear in the Ge’ez.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: መዛግብተ
   chosen: treasuries
@@ -192,12 +189,18 @@ revisions:
   from: And the treasuries of the spirits and how the spirits are divided, and how they are weighed out, and the portals of the spirits are reckoned, each according to the power of the spirit, and their powers for the light of the moon, and according to the power of righteousness, and the divisions of the stars by their names—every division shall be apportioned.
   to: And the treasuries of the spirits, and how the spirits are divided, and how they are weighed out, and the portals of the spirits are reckoned, each according to the power of the spirit, and their powers for the light of the moon, and according to the power of righteousness, and the divisions of the stars by their names—every division shall be apportioned.
   rationale: Added a comma after “spirits” for clearer coordination. No substantive translation changes were needed.
+- timestamp: '2026-11-09T19:57:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the treasuries of the spirits[a], and how the spirits are divided, and how they are weighed out, and the portals of the spirits are reckoned, each according to the power of the spirit, and their powers for the light of the moon, and according to the power of righteousness[c][b], and the divisions of the stars by their names—every division shall be apportioned.
+  to: He showed me the treasuries of the spirits[a], how the spirits are divided and weighed out, and how their portals are counted according to each spirit’s power. He also showed me their powers for the moon’s light, in accordance with the power of righteousness[b], and the divisions of the stars, each by name. Every division is apportioned.
+  rationale: The corrections of 'clouds' to 'how' and 'chambers' to 'portals' are sound and are preserved. The older notes identify genuine uncertainty in the remaining syntax, so I retain 'spirits' with its wind alternative and avoid explaining the obscure lunar clause.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:43Z'
   unchanged: false
   changes_summary: Added a comma after “spirits” for clearer coordination. No substantive translation changes were needed.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -217,3 +220,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/060/012.job-72455.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:57:37Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The angel reveals the measured distribution of spirits, their portals and powers, and the named divisions of the stars.
+  meaning_decisions:
+  - source_phrase: ወመዛግብተ፡ መንፈሳት
+    prior_rendering: And the treasuries of the spirits
+    new_rendering: He showed me the treasuries of the spirits
+    rationale: The implied action continues from the preceding verse; supplying it makes this verse readable without relocating any content.
+  - source_phrase: ወኀይሎሙ፡ ለብርሃነ፡ ወርኅ፡ ወ(በ)ከመ፡ ኀይለ፡ ጽድቅ
+    prior_rendering: and their powers for the light of the moon, and according to the power of righteousness
+    new_rendering: their powers for the moon’s light, in accordance with the power of righteousness
+    rationale: This is the most immediate connection between the adjacent phrases, but its obscurity is acknowledged rather than explained through an invented cosmology.
+  - source_phrase: ወኵሉ፡ ክፍለ፡ ይትከፈል
+    prior_rendering: every division shall be apportioned
+    new_rendering: Every division is apportioned
+    rationale: The context describes the ongoing ordering of cosmic forces, not a newly announced future distribution.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The corrections of 'clouds' to 'how' and 'chambers' to 'portals' are sound and are preserved. The older notes identify genuine uncertainty in the remaining syntax, so I retain 'spirits' with its wind alternative and avoid explaining the obscure lunar clause.

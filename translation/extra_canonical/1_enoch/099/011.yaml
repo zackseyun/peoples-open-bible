@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch99.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 99, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you who spread evil to your neighbors[c][b][a], for by your neighbors you will be slain.
-  philosophy: optimal-equivalence
+  text: Woe to you who spread evil among your neighbors, for you will be slain by your neighbors[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Ge''ez repeats the companion-word in both clauses, likely for rhetorical effect: those acting with companions are judged by companions.'
-    reason: lexical_alternative
-  - marker: b
-    text: The first companion-phrase could also be rendered 'through your companions' if taken instrumentally rather than associatively.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'spread out evil with your companions, for by companions you will be slain.'.
-    reason: previous_rendering
+    text: The final Ge'ez phrase is unclear; it may instead mean “in Sheol.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: እሌ
   chosen: Woe to
@@ -144,12 +138,18 @@ revisions:
   from: Woe to you who spread evil to your neighbors, for in Sheol you will be slain.
   to: Woe to you who spread evil to your neighbors, for by your neighbors you will be slain.
   rationale: Replaced 'in Sheol' with 'by your neighbors' to reflect በቢጸል ('by/through neighbors, companions') rather than Sheol, and preserved the reciprocal wording of the verse more accurately.
+- timestamp: '2026-11-09T20:08:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you who spread evil to your neighbors[c][b][a], for by your neighbors you will be slain.
+  to: Woe to you who spread evil among your neighbors, for you will be slain by your neighbors[a].
+  rationale: The history disagrees sharply over the final word, offering both a neighbor reading and a proposed Sheol correction. I retain the neighbor sense supported by the supplied form, but mark the uncertainty rather than asserting a secure wordplay.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:46Z'
   unchanged: false
   changes_summary: Replaced 'in Sheol' with 'by your neighbors' to reflect በቢጸል ('by/through neighbors, companions') rather than Sheol, and preserved the reciprocal wording of the verse more accurately.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -169,3 +169,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/099/011.job-72914.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:45Z'
+  change_level: refined
+  confidence: low
+  meaning: Those who spread evil among their neighbors are warned that they will be slain, apparently by those neighbors.
+  meaning_decisions:
+  - source_phrase: ትሰፍሕዋ፡ ለእኩይ፡ በቢጽክሙ
+    prior_rendering: spread evil to your neighbors
+    new_rendering: spread evil among your neighbors
+    rationale: “Among” expresses the spreading of evil in the sphere of one’s neighbors without forcing either a strictly instrumental or a conspiratorial sense.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history disagrees sharply over the final word, offering both a neighbor reading and a proposed Sheol correction. I retain the neighbor sense supported by the supplied form, but mark the uncertainty rather than asserting a secure wordplay.

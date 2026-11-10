@@ -22,15 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until all the wolves that followed those sheep perished and were drowned[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic wording is difficult at the end of the verse. The sense is that the beasts who had turned away from the sheep were engulfed or swallowed up in judgment.
-    reason: textual_variant
-  - marker: b
-    text: Or 'all the beasts that had turned away from those sheep were swallowed up.'.
-    reason: previous_rendering
+  text: I watched until all the wolves that pursued those sheep perished and were drowned.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -150,12 +143,18 @@ revisions:
   from: And I saw until all the wolves that pursued those sheep perished and were drowned.
   to: And I saw until all the wolves that followed those sheep perished and were drowned.
   rationale: Changed 'pursued' to 'followed' for closer lexical alignment with the source, while retaining the formal structure and completeness of the verse.
+- timestamp: '2026-11-09T20:10:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until all the wolves that followed those sheep perished and were drowned[a][b].
+  to: I watched until all the wolves that pursued those sheep perished and were drowned.
+  rationale: The current wording preserves the earlier correction of the animal, the pursuit, and the two verbs describing destruction and drowning. 'Watched' makes the continuing vision natural in English, and 'pursued' expresses the hostile following already established in context; the obsolete notes are dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:07Z'
   unchanged: false
   changes_summary: Changed 'pursued' to 'followed' for closer lexical alignment with the source, while retaining the formal structure and completeness of the verse.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -175,3 +174,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/027.job-72753.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Every wolf that pursued the sheep dies in the water.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the earlier correction of the animal, the pursuit, and the two verbs describing destruction and drowning. 'Watched' makes the continuing vision natural in English, and 'pursued' expresses the hostile following already established in context; the obsolete notes are dropped.

@@ -107,7 +107,9 @@ books: 37,295 verses, translated in 2,694 passages.
   reading verses this pass revised as they stood in the last commit before it
   ([`tests/meaning_pass_baseline.py`](../tests/meaning_pass_baseline.py)). Every
   other verse, including each reviewed target verse, is still checked live.
-- The extra-canonical books are not part of this pass.
+- The extra-canonical books are not part of this pass. 1 Enoch received its
+  own meaning-first pass from the Ge'ez, described in
+  [`ENOCH_MEANING_FIRST_2026-11.md`](ENOCH_MEANING_FIRST_2026-11.md).
 
 The Simplified People's Open Bible (SPOB) is derived from POB and will be
 regenerated from the new text in a separate pass. Other-language editions are

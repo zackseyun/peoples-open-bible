@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch76.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 76, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And through the second middle gate abundance comes out[a], and from it come rain and fruit and peace and dew; and through the third gate, which is toward the south[c][b], frost comes out and dryness.
-  philosophy: optimal-equivalence
+  text: Through the second gate, the middle one, comes abundance[a]; from it come rain, fruit, peace, and dew. Through the third gate, toward the north, come frost and dryness.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The sequence 'famine ... rain and fruit and peace and dew' is textually and conceptually abrupt. The Ge'ez is translated as given rather than smoothed; some readers may expect a contrast or a different ordering of effects.
-    reason: textual_variant
-  - marker: b
-    text: Or 'aridity' for 'dryness.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And from the second middle gate famine comes out, and from it come rain and fruit and peace and dew; and from the third gate, which is toward the south, frost comes out and dryness.'.
-    reason: previous_rendering
+    text: The word rendered 'abundance' can also mean 'breadth'; its sense here is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኆኅት
   chosen: gate
@@ -159,12 +153,18 @@ revisions:
   from: And through the second middle gate what is right comes out, and from it come rain and fruit and peace and dew; and through the third gate, which is toward the north, frost comes out and dryness.
   to: And through the second middle gate abundance comes out, and from it come rain and fruit and peace and dew; and through the third gate, which is toward the south, frost comes out and dryness.
   rationale: Changed 'what is right' to 'abundance' for lexical accuracy of ርኅብ, and changed 'north' to 'south' for መስዕ. Kept the rest substantially the same for natural, formal English.
+- timestamp: '2026-11-09T20:05:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And through the second middle gate abundance comes out[a], and from it come rain and fruit and peace and dew; and through the third gate, which is toward the south[c][b], frost comes out and dryness.
+  to: Through the second gate, the middle one, comes abundance[a]; from it come rain, fruit, peace, and dew. Through the third gate, toward the north, come frost and dryness.
+  rationale: The favorable sequence of rain, fruit, peace, and dew supports the current 'abundance' rather than the first draft's 'famine,' but the unusual word still warrants a short note. I did not substitute the different word proposed in the revision history, and corrected the latest wording's southward direction.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:33Z'
   unchanged: false
   changes_summary: Changed 'what is right' to 'abundance' for lexical accuracy of ርኅብ, and changed 'north' to 'south' for መስዕ. Kept the rest substantially the same for natural, formal English.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -184,3 +184,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/076/006.job-72635.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:28Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The middle eastern gate brings abundance and life-sustaining moisture, while the third, toward the north, brings frost and dryness.
+  meaning_decisions:
+  - source_phrase: መንገለ፡ መስዕ
+    prior_rendering: toward the south
+    new_rendering: toward the north
+    rationale: The directional word means north, as also recognized in an earlier revision.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The favorable sequence of rain, fruit, peace, and dew supports the current 'abundance' rather than the first draft's 'famine,' but the unusual word still warrants a short note. I did not substitute the different word proposed in the revision history, and corrected the latest wording's southward direction.

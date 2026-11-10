@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the lions and the leopards devoured and swallowed up most of those sheep[a], and the wild boars of the desert ate with them[c][b], and they burned that tower and tore down that house.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The exact feline meant by the Ethiopic term rendered 'tigers' is uncertain; 'leopards' or 'panthers' are possible.
-    reason: lexical_alternative
-  - marker: b
-    text: '''House'' likely refers symbolically to the sanctuary/temple within the vision, but the main text preserves the image used in the narrative.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'And lions and tigers and wild boars of the desert devoured and swallowed up most of those sheep with them'.
-    reason: previous_rendering
+  text: The lions and the leopards devoured and swallowed up most of those sheep, and the wild boars of the wilderness ate with them. They burned that tower and tore down that house.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በልዑ
   chosen: devoured
@@ -182,12 +172,18 @@ revisions:
   from: And the lions and the leopards devoured and swallowed up most of those sheep, and the wild boars of the desert ate with them, and they burned that tower and tore down that house., and they burned that tower and tore down that house.
   to: And the lions and the leopards devoured and swallowed up most of those sheep, and the wild boars of the desert ate with them, and they burned that tower and tore down that house.
   rationale: Removed the duplicated final clause and retained the rest of the wording, which accurately and naturally reflects the source.
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the lions and the leopards devoured and swallowed up most of those sheep[a], and the wild boars of the desert ate with them[c][b], and they burned that tower and tore down that house.
+  to: The lions and the leopards devoured and swallowed up most of those sheep, and the wild boars of the wilderness ate with them. They burned that tower and tore down that house.
+  rationale: The current wording incorporates the important corrections to leopards and to the separate clause about the boars eating with them. I preserved those gains and the house and tower imagery, while dropping notes tied to the superseded tiger reading.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:13Z'
   unchanged: false
   changes_summary: Removed the duplicated final clause and retained the rest of the wording, which accurately and naturally reflects the source.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -207,3 +203,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/066.job-72792.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The predators consume most of the sheep and destroy their tower and house.
+  meaning_decisions:
+  - source_phrase: ሐራዊያ፡ ገዳም
+    prior_rendering: wild boars of the desert
+    new_rendering: wild boars of the wilderness
+    rationale: The phrase describes boars of uncultivated country without requiring an arid desert landscape.
+  footnote_kinds: {}
+  history_weighed: The current wording incorporates the important corrections to leopards and to the separate clause about the boars eating with them. I preserved those gains and the house and tower imagery, while dropping notes tied to the superseded tiger reading.

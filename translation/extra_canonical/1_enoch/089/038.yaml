@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that sheep who was leading them[a], who had become a man, was separated from them and lay down[c][b]; and all the sheep sought him and cried out over him with a great cry.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: '''Lay down'' likely signals the death of the sheep-leader within the vision, but the text expresses it through the image itself.'
-    reason: lexical_alternative
-  - marker: b
-    text: The sheep 'which had become a man' is a symbolic transformation within the dream vision, not a shift out of the allegorical register.
-    reason: cultural_note
-  - marker: c
-    text: Or 'And I saw that the sheep which had become a man, the one who was leading them,'.
-    reason: previous_rendering
+  text: And that sheep who was leading them, who had become a man, was separated from them and lay down; all the sheep sought him and raised a great cry of grief over him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወዝኩ
   chosen: And I saw
@@ -157,12 +147,18 @@ revisions:
   from: And I saw that the sheep which had become a man, the one who was leading them,
   to: And that sheep who was leading them, who had become a man,
   rationale: 'The Ge''ez text begins with ወዝኩ (wa-zəku, ''And that''), not ወርኢኩ (wa-rəʾiku, ''And I saw''). The drafter''s lexical note confuses the demonstrative pronoun ዝኩ with the visionary formula used in surrounding verses. Consequently, the draft turns the main subject into an object clause. The draft also reverses the order of the two relative clauses (ዘይመርሖሙ ''who was leading them'' and ዘኮነ ብእሴ ''who had become a man''). | Adjudicator: The reviewer is factually correct about the Ge''ez text. The word `ወዝኩ` (wa-zəku) means ''And that,'' not ''And I saw'' (which would be `ወርኢኩ`, wa-rəʾiku). The current rendering hallucinates the visionary '
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that sheep who was leading them[a], who had become a man, was separated from them and lay down[c][b]; and all the sheep sought him and cried out over him with a great cry.
+  to: And that sheep who was leading them, who had become a man, was separated from them and lay down; all the sheep sought him and raised a great cry of grief over him.
+  rationale: The correction of the opening to “And that sheep” is sound; the source does not introduce another “I saw” clause. Separation remains without a named agent, and the death image continues with the explanation given in verse 37.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:08Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -182,3 +178,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/038.job-72764.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The sheep who became a man is separated from the flock and dies, and all the sheep seek him and mourn loudly.
+  meaning_decisions:
+  - source_phrase: ወጸርኁ፡ ዲቤሁ፡ ጽራኀ፡ ዐቢየ
+    prior_rendering: and cried out over him with a great cry
+    new_rendering: and raised a great cry of grief over him
+    rationale: The context establishes mourning for the departed leader; the rendering makes that emotional meaning explicit while preserving the great collective cry.
+  footnote_kinds: {}
+  history_weighed: The correction of the opening to “And that sheep” is sound; the source does not introduce another “I saw” clause. Separation remains without a named agent, and the death image continues with the explanation given in verse 37.

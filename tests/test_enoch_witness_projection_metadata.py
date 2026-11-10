@@ -1,6 +1,5 @@
-import subprocess
 """Six fixed metadata projections retain historical inputs, not new language votes."""
-import copy,json,shutil,tempfile,unittest
+import copy,json,shutil,subprocess,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
 import yaml
@@ -108,21 +107,45 @@ class WitnessProjectionMetadataTest(unittest.TestCase):
  def writer_fixture(self,directory):
   root,package,data=self.fixture(directory);(package/'application.json').unlink(missing_ok=True);corpus=root/'corpus';shutil.copytree(t.TRANSLATION,corpus)
   for ref,case in data['cases'].items():(corpus/('%03d/%03d.yaml'%t.parse_ref(ref))).write_bytes(t.artifact(t.ROOT,case['original_candidate']).read_bytes())
-  # Reconstruct this historical writer's exact preimage, not a mixture of
-  # old six metadata targets and a later unrelated44 language successor.
+  # Reconstruct all966 exact historical preimages after reverting its own six
+  # metadata targets. Later44, six B35 units and the fixed B36/B37 units require
+  # their strict current chain, then actual Git bytes at the declared baseline.
   drift={k for k,v in t.corpus_hashes(corpus).items()if data['canonical_baseline_sha256'].get(k)!=v}
   if drift:
-   from tools.enoch import batch34_evidence,legacy44_evidence
-   proof=batch34_evidence.verify_current()
-   allowed={'044/001.yaml'}
-   if proof['current_postmap']['052/008.yaml']!=proof['historical_postmap']['052/008.yaml']:
-    allowed.add('052/008.yaml')
-   self.assertEqual(drift,allowed)
-   if '052/008.yaml' in drift:
-    raw52=subprocess.check_output(['git','show','a3681961d91c1eb1a609e12cec312a644148f9bb:translation/extra_canonical/1_enoch/052/008.yaml'],cwd=t.ROOT)
-    self.assertEqual(t.sha(raw52),data['canonical_baseline_sha256']['052/008.yaml'])
-    (corpus/'052/008.yaml').write_bytes(raw52)
-   raw=legacy44_evidence.historical_bytes();self.assertEqual(t.sha(raw),data['canonical_baseline_sha256']['044/001.yaml']);(corpus/'044/001.yaml').write_bytes(raw)
+   from tools.enoch import batch34_evidence,batch35_evidence
+   if (t.APPLICATIONS/batch35_evidence.NAME/'application.json').is_file():
+    batch35_evidence.verify_current()
+    expected_drift={'044/001.yaml'}|batch35_evidence.CHANGED_PATHS
+    from tools.enoch import batch36_evidence
+    if (t.APPLICATIONS/batch36_evidence.NAME/'application.json').is_file():
+     batch36_evidence.verify_current();expected_drift |= batch36_evidence.CHANGED_PATHS
+     from tools.enoch import batch37_evidence
+     if (t.APPLICATIONS/batch37_evidence.NAME/'application.json').is_file():
+      batch37_evidence.verify_current();expected_drift |= batch37_evidence.CHANGED_PATHS
+      from tools.enoch import batch38_evidence
+      if (t.APPLICATIONS/batch38_evidence.NAME/'application.json').is_file():
+       batch38_evidence.verify_current();expected_drift |= batch38_evidence.CHANGED_PATHS
+       from tools.enoch import batch39_evidence
+       if (t.APPLICATIONS/batch39_evidence.NAME/'application.json').is_file():
+        batch39_evidence.verify_current();expected_drift |= batch39_evidence.CHANGED_PATHS
+        from tools.enoch import batch40_evidence
+        if (t.APPLICATIONS/batch40_evidence.NAME/'application.json').is_file():
+         batch40_evidence.verify_current();expected_drift |= batch40_evidence.CHANGED_PATHS
+         from tools.enoch import batch41_evidence
+         if (t.APPLICATIONS/batch41_evidence.NAME/'application.json').is_file():
+          batch41_evidence.verify_current();expected_drift |= batch41_evidence.CHANGED_PATHS
+   else:
+    batch34_evidence.verify_current();expected_drift={'044/001.yaml'}
+   self.assertEqual(drift,expected_drift)
+   for relative in sorted(drift):
+    if relative not in data['canonical_baseline_sha256']:
+     self.assertIn(relative, {'066/002.yaml','032/006.yaml'})
+     (corpus/relative).unlink()
+     continue
+    historical='translation/extra_canonical/1_enoch/'+relative
+    raw=subprocess.check_output(['git','show',m.BASE+':'+historical],cwd=t.ROOT)
+    self.assertEqual(t.sha(raw),data['canonical_baseline_sha256'][relative])
+    (corpus/relative).write_bytes(raw)
   self.assertEqual(t.corpus_hashes(corpus),data['canonical_baseline_sha256'])
   return root,package,data,corpus
  def test_writer_uses_atomic_receipt_and_keeps_exact_whole_postmap(self):

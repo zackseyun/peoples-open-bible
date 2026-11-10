@@ -41,23 +41,10 @@ def _export_record_verse(verse_num,record):
 
 
 def _enoch_expected_verse_map():
-    from tools.enoch import verse_parser
-    from tools.enoch.audit_pob_source_coverage import EXPECTED_VERSES
-    from tools.enoch.selected_edition_sources import registry_data
-    full=(registry_data() or {}).get('chapters',{})
-    expected={}
-    for chapter in range(1,109):
-        # Validate registered evidence even where a release count is declared.
-        reviewed,_=verse_parser.parse_chapter(chapter)
-        if chapter in EXPECTED_VERSES:
-            expected[chapter]=list(range(1,EXPECTED_VERSES[chapter]+1))
-        elif str(chapter) in full:
-            expected[chapter]=[row.verse for row in reviewed]
-        else:
-            # Individual source-only overrides cannot alter release eligibility.
-            raw,_=verse_parser.parse_ocr_chapter(chapter)
-            expected[chapter]=[row.verse for row in raw]
-    return expected
+    # All 1,061 printed units, from the 2026 paired scan inventory. The earlier
+    # per-chapter OCR parse stopped at page breaks and under-counted chapters.
+    counts=json.loads((ROOT/'sources/enoch/coverage/printed_unit_counts.json').read_text())['chapters']
+    return {int(chapter):list(range(1,n+1)) for chapter,n in counts.items()}
 
 
 def export_extra_canonical_book(book_code):

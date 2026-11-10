@@ -22,15 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And that ram took other sheep with him[a], and came upon those sheep that had gone astray; and he began to kill them. And the sheep were afraid before him, and that ram made those sheep that had gone astray return[b], and they went back into their folds.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The phrase rendered 'he began to kill them' may also be understood more woodenly as 'he seized them to kill them'; the Ge'ez construction emphasizes the onset of violent action.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'another sheep'.
-    reason: previous_rendering
+  text: And that sheep took other sheep with him and went against those sheep that had gone astray, and he began to kill them. The sheep were afraid before him, and he brought back those that had gone astray, and they returned to their folds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በግዕ
   chosen: ram
@@ -162,12 +155,18 @@ revisions:
   from: And that ram took And that ram took other sheep with him, and came upon those sheep that had gone astray; and he began to kill them. And the sheep were afraid before him, and that ram made all those sheep that had gone astray return, and they went back into their folds. with him, and came upon those sheep that had gone astray; and he began to kill them. And the sheep were afraid before him, and that ram made all those sheep that had gone astray return, and they went back into their folds.
   to: And that ram took other sheep with him, and came upon those sheep that had gone astray; and he began to kill them. And the sheep were afraid before him, and that ram made those sheep that had gone astray return, and they went back into their folds.
   rationale: Removed the accidental duplicated text at the beginning and end of the draft. Also removed 'all' before 'those sheep' since it is not clearly represented in the source. Retained the rest as accurate and natural.
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that ram took other sheep with him[a], and came upon those sheep that had gone astray; and he began to kill them. And the sheep were afraid before him, and that ram made those sheep that had gone astray return[b], and they went back into their folds.
+  to: And that sheep took other sheep with him and went against those sheep that had gone astray, and he began to kill them. The sheep were afraid before him, and he brought back those that had gone astray, and they returned to their folds.
+  rationale: The earlier correction to plural “other sheep” is supported by the source and outweighs the older singular lexical note. The explicit killing and causative return are preserved, without adding that every straying sheep returned.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:08Z'
   unchanged: false
   changes_summary: Removed the accidental duplicated text at the beginning and end of the draft. Also removed 'all' before 'those sheep' since it is not clearly represented in the source. Retained the rest as accurate and natural.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -187,3 +186,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/035.job-72761.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The leading sheep takes companions against the straying flock, begins killing them, and brings the frightened sheep back to their folds.
+  meaning_decisions:
+  - source_phrase: ዝኩ፡ በግዕ
+    prior_rendering: that ram
+    new_rendering: that sheep
+    rationale: The source uses the ordinary word for sheep, continuing the identity of the leader in the surrounding verses; the distinct word for ram appears later in verse 42.
+  - source_phrase: ቦአ፡ ዲበ፡ ዝኩ፡ አባግዕ
+    prior_rendering: came upon those sheep
+    new_rendering: went against those sheep
+    rationale: The movement is a deliberate confrontation followed by killing, not a chance encounter.
+  footnote_kinds: {}
+  history_weighed: The earlier correction to plural “other sheep” is supported by the source and outweighs the older singular lexical note. The explicit killing and causative return are preserved, without adding that every straying sheep returned.

@@ -13,21 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And throughout the time when the moon is waning[a], it diminishes its light before the sun until fourteen days [its light is completed]; and when it is extinguished[d][c][b], all its light is completed in the sky.
-  philosophy: optimal-equivalence
+  text: Throughout the moon's waning, it transfers its light before the sun for fourteen days, until its light is complete[a]; and when it glows all over, its light is complete in the sky.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause around 'until fourteen days are completed' is textually difficult in the Ethiopic OCR, and the bracketed words likely repeat the idea that the moon's light reaches its completion or end over that period.
-    reason: textual_variant
-  - marker: b
-    text: '''Before the sun'' is kept literally. In context it may mean in the sun''s presence or in relation to the sun''s course.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'its light diminishes before the sun'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'until fourteen days are completed'.
-    reason: previous_rendering
+    text: 'The completion of its light may also mean that its light has come to an end. The wording is difficult: the verse speaks of waning but ends by describing full illumination.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ኵሎ፡ ዘመነ፡
   chosen: throughout the time
@@ -176,12 +167,18 @@ revisions:
   from: And throughout the time when the moon is waning, it transfers its light before the sun until fourteen days [its light is completed]; and when it is extinguished, all its light is completed in the sky.
   to: And throughout the time when the moon is waning, it diminishes its light before the sun until fourteen days [its light is completed]; and when it is extinguished, all its light is completed in the sky.
   rationale: Changed 'transfers its light' to 'diminishes its light' for better lexical accuracy and natural English in context of the moon's waning; otherwise retained the structure and bracketed text.
+- timestamp: '2026-11-09T20:07:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And throughout the time when the moon is waning[a], it diminishes its light before the sun until fourteen days [its light is completed]; and when it is extinguished[d][c][b], all its light is completed in the sky.
+  to: Throughout the moon's waning, it transfers its light before the sun for fourteen days, until its light is complete[a]; and when it glows all over, its light is complete in the sky.
+  rationale: An earlier review correctly identified the light-transfer verb, but the current wording reverted to diminishing. The final verb does not support extinction securely enough to retain it, and the bracketed completion phrase is translated without editorial signs.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:36Z'
   unchanged: false
   changes_summary: Changed 'transfers its light' to 'diminishes its light' for better lexical accuracy and natural English in context of the moon's waning; otherwise retained the structure and bracketed text.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -201,3 +198,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/011.job-72657.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:52Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The moon transfers its light in relation to the sun over fourteen days, although the verse leaves an unresolved tension between waning and complete illumination.
+  meaning_decisions:
+  - source_phrase: ብርሃነ፡ ዚአሃ፡ ትወዲ
+    prior_rendering: it diminishes its light
+    new_rendering: it transfers its light
+    rationale: The verb describes placing or transferring light, as does the related verb in verse 10; it does not itself mean diminishing.
+  - source_phrase: እስከ፡ ፲ወ፬መዋዕል፡ [ይትፌጸም፡ ብርሃና፡]
+    prior_rendering: until fourteen days [its light is completed]
+    new_rendering: for fourteen days, until its light is complete
+    rationale: The completion clause explicitly concerns the moon's light. The English makes the temporal connection clear without treating the days as the subject of completion.
+  - source_phrase: ወሶበ፡ ይውዒ፡ ኵሉ፡ ይትፌጸም፡ ብርሃኑ፡ ውስተ፡ ሰማይ
+    prior_rendering: and when it is extinguished, all its light is completed in the sky
+    new_rendering: and when it glows all over, its light is complete in the sky
+    rationale: The verb carries the sense of burning or glowing rather than extinction, and 'all' can describe the extent of that illumination. This preserves the tension with the opening reference to waning instead of silently harmonizing it.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: An earlier review correctly identified the light-transfer verb, but the current wording reverted to diminishing. The final verb does not support extinction securely enough to retain it, and the bracketed completion phrase is translated without editorial signs.

@@ -12,21 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch77.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 77, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the two of them come from the west as far as the sea[d][c][b][a], and they pour out their waters into the Erythraean Sea in the east.
-  philosophy: optimal-equivalence
+  text: And two of them come from the north as far as the sea and pour out their waters into the Erythraean Sea[a] in the east.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally 'from noon'; in geographical description this likely means 'from the south.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Ge'ez reads 'the sea of Erythra/Red Sea, east.' This may refer to the Red Sea or a broader 'Erythraean Sea' conception in ancient geography.
+    text: In ancient geography, this name could include the Red Sea and adjoining parts of the Indian Ocean.
     reason: cultural_note
-  - marker: c
-    text: Or 'from noon'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'into the eastern sea'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ክልኤቱ፡ ክልኤ፡
   chosen: the two of them
@@ -136,12 +127,18 @@ revisions:
   from: And the two of them come from the north as far as the sea, and they pour out their waters into the Erythraean Sea in the east.
   to: And the two of them come from the west as far as the sea, and they pour out their waters into the Erythraean Sea in the east.
   rationale: Changed 'north' to 'west' for lexical accuracy, since እመስዕ means 'from the west.'
+- timestamp: '2026-11-09T20:04:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the two of them come from the west as far as the sea[d][c][b][a], and they pour out their waters into the Erythraean Sea in the east.
+  to: And two of them come from the north as far as the sea and pour out their waters into the Erythraean Sea[a] in the east.
+  rationale: The earlier correction to 'north' agrees with the Ge'ez and the chapter's directional vocabulary; the later change to 'west' does not. I preserve the explicit sea name and remove the obsolete notes about noon and south.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:06Z'
   unchanged: false
   changes_summary: Changed 'north' to 'west' for lexical accuracy, since እመስዕ means 'from the west.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -161,3 +158,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/077/006.job-72645.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Two of the seven rivers come from the north and discharge their waters into the Erythraean Sea in the east.
+  meaning_decisions:
+  - source_phrase: እመስዕ
+    prior_rendering: from the west
+    new_rendering: from the north
+    rationale: The directional word is the same one rendered 'North' in verse 3 and 'north' in verse 7; neither west nor noon fits the Ge'ez.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier correction to 'north' agrees with the Ge'ez and the chapter's directional vocabulary; the later change to 'west' does not. I preserve the explicit sea name and remove the obsolete notes about noon and south.

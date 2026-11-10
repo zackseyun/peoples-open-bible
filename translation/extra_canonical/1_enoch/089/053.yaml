@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And he sent many other sheep to those sheep[d][c][b][a], that they might hear and cry out over them.
-  philosophy: optimal-equivalence
+  text: And he sent many other sheep to those sheep to proclaim their message and lament over them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause rendered 'that they might hear' is difficult; the underlying verb may carry a causative nuance ('make hear' / 'proclaim so as to be heard').
-    reason: lexical_alternative
-  - marker: b
-    text: '''Cry out over them'' could also be understood as ''cry out concerning them'' or, less likely, ''cry out against them.'''
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And I sent'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'that they might hear'.
-    reason: previous_rendering
+    text: The cry may also be understood as an outcry against them.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ካልኣነ
   chosen: other
@@ -177,12 +168,18 @@ revisions:
   from: And he sent many other sheep to those sheep, And he sent many other sheep to those sheep, that they might testify and cry out over them. and cry out over them.
   to: And he sent many other sheep to those sheep, that they might hear and cry out over them.
   rationale: 'Removed the duplicated phrase and smoothed the sentence. Rendered the verb as ''hear'' rather than ''testify'' to reflect the source more directly: ''that they might hear and cry out over them.'''
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he sent many other sheep to those sheep[d][c][b][a], that they might hear and cry out over them.
+  to: And he sent many other sheep to those sheep to proclaim their message and lament over them[a].
+  rationale: The correction identifying the Lord as the sender was sound and is retained. The earlier recognition of the causative 'make hear' was also sound, despite its later replacement by 'hear'; the outcry's less certain force is acknowledged in a short note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:11Z'
   unchanged: false
   changes_summary: 'Removed the duplicated phrase and smoothed the sentence. Rendered the verb as ''hear'' rather than ''testify'' to reflect the source more directly: ''that they might hear and cry out over them.'''
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -202,3 +199,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/053.job-72779.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Lord sends many more sheep to proclaim their message to the straying sheep and lament over them.
+  meaning_decisions:
+  - source_phrase: ያስምዑ
+    prior_rendering: that they might hear
+    new_rendering: to proclaim their message
+    rationale: The causative verb describes making others hear, not the messengers themselves listening; proclamation conveys that communicative action without supplying the message's content.
+  - source_phrase: የአውይዉ፡ ዲቤሆሙ
+    prior_rendering: cry out over them
+    new_rendering: lament over them
+    rationale: The distress cry accompanying the proclamation carries a grieving force in this setting, while a denunciatory understanding remains possible.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The correction identifying the Lord as the sender was sound and is retained. The earlier recognition of the causative 'make hear' was also sound, despite its later replacement by 'hear'; the outcry's less certain force is acknowledged in a short note.

@@ -22,15 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the wolves began to pursue those sheep until they overtook them at a spring of water[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'until they overtook them at a pool of water.' The Ge'ez verb in this clause is difficult, and the exact force may be either simple arrival or forced movement into the water.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'until they drove them into a pool of water.'.
-    reason: previous_rendering
+  text: And the wolves began to pursue those sheep until they overtook them at a body of water.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አዝእብት
   chosen: the wolves
@@ -144,12 +137,18 @@ revisions:
   from: And the wolves began to pursue those sheep until they overtook them at a pool of water.
   to: And the wolves began to pursue those sheep until they overtook them at a spring of water.
   rationale: Changed 'pool of water' to 'spring of water' for a more precise rendering of the source phrase; otherwise retained the draft.
+- timestamp: '2026-11-09T20:10:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the wolves began to pursue those sheep until they overtook them at a spring of water[a][b].
+  to: And the wolves began to pursue those sheep until they overtook them at a body of water.
+  rationale: The earlier correction from 'drove them into' to 'overtook them at' is supported by the verb and preserves the narrative sequence. The old notes perpetuate that resolved grammatical question and are unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
   changes_summary: Changed 'pool of water' to 'spring of water' for a more precise rendering of the source phrase; otherwise retained the draft.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -169,3 +168,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/023.job-72749.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The pursuing wolves catch up with the sheep at a body of water.
+  meaning_decisions:
+  - source_phrase: በአሐቲ፡ ዐይገ፡ ማይ
+    prior_rendering: at a spring of water
+    new_rendering: at a body of water
+    rationale: The same water-place is divided, crossed, and reunited in the following verses; 'spring' misleadingly suggests a small source of flowing water. The broader expression preserves the image without specifying its size.
+  footnote_kinds: {}
+  history_weighed: The earlier correction from 'drove them into' to 'overtook them at' is supported by the verb and preserves the narrative sequence. The old notes perpetuate that resolved grammatical question and are unnecessary.

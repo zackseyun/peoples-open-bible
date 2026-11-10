@@ -11,21 +11,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch92.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 92, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: The book written by Hanok—[Hanok indeed wrote every sign of wisdom[a], praised among all people and a judge of all the earth]—for all my children who will dwell on the dry land[d][c][b], and for the generations to come who practice righteousness and peace.
-  philosophy: optimal-equivalence
+  text: This is the book Hanok wrote for all my children who will dwell on the earth, and for the generations to come[a] who practice righteousness and peace. Hanok, praised by all people and a judge of the whole earth[b], indeed recorded every sign of wisdom.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The bracketed clause in the Ethiopic witness appears textually unstable in this OCR line; the translation retains it in a cautious, literal form rather than omitting it.
-    reason: textual_variant
-  - marker: b
-    text: '"Dry land" is a literal rendering of the Ethiopic expression; some translators smooth it to "earth" or "world."'
-    reason: lexical_alternative
-  - marker: c
-    text: The syntax around "the generations to come" and "the chosen ones" is compressed and may also be understood as "for a future generation, the chosen, who practice righteousness and peace."
+    text: The word describing the generations is unclear; it may refer to the chosen instead.
     reason: alternative_reading
-  - marker: d
-    text: Or 'Written by Hanok—the book that Hanok wrote, all the signs of wisdom among all humankind, praised and ruling over all the earth—for all my children, and for the generations to come who will dwell on the dry land, the chosen ones who practice righteousness and peace.'.
-    reason: previous_rendering
+  - marker: b
+    text: The Ge'ez wording is uncertain; the praise and the role of judge may describe the book's wisdom rather than Hanok.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ዘተጽሕፈ
   chosen: Written
@@ -164,12 +158,18 @@ revisions:
   from: The book written by Hanok—[Hanok indeed wrote this complete sign of wisdom, praised by all people and a judge of all the earth]—for all my children who will dwell on the dry land, and for the future generations who practice righteousness and peace.
   to: The book written by Hanok—[Hanok indeed wrote every sign of wisdom, praised among all people and a judge of all the earth]—for all my children who will dwell on the dry land, and for the generations to come who practice righteousness and peace.
   rationale: 'Revised the bracketed clause for closer lexical accuracy and more natural English: changed ''this complete sign of wisdom'' to ''every sign of wisdom'' to better reflect the source, adjusted ''praised by all people'' to ''praised among all people,'' and changed ''future generations'' to ''the generations to come'' for a more formal register.'
+- timestamp: '2026-11-09T20:13:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The book written by Hanok—[Hanok indeed wrote every sign of wisdom[a], praised among all people and a judge of all the earth]—for all my children who will dwell on the dry land[d][c][b], and for the generations to come who practice righteousness and peace.
+  to: This is the book Hanok wrote for all my children who will dwell on the earth, and for the generations to come[a] who practice righteousness and peace. Hanok, praised by all people and a judge of the whole earth[b], indeed recorded every sign of wisdom.
+  rationale: The earlier revisions correctly attached earthly dwelling to Hanok's children, but left the description of his wisdom awkward and disputed the generations' description. I retain the future-generation reading, clarify the description, and acknowledge both uncertainties.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:31Z'
   unchanged: false
   changes_summary: 'Revised the bracketed clause for closer lexical accuracy and more natural English: changed ''this complete sign of wisdom'' to ''every sign of wisdom'' to better reflect the source, adjusted ''praised by all people'' to ''praised among all people,'' and changed ''future generations'' to ''the generations to come'' for a more formal register.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -189,3 +189,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/092/001.job-72853.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:13:51Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Hanok's book, bearing his wisdom and authority, is addressed to his children on earth and to future generations who practice righteousness and peace.
+  meaning_decisions:
+  - source_phrase: ጸሐፈ፡ እንከ፡ ሄኖክ፡ ዘኵሉ፡ ትእምርተ፡ ጥበብ፡ እምኵሉ፡ ሰብእ፡ ስቡሕ፡ ወመኰንነ፡ ኵሉ፡ ምድር
+    prior_rendering: '[Hanok indeed wrote every sign of wisdom, praised among all people and a judge of all the earth]'
+    new_rendering: Hanok, praised by all people and a judge of the whole earth[b], indeed recorded every sign of wisdom.
+    rationale: A separate sentence makes the description readable without editorial brackets. Hanok is taken as the subject of the praise and authority, while the footnote preserves the serious alternative; 'by all people' gives the natural agency of the passive description.
+  - source_phrase: እለ፡ የኃድሩ፡ ዲበ፡ የብስ
+    prior_rendering: who will dwell on the dry land
+    new_rendering: who will dwell on the earth
+    rationale: The phrase identifies the earthly dwelling of Hanok's children, without making a contrast between land and sea; 'earth' conveys that meaning naturally.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier revisions correctly attached earthly dwelling to Hanok's children, but left the description of his wisdom awkward and disputed the generations' description. I retain the future-generation reading, clarify the description, and acknowledge both uncertainties.

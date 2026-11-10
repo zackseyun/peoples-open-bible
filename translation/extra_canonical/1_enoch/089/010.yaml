@@ -22,18 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And they began to bring forth the beasts of the field and the birds[a]; and from among them there came forth every kind of the nations: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, swine, falcons, vultures, kites, eagles, and ravens[c][b]; and in their midst a white bull was born.'
-  philosophy: optimal-equivalence
+  text: 'They began to bring forth wild beasts and birds. From them came nations of every kind: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, hares, swine, falcons, vultures, kites, eagles, and ravens[a]. Among them a white bull was born.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'every kindred of the nations' is difficult. It may also be understood more generally as 'every sort' or 'every class,' but the word for 'nations/peoples' is present in the Ge'ez witness.
-    reason: lexical_alternative
-  - marker: b
-    text: Several animal names in this verse are uncertain in exact species identification; alternatives include jackals for 'hyenas' or 'foxes,' hawks for 'falcons,' and crows for 'ravens.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'squirrels'.
-    reason: previous_rendering
+    text: Some animal names are uncertain; “hyenas” and “foxes” may refer to jackals, “falcons” to hawks, and “ravens” to crows.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አሐዙ ይለዱ
   chosen: they began to bring forth
@@ -236,6 +230,13 @@ revisions:
   from: 'And they began to bring forth the beasts of the field and the birds[a]; and from among them there came forth every kind of the nations: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, swine, falcons, vultures, kites, eagles, and ravens[c][b]; and in their midst a white bull was born.'
   to: 'And they began to bring forth the beasts of the field and the birds[a]; and from among them there came forth every kind of the nations: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, swine, falcons, vultures, kites, eagles, and ravens[c][b]; and in their midst a white bull was born.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every kindred of the nations''].'
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And they began to bring forth the beasts of the field and the birds[a]; and from among them there came forth every kind of the nations: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, swine, falcons, vultures, kites, eagles, and ravens[c][b]; and in their midst a white bull was born.'
+  to: 'They began to bring forth wild beasts and birds. From them came nations of every kind: lions, leopards, wolves, dogs, hyenas, wild boars, foxes, hares, swine, falcons, vultures, kites, eagles, and ravens[a]. Among them a white bull was born.'
+  rationale: The earlier identification of hares was a real gain that the current wording lost. I preserve the explicit reference to nations and the established animal names, with one concise note for genuinely uncertain species.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:21Z'
@@ -260,3 +261,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/010.job-72736.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The descendants become the many nations pictured as different animals and birds, and a new white bull is born among them.
+  meaning_decisions:
+  - source_phrase: አራዊተ፡ ገዳም
+    prior_rendering: the beasts of the field
+    new_rendering: wild beasts
+    rationale: Expresses animals of the wilderness without suggesting cultivated fields.
+  - source_phrase: ዘእምኵሉ፡ ኅብር፡ አሕዛብ
+    prior_rendering: every kind of the nations
+    new_rendering: nations of every kind
+    rationale: Makes the national symbolism explicit in natural English without reducing the list to zoological species.
+  - source_phrase: ወገሐያት
+    prior_rendering: omitted
+    new_rendering: hares
+    rationale: Restores an animal present in the source and correctly identified in an earlier revision but absent from the current text.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier identification of hares was a real gain that the current wording lost. I preserve the explicit reference to nations and the established animal names, with one concise note for genuinely uncertain species.

@@ -14,15 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch91.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 91, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the righteous one shall arise from their sleep[b][a], and wisdom shall arise and be given to them.
-  philosophy: optimal-equivalence
+  text: And the righteous one[a] will arise from his sleep, and wisdom will arise and be given to them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The singular 'the righteous one' may refer either to an individual figure arising from the community or to a representative righteous person; the wording is left intentionally open.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And the righteous one shall arise from among them, and wisdom shall arise and be given to them.'.
-    reason: previous_rendering
+    text: The Ge'ez has “the righteous one” and “his sleep,” but ends with “to them”; the singular may represent the righteous as a group.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይትነሣእ
   chosen: shall arise
@@ -127,12 +124,18 @@ revisions:
   from: And the righteous one shall arise from his sleep, and wisdom shall arise and be given to them.
   to: And the righteous one shall arise from their sleep, and wisdom shall arise and be given to them.
   rationale: Changed 'his sleep' to 'their sleep' to match the plural referent in the source and the following 'to them'; otherwise retained the draft wording.
+- timestamp: '2026-11-09T20:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the righteous one shall arise from their sleep[b][a], and wisdom shall arise and be given to them.
+  to: And the righteous one[a] will arise from his sleep, and wisdom will arise and be given to them.
+  rationale: The earlier correction from 'among them' to 'his sleep' identifies the source expression correctly; the subsequent change to 'their sleep' obscured its singular form. I retained the lowercase designation and the parallel rising of wisdom without deciding whether the sleeper is an individual or represents the righteous collectively.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:28Z'
   unchanged: false
   changes_summary: Changed 'his sleep' to 'their sleep' to match the plural referent in the source and the following 'to them'; otherwise retained the draft wording.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -152,3 +155,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/091/010.job-72846.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The righteous one rises from sleep, and wisdom arises to be given to the righteous.
+  meaning_decisions:
+  - source_phrase: ጻድቅ፡ እምነዋሙ
+    prior_rendering: the righteous one shall arise from their sleep
+    new_rendering: the righteous one will arise from his sleep
+    rationale: The sleep expression carries a singular possessive. The later plural 'to them' does not justify changing it, and the unresolved relationship between individual and community is preserved.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier correction from 'among them' to 'his sleep' identifies the source expression correctly; the subsequent change to 'their sleep' obscured its singular form. I retained the lowercase designation and the parallel rising of wisdom without deciding whether the sleeper is an individual or represents the righteous collectively.

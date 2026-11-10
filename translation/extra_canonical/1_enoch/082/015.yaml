@@ -14,18 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: At the beginning of the year[a], first rises and rules Melkiyal, whose name is called Tam'ade'eni and the sun; and all the days of his dominion, while he rules[c][b], are ninety-one days.
-  philosophy: optimal-equivalence
+  text: At the beginning of the year, Melkiyal rises first and rules. He is called Tam'ade'eni and the sun[a], and his dominion lasts ninety-one days.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause after 'Melkiyal' is textually difficult. The Ge'ez appears to give an additional name or designation, here transliterated as Tam'ade'eni rather than translated speculatively.
-    reason: textual_variant
-  - marker: b
-    text: The verse treats the opening segment of the year as a personified period under Melkiyal's rule, totaling ninety-one days.
-    reason: cultural_note
-  - marker: c
-    text: Or "the first, Melkiyal rises and rules—the one whose name is Tam'ade'eni—and the sun and all the days of his dominion, while he rules, are ninety-one days.".
-    reason: previous_rendering
+    text: The Ge’ez is unclear about how Tam'ade'eni and 'the sun' are related.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: በቅድመ
   chosen: at the beginning of
@@ -180,12 +174,18 @@ revisions:
   from: At the beginning of the year, Melkiyal rises first and rules, whose name is called Tam'ade'eni and the sun; and all the days of his dominion, while he rules, are ninety-one days.
   to: At the beginning of the year, first rises and rules Melkiyal, whose name is called Tam'ade'eni and the sun; and all the days of his dominion, while he rules, are ninety-one days.
   rationale: 'Adjusted word order to more closely reflect the source and improve formal naturalness: moved ''first'' to modify ''rises'' directly and placed ''Melkiyal'' after the paired verbs. Kept the rest substantially unchanged.'
+- timestamp: '2026-11-09T20:07:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: At the beginning of the year[a], first rises and rules Melkiyal, whose name is called Tam'ade'eni and the sun; and all the days of his dominion, while he rules[c][b], are ninety-one days.
+  to: At the beginning of the year, Melkiyal rises first and rules. He is called Tam'ade'eni and the sun[a], and his dominion lasts ninety-one days.
+  rationale: The earlier decision to connect 'the sun' with the naming phrase is supported by the parallel in verse 18. The source’s difficult designation remains visible, but the inverted word order and repeated duration formula are made natural.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:46Z'
   unchanged: false
   changes_summary: 'Adjusted word order to more closely reflect the source and improve formal naturalness: moved ''first'' to modify ''rises'' directly and placed ''Melkiyal'' after the paired verbs. Kept the rest substantially unchanged.'
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -205,3 +205,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/015.job-72690.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:10Z'
+  change_level: refined
+  confidence: low
+  meaning: Melkiyal rises first at the beginning of the year and exercises dominion for ninety-one days, with an uncertain additional naming phrase.
+  meaning_decisions:
+  - source_phrase: ዘይሠመይ፡ ስሞ፡ ተመአደኒ፡ ወፀሐይ
+    prior_rendering: whose name is called Tam'ade'eni and the sun
+    new_rendering: He is called Tam'ade'eni and the sun
+    rationale: The naming formula is expressed idiomatically while preserving both designations and their unresolved relationship.
+  - source_phrase: ኵሎሙ፡ መዋዕለ፡ ዘበስልጣኑ፡ ዚአሁ፡ እለ፡ ይመልክ፡ ፺ወ፩ዕለት
+    prior_rendering: all the days of his dominion, while he rules, are ninety-one days
+    new_rendering: his dominion lasts ninety-one days
+    rationale: The repeated expressions of rule establish the total duration of his dominion, which English can convey directly without losing content.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier decision to connect 'the sun' with the naming phrase is supported by the parallel in verse 18. The source’s difficult designation remains visible, but the inverted word order and repeated duration formula are made natural.

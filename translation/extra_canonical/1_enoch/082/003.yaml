@@ -14,21 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch82.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 82, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those who understand shall not sleep[a], but shall listen with their ears so as to learn this wisdom[d][c][b]; and it will be sweeter to them than good food is to those who eat.
-  philosophy: optimal-equivalence
+  text: Those who understand will not sleep, but will listen eagerly[a] to learn this wisdom; it will delight them more than good food delights those who eat it.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez wording about the ears is difficult; it likely means becoming dull or unresponsive in hearing rather than literal deafness.
+    text: Literally, 'they will thirst with their ears.'
     reason: lexical_alternative
-  - marker: b
-    text: 'The final clause uses food imagery for receiving wisdom: wisdom is portrayed as more pleasing than fine things to eat.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'or be sluggish in their ears'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'it will be sweeter than good food for those who eat it'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ኢይነውሙ
   chosen: shall not sleep
@@ -161,12 +152,18 @@ revisions:
   from: And those who understand shall not sleep but shall listen with their ears, so as to learn this wisdom; and it will be more pleasing to them than good food is to those who eat.
   to: And those who understand shall not sleep, but shall listen with their ears so as to learn this wisdom; and it will be sweeter to them than good food is to those who eat.
   rationale: Changed 'more pleasing' to 'sweeter' to better reflect the comparison with food and preserve the concrete imagery of the source; made minor punctuation smoothing only.
+- timestamp: '2026-11-09T20:07:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those who understand shall not sleep[a], but shall listen with their ears so as to learn this wisdom[d][c][b]; and it will be sweeter to them than good food is to those who eat.
+  to: Those who understand will not sleep, but will listen eagerly[a] to learn this wisdom; it will delight them more than good food delights those who eat it.
+  rationale: The earlier correction from sluggish hearing to eager listening is supported by the verb and the context. I also restored the history's well-supported distinction between delight and sweetness, while retaining the food comparison.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:42Z'
   unchanged: false
   changes_summary: Changed 'more pleasing' to 'sweeter' to better reflect the comparison with food and preserve the concrete imagery of the source; made minor punctuation smoothing only.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -186,3 +183,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/082/003.job-72678.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Discerning people remain awake and eager to learn this wisdom, finding greater delight in it than eaters find in good food.
+  meaning_decisions:
+  - source_phrase: ወይጸምኡ፡ በእዝናሆሙ
+    prior_rendering: but shall listen with their ears
+    new_rendering: but will listen eagerly
+    rationale: The ear-thirst image conveys an active appetite for instruction, not merely the act of hearing. The note preserves the striking literal image.
+  - source_phrase: ወትደልዎሙ፡ እመበልዕት፡ ሠናያት፡ ለእለ፡ ይበልዑ
+    prior_rendering: and it will be sweeter to them than good food is to those who eat
+    new_rendering: it will delight them more than good food delights those who eat it
+    rationale: The verb expresses pleasure or delight rather than sweetness. The comparison concerns the pleasure wisdom gives its learners and food gives its eaters.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier correction from sluggish hearing to eager listening is supported by the verb and the context. I also restored the history's well-supported distinction between delight and sweetness, while retaining the food comparison.

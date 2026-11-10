@@ -13,15 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'Thus I saw their workings: how the moon rises and the sun sets in those days[a][b].'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The phrase rendered 'the paths steal away' is difficult. The Ge'ez verb commonly carries the sense 'steal' or 'slip away,' and the noun may refer to heavenly paths or courses. A more interpretive rendering would be 'the courses shift away.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'how the paths steal away'.
-    reason: previous_rendering
+  text: 'Thus I saw their workings: how the moon rises and the sun sets in those days.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ከመዝ
   chosen: Thus
@@ -145,12 +138,18 @@ revisions:
   from: 'Thus I saw their workings: how the moons rise, and the sun sets in those days.'
   to: 'Thus I saw their workings: how the moon rises and the sun sets in those days.'
   rationale: Changed 'moons' to singular 'moon' for lexical accuracy and smoother English; removed the comma after 'rise' for more natural flow.
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus I saw their workings: how the moon rises and the sun sets in those days[a][b].'
+  to: 'Thus I saw their workings: how the moon rises and the sun sets in those days.'
+  rationale: The current wording rightly preserves the corrections from stealing to rising and from paths to the moon. The plural form concerns recurring moons or months, not several celestial moons; the obsolete notes about paths stealing away have been dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:27Z'
   unchanged: false
   changes_summary: Changed 'moons' to singular 'moon' for lexical accuracy and smoother English; removed the comma after 'rise' for more natural flow.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -170,3 +169,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/009.job-72618.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch summarizes his observation of the moon’s rising and the sun’s setting during the days described.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording rightly preserves the corrections from stealing to rising and from paths to the moon. The plural form concerns recurring moons or months, not several celestial moons; the obsolete notes about paths stealing away have been dropped.

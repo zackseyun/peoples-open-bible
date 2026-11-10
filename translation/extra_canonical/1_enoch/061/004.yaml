@@ -14,21 +14,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch61.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 61, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the chosen ones shall dwell with the chosen ones[a], and these are the measures that shall be given for faith[d][c][b], and they shall strengthen righteousness.
-  philosophy: optimal-equivalence
+  text: The chosen ones will begin to dwell with the chosen ones. These measures[a] will be given to sustain faith[b], and they will strengthen righteousness.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The opening may more fully mean, 'the chosen ones shall rest and dwell with the chosen ones'; the Ge'ez uses two closely related verbs.
-    reason: lexical_alternative
+    text: The measures may be allotted portions or standards for measuring; the exact sense is uncertain.
+    reason: alternative_reading
   - marker: b
-    text: Or 'for faithfulness' or 'for steadfastness' instead of 'for faith.'
-    reason: lexical_alternative
-  - marker: c
-    text: '''Measures'' may mean measured portions, allotted shares, or standards; the exact nuance is uncertain in this line.'
-    reason: textual_variant
-  - marker: d
-    text: Or 'And the chosen ones shall rest with the chosen ones, and those are the measures'.
-    reason: previous_rendering
+    text: Or “given on account of faithfulness.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይዌጥኑ
   chosen: shall rest
@@ -162,12 +156,18 @@ revisions:
   from: And the chosen ones shall begin to dwell with the chosen ones, and these are the measures that shall be given for faith, and they shall strengthen righteousness.
   to: And the chosen ones shall dwell with the chosen ones, and these are the measures that shall be given for faith, and they shall strengthen righteousness.
   rationale: Removed 'begin to' because the source simply says 'shall dwell,' improving lexical accuracy without adding aspect not explicit in the text.
+- timestamp: '2026-11-09T19:58:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the chosen ones shall dwell with the chosen ones[a], and these are the measures that shall be given for faith[d][c][b], and they shall strengthen righteousness.
+  to: The chosen ones will begin to dwell with the chosen ones. These measures[a] will be given to sustain faith[b], and they will strengthen righteousness.
+  rationale: 'The history alternated between ''rest,'' ''begin,'' and omission, but the source supports ''begin.'' I reduced the overlapping notes to the two uncertainties that affect understanding: the measures themselves and their relation to faith.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:47Z'
   unchanged: false
   changes_summary: Removed 'begin to' because the source simply says 'shall dwell,' improving lexical accuracy without adding aspect not explicit in the text.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -187,3 +187,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/061/004.job-72468.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:58:02Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The chosen begin dwelling with the chosen, and the measures serve faith and strengthen righteousness.
+  meaning_decisions:
+  - source_phrase: ይዌጥኑ፡ ወየሐድሩ፡ ኅሩያን፡ ምስለ፡ ኅሩያን
+    prior_rendering: the chosen ones shall dwell with the chosen ones
+    new_rendering: The chosen ones will begin to dwell with the chosen ones
+    rationale: The opening verb means 'begin' and contributes the beginning of this dwelling; it should neither disappear nor be rendered as 'rest.'
+  - source_phrase: እለ፡ ይትወሀቡ፡ ለሃይማኖት
+    prior_rendering: that shall be given for faith
+    new_rendering: will be given to sustain faith
+    rationale: Reliance in the preceding verse and strengthened righteousness here favor measures that support faith. The possibility that they are given on account of faithfulness remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: 'The history alternated between ''rest,'' ''begin,'' and omission, but the source supports ''begin.'' I reduced the overlapping notes to the two uncertainties that affect understanding: the measures themselves and their relation to faith.'

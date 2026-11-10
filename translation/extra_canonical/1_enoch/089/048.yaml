@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And afterward that ram arose and led the sheep[a]; and that ram fathered many sheep and lay down. And a little sheep became a ram in its place[d][c][b], and it became ruler and leader of those sheep.
-  philosophy: optimal-equivalence
+  text: And that later ram arose and led the sheep; that ram fathered many sheep and lay down[a]. And a little sheep became a ram in its place, and it became ruler and leader of those sheep.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: '''Lay down'' likely functions as the vision''s idiom for the ram''s death, but the main text keeps the image literal.'
+    text: In this vision, 'lay down' signifies death.
     reason: lexical_alternative
-  - marker: b
-    text: The adjective rendered 'little' may also suggest 'young'; the phrase can mean either a small sheep or a young one.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And afterward that ram'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'the little sheep'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ዳሓራዊ
   chosen: afterward
@@ -196,12 +187,18 @@ revisions:
   from: And that later ram arose and led And afterward that ram arose and led the sheep; and that ram fathered many sheep and lay down. And a little sheep became a ram in its place, and it became ruler and became leader of those sheep.; and that ram fathered many sheep and lay down. And a little sheep became a ram in its place, and it became ruler and became leader of those sheep.
   to: And afterward that ram arose and led the sheep; and that ram fathered many sheep and lay down. And a little sheep became a ram in its place, and it became ruler and leader of those sheep.
   rationale: Removed duplicated text and corrected the opening to a single natural rendering. Smoothed repetition by changing 'became ruler and became leader' to 'became ruler and leader' while preserving all source elements.
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And afterward that ram arose and led the sheep[a]; and that ram fathered many sheep and lay down. And a little sheep became a ram in its place[d][c][b], and it became ruler and leader of those sheep.
+  to: And that later ram arose and led the sheep; that ram fathered many sheep and lay down[a]. And a little sheep became a ram in its place, and it became ruler and leader of those sheep.
+  rationale: The earlier recognition of 'later' as an adjective was sound, although subsequent wording lost that distinction. The current handling of the little sheep and succession is retained, and the death idiom receives one short reader's note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:10Z'
   unchanged: false
   changes_summary: Removed duplicated text and corrected the opening to a single natural rendering. Smoothed repetition by changing 'became ruler and became leader' to 'became ruler and leader' while preserving all source elements.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -221,3 +218,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/048.job-72774.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The later ram leads the sheep, fathers many sheep, and dies, after which a little sheep becomes the ruling ram in its place.
+  meaning_decisions:
+  - source_phrase: ዳሓራዊ፡ ዝኩ፡ ሐርጌ
+    prior_rendering: afterward that ram
+    new_rendering: that later ram
+    rationale: The adjective identifies the later of the two rams from verse 47; it is not merely a word marking the next event.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier recognition of 'later' as an adjective was sound, although subsequent wording lost that distinction. The current handling of the little sheep and succession is retained, and the death idiom receives one short reader's note.

@@ -16,15 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And on that day the night is shortened from its length[a], and the night becomes ten parts[b], and the day eight parts.
-  philosophy: optimal-equivalence
+  text: And on that day the night grows shorter; it becomes twelve parts[a], and the day eight parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The verse uses the Astronomical Book's schematic division of day and night into numbered 'parts,' a technical way of describing seasonal change rather than clock-hours.
-    reason: cultural_note
-  - marker: b
-    text: Or 'twelve parts'.
-    reason: previous_rendering
+    text: The Ge'ez gives twelve parts for the night; the surrounding sequence suggests ten.
+    reason: textual_variant
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: on that day
@@ -112,12 +109,18 @@ revisions:
   from: twelve parts
   to: ten parts
   rationale: The Ge'ez OCR incorrectly reads ፲ወ፪ተ (12) instead of ፲ (10). The Astronomical Book operates on a strict 18-part day, and the sequence of months dictates that the night decreases from 11 parts (v. 28) to 10 parts here, while the day increases to 8 parts (10 + 8 = 18). Translating 'twelve parts' breaks the mathematical and calendrical system of the text.
+- timestamp: '2026-11-09T20:02:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on that day the night is shortened from its length[a], and the night becomes ten parts[b], and the day eight parts.
+  to: And on that day the night grows shorter; it becomes twelve parts[a], and the day eight parts.
+  rationale: The earlier revision changed twelve to ten to restore mathematical consistency. The translation now preserves the supplied number and explains the discrepancy, while replacing the cumbersome shortening phrase with natural English.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:21Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -137,3 +140,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/030.job-72599.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:15Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The night continues to shorten as the day reaches eight parts, although the stated twelve parts for the night conflicts with the surrounding sequence.
+  meaning_decisions:
+  - source_phrase: ትከውን፡ ሌሊት፡ ፲ወ፪ተ፡ ክፍለ
+    prior_rendering: the night becomes ten parts
+    new_rendering: it becomes twelve parts
+    rationale: Twelve is the numeral supplied in the source. Ten fits the eighteen-part scheme, but that contextual correction must not replace the given reading without notice.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier revision changed twelve to ten to restore mathematical consistency. The translation now preserves the supplied number and explains the discrepancy, while replacing the cumbersome shortening phrase with natural English.

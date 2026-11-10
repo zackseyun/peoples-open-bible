@@ -12,15 +12,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch75.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 75, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Likewise[a], Uriel showed me twelve openings in the circuit of the chariots of the sun in the sky, from which the rays of the sun go out[b], and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
-  philosophy: optimal-equivalence
+  text: Likewise, Uriel showed me twelve openings[a] in the circuit of the chariots of the sun in the sky, from which the rays of the sun[b] go out, and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez word rendered 'light' is difficult and may more literally suggest 'feet' or, by extension in context, something like the sun's outgoing rays or beams.
-    reason: lexical_alternative
+    text: The opening wording is unclear in the Ge’ez.
+    reason: textual_variant
   - marker: b
-    text: 'Or ''And Uriel showed me another law: the courses of the chariots of the sun in the sky, from which its light goes out''.'
-    reason: previous_rendering
+    text: Literally, “the sun’s feet,” an image for its spreading rays.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ከመዝ ፲ሥሩ ወካልእ
   chosen: another law
@@ -158,12 +158,18 @@ revisions:
   from: Likewise, Uriel showed me twelve openings, open in the circuit of the chariots of the sun in the sky, from which the rays of the sun go out, and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
   to: Likewise, Uriel showed me twelve openings in the circuit of the chariots of the sun in the sky, from which the rays of the sun go out, and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
   rationale: Removed the redundant second 'open' after 'openings' for more natural English while preserving the sense. No other changes needed.
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Likewise[a], Uriel showed me twelve openings in the circuit of the chariots of the sun in the sky, from which the rays of the sun go out[b], and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
+  to: Likewise, Uriel showed me twelve openings[a] in the circuit of the chariots of the sun in the sky, from which the rays of the sun[b] go out, and from which warmth comes forth upon the earth when they are opened in the seasons appointed for them.
+  rationale: The earlier correction to twelve openings fits the description of solar portals better than the first draft’s another law, and the current English conveys that description well. I keep its wording while replacing the misplaced editorial notes with brief notices about the unclear opening and the sun’s feet.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:30Z'
   unchanged: false
   changes_summary: Removed the redundant second 'open' after 'openings' for more natural English while preserving the sense. No other changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.5
@@ -183,3 +189,19 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/075/004.job-72627.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: refined
+  confidence: low
+  meaning: Uriel shows Enoch twelve openings along the sun’s heavenly circuit through which its rays and warmth reach the earth at appointed seasons.
+  meaning_decisions: []
+  footnote_kinds:
+    a: textual_variant
+    b: literal_wording
+  history_weighed: The earlier correction to twelve openings fits the description of solar portals better than the first draft’s another law, and the current English conveys that description well. I keep its wording while replacing the misplaced editorial notes with brief notices about the unclear opening and the sun’s feet.

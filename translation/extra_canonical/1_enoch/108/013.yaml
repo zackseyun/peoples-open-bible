@@ -14,27 +14,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And they will shine in times without number[a], for the righteousness belongs to God[f][e][d][c][b]; for he will give faith to the faithful in the dwelling of the paths of uprightness.
-  philosophy: optimal-equivalence
+  text: And they will shine for ages without number, for righteousness belongs to God[a]; for he will give faith[b] to the faithful in the dwelling of upright paths.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for unnumbered ages.' The Ge'ez phrase speaks of times that cannot be counted.
-    reason: lexical_alternative
+    text: The Ge’ez phrase is unclear; it may mean “God’s judgment is righteous.”
+    reason: alternative_reading
   - marker: b
-    text: Or 'he will give steadfastness/faithfulness to the wise.' The noun rendered 'faith' may also carry the sense of fidelity.
-    reason: lexical_alternative
-  - marker: c
-    text: The phrase 'dwelling of the paths of uprightness' preserves the text's concrete imagery of a place characterized by righteous ways, rather than reducing it to a simple abstract expression.
-    reason: cultural_note
-  - marker: d
-    text: Or 'And they will rejoice'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'righteousness belongs to God'.
-    reason: previous_rendering
-  - marker: f
-    text: Or 'to the wise'.
-    reason: previous_rendering
+    text: Or “faithfulness.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይትወሐውሑ
   chosen: they will rejoice
@@ -170,12 +158,18 @@ revisions:
   from: And they will shine in times without number, for the judgment of God is righteous; for he will give faith to the faithful in the dwelling of the paths of uprightness.
   to: And they will shine in times without number, for the righteousness belongs to God; for he will give faith to the faithful in the dwelling of the paths of uprightness.
   rationale: Changed 'the judgment of God is righteous' to 'the righteousness belongs to God' to better reflect the source term for 'righteousness' rather than 'judgment.'
+- timestamp: '2026-11-09T20:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they will shine in times without number[a], for the righteousness belongs to God[f][e][d][c][b]; for he will give faith to the faithful in the dwelling of the paths of uprightness.
+  to: And they will shine for ages without number, for righteousness belongs to God[a]; for he will give faith[b] to the faithful in the dwelling of upright paths.
+  rationale: The earlier corrections to 'shine' and 'the faithful' are supported by the Ge’ez and the surrounding contrast. I have not substituted the proposed judgment reading for the supplied middle phrase, whose uncertainty remains significant.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:08Z'
   unchanged: false
   changes_summary: Changed 'the judgment of God is righteous' to 'the righteousness belongs to God' to better reflect the source term for 'righteousness' rather than 'judgment.'
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -195,3 +189,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/013.job-72992.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:18Z'
+  change_level: refined
+  confidence: low
+  meaning: The righteous will shine for unnumbered ages because righteousness belongs to God, who gives faith to the faithful in the dwelling of upright paths.
+  meaning_decisions:
+  - source_phrase: በእዝማን፡ ዘአልቦ፡ ኍልቈ
+    prior_rendering: in times without number
+    new_rendering: for ages without number
+    rationale: The phrase expresses the immeasurable duration of their radiance, rather than an indefinite number of separate occasions.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier corrections to 'shine' and 'the faithful' are supported by the Ge’ez and the surrounding contrast. I have not substituted the proposed judgment reading for the supplied middle phrase, whose uncertainty remains significant.

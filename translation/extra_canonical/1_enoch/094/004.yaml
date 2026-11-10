@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: But seek and choose for yourselves righteousness and a good life[a], and walk in the paths of peace[c][b], so that you may live and prosper.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic wording around 'a good life' is somewhat difficult in this OCR witness; the sense is an exhortation to choose life characterized by goodness or uprightness.
-    reason: textual_variant
-  - marker: b
-    text: Or 'walk in the ways of peace.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'Love righteousness and choose for yourselves a good life'.
-    reason: previous_rendering
+  text: But seek and choose for yourselves righteousness and a good life, and walk in the paths of peace, so that you may live and prosper.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እላ
   chosen: love
@@ -155,12 +145,18 @@ revisions:
   from: Love righteousness and choose for yourselves a good life
   to: But seek and choose for yourselves righteousness and a good life
   rationale: 'The draft hallucinates ''Love'' and omits the actual first verb. The Ge''ez `እላ` (an OCR error for `አላ`, ''but'') and `ፍቅዱ` (imperative of `ፈቀደ`, ''seek'' or ''desire'') are missed. The text reads `አላ ፍቅዱ ወኀረዩ ለክሙ ጽድቀ` (''But seek and choose for yourselves righteousness''). | Adjudicator: The reviewer is correct. The Ge''ez verb `ፍቅዱ` is the imperative plural of `ፈቀደ` (''to seek, desire''), not `አፍቀረ` (''to love''). The current translation likely confused the roots. Additionally, the initia'
+- timestamp: '2026-11-09T20:15:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But seek and choose for yourselves righteousness and a good life[a], and walk in the paths of peace[c][b], so that you may live and prosper.
+  to: But seek and choose for yourselves righteousness and a good life, and walk in the paths of peace, so that you may live and prosper.
+  rationale: The revision correctly restored 'But seek' and recognized righteousness and a good life as the things to choose. The earlier segmentation difficulties do not leave a consequential ambiguity in this wording, so the editorial and synonymous notes are omitted.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:35Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -180,3 +176,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/004.job-72871.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:15:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The hearers should deliberately choose righteousness and a good life, following peaceful paths that lead to life and prosperity.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The revision correctly restored 'But seek' and recognized righteousness and a good life as the things to choose. The earlier segmentation difficulties do not leave a consequential ambiguity in this wording, so the editorial and synonymous notes are omitted.

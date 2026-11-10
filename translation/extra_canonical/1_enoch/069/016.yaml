@@ -15,21 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.
-  philosophy: optimal-equivalence
+  text: These are the hidden things of this oath[a]. It is made firm by his oath. Heaven was suspended before the world was created, and by this oath it remains suspended forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The opening clause is textually difficult in this Ethiopic witness; the ellipsis in the source indicates damaged or uncertain transmission after 'this oath.'
+    text: The Ge'ez has a gap after “this oath”; the subject of the next clause is unclear.
     reason: textual_variant
-  - marker: b
-    text: Or 'the secret things of this oath.'
-    reason: lexical_alternative
-  - marker: c
-    text: The final phrase is obscure in this witness; literally, 'and forever it is upon it.' The referent of 'it' may be the oath, heaven, or the created world.
-    reason: alternative_reading
-  - marker: d
-    text: Or 'it is upon it'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: እሉንቱ
   chosen: these
@@ -188,9 +179,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.'
-  to: 'And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.'
+  from: And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.
+  to: And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and forever''].'
+- timestamp: '2026-11-09T20:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And these are the hidden things of this oath [a]. . . and it is made firm by his oath, and heaven was suspended before the world was created[d][c][b], and by it forever.
+  to: These are the hidden things of this oath[a]. It is made firm by his oath. Heaven was suspended before the world was created, and by this oath it remains suspended forever.
+  rationale: The earlier correction to “by it” rightly recognized the oath's sustaining power. The gap still leaves the preceding assertion of firmness uncertain, so that uncertainty is preserved rather than supplied with a conjectured subject.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:51Z'
@@ -215,3 +213,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/016.job-72543.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:42Z'
+  change_level: refined
+  confidence: low
+  meaning: The passage begins to reveal the hidden workings of the oath that keeps heaven suspended forever.
+  meaning_decisions:
+  - source_phrase: ወእስከ፡ ለዓለም፡ ቦቱ
+    prior_rendering: and by it forever
+    new_rendering: and by this oath it remains suspended forever
+    rationale: The surrounding verses support the oath as the means of sustaining creation; repeating the implied verb makes the enduring suspension intelligible.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction to “by it” rightly recognized the oath's sustaining power. The gap still leaves the preceding assertion of firmness uncertain, so that uncertainty is preserved rather than supplied with a conjectured subject.

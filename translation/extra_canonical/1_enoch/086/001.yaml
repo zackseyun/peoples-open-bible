@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch86.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 86, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: In the Animal Apocalypse, stars commonly function as symbolic heavenly beings, but the verse itself says 'star.'
-    reason: cross_reference
-  - marker: b
-    text: The final verbs are literally 'ate and grazed/fed,' preserving the animal imagery of the vision rather than smoothing it into a single action.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'calves'.
-    reason: previous_rendering
+  text: Again, as I slept, I looked and saw heaven above. One star fell from heaven, rose, and ate and grazed among those cattle.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ካዕበ
   chosen: again
@@ -171,9 +161,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.'
-  to: 'And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.'
+  from: And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.
+  to: And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the heaven above''].'
+- timestamp: '2026-11-09T20:08:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again I looked with my eyes while I was sleeping[a], and I saw heaven above, and behold, one star fell from heaven[c][b], and it arose and ate and grazed in the midst of those cattle.
+  to: Again, as I slept, I looked and saw heaven above. One star fell from heaven, rose, and ate and grazed among those cattle.
+  rationale: I retain the sound correction from 'calves' to 'cattle' and preserve both eating and grazing. The earlier notes do not identify an uncertainty that requires a reader's footnote.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:17Z'
@@ -198,3 +195,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/086/001.job-72715.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees a star fall from heaven and begin feeding among the cattle in his dream.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: I retain the sound correction from 'calves' to 'cattle' and preserve both eating and grazing. The earlier notes do not identify an uncertainty that requires a reader's footnote.

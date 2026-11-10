@@ -22,24 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And all the excess and destruction that was done by the shepherds[a], the scribe wrote down: how many they destroyed by my command, and how many they destroyed of their own accord[e][d][c][b]; all the destruction of those seventy shepherds was recorded against them.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez wording is difficult. The repeated root rendered 'plucked out / destruction' may cover a broader sense of violent removal or ruin.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'by/on their heads' in the second clause; the idiom may mean 'on their own responsibility' rather than strictly 'by their own will.'
-    reason: lexical_alternative
-  - marker: c
-    text: The affected animals are given here as 'elephants' from the Ge'ez witness. Because this chapter's symbolic-animal sequence is textually difficult in places, the identification should be held with some caution.
-    reason: textual_variant
-  - marker: d
-    text: Or 'blindness'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'to those elephants'.
-    reason: previous_rendering
+  text: '“Write down all the excess and destruction caused by the shepherds: how many they destroy at my command and how many they destroy on their own. Record against them all the destruction caused by each group of seven shepherds.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ጽጋበ
   chosen: blindness
@@ -188,6 +172,13 @@ revisions:
   from: 'And all the excess and destruction that was done by the shepherds[a], the scribe wrote down: how many they destroyed by my command, and how many they destroyed of their own accord[e][d][c][b]; all the destruction of those seventy shepherds was recorded against them.'
   to: 'And all the excess and destruction that was done by the shepherds[a], the scribe wrote down: how many they destroyed by my command, and how many they destroyed of their own accord[e][d][c][b]; all the destruction of those seventy shepherds was recorded against them.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by their own will''].'
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And all the excess and destruction that was done by the shepherds[a], the scribe wrote down: how many they destroyed by my command, and how many they destroyed of their own accord[e][d][c][b]; all the destruction of those seventy shepherds was recorded against them.'
+  to: '“Write down all the excess and destruction caused by the shepherds: how many they destroy at my command and how many they destroy on their own. Record against them all the destruction caused by each group of seven shepherds.”'
+  rationale: The earlier correction rightly restored excess, destruction, shepherds, and imperative commands, but the current wording again turns the commands into completed narration. I also followed the supplied distributive numeral rather than the later description of it as seventy.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:46Z'
@@ -212,3 +203,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/062.job-72788.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The observer must record the shepherds’ excess and distinguish commanded destruction from destruction undertaken on their own.
+  meaning_decisions:
+  - source_phrase: ጻሐፍ ... ጻሐፍ፡ ዲቤሆሙ
+    prior_rendering: the scribe wrote down ... was recorded against them
+    new_rendering: Write down ... Record against them
+    rationale: These are commands to the observer within the Lord’s continuing speech, not a report that a scribe has already completed the record.
+  - source_phrase: በርእሶሙ
+    prior_rendering: of their own accord
+    new_rendering: on their own
+    rationale: The phrase contrasts responsibility taken by the shepherds themselves with action authorized by the Lord, without narrowing the contrast to their personal desires.
+  - source_phrase: ለ፯፯ኖላዊ
+    prior_rendering: of those seventy shepherds
+    new_rendering: caused by each group of seven shepherds
+    rationale: The supplied numeral is distributive seven, matching the grouping in verse 59, rather than the numeral seventy.
+  footnote_kinds: {}
+  history_weighed: The earlier correction rightly restored excess, destruction, shepherds, and imperative commands, but the current wording again turns the commands into completed narration. I also followed the supplied distributive numeral rather than the later description of it as seventy.

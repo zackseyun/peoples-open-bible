@@ -13,18 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And five days are added[a], and for the sun it reaches thirty days; and all the days that accrue to it for one of those five years, when completed[c][b], amount to three hundred and sixty-four days.
-  philosophy: optimal-equivalence
+  text: Over five years, the sun gains thirty days; its full year consists of three hundred and sixty-four days[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic line is textually awkward in places. The sense is that five supplementary days are added to complete the solar year at 364 days.
+    text: The wording and numbers are unclear in the Ge’ez; verse 12 gives 364 days for a solar year.
     reason: textual_variant
-  - marker: b
-    text: Compare the broader calendar scheme in the Astronomical Book, where the year is structured as 364 days rather than by a lunar reckoning.
-    reason: cross_reference
-  - marker: c
-    text: Or 'And the five days are added, and for the sun there come to thirty days; and all the days appointed to the year amount to three hundred and sixty-four days, from these five days being completed.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ይትዌሰክ
   chosen: are added
@@ -138,12 +132,18 @@ revisions:
   from: And five years are added, and for the sun it reaches thirty days; and all the days that accrue to it for one of those five years, being completed, amount to three hundred and sixty-four days.
   to: And five days are added, and for the sun it reaches thirty days; and all the days that accrue to it for one of those five years, when completed, amount to three hundred and sixty-four days.
   rationale: Corrected 'five years are added' to 'five days are added' to match the sense of the calendrical statement; retained the rest with minor smoothing ('when completed').
+- timestamp: '2026-11-09T20:05:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And five days are added[a], and for the sun it reaches thirty days; and all the days that accrue to it for one of those five years, when completed[c][b], amount to three hundred and sixty-four days.
+  to: Over five years, the sun gains thirty days; its full year consists of three hundred and sixty-four days[a].
+  rationale: The earlier correction to “five years” is supported by the Ge’ez and verse 11; the later explanation involving supplementary days is not. The annual 364-day sense remains the best-supported understanding, but its difficult wording and numerals require a note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:28Z'
   unchanged: false
   changes_summary: Corrected 'five years are added' to 'five days are added' to match the sense of the calendrical statement; retained the rest with minor smoothing ('when completed').
-
 cross_check:
   status: needs_review
   agreement: 0.5
@@ -163,3 +163,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/010.job-72619.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:21Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Over five years the sun gains thirty days, while its full annual cycle contains 364 days.
+  meaning_decisions:
+  - source_phrase: ወይትዌሰክ፡ ኃምስቱ፡ ዓመት፡ ወይበጽሕ፡ ለፀሐይ፡ ሠላሳ፡ መዋዕለ
+    prior_rendering: And five days are added, and for the sun it reaches thirty days
+    new_rendering: Over five years, the sun gains thirty days
+    rationale: The Ge’ez explicitly names years, not days, and verse 11 identifies the thirty days as the accumulated solar excess over five years.
+  - source_phrase: ወኵሎሙ፡ መዋዕለ፡ ይበጽሕዎ፡ ለ*ዓመት፡ ፭እምእሉኩ፡ ፭ዓመት፡ ተመሊኦሙ፡ ይከውኑ፡ *፻፷ወ፰ወረቡዐ፡ መዋዕለ
+    prior_rendering: all the days that accrue to it for one of those five years, when completed, amount to three hundred and sixty-four days
+    new_rendering: its full year consists of three hundred and sixty-four days[a]
+    rationale: The singular reference to the year, the record’s annual-total interpretation, and verse 12 support an annual count rather than a five-year total; the irregular wording and numerals remain explicitly uncertain.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction to “five years” is supported by the Ge’ez and verse 11; the later explanation involving supplementary days is not. The annual 364-day sense remains the best-supported understanding, but its difficult wording and numerals require a note.

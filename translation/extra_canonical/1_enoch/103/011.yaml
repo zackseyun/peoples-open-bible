@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch103.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 103, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: We hoped to become the head[a], and we became the tail; we toiled, but we did not gain mastery over our labor; and we became food for sinners and for the lawless[c][b], and they laid their yoke heavily upon us.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'we labored, but it did not come about,' or 'we labored, but it was not accomplished.' The middle clause is textually and syntactically difficult in the Ethiopic witness.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Food'' is a concrete metaphor; the sense is that they became prey to sinners and the lawless.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'we toiled, and it was not done for us, and we did not gain mastery over our wealth'.
-    reason: previous_rendering
+  text: We hoped to become the head, but we became the tail; we toiled, yet had no control over the fruit of our labor. We became food for sinners and the lawless, and they laid their yoke heavily upon us.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ንሴፎ
   chosen: we hoped
@@ -163,12 +153,18 @@ revisions:
   from: We hoped to become the head, and we became the tail; we toiled as we labored, and we did not gain mastery over the fruit of our labor; and we became food for sinners and for the lawless, and they laid their yoke heavily upon us.
   to: We hoped to become the head, and we became the tail; we toiled, but we did not gain mastery over our labor; and we became food for sinners and for the lawless, and they laid their yoke heavily upon us.
   rationale: Removed the awkward and likely redundant 'as we labored' to better reflect the source and improve natural English; simplified 'the fruit of our labor' to 'our labor' for closer lexical correspondence while retaining the rest of the verse.
+- timestamp: '2026-11-09T20:07:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We hoped to become the head[a], and we became the tail; we toiled, but we did not gain mastery over our labor; and we became food for sinners and for the lawless[c][b], and they laid their yoke heavily upon us.
+  to: We hoped to become the head, but we became the tail; we toiled, yet had no control over the fruit of our labor. We became food for sinners and the lawless, and they laid their yoke heavily upon us.
+  rationale: The earlier revisions correctly rejected an invented negative in the clause about working; I keep that gain. I restore the fruit-of-labor sense lost in the latest wording and preserve the head, tail, food, and yoke images.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:56Z'
   unchanged: false
   changes_summary: Removed the awkward and likely redundant 'as we labored' to better reflect the source and improve natural English; simplified 'the fruit of our labor' to 'our labor' for closer lexical correspondence while retaining the rest of the verse.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -188,3 +184,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/103/011.job-72952.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The community’s hope of rising to authority was reversed into subjection, loss of control over its earnings, and exploitation by sinners.
+  meaning_decisions:
+  - source_phrase: ወኢሠለጥነ፡ ዲበ፡ ዳማነ፡
+    prior_rendering: but we did not gain mastery over our labor
+    new_rendering: yet had no control over the fruit of our labor
+    rationale: The complaint concerns their inability to control what their work produced, rather than mastery of the work itself. ‘Fruit of our labor’ also accommodates the word’s broader sense of possessions or wealth.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions correctly rejected an invented negative in the clause about working; I keep that gain. I restore the fruit-of-labor sense lost in the latest wording and preserve the head, tail, food, and yoke images.

@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch98.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 98, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: Woe to you[a], fools, for you will perish in your folly, and you oppress the wise[c][b], and good will not come upon you.
-  philosophy: optimal-equivalence
+  text: Woe to you, fools, for you will perish in your folly; you wrong the wise[a], and no good will come to you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The verb rendered 'you trust' may also be understood as 'you boast' or 'you rely' in relation to wealth.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'good will not find you' / 'well-being will not reach you.' The Ge'ez expression is broad and may imply withheld blessing or prosperity.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for you trust in your wealth, and from your riches you drive away the wise'.
-    reason: previous_rendering
+    text: Or “you disregard the wise.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: አሌ
   chosen: Woe
@@ -150,12 +144,18 @@ revisions:
   from: Woe to you, fools, for you will perish in your folly, and you forget the wise, and good will not come upon you.
   to: Woe to you, fools, for you will perish in your folly, and you oppress the wise, and good will not come upon you.
   rationale: Changed 'you forget the wise' to 'you oppress the wise' to better reflect the source verb; otherwise retained the draft's structure and wording.
+- timestamp: '2026-11-09T20:10:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Woe to you[a], fools, for you will perish in your folly, and you oppress the wise[c][b], and good will not come upon you.
+  to: Woe to you, fools, for you will perish in your folly; you wrong the wise[a], and no good will come to you.
+  rationale: The correction to perishing in folly is firmly supported, unlike the earliest wording about wealth. The history disagrees over the treatment of the wise, so I use the broader accusation and note the serious alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:13Z'
   unchanged: false
   changes_summary: Changed 'you forget the wise' to 'you oppress the wise' to better reflect the source verb; otherwise retained the draft's structure and wording.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -175,3 +175,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/098/009.job-72902.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Fools who wrong the wise will perish in their folly and receive no good.
+  meaning_decisions:
+  - source_phrase: ወለጠበብን፡ ትረሰዕዎሙ
+    prior_rendering: and you oppress the wise
+    new_rendering: you wrong the wise
+    rationale: The broader wording expresses wrongdoing toward the wise without restricting it to oppression. The competing understanding as disregard is given in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The correction to perishing in folly is firmly supported, unlike the earliest wording about wealth. The history disagrees over the treatment of the wise, so I use the broader accusation and note the serious alternative.

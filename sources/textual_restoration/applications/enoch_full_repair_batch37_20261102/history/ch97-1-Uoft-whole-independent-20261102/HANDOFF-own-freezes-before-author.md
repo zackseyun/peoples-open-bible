@@ -1,0 +1,9 @@
+#97:1 ownwholefreezes beforeauthorpacket
+
+Nine-wordsource27f03frozen; actualfullLatinentriesand1907imperative/plural/reflexiveproofpersonallyread. OwnEnglish: Be confident, righteous ones, that sinners will become an object of reproach and will perish on the day of injustice.
+
+ThisisaboundedLOWmeaningproposal, NOTexactpeerapproval. W4Alf-vsAinlexicalidentificationmustbetruthfullybounded; actualnounmeansreproach/disgrace, notMWTdeath. ActualHGLcrossreference130followed18–20; reflexiveintransitiveperish, sourceGamlIጐnotV. NoGreek/AramaicfillorindependentMSSclaim. ActualallcandidateEnglish/notesstillunknown; askforexactnewauthorinputonlynow.
+
+Source00 SHA `27f03fd70ac278f104e563bf9e99956f9093f412897f09a476edfb6453865ed4`.
+Meaning06 SHA `ee25ee8e33c597a8d528e792bab08626fad396f79941d2ab6e9adad8f3596c12`.
+ResearchPV08 SHA `5f8b66d64c9a912921de01d47115a52140c98065014a4481fca8a53b47ca9ef0`.

@@ -29,17 +29,14 @@ source_warnings:
 - Restored chapter 6 verse 8 boundary before the chiefs-of-tens sentence.
 - Dillmann 1851 chapter OCR exists for chapter 6, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: 'And these are the names of their angels: Semiazaz—he was their angel[a]—Arakibaremeel,[b] Kokabiel, Tamiel, Ramiel, Danel, Ezeqeel, Baraqiyel, Asael, Armaros, Baterel, Ananel, Zaqeel, Samsapeel, Saterel, Turel, Yomyael, and Arazial.[c]'
-  philosophy: optimal-equivalence
+  text: 'These are the names of their leaders[a]: Semiazaz, who was their leader; Arakibaremeel, Kokabiel, Tamiel, Ramiel, Danel, Ezeqeel, Baraqiyel, Asael, Armaros, Baterel, Ananel, Zaqeel, Samsapeel, Saterel, Turel, Yomyael, and Arazial[b].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The printed Geʿez has “their angels” and “their angel”; Charles places an asterisk before the word for “their angels.” Rendering these expressions as “their leaders” and “their leader” would be a contextual interpretation.
-    reason: textual_variant
+    text: The Ge’ez word can also mean “angels” or “messengers.”
+    reason: alternative_reading
   - marker: b
-    text: Charles prints Arakibaremeel as one asterisked name. His apparatus records variant forms and a division of the name. The combined printed form is retained here.
-    reason: textual_variant
-  - marker: c
-    text: Charles encloses Arazial in daggers, marking a textual crux. The printed form is retained without reconstruction.
+    text: The last name is uncertain in the Ge’ez.
     reason: textual_variant
 lexical_decisions:
 - source_word: መላእክቲሆሙ / መልአኮሙ
@@ -90,6 +87,13 @@ revisions:
   from: 'And these are the names of their angels: Shemiazaz—he was their angel—Arakibaremeel, Kokabiel, Tamiel, Ramiel, Daniel, Ezeqiel, Baraqiel, Asael, Armaros, Baterel, Ananel, Zaqiel, Samsapeel, Saterel, Turel, Yomyael, and Arazial.'
   to: 'And these are the names of their angels: Semiazaz—he was their angel[a]—Arakibaremeel,[b] Kokabiel, Tamiel, Ramiel, Danel, Ezeqeel, Baraqiyel, Asael, Armaros, Baterel, Ananel, Zaqeel, Samsapeel, Saterel, Turel, Yomyael, and Arazial.[c]'
   rationale: Follows the printed Geʿez with textual uncertainty explicitly noted.
+- timestamp: '2026-11-09T19:42:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And these are the names of their angels: Semiazaz—he was their angel[a]—Arakibaremeel,[b] Kokabiel, Tamiel, Ramiel, Danel, Ezeqeel, Baraqiyel, Asael, Armaros, Baterel, Ananel, Zaqeel, Samsapeel, Saterel, Turel, Yomyael, and Arazial.[c]'
+  to: 'These are the names of their leaders[a]: Semiazaz, who was their leader; Arakibaremeel, Kokabiel, Tamiel, Ramiel, Danel, Ezeqeel, Baraqiyel, Asael, Armaros, Baterel, Ananel, Zaqeel, Samsapeel, Saterel, Turel, Yomyael, and Arazial[b].'
+  rationale: The earlier wording favored the angel sense, but the leadership usage in verse 3 and the list’s relation to verse 8 favor “leaders” here. I preserve every established name, including the combined Arakibaremeel, and retain a brief warning about the uncertain final name.
 cross_check:
   status: high_agreement
   verdict: accept
@@ -112,3 +116,27 @@ revision_pass:
   unchanged: false
   changes_summary: Full Charles 1906 Geʿez continuation reviewed against scan; final English and textual notes accepted.
   source_review: sources/textual_restoration/applications/enoch_6_20260930/final-source-review.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:42:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The passage names the group’s leaders, beginning with Semiazaz as their leader.
+  meaning_decisions:
+  - source_phrase: ለመላእክቲሆሙ
+    prior_rendering: of their angels
+    new_rendering: of their leaders
+    rationale: The group already consists of angels; this list identifies its leading members, as the following verse indicates, rather than angels belonging to other angels.
+  - source_phrase: ዝንቱ፡ ውእቱ፡ መልአኮሙ
+    prior_rendering: he was their angel
+    new_rendering: who was their leader
+    rationale: The same expression denotes the leader in verse 3, and its function here is likewise to distinguish the group’s leader from the other named members.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The earlier wording favored the angel sense, but the leadership usage in verse 3 and the list’s relation to verse 8 favor “leaders” here. I preserve every established name, including the combined Arakibaremeel, and retain a brief warning about the uncertain final name.

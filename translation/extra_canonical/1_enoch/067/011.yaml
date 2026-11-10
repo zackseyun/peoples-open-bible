@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch67.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 67, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and grow cold.
-  philosophy: optimal-equivalence
+  text: The waters themselves will change in those days, for when those angels are judged in them, the springs that feed those waters will change. When the angels ascend[a], the water of those springs will change and grow cold.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ge'ez wording is difficult in the middle of the verse. The phrase rendered 'the heat of those springs of water' may more literally refer to the hot condition of the water-springs; the sense is inferred from the closing statement that they 'grow cold.'
-    reason: lexical_alternative
-  - marker: b
-    text: The clause 'when the angels ascend' is retained literally. In context it may refer to the judged angels coming up in relation to the springs or fiery waters, but the exact picture is uncertain in the Ethiopic witness.
+    text: The angels’ ascent is unexplained; it may mean that they rise from the waters.
     reason: alternative_reading
-  - marker: c
-    text: Or 'for when those angels are judged, the heat of those springs of water will be changed'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ኪያሁ
   chosen: themselves
@@ -164,9 +158,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and become cold.'
-  to: 'And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and grow cold.'
-  rationale: 'Drafter chose ''undergo change'' for ተውላጠ to preserve the inchoative/passive sense of the change-state verb; azure passive-shifted to ''be changed''. Drafter chose ''grow cold'' for ይቈርሩ as natural English preserving contrast with prior heat; azure swapped to ''become cold'' for no lexical reason.'
+  from: And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and become cold.
+  to: And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and grow cold.
+  rationale: Drafter chose 'undergo change' for ተውላጠ to preserve the inchoative/passive sense of the change-state verb; azure passive-shifted to 'be changed'. Drafter chose 'grow cold' for ይቈርሩ as natural English preserving contrast with prior heat; azure swapped to 'become cold' for no lexical reason.
+- timestamp: '2026-11-09T19:59:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the waters themselves will be changed in those days[a], for when those angels are judged in those waters, these springs of water will change, and when the angels ascend[c][b], that water of the springs will change and grow cold.
+  to: The waters themselves will change in those days, for when those angels are judged in them, the springs that feed those waters will change. When the angels ascend[a], the water of those springs will change and grow cold.
+  rationale: I retained the corrections identifying springs rather than heat and specifying that the angels are judged in the waters. The ascent remains unexplained, and I have not reconciled the cooling here with the later transformation into fire.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:54:35Z'
@@ -191,3 +192,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/067/011.job-72520.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:59:22Z'
+  change_level: refined
+  confidence: medium
+  meaning: The waters and their springs will change in connection with the angels’ judgment and ascent, eventually growing cold.
+  meaning_decisions:
+  - source_phrase: ይትዌለጡ፡ ዐያኖሙ፡ እልኩ፡ አንቅዐተ፡ ማያት
+    prior_rendering: these springs of water will change
+    new_rendering: the springs that feed those waters will change
+    rationale: This expresses the possessive relationship between the waters and their sources without reproducing the redundant pairing of springs and fountains.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained the corrections identifying springs rather than heat and specifying that the angels are judged in the waters. The ascent remains unexplained, and I have not reconciled the cooling here with the later transformation into fire.

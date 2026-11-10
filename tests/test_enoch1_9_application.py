@@ -14,6 +14,7 @@ from tools import export_mobile_bible as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'ac3e51bd2580ab433502f65b2d46414b6a8c312b'
+APPLIED = '01e5f552089e1054dea4b4bfe02f3f9534bb34ce'
 TARGET = ROOT / 'translation/extra_canonical/1_enoch/001/009.yaml'
 CANDIDATE = ROOT / 'sources/textual_restoration/candidates/enoch1_9.2026-10-05.v1.json'
 RECEIPT = ROOT / 'sources/textual_restoration/applications/enoch1_9.2026-10-05.v1.json'
@@ -25,7 +26,9 @@ class Enoch19ApplicationTests(unittest.TestCase):
         cls.before_raw = subprocess.check_output(
             ['git', 'show', f'{BASE}:{TARGET.relative_to(ROOT)}'], cwd=ROOT)
         cls.before = yaml.safe_load(cls.before_raw)
-        cls.current = yaml.safe_load(TARGET.read_text())
+        cls.applied_raw = subprocess.check_output(
+            ['git', 'show', f'{APPLIED}:{TARGET.relative_to(ROOT)}'], cwd=ROOT)
+        cls.current = yaml.safe_load(cls.applied_raw)
         cls.candidate = json.loads(CANDIDATE.read_text())
         cls.receipt = json.loads(RECEIPT.read_text())
 
@@ -84,13 +87,14 @@ class Enoch19ApplicationTests(unittest.TestCase):
             self.assertFalse(decision[field])
 
     def test_complete_available_reader_export_changes_only_one_unit(self):
-        after = exporter.export_extra_canonical_book('ENO')
         original = Path.read_text
-        before_text = self.before_raw.decode()
-        def read_before(path, *args, **kwargs):
-            return before_text if path.resolve() == TARGET else original(path, *args, **kwargs)
-        with patch.object(Path, 'read_text', autospec=True, side_effect=read_before):
-            before = exporter.export_extra_canonical_book('ENO')
+        def export_at(raw):
+            def read_at(path, *args, **kwargs):
+                return raw.decode() if path.resolve() == TARGET else original(path, *args, **kwargs)
+            with patch.object(Path, 'read_text', autospec=True, side_effect=read_at):
+                return exporter.export_extra_canonical_book('ENO')
+        after = export_at(self.applied_raw)
+        before = export_at(self.before_raw)
         index = lambda book: {(ch['chapter'], v['verse']): v
                               for ch in book['chapters'] for v in ch['verses']}
         a, b = index(after), index(before)
@@ -103,13 +107,22 @@ class Enoch19ApplicationTests(unittest.TestCase):
         # Frozen receipt counts describe its baseline, not all later additions.
         self.assertIn('not complete Enoch', self.receipt['application']['export_scope'])
 
+    def test_current_is_historical_application_or_fixed_successor(self):
+        if TARGET.read_bytes() != self.applied_raw:
+            from tools.enoch import batch38_evidence
+            proof = batch38_evidence.verify_current()
+            self.assertEqual(proof['current_postmap'][batch38_evidence.PATH],
+                             hashlib.sha256(TARGET.read_bytes()).hexdigest())
+            self.assertEqual(proof['manifest']['canonical_baseline_sha256'][batch38_evidence.PATH],
+                             hashlib.sha256(self.applied_raw).hexdigest())
+
     def test_receipt_binds_candidate_source_control_and_application(self):
         r = self.receipt
         self.assertEqual(r['baseline_revision'], BASE)
         self.assertEqual(r['baseline_sha256'], hashlib.sha256(self.before_raw).hexdigest())
         self.assertEqual(r['target'], str(TARGET.relative_to(ROOT)))
         self.assertEqual(r['candidate_sha256'], hashlib.sha256(CANDIDATE.read_bytes()).hexdigest())
-        self.assertEqual(r['application']['yaml_sha256'], hashlib.sha256(TARGET.read_bytes()).hexdigest())
+        self.assertEqual(r['application']['yaml_sha256'], hashlib.sha256(self.applied_raw).hexdigest())
         control = ROOT / r['greek_control']['repo_path']
         self.assertEqual(r['greek_control']['sha256'], hashlib.sha256(control.read_bytes()).hexdigest())
         self.assertEqual(r['application']['changed_export_units'], [[1, 9]])

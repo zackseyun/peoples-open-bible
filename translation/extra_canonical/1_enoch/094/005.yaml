@@ -12,27 +12,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch94.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 94, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And command them in the thought of your hearts[a], and do not let my words be blotted out from your hearts; for I know that sinners will tempt men to practice evil wisdom, and no place will be found for it[f][e][d][c][b], and no temptation will diminish.
-  philosophy: optimal-equivalence
+  text: Give these commands with heartfelt resolve[a], and do not let my words be blotted out from your hearts; for I know that sinners will entice people to deal wickedly with wisdom, so that no place will be found for her and no trial will diminish[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'charge them in the intention of your hearts.' The Ge'ez combines inward thought/intention with the heart as the seat of resolve.
-    reason: lexical_alternative
-  - marker: b
-    text: The clause 'no place will be found for it' is difficult. 'Place' may mean literal place, room, or opportunity for the evil teaching.
+    text: The opening word is unclear; it may mean 'hold fast in your hearts' instead.
     reason: alternative_reading
-  - marker: c
-    text: The final clause is uncertain; it may mean that no affliction will remove it or cut it short.
-    reason: textual_variant
-  - marker: d
-    text: Or 'And command them'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'instruct'.
-    reason: previous_rendering
-  - marker: f
-    text: Or 'trial'.
-    reason: previous_rendering
+  - marker: b
+    text: Or 'practice evil wisdom' rather than 'deal wickedly with wisdom.' The closing words are unclear; they may mean that no affliction will put an end to it.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ትእዛዙ
   chosen: command them
@@ -177,12 +165,18 @@ revisions:
   from: And hold fast in the thought of your hearts, and do not let my words be blotted out from your hearts; for I know that sinners will entice men to practice evil wisdom, and no place will be found for it, and no And command them in the thought of your hearts, and do not let my words be blotted out from your hearts; for I know that sinners will tempt men to practice evil wisdom, and no place will be found for it, and no temptation will diminish. will diminish.
   to: And command them in the thought of your hearts, and do not let my words be blotted out from your hearts; for I know that sinners will tempt men to practice evil wisdom, and no place will be found for it, and no temptation will diminish.
   rationale: Removed the duplicated, corrupted first clause and retained a single coherent rendering. Kept 'command them' to reflect the imperative, and 'tempt'/'temptation' for consistency with the closing clause. No other substantive changes.
+- timestamp: '2026-11-09T20:15:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And command them in the thought of your hearts[a], and do not let my words be blotted out from your hearts; for I know that sinners will tempt men to practice evil wisdom, and no place will be found for it[f][e][d][c][b], and no temptation will diminish.
+  to: Give these commands with heartfelt resolve[a], and do not let my words be blotted out from your hearts; for I know that sinners will entice people to deal wickedly with wisdom, so that no place will be found for her and no trial will diminish[b].
+  rationale: The proposed 'hold fast' correction fits the context but differs from the supplied source word, so it is acknowledged without replacing that reading. The earlier notes correctly identify uncertainty in the closing clauses; their numerous alternatives are reduced to two reader-facing notes.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:36Z'
   unchanged: false
   changes_summary: Removed the duplicated, corrupted first clause and retained a single coherent rendering. Kept 'command them' to reflect the imperative, and 'tempt'/'temptation' for consistency with the closing clause. No other substantive changes.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -202,3 +196,39 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/094/005.job-72872.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:15:30Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Enoch urges wholehearted instruction and remembrance of his words, warning that sinners will lead people to mistreat wisdom and that trials will not diminish.
+  meaning_decisions:
+  - source_phrase: ወትእዛዙ፡ በሐሊና፡ ልብክሙ
+    prior_rendering: And command them in the thought of your hearts
+    new_rendering: Give these commands with heartfelt resolve
+    rationale: This preserves the command reading supplied in the record while expressing the heart's thought as inward deliberation and resolve. It avoids introducing unidentified people as the recipients of 'command them.'
+  - source_phrase: ያሜክሮዎሙ፡ ኃጥኣን፡ ለሰብእ
+    prior_rendering: sinners will tempt men
+    new_rendering: sinners will entice people
+    rationale: The verb describes sinners actively drawing people toward evil, not merely testing them or offering instruction.
+  - source_phrase: ይግበሩ፡ ጥበበ፡ እኩየ
+    prior_rendering: to practice evil wisdom
+    new_rendering: to deal wickedly with wisdom
+    rationale: I understand the evil as describing people's treatment of wisdom. This fits the following statement that wisdom finds no place and the book's portrayal of wisdom rejected among human beings; the alternative construction remains in a note.
+  - source_phrase: ወኵሉ፡ መካን፡ ኢይትረከብ፡ ላቲ
+    prior_rendering: and no place will be found for it
+    new_rendering: so that no place will be found for her
+    rationale: The clause expresses the consequence of the sinners' enticement. The feminine reference preserves wisdom's personification rather than treating it only as an impersonal technique.
+  - source_phrase: ወኵሉ፡ መከራ፡ አያሐፅፅ
+    prior_rendering: and no temptation will diminish
+    new_rendering: and no trial will diminish
+    rationale: '''Trial'' preserves the noun''s range of testing and affliction without assuming that it means only the enticement described earlier.'
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The proposed 'hold fast' correction fits the context but differs from the supplied source word, so it is acknowledged without replacing that reading. The earlier notes correctly identify uncertainty in the closing clauses; their numerous alternatives are reduced to two reader-facing notes.

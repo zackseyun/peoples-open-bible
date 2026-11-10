@@ -13,21 +13,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: On the first day she is called the new moon[d][c][b][a], because on that day light rises upon her.
-  philosophy: optimal-equivalence
+  text: On the first day she is called the new moon[a], because on that day light rises upon her.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, the moon is in its increasing phase at the beginning of the month.
+    text: Here 'new moon' refers to the moon's first visible light at the beginning of the month.
     reason: cultural_note
-  - marker: b
-    text: Or 'light appears upon her.' The Ge'ez expression pictures brightness coming up over the moon.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the waxing one'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'the light rises over her'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: በቀዳሚት ዕለት
   chosen: On the first day
@@ -135,12 +126,18 @@ revisions:
   from: the light rises over her
   to: light rises upon her
   rationale: 'The preposition ላዕለ (lā''la) in the context of light appearing on the moon is more naturally rendered ''upon her'' rather than ''over her,'' as the light is illuminating its surface. Additionally, ''light'' (ብርሃን) is anarthrous (lacks a definite article) in the Ge''ez. | Adjudicator: The reviewer''s rationale is correct on both counts. The Ge''ez preposition ላዕለ (lā''la) is better rendered ''upon'' rather than ''over'' in the context of light illuminating the surface of a celestial body.'
+- timestamp: '2026-11-09T20:07:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On the first day she is called the new moon[d][c][b][a], because on that day light rises upon her.
+  to: On the first day she is called the new moon[a], because on that day light rises upon her.
+  rationale: The established designation 'new moon' and the image of light rising upon her convey the verse well. The overlapping alternatives were replaced with one note clarifying the ancient calendrical meaning.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:06Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -160,3 +157,18 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/012.job-72658.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:52Z'
+  change_level: refined
+  confidence: high
+  meaning: The moon is called the new moon on the first day because light first appears upon it that day.
+  meaning_decisions: []
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The established designation 'new moon' and the image of light rising upon her convey the verse well. The overlapping alternatives were replaced with one note clarifying the ancient calendrical meaning.

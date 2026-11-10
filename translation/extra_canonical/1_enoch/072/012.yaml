@@ -16,15 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And at that time the day grows longer by two parts[a], and the day becomes eleven parts[b], and the night grows shorter and becomes seven parts.
-  philosophy: optimal-equivalence
+  text: And at that time the day grows longer by two parts[a], and the day becomes eleven parts, and the night grows shorter and becomes seven parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic text marks the word for 'two' as uncertain in this witness. The sense required by the verse is that the day is reduced by two parts, yielding eleven parts for the day and seven for the night.
+    text: The number “two” is uncertain in the Ge’ez.
     reason: textual_variant
-  - marker: b
-    text: Or 'the day diminishes by two parts, and becomes eleven parts'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወእሜሃ
   chosen: and at that time
@@ -139,12 +136,18 @@ revisions:
   from: the day diminishes by two parts, and becomes eleven parts
   to: the day grows longer by two parts, and the day becomes eleven parts
   rationale: The verb ይነኍኅ (from the root ነወኀ) means 'to lengthen' or 'grow longer', not 'diminish'. The context confirms the day is increasing to 11 parts. Furthermore, the draft omits the explicit subject ዕለት (the day) in the clause ወትከውን፡ ዕለት ('and the day becomes').
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And at that time the day grows longer by two parts[a], and the day becomes eleven parts[b], and the night grows shorter and becomes seven parts.
+  to: And at that time the day grows longer by two parts[a], and the day becomes eleven parts, and the night grows shorter and becomes seven parts.
+  rationale: The correction from diminishes to grows longer is required by the verb and the seasonal progression. I retain the uncertain number two rather than repair it, and replace the old footnote that incorrectly described a reduction.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:16Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -164,3 +167,18 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/012.job-72581.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: refined
+  confidence: low
+  meaning: At this stage the day lengthens by two parts to eleven parts, while the night shortens to seven.
+  meaning_decisions: []
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The correction from diminishes to grows longer is required by the verb and the seasonal progression. I retain the uncertain number two rather than repair it, and replace the old footnote that incorrectly described a reduction.

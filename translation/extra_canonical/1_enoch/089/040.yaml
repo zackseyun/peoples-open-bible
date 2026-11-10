@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw the sheep until they entered into a good place[a], and into a pleasant and glorious land; and I saw until the sheep were satisfied[c][b], and that house was in their midst in the pleasant land.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: '''House'' may refer to the sanctuary or temple within the vision''s symbolic imagery.'
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'land of delight' is repeated at the end of the verse in the Ge'ez, reinforcing the restored and blessed setting.
-    reason: cross_reference
-  - marker: c
-    text: Or 'until those sheep entered into a good place, into a land of delight and glory; and I saw until the sheep were satisfied, and that house was in their midst in the land of delight.'.
-    reason: previous_rendering
+  text: And I watched the sheep until they entered a good place, a pleasant and glorious land. I watched until the sheep had eaten their fill, and that house was in their midst in the pleasant land.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: አባግዕ
   chosen: sheep
@@ -142,12 +132,18 @@ revisions:
   from: until those sheep entered into a good place, into a land of delight and glory; and I saw until the sheep were satisfied, and that house was in their midst in the land of delight.
   to: the sheep until they entered into a good place, and into a pleasant and glorious land; and I saw until the sheep were satisfied, and that house was in their midst in the pleasant land.
   rationale: 'The Ge''ez syntax is proleptic (ወርኢኩ፡ አባግዕ፡ እስከ፡ ይበውኡ, ''I saw the sheep until they entered'') and lacks a demonstrative for ''sheep'' (simply አባግዕ, not ዝኩ አባግዕ). Furthermore, ኃዋዝ (''pleasant'') and ስብሕት (''glorious'', feminine to match ምድር) are adjectives modifying ''land'', not nouns (''delight and glory''). Translating them as adjectives preserves the exact grammatical force of the description. | Adjudicator: The reviewer correctly identifies the Ge''ez syntax. The verb ርኢኩ (I saw) takes አባግዕ (sheep) as its direct object before the conjunction እስከ (until), creating the proleptic construction ''I saw the shee'
+- timestamp: '2026-11-09T20:10:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw the sheep until they entered into a good place[a], and into a pleasant and glorious land; and I saw until the sheep were satisfied[c][b], and that house was in their midst in the pleasant land.
+  to: And I watched the sheep until they entered a good place, a pleasant and glorious land. I watched until the sheep had eaten their fill, and that house was in their midst in the pleasant land.
+  rationale: The current description “pleasant and glorious land” correctly conveys the adjectives and is preserved. The repeated pleasant land and the house among the flock remain intact, while the earlier notes about restoration and alternative grammatical forms are unnecessary.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:38Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +163,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/040.job-72766.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The sheep enter a pleasant and glorious land, receive abundant food, and have the house among them.
+  meaning_decisions:
+  - source_phrase: ጸግቡ
+    prior_rendering: were satisfied
+    new_rendering: had eaten their fill
+    rationale: In the pastoral setting, the verb describes being filled with food, not merely feeling content; the rendering makes the land’s provision clear.
+  footnote_kinds: {}
+  history_weighed: The current description “pleasant and glorious land” correctly conveys the adjectives and is preserved. The repeated pleasant land and the house among the flock remain intact, while the earlier notes about restoration and alternative grammatical forms are unnecessary.

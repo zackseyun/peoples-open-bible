@@ -13,18 +13,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch78.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 78, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.
-  philosophy: optimal-equivalence
+  text: When the moon rises, one-fourteenth of its light[a] appears in the sky. Its light becomes full within it[b], reaching a total of fourteen parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The bracketed Ge'ez clause in the witness is textually awkward but appears to state that the moon's light is present in full measure within this reckoning. The English keeps the sense without forcing every element of the compressed syntax.
-    reason: textual_variant
+    text: Literally, “half of a seventh part.” The same fraction is used in verses 7 and 8.
+    reason: lexical_alternative
   - marker: b
-    text: The Astronomical Book regularly measures lunar illumination in numbered 'parts.' The phrase 'fourteen parts' should be read as part of that schematic system, not as modern scientific description.
-    reason: cultural_note
-  - marker: c
-    text: Or 'and all its light is completed to the measure of fourteen parts.'.
-    reason: previous_rendering
+    text: The Ge’ez can also be read as saying that all the light is already within the moon. Its full light is counted as fourteen parts here, but fifteen in verse 7.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ይትነሣእ
   chosen: rises
@@ -160,9 +157,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.'
-  to: 'And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.'
+  from: And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.
+  to: And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the measure of fourteen parts''].'
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the moon rises[a], it appears in the sky as half of a seventh part[c][b], [and all the light is in it,] and it completes its light as fourteen parts.
+  to: When the moon rises, one-fourteenth of its light[a] appears in the sky. Its light becomes full within it[b], reaching a total of fourteen parts.
+  rationale: The earlier revision rightly sought to preserve the clause about light within the moon, but its insistence on an already-complete state is not required by the verb. The uncertain clause is integrated into the waxing description without changing fourteen to fifteen or supplying a fourteenth day.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -187,3 +191,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/078/006.job-72652.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The moon appears with one-fourteenth of its light and comes to full illumination, reckoned here as fourteen parts.
+  meaning_decisions:
+  - source_phrase: መንፈቀ፡ ሳብዕተ፡ እደ
+    prior_rendering: half of a seventh part
+    new_rendering: one-fourteenth of its light
+    rationale: The equivalent fraction is immediately understandable in English, and the implied referent is the moon’s light. A note preserves the source’s seventh-part formulation.
+  - source_phrase: ብርሃን፡ ይከውን፡ ቦቱ፡ ኵሉ፡ ከመ፡ ዐሡር፡ ወረቡዕ፡ ይፈጽም፡ ብርሃኖ
+    prior_rendering: '[and all the light is in it,] and it completes its light as fourteen parts'
+    new_rendering: Its light becomes full within it, reaching a total of fourteen parts
+    rationale: The verb can describe what comes to be, rather than asserting that the moon is already fully illuminated at its first appearance. In the waxing sequence, the clauses most naturally describe light becoming full within the moon; the alternative understanding remains in a note.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The earlier revision rightly sought to preserve the clause about light within the moon, but its insistence on an already-complete state is not required by the verb. The uncertain clause is integrated into the waxing description without changing fourteen to fifteen or supplying a fourteenth day.

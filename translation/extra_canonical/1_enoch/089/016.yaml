@@ -22,21 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And a sheep that had been rescued from the wolves fled and passed into the wild asses of the wilderness[a], and I saw the sheep as they lamented and cried out and petitioned their Lord with all their strength, until that Lord of the sheep came down at the voice of the sheep from his lofty dwelling[d][c][b], and he came to them and saw them.
-  philosophy: optimal-equivalence
+  text: And a sheep that had been rescued from the wolves fled and went among the wild asses of the wilderness[a]. I saw the sheep lamenting, crying out, and pleading with their Lord with all their strength, until the Lord of the sheep came down from his lofty dwelling in response to their cries. He came to them and saw them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'passed into the wild asses of the wilderness' is textually and syntactically difficult. It likely refers to the sheep moving into the region or company of another animal group within the vision rather than a simple landscape detail.
-    reason: textual_variant
-  - marker: b
-    text: Or 'in response to the sheep's voice from their great outcry.' The clause after 'came down' is compressed in the Ge'ez.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And the sheep that had been rescued from the wolves fled and passed into the wild asses of the wilderness'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'from their loud crying'.
-    reason: previous_rendering
+    text: The fleeing sheep represents Moses, who took refuge in Midian after escaping from Egypt (Exodus 2:11–15).
+    reason: cultural_note
 lexical_decisions:
 - source_word: በግዕ
   chosen: the sheep
@@ -211,12 +202,18 @@ revisions:
   from: And a sheep that had been rescued from the wolves fled and passed among the wild asses of the wilderness, and I saw the sheep as they lamented and cried out and petitioned their Lord with all their strength, until that Lord of the sheep came down at the voice of the sheep from his lofty hall, and he came to them and saw them.
   to: And a sheep that had been rescued from the wolves fled and passed into the wild asses of the wilderness, and I saw the sheep as they lamented and cried out and petitioned their Lord with all their strength, until that Lord of the sheep came down at the voice of the sheep from his lofty dwelling, and he came to them and saw them.
   rationale: Changed 'among' to 'into' for closer alignment with the motion verb, and 'from his lofty hall' to 'from his lofty dwelling' for a more natural and lexically broad rendering of the source.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And a sheep that had been rescued from the wolves fled and passed into the wild asses of the wilderness[a], and I saw the sheep as they lamented and cried out and petitioned their Lord with all their strength, until that Lord of the sheep came down at the voice of the sheep from his lofty dwelling[d][c][b], and he came to them and saw them.
+  to: And a sheep that had been rescued from the wolves fled and went among the wild asses of the wilderness[a]. I saw the sheep lamenting, crying out, and pleading with their Lord with all their strength, until the Lord of the sheep came down from his lofty dwelling in response to their cries. He came to them and saw them.
+  rationale: The history correctly distinguishes the single fleeing sheep from the flock and identifies the Lord's lofty dwelling rather than a loud cry. Those gains are preserved, while the later return to 'into the wild asses' is replaced with natural English.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:05Z'
   unchanged: false
   changes_summary: Changed 'among' to 'into' for closer alignment with the motion verb, and 'from his lofty hall' to 'from his lofty dwelling' for a more natural and lexically broad rendering of the source.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -236,3 +233,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/016.job-72742.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: refined
+  confidence: high
+  meaning: One rescued sheep flees to the wilderness, while the flock's desperate appeals bring the Lord of the sheep down from his heavenly dwelling to see them.
+  meaning_decisions:
+  - source_phrase: ኀለፈ፡ ውስተ፡ አእዱገ፡ ገዳም
+    prior_rendering: passed into the wild asses of the wilderness
+    new_rendering: went among the wild asses of the wilderness
+    rationale: The sheep moves into another animal group's company, not into the animals themselves.
+  - source_phrase: ይስእልዎ፡ ለእግዚኦሙ
+    prior_rendering: petitioned their Lord
+    new_rendering: pleading with their Lord
+    rationale: The surrounding lament and exertion give the appeal an urgency that 'pleading' conveys more directly.
+  - source_phrase: ኀበ፡ ቃሎሙ፡ ለአባግዕ
+    prior_rendering: at the voice of the sheep
+    new_rendering: in response to their cries
+    rationale: The construction connects the Lord's descent with the sheep's appeal; the new wording makes that connection clear.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history correctly distinguishes the single fleeing sheep from the flock and identifies the Lord's lofty dwelling rather than a loud cry. Those gains are preserved, while the later return to 'into the wild asses' is replaced with natural English.

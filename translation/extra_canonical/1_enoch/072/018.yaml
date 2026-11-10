@@ -16,15 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: On that day the day diminishes by two parts[a], and the day becomes ten parts[b], and the night eight parts.
-  philosophy: optimal-equivalence
+  text: On that day the day has shortened by two parts[a]; the day becomes ten parts and the night eight parts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The Astronomical Book regularly measures daylight and darkness in numbered ''parts.'' The verse describes the seasonal decrease of daylight: day has ten parts, night eight.'
-    reason: cultural_note
-  - marker: b
-    text: Or 'is shortened by two parts, and it becomes ten parts for the day and eight parts for the night.'.
-    reason: previous_rendering
+    text: The expression “by two parts” is uncertain in the Ge'ez; the resulting lengths are clearly given as ten parts for day and eight for night.
+    reason: textual_variant
 lexical_decisions:
 - source_word: በይእቲ ዕለት
   chosen: On that day
@@ -120,12 +117,18 @@ revisions:
   from: is shortened by two parts, and it becomes ten parts for the day and eight parts for the night.
   to: diminishes by two parts, and the day becomes ten parts, and the night eight parts.
   rationale: 'For consistency with verse 16, the formulaic verb ተሐፅፅ should be rendered ''diminishes'' rather than ''is shortened''. Additionally, the Ge''ez syntax is ወትከውን፡ ዕለት (''and the day becomes''), making ''day'' the explicit subject, which is obscured by the draft''s clunky ''it becomes ten parts for the day''. | Adjudicator: The reviewer is correct about the Ge''ez syntax. The phrase ወትከውን፡ ዕለት (wa-tekkawwen ''elat) explicitly makes ''day'' the subject of the verb ''becomes'' (i.e., ''and the day becomes ten parts''), whereas the'
+- timestamp: '2026-11-09T20:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day the day diminishes by two parts[a], and the day becomes ten parts[b], and the night eight parts.
+  to: On that day the day has shortened by two parts[a]; the day becomes ten parts and the night eight parts.
+  rationale: The current wording correctly makes the day the subject and preserves the stated ten-to-eight result. Unlike the older notes, the new note addresses the source's actual uncertainty in the expression for the decrease.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:17Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -145,3 +148,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/018.job-72587.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:13Z'
+  change_level: refined
+  confidence: medium
+  meaning: Daylight has shortened to ten parts, while the night is eight parts.
+  meaning_decisions:
+  - source_phrase: ተሐፅፅ፡ ዕለት፡ ተክልኤተ፡ ክፍል
+    prior_rendering: the day diminishes by two parts
+    new_rendering: the day has shortened by two parts
+    rationale: The completed wording allows the two-part decrease to describe the accumulated shortening from the twelve-part day, rather than implying a fresh subtraction of two from the preceding eleven.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The current wording correctly makes the day the subject and preserves the stated ten-to-eight result. Unlike the older notes, the new note addresses the source's actual uncertainty in the expression for the decrease.

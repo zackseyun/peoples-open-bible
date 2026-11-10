@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch67.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 67, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And as the burning of their bodies is very great[a], so a change comes upon them in spirit forever and ever[c][b], because before the Lord of Spirits there is none who speaks a vain word.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic line is difficult. The clause rendered 'so a change comes upon them forever and ever in spirit' may also be understood more literally as 'thus there is for them a change of spirit forever and ever.'
-    reason: alternative_reading
-  - marker: b
-    text: Or 'there is none before the Lord of Spirits who can utter a matter against them.' The wording has a judicial or adversarial flavor.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'who can speak a word against them'.
-    reason: previous_rendering
+  text: As the burning of their bodies is very great, so a change comes upon their spirits forever and ever, for no one speaks a vain word before the Lord of Spirits.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ውዕየ
   chosen: burning
@@ -140,12 +130,18 @@ revisions:
   from: And as the burning of their bodies is very great, so a change comes upon them forever and ever in spirit, because before the Lord of Spirits there is none who speaks a vain word.
   to: And as the burning of their bodies is very great, so a change comes upon them in spirit forever and ever, because before the Lord of Spirits there is none who speaks a vain word.
   rationale: Moved 'in spirit' to modify the change more naturally and directly, while preserving the source sense. No other substantive changes.
+- timestamp: '2026-11-09T19:59:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as the burning of their bodies is very great[a], so a change comes upon them in spirit forever and ever[c][b], because before the Lord of Spirits there is none who speaks a vain word.
+  to: As the burning of their bodies is very great, so a change comes upon their spirits forever and ever, for no one speaks a vain word before the Lord of Spirits.
+  rationale: I preserved the corrected vain word rather than the unsupported wording about speaking against them. The verse does not explain the nature of the spiritual change, so I have not made it either restorative or destructive.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:32Z'
   unchanged: false
   changes_summary: Moved 'in spirit' to modify the change more naturally and directly, while preserving the source sense. No other substantive changes.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -165,3 +161,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/067/009.job-72518.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:59:22Z'
+  change_level: refined
+  confidence: medium
+  meaning: Intense bodily burning is accompanied by an enduring change in spirit, and no empty word is spoken before the Lord of Spirits.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: I preserved the corrected vain word rather than the unsupported wording about speaking against them. The verse does not explain the nature of the spiritual change, so I have not made it either restorative or destructive.

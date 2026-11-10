@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch100.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 100, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
-  philosophy: optimal-equivalence
+  text: In those days the angels will descend into the hidden places and gather in one place all those who brought sin down[a]. The Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause rendered 'all those who helped sin descend' is difficult. It may also mean 'those through whom sin came down' or 'those who caused sin to descend.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Hidden places'' may also be rendered ''secret places,'' suggesting concealed locations where the wicked are rounded up for judgment.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'In those days the angels will descend into the hidden places, and they will gather together into one place all those who helped sin descend; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.'.
-    reason: previous_rendering
+    text: The wording about sin is unclear; another Ge'ez reading speaks of 'those who helped sin,' meaning those who promoted it.
+    reason: textual_variant
 lexical_decisions:
 - source_word: በእማንቱ መዋዕል
   chosen: In those days
@@ -171,9 +165,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.'
-  to: 'In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.'
+  from: In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
+  to: In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and they will gather together into one place''].'
+- timestamp: '2026-11-09T20:08:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In those days the angels will descend into the hidden places and gather together into one place all those who led others into sin[c][b][a]; and the Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
+  to: In those days the angels will descend into the hidden places and gather in one place all those who brought sin down[a]. The Most High will arise on that day of judgment to execute great judgment in the midst of the sinners.
+  rationale: The history distinguishes a reading about helping sin from the supplied wording about descent. Neither that alternative nor the current reference to leading others should silently replace the supplied wording, whose uncertainty remains visible in a short note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:03Z'
@@ -198,3 +199,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/100/004.job-72920.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:16Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Angels will gather those associated with bringing sin down, and the Most High will rise to carry out great judgment among sinners.
+  meaning_decisions:
+  - source_phrase: ለእሉ፡ እለ፡ ይወርደዋ፡ ለኃጢአት
+    prior_rendering: all those who led others into sin
+    new_rendering: all those who brought sin down
+    rationale: The supplied wording connects these figures with sin's descent, not explicitly with leading other people astray; the significant alternative about promoting sin is noted.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The history distinguishes a reading about helping sin from the supplied wording about descent. Neither that alternative nor the current reference to leading others should silently replace the supplied wording, whose uncertainty remains visible in a short note.

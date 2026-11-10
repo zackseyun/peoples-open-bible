@@ -11,18 +11,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch31.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 31, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.
-  philosophy: optimal-equivalence
+  text: I saw other mountains where trees grew and gave off something like nectar, called serera and galbanum[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The botanical identification of serera is uncertain; the Ge'ez appears to preserve the name of an aromatic substance rather than a common descriptive noun.
+    text: Galbanum is an aromatic resin; the exact identity of serera is uncertain.
     reason: lexical_alternative
-  - marker: b
-    text: Galbanum is an aromatic resin known from ancient incense traditions; the underlying Ge'ez term may also be left transliterated as kelbene.
-    reason: cultural_note
-  - marker: c
-    text: Or 'another mountain, in which'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -143,9 +137,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.'
-  to: 'And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.'
+  from: And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.
+  to: And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and from it there came out''].'
+- timestamp: '2026-11-09T19:49:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw other mountains[a], in which there were trees, and from them there came out something like nectar[c][b], whose name was serera and galbanum.
+  to: I saw other mountains where trees grew and gave off something like nectar, called serera and galbanum[a].
+  rationale: The correction to plural mountains is supported by the Ge'ez and remains. The concrete nectar comparison and established names are preserved, while the notes are reduced to the botanical information a reader needs.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:11Z'
@@ -170,3 +171,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/031/001.job-72321.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:49:10Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees more mountains whose trees yield nectar-like substances called serera and galbanum.
+  meaning_decisions:
+  - source_phrase: ዘቦ፡ ውስቴቶሙ፡ ዕፀወ፡ ወይወፅእ፡ እምኔሁ፡
+    prior_rendering: in which there were trees, and from them there came out
+    new_rendering: where trees grew and gave off
+    rationale: The botanical context identifies the trees as the source of the substance; the new wording makes that relationship clear without turning the concrete substance into an abstract scent.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The correction to plural mountains is supported by the Ge'ez and remains. The concrete nectar comparison and established names are preserved, while the notes are reduced to the botanical information a reader needs.

@@ -22,24 +22,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.
-  philosophy: optimal-equivalence
+  text: Again I looked, and behold, springs were opened on the earth within that great enclosure. As the water welled up and rose over the earth, the enclosure remained visible[a] until all its land was covered with water.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'fountains' or 'sources' were opened.
-    reason: lexical_alternative
-  - marker: b
-    text: The clause 'that enclosure appeared' is textually and syntactically difficult; it may mean that the enclosed land came into view as the waters rose, or more broadly that the scene of the enclosure was revealed.
+    text: The clause about the enclosure is unclear; it may instead mean that the enclosure came into view.
     reason: alternative_reading
-  - marker: c
-    text: '''All its ground'' may also be understood as ''all the earth,'' depending on how the pronominal ending is taken.'
-    reason: alternative_reading
-  - marker: d
-    text: Or 'saw that springs'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'and that water began to well up and rise over the earth; and that enclosure appeared'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: አንቅዕታት
   chosen: springs
@@ -173,9 +161,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.'
-  to: 'And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.'
+  from: And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.
+  to: And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all its ground''].'
+- timestamp: '2026-11-09T20:10:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And again I saw[a], and behold, springs were opened upon the earth in that great enclosure, and that water was bubbling up and rising over the earth, and that enclosure appeared[e][d][c][b], until all its land was covered with water.
+  to: Again I looked, and behold, springs were opened on the earth within that great enclosure. As the water welled up and rose over the earth, the enclosure remained visible[a] until all its land was covered with water.
+  rationale: An earlier review correctly recognized the temporal construction, but the current wording lost that connection. I restore it, retain the enclosure’s own land as the referent, and acknowledge the difficult visibility clause.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -200,3 +195,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/003.job-72729.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:29Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Springs open within the great enclosure, and the rising water gradually hides all its land.
+  meaning_decisions:
+  - source_phrase: ወአንዘ፡ ... ይፈልሕ፡ ወይትነሣእ፡ ... ወተአርአየ፡ ለውእቱ፡ ዐጸድ፡ እስከ
+    prior_rendering: that water was bubbling up and rising over the earth, and that enclosure appeared, until
+    new_rendering: As the water welled up and rose over the earth, the enclosure remained visible until
+    rationale: 'Restores the temporal relationship: the enclosure can still be seen while the water rises, until the inundation hides its whole land.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: An earlier review correctly recognized the temporal construction, but the current wording lost that connection. I restore it, retain the enclosure’s own land as the referent, and acknowledge the difficult visibility clause.

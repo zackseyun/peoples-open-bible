@@ -13,18 +13,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch74.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 74, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For two months it sets with the sun in these two middle portals[c][b][a], in the third and in the fourth portal.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic line is textually difficult, and the noun rendered 'windows' may also be understood more broadly as 'openings' or 'gates.'
-    reason: lexical_alternative
-  - marker: b
-    text: The temporal notation likely means 'on the fourth day' of the second month; the source form is compact and may reflect a calendrical shorthand.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'In the second month, on the fourth day, with the sun, through these two middle windows, in the third and in the fourth window.'.
-    reason: previous_rendering
+  text: For two months it sets with the sun through these two middle gates, the third and fourth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: በክልኤ ወርኅ
   chosen: In the second month
@@ -128,12 +118,18 @@ revisions:
   from: In the second month, on the fourth day, with the sun, through these two middle windows, in the third and in the fourth window.
   to: For two months it sets with the sun in these two middle portals, in the third and in the fourth portal.
   rationale: '`በክልኤ፡ ወርኅ` uses the cardinal number `ክልኤ` ("two"), meaning "for two months," not the ordinal "second" (`ካልእ`). `የዓርብ` is the imperfect 3ms verb from `ዐረበ` ("to set"), meaning "it sets," not "on the fourth day." Finally, `ኆኅት` (pl. `ኆዋኅው`) means "door," "gate," or "portal," not "window" (which would be `መስኮት`). | Adjudicator: The reviewer''s grammatical and lexical analysis is entirely correct. The Ge''ez `ክልኤ` is the cardinal ''two'', not the ordinal ''second'' (`ካልእ`). The word `የዓርብ` is indeed the imperfect 3ms verb from `ዐረበ'
+- timestamp: '2026-11-09T20:03:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For two months it sets with the sun in these two middle portals[c][b][a], in the third and in the fourth portal.
+  to: For two months it sets with the sun through these two middle gates, the third and fourth.
+  rationale: The current wording preserves the sound corrections to two months, sets, and portals. Gate is used consistently with the following verses, and the obsolete notes about a fourth day and windows have been dropped.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:25Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -153,3 +149,17 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/074/005.job-72614.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:03:34Z'
+  change_level: refined
+  confidence: high
+  meaning: For two months the moon sets with the sun through the two central gates, numbered third and fourth.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the sound corrections to two months, sets, and portals. Gate is used consistently with the following verses, and the obsolete notes about a fourth day and windows have been dropped.

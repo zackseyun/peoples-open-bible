@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the Lord brought the twelve sheep so that they might dwell with it and graze with it among the wolves[c][b][a]; and they multiplied and became many flocks of sheep.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ethiopic text is difficult in the middle of the verse; the clause rendered 'pasture with him among the wolves' reflects the animal imagery of the passage and may also be understood more literally as 'graze with him in the midst of the wolves.'
-    reason: textual_variant
-  - marker: b
-    text: The final phrase is uncertain in the OCR witness. It appears to describe the twelve sheep increasing into numerous groups or flocks of sheep.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'dwell with him and pasture with him'.
-    reason: previous_rendering
+  text: And the Lord brought the twelve sheep to dwell and graze with that sheep among the wolves. They multiplied and became many flocks of sheep.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እግዚአ
   chosen: the Lord
@@ -156,12 +146,18 @@ revisions:
   from: And the Lord brought the twelve sheep so that they might dwell with it and pasture with it among the wolves; and they multiplied and became many flocks of sheep.
   to: And the Lord brought the twelve sheep so that they might dwell with it and graze with it among the wolves; and they multiplied and became many flocks of sheep.
   rationale: Changed 'pasture with it' to 'graze with it' for more natural English while preserving the sense of feeding alongside it.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the Lord brought the twelve sheep so that they might dwell with it and graze with it among the wolves[c][b][a]; and they multiplied and became many flocks of sheep.
+  to: And the Lord brought the twelve sheep to dwell and graze with that sheep among the wolves. They multiplied and became many flocks of sheep.
+  rationale: The history rightly identifies the individual sheep as the companion and improves 'pasture' to 'graze.' The older notes about the final wording do not establish a meaningful alternative to the coherent description of multiplying flocks.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:02Z'
   unchanged: false
   changes_summary: Changed 'pasture with it' to 'graze with it' for more natural English while preserving the sense of feeding alongside it.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -181,3 +177,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/014.job-72740.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: refined
+  confidence: high
+  meaning: The Lord brings Jacob's sons to join Joseph among the Egyptians, where they multiply into many flocks.
+  meaning_decisions:
+  - source_phrase: ምስሌሁ
+    prior_rendering: with it
+    new_rendering: with that sheep
+    rationale: Naming the antecedent makes clear that the twelve sheep join the individual sheep of verse 13, not the Lord.
+  footnote_kinds: {}
+  history_weighed: The history rightly identifies the individual sheep as the companion and improves 'pasture' to 'graze.' The older notes about the final wording do not establish a meaningful alternative to the coherent description of multiplying flocks.

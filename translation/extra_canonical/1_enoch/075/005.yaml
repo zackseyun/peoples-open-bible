@@ -12,18 +12,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch75.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 75, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: and for the winds[a], and for the spirit of dew[c][b], when the openings are opened in heaven at the ends.
-  philosophy: optimal-equivalence
+  text: The openings at the ends of heaven are also opened for the winds and for the spirit of dew[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase rendered 'spirit of dew' is lexically difficult and could also be understood more physically, such as 'breath of dew' or a dew-bearing wind.
-    reason: lexical_alternative
-  - marker: b
-    text: The bracketed clause in the source witness appears textually uncertain; 'openings' may also be rendered 'windows' or 'vents' of heaven.
+    text: The wording about the winds and dew is damaged, and its connection with the preceding verse is uncertain. “Spirit of dew” may also mean a dew-bearing wind.
     reason: textual_variant
-  - marker: c
-    text: Or 'when their openings are opened in the heavens'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ነፋሳት
   chosen: winds
@@ -150,12 +144,18 @@ revisions:
   from: and for the winds, and for the spirit of dew, when openings are opened in heaven at the ends.
   to: and for the winds, and for the spirit of dew, when the openings are opened in heaven at the ends.
   rationale: Added the article in 'the openings' for more natural formal English while preserving the source sense; otherwise retained the draft.
+- timestamp: '2026-11-09T20:05:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and for the winds[a], and for the spirit of dew[c][b], when the openings are opened in heaven at the ends.
+  to: The openings at the ends of heaven are also opened for the winds and for the spirit of dew[a].
+  rationale: The earlier removal of the unsupported possessive remains sound, and spirit of dew preserves the passage’s cosmic imagery. The marked damage requires a note about the uncertain connection, but the supplied clause can be translated without discussing its editorial status.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:30Z'
   unchanged: false
   changes_summary: Added the article in 'the openings' for more natural formal English while preserving the source sense; otherwise retained the draft.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -175,3 +175,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/075/005.job-72628.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:05:01Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The heavenly openings also have a role in releasing the winds and the spirit of dew, though the damaged wording leaves their connection with the preceding description uncertain.
+  meaning_decisions:
+  - source_phrase: ወለነፋሳት፡ ወለመንፈሰ፡ ጠል፡ ሶበ፡ ይትረኃዉ፡ ርኅወተ፡ በሰማይ፡ ዲበ፡ አጽናፈ
+    prior_rendering: and for the winds, and for the spirit of dew, when the openings are opened in heaven at the ends
+    new_rendering: The openings at the ends of heaven are also opened for the winds and for the spirit of dew
+    rationale: The preceding description supplies openings as the understood subject; making that subject explicit gives the fragment a readable sentence without adding a new heavenly mechanism.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier removal of the unsupported possessive remains sound, and spirit of dew preserves the passage’s cosmic imagery. The marked damage requires a note about the uncertain connection, but the supplied clause can be translated without discussing its editorial status.

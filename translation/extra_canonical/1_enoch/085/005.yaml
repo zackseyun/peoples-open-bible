@@ -3,23 +3,22 @@ reference: 1 Enoch 85:5
 book: 1 Enoch
 source:
   edition: charles-1906-enoch
-  text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ላህቀ፡ ወ*መጽአት፡
+  text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ልህቀ፡ ወ*መጽአት፡ ምስሌሁ፡ ዝኩ፡ ጣዕዋ፡ አንስታይት፡ ወርኢኩ፡ እምኔሁ፡ ዘይወጽኡ፡ *አልህምት፡ ብዙኃን፡ እንዘ፡ ይመስልዎ፡ ወይትልዉ፡ ድኅሬሁ።
   language: Geez
   pages:
   - 201
+  - 202
   confidence: medium
-  validation: verse_parser_ok
-  note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 85, but verse-aligned extraction is not yet implemented in this prompt builder.
+  validation: page_order_transcription_restored
+  note: The earlier text stopped at a page break. Restored 2026-11-09, collated against the printed page in the 2026 source review. Not independently reviewed.
+  previous_text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ላህቀ፡ ወ*መጽአት፡
 translation:
-  text: And that black heifer grew up[b][a], and she came
-  philosophy: optimal-equivalence
+  text: And that black calf grew up, and that heifer[a] accompanied him. I saw many bulls come from him, resembling him and following behind him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic wording is terse. The animal term is rendered 'wild boar' to preserve the specific zoomorphic imagery of the vision; 'boar' is a possible simpler alternative.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And I saw that black wild boar, and it came.'.
-    reason: previous_rendering
+    text: It is unclear whether this is the first heifer or another one.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ወዝኩ
   chosen: And I saw
@@ -81,10 +80,10 @@ enoch_witnesses:
   available_witnesses:
   - language: geez
     witness: charles_1906
-    text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ላህቀ፡ ወ*መጽአት፡
+    text: ወዝኩ፡ *ጸሊም፡ ጣዕዋ፡ ልህቀ፡ ወ*መጽአት፡ ምስሌሁ፡ ዝኩ፡ ጣዕዋ፡ አንስታይት፡ ወርኢኩ፡ እምኔሁ፡ ዘይወጽኡ፡ *አልህምት፡ ብዙኃን፡ እንዘ፡ ይመስልዎ፡ ወይትልዉ፡ ድኅሬሁ።
     source_edition: Charles 1906 Ethiopic Enoch
     confidence: medium
-    note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch85.txt via tools/enoch/verse_parser.py
+    note: The earlier text stopped at a page break. Restored 2026-11-09, collated against the printed page in the 2026 source review. Not independently reviewed.
   attestation_expectations:
     greek:
       attested: false
@@ -121,12 +120,18 @@ revisions:
   from: And that black calf grew up, and she came
   to: And that black heifer grew up, and she came
   rationale: Changed 'calf' to 'heifer' for consistency with the feminine verb/pronoun ('she came') and more precise lexical/register alignment.
+- timestamp: '2026-11-09T20:09:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And that black heifer grew up[b][a], and she came
+  to: And that black calf grew up, and that heifer[a] accompanied him. I saw many bulls come from him, resembling him and following behind him.
+  rationale: The restored sentence shows that the feminine verb refers to the accompanying heifer, not to the black calf. The earlier boar readings have no basis in this verse, and the page break does not mark the end of its content.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:53Z'
   unchanged: false
   changes_summary: Changed 'calf' to 'heifer' for consistency with the feminine verb/pronoun ('she came') and more precise lexical/register alignment.
-
 cross_check:
   status: needs_review
   agreement: 0.1
@@ -146,3 +151,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/085/005.job-72714.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:09:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Accompanied by a heifer, the grown black calf becomes the ancestor of many bulls who resemble and follow him.
+  meaning_decisions:
+  - source_phrase: ወዝኩ፡ ጸሊም፡ ጣዕዋ፡ ልህቀ
+    prior_rendering: And that black heifer grew up
+    new_rendering: And that black calf grew up
+    rationale: The black animal remains the male calf of the preceding verses; the feminine verb that follows belongs to a different grammatical subject.
+  - source_phrase: ወመጽአት፡ ምስሌሁ፡ ዝኩ፡ ጣዕዋ፡ አንስታይት
+    prior_rendering: and she came
+    new_rendering: and that heifer accompanied him
+    rationale: The restored continuation identifies the feminine subject as the heifer and describes her coming with the black calf, without specifying their relationship.
+  - source_phrase: ወርኢኩ፡ እምኔሁ፡ ዘይወጽኡ፡ አልህምት፡ ብዙኃን፡ እንዘ፡ ይመስልዎ፡ ወይትልዉ፡ ድኅሬሁ
+    prior_rendering: ''
+    new_rendering: I saw many bulls come from him, resembling him and following behind him.
+    rationale: The restored text completes the scene with the black calf’s descendants, their likeness to him, and their following him.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The restored sentence shows that the feminine verb refers to the accompanying heifer, not to the black calf. The earlier boar readings have no basis in this verse, and the page break does not mark the end of its content.

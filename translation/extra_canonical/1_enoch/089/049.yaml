@@ -22,24 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able again to be in the midst of the sheep[e][d][c][b], and they did not seize anything from them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The animal term rendered 'foxes' may denote a fox-like scavenger; 'jackals' is a possible alternative.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'wild boars of the field' could also be understood more broadly as wild swine of the wilderness.
-    reason: lexical_alternative
-  - marker: c
-    text: The final clause stresses that the hostile beasts no longer carried off anything from the sheep.
-    reason: cultural_note
-  - marker: d
-    text: Or 'multiplied and became many'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'struck'.
-    reason: previous_rendering
+  text: And those sheep grew and multiplied, and all those dogs and foxes and wild boars of the field were afraid and fled from the ram. And that ram gored and killed all the beasts. Those beasts could no longer be among the sheep and seized nothing at all from them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ልህቁ / በዝኁ
   chosen: multiplied and became many
@@ -199,9 +183,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able to be again in the midst of the sheep[e][d][c][b], and they did not seize anything from them.'
-  to: 'And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able again to be in the midst of the sheep[e][d][c][b], and they did not seize anything from them.'
-  rationale: 'Restored Gemini-established word order ''were no longer able again to be''.'
+  from: And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able to be again in the midst of the sheep[e][d][c][b], and they did not seize anything from them.
+  to: And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able again to be in the midst of the sheep[e][d][c][b], and they did not seize anything from them.
+  rationale: Restored Gemini-established word order 'were no longer able again to be'.
+- timestamp: '2026-11-09T20:11:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those sheep grew and multiplied[a], and all those dogs and foxes and wild boars of the field feared and fled from them. And that ram gored and killed all the beasts, and those beasts were no longer able again to be in the midst of the sheep[e][d][c][b], and they did not seize anything from them.
+  to: And those sheep grew and multiplied, and all those dogs and foxes and wild boars of the field were afraid and fled from the ram. And that ram gored and killed all the beasts. Those beasts could no longer be among the sheep and seized nothing at all from them.
+  rationale: The revisions rightly distinguished growing from multiplying and identified the ram's attack as goring. Those gains are retained; the singular referent of the predators' flight is corrected, and the closing account of their lost power is made natural in English.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T08:53:57Z'
@@ -226,3 +217,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/049.job-72775.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sheep grow and multiply under a ram whose attacks drive off the predators and end their plundering of the sheep.
+  meaning_decisions:
+  - source_phrase: ፈርሁ፡ ወነፍጹ፡ እምኔሁ
+    prior_rendering: feared and fled from them
+    new_rendering: were afraid and fled from the ram
+    rationale: The singular pronoun refers to the leading ram, whereas the final clause uses a plural pronoun for the sheep.
+  footnote_kinds: {}
+  history_weighed: The revisions rightly distinguished growing from multiplying and identified the ram's attack as goring. Those gains are retained; the singular referent of the predators' flight is corrected, and the closing account of their lost power is made natural in English.

@@ -11,18 +11,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch88.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 88, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw one of those four who had come out first, and he seized that first star[a] which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss[c][b]. And that abyss was narrow and deep and dreadful and dark.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The 'star' is presented with hands and feet, indicating that the visionary symbol represents a personal heavenly being under judgment.
-    reason: cultural_note
-  - marker: b
-    text: Or 'the deep.' The Ge'ez term denotes a profound depth; 'abyss' is chosen to preserve the apocalyptic sense of a place of confinement.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'who had come out before them'.
-    reason: previous_rendering
+  text: And I saw one of those four who had come out first, and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss. And that abyss was narrow and deep and dreadful and dark.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወርኢኩ
   chosen: And I saw
@@ -163,8 +153,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I saw one of those four who had come out first[a], and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss[c][b]. And that abyss was narrow and deep and terrible and dark.'
-  to: 'And I saw one of those four who had come out first, and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss. And that abyss was narrow and deep and dreadful and dark.'
+  from: And I saw one of those four who had come out first[a], and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss[c][b]. And that abyss was narrow and deep and terrible and dark.
+  to: And I saw one of those four who had come out first, and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss. And that abyss was narrow and deep and dreadful and dark.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''narrow and deep and dreadful and dark''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -174,6 +164,13 @@ revisions:
   from: And I saw one of those four who had come out first, and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss. And that abyss was narrow and deep and dreadful and dark.
   to: And I saw one of those four who had come out first, and he seized that first star[a] which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss[c][b]. And that abyss was narrow and deep and dreadful and dark.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('star') because the note quotes that phrase from the rendering; [b] restored to the position it held before an earlier revision pass dropped it; [c] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:08:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw one of those four who had come out first, and he seized that first star[a] which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss[c][b]. And that abyss was narrow and deep and dreadful and dark.
+  to: And I saw one of those four who had come out first, and he seized that first star which had fallen from heaven, and bound its hands and its feet, and threw it into the abyss. And that abyss was narrow and deep and dreadful and dark.
+  rationale: The current wording faithfully preserves the arrest, binding, and confinement of the star, including the cumulative description of the abyss. I kept the earlier decision to use “first” rather than “before them” and removed notes that explained the imagery or offered alternatives without a meaningful difference.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:52Z'
@@ -198,3 +195,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/088/001.job-72725.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:07Z'
+  change_level: refined
+  confidence: high
+  meaning: One of the four heavenly beings imprisons the first fallen star in a narrow, deep, terrifying, dark abyss.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording faithfully preserves the arrest, binding, and confinement of the star, including the cumulative description of the abyss. I kept the earlier decision to use “first” rather than “before them” and removed notes that explained the imagery or offered alternatives without a meaningful difference.

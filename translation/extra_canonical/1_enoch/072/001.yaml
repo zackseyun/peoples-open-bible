@@ -16,33 +16,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: The book of the courses of the luminaries of heaven[a], how they are, each according to their companies, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.
-  philosophy: optimal-equivalence
+  text: 'This is the book of the courses of the luminaries of heaven: their arrangement in companies, their dominion and seasons, their names and origins, and their months. Uriel, the holy angel who was with me and is their guide, showed me these things. This is their complete account as he showed it to me, including their order in every year of the world, for all time, until a new work[a] is accomplished that will endure forever.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'The phrase translated “in their companies” is literally “in their peoples/assemblies,” here applied metaphorically to groupings of celestial bodies (cf. alternatives: hosts, classes).'
-    reason: lexical_alternative
-  - marker: b
-    text: “Origins” renders a word that literally means “births/origins”; in astronomical context it can suggest points of origin or “risings.”
-    reason: lexical_alternative
-  - marker: c
-    text: “[Ordered]” is supplied for English clarity; the Geʿez reads “as the whole year of the world …,” picking up the sense from “he showed me.”
-    reason: cultural_note
-  - marker: d
-    text: “A new work” can also be understood as “a new creation,” i.e., a decisive divine act that endures forever.
-    reason: lexical_alternative
-  - marker: e
-    text: “The year of the world” refers to the complete annual cycle (the cosmic year) as envisioned in Enoch’s astronomical section.
-    reason: cultural_note
-  - marker: f
-    text: Or 'and their names and their origins, and their paths'.
-    reason: previous_rendering
-  - marker: g
-    text: Or 'how they move'.
-    reason: previous_rendering
-  - marker: h
-    text: Or 'all their writings'.
-    reason: previous_rendering
+    text: “A new work” may mean a new creation.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: መጽሐፈ
   chosen: book
@@ -287,9 +266,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The book of the courses of the luminaries of heaven[a], how they are, each according to their classes, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.'
-  to: 'The book of the courses of the luminaries of heaven[a], how they are, each according to their companies, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.'
-  rationale: 'Drafter chose ''companies'' for ሕዝብ to preserve the collective/assembly metaphor (a social-collective term applied to celestial groupings); azure substituted ''classes'' (a taxonomic term with no basis in the Geʿez lexeme''s semantic range) with no lexical engagement.'
+  from: The book of the courses of the luminaries of heaven[a], how they are, each according to their classes, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.
+  to: The book of the courses of the luminaries of heaven[a], how they are, each according to their companies, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.
+  rationale: Drafter chose 'companies' for ሕዝብ to preserve the collective/assembly metaphor (a social-collective term applied to celestial groupings); azure substituted 'classes' (a taxonomic term with no basis in the Geʿez lexeme's semantic range) with no lexical engagement.
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The book of the courses of the luminaries of heaven[a], how they are, each according to their companies, and according to their dominion and their seasons, according to their names and their origins, and according to their paths, which Uriel, the holy angel who was with me, showed me—he who is their guide—and the whole record of them, as he showed me, and how it is with regard to every year of the world and forever[h][g][f][e][d][c][b], until a new work is accomplished which will endure forever.
+  to: 'This is the book of the courses of the luminaries of heaven: their arrangement in companies, their dominion and seasons, their names and origins, and their months. Uriel, the holy angel who was with me and is their guide, showed me these things. This is their complete account as he showed it to me, including their order in every year of the world, for all time, until a new work[a] is accomplished that will endure forever.'
+  rationale: I retain companies, guide, and the complete account, while accepting the earlier correction of paths to months. The catalogue and annual-order clause are clarified, and only the meaningful alternative for new work remains in a footnote.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T18:39:35Z'
@@ -314,3 +300,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/001.job-72570.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: This book records Uriel’s revelation of the heavenly lights, their ordered arrangements and annual cycles, which continue until an enduring new work is accomplished.
+  meaning_decisions:
+  - source_phrase: በከመ፡ ሀለዉ፡ በበሕዝቢሆሙ
+    prior_rendering: how they are, each according to their companies
+    new_rendering: their arrangement in companies
+    rationale: The passage introduces the lights’ ordered arrangement, not merely their existence or their movement; the collective image of companies remains.
+  - source_phrase: ወበበ፡ አውራኂሆሙ
+    prior_rendering: and according to their paths
+    new_rendering: and their months
+    rationale: The noun denotes months, as an earlier revision correctly recognized; the later return to paths lacks lexical support.
+  - source_phrase: ወበከመ፡ ኵሉ፡ ዓመተ፡ ዓለም፡ ወእስከ፡ ለዓለም
+    prior_rendering: and how it is with regard to every year of the world and forever
+    new_rendering: including their order in every year of the world, for all time
+    rationale: The subject understood from the surrounding account is the luminaries’ continuing annual order; making that subject explicit conveys the meaning of the compressed construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain companies, guide, and the complete account, while accepting the earlier correction of paths to months. The catalogue and annual-order clause are clarified, and only the meaningful alternative for new work remains in a footnote.

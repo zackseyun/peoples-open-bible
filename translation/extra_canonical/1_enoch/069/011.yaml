@@ -15,21 +15,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch69.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 69, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: For human beings were not created except to be like the angels[a], so that they might remain pure and righteous; and death, which destroys everything, would not have touched them. But through this knowledge they are being destroyed[d][c][b], and through this power it is consuming me.
-  philosophy: optimal-equivalence
+  text: For human beings were created only to be like the angels, so that they might remain pure and righteous; death, which destroys everything, would not have touched them. But through this knowledge of theirs they are being destroyed, and through this power it is consuming me[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The clause 'through this knowledge they are being destroyed' is difficult. The Ge'ez may also be understood as 'through this understanding they perish.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final line is vivid and personal: literally, the power ''consumes'' or ''devours'' me.'
-    reason: lexical_alternative
-  - marker: c
-    text: This section of the Parables lacks effective Greek or Qumran control in this workflow, so uncertain phrases are translated with deliberate restraint.
+    text: The last words are uncertain in the Ge'ez; it is unclear who is speaking or what is consuming him.
     reason: textual_variant
-  - marker: d
-    text: Or 'For no human being was created except to be like the angels, so that they'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ኢተፈጥረ
   chosen: was created
@@ -180,12 +171,18 @@ revisions:
   from: For no human being was created except to be like the angels, so that they
   to: For human beings were not created except to be like the angels, so that they
   rationale: The Ge'ez ሰብእ (sab'e) is a collective noun. Translating it as the singular distributive 'no human being' creates an awkward number clash with the subsequent plural pronouns ('they might remain', 'touched them'). Rendering it as 'human beings' or 'humanity' resolves the English grammar while accurately reflecting the collective source.
+- timestamp: '2026-11-09T20:01:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For human beings were not created except to be like the angels[a], so that they might remain pure and righteous; and death, which destroys everything, would not have touched them. But through this knowledge they are being destroyed[d][c][b], and through this power it is consuming me.
+  to: For human beings were created only to be like the angels, so that they might remain pure and righteous; death, which destroys everything, would not have touched them. But through this knowledge of theirs they are being destroyed, and through this power it is consuming me[a].
+  rationale: The earlier correction to plural 'human beings' resolved a real English agreement problem, and the distinction between angelic likeness and identity remains important. The uncertain final verb still says 'me'; I do not change it to 'them' or identify its unstated subject.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:04Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -205,3 +202,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/069/011.job-72538.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:01:11Z'
+  change_level: refined
+  confidence: low
+  meaning: Human beings were intended to remain pure and righteous like the angels and untouched by death, but their knowledge brings destruction, and the speaker says it is consuming him.
+  meaning_decisions:
+  - source_phrase: ኢተፈጥረ፡ ሰብእ፡ ዘእንበለ፡ ከመ፡ መላእክት
+    prior_rendering: human beings were not created except to be like the angels
+    new_rendering: human beings were created only to be like the angels
+    rationale: The positive restrictive construction conveys the same claim more naturally, while preserving likeness rather than identity with angels.
+  - source_phrase: በዝ፡ አእምሮቶሙ
+    prior_rendering: through this knowledge
+    new_rendering: through this knowledge of theirs
+    rationale: The source explicitly attributes the knowledge to them; the possessive belongs in the English.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier correction to plural 'human beings' resolved a real English agreement problem, and the distinction between angelic likeness and identity remains important. The uncertain final verb still says 'me'; I do not change it to 'them' or identify its unstated subject.

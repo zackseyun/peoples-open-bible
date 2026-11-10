@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And from it I saw the wolves[a], and they became exceedingly strong against the sheep with all their power[c][b], and the sheep cried out.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from him' or 'from there'; the pronominal suffix in 'from it' is ambiguous in isolation, and the immediate antecedent depends on the wider vision context.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The paired verbs likely express both strengthening and increase/intensification: the hostile creatures became strong and grew in force or number.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the wild beasts and the birds grow strong and increase'.
-    reason: previous_rendering
+  text: Then I saw how fiercely the wolves oppressed the sheep with all their power, and the sheep cried out.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: እምኔሁ
   chosen: from it
@@ -172,12 +162,18 @@ revisions:
   from: And from it I saw the wolves, and how they grew exceedingly strong against the sheep with all their power, and the sheep cried out.
   to: And from it I saw the wolves, and they became exceedingly strong against the sheep with all their power, and the sheep cried out.
   rationale: Replaced 'and how they grew' with 'and they became' for more direct, formal rendering of the verbal clause while preserving the meaning. No other changes needed.
+- timestamp: '2026-11-09T20:10:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And from it I saw the wolves[a], and they became exceedingly strong against the sheep with all their power[c][b], and the sheep cried out.
+  to: Then I saw how fiercely the wolves oppressed the sheep with all their power, and the sheep cried out.
+  rationale: The history securely corrects the animal name, the word 'how,' and the intensifier. Their combined meaning in this hostile setting is fierce oppression; the older notes about birds or increasing numbers reflect discarded errors.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:38:03Z'
   unchanged: false
   changes_summary: Replaced 'and how they grew' with 'and they became' for more direct, formal rendering of the verbal clause while preserving the meaning. No other changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -197,3 +193,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/019.job-72745.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The wolves continue with fierce oppression, and the sheep cry out.
+  meaning_decisions:
+  - source_phrase: እምኔሁ
+    prior_rendering: from it
+    new_rendering: Then
+    rationale: In the narrative sequence the expression moves to what follows the warning; an isolated English pronoun obscures that connection.
+  - source_phrase: ወአፎ፡ ጸንዑ፡ ፈድፋደ፡ ዲበ፡ አባግዕ
+    prior_rendering: and they became exceedingly strong against the sheep
+    new_rendering: how fiercely the wolves oppressed the sheep
+    rationale: The wolves' strength is exercised against the sheep as oppressive force, not described as an independent increase in physical strength.
+  footnote_kinds: {}
+  history_weighed: The history securely corrects the animal name, the word 'how,' and the intensifier. Their combined meaning in this hostile setting is fierce oppression; the older notes about birds or increasing numbers reflect discarded errors.

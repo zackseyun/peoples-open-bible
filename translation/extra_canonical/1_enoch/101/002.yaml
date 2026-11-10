@@ -12,18 +12,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch101.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 101, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The imagery of 'the windows of heaven' reflects ancient cosmological language for the source of rain; the translation preserves the image rather than reducing it to a modern meteorological expression.
-    reason: cultural_note
-  - marker: b
-    text: The final clause is a rhetorical question. It may also be rendered more literally, 'what is it that you will do?'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And if he shuts'.
-    reason: previous_rendering
+  text: If he shuts the windows of heaven and, because of you, withholds the rain and dew so that they do not fall on the earth, what will you do?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ዐፀወ
   chosen: shuts
@@ -144,9 +134,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?'
-  to: 'If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?'
+  from: If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?
+  to: If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''what will you do then?''].'
+- timestamp: '2026-11-09T20:07:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If he shuts the windows of heaven[a], and withholds the rain and the dew so that it does not come down upon the earth because of you[c][b], what will you do?
+  to: If he shuts the windows of heaven and, because of you, withholds the rain and dew so that they do not fall on the earth, what will you do?
+  rationale: The current wording correctly preserves both the heavenly windows and the drought's connection to the hearers. Moving 'because of you' makes that connection clearer; the earlier notes concerned wording rather than uncertainty about the meaning.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:02:11Z'
@@ -171,3 +168,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/101/002.job-72928.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:07:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The hearers are challenged to consider their helplessness if God withholds rain and dew because of them.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording correctly preserves both the heavenly windows and the drought's connection to the hearers. Moving 'because of you' makes that connection clearer; the earlier notes concerned wording rather than uncertainty about the meaning.

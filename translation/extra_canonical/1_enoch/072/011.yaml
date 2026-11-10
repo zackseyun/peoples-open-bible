@@ -16,18 +16,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch72.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 72, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And the sun comes out from that fourth gate[a], and sets in the fourth gate, and returns to the fifth gate of the east for thirty mornings[c][b]; then it comes out from it and sets in the fifth gate.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Ge'ez counts the period as 'thirty mornings,' a characteristic expression in this section; some English renderings smooth this to 'thirty days.'
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause repeats the fifth gate. The sequence is terse in Ge'ez and may summarize the sun's continued course after the thirty mornings rather than narrate a separate additional movement in detail.
-    reason: textual_variant
-  - marker: c
-    text: Or 'enters the fifth gate for thirty mornings'.
-    reason: previous_rendering
+  text: The sun comes out through that fourth gate and sets through the fourth gate in the west. It then returns to the fifth gate in the east; for thirty mornings it comes out through that gate and sets through the fifth gate in the west.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ወይወፅእ
   chosen: and ... goes out
@@ -155,12 +145,18 @@ revisions:
   from: And the sun goes out from that fourth gate, and sets in the fourth, and returns to the fifth gate of the east for thirty mornings; then it comes out from it and sets in the fifth gate.
   to: And the sun comes out from that fourth gate, and sets in the fourth gate, and returns to the fifth gate of the east for thirty mornings; then it comes out from it and sets in the fifth gate.
   rationale: Added 'gate' after the second 'fourth' for completeness and clarity; changed 'goes out' to 'comes out' for more natural and consistent rendering with the later clause.
+- timestamp: '2026-11-09T20:02:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sun comes out from that fourth gate[a], and sets in the fourth gate, and returns to the fifth gate of the east for thirty mornings[c][b]; then it comes out from it and sets in the fifth gate.
+  to: The sun comes out through that fourth gate and sets through the fourth gate in the west. It then returns to the fifth gate in the east; for thirty mornings it comes out through that gate and sets through the fifth gate in the west.
+  rationale: I retain the earlier restoration of returns and the eastern location of the fifth gate. The former note recognized that the final clause summarizes the thirty-morning course; that relationship is now clear in the main text.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:37:16Z'
   unchanged: false
   changes_summary: Added 'gate' after the second 'fourth' for completeness and clarity; changed 'goes out' to 'comes out' for more natural and consistent rendering with the later clause.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -180,3 +176,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/072/011.job-72580.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:02:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sun moves from the fourth pair of gates to the fifth pair, through which it rises and sets for thirty mornings.
+  meaning_decisions:
+  - source_phrase: ወይገብእ፡ ውስተ፡ ኃምስ፡ ኆኅት፡ እንተ፡ ጽባሕ፡ ሠላሳ፡ ጽባሐ፡ ወይወፅእ፡ እምኔሃ፡ ወየዓርብ
+    prior_rendering: returns to the fifth gate of the east for thirty mornings; then it comes out from it and sets
+    new_rendering: returns to the fifth gate in the east; for thirty mornings it comes out through that gate and sets
+    rationale: The thirty mornings describe the repeated rising and setting through the fifth gates, not a waiting period followed by a separate emergence.
+  - source_phrase: ወየዓርብ፡ በራብዕት … ወየዓርብ፡ ውስተ፡ ኃምስት፡ ኆኅት
+    prior_rendering: sets in the fourth gate … sets in the fifth gate
+    new_rendering: sets through the fourth gate in the west … sets through the fifth gate in the west
+    rationale: The western locations are understood from the paired-gate scheme; stating them prevents readers from imagining sunset through the eastern rising gate.
+  footnote_kinds: {}
+  history_weighed: I retain the earlier restoration of returns and the eastern location of the fifth gate. The former note recognized that the final clause summarizes the thirty-morning course; that relationship is now clear in the main text.

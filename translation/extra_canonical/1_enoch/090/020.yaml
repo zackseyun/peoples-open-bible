@@ -18,15 +18,15 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch90.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 90, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until a throne was set up in the pleasant land[a], and the Lord of the sheep sat upon it[b]; and he took all the sealed books and opened those books before the Lord of the sheep.
-  philosophy: optimal-equivalence
+  text: I watched as a throne was set up in the pleasant land[a], and the Lord of the sheep sat on it. All the sealed books were taken and opened before the Lord of the sheep[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Ethiopic word rendered 'pleasant land' is uncertain in this witness; it may denote a specially favored land rather than the earth in general.
-    reason: lexical_alternative
+    text: The Ge’ez word describing the land is unclear; it may refer simply to the land rather than describe it as pleasant.
+    reason: alternative_reading
   - marker: b
-    text: The verse repeats 'the Lord of the sheep' both as the one seated on the throne and as the one before whom the books are opened. The translation keeps this repetition rather than smoothing it away.
-    reason: textual_variant
+    text: The Ge’ez says “he took all the sealed books and opened them,” but it is unclear who does this.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: መንበር
   chosen: throne
@@ -121,7 +121,6 @@ revision_pass:
   timestamp: '2026-04-23T11:38:19Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +140,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/090/020.job-72818.json
+revisions:
+- timestamp: '2026-11-09T20:17:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until a throne was set up in the pleasant land[a], and the Lord of the sheep sat upon it[b]; and he took all the sealed books and opened those books before the Lord of the sheep.
+  to: I watched as a throne was set up in the pleasant land[a], and the Lord of the sheep sat on it. All the sealed books were taken and opened before the Lord of the sheep[b].
+  rationale: The current wording preserves the throne, the sealed books, and the repeated title well. Its notes identify uncertainty about the land and the opening of the books; both remain visible without assigning an unsupported agent.
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:17:12Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The Lord of the sheep sits enthroned for judgment, and all the sealed books are opened before him.
+  meaning_decisions:
+  - source_phrase: ወነሥአ፡ ኵሎ፡ መጻሕፍተ፡ ኅትማተ፡ ወፈትሖን፡ ለውእቶን፡ መጻሕፍት፡ በቅድመ፡ እግዚአ፡ አባግዕ
+    prior_rendering: and he took all the sealed books and opened those books before the Lord of the sheep
+    new_rendering: All the sealed books were taken and opened before the Lord of the sheep
+    rationale: The Ge’ez does not explicitly name the subject of taking and opening the books. The passive leaves that agent unresolved rather than making the Lord necessarily open the books before himself or supplying the recorder as the subject.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The current wording preserves the throne, the sealed books, and the repeated title well. Its notes identify uncertainty about the land and the opening of the books; both remain visible without assigning an unsupported agent.

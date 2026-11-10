@@ -14,18 +14,12 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch108.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 108, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I will bring out into bright light those who loved my holy name[c][b][a], and I will seat each one on the throne of his glory.
-  philosophy: optimal-equivalence
+  text: And I will bring those who loved my holy name out into bright light, and I will seat each one on his own throne of glory[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for those who have loved my holy name.' The Ge'ez construction may be read as identifying the people for whose sake or to whom this bringing-out is directed.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final pronoun is most naturally read as personal: ''his glory.'' Some may understand the phrase more generally as ''the glorious throne.'''
+    text: Alternatively, the throne may be understood as God’s throne of glory.
     reason: alternative_reading
-  - marker: c
-    text: Or 'bring them out into the bright light for those who loved my holy name, and I will seat them, one by one, on the throne of his glory.'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: እወፅኦሙ
   chosen: I will bring them out
@@ -143,12 +137,18 @@ revisions:
   from: And I will bring out into bright light those who loved my holy name, and I will seat each one on his throne of glory.
   to: And I will bring out into bright light those who loved my holy name, and I will seat each one on the throne of his glory.
   rationale: Adjusted the final phrase from 'on his throne of glory' to 'on the throne of his glory' to more closely reflect the source construction with the definite noun phrase. No other changes needed.
+- timestamp: '2026-11-09T20:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will bring out into bright light those who loved my holy name[c][b][a], and I will seat each one on the throne of his glory.
+  to: And I will bring those who loved my holy name out into bright light, and I will seat each one on his own throne of glory[a].
+  rationale: I retained the correction identifying those who loved the holy name as the people brought into light, not a separate beneficiary group. The grammatical reasoning in the earlier revision supports individual thrones more strongly than the later explanation assigning 'his' to God.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:39:06Z'
   unchanged: false
   changes_summary: Adjusted the final phrase from 'on his throne of glory' to 'on the throne of his glory' to more closely reflect the source construction with the definite noun phrase. No other changes needed.
-
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -168,3 +168,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/108/012.job-72991.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:04:18Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God will bring those who loved his holy name into radiant light and give each one a throne of glory.
+  meaning_decisions:
+  - source_phrase: አሐደ፡ አሐደ፡ ውስተ፡ መንበረ፡ ክብር፡ ዚአሁ
+    prior_rendering: each one on the throne of his glory
+    new_rendering: each one on his own throne of glory
+    rationale: The distributive 'each one' supplies the natural antecedent of 'his.' Since the speaker speaks of his holy name in the first person, the third-person possessive most naturally identifies each recipient’s throne.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained the correction identifying those who loved the holy name as the people brought into light, not a separate beneficiary group. The grammatical reasoning in the earlier revision supports individual thrones more strongly than the later explanation assigning 'his' to God.

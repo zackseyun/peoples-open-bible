@@ -11,18 +11,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch30.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 30, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And by the edges of those valleys I saw fragrant cinnamon[c][b][a], and beyond them I went toward the east.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The opening expression is literally something like 'by the side/flank of those valleys.'
-    reason: lexical_alternative
-  - marker: b
-    text: The preposition rendered 'beyond them' can also be understood more generally as 'past them' or 'in the direction beyond them.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'And by the side of those valleys I saw fragrant cinnamon, and beyond them I came near toward the east.'.
-    reason: previous_rendering
+  text: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I went toward the east.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: መንገለ
   chosen: by the side of / beyond / toward
@@ -147,12 +137,18 @@ revisions:
   from: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I advanced toward the east.
   to: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I went toward the east.
   rationale: Changed 'I advanced' to 'I went' for more natural, formal English without altering meaning; retained the rest as accurate and complete.
+- timestamp: '2026-11-09T19:48:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And by the edges of those valleys I saw fragrant cinnamon[c][b][a], and beyond them I went toward the east.
+  to: And by the edges of those valleys I saw fragrant cinnamon, and beyond them I went toward the east.
+  rationale: The current wording preserves the earlier correction to “edges” and conveys the onward movement naturally. The existing notes offer no materially different meaning that a reader needs.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T11:36:07Z'
   unchanged: false
   changes_summary: Changed 'I advanced' to 'I went' for more natural, formal English without altering meaning; retained the rest as accurate and complete.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -172,3 +168,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/030/003.job-72320.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:48:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Enoch sees fragrant cinnamon at the edges of the valleys and continues beyond them toward the east.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the earlier correction to “edges” and conveys the onward movement naturally. The existing notes offer no materially different meaning that a reader needs.

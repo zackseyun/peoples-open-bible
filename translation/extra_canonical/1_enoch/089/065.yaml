@@ -22,18 +22,8 @@ source:
   validation: verse_parser_ok
   note: Recovered from sources/enoch/ethiopic/transcribed/charles_1906/ch89.txt via tools/enoch/verse_parser.py | Dillmann 1851 chapter OCR exists for chapter 89, but verse-aligned extraction is not yet implemented in this prompt builder.
 translation:
-  text: And I saw until those shepherds pastured in their season[a], and they began to kill and destroy much more than they had been commanded[c][b], and they abandoned those sheep into the hand of the lions.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in their time.' The phrase indicates the appointed period of the shepherds' activity.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from their command' or 'beyond their command'—that is, beyond what had been ordered for them.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'many beyond what had been commanded them'.
-    reason: previous_rendering
+  text: I watched as those shepherds tended the sheep during their allotted time. They began to kill and destroy far more sheep than they had been commanded to, and they abandoned those sheep to the lions.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ኖላዊያን
   chosen: shepherds
@@ -194,8 +184,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I saw until those shepherds pastured in their time[a], and they began to kill and destroy much more than they had been commanded[c][b], and they abandoned those sheep into the hand of the lions.'
-  to: 'And I saw until those shepherds pastured in their season, and they began to kill and destroy much more than they had been commanded, and they abandoned those sheep into the hand of the lions.'
+  from: And I saw until those shepherds pastured in their time[a], and they began to kill and destroy much more than they had been commanded[c][b], and they abandoned those sheep into the hand of the lions.
+  to: And I saw until those shepherds pastured in their season, and they began to kill and destroy much more than they had been commanded, and they abandoned those sheep into the hand of the lions.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in their season''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -205,6 +195,13 @@ revisions:
   from: And I saw until those shepherds pastured in their season, and they began to kill and destroy much more than they had been commanded, and they abandoned those sheep into the hand of the lions.
   to: And I saw until those shepherds pastured in their season[a], and they began to kill and destroy much more than they had been commanded[c][b], and they abandoned those sheep into the hand of the lions.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in their season') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it; [c] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:11:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I saw until those shepherds pastured in their season[a], and they began to kill and destroy much more than they had been commanded[c][b], and they abandoned those sheep into the hand of the lions.
+  to: I watched as those shepherds tended the sheep during their allotted time. They began to kill and destroy far more sheep than they had been commanded to, and they abandoned those sheep to the lions.
+  rationale: The history correctly established the comparative sense of destruction exceeding the command. I retained that gain, clarified the allotted period and the sheep as objects, and removed notes explaining the comparative construction.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:48Z'
@@ -229,3 +226,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_ethiopic_pseudepigrapha/extra_canonical/1_enoch/089/065.job-72791.json
+meaning_pass:
+  run: enoch-v1
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_enoch_v1
+  prompt_sha256: 74c44aca74626bbd061671348f47cd72b69e2fd0a06ce1149e78e26129e1725f
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:11:34Z'
+  change_level: refined
+  confidence: high
+  meaning: During their allotted service, the shepherds destroy far more sheep than authorized and abandon the flock to lions.
+  meaning_decisions:
+  - source_phrase: ወርኢኩ፡ እስከ፡ ሶበ፡ እልኩ፡ ኖላዊያን፡ ይርዐዩ፡ በጊዜሁ
+    prior_rendering: And I saw until those shepherds pastured in their season
+    new_rendering: I watched as those shepherds tended the sheep during their allotted time
+    rationale: The vision follows the shepherds exercising their assigned charge; the time is their period of service, not a grazing season.
+  - source_phrase: ይቅትሉ፡ ወያሕጕሉ፡ ብዙኃ፡ እምትእዛዞሙ
+    prior_rendering: to kill and destroy much more than they had been commanded
+    new_rendering: to kill and destroy far more sheep than they had been commanded to
+    rationale: Supplying the understood object makes the numerical excess explicit within the passage’s counted accounting.
+  - source_phrase: ወኃደጉ፡ ዝኩ፡ አባግዐ፡ ውስተ፡ እደ፡ አናብስት
+    prior_rendering: and they abandoned those sheep into the hand of the lions
+    new_rendering: and they abandoned those sheep to the lions
+    rationale: The idiom means leaving the sheep in the lions’ power; the shorter English preserves that force.
+  footnote_kinds: {}
+  history_weighed: The history correctly established the comparative sense of destruction exceeding the command. I retained that gain, clarified the allotted period and the sheep as objects, and removed notes explaining the comparative construction.

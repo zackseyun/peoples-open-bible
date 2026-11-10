@@ -1,13 +1,16 @@
 """Verse files as they stood just before the November 2026 meaning-first pass.
 
-Some older application and proposal guards prove that one narrow change touched
-nothing else by freezing every other verse in the book, or a passage's context,
-to its live bytes. The meaning-first pass (docs/MEANING_FIRST_TRANSLATION_2026-11.md)
-later revised those verses on purpose, and every file it revised carries a
-top-level ``meaning_pass`` block. For those files the guards read the bytes from
-the last commit before the pass, which is exactly what they verified when they
-were written. Files without the block, including the reviewed target verses the
-pass held back, are still read live, so the guards keep catching any other edit.
+Some reviewed application and proposal tests prove that one narrow change
+touched nothing else by freezing every other verse in a book, or a passage's
+context, to its live bytes. The meaning-first pass
+(docs/MEANING_FIRST_TRANSLATION_2026-11.md) later revised those verses on
+purpose, and every file it revised carries a top-level ``meaning_pass`` block.
+
+The reviewed test files stay byte-for-byte as approved. A ``*_live.py``
+successor reruns each frozen check inside ``pre_meaning_pass_view()``, which
+serves the pre-pass bytes for verse files the pass revised: exactly what the
+check verified when it was written. Every other file, including each reviewed
+target verse the pass held back, is still read live.
 """
 from __future__ import annotations
 
@@ -15,8 +18,6 @@ import contextlib
 import subprocess
 from pathlib import Path
 from unittest.mock import patch
-
-import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 # Last commit before the meaning-first retranslation landed. corpus-integrity
@@ -30,7 +31,7 @@ def revised_by_meaning_pass(raw: bytes) -> bool:
     return raw.startswith(b'meaning_pass:') or b'\nmeaning_pass:' in raw
 
 
-def _pre_pass_blob(rel: str) -> bytes:
+def pre_pass_blob(rel: str) -> bytes:
     global _cat_file
     if _cat_file is None:
         _cat_file = subprocess.Popen(['git', 'cat-file', '--batch'], cwd=ROOT,
@@ -45,25 +46,31 @@ def _pre_pass_blob(rel: str) -> bytes:
     return data
 
 
-def corpus_bytes(path) -> bytes:
-    """Live bytes, or the pre-pass bytes when the meaning-first pass revised the file."""
-    p = Path(path)
-    p = p if p.is_absolute() else ROOT / p
-    raw = p.read_bytes()
-    if revised_by_meaning_pass(raw):
-        return _pre_pass_blob(p.relative_to(ROOT).as_posix())
-    return raw
+def _verse_rel(path: Path) -> str | None:
+    p = path if path.is_absolute() else Path.cwd() / path
+    try:
+        rel = p.relative_to(ROOT).as_posix()
+    except ValueError:
+        return None
+    return rel if rel.startswith('translation/') and rel.endswith('.yaml') else None
 
 
 @contextlib.contextmanager
-def pre_meaning_pass_records(exporter):
-    """Make ``exporter.export_book`` read each verse through ``corpus_bytes``."""
-    def load(code, chapter, verse):
-        path = exporter.draft.translation_path_for_verse(
-            exporter.draft.load_source_verse(code, chapter, verse))
-        if not path.exists():
-            return None
-        return yaml.safe_load(corpus_bytes(path).decode('utf-8'))
+def pre_meaning_pass_view():
+    """Serve pre-pass bytes for verse files the meaning-first pass revised."""
+    read_bytes, read_text = Path.read_bytes, Path.read_text
 
-    with patch.object(exporter, 'load_translation_record', side_effect=load):
+    def corpus_bytes(self):
+        raw = read_bytes(self)
+        rel = _verse_rel(self)
+        if rel and revised_by_meaning_pass(raw):
+            return pre_pass_blob(rel)
+        return raw
+
+    def corpus_text(self, encoding=None, errors=None, *args, **kwargs):
+        if _verse_rel(self) is None:
+            return read_text(self, encoding, errors, *args, **kwargs)
+        return corpus_bytes(self).decode(encoding or 'utf-8', errors or 'strict')
+
+    with patch.object(Path, 'read_bytes', corpus_bytes), patch.object(Path, 'read_text', corpus_text):
         yield

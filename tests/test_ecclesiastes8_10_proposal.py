@@ -8,7 +8,6 @@ import unittest
 import yaml
 from jsonschema import Draft202012Validator
 
-from tests.meaning_pass_baseline import corpus_bytes
 from tools import export_mobile_bible
 from tools.textual_restoration.verify_source_composition import normalized, verify
 
@@ -43,10 +42,8 @@ class Ecclesiastes810ProposalTests(unittest.TestCase):
         for pin in self.contract["inputs"]:
             self.assertEqual(digest((ROOT / pin["path"]).read_bytes()), pin["sha256"], pin["path"])
         self.assertEqual(len(self.comparison["context_pins"]), 22)
-        # Context verses the meaning-first pass later revised are read as they
-        # stood before it; see tests/meaning_pass_baseline.py.
         for path, sha in self.comparison["context_pins"].items():
-            self.assertEqual(digest(corpus_bytes(path)), sha, path)
+            self.assertEqual(digest((ROOT / path).read_bytes()), sha, path)
         out = self.contract["preflight"]["export"]
         self.assertEqual((out["chapters"], out["units"], out["non_target_count"]), (12, 222, 221))
         self.assertEqual(out["changed_units"], [[8, 10]])

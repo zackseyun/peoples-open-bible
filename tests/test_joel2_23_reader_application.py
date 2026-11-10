@@ -10,7 +10,6 @@ import yaml
 from jsonschema import Draft202012Validator
 from tools import audit_footnotes
 from tools import export_mobile_bible as ex
-from tests.meaning_pass_baseline import corpus_bytes, pre_meaning_pass_records
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'e8791d444be8f298857dbb6145164d52b0a47b9b'
@@ -169,18 +168,15 @@ class JoelReaderApplicationTests(unittest.TestCase):
     def test_current_application_state_and_other_files(self):
         receipt = json.loads((ROOT / RECEIPT).read_text())
         self.assertEqual(sha((ROOT / CONTRACT).read_bytes()), receipt['contract_sha256'])
-        # Verses the meaning-first pass later revised are read as they stood
-        # before it; see tests/meaning_pass_baseline.py.
         for pin in self.contract['book_baseline_pins']:
             p = ROOT / pin['path']
             if str(p.relative_to(ROOT)) != self.contract['canonical_target']:
-                self.assertEqual(sha(corpus_bytes(p)), pin['sha256'])
+                self.assertEqual(sha(p.read_bytes()), pin['sha256'])
         raw = (ROOT / self.contract['canonical_target']).read_bytes()
         if receipt['canonical_change_applied']:
             self.assertEqual(sha(raw), self.contract['candidate_yaml_sha256'])
             self.assertEqual(yaml.safe_load(raw), self.candidate)
-            with pre_meaning_pass_records(ex):
-                book = ex.export_book('JOL')
+            book = ex.export_book('JOL')
             self.assertEqual(digest(book), self.contract['export']['proposed_sha256'])
             self.assertEqual(len(book['chapters']), 4)
             self.assertEqual(len(index(book)), 73)

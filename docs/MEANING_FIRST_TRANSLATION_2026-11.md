@@ -82,8 +82,8 @@ retranslated), and the translator's confidence.
 This pass covers the 66 books of the Protestant canon and the deuterocanonical
 books: 37,295 verses, translated in 2,694 passages.
 
-- **36,844 verses** received the meaning-first pass: 11,659 retranslated,
-  17,603 refined, and 7,582 kept word for word. A kept verse still gets a
+- **36,842 verses** received the meaning-first pass: 11,658 retranslated,
+  17,602 refined, and 7,582 kept word for word. A kept verse still gets a
   `meaning_pass` record, but no revision entry, because its wording did not
   change.
 - **173 of those** were translated by Claude Opus 5.5 with the same
@@ -91,20 +91,22 @@ books: 37,295 verses, translated in 2,694 passages.
   them (mostly passages describing violence or sexual sin), or repeatedly cut
   the reply off. Their revision entries and `meaning_pass` blocks name that
   model (`adjudicator: claude-opus-5.5-meaning-pass`).
-- **451 verses keep their previous wording** for now, because a test or a
-  recorded decision pins their exact text: 241 by tests, 147 by applied
+- **453 verses keep their previous wording** for now, because a test or a
+  recorded decision pins their exact text: 243 by tests, 147 by applied
   textual-restoration decisions, 59 by the repentance and reorientation
   terminology decisions, and 4 by tools. Changing them needs a separate review
   that updates those records together with the wording. The list is in
   [`MEANING_PASS_HELD_VERSES_2026-11.txt`](MEANING_PASS_HELD_VERSES_2026-11.txt).
-- **Whole-book guards.** Eight older guards proved that one narrow change
-  touched nothing else by freezing the rest of the book (Exodus, Lamentations,
-  Joel, Nahum, Habakkuk) or a proposal's surrounding verses (Genesis 10,
-  2 Samuel 14–15, Ecclesiastes). For verses this pass revised, those guards now
-  read the bytes from the last commit before the pass
-  ([`tests/meaning_pass_baseline.py`](../tests/meaning_pass_baseline.py)), which
-  is what they verified when they were written. Every other verse, including
-  each reviewed target verse, is still checked live.
+- **Whole-book guards.** Fifteen reviewed tests proved that one narrow change
+  touched nothing else by freezing the rest of the book (Exodus, 1 Samuel,
+  2 Kings, 2 Chronicles, Isaiah, Lamentations, Joel, Nahum, Habakkuk, 1 Esdras,
+  Letter of Jeremiah), a proposal's surrounding verses (Genesis 10, 2 Samuel
+  14–15, Ecclesiastes 8), or evidence verses (Hebrews 8:9 for Jeremiah 31).
+  Those test files stay byte-for-byte as reviewed. Following the repository's
+  `*_live.py` successor pattern, each successor reruns only the frozen checks,
+  reading verses this pass revised as they stood in the last commit before it
+  ([`tests/meaning_pass_baseline.py`](../tests/meaning_pass_baseline.py)). Every
+  other verse, including each reviewed target verse, is still checked live.
 - The extra-canonical books are not part of this pass.
 
 The Simplified People's Open Bible (SPOB) is derived from POB and will be

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἡμέρας μέσης κατὰ τὴν ὁδὸν εἶδον, βασιλεῦ, οὐρανόθεν ὑπὲρ τὴν λαμπρότητα τοῦ ἡλίου περιλάμψαν με φῶς καὶ τοὺς σὺν ἐμοὶ πορευομένους·
 translation:
-  text: At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'beyond the brightness of the sun'; the Greek emphasizes that the light surpassed the sun's brightness.
-    reason: lexical_alternative
+  text: At midday, Your Majesty, I saw a light from heaven as I traveled along the road. It was brighter than the sun and shone around me and those traveling with me.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἡμέρας μέσης
   chosen: At midday
@@ -103,14 +99,20 @@ revisions:
   from: At midday, along the road, I saw, O king, a light from heaven, brighter than the brightness of the sun, shining around me and those traveling with me.
   to: At midday, along the road, I saw, O king, a light from heaven, brighter than the brightness of the sun, shining around me and those traveling with me.
   rationale: Replaced 'brighter than the brightness of the sun' with the more natural and equally accurate 'brighter than the sun.'
-
 - timestamp: '2026-05-18T03:00:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.'
-  to: 'At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.'
+  from: At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.
+  to: At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''brighter than the brightness of the sun''].'
+- timestamp: '2026-11-09T17:09:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: At midday[a], along the road, I saw, O king, a light from heaven, brighter than the sun, shining around me and those traveling with me.
+  to: At midday, Your Majesty, I saw a light from heaven as I traveled along the road. It was brighter than the sun and shone around me and those traveling with me.
+  rationale: I preserve the review’s gain in “brighter than the sun,” despite the automated revert rationale favoring the redundant “brighter than the brightness of the sun.” The documented heavenly origin and illumination of Paul’s companions remain intact.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +132,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/026/013.job-46955.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:14Z'
+  change_level: refined
+  confidence: high
+  meaning: At midday on the road, Paul and his traveling companions were surrounded by a heavenly light brighter than the sun.
+  meaning_decisions:
+  - source_phrase: βασιλεῦ
+    prior_rendering: O king
+    new_rendering: Your Majesty
+    rationale: This carries the respectful direct address to a king in natural contemporary English.
+  - source_phrase: κατὰ τὴν ὁδὸν ... ὑπὲρ τὴν λαμπρότητα τοῦ ἡλίου περιλάμψαν με φῶς
+    prior_rendering: along the road ... a light ... brighter than the sun, shining around me
+    new_rendering: a light ... as I traveled along the road. It was brighter than the sun and shone around me
+    rationale: Separating the sighting from the light’s description avoids piled-up interruptions while preserving its heavenly origin, surpassing brightness, and surrounding illumination.
+  footnote_kinds: {}
+  history_weighed: I preserve the review’s gain in “brighter than the sun,” despite the automated revert rationale favoring the redundant “brighter than the brightness of the sun.” The documented heavenly origin and illumination of Paul’s companions remain intact.

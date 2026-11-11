@@ -15,15 +15,15 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And she continued to prosper greatly[a], and she grew old in her husband's house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.
-  philosophy: optimal-equivalence
+  text: She gained ever greater honor[a] and grew old in her husband's house, reaching the age of one hundred and five. She set her maidservant[b] free. Then she died in Bethulia, and they buried her in the burial cave of her husband Manasseh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'she became very great indeed'; the Greek literally speaks of her 'advancing' or 'becoming great' with strong intensification.
-    reason: lexical_alternative
+    text: Or, “She continued to prosper greatly.”
+    reason: alternative_reading
   - marker: b
-    text: The Greek term for the woman Judith freed denotes a female attendant or maid; because Judith 'set her free,' the verse implies a servile dependent status.
-    reason: lexical_alternative
+    text: The attendant was a female household slave.
+    reason: cultural_note
 lexical_decisions:
 - source_word: προβαίνουσα
   lemma: προβαίνω
@@ -123,17 +123,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And she continued to prosper greatly, and she grew old in her husband''s house, to the age of one hundred five years. And she set her maidservant free. Then she died in Bethulia, and they buried her in the cave of her husband Manasseh.'
-  to: 'And she continued to prosper greatly, and she grew old in her husband''s house, to the age of one hundred five years. And she set her maidservant free. Then she died in Bethulia, and they buried her in the cave of her husband Manasseh.'
+  from: And she continued to prosper greatly, and she grew old in her husband's house, to the age of one hundred five years. And she set her maidservant free. Then she died in Bethulia, and they buried her in the cave of her husband Manasseh.
+  to: And she continued to prosper greatly, and she grew old in her husband's house, to the age of one hundred five years. And she set her maidservant free. Then she died in Bethulia, and they buried her in the cave of her husband Manasseh.
   rationale: Adjusted 'to the age of one hundred five years' to 'for one hundred five years' to more naturally and accurately reflect the Greek construction while preserving the sense; combined the sentence flow more smoothly.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And she continued to prosper greatly[a], and she grew old in her husband''s house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.'
-  to: 'And she continued to prosper greatly[a], and she grew old in her husband''s house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.'
+  from: And she continued to prosper greatly[a], and she grew old in her husband's house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.
+  to: And she continued to prosper greatly[a], and she grew old in her husband's house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the age of one hundred five years''].'
+- timestamp: '2026-11-09T19:02:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she continued to prosper greatly[a], and she grew old in her husband's house for one hundred five years, and she set her maidservant free. Then she died in Bethulia[b], and they buried her in the cave of her husband Manasseh.
+  to: She gained ever greater honor[a] and grew old in her husband's house, reaching the age of one hundred and five. She set her maidservant[b] free. Then she died in Bethulia, and they buried her in the burial cave of her husband Manasseh.
+  rationale: The first draft and lexical rationale correctly identified 105 as her age; I restore that meaning against the current duration wording. I go beyond the earlier prosperity rendering because verse 21 favors increasing honor, retaining prosperity in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +159,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/016/023.job-50837.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judith’s honor continued to increase, she lived to the age of 105 in her husband’s house and freed her maidservant, and after her death in Bethulia she was buried in Manasseh’s burial cave.
+  meaning_decisions:
+  - source_phrase: ἦν προβαίνουσα μεγάλη σφόδρα
+    prior_rendering: she continued to prosper greatly
+    new_rendering: She gained ever greater honor
+    rationale: Following verse 21’s account of her renown, increasing honor is the strongest contextual reading of her advancing greatness; general prosperity remains a serious alternative.
+  - source_phrase: ἐγήρασεν ... ἔτη ἑκατὸν πέντε
+    prior_rendering: she grew old ... for one hundred five years
+    new_rendering: grew old ... reaching the age of one hundred and five
+    rationale: The number gives her age, not the duration of her residence or old age.
+  - source_phrase: ἐν τῷ σπηλαίῳ
+    prior_rendering: in the cave
+    new_rendering: in the burial cave
+    rationale: The burial setting identifies the cave as a family tomb rather than an ordinary cave.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The first draft and lexical rationale correctly identified 105 as her age; I restore that meaning against the current duration wording. I go beyond the earlier prosperity rendering because verse 21 favors increasing honor, retaining prosperity in a note.

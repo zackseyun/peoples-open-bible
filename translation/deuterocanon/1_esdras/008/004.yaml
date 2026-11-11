@@ -29,15 +29,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And the king gave him honor[a], because he had found favor before him in regard to all his offices[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'glory' for 'honor.' The Greek term can denote public distinction or esteem; here it refers to royal recognition rather than divine glory.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek phrase rendered 'all his offices' is somewhat compressed and may also mean 'all his dignities' or 'all his appointments.'
-    reason: alternative_reading
+  text: The king honored him because he had found favor with the king in all his requests.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔδωκεν ... δόξαν
   chosen: gave ... honor
@@ -108,13 +101,12 @@ revisions:
   from: And the king gave him honor, because he had found favor before him in regard to all his offices.
   to: And the king gave him honor, because he had found favor before him concerning all his requests.
   rationale: Revised 'in regard to all his offices' to 'concerning all his requests' for better lexical accuracy of ἀξιώματα in this context; retained the rest with natural formal English.
-
 - timestamp: '2026-05-18T03:09:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king gave him honor[b][a], because he had found favor before him concerning all his requests.'
-  to: 'And the king gave him honor, because he had found favor before him in regard to all his offices.'
+  from: And the king gave him honor[b][a], because he had found favor before him concerning all his requests.
+  to: And the king gave him honor, because he had found favor before him in regard to all his offices.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in regard to all his offices''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -124,6 +116,13 @@ revisions:
   from: And the king gave him honor, because he had found favor before him in regard to all his offices.
   to: And the king gave him honor[a], because he had found favor before him in regard to all his offices[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('honor') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('all his offices') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:51:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king gave him honor[a], because he had found favor before him in regard to all his offices[b].
+  to: The king honored him because he had found favor with the king in all his requests.
+  rationale: The April review identified “requests” as the better contextual meaning; the later change was a wholesale automated revert rather than a new argument against that reading. I adopt the review’s lexical correction while retaining the established distinction between royal honor and divine glory.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -143,3 +142,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/008/004.job-47808.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king honored Ezra because Ezra enjoyed royal favor concerning all his requests.
+  meaning_decisions:
+  - source_phrase: ἐπὶ πάντα τὰ ἀξιώματα αὐτοῦ
+    prior_rendering: in regard to all his offices
+    new_rendering: in all his requests
+    rationale: In this context of royal favor and the authorization that follows, the phrase concerns Ezra’s petitions, not a collection of offices he held.
+  - source_phrase: ἐναντίον αὐτοῦ
+    prior_rendering: before him
+    new_rendering: with the king
+    rationale: Names the person granting favor and expresses the relational idiom without leaving the pronoun’s reference uncertain.
+  footnote_kinds: {}
+  history_weighed: The April review identified “requests” as the better contextual meaning; the later change was a wholesale automated revert rather than a new argument against that reading. I adopt the review’s lexical correction while retaining the established distinction between royal honor and divine glory.

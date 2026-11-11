@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַח֩ שָׁא֨וּל מַלְאָכִ֜ים אֶל בֵּ֤ית דָּוִד֙ לְ/שָׁמְר֔/וֹ וְ/לַ/הֲמִית֖/וֹ בַּ/בֹּ֑קֶר וַ/תַּגֵּ֣ד לְ/דָוִ֗ד מִיכַ֤ל אִשְׁתּ/וֹ֙ לֵ/אמֹ֔ר אִם אֵ֨ינְ/ךָ֜ מְמַלֵּ֤ט אֶֽת נַפְשְׁ/ךָ֙ הַ/לַּ֔יְלָה מָחָ֖ר אַתָּ֥ה מוּמָֽת־־־׃
 translation:
-  text: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “If you do not escape with your life tonight, tomorrow you will be put to death.”
-    reason: lexical_alternative
+  text: Then Saul sent messengers to David’s house to watch him and kill him in the morning. But his wife Michal warned David, “If you do not escape with your life tonight, you will be put to death tomorrow.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַלְאָכִים
   chosen: messengers
@@ -93,14 +89,20 @@ revisions:
   from: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. But Michal his wife told David, saying, “If you do not save your life tonight, tomorrow you will be killed.”
   to: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. But Michal his wife told David, saying, “If you do not save your life tonight, tomorrow you will be killed.”
   rationale: Replaced 'But' with 'And' to reflect the simple narrative conjunction, and changed 'you will be killed' to 'you will be put to death' for a more formal rendering of the passive verb.
-
 - timestamp: '2026-05-18T02:56:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”'
-  to: 'Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”'
+  from: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”
+  to: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will be killed''].'
+- timestamp: '2026-11-09T17:23:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Saul sent messengers to David’s house to watch him and to kill him in the morning. And Michal his wife told David[a], saying, “If you do not save your life tonight, tomorrow you will be put to death.”
+  to: Then Saul sent messengers to David’s house to watch him and kill him in the morning. But his wife Michal warned David, “If you do not escape with your life tonight, you will be put to death tomorrow.”
+  rationale: The first draft’s 'But' captures Michal’s intervention against Saul’s plan better than the automated preference for simple 'And.' I retain 'put to death' and bring the documented escape sense into the warning, making the earlier note unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +122,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/019/011.job-59238.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul sends men to watch David’s house and kill him in the morning, but Michal warns David that he must escape that night.
+  meaning_decisions:
+  - source_phrase: וַתַּגֵּד לְדָוִד מִיכַל אִשְׁתּוֹ לֵאמֹר
+    prior_rendering: And Michal his wife told David, saying
+    new_rendering: But his wife Michal warned David
+    rationale: Michal’s warning counters Saul’s murderous plan; the adversative connection and the speech’s warning function express that narrative relationship.
+  - source_phrase: מְמַלֵּט אֶת נַפְשְׁךָ
+    prior_rendering: save your life
+    new_rendering: escape with your life
+    rationale: In this setting, saving his life specifically requires escape; the documented alternative makes Michal’s urgent instruction explicit.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'But' captures Michal’s intervention against Saul’s plan better than the automated preference for simple 'And.' I retain 'put to death' and bring the documented escape sense into the warning, making the earlier note unnecessary.

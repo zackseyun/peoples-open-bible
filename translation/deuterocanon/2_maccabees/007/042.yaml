@@ -24,12 +24,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: So then[a], let this be enough about the mother’s compassion and the extraordinary tortures.
-  philosophy: optimal-equivalence
+  text: Let this be enough, then, about the eating of sacrificial meat[a] and the extreme tortures.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more formally, 'Now then, let what concerns the mother’s affections and the extraordinary cruelties be declared to this extent.'
-    reason: lexical_alternative
+    text: Or, “the mother’s deep affection.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τὰ ... περὶ τοὺς σπλαγχνισμούς
   chosen: about the mother’s compassion
@@ -92,13 +92,12 @@ revisions:
   from: So then, let this be enough about the mother’s compassion and the extraordinary tortures.
   to: So then, let this be enough about the compassions and the extraordinary tortures.
   rationale: Replaced “the mother’s compassion” with “the compassions” to reflect the plural σπλαγχνισμούς and avoid adding “mother’s,” which is not explicit in the Greek. Kept the formal closing sense of ἐπὶ τοσούτου δεδηλώσθω as “let this be enough about.”
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So then[a], let this be enough about the compassions and the extraordinary tortures.'
-  to: 'So then, let this be enough about the mother’s compassion and the extraordinary tortures.'
+  from: So then[a], let this be enough about the compassions and the extraordinary tortures.
+  to: So then, let this be enough about the mother’s compassion and the extraordinary tortures.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about the mother’s compassion''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -108,6 +107,13 @@ revisions:
   from: So then, let this be enough about the mother’s compassion and the extraordinary tortures.
   to: So then[a], let this be enough about the mother’s compassion and the extraordinary tortures.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:00:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So then[a], let this be enough about the mother’s compassion and the extraordinary tortures.
+  to: Let this be enough, then, about the eating of sacrificial meat[a] and the extreme tortures.
+  rationale: No MAINTAINER revision is recorded; the automated revision and revert concern whether to supply “mother’s,” rather than the competing senses of the noun. I depart from the restored wording because the sacrificial-food interpretation better fits the narrative’s framing, while preserving the history’s maternal-affection reading as a serious alternative.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -127,3 +133,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/042.job-49176.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The narrator concludes the account of eating sacrificial food and the extreme tortures inflicted on those who refused.
+  meaning_decisions:
+  - source_phrase: τὰ ... περὶ τοὺς σπλαγχνισμούς
+    prior_rendering: about the mother’s compassion
+    new_rendering: about the eating of sacrificial meat
+    rationale: The unusual noun can denote eating sacrificial portions as well as deep affection. The sacrificial-food sense best fits the dietary coercion that frames the martyrdom accounts; the maternal-affection interpretation remains in a footnote.
+  - source_phrase: τὰς ὑπερβαλλούσας αἰκίας
+    prior_rendering: the extraordinary tortures
+    new_rendering: the extreme tortures
+    rationale: The adjective emphasizes the excessive severity of the torture, not merely its unusual character.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: No MAINTAINER revision is recorded; the automated revision and revert concern whether to supply “mother’s,” rather than the competing senses of the noun. I depart from the restored wording because the sacrificial-food interpretation better fits the narrative’s framing, while preserving the history’s maternal-affection reading as a serious alternative.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֤ח אֵלָי/ו֙ בֶּן הֲדַ֔ד וַ/יֹּ֕אמֶר כֹּֽה יַעֲשׂ֥וּ/ן לִ֛/י אֱלֹהִ֖ים וְ/כֹ֣ה יוֹסִ֑פוּ אִם יִשְׂפֹּק֙ עֲפַ֣ר שֹׁמְר֔וֹן לִ/שְׁעָלִ֕ים לְ/כָל הָ/עָ֖ם אֲשֶׁ֥ר בְּ/רַגְלָֽ/י־־־־׃
 translation:
-  text: Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”
-  philosophy: optimal-equivalence
+  text: 'Ben-hadad sent him this reply: “May the gods punish me severely[a] if Samaria has enough dust for each of my soldiers to take a handful!”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, “if the dust of Samaria will suffice for hollows/handfuls for all the people at my feet.” The idiom means Ben-hadad boasts that Samaria is so small its dust would not provide even a handful for each of his followers.
+    text: Literally, “May the gods do so to me, and more also,” an oath invoking punishment on the speaker if his claim proves false.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּשְׁלַח אֵלָיו
@@ -90,14 +90,20 @@ revisions:
   from: Ben-hadad sent to him and said, “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who follow me.”
   to: Ben-hadad sent to him and said, “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who follow me.”
   rationale: Revised the final clause from 'who follow me' to the more literal 'who are at my feet,' preserving the Hebrew idiom without interpretive expansion. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T02:56:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”'
-  to: 'Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”'
+  from: Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”
+  to: Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for all the people who follow me''].'
+- timestamp: '2026-11-09T17:22:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Ben-hadad sent to him and said[a], “May the gods do so to me, and more also, if the dust of Samaria will be enough for handfuls for all the people who are at my feet.”
+  to: 'Ben-hadad sent him this reply: “May the gods punish me severely[a] if Samaria has enough dust for each of my soldiers to take a handful!”'
+  rationale: The first draft and lexical rationale correctly explain “at my feet” as the king’s followers, whereas the later wording favored literal form. I recover that military meaning, retain the gods of the pagan oath, and make the self-curse intelligible without discarding its traditional formula.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +126,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_kings/020/010.job-28138.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ben-hadad invokes his gods in an oath boasting that Samaria is insignificant beside the size of his army.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁלַח אֵלָיו ... וַיֹּאמֶר
+    prior_rendering: sent to him and said
+    new_rendering: sent him this reply
+    rationale: The action is sending a spoken response through messengers; the supplied object makes the communication natural in English.
+  - source_phrase: כֹּה יַעֲשׂוּן לִי אֱלֹהִים וְכֹה יוֹסִפוּ
+    prior_rendering: May the gods do so to me, and more also
+    new_rendering: May the gods punish me severely
+    rationale: The conventional self-curse invokes severe punishment without naming it; its force is explicit in the text and its formula is preserved in the note.
+  - source_phrase: אִם יִשְׂפֹּק עֲפַר שֹׁמְרוֹן לִשְׁעָלִים לְכָל הָעָם אֲשֶׁר בְּרַגְלָי
+    prior_rendering: if the dust of Samaria will be enough for handfuls for all the people who are at my feet
+    new_rendering: if Samaria has enough dust for each of my soldiers to take a handful
+    rationale: The boast compares the city’s dust with the enormous number of troops following Ben-hadad; the handful image remains intact while the military idiom is translated.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale correctly explain “at my feet” as the king’s followers, whereas the later wording favored literal form. I recover that military meaning, retain the gods of the pagan oath, and make the self-curse intelligible without discarding its traditional formula.

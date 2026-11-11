@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/עַתָּ֣ה אֲדֹנָ֣/י יְהוִ֗ה אַתָּה הוּא֙ הָֽ/אֱלֹהִ֔ים וּ/דְבָרֶ֖י/ךָ יִהְי֣וּ אֱמֶ֑ת וַ/תְּדַבֵּר֙ אֶֽל עַבְדְּ/ךָ֔ אֶת הַ/טּוֹבָ֖ה הַ/זֹּֽאת׀־־־׃
 translation:
-  text: And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''Lord YHWH''; English ''Lord GOD'' avoids the awkward repetition that would result from rendering both elements as ''Lord.'''
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'your words will be true' or 'your words are trustworthy.'
-    reason: lexical_alternative
+  text: And now, Lord Yahweh, you are God, and your words are true, and you have promised this good thing to your servant.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֲדֹנָי יְהוִה
   chosen: Lord GOD
@@ -103,14 +96,20 @@ revisions:
   from: And now, Lord GOD, you are God, and your words are truth, and you have spoken this good thing to your servant.
   to: And now, Lord GOD, you are God, and your words are truth, and you have spoken this good thing to your servant.
   rationale: Changed 'your words are truth' to 'your words are true' for more natural English while preserving the sense of אֱמֶת.
-
 - timestamp: '2026-05-17T04:51:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.'
-  to: 'And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.'
+  from: And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.
+  to: And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are truth''].'
+- timestamp: '2026-11-09T17:28:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now[a], Lord GOD, you are God, and your words are true[b], and you have spoken this good thing to your servant.
+  to: And now, Lord Yahweh, you are God, and your words are true, and you have promised this good thing to your servant.
+  rationale: 'I keep the current “your words are true”: the history''s preference for the predicate noun “truth” adds no meaning in English. The context warrants “promised” rather than the unnatural “spoken this good thing,” and the standing ruling requires Lord Yahweh.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +132,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/007/028.job-60981.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:13Z'
+  change_level: refined
+  confidence: high
+  meaning: David affirms that Yahweh is God, that his words are true, and that he has promised good to his servant.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: Lord GOD
+    new_rendering: Lord Yahweh
+    rationale: This follows the standing divine-name ruling.
+  - source_phrase: וַתְּדַבֵּר אֶל עַבְדְּךָ אֶת הַטּוֹבָה הַזֹּאת
+    prior_rendering: you have spoken this good thing to your servant
+    new_rendering: you have promised this good thing to your servant
+    rationale: In context, the good spoken to David is a commitment about his house's future; “promised” conveys the speech's actual function in natural English.
+  footnote_kinds: {}
+  history_weighed: 'I keep the current “your words are true”: the history''s preference for the predicate noun “truth” adds no meaning in English. The context warrants “promised” rather than the unnatural “spoken this good thing,” and the standing ruling requires Lord Yahweh.'

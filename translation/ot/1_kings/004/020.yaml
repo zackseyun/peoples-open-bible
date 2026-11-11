@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: יְהוּדָ֤ה וְ/יִשְׂרָאֵל֙ רַבִּ֔ים כַּ/ח֥וֹל אֲשֶׁר עַל הַ/יָּ֖ם לָ/רֹ֑ב אֹכְלִ֥ים וְ/שֹׁתִ֖ים וּ/שְׂמֵחִֽים־־׃
 translation:
-  text: Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.
-  philosophy: optimal-equivalence
+  text: The people of Judah and Israel were as numerous as the sand on the seashore[a]; they were eating, drinking, and rejoicing.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'like the sand on the seashore,' a common Hebrew expression for an exceedingly large population.
-    reason: lexical_alternative
+    text: Echoes the promise that Abraham’s descendants would be like the sand on the seashore (Genesis 22:17).
+    reason: cross_reference
 lexical_decisions:
 - source_word: יְהוּדָה
   chosen: Judah
@@ -75,14 +75,20 @@ revisions:
   from: Judah and Israel were as numerous as the sand that is by the sea in multitude, eating and drinking and rejoicing.
   to: Judah and Israel were as numerous as the sand that is by the sea in multitude, eating and drinking and rejoicing.
   rationale: Removed 'that is' for a more natural and direct rendering of the Hebrew while preserving the formal sense; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.'
-  to: 'Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.'
+  from: Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.
+  to: Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as the sand that is by the sea''].'
+- timestamp: '2026-11-09T17:21:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Judah and Israel were as numerous as the sand by the sea in multitude[a], eating and drinking and rejoicing.
+  to: The people of Judah and Israel were as numerous as the sand on the seashore[a]; they were eating, drinking, and rejoicing.
+  rationale: The earlier record consistently preserves the sand image and the ongoing description of eating, drinking, and rejoicing; both remain. The automated revert supplies no meaning-based reason to retain the redundant “in multitude,” so I remove it without weakening the comparison.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -102,3 +108,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/004/020.job-58127.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people of Judah and Israel were immensely numerous and lived in a state of abundance and rejoicing.
+  meaning_decisions:
+  - source_phrase: יְהוּדָה וְיִשְׂרָאֵל רַבִּים
+    prior_rendering: Judah and Israel were as numerous
+    new_rendering: The people of Judah and Israel were as numerous
+    rationale: The national names stand for their populations, which the English makes explicit.
+  - source_phrase: כַּחוֹל אֲשֶׁר עַל הַיָּם לָרֹב
+    prior_rendering: as the sand by the sea in multitude
+    new_rendering: as the sand on the seashore
+    rationale: The established image expresses immense number; “as numerous” already conveys the respect in which the comparison applies, making “in multitude” redundant in English.
+  - source_phrase: אֹכְלִים וְשֹׁתִים וּשְׂמֵחִים
+    prior_rendering: eating and drinking and rejoicing
+    new_rendering: they were eating, drinking, and rejoicing
+    rationale: An explicit subject and finite construction preserve the continuing picture of well-being while producing a complete English sentence.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier record consistently preserves the sand image and the ongoing description of eating, drinking, and rejoicing; both remain. The automated revert supplies no meaning-based reason to retain the redundant “in multitude,” so I remove it without weakening the comparison.

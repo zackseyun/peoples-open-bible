@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יְסִירֵ֥/הוּ מֶֽלֶךְ מִצְרַ֖יִם בִּֽ/ירוּשָׁלִָ֑ם וַֽ/יַּעֲנֹשׁ֙ אֶת הָ/אָ֔רֶץ מֵאָ֥ה כִכַּר כֶּ֖סֶף וְ/כִכַּ֥ר זָהָֽב־־־׃
 translation:
-  text: And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].
-  philosophy: optimal-equivalence
+  text: The king of Egypt deposed him in Jerusalem and imposed on the land a fine of a hundred talents[a] of silver and a talent of gold.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'deposed him'; the Hebrew verb can mean to remove someone from position or to take him away.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'imposed a fine on the land'; the verb refers to levying a monetary penalty.
-    reason: lexical_alternative
-  - marker: c
-    text: A talent was a large unit of weight; the text preserves the ancient measure rather than converting it.
+    text: A talent was a unit of weight, approximately 75 pounds (34 kilograms).
     reason: cultural_note
 lexical_decisions:
 - source_word: וַיְסִירֵהוּ
@@ -84,14 +78,20 @@ revisions:
   from: And the king of Egypt removed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold.
   to: And the king of Egypt removed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold.
   rationale: Changed 'removed him' to 'deposed him' for more precise and natural rendering of the verb in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-17T01:21:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].'
-  to: 'And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].'
+  from: And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].
+  to: And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''removed him''].'
+- timestamp: '2026-11-09T17:26:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king of Egypt deposed him in Jerusalem and imposed on the land a tribute of a hundred talents of silver and a talent of gold[a][b][c].
+  to: The king of Egypt deposed him in Jerusalem and imposed on the land a fine of a hundred talents[a] of silver and a talent of gold.
+  rationale: The review's preference for 'deposed' fits the royal context, and the automated revert supplies no meaning-based reason to abandon it. The lexical discussion identifies a monetary penalty, so I make that force explicit with 'fine.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -111,3 +111,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/036/003.job-60252.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Egypt's king removed Jehoahaz from the throne in Jerusalem and imposed a substantial monetary penalty on the land.
+  meaning_decisions:
+  - source_phrase: וַיַּעֲנֹשׁ אֶת הָאָרֶץ
+    prior_rendering: imposed on the land a tribute
+    new_rendering: imposed on the land a fine
+    rationale: The verb identifies a punitive financial levy; 'tribute' conveys payment to an overlord but leaves out the penalty.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The review's preference for 'deposed' fits the royal context, and the automated revert supplies no meaning-based reason to abandon it. The lexical discussion identifies a monetary penalty, so I make that force explicit with 'fine.'

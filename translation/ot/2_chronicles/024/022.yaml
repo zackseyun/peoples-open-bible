@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וְ/לֹא זָכַ֞ר יוֹאָ֣שׁ הַ/מֶּ֗לֶךְ הַ/חֶ֨סֶד֙ אֲשֶׁ֨ר עָשָׂ֜ה יְהוֹיָדָ֤ע אָבִי/ו֙ עִמּ֔/וֹ וַֽ/יַּהֲרֹ֖ג אֶת בְּנ֑/וֹ וּ/כְ/מוֹת֣/וֹ אָמַ֔ר יֵ֥רֶא יְהוָ֖ה וְ/יִדְרֹֽשׁ־־׃פ
 translation:
-  text: But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”
-  philosophy: optimal-equivalence
+  text: King Joash did not remember the kindness that Jehoiada, Zechariah’s father[a], had shown him. Instead, he killed Jehoiada’s son. As Zechariah was dying, he said, “May Yahweh see this and call those responsible to account.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the loyalty' or 'the covenant faithfulness' that Jehoiada had shown him.
-    reason: lexical_alternative
-  - marker: b
-    text: '''His father'' likely reflects Jehoiada''s fatherly role toward Joash rather than biological paternity.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'May the LORD see and require it.' The Hebrew verb can carry the sense of seeking out wrongdoing in order to hold someone accountable.
-    reason: lexical_alternative
+    text: Alternatively, “Jehoiada, who had been a father to Joash.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הַחֶסֶד
   chosen: the kindness
@@ -103,14 +97,20 @@ revisions:
   from: But King Joash did not remember the kindness that Jehoiada, his father, had shown him, and he killed his son. As he was dying, he said, “May the LORD see and call to account.”
   to: But King Joash did not remember the kindness that Jehoiada, his father, had shown him, and he killed his son. As he was dying, he said, “May the LORD see and call to account.”
   rationale: Removed the comma in 'Jehoiada his father' for smoother formal style, and changed 'call to account' to 'require it' to more directly reflect וידרש while preserving the concise, formal tone.
-
 - timestamp: '2026-05-17T01:00:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”'
-  to: 'But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”'
+  from: But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”
+  to: But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and call to account''].'
+- timestamp: '2026-11-09T17:24:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But King Joash did not remember the kindness that Jehoiada his father had shown him[a], and he killed his son. As he was dying, he said[c][b], “May Yahweh see and require it.”
+  to: King Joash did not remember the kindness that Jehoiada, Zechariah’s father[a], had shown him. Instead, he killed Jehoiada’s son. As Zechariah was dying, he said, “May Yahweh see this and call those responsible to account.”
+  rationale: The first draft and lexical rationale support 'call to account,' which conveys the meaning better than the current 'require it.' The recorded fatherly-role interpretation is weighed but not adopted as primary, because the immediate father–son relationship with Zechariah is stronger; no MAINTAINER ruling fixes the alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +133,30 @@ cross_check:
     agree: 1
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/024/022.job-59989.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:58Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Joash repaid Jehoiada’s kindness by killing his son, whose dying words appealed to Yahweh to hold the perpetrators accountable.
+  meaning_decisions:
+  - source_phrase: יְהוֹיָדָע אָבִיו
+    prior_rendering: Jehoiada his father
+    new_rendering: Jehoiada, Zechariah’s father
+    rationale: The surrounding narrative identifies Jehoiada as Zechariah’s father; making that reference explicit avoids suggesting that he was Joash’s biological father. The earlier fatherly-benefactor interpretation is retained as an alternative.
+  - source_phrase: וַיַּהֲרֹג אֶת בְּנוֹ וּכְמוֹתוֹ אָמַר
+    prior_rendering: and he killed his son. As he was dying, he said
+    new_rendering: Instead, he killed Jehoiada’s son. As Zechariah was dying, he said
+    rationale: The explicit names prevent confusion about whose son was killed and who spoke the dying appeal; 'Instead' expresses Joash’s betrayal of the kindness he had received.
+  - source_phrase: יֵרֶא יְהוָה וְיִדְרֹשׁ
+    prior_rendering: May Yahweh see and require it
+    new_rendering: May Yahweh see this and call those responsible to account
+    rationale: In this bloodshed context, דרש means demanding accountability; 'require it' no longer communicates that judicial appeal clearly.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale support 'call to account,' which conveys the meaning better than the current 'require it.' The recorded fatherly-role interpretation is weighed but not adopted as primary, because the immediate father–son relationship with Zechariah is stronger; no MAINTAINER ruling fixes the alternative.

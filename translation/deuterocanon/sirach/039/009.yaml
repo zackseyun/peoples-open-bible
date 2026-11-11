@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for generations and generations.' The Greek expression is an idiom for enduring through successive generations.
-    reason: lexical_alternative
+  text: Many will praise his understanding; it will never be blotted out. His memory will not fade, and his name will live on from generation to generation.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: αἰνέσουσιν
   chosen: will praise
@@ -127,14 +123,20 @@ revisions:
   from: Many will praise his understanding, and it will not be blotted out forever; his remembrance will not depart, and his name will live through generations of generations.
   to: Many will praise his understanding, and it will not be blotted out forever; his remembrance will not depart, and his name will live through generations of generations.
   rationale: Adjusted punctuation for clearer clause structure, changed 'and it will not be blotted out forever' to a more natural independent clause, and rendered εἰς as 'for' instead of 'through' in 'for generations of generations.'
-
 - timestamp: '2026-05-18T02:59:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.'
-  to: 'Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.'
+  from: Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.
+  to: Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through generations of generations''].'
+- timestamp: '2026-11-09T19:09:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Many will praise his understanding; it will not be blotted out forever. His remembrance will not depart[a], and his name will live for generations of generations.
+  to: Many will praise his understanding; it will never be blotted out. His memory will not fade, and his name will live on from generation to generation.
+  rationale: The lexical history rightly preserves blotting out and the name's continuing life rather than replacing them with an abstract legacy. I retain those images, correct the English scope of the negation, and express the generational idiom naturally.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -154,3 +156,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/039/009.job-52087.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The scholar's understanding will receive lasting praise, and his memory and name will endure through successive generations.
+  meaning_decisions:
+  - source_phrase: ἕως τοῦ αἰῶνος οὐκ ἐξαλειφθήσεται
+    prior_rendering: it will not be blotted out forever
+    new_rendering: it will never be blotted out
+    rationale: The source promises permanent remembrance; the prior English could instead suggest an erasure that would not last forever.
+  - source_phrase: οὐκ ἀποστήσεται τὸ μνημόσυνον αὐτοῦ
+    prior_rendering: His remembrance will not depart
+    new_rendering: His memory will not fade
+    rationale: The clause concerns others' continuing remembrance of him, expressed through a natural English image of memory enduring.
+  - source_phrase: ὄνομα αὐτοῦ ζήσεται εἰς γενεὰς γενεῶν
+    prior_rendering: his name will live for generations of generations
+    new_rendering: his name will live on from generation to generation
+    rationale: The source's intensifying generational expression means continuing through successive generations; the living-name image remains intact.
+  footnote_kinds: {}
+  history_weighed: The lexical history rightly preserves blotting out and the name's continuing life rather than replacing them with an abstract legacy. I retain those images, correct the English scope of the negation, and express the generational idiom naturally.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἦραν ⸂κλάσματα δώδεκα κοφίνων πληρώματα⸃ καὶ ἀπὸ τῶν ἰχθύων.
 translation:
-  text: And they picked up twelve basketfuls of broken pieces[a], and some of the fish.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'twelve full baskets of fragments.' The Greek expression literally combines 'broken pieces,' 'twelve baskets,' and 'fillings/full amounts.'
-    reason: lexical_alternative
+  text: And they gathered up twelve basketfuls of broken pieces of bread, along with what was left of the fish.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἦραν
   chosen: they picked up
@@ -77,14 +73,20 @@ revisions:
   from: And they picked up twelve basketfuls of broken pieces, and some of the fish.
   to: And they picked up twelve baskets full of broken pieces, and from the fish.
   rationale: Changed 'basketfuls' to 'baskets full' to reflect the Greek construction more closely, and replaced 'some of the fish' with 'from the fish' to avoid adding 'some,' which is not explicit in the source.
-
 - timestamp: '2026-05-15T16:54:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they picked up twelve baskets full of broken pieces[a], and from the fish.'
-  to: 'And they picked up twelve basketfuls of broken pieces[a], and some of the fish.'
-  rationale: 'Restored 2 chosen renderings preserving πλήρωμα quantity-noun and partitive ἀπό.'
+  from: And they picked up twelve baskets full of broken pieces[a], and from the fish.
+  to: And they picked up twelve basketfuls of broken pieces[a], and some of the fish.
+  rationale: Restored 2 chosen renderings preserving πλήρωμα quantity-noun and partitive ἀπό.
+- timestamp: '2026-11-09T17:13:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they picked up twelve basketfuls of broken pieces[a], and some of the fish.
+  to: And they gathered up twelve basketfuls of broken pieces of bread, along with what was left of the fish.
+  rationale: The attempt to use 'and from the fish' sacrificed understandable English without clarifying the meaning. I retain the established 'basketfuls' and express the contextual sense of the fish portions as leftovers.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/006/043.job-56282.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:34Z'
+  change_level: refined
+  confidence: high
+  meaning: After the meal, twelve basketfuls of broken bread are collected, along with leftovers from the fish.
+  meaning_decisions:
+  - source_phrase: κλάσματα
+    prior_rendering: broken pieces
+    new_rendering: broken pieces of bread
+    rationale: The surrounding account identifies these as pieces of the loaves; making that referent explicit distinguishes them from the fish mentioned afterward.
+  - source_phrase: καὶ ἀπὸ τῶν ἰχθύων
+    prior_rendering: and some of the fish
+    new_rendering: along with what was left of the fish
+    rationale: The phrase refers to portions remaining after the meal, not to an otherwise unspecified quantity of fish.
+  footnote_kinds: {}
+  history_weighed: The attempt to use 'and from the fish' sacrificed understandable English without clarifying the meaning. I retain the established 'basketfuls' and express the contextual sense of the fish portions as leftovers.

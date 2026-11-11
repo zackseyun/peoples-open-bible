@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: נְבִיאֶ֨י/הָ֙ פֹּֽחֲזִ֔ים אַנְשֵׁ֖י בֹּֽגְד֑וֹת כֹּהֲנֶ֨י/הָ֙ חִלְּלוּ קֹ֔דֶשׁ חָמְס֖וּ תּוֹרָֽה־׃
 translation:
-  text: Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.
-  philosophy: optimal-equivalence
+  text: Her prophets are reckless, treacherous men; her priests have profaned what is holy[a]; they have done violence to the law.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "the sanctuary" or "holy things" for "what is holy."
-    reason: lexical_alternative
-  - marker: b
-    text: Or "instruction" for "the law" (Hebrew torah).
-    reason: lexical_alternative
+    text: Or, 'the sanctuary.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: נְבִיאֶיהָ
   chosen: her prophets
@@ -103,14 +100,20 @@ revisions:
   from: Her prophets are reckless, treacherous men; her priests have profaned what is holy; they have done violence to the law.
   to: Her prophets are reckless, treacherous men; her priests have profaned what is holy; they have done violence to the law.
   rationale: Changed 'what is holy' to 'the holy' for a slightly more formal and closer rendering of קֹדֶשׁ, while retaining the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.'
-  to: 'Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.'
+  from: Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.
+  to: Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''what is holy''].'
+- timestamp: '2026-11-09T18:49:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Her prophets are reckless[a], treacherous men; her priests have profaned the holy[b]; they have done violence to the law.
+  to: Her prophets are reckless, treacherous men; her priests have profaned what is holy[a]; they have done violence to the law.
+  rationale: The first draft and documented lexical decision used 'what is holy' to preserve the object’s breadth. The automated preference for 'the holy' added formality rather than meaning, so the clearer earlier wording is restored.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +134,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/weighted_vocab/ot/zephaniah/003/004.job-17923.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:51Z'
+  change_level: refined
+  confidence: high
+  meaning: The city’s prophets are reckless and treacherous, while its priests desecrate what is holy and abuse the law.
+  meaning_decisions:
+  - source_phrase: חִלְּלוּ קֹדֶשׁ
+    prior_rendering: have profaned the holy
+    new_rendering: have profaned what is holy
+    rationale: This restores natural English while preserving the broad scope of the Hebrew, which need not refer exclusively to the sanctuary.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and documented lexical decision used 'what is holy' to preserve the object’s breadth. The automated preference for 'the holy' added formality rather than meaning, so the clearer earlier wording is restored.

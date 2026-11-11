@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἀπεκρίθησαν καὶ εἶπαν αὐτῷ· Εἰ μὴ ἦν οὗτος ⸂κακὸν ποιῶν⸃, οὐκ ἄν σοι παρεδώκαμεν αὐτόν.
 translation:
-  text: They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “If this man were not an evildoer, we would not have handed him over to you.”
-    reason: lexical_alternative
+  text: They answered him, “If this man were not an evildoer, we would not have handed him over to you.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπεκρίθησαν
   chosen: They answered
@@ -91,14 +87,20 @@ revisions:
   from: They answered and said to him, “If this man were not doing evil, we would not have handed him over to you.”
   to: They answered and said to him, “If this man were not doing evil, we would not have handed him over to you.”
   rationale: Revised “doing evil” to “an evildoer” to more naturally and directly reflect κακὸν ποιῶν in this context, while keeping the formal tone and full sense of the verse.
-
 - timestamp: '2026-05-18T02:59:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”'
-  to: 'They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”'
+  from: They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”
+  to: They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''doing evil''].'
+- timestamp: '2026-11-09T17:11:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They answered and said to him[a], “If this man were not an evildoer, we would not have handed him over to you.”
+  to: They answered him, “If this man were not an evildoer, we would not have handed him over to you.”
+  rationale: The current 'evildoer' preserves the general allegation without inventing a specific legal charge, honoring the concern behind the earlier 'doing evil' rendering. The redundant footnote is omitted.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +120,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/018/030.job-7532.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:01Z'
+  change_level: refined
+  confidence: high
+  meaning: The accusers insist that Jesus is an evildoer whose wrongdoing justifies handing him over, without naming a specific offense.
+  meaning_decisions:
+  - source_phrase: ἀπεκρίθησαν καὶ εἶπαν αὐτῷ
+    prior_rendering: They answered and said to him
+    new_rendering: They answered him
+    rationale: The two verbs form a conventional introduction to a reply, not two distinct actions; one natural English verb carries their meaning.
+  footnote_kinds: {}
+  history_weighed: The current 'evildoer' preserves the general allegation without inventing a specific legal charge, honoring the concern behind the earlier 'doing evil' rendering. The redundant footnote is omitted.

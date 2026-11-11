@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/עַתָּ֡ה תְּנוּ֩ אֶת הָ/אֲנָשִׁ֨ים בְּנֵֽי בְלִיַּ֜עַל אֲשֶׁ֤ר בַּ/גִּבְעָה֙ וּ/נְמִיתֵ֔/ם וּ/נְבַעֲרָ֥ה רָעָ֖ה מִ/יִּשְׂרָאֵ֑ל וְ/לֹ֤א אָבוּ֙ בִּנְיָמִ֔ן לִ/שְׁמֹ֕עַ בְּ/ק֖וֹל אֲחֵי/הֶ֥ם בְּנֵֽי יִשְׂרָאֵֽל־־־׃
 translation:
-  text: Hand over the men[a], the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge evil from Israel. But Benjamin was not willing to listen to the voice of their brothers[c][b], the sons of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'worthless men'; traditionally 'sons of Belial.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'listen to the voice of,' an idiom that can also mean 'obey' or 'heed.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the Israelites.'
-    reason: lexical_alternative
+  text: “Now hand over the wicked men who are in Gibeah, so that we may put them to death and purge evil from Israel.” But the tribe of Benjamin refused to heed their Israelite brothers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: תְּנוּ
   chosen: hand over
@@ -23,7 +13,7 @@ lexical_decisions:
   - give
   - deliver up
   lexicon: HALOT
-  rationale: "In this judicial context, the imperative asks for surrendering the guilty parties to the assembly for punishment, not merely 'giving' them in a general sense. 'Hand over' is idiomatic and preserves the legal force. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'In this judicial context, the imperative asks for surrendering the guilty parties to the assembly for punishment, not merely ''giving'' them in a general sense. ''Hand over'' is idiomatic and preserves the legal force. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: הָאֲנָשִׁים
   chosen: the men
   alternatives:
@@ -132,7 +122,6 @@ revisions:
   from: Now hand over the men, the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge the evil from Israel. But Benjamin was not willing to listen to the voice of their brothers, the sons of Israel.
   to: Now hand over the men, the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge evil from Israel. But Benjamin was not willing to listen to the voice of their brothers, the sons of Israel.
   rationale: Removed the definite article from 'evil' to match the Hebrew 'רָעָה' (evil) rather than 'הָרָעָה' (the evil).
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -140,6 +129,13 @@ revisions:
   from: Now hand over the men[a], the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge evil from Israel. But Benjamin was not willing to listen to the voice of their brothers[c][b], the sons of Israel.
   to: Hand over the men[a], the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge evil from Israel. But Benjamin was not willing to listen to the voice of their brothers[c][b], the sons of Israel.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T20:30:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Hand over the men[a], the sons of worthlessness, who are in Gibeah, so that we may put them to death and purge evil from Israel. But Benjamin was not willing to listen to the voice of their brothers[c][b], the sons of Israel.
+  to: “Now hand over the wicked men who are in Gibeah, so that we may put them to death and purge evil from Israel.” But the tribe of Benjamin refused to heed their Israelite brothers.
+  rationale: There are no MAINTAINER revisions; the earlier judicial wording ‘put them to death and purge evil from Israel’ remains well suited to the meaning. I reversed the low-weight removal of ‘Now’ because וְעַתָּה is explicit in the supplied source, and replaced source-transparent idioms with English that carries their established sense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +155,37 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/020/013.job-69365.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel demands that Benjamin surrender the wicked men in Gibeah for execution to purge evil from Israel, but Benjamin refuses to heed its fellow Israelites.
+  meaning_decisions:
+  - source_phrase: וְעַתָּה
+    prior_rendering: ''
+    new_rendering: Now
+    rationale: The source explicitly includes ‘and now,’ introducing the demand that follows the preceding question; restoring it preserves that transition.
+  - source_phrase: הָאֲנָשִׁים בְּנֵי בְלִיַּעַל
+    prior_rendering: the men, the sons of worthlessness
+    new_rendering: the wicked men
+    rationale: The Hebrew idiom characterizes the men as morally vile, not as literal sons of an abstraction or a being named Belial.
+  - source_phrase: בִּנְיָמִן
+    prior_rendering: Benjamin
+    new_rendering: the tribe of Benjamin
+    rationale: Making the collective identity explicit prevents the tribal name from being mistaken for an individual.
+  - source_phrase: וְלֹא אָבוּ ... לִשְׁמֹעַ בְּקוֹל
+    prior_rendering: was not willing to listen to the voice of
+    new_rendering: refused to heed
+    rationale: The expression describes deliberate refusal to comply with the demand, not merely unwillingness to hear someone speak.
+  - source_phrase: אֲחֵיהֶם בְּנֵי יִשְׂרָאֵל
+    prior_rendering: their brothers, the sons of Israel
+    new_rendering: their Israelite brothers
+    rationale: This preserves the pointed kinship language while rendering the national designation naturally.
+  footnote_kinds: {}
+  history_weighed: There are no MAINTAINER revisions; the earlier judicial wording ‘put them to death and purge evil from Israel’ remains well suited to the meaning. I reversed the low-weight removal of ‘Now’ because וְעַתָּה is explicit in the supplied source, and replaced source-transparent idioms with English that carries their established sense.

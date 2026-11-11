@@ -4,17 +4,13 @@ source:
   edition: SBLGNT
   text: Σαῦλος δὲ ἦν συνευδοκῶν τῇ ἀναιρέσει αὐτοῦ. Ἐγένετο δὲ ἐν ἐκείνῃ τῇ ἡμέρᾳ διωγμὸς μέγας ἐπὶ τὴν ἐκκλησίαν τὴν ἐν Ἱεροσολύμοις· πάντες δὲ διεσπάρησαν κατὰ τὰς χώρας τῆς Ἰουδαίας καὶ Σαμαρείας πλὴν τῶν ἀποστόλων.
 translation:
-  text: Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his execution,' 'his death,' or more interpretively, 'his murder.' The Greek refers to the act of putting him to death.
-    reason: lexical_alternative
+  text: Saul approved of Stephen’s killing. That day a great persecution broke out against the church in Jerusalem, and all its members except the apostles were scattered throughout the regions of Judea and Samaria.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Σαῦλος
   chosen: Saul
   lexicon: BDAG
-  rationale: "Standard transliteration of the personal name; names are transliterated rather than translated. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Standard transliteration of the personal name; names are transliterated rather than translated. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: συνευδοκῶν
   chosen: was approving of
   alternatives:
@@ -126,13 +122,12 @@ revisions:
   from: Now Saul was approving of his killing. And on that day a great persecution arose against the church in Jerusalem, and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
   to: Now Saul was approving of his killing. And on that day a great persecution arose against the church in Jerusalem, and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
   rationale: Changed 'his killing' to 'his execution' for a more natural and precise rendering of ἀναιρέσει in this context.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.'
-  to: 'Now Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.'
+  from: Now Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
+  to: Now Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his killing''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -141,6 +136,13 @@ revisions:
   from: Now Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
   to: Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:06:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Saul was approving of his execution. And on that day a great persecution arose against the church in Jerusalem[a], and they were all scattered throughout the regions of Judea and Samaria, except the apostles.
+  to: Saul approved of Stephen’s killing. That day a great persecution broke out against the church in Jerusalem, and all its members except the apostles were scattered throughout the regions of Judea and Samaria.
+  rationale: The review favored 'execution,' but the lexical and theological records identify its possible implication of legal legitimacy. I retain their stronger distinction between approval and direct participation while using 'killing' and identifying Stephen explicitly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -160,3 +162,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/008/001.job-46681.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul approved Stephen’s killing, and persecution beginning that day scattered the Jerusalem church throughout Judea and Samaria, except for the apostles.
+  meaning_decisions:
+  - source_phrase: ἦν συνευδοκῶν τῇ ἀναιρέσει αὐτοῦ
+    prior_rendering: was approving of his execution
+    new_rendering: approved of Stephen’s killing
+    rationale: Naming Stephen clarifies the referent across the chapter boundary, while 'killing' conveys the act of putting him to death without suggesting that it was a lawful execution; simple past naturally expresses Saul’s contemporaneous approval.
+  - source_phrase: Ἐγένετο δὲ ἐν ἐκείνῃ τῇ ἡμέρᾳ διωγμὸς μέγας
+    prior_rendering: And on that day a great persecution arose
+    new_rendering: That day a great persecution broke out
+    rationale: '''Broke out'' naturally conveys the onset of the persecution while retaining its scale.'
+  - source_phrase: πάντες δὲ διεσπάρησαν ... πλὴν τῶν ἀποστόλων
+    prior_rendering: and they were all scattered ... except the apostles
+    new_rendering: and all its members except the apostles were scattered
+    rationale: Making the church members the explicit subject removes the vague pronoun without weakening the statement’s comprehensive force.
+  footnote_kinds: {}
+  history_weighed: The review favored 'execution,' but the lexical and theological records identify its possible implication of legal legitimacy. I retain their stronger distinction between approval and direct participation while using 'killing' and identifying Stephen explicitly.

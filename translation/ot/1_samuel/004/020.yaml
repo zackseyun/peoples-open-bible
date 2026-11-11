@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וּ/כְ/עֵ֣ת מוּתָ֗/הּ וַ/תְּדַבֵּ֨רְנָה֙ הַ/נִּצָּב֣וֹת עָלֶ֔י/הָ אַל תִּֽירְאִ֖י כִּ֣י בֵ֣ן יָלָ֑דְתְּ וְ/לֹ֥א עָנְתָ֖ה וְ/לֹא שָׁ֥תָה לִבָּֽ/הּ־־׃
 translation:
-  text: And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “she did not set her heart on it,” that is, she paid no attention to what they said.
-    reason: lexical_alternative
+  text: As she was dying, the women attending her said, “Do not fear, for you have borne a son.” But she did not answer or pay attention to what they said.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּכְעֵת
   chosen: about the time of
@@ -90,14 +86,20 @@ revisions:
   from: And about the time of her death, the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, and she did not take it to heart.
   to: And about the time of her death, the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, and she did not take it to heart.
   rationale: Changed 'and she did not take it to heart' to 'nor did she take it to heart' for smoother, more formal English while preserving the Hebrew sense. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.'
-  to: 'And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.'
+  from: And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.
+  to: And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she did not take it to heart''].'
+- timestamp: '2026-11-09T17:22:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And about the time of her death[a], the women standing by her said, “Do not fear, for you have borne a son.” But she did not answer, nor did she take it to heart.
+  to: As she was dying, the women attending her said, “Do not fear, for you have borne a son.” But she did not answer or pay attention to what they said.
+  rationale: The automated comments concern 'and' versus 'nor' and establish no substantive meaning change. The documented sense of setting one’s heart as paying attention governs the revised ending, so its earlier explanatory note is no longer needed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +122,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/004/020.job-58858.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As the mother is dying, the women try to reassure her that she has borne a son, but she neither answers nor attends to their words.
+  meaning_decisions:
+  - source_phrase: וּכְעֵת מוּתָהּ
+    prior_rendering: And about the time of her death
+    new_rendering: As she was dying
+    rationale: Locates the women’s words during her dying rather than vaguely around the time of her death.
+  - source_phrase: הַנִּצָּבוֹת עָלֶיהָ
+    prior_rendering: the women standing by her
+    new_rendering: the women attending her
+    rationale: Expresses their understood role at the childbirth rather than merely their physical position.
+  - source_phrase: וְלֹא שָׁתָה לִבָּהּ
+    prior_rendering: nor did she take it to heart
+    new_rendering: or pay attention to what they said
+    rationale: The Hebrew idiom means giving attention; modern 'take it to heart' can instead suggest becoming emotionally affected by something.
+  footnote_kinds: {}
+  history_weighed: The automated comments concern 'and' versus 'nor' and establish no substantive meaning change. The documented sense of setting one’s heart as paying attention governs the revised ending, so its earlier explanatory note is no longer needed.

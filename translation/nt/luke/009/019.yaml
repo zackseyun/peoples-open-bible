@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: οἱ δὲ ἀποκριθέντες εἶπαν· Ἰωάννην τὸν βαπτιστήν, ἄλλοι δὲ Ἠλίαν, ἄλλοι δὲ ὅτι προφήτης τις τῶν ἀρχαίων ἀνέστη.
 translation:
-  text: And they answered[a], “John the Baptist; but others, Elijah; and others, that some prophet of the ancients has risen.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “a prophet from long ago has arisen.” The Greek can be understood more idiomatically this way.
-    reason: lexical_alternative
+  text: They answered, “Some say John the Baptist; others say Elijah; and others say that one of the prophets of old has risen from the dead.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀποκριθέντες εἶπαν
   chosen: they answered
@@ -93,14 +89,20 @@ revisions:
   from: And they answered, “John the Baptist; but others, Elijah; and others, that some prophet of the ancients has risen.”
   to: And they answered, “John the Baptist; but others, Elijah; and others, that one of the ancient prophets has risen.”
   rationale: Revised 'some prophet of the ancients' to 'one of the ancient prophets' for more natural English and closer representation of τῶν ἀρχαίων.
-
 - timestamp: '2026-05-16T23:07:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they answered[a], “John the Baptist; but others, Elijah; and others, that one of the ancient prophets has risen.”'
-  to: 'And they answered[a], “John the Baptist; but others, Elijah; and others, that some prophet of the ancients has risen.”'
-  rationale: 'Restored drafter ''some prophet of the ancients'' (preserving the chosen rendering of τῶν ἀρχαίων) per chosen renderings.'
+  from: And they answered[a], “John the Baptist; but others, Elijah; and others, that one of the ancient prophets has risen.”
+  to: And they answered[a], “John the Baptist; but others, Elijah; and others, that some prophet of the ancients has risen.”
+  rationale: Restored drafter 'some prophet of the ancients' (preserving the chosen rendering of τῶν ἀρχαίων) per chosen renderings.
+- timestamp: '2026-11-09T17:11:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they answered[a], “John the Baptist; but others, Elijah; and others, that some prophet of the ancients has risen.”
+  to: They answered, “Some say John the Baptist; others say Elijah; and others say that one of the prophets of old has risen from the dead.”
+  rationale: The recorded revision to “one of the ancient prophets” clarified the meaning; the later automated revert restored a less intelligible genitive construction without offering contextual evidence against that clarification. I retain the revision’s gain and make the contextual sense of rising explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +124,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/009/019.job-55514.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The disciples reported that the crowds identified Jesus as John the Baptist, Elijah, or an ancient prophet raised from the dead.
+  meaning_decisions:
+  - source_phrase: Ἰωάννην τὸν βαπτιστήν, ἄλλοι δὲ Ἠλίαν
+    prior_rendering: John the Baptist; but others, Elijah
+    new_rendering: Some say John the Baptist; others say Elijah
+    rationale: The supplied verbs make explicit the reported opinions already understood from Jesus’ question.
+  - source_phrase: προφήτης τις τῶν ἀρχαίων ἀνέστη
+    prior_rendering: some prophet of the ancients has risen
+    new_rendering: one of the prophets of old has risen from the dead
+    rationale: The phrase identifies a prophet belonging to the distant past. The parallel reports in 9:7–8 make clear that rising here means returning from death, not merely beginning a prophetic ministry.
+  footnote_kinds: {}
+  history_weighed: The recorded revision to “one of the ancient prophets” clarified the meaning; the later automated revert restored a less intelligible genitive construction without offering contextual evidence against that clarification. I retain the revision’s gain and make the contextual sense of rising explicit.

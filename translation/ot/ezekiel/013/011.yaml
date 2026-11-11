@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֱמֹ֛ר אֶל טָחֵ֥י תָפֵ֖ל וְ/יִפֹּ֑ל הָיָ֣ה גֶּ֣שֶׁם שׁוֹטֵ֗ף וְ/אַתֵּ֜נָה אַבְנֵ֤י אֶלְגָּבִישׁ֙ תִּפֹּ֔לְנָה וְ/ר֥וּחַ סְעָר֖וֹת תְּבַקֵּֽעַ־׀׃
 translation:
-  text: Tell those who plaster it with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a windstorm will break it open.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'you, hailstones, will fall,' directly addressing the hailstones for vivid effect.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'a torrential rain' for 'a flooding rain.'
-    reason: lexical_alternative
+  text: Tell those who plaster it with whitewash that the wall will fall. Torrential rain will come; you, hailstones, will fall, and a windstorm will split it apart.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: טָחֵי תָפֵל
   chosen: those who plaster it with whitewash
@@ -83,14 +76,20 @@ revisions:
   from: Tell those who plaster it with whitewash that it will fall. There will be a flooding rain, and you, O hailstones, will fall, and a windstorm will break it open.
   to: Tell those who plaster with whitewash that it will fall. There will be a flooding rain, and you, O hailstones, will fall, and a storm wind will break it apart.
   rationale: Removed 'it' after 'plaster' to better match the Hebrew, changed 'a windstorm' to 'a storm wind' for closer lexical correspondence, and revised 'break it open' to 'break it apart' for more natural English.
-
 - timestamp: '2026-05-15T10:39:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Tell those who plaster with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a storm wind will break it apart.'
-  to: 'Tell those who plaster it with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a windstorm will break it open.'
-  rationale: 'Restored explicit pronoun ''it'', ''windstorm'', and concrete ''break it open''.'
+  from: Tell those who plaster with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a storm wind will break it apart.
+  to: Tell those who plaster it with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a windstorm will break it open.
+  rationale: Restored explicit pronoun 'it', 'windstorm', and concrete 'break it open'.
+- timestamp: '2026-11-09T17:37:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Tell those who plaster it with whitewash that it will fall[a]. There will be a flooding rain, and you, O hailstones, will fall[b], and a windstorm will break it open.
+  to: Tell those who plaster it with whitewash that the wall will fall. Torrential rain will come; you, hailstones, will fall, and a windstorm will split it apart.
+  rationale: The earlier revision recognized that the final verb describes the wall breaking apart, while its automated revert supplies no meaning-based reason to prefer “break it open.” I retain the helpful explicit wall reference, the natural “windstorm,” and the source’s vivid direct address to the hailstones.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +112,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/013/011.job-63620.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Ezekiel must warn the whitewashers that their wall will collapse under torrential rain, hail, and a destructive windstorm.
+  meaning_decisions:
+  - source_phrase: וְיִפֹּל
+    prior_rendering: that it will fall
+    new_rendering: that the wall will fall
+    rationale: Naming the implied subject prevents the coating rather than the wall from being mistaken for what will collapse.
+  - source_phrase: הָיָה גֶּשֶׁם שׁוֹטֵף
+    prior_rendering: There will be a flooding rain
+    new_rendering: Torrential rain will come
+    rationale: “Torrential rain” naturally conveys the heavy, sweeping rainfall in the destructive storm.
+  - source_phrase: תְּבַקֵּעַ
+    prior_rendering: will break it open
+    new_rendering: will split it apart
+    rationale: The verb describes structural splitting or rupture; “split it apart” carries that force more naturally for a collapsing wall.
+  footnote_kinds: {}
+  history_weighed: The earlier revision recognized that the final verb describes the wall breaking apart, while its automated revert supplies no meaning-based reason to prefer “break it open.” I retain the helpful explicit wall reference, the natural “windstorm,” and the source’s vivid direct address to the hailstones.

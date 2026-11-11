@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וְ/הַ/בַּ֗יִת אֲשֶׁ֨ר בָּנָ֜ה הַ/מֶּ֤לֶךְ שְׁלֹמֹה֙ לַֽ/יהוָ֔ה שִׁשִּֽׁים אַמָּ֥ה אָרְכּ֖/וֹ וְ/עֶשְׂרִ֤ים רָחְבּ֑/וֹ וּ/שְׁלֹשִׁ֥ים אַמָּ֖ה קוֹמָתֽ/וֹ־׃
 translation:
-  text: The house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
-  philosophy: optimal-equivalence
+  text: The house that King Solomon built for Yahweh was sixty cubits[a] long, twenty cubits wide, and thirty cubits high.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''And the house ...''; the opening conjunction can also be rendered ''And'' rather than ''Now.'''
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'its width was twenty cubits'; the Hebrew does not repeat 'cubits' in this phrase, but the unit is understood from the context.
-    reason: lexical_alternative
-  - marker: c
-    text: '''the LORD'' renders the divine name YHWH; alternatively, ''Yahweh.'''
-    reason: alternative_reading
+    text: A cubit was roughly eighteen inches (45 centimeters), though the precise standard used here is uncertain.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וְהַבַּיִת
   chosen: The house
@@ -24,7 +18,7 @@ lexical_decisions:
   - the temple
   - Now the house
   lexicon: HALOT
-  rationale: "בַּיִת literally means 'house.' In this temple-building context it refers to the temple structure, but 'house' preserves the Hebrew wording and its theological resonance ('house' for the LORD's dwelling). The prefixed conjunction is rendered 'Now' for natural English narrative flow. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'בַּיִת literally means ''house.'' In this temple-building context it refers to the temple structure, but ''house'' preserves the Hebrew wording and its theological resonance (''house'' for the LORD''s dwelling). The prefixed conjunction is rendered ''Now'' for natural English narrative flow. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: אֲשֶׁר
   chosen: that
   alternatives:
@@ -100,13 +94,12 @@ revisions:
   from: Now the house that King Solomon built for the LORD was sixty cubits long, twenty wide, and thirty cubits high.
   to: Now the house that King Solomon built for the LORD was sixty cubits long, twenty wide, and thirty cubits high.
   rationale: Added 'cubits' after 'twenty' for completeness and consistency with the source and the other dimensions.
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.'
-  to: 'Now the house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.'
+  from: Now the house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
+  to: Now the house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''twenty wide''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -115,6 +108,13 @@ revisions:
   from: Now the house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
   to: The house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:22:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The house that King Solomon built for Yahweh was sixty cubits long[a], twenty cubits wide[c][b], and thirty cubits high.
+  to: The house that King Solomon built for Yahweh was sixty cubits[a] long, twenty cubits wide, and thirty cubits high.
+  rationale: The current wording clearly expresses all three dimensions, including the understood unit for the width. I retain it, replacing the redundant earlier notes with a brief explanation of the ancient unit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +137,18 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/006/002.job-58161.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:18Z'
+  change_level: kept
+  confidence: high
+  meaning: Solomon’s temple measured sixty cubits in length, twenty in width, and thirty in height.
+  meaning_decisions: []
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The current wording clearly expresses all three dimensions, including the understood unit for the width. I retain it, replacing the redundant earlier notes with a brief explanation of the ancient unit.

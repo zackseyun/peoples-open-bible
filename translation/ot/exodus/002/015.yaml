@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁמַ֤ע פַּרְעֹה֙ אֶת הַ/דָּבָ֣ר הַ/זֶּ֔ה וַ/יְבַקֵּ֖שׁ לַ/הֲרֹ֣ג אֶת מֹשֶׁ֑ה וַ/יִּבְרַ֤ח מֹשֶׁה֙ מִ/פְּנֵ֣י פַרְעֹ֔ה וַ/יֵּ֥שֶׁב בְּ/אֶֽרֶץ מִדְיָ֖ן וַ/יֵּ֥שֶׁב עַֽל הַ/בְּאֵֽר־־־־׃
 translation:
-  text: When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'heard this thing' or 'learned of this incident.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew uses the same verb twice ('settled' / 'sat down'), first for residing in Midian and then for physically sitting by the well.
-    reason: lexical_alternative
+  text: When Pharaoh heard about this, he sought to kill Moses. But Moses fled from Pharaoh and settled in the land of Midian, where he sat down by the well.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁמַע
   chosen: heard
@@ -87,14 +80,20 @@ revisions:
   from: When Pharaoh heard about this matter, he sought to kill Moses. But Moses fled from Pharaoh and settled in the land of Midian, and he sat down by the well.
   to: When Pharaoh heard about this matter, he sought to kill Moses. But Moses fled from Pharaoh and settled in the land of Midian, and he sat down by the well.
   rationale: Changed 'heard about this matter' to 'heard this matter' for closer lexical correspondence, and 'settled' to 'stayed' to avoid implying permanence beyond the source.
-
 - timestamp: '2026-05-18T02:55:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.'
-  to: 'When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.'
+  from: When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.
+  to: When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''settled in the land of Midian''].'
+- timestamp: '2026-11-09T17:33:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When Pharaoh heard this matter[a], he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian[b], and he sat down by the well.
+  to: When Pharaoh heard about this, he sought to kill Moses. But Moses fled from Pharaoh and settled in the land of Midian, where he sat down by the well.
+  rationale: The history debated “settled” versus “stayed”; the ensuing narrative supports taking up residence in Midian. The notes on “matter” and the repeated verb are unnecessary once the English expresses their contextual senses clearly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +116,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/002/015.job-62311.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:41Z'
+  change_level: refined
+  confidence: high
+  meaning: Pharaoh learns of the killing and seeks Moses’s death, so Moses flees to Midian and sits beside a well.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁמַע פַּרְעֹה אֶת־הַדָּבָר הַזֶּה
+    prior_rendering: When Pharaoh heard this matter
+    new_rendering: When Pharaoh heard about this
+    rationale: Pharaoh learns of the incident; “heard about this” expresses that meaning naturally rather than suggesting that a matter itself was heard.
+  - source_phrase: וַיֵּשֶׁב בְּאֶרֶץ מִדְיָן וַיֵּשֶׁב עַל־הַבְּאֵר
+    prior_rendering: stayed in the land of Midian, and he sat down by the well
+    new_rendering: settled in the land of Midian, where he sat down by the well
+    rationale: The first verb describes taking up residence and the second physical sitting; the ensuing household and long interval support “settled” without implying permanent residence.
+  footnote_kinds: {}
+  history_weighed: The history debated “settled” versus “stayed”; the ensuing narrative supports taking up residence in Midian. The notes on “matter” and the repeated verb are unnecessary once the English expresses their contextual senses clearly.

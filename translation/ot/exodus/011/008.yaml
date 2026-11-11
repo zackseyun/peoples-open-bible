@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וְ/יָרְד֣וּ כָל עֲבָדֶי/ךָ֩ אֵ֨לֶּה אֵלַ֜/י וְ/הִשְׁתַּֽחֲוּוּ לִ֣/י לֵ/אמֹ֗ר צֵ֤א אַתָּה֙ וְ/כָל הָ/עָ֣ם אֲשֶׁר בְּ/רַגְלֶ֔י/ךָ וְ/אַחֲרֵי כֵ֖ן אֵצֵ֑א וַ/יֵּצֵ֥א מֵֽ/עִם פַּרְעֹ֖ה בָּ/חֳרִי אָֽף־־־־־־־׃ס
 translation:
-  text: Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
-  philosophy: optimal-equivalence
+  text: Then all these officials of yours will come down to me and bow down to me, saying, ‘Leave—you and all the people who follow you[a]!’ After that I will leave.” Then Moses left Pharaoh in burning anger.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'all the people who are at your feet,' an idiom for those accompanying or following you.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'your officials' for 'servants of yours'; the Hebrew term can refer to royal attendants in a court setting.
+    text: Literally, “all the people who are at your feet.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְיָרְדוּ
@@ -99,14 +96,20 @@ revisions:
   from: Then all these servants of yours will come down to me and bow down to me, saying, ‘Go out, you and all the people who follow you,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
   to: Then all these servants of yours will come down to me and bow down to me, saying, ‘Go out, you and all the people who follow you,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
   rationale: Revised ‘who follow you’ to the more literal ‘who are at your feet,’ reflecting the Hebrew expression more closely while preserving formal register. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.'
-  to: 'Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.'
+  from: Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
+  to: Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and all the people who follow you''].'
+- timestamp: '2026-11-09T17:34:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then all these servants of yours will come down to me and bow down to me[a], saying, ‘Go out[b], you and all the people who are at your feet,’ and after that I will go out.” And he went out from Pharaoh in burning anger.
+  to: Then all these officials of yours will come down to me and bow down to me, saying, ‘Leave—you and all the people who follow you[a]!’ After that I will leave.” Then Moses left Pharaoh in burning anger.
+  rationale: The first draft and lexical rationale support “who follow you,” while the later automated records conflict about restoring that wording; no maintainer revision settles the matter. I use the idiom’s established meaning in the text, preserve its literal image in a note, and retain “burning anger.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +129,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/011/008.job-62533.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Moses tells Pharaoh that his own officials will bow before Moses and demand Israel’s departure, then leaves Pharaoh in burning anger.
+  meaning_decisions:
+  - source_phrase: כָל עֲבָדֶיךָ אֵלֶּה
+    prior_rendering: all these servants of yours
+    new_rendering: all these officials of yours
+    rationale: These are Pharaoh’s court personnel, whose submission to Moses reverses the present balance of authority.
+  - source_phrase: צֵא אַתָּה
+    prior_rendering: Go out, you
+    new_rendering: Leave—you
+    rationale: The command demands departure; the dash preserves the emphatic identification of Moses and his people as those who must leave.
+  - source_phrase: וְכָל הָעָם אֲשֶׁר בְּרַגְלֶיךָ
+    prior_rendering: and all the people who are at your feet
+    new_rendering: and all the people who follow you
+    rationale: The idiom refers to those accompanying or following Moses, rather than people physically gathered at his feet.
+  - source_phrase: וְאַחֲרֵי כֵן אֵצֵא וַיֵּצֵא מֵעִם פַּרְעֹה
+    prior_rendering: and after that I will go out. And he went out from Pharaoh
+    new_rendering: After that I will leave. Then Moses left Pharaoh
+    rationale: Natural departure language and an explicit narrative subject clearly distinguish Moses’ prediction from his immediate exit.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale support “who follow you,” while the later automated records conflict about restoring that wording; no maintainer revision settles the matter. I use the idiom’s established meaning in the text, preserve its literal image in a note, and retain “burning anger.”

@@ -19,11 +19,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.
-  philosophy: optimal-equivalence
+  text: Wine is like life to a man if you drink it in due measure. What is life to one who lacks wine[a]? For it too was created for human gladness.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or possibly, 'What is life to one lacking wine?' The Greek phrase is terse, and the dative with 'wine' can be taken differently; the main text understands the sense as a person diminished by wine, that is, harmed by it.
+    text: Alternatively, 'one diminished by wine,' understood as someone harmed by it.
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἴσον
@@ -145,14 +145,20 @@ revisions:
   from: Wine is like life to a man, if you drink it in its measure. What is life to one diminished by wine? It too was created for human gladness.
   to: Wine is like life to a man, if you drink it in its measure. What is life to one diminished by wine? It too was created for human gladness.
   rationale: Changed 'in its measure' to 'in due measure' for more natural English while preserving μέτρῳ αὐτοῦ; added 'For' at the start of the final clause to reflect καί more naturally in context.
-
 - timestamp: '2026-05-18T02:59:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.'
-  to: 'Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.'
+  from: Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.
+  to: Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in its measure''].'
+- timestamp: '2026-11-09T19:08:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Wine is like life to a man[a], if you drink it in due measure. What is life to one diminished by wine? For it too was created for human gladness.
+  to: Wine is like life to a man if you drink it in due measure. What is life to one who lacks wine[a]? For it too was created for human gladness.
+  rationale: The earlier draft and lexical decisions favored being harmed by wine, but this verse's positive movement favors lacking wine instead. I retain the current 'in due measure' and preserve the prior interpretation as an alternative.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -172,3 +178,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/034/027.job-51941.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wine enjoyed in proper measure enriches life and was created to give human beings gladness.
+  meaning_decisions:
+  - source_phrase: τίς ζωὴ ἐλασσουμένῳ οἴνῳ
+    prior_rendering: What is life to one diminished by wine?
+    new_rendering: What is life to one who lacks wine?
+    rationale: The dative is best understood as indicating what the person lacks; the question continues the praise of measured wine and its created purpose, whereas the warning against excess begins in verse 29.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier draft and lexical decisions favored being harmed by wine, but this verse's positive movement favors lacking wine instead. I retain the current 'in due measure' and preserve the prior interpretation as an alternative.

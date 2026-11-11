@@ -21,12 +21,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
-  philosophy: optimal-equivalence
+  text: Guaranteeing debts has ruined many who were prospering[a] and shaken them like a wave of the sea; it has driven mighty men from their homes, and they have wandered among foreign nations.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Guarantee' or 'standing surety.' The Greek term refers to becoming security for another person's debt.
-    reason: lexical_alternative
+    text: Or, “who were upright.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐγγύη
   chosen: Surety
@@ -134,14 +134,20 @@ revisions:
   from: Surety has destroyed many who were prospering, and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
   to: Surety has destroyed many who were prospering, and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
   rationale: Changed 'who were prospering' to 'who were upright' to better reflect κατευθύνοντας ('those going straight/upright') rather than prosperity. Kept the rest substantially the same as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.'
-  to: 'Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.'
+  from: Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
+  to: Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who were prospering''].'
+- timestamp: '2026-11-09T19:06:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Surety has destroyed many who were upright[a], and has shaken them like a wave of the sea; it has driven mighty men from their homes, and they wandered among foreign nations.
+  to: Guaranteeing debts has ruined many who were prospering[a] and shaken them like a wave of the sea; it has driven mighty men from their homes, and they have wandered among foreign nations.
+  rationale: The first draft and lexical discussion support “prospering,” while an automated review favored “upright”; the subsequent revert record is inconsistent with the supplied current text. The financial context favors the first understanding, with the later interpretation retained in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -161,3 +167,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/029/018.job-51768.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:58Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Guaranteeing debts has ruined even prosperous and powerful men, unsettling their lives and driving them to wander abroad.
+  meaning_decisions:
+  - source_phrase: ἐγγύη
+    prior_rendering: Surety
+    new_rendering: Guaranteeing debts
+    rationale: The noun denotes assuming responsibility for another person's obligation, not the guarantor himself; the new wording states that action clearly.
+  - source_phrase: ἀπώλεσεν
+    prior_rendering: has destroyed
+    new_rendering: has ruined
+    rationale: The consequences described are loss of prosperity, home, and social stability, rather than necessarily death.
+  - source_phrase: κατευθύνοντας
+    prior_rendering: who were upright
+    new_rendering: who were prospering
+    rationale: The contrast with subsequent financial ruin and displacement favors people whose affairs were going well; the moral interpretation remains a serious alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical discussion support “prospering,” while an automated review favored “upright”; the subsequent revert record is inconsistent with the supplied current text. The financial context favors the first understanding, with the later interpretation retained in a note.

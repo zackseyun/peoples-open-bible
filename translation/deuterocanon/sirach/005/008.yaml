@@ -16,12 +16,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 5:8
 translation:
-  text: And you said[a], “His mercies are many; for the multitude of my iniquities he will forgive.”
-  philosophy: optimal-equivalence
+  text: And do not say[a], “His mercy is abundant; he will forgive my many iniquities.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: “Do not rely on unrighteous riches, for they will profit you nothing in the day of visitation.” The surviving Hebrew witness here instead gives a warning against presuming on God’s mercy.'
-    reason: textual_variant
+    text: Or “And you say,” presenting the presumptuous claim that the next verse rebuts.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאָמַרְתָּ
   chosen: And you said
@@ -108,13 +108,12 @@ revisions:
   from: And you said, “His mercies are many; for the multitude of my iniquities he will forgive.”
   to: And you say, “His mercies are many; for the multitude of my iniquities he will forgive.”
   rationale: Changed 'said' to 'say' to better reflect the Hebrew perfect used in this admonitory context. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you say[a], “His mercies are many; for the multitude of my iniquities he will forgive.”'
-  to: 'And you said, “His mercies are many; for the multitude of my iniquities he will forgive.”'
+  from: And you say[a], “His mercies are many; for the multitude of my iniquities he will forgive.”
+  to: And you said, “His mercies are many; for the multitude of my iniquities he will forgive.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And you said''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -124,6 +123,13 @@ revisions:
   from: And you said, “His mercies are many; for the multitude of my iniquities he will forgive.”
   to: And you said[a], “His mercies are many; for the multitude of my iniquities he will forgive.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you said[a], “His mercies are many; for the multitude of my iniquities he will forgive.”
+  to: And do not say[a], “His mercy is abundant; he will forgive my many iniquities.”
+  rationale: The recorded past tense follows the Hebrew form too mechanically for the continuing admonition. I read the saying under the preceding prohibition, with the alternative noted, and drop the earlier Greek note about wealth because it compares a differently numbered saying.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -143,3 +149,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/005/008.job-51097.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:59Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The hearer must not use God's abundant mercy to assume forgiveness for numerous iniquities.
+  meaning_decisions:
+  - source_phrase: וְאָמַרְתָּ
+    prior_rendering: And you said
+    new_rendering: And do not say
+    rationale: In this continuing admonition, the saying is best read under the preceding prohibition; the corresponding Greek warning supports that reading, while a direct presentation of the hearer's claim remains possible.
+  - source_phrase: רַחֲמָיו רַבִּים
+    prior_rendering: His mercies are many
+    new_rendering: His mercy is abundant
+    rationale: The Hebrew plural expresses abundant compassion, which English naturally conveys with the singular abstract noun.
+  - source_phrase: לְרֹב עֲוֹנוֹתַי יִסְלָח
+    prior_rendering: for the multitude of my iniquities he will forgive
+    new_rendering: he will forgive my many iniquities
+    rationale: The phrase identifies the numerous iniquities presumed forgivable; the former English could misleadingly suggest that their multitude causes forgiveness.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded past tense follows the Hebrew form too mechanically for the continuing admonition. I read the saying under the preceding prohibition, with the alternative noted, and drop the earlier Greek note about wealth because it compares a differently numbered saying.

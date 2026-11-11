@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יְדַבֵּ֣ר מֹשֶׁ֔ה לִ/פְנֵ֥י יְהוָ֖ה לֵ/אמֹ֑ר הֵ֤ן בְּנֵֽי יִשְׂרָאֵל֙ לֹֽא שָׁמְע֣וּ אֵלַ֔/י וְ/אֵיךְ֙ יִשְׁמָעֵ֣/נִי פַרְעֹ֔ה וַ/אֲנִ֖י עֲרַ֥ל שְׂפָתָֽיִם־־׃פ
 translation:
-  text: But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”
-  philosophy: optimal-equivalence
+  text: But Moses said to Yahweh, “Even the Israelites have not listened to me. How will Pharaoh listen to me, since I am a poor speaker[a]?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''uncircumcised in/of lips,'' an idiom expressing impeded or inadequate speech; compare Exod 4:10.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the Israelites' for 'the sons of Israel.'
+    text: Literally, “I am uncircumcised of lips,” a metaphor for speech that is impeded or unfit.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיְדַבֵּר
@@ -128,14 +125,20 @@ revisions:
   from: But Moses spoke before the LORD, saying, “Look, the sons of Israel have not listened to me; so how will Pharaoh listen to me, when I am uncircumcised in lips?”
   to: But Moses spoke before the LORD, saying, “Look, the sons of Israel have not listened to me; so how will Pharaoh listen to me, when I am uncircumcised in lips?”
   rationale: Replaced 'Look' with the more formal 'Behold' for register, and 'when' with 'since' to better reflect the causal force here. Kept 'uncircumcised in lips' as a literal rendering of the Hebrew idiom.
-
 - timestamp: '2026-05-18T02:55:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”'
-  to: 'But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”'
+  from: But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”
+  to: But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when I am''].'
+- timestamp: '2026-11-09T17:34:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Moses spoke before Yahweh[a], saying, “Behold, the sons of Israel have not listened to me; so how will Pharaoh listen to me[b], since I am uncircumcised in lips?”
+  to: But Moses said to Yahweh, “Even the Israelites have not listened to me. How will Pharaoh listen to me, since I am a poor speaker[a]?”
+  rationale: The earlier deliberation rightly identifies impeded or unfit speech and warns against imposing a diagnosis. I carry that meaning into the main text rather than retain an opaque idiom, while keeping the metaphor in a correctly placed note and retaining the current causal 'since.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -158,3 +161,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/exodus/006/012.job-38237.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Moses objects that Pharaoh is unlikely to listen when even Israel has not listened and Moses considers himself unable to speak effectively.
+  meaning_decisions:
+  - source_phrase: וַיְדַבֵּר מֹשֶׁה לִפְנֵי יְהוָה לֵאמֹר
+    prior_rendering: Moses spoke before Yahweh, saying
+    new_rendering: Moses said to Yahweh
+    rationale: This is Moses addressing Yahweh directly; the natural English introduction conveys that encounter without retaining the doubled speech formula.
+  - source_phrase: הֵן בְּנֵי יִשְׂרָאֵל לֹא שָׁמְעוּ אֵלָי
+    prior_rendering: Behold, the sons of Israel have not listened to me
+    new_rendering: Even the Israelites have not listened to me
+    rationale: '''Even'' conveys the force of Moses’ argument: if his own people have not listened, Pharaoh is still less likely to do so. ''Israelites'' preserves the collective scope.'
+  - source_phrase: עֲרַל שְׂפָתָיִם
+    prior_rendering: uncircumcised in lips
+    new_rendering: a poor speaker
+    rationale: The metaphor expresses Moses’ perceived inadequacy or impediment in speaking, not a physical description that contemporary English readers can readily interpret. The wording avoids diagnosing a particular disability, and the source metaphor remains in the footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier deliberation rightly identifies impeded or unfit speech and warns against imposing a diagnosis. I carry that meaning into the main text rather than retain an opaque idiom, while keeping the metaphor in a correctly placed note and retaining the current causal 'since.'

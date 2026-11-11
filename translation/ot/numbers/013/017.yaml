@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֤ח אֹתָ/ם֙ מֹשֶׁ֔ה לָ/ת֖וּר אֶת אֶ֣רֶץ כְּנָ֑עַן וַ/יֹּ֣אמֶר אֲלֵ/הֶ֗ם עֲל֥וּ זֶה֙ בַּ/נֶּ֔גֶב וַ/עֲלִיתֶ֖ם אֶת הָ/הָֽר־־׃
 translation:
-  text: Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”
-  philosophy: optimal-equivalence
+  text: Moses sent them to scout out the land of Canaan and said to them, “Go up this way through the Negev[a], then go up into the hill country.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “spy out the land of Canaan.”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “the Negev,” the southern arid region.
+    text: The Negev is the dry southern region of Canaan.
     reason: cultural_note
-  - marker: c
-    text: Or “the mountains.”
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּשְׁלַח
   chosen: sent
@@ -96,14 +90,20 @@ revisions:
   from: Moses sent them to scout out the land of Canaan, and he said to them, “Go up this way through the Negev, and go up into the hill country.”
   to: Moses sent them to scout out the land of Canaan, and he said to them, “Go up this way through the Negev, and go up into the hill country.”
   rationale: Changed 'through the Negev' to 'into the Negev' for closer alignment with the directional sense of the Hebrew. Kept 'scout out' and 'hill country' as accurate and natural renderings.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”'
-  to: 'Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”'
+  from: Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”
+  to: Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''through the Negev''].'
+- timestamp: '2026-11-09T18:28:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Moses sent them to scout out the land of Canaan[a], and he said to them, “Go up this way into the Negev[c][b], and go up into the hill country.”
+  to: Moses sent them to scout out the land of Canaan and said to them, “Go up this way through the Negev[a], then go up into the hill country.”
+  rationale: The draft and lexical rationale support 'through the Negev,' while the automated records inconsistently discuss 'into' and a revert without recording a text change. I choose 'through' on the route’s contextual meaning and retain the well-supported 'scout out' and 'hill country.'
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -123,3 +123,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/013/017.job-41027.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:28:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses sends the men to scout Canaan and directs them through the Negev before they ascend into the hill country.
+  meaning_decisions:
+  - source_phrase: עֲלוּ זֶה בַּנֶּגֶב
+    prior_rendering: Go up this way into the Negev
+    new_rendering: Go up this way through the Negev
+    rationale: 'Moses describes the route into Canaan: the southern Negev is traversed before the ascent into the hill country.'
+  - source_phrase: וַעֲלִיתֶם אֶת הָהָר
+    prior_rendering: and go up into the hill country
+    new_rendering: then go up into the hill country
+    rationale: The continuing instruction gives the next stage of the journey, which 'then' makes clear in English.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The draft and lexical rationale support 'through the Negev,' while the automated records inconsistently discuss 'into' and a revert without recording a text change. I choose 'through' on the route’s contextual meaning and retain the well-supported 'scout out' and 'hill country.'

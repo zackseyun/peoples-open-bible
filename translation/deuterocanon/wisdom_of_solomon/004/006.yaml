@@ -20,17 +20,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].
-  philosophy: optimal-equivalence
+  text: For children born of lawless unions bear witness to their parents’ wickedness when the parents are called to account[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'from lawless beds,' a Greek euphemism for illicit sexual unions.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'are witnesses against their parents of wickedness.'
-    reason: alternative_reading
-  - marker: c
-    text: The phrase 'when they are examined' may also be understood more generally as 'under scrutiny,' and some may take the pronoun to refer to the parents rather than the children.
+    text: Or, 'when the children are examined'; the Greek pronoun can refer to either the parents or the children.
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἀνόμων
@@ -128,14 +122,20 @@ revisions:
   from: For children born from lawless unions are witnesses of their parents’ wickedness when they are examined.
   to: For children born from lawless unions are witnesses of their parents’ wickedness when they are examined.
   rationale: Replaced 'when they are examined' with 'at their examination' to reflect the singular noun ἐν ἐξετασμῷ more directly and avoid ambiguity about who is examined. Kept 'lawless unions' as a natural rendering of ἀνόμων ὕπνων.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].'
-  to: 'For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].'
+  from: For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].
+  to: For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when they are examined''].'
+- timestamp: '2026-11-09T20:12:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For children born from lawless unions are witnesses of their parents’ wickedness at their examination[a][b][c].
+  to: For children born of lawless unions bear witness to their parents’ wickedness when the parents are called to account[a].
+  rationale: Earlier deliberation favored examining the children, but the current wording leaves the referent unclear. I favor the parents because they are the object of the testimony and the nearest named antecedent in this judicial setting, retaining examination of the children as an alternative.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -155,3 +155,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/004/006.job-39531.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:10Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Children born of lawless unions provide evidence of their parents’ wickedness when the parents are called to account.
+  meaning_decisions:
+  - source_phrase: ἐν ἐξετασμῷ αὐτῶν
+    prior_rendering: at their examination
+    new_rendering: when the parents are called to account
+    rationale: The forensic setting and the testimony directed against the parents favor their judicial examination; the parents are also the nearest named antecedent. Examination of the children remains a serious alternative and is footnoted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier deliberation favored examining the children, but the current wording leaves the referent unclear. I favor the parents because they are the object of the testimony and the nearest named antecedent in this judicial setting, retaining examination of the children as an alternative.

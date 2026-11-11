@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: ὁ δὲ ἀποκριθεὶς εἶπεν· Ἀγαπήσεις κύριον τὸν θεόν σου ἐξ ὅλης ⸀τῆς καρδίας σου καὶ ⸂ἐν ὅλῃ τῇ ψυχῇ⸃ σου καὶ ⸂ἐν ὅλῃ τῇ ἰσχύϊ⸃ σου καὶ ⸂ἐν ὅλῃ τῇ διανοίᾳ⸃ σου, καὶ τὸν πλησίον σου ὡς σεαυτόν.
 translation:
-  text: And he answered, “You shall love the Lord your God from all your heart[a] and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
-  philosophy: optimal-equivalence
+  text: And he answered, “You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and you shall love your neighbor as yourself[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Traditional English often reads 'with all your heart' here. The Greek uses 'from all your heart' (ἐξ ὅλης τῆς καρδίας), while the following phrases use 'with/in' (ἐν).
-    reason: lexical_alternative
+    text: Deuteronomy 6:5; Leviticus 19:18.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ἀποκριθεὶς εἶπεν
   chosen: he answered
@@ -111,13 +111,12 @@ revisions:
   from: And he answered, “You shall love the Lord your God from all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
   to: And he answered, “You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
   rationale: Changed 'from all your heart' to 'with all your heart' for accurate and natural rendering of ἐξ ὅλης τῆς καρδίας in this context; left the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he answered[a], “You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”'
-  to: 'And he answered, “You shall love the Lord your God from all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”'
+  from: And he answered[a], “You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
+  to: And he answered, “You shall love the Lord your God from all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from all your heart''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +126,13 @@ revisions:
   from: And he answered, “You shall love the Lord your God from all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
   to: And he answered, “You shall love the Lord your God from all your heart[a] and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('from all your heart') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he answered, “You shall love the Lord your God from all your heart[a] and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.”
+  to: And he answered, “You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and you shall love your neighbor as yourself[a].”
+  rationale: The recorded review's 'with all your heart' conveys the idiom better than the wording restored by the automated policy revert, which favored prepositional correspondence rather than meaning. The weighty fourfold expression and 'Lord' in the scriptural quotation are retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +156,26 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/010/027.job-55571.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:02Z'
+  change_level: refined
+  confidence: high
+  meaning: The expert answers that the Law commands wholehearted love for God with every faculty and love for one's neighbor as oneself.
+  meaning_decisions:
+  - source_phrase: ἐξ ὅλης τῆς καρδίας σου
+    prior_rendering: from all your heart
+    new_rendering: with all your heart
+    rationale: The expression means wholehearted love, which the established English idiom conveys accurately; preserving the preposition mechanically obscures rather than enriches that meaning.
+  - source_phrase: καὶ τὸν πλησίον σου ὡς σεαυτόν
+    prior_rendering: and your neighbor as yourself
+    new_rendering: and you shall love your neighbor as yourself
+    rationale: Repeating the implied command makes the second object of love clear after the long fourfold description of devotion to God.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The recorded review's 'with all your heart' conveys the idiom better than the wording restored by the automated policy revert, which favored prepositional correspondence rather than meaning. The weighty fourfold expression and 'Lord' in the scriptural quotation are retained.

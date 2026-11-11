@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: κἀγὼ διατίθεμαι ὑμῖν, καθὼς διέθετό μοι ὁ πατήρ μου βασιλείαν,
 translation:
-  text: And I appoint[b][a] to you, just as my Father appointed to me, a kingdom.
-  philosophy: optimal-equivalence
+  text: And I confer on you a kingdom[a], just as my Father conferred one on me,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'I covenant to you a kingdom ... as my Father covenanted to me.' The Greek verb can carry covenantal or dispositional force as well as the sense of appointing or conferring.
+    text: Or, “I covenant to give you a kingdom, just as my Father covenanted to give one to me.”
     reason: alternative_reading
-  - marker: b
-    text: Or 'appoint to you a kingdom, just as my Father appointed one to me,'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: κἀγὼ
   chosen: And I
@@ -110,8 +107,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I confer on you a kingdom[a], just as my Father conferred one on me[b],'
-  to: 'And I appoint to you, just as my Father appointed to me, a kingdom.'
+  from: And I confer on you a kingdom[a], just as my Father conferred one on me[b],
+  to: And I appoint to you, just as my Father appointed to me, a kingdom.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''appointed''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -121,6 +118,13 @@ revisions:
   from: And I appoint to you, just as my Father appointed to me, a kingdom.
   to: And I appoint[b][a] to you, just as my Father appointed to me, a kingdom.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('appoint') because the note names that rendering; [b] anchored to ('appoint') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I appoint[b][a] to you, just as my Father appointed to me, a kingdom.
+  to: And I confer on you a kingdom[a], just as my Father conferred one on me,
+  rationale: An earlier substantive revision already recognized that “confer on” better expresses the action, but an automated revert restored “appoint to.” I follow that meaning-based gain, retain the covenantal alternative, and let the sentence continue into verse 30.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:10:38Z'
@@ -149,3 +153,22 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/022/029.job-38933.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jesus confers a kingdom on his disciples in correspondence with the kingdom his Father conferred on him.
+  meaning_decisions:
+  - source_phrase: διατίθεμαι ὑμῖν, καθὼς διέθετό μοι ὁ πατήρ μου βασιλείαν
+    prior_rendering: appoint to you, just as my Father appointed to me, a kingdom
+    new_rendering: confer on you a kingdom, just as my Father conferred one on me
+    rationale: “Confer on” expresses the bestowal of royal dominion in idiomatic English and preserves the repeated verb; placing the object earlier avoids an unnatural separation.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: An earlier substantive revision already recognized that “confer on” better expresses the action, but an automated revert restored “appoint to.” I follow that meaning-based gain, retain the covenantal alternative, and let the sentence continue into verse 30.

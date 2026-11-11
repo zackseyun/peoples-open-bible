@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: מִ֣י יֹ֭בִלֵ/נִי עִ֣יר מִבְצָ֑ר מִ֖י נָחַ֣/נִי עַד אֱדֽוֹם־׃
 translation:
-  text: Who will bring me to the fortified city? Who will lead me as far as Edom?[a][b]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Who will lead me to Edom?' The second verb can be rendered as a future-like question in parallel with the first line, though the Hebrew form is formally perfect ('has led me').
-    reason: lexical_alternative
-  - marker: b
-    text: '''The fortified city'' may refer to a specific Edomite stronghold, traditionally understood by many as Sela/Petra, though the Hebrew text does not name the city.'
-    reason: cultural_note
+  text: Who will bring me to the fortified city? Who will lead me to Edom?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִי
   chosen: Who
@@ -82,6 +75,13 @@ revisions:
   from: Who will bring me to the fortified city? Who will lead me to Edom?[a][b][c]
   to: Who will bring me to the fortified city? Who will lead me as far as Edom?[a][b][c]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as far as Edom''].'
+- timestamp: '2026-11-09T18:45:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who will bring me to the fortified city? Who will lead me as far as Edom?[a][b]
+  to: Who will bring me to the fortified city? Who will lead me to Edom?
+  rationale: I preserve the earlier correction to the future sense of “will lead me,” which follows the parallel question and the plea for coming help. The later wording “to Edom” improves clarity; its automated revert supplies no meaning-based reason to reject it.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:53:42Z'
@@ -117,3 +117,21 @@ source_audit:
   scope: WLC Hebrew, immediate literary context, natural-English and interpretation-boundary review
   human_or_scholar_review: false
   review_summary: 'The verse text is defensible: the second colon can be aligned contextually with the first as a future-oriented rhetorical question, while עַד naturally retains the extent nuance “as far as.” However, footnote [a] is stale because it presents the wording already used in the main text as an alternative and then contrasts it with the formally perfect Hebrew. The replacement note correctly preserves the formal alternative without changing the verse.'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:45:09Z'
+  change_level: refined
+  confidence: high
+  meaning: The psalmist asks who can lead him to the enemy's fortified city and into Edom.
+  meaning_decisions:
+  - source_phrase: עַד אֱדוֹם
+    prior_rendering: as far as Edom
+    new_rendering: to Edom
+    rationale: The phrase identifies the destination to be reached. “To Edom” conveys that sense directly without the possible implication that the journey stops short at Edom's boundary.
+  footnote_kinds: {}
+  history_weighed: I preserve the earlier correction to the future sense of “will lead me,” which follows the parallel question and the plea for coming help. The later wording “to Edom” improves clarity; its automated revert supplies no meaning-based reason to reject it.

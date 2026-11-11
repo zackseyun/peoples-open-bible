@@ -4,17 +4,17 @@ source:
   edition: WLC
   text: וְ/הַ֨/מְּדָנִ֔ים מָכְר֥וּ אֹת֖/וֹ אֶל מִצְרָ֑יִם לְ/פֽוֹטִיפַר֙ סְרִ֣יס פַּרְעֹ֔ה שַׂ֖ר הַ/טַּבָּחִֽים־׃פ
 translation:
-  text: Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.
-  philosophy: optimal-equivalence
+  text: Meanwhile, the Medanites[a] sold him in Egypt to Potiphar, a court official of Pharaoh[b], the captain of the guard[c].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''Medanites''; traditionally understood here as ''Midianites'' in light of the surrounding narrative and ancient versions.'
-    reason: alternative_reading
+    text: The ancient Greek translation reads “Midianites,” as in verse 28.
+    reason: textual_variant
   - marker: b
-    text: Or 'a eunuch of Pharaoh' or 'a court official of Pharaoh.' The Hebrew term can refer either to a literal eunuch or to a royal officer.
-    reason: lexical_alternative
+    text: The Hebrew term can mean either a court official or a eunuch.
+    reason: alternative_reading
   - marker: c
-    text: Literally 'chief of the slaughterers.' In royal context this likely refers to the captain of the guard or bodyguard.
+    text: Literally, “chief of the slaughterers,” a title associated with royal guards and executioners.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְהַמְּדָנִים
@@ -80,14 +80,20 @@ revisions:
   from: Meanwhile, the Midianites sold him in Egypt to Potiphar, an officer of Pharaoh, the captain of the guard.
   to: Meanwhile, the Midianites sold him into Egypt to Potiphar, an officer of Pharaoh, the captain of the guard.
   rationale: Changed 'Midianites' to 'Medanites' to match the Hebrew term מְדָנִים, and changed 'in Egypt' to 'into Egypt' for more precise representation of אֶל מִצְרָיִם.
-
 - timestamp: '2026-05-15T21:54:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.'
-  to: 'Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.'
-  rationale: 'Drafter explicitly chose ''Midianites'' over ''Medanites'' (formally-available alternative) citing narrative context (broader Joseph story uses Midianites for this trading group, cf. Gen 37:28) and ancient versions. Azure substituted on bare consonantal-matching grounds without engaging the contextual reasoning. (In Egypt→into Egypt retained — אֶל genuinely directional.)'
+  from: Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.
+  to: Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.
+  rationale: Drafter explicitly chose 'Midianites' over 'Medanites' (formally-available alternative) citing narrative context (broader Joseph story uses Midianites for this trading group, cf. Gen 37:28) and ancient versions. Azure substituted on bare consonantal-matching grounds without engaging the contextual reasoning. (In Egypt→into Egypt retained — אֶל genuinely directional.)
+- timestamp: '2026-11-09T17:45:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Meanwhile[a], the Medanites sold him into Egypt to Potiphar, an officer of Pharaoh[c][b], the captain of the guard.
+  to: Meanwhile, the Medanites[a] sold him in Egypt to Potiphar, a court official of Pharaoh[b], the captain of the guard[c].
+  rationale: I retain the current text's Medanites rather than harmonizing the Hebrew name, while noting the ancient Greek reading. For the sale's setting, the first draft's contextual rationale for “in Egypt” outweighs the later preference for formally directional “into Egypt”; “captain of the guard” remains appropriate.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +115,28 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/037/036.job-65467.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:22Z'
+  change_level: refined
+  confidence: medium
+  meaning: While Jacob mourns, Joseph is sold in Egypt to Potiphar, a royal official who commands Pharaoh's guard.
+  meaning_decisions:
+  - source_phrase: מָכְרוּ אֹתוֹ אֶל מִצְרָיִם לְפוֹטִיפַר
+    prior_rendering: sold him into Egypt to Potiphar
+    new_rendering: sold him in Egypt to Potiphar
+    rationale: Verse 28 has already brought Joseph to Egypt, and this verse identifies his Egyptian purchaser; “in Egypt” expresses the sale's setting naturally rather than suggesting Egypt itself was the buyer.
+  - source_phrase: סְרִיס פַּרְעֹה
+    prior_rendering: an officer of Pharaoh
+    new_rendering: a court official of Pharaoh
+    rationale: The term identifies royal service without necessarily implying a military office or physical castration; the serious alternative is retained in a note.
+  footnote_kinds:
+    a: textual_variant
+    b: alternative_meaning
+    c: literal_wording
+  history_weighed: I retain the current text's Medanites rather than harmonizing the Hebrew name, while noting the ancient Greek reading. For the sale's setting, the first draft's contextual rationale for “in Egypt” outweighs the later preference for formally directional “into Egypt”; “captain of the guard” remains appropriate.

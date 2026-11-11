@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּוָּדַ֤ע הַ/דָּבָר֙ לְ/מָרְדֳּכַ֔י וַ/יַּגֵּ֖ד לְ/אֶסְתֵּ֣ר הַ/מַּלְכָּ֑ה וַ/תֹּ֧אמֶר אֶסְתֵּ֛ר לַ/מֶּ֖לֶךְ בְּ/שֵׁ֥ם מָרְדֳּכָֽי׃
 translation:
-  text: When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai's name.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'was made known to Mordecai.' The Hebrew passive can emphasize either that the matter came to his knowledge or that someone informed him.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Esther the queen.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'in the name of Mordecai' or 'on Mordecai's behalf.' The phrase indicates that Esther presented the report as coming from Mordecai.
-    reason: lexical_alternative
+  text: When Mordecai learned of the plot, he told Queen Esther, and Esther reported it to the king, naming Mordecai as her source.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּוָּדַע
   chosen: became known
@@ -91,14 +81,20 @@ revisions:
   from: When the matter became known to Mordecai, he told Queen Esther, and Esther spoke to the king in Mordecai's name.
   to: When the matter became known to Mordecai, he told Queen Esther, and Esther spoke to the king in Mordecai's name.
   rationale: Changed 'spoke to the king' to 'told the king' to more directly reflect the verb and maintain consistency with the preceding clause.
-
 - timestamp: '2026-05-17T21:36:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai''s name.'
-  to: 'When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai''s name.'
+  from: When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai's name.
+  to: When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai's name.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the king''].'
+- timestamp: '2026-11-09T17:33:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the matter became known to Mordecai[a], he told Queen Esther[c][b], and Esther told the king in Mordecai's name.
+  to: When Mordecai learned of the plot, he told Queen Esther, and Esther reported it to the king, naming Mordecai as her source.
+  rationale: The recorded review’s move from 'spoke' to 'told' correctly made this a report, not merely a conversation. The lexical rationale also identifies Mordecai as the report’s source, so I put that attribution directly into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +114,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/esther/002/022.job-42278.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Mordecai informed Esther of the plot, and she reported it to the king while identifying Mordecai as the source.
+  meaning_decisions:
+  - source_phrase: וַיִּוָּדַע הַדָּבָר לְמָרְדֳּכַי
+    prior_rendering: When the matter became known to Mordecai
+    new_rendering: When Mordecai learned of the plot
+    rationale: The matter is the preceding assassination scheme; the English states this clearly without specifying how Mordecai obtained the information.
+  - source_phrase: וַתֹּאמֶר אֶסְתֵּר לַמֶּלֶךְ בְּשֵׁם מָרְדֳּכָי
+    prior_rendering: Esther told the king in Mordecai’s name
+    new_rendering: Esther reported it to the king, naming Mordecai as her source
+    rationale: The phrase attributes the information to Mordecai, rather than suggesting that Esther spoke under his delegated authority.
+  footnote_kinds: {}
+  history_weighed: The recorded review’s move from 'spoke' to 'told' correctly made this a report, not merely a conversation. The lexical rationale also identifies Mordecai as the report’s source, so I put that attribution directly into the text.

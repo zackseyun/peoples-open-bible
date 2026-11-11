@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יְהִ֣י כְּ/מֵשִׁ֣יב יָד֗/וֹ וְ/הִנֵּה֙ יָצָ֣א אָחִ֔י/ו וַ/תֹּ֕אמֶר מַה פָּרַ֖צְתָּ עָלֶ֣י/ךָ פָּ֑רֶץ וַ/יִּקְרָ֥א שְׁמ֖/וֹ פָּֽרֶץ׀־׃
 translation:
-  text: And as he drew back his hand[a], behold, his brother came out. Then she said[b], “What a breach you have made for yourself!” So his name was called Perez.
-  philosophy: optimal-equivalence
+  text: But as he drew back his hand, out came his brother! The midwife said, “How you have broken through!” So he was named Perez[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''What a breach you have breached for yourself!'' The wording is an exclamation built on the root פרץ, which also gives the name Perez.'
+    text: Perez means ‘breach,’ echoing the midwife’s words, literally, ‘What a breach you have made for yourself!’
     reason: lexical_alternative
-  - marker: b
-    text: Or 'And it happened, as he drew back his hand, that behold,'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: כְּמֵשִׁיב יָדוֹ
   chosen: as he drew back his hand
@@ -75,12 +72,18 @@ revisions:
   from: And it happened, as he drew back his hand, that behold,
   to: And as he drew back his hand, behold,
   rationale: The current rendering attempts to translate both the introductory `וַיְהִי` ('And it happened') and the particle `וְהִנֵּה` ('that behold'), resulting in the syntactically awkward English phrase 'it happened that behold'. The suggested rewrite removes the formulaic and somewhat redundant 'And it happened,' which improves the narrative flow while still faithfully rendering the temporal clause ('as he drew back his hand') and the marker of surprise, 'behold' (`הִנֵּה`).
+- timestamp: '2026-11-09T17:45:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as he drew back his hand[a], behold, his brother came out. Then she said[b], “What a breach you have made for yourself!” So his name was called Perez.
+  to: But as he drew back his hand, out came his brother! The midwife said, “How you have broken through!” So he was named Perez[a].
+  rationale: The earlier cleanup rightly removed the awkward ‘it happened ... that behold.’ I go beyond its remaining ‘breach’ wording because that expression obscures the child’s breaking through in English, preserving both the image and the naming wordplay.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:46:18Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -104,3 +107,30 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/038/029.job-37684.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: When the twin with the marked hand withdrew it, his brother was born ahead of him and was named Perez for breaking through.
+  meaning_decisions:
+  - source_phrase: וְהִנֵּה יָצָא אָחִיו
+    prior_rendering: behold, his brother came out
+    new_rendering: out came his brother!
+    rationale: The inversion and exclamation preserve the vivid surprise of the other twin’s emergence without an archaic attention marker.
+  - source_phrase: מַה פָּרַצְתָּ עָלֶיךָ פָּרֶץ
+    prior_rendering: What a breach you have made for yourself!
+    new_rendering: How you have broken through!
+    rationale: The exclamation describes the child’s breaking through, not an abstract violation; the natural verb phrase retains that image, and the note preserves the Hebrew wording and naming wordplay.
+  - source_phrase: וַיִּקְרָא שְׁמוֹ פָּרֶץ
+    prior_rendering: So his name was called Perez
+    new_rendering: So he was named Perez
+    rationale: This is the natural English naming formula and does not assign the naming to an unstated person.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier cleanup rightly removed the awkward ‘it happened ... that behold.’ I go beyond its remaining ‘breach’ wording because that expression obscures the child’s breaking through in English, preserving both the image and the naming wordplay.

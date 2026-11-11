@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/כִֽי יָבֹ֨א הַ/לֵּוִ֜י מֵ/אַחַ֤ד שְׁעָרֶ֨י/ךָ֙ מִ/כָּל יִשְׂרָאֵ֔ל אֲשֶׁר ה֖וּא גָּ֣ר שָׁ֑ם וּ/בָא֙ בְּ/כָל אַוַּ֣ת נַפְשׁ֔/וֹ אֶל הַ/מָּק֖וֹם אֲשֶׁר יִבְחַ֥ר יְהוָֽה־־־־־־׃
 translation:
-  text: And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'from one of your gates.' Here 'gates' refers metonymically to a town or civic settlement.
-    reason: cultural_note
-  - marker: b
-    text: Or, 'with all his heart’s desire' / 'with all the longing of his soul.'
-    reason: lexical_alternative
+  text: If a Levite residing in any of your towns in Israel comes with all the longing of his soul to the place Yahweh will choose for worship,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְכִי
   chosen: And if
@@ -114,14 +107,20 @@ revisions:
   from: And if the Levite comes from one of your towns out of all Israel, where he is residing, and comes with all the desire of his soul to the place that the LORD will choose,
   to: And if the Levite comes from one of your towns out of all Israel, where he is residing, and comes with all the desire of his soul to the place that the LORD will choose,
   rationale: Changed 'towns' to 'gates' for closer lexical accuracy to the source term while retaining the rest of the draft.
-
 - timestamp: '2026-05-18T02:55:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],'
-  to: 'And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],'
+  from: And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],
+  to: And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from one of your towns''].'
+- timestamp: '2026-11-09T17:31:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if the Levite comes from one of your gates out of all Israel[a], where he is residing, and comes with all the desire of his soul to the place that Yahweh will choose[b],
+  to: If a Levite residing in any of your towns in Israel comes with all the longing of his soul to the place Yahweh will choose for worship,
+  rationale: I return to the draft’s “towns,” supported by the lexical discussion and later revert rationale, because the review’s “gates” obscures the settlement reference. I retain the soul’s desire while clarifying the familiar chosen-place formula without naming a location.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -144,3 +143,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/deuteronomy/018/006.job-38310.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: This provision concerns a Levite living anywhere in Israel who comes with wholehearted desire to Yahweh’s chosen place of worship.
+  meaning_decisions:
+  - source_phrase: מֵאַחַד שְׁעָרֶיךָ מִכָּל יִשְׂרָאֵל אֲשֶׁר הוּא גָּר שָׁם
+    prior_rendering: from one of your gates out of all Israel, where he is residing
+    new_rendering: residing in any of your towns in Israel
+    rationale: “Gates” denotes towns, and the construction allows a Levite to come from anywhere in Israel; the reordering expresses his residence without an awkward chain of location phrases.
+  - source_phrase: יָבֹא ... וּבָא בְּכָל אַוַּת נַפְשׁוֹ
+    prior_rendering: comes ... and comes with all the desire of his soul
+    new_rendering: comes with all the longing of his soul
+    rationale: One English verb carries the movement from his residence to the chosen place; “longing” retains the full personal desire and the source’s reference to the soul.
+  - source_phrase: אֶל הַמָּקוֹם אֲשֶׁר יִבְחַר יְהוָה
+    prior_rendering: to the place that Yahweh will choose
+    new_rendering: to the place Yahweh will choose for worship
+    rationale: The recurring Deuteronomic formula identifies the chosen worship site, a referent the first hearers knew but modern readers might otherwise miss.
+  footnote_kinds: {}
+  history_weighed: I return to the draft’s “towns,” supported by the lexical discussion and later revert rationale, because the review’s “gates” obscures the settlement reference. I retain the soul’s desire while clarifying the familiar chosen-place formula without naming a location.

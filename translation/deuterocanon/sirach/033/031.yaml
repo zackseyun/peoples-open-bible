@@ -19,15 +19,12 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: If you have a servant[a], let him be as yourself[b], because you acquired him with blood.
-  philosophy: optimal-equivalence
+  text: If you have a servant, treat him as you would yourself, because you acquired him with blood[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'servant' or 'household servant'; the Greek οἰκέτης often refers to a member of the household staff, but here the context of acquisition makes the bonded sense prominent.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'because with blood you acquired him.' The phrase likely expresses costly acquisition rather than specifying whose blood is in view.
-    reason: lexical_alternative
+    text: Or, 'because you acquired him at great personal cost'; the blood image does not identify whose blood is meant.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἰκέτης
   chosen: slave
@@ -105,7 +102,13 @@ revisions:
   from: If you have a servant, let him be as yourself, because you acquired him with blood.
   to: If you have a slave, let him be as yourself, because you acquired him with blood.
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T19:08:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you have a servant[a], let him be as yourself[b], because you acquired him with blood.
+  to: If you have a servant, treat him as you would yourself, because you acquired him with blood[a].
+  rationale: The record rightly avoids specifying whose blood is meant, and I preserve that restraint while noting the costly-acquisition interpretation. I make the implied instruction about treatment explicit rather than retain the opaque 'let him be as yourself.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +128,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/031.job-51906.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:09Z'
+  change_level: refined
+  confidence: medium
+  meaning: The reader must treat his servant as he would himself, because he acquired him with blood.
+  meaning_decisions:
+  - source_phrase: ἔστω ὡς σύ
+    prior_rendering: let him be as yourself
+    new_rendering: treat him as you would yourself
+    rationale: The imperative directs the owner's treatment of the servant, not the servant's resemblance to or transformation into the owner.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The record rightly avoids specifying whose blood is meant, and I preserve that restraint while noting the costly-acquisition interpretation. I make the implied instruction about treatment explicit rather than retain the opaque 'let him be as yourself.'

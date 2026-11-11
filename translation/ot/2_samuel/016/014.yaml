@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יָּבֹ֥א הַ/מֶּ֛לֶךְ וְ/כָל הָ/עָ֥ם אֲשֶׁר אִתּ֖/וֹ עֲיֵפִ֑ים וַ/יִּנָּפֵ֖שׁ שָֽׁם־־׃
 translation:
-  text: The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.
-  philosophy: optimal-equivalence
+  text: The king and all the people with him arrived weary, and he refreshed himself there[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'came ... and rested there.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Hebrew verb is singular (''he refreshed himself''), though some understand it collectively: ''they refreshed themselves.'''
+    text: 'Alternatively, the final verb may be understood collectively: “they refreshed themselves there.”'
     reason: alternative_reading
 lexical_decisions:
 - source_word: וַיָּבֹא
@@ -70,14 +67,20 @@ revisions:
   from: The king and all the people who were with him arrived weary, and he refreshed himself there.
   to: The king and all the people who were with him arrived weary, and he refreshed himself there.
   rationale: Changed 'he refreshed himself' to 'they refreshed themselves' to match the plural subject in the Hebrew and preserve completeness and accuracy.
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.'
-  to: 'The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.'
+  from: The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.
+  to: The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he refreshed himself''].'
+- timestamp: '2026-11-09T17:28:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The king and all the people who were with him arrived weary[b][a], and they refreshed themselves there.
+  to: The king and all the people with him arrived weary, and he refreshed himself there[a].
+  rationale: The history alternates between singular and collective renderings, but the source and first draft support focusing the final action on the king. I retain 'refreshed himself' rather than reducing the sense to resting, and note the collective alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -97,3 +100,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/016/014.job-45879.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:23Z'
+  change_level: refined
+  confidence: high
+  meaning: The king and his companions arrive weary, and the king refreshes himself there.
+  meaning_decisions:
+  - source_phrase: וַיִּנָּפֵשׁ שָׁם
+    prior_rendering: they refreshed themselves there
+    new_rendering: he refreshed himself there
+    rationale: The singular verb most naturally returns the narrative focus to the king after describing the whole company’s weariness; the collective understanding remains possible.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history alternates between singular and collective renderings, but the source and first draft support focusing the final action on the king. I retain 'refreshed himself' rather than reducing the sense to resting, and note the collective alternative.

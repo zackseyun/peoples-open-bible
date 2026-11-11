@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֵּ֣לֶךְ מֵ/אֵ֣ת אֱלִישָׁ֗ע וַ/יָּבֹא֙ אֶל אֲדֹנָ֔י/ו וַ/יֹּ֣אמֶר ל֔/וֹ מָֽה אָמַ֥ר לְ/ךָ֖ אֱלִישָׁ֑ע וַ/יֹּ֕אמֶר אָ֥מַר לִ֖/י חָיֹ֥ה תִחְיֶֽה׀־־׃
 translation:
-  text: So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or, “He said to me, ‘You shall surely live.’” The Hebrew literally repeats the verb for emphasis: “living, you will live.” In context this refers to recovery from illness.'
-    reason: lexical_alternative
+  text: Hazael left Elisha and returned to his master, who asked him, “What did Elisha say to you?” He answered, “He told me, ‘You will certainly recover.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֵּלֶךְ
   chosen: went away
@@ -88,14 +84,20 @@ revisions:
   from: So he went away from Elisha and came to his master, who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will certainly recover.’”
   to: So he went away from Elisha and came to his master, who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will certainly recover.’”
   rationale: Changed 'certainly recover' to 'surely recover' for a slightly more formal and direct rendering of חָיֹה תִחְיֶה, while preserving the sense.
-
 - timestamp: '2026-05-18T02:58:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”'
-  to: 'So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”'
+  from: So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”
+  to: So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will certainly recover''].'
+- timestamp: '2026-11-09T18:26:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he went away from Elisha and came to his master[a], who said to him, “What did Elisha say to you?” And he said, “He told me, ‘You will surely recover.’”
+  to: Hazael left Elisha and returned to his master, who asked him, “What did Elisha say to you?” He answered, “He told me, ‘You will certainly recover.’”
+  rationale: The history’s variation between “surely” and “certainly” makes no substantive difference; I use the same wording as verse 10 because the Hebrew repeats the same assurance. I retain “master” and the illness-context meaning “recover,” without adding an explanation of Hazael’s motives.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/008/014.job-60460.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:26:56Z'
+  change_level: refined
+  confidence: high
+  meaning: Hazael returned to Ben-hadad and reported Elisha’s assurance that the king would recover.
+  meaning_decisions:
+  - source_phrase: וַיֵּלֶךְ מֵאֵת אֱלִישָׁע וַיָּבֹא אֶל אֲדֹנָיו
+    prior_rendering: So he went away from Elisha and came to his master
+    new_rendering: Hazael left Elisha and returned to his master
+    rationale: The context identifies Hazael and establishes that he is returning from the mission his master gave him.
+  - source_phrase: חָיֹה תִחְיֶה
+    prior_rendering: You will surely recover
+    new_rendering: You will certainly recover
+    rationale: Matching verse 10’s wording makes clear that Hazael reports the same emphatic recovery statement.
+  footnote_kinds: {}
+  history_weighed: The history’s variation between “surely” and “certainly” makes no substantive difference; I use the same wording as verse 10 because the Hebrew repeats the same assurance. I retain “master” and the illness-context meaning “recover,” without adding an explanation of Hazael’s motives.

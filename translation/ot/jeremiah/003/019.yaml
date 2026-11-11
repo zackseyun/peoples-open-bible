@@ -4,15 +4,18 @@ source:
   edition: WLC
   text: וְ/אָנֹכִ֣י אָמַ֗רְתִּי אֵ֚יךְ אֲשִׁיתֵ֣/ךְ בַּ/בָּנִ֔ים וְ/אֶתֶּן לָ/ךְ֙ אֶ֣רֶץ חֶמְדָּ֔ה נַחֲלַ֥ת צְבִ֖י צִבְא֣וֹת גּוֹיִ֑ם וָ/אֹמַ֗ר אָבִ/י֙ תקראו לִ֔/י וּ/מֵ/אַחֲרַ֖/י לֹ֥א תשובו־־׃
 translation:
-  text: And I said[a], ‘How I would set you among the sons and give you a desirable land, the most beautiful inheritance of the nations' armies.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’
-  philosophy: optimal-equivalence
+  text: I myself thought, ‘How gladly[a] I would give you a place among my sons[b] and give you a delightful land, the most beautiful inheritance among all the nations[c]!’ I thought you would call me ‘My Father’ and would not turn away from following me.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more broadly, 'among the children'; Hebrew literally 'among the sons.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew phrase here is difficult; it may mean 'the most splendid heritage of the nations' or 'a glorious inheritance among the nations.'
+    text: Or, “How could I give you a place among my sons ...?” The opening can be read as a question rather than an exclamation.
     reason: alternative_reading
+  - marker: b
+    text: Sons ordinarily inherited family land; Israel is addressed here with feminine singular pronouns.
+    reason: cultural_note
+  - marker: c
+    text: Literally, “an inheritance of beauty of the hosts of nations”; the Hebrew phrase is compressed and uncertain.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: אֵיךְ
   chosen: How I would
@@ -95,14 +98,20 @@ revisions:
   from: And I said, ‘How I would set you among the sons and give you a desirable land, the most beautiful inheritance of the nations’ armies.’ And I said, ‘You will call me, “My Father,” and you will not turn away from following me.’
   to: And I said, ‘How I would set you among the children and give you a desirable land, a beautiful inheritance of the hosts of nations.’ And I said, ‘You will call me, “My Father,” and you will not turn away from following me.’
   rationale: Revised ‘sons’ to ‘children’ for broader sense of בנים in context; changed ‘the most beautiful inheritance of the nations’ armies’ to ‘a beautiful inheritance of the hosts of nations’ to reflect צבי/צבאות more accurately and avoid the misleading ‘armies.’ Kept the rest substantially the same for formal, natural English.
-
 - timestamp: '2026-05-16T08:25:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I said[a], ‘How I would set you among the children and give you a desirable land, a beautiful inheritance of the hosts of nations.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’'
-  to: 'And I said[a], ‘How I would set you among the sons and give you a desirable land, the most beautiful inheritance of the nations'' armies.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’'
-  rationale: 'Azure substituted ''children'' for ''sons'' (drafter''s explicit rejected_alternative per theological_decisions §4 gender-accurate policy) and softened ''the most beautiful inheritance of the nations'' armies'' to ''a beautiful inheritance of the hosts of nations'' (toward rejected idiomatic smoothing).'
+  from: And I said[a], ‘How I would set you among the children and give you a desirable land, a beautiful inheritance of the hosts of nations.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’
+  to: And I said[a], ‘How I would set you among the sons and give you a desirable land, the most beautiful inheritance of the nations' armies.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’
+  rationale: Azure substituted 'children' for 'sons' (drafter's explicit rejected_alternative per theological_decisions §4 gender-accurate policy) and softened 'the most beautiful inheritance of the nations' armies' to 'a beautiful inheritance of the hosts of nations' (toward rejected idiomatic smoothing).
+- timestamp: '2026-11-09T17:55:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I said[a], ‘How I would set you among the sons and give you a desirable land, the most beautiful inheritance of the nations' armies.’ And I said, ‘You will call me[b], “My Father,” and you will not turn away from following me.’
+  to: I myself thought, ‘How gladly[a] I would give you a place among my sons[b] and give you a delightful land, the most beautiful inheritance among all the nations[c]!’ I thought you would call me ‘My Father’ and would not turn away from following me.
+  rationale: The review correctly identified “armies” as misleading, though its replacement “hosts” remained opaque; the automated revert carries little weight against the land-and-inheritance context. I retain “sons” for the inheritance imagery but make Yahweh’s longing and disappointed expectation explicit.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -122,3 +131,40 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/003/019.job-67168.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:50Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh recalls his desire to give Israel the standing and inheritance of his sons and his expectation that they would call him Father and remain faithful.
+  meaning_decisions:
+  - source_phrase: וְאָנֹכִי אָמַרְתִּי
+    prior_rendering: And I said
+    new_rendering: I myself thought
+    rationale: The emphatic pronoun introduces Yahweh’s own recalled intention; “thought” naturally conveys this deliberative speech.
+  - source_phrase: אֵיךְ אֲשִׁיתֵךְ בַּבָּנִים
+    prior_rendering: How I would set you among the sons
+    new_rendering: How gladly I would give you a place among my sons
+    rationale: The best-supported exclamatory reading expresses Yahweh’s desire to grant filial standing. “My” is understood from the Father language, and “sons” preserves the inheritance-bearing image.
+  - source_phrase: אֶרֶץ חֶמְדָּה
+    prior_rendering: a desirable land
+    new_rendering: a delightful land
+    rationale: The phrase presents the land as a cherished, pleasing gift, not merely something others might wish to acquire.
+  - source_phrase: נַחֲלַת צְבִי צִבְאוֹת גּוֹיִם
+    prior_rendering: the most beautiful inheritance of the nations' armies
+    new_rendering: the most beautiful inheritance among all the nations
+    rationale: The land-and-inheritance context favors praise of the land’s exceptional beauty among the nations, not an inheritance belonging to military forces. The difficult wording involving “hosts” is preserved in a note.
+  - source_phrase: וָאֹמַר אָבִי תקראו לִי וּמֵאַחֲרַי לֹא תשובו
+    prior_rendering: And I said, ‘You will call me, “My Father,” and you will not turn away from following me.’
+    new_rendering: I thought you would call me ‘My Father’ and would not turn away from following me
+    rationale: The betrayal in verse 20 shows that this recalls Yahweh’s expectation, rather than announcing an unconditional prediction of their future conduct.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+    c: literal_wording
+  history_weighed: The review correctly identified “armies” as misleading, though its replacement “hosts” remained opaque; the automated revert carries little weight against the land-and-inheritance context. I retain “sons” for the inheritance imagery but make Yahweh’s longing and disappointed expectation explicit.

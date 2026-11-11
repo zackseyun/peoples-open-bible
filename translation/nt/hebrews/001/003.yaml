@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: ὃς ὢν ἀπαύγασμα τῆς δόξης καὶ χαρακτὴρ τῆς ὑποστάσεως αὐτοῦ, φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως, ⸂δι’ αὑτοῦ⸃ καθαρισμὸν ⸂τῶν ἁμαρτιῶν ποιησάμενος⸃ ἐκάθισεν ἐν δεξιᾷ τῆς μεγαλωσύνης ἐν ὑψηλοῖς,
 translation:
-  text: He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],
-  philosophy: optimal-equivalence
+  text: The Son is the radiance of God’s glory and the exact imprint of his being. He sustains all things by his powerful word. After making purification for sins through himself[a], he sat down at the right hand of the Majesty on high.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts omit "through himself"; the phrase is included here following the SBLGNT reading. Traditional English versions often reflect a different textual form, sometimes rendered "by himself."
+    text: Some manuscripts omit “through himself.”
     reason: textual_variant
-  - marker: b
-    text: Or "the exact representation of his nature/substance."
-    reason: lexical_alternative
-  - marker: c
-    text: Or "on high."
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀπαύγασμα
   chosen: radiance
@@ -168,14 +162,20 @@ revisions:
   from: He, being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself, sat down at the right hand of the Majesty in the heights,
   to: He, being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself, sat down at the right hand of the Majesty in the heights,
   rationale: Changed 'in the heights' to 'on high' for more natural formal English and closer idiomatic rendering of ἐν ὑψηλοῖς. Kept the rest unchanged, including 'through himself,' which reflects the textual reading δι’ αὑτοῦ.
-
 - timestamp: '2026-05-18T03:00:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],'
-  to: 'He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],'
+  from: He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],
+  to: He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the heights''].'
+- timestamp: '2026-11-09T17:08:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He[a], being the radiance of his glory and the exact imprint of his being, and sustaining all things by the word of his power, after making purification for sins through himself[b], sat down at the right hand of the Majesty on high[c],
+  to: The Son is the radiance of God’s glory and the exact imprint of his being. He sustains all things by his powerful word. After making purification for sins through himself[a], he sat down at the right hand of the Majesty on high.
+  rationale: The earlier review’s preference for “on high” supports the current idiom, while the automated revert supplies no meaning-based objection. I retain “radiance,” “exact imprint,” “being,” and the supplied reading “through himself,” but replace the participial chain with clear sentences.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -195,3 +195,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/hebrews/001/003.job-54345.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Son perfectly manifests God’s glory and being, sustains everything by his powerful word, and, after providing purification for sins through himself, takes his seat beside God in heavenly majesty.
+  meaning_decisions:
+  - source_phrase: ὃς ὢν ἀπαύγασμα τῆς δόξης καὶ χαρακτὴρ τῆς ὑποστάσεως αὐτοῦ
+    prior_rendering: He, being the radiance of his glory and the exact imprint of his being
+    new_rendering: The Son is the radiance of God’s glory and the exact imprint of his being
+    rationale: Explicitly identifying the Son and God removes the ambiguity of successive masculine pronouns while retaining the radiance and imprint images and the weight of “being.”
+  - source_phrase: φέρων τε τὰ πάντα τῷ ῥήματι τῆς δυνάμεως
+    prior_rendering: and sustaining all things by the word of his power
+    new_rendering: He sustains all things by his powerful word
+    rationale: A finite sentence clearly expresses the Son’s continuing action, and “his powerful word” conveys the attributive force of the Greek genitive.
+  - source_phrase: καθαρισμὸν τῶν ἁμαρτιῶν ποιησάμενος ἐκάθισεν
+    prior_rendering: after making purification for sins through himself, sat down
+    new_rendering: After making purification for sins through himself, he sat down
+    rationale: The sentence makes the sequence clear without losing the sacrificial force of purification or the enthronement image.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review’s preference for “on high” supports the current idiom, while the automated revert supplies no meaning-based objection. I retain “radiance,” “exact imprint,” “being,” and the supplied reading “through himself,” but replace the participial chain with clear sentences.

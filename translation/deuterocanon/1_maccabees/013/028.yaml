@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'one facing another.' The Greek phrase describes the monuments as arranged opposite each other.
-    reason: lexical_alternative
+  text: He set up seven pyramid-shaped monuments, one facing another, for his father, his mother, and his four brothers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔστησεν
   chosen: set up
@@ -79,14 +75,20 @@ revisions:
   from: And he set up seven pyramids, one opposite another, for his father and mother and four brothers.
   to: And he set up seven pyramids, one opposite another, for his father and mother and four brothers.
   rationale: Changed 'one opposite another' to 'one opposite the other' for more natural English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.'
-  to: 'And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.'
+  from: And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.
+  to: And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one opposite another''].'
+- timestamp: '2026-11-09T18:53:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he set up seven pyramids[a], one opposite the other, for his father and mother and four brothers.
+  to: He set up seven pyramid-shaped monuments, one facing another, for his father, his mother, and his four brothers.
+  rationale: The first draft and lexical notes favor a reciprocal arrangement rather than wording suggestive of two objects. I preserve all seven structures and the six named family members without supplying an unmentioned dedication for the seventh.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/028.job-48752.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Simon erects seven facing pyramid-shaped monuments in connection with the memorial for his parents and four brothers.
+  meaning_decisions:
+  - source_phrase: ἑπτὰ πυραμίδας
+    prior_rendering: seven pyramids
+    new_rendering: seven pyramid-shaped monuments
+    rationale: The funerary context identifies these as memorial structures; the wording preserves their shape without suggesting monumental Egyptian pyramids.
+  - source_phrase: μίαν κατέναντι τῆς μιᾶς
+    prior_rendering: one opposite the other
+    new_rendering: one facing another
+    rationale: The reciprocal arrangement concerns seven structures, whereas 'the other' can misleadingly suggest only a pair.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical notes favor a reciprocal arrangement rather than wording suggestive of two objects. I preserve all seven structures and the six named family members without supplying an unmentioned dedication for the seventh.

@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ γὰρ κινδυνεύομεν ἐγκαλεῖσθαι στάσεως περὶ τῆς σήμερον μηδενὸς αἰτίου ὑπάρχοντος περὶ οὗ οὐ δυνησόμεθα ⸀ἀποδοῦναι λόγον ⸀περὶ τῆς συστροφῆς ταύτης. καὶ ταῦτα εἰπὼν ἀπέλυσεν τὴν ἐκκλησίαν.
 translation:
-  text: For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with sedition' or 'with insurrection'; the Greek term can denote a serious civil uprising, but here 'rioting' best fits the immediate context of a public uproar.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'commotion' or 'mob'; the Greek refers to this tumultuous gathering and is distinct from the more formal 'assembly' later in the verse.
-    reason: lexical_alternative
-  - marker: c
-    text: The word translated 'assembly' is the same Greek word often used elsewhere for 'church,' but here it refers to the civic assembly in Ephesus.
-    reason: cross_reference
+  text: For indeed we are in danger of being charged with rioting over today’s events, since there is no justification for this disorderly gathering and we will not be able to account for it.” After saying this, he dismissed the assembly.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κινδυνεύομεν
   chosen: we are in danger
@@ -111,14 +101,20 @@ revisions:
   from: For indeed we are in danger of being charged with rioting over what happened today, since there is no cause for it, and we will not be able to give an account for this disorderly gathering. And after saying these things, he dismissed the assembly.
   to: For indeed we are in danger of being charged with rioting over what happened today, since there is no cause for it, and we will not be able to give an account for this disorderly gathering. And after saying these things, he dismissed the assembly.
   rationale: Changed 'disorderly gathering' to 'commotion' to more directly reflect συστροφή and avoid interpretive expansion. Kept the rest of the draft, which is accurate and natural.
-
 - timestamp: '2026-05-18T03:01:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.'
-  to: 'For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.'
+  from: For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.
+  to: For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''disorderly gathering''].'
+- timestamp: '2026-11-09T17:07:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For indeed we are in danger of being charged with rioting over what happened today[a], since there is no cause for it, and we will not be able to give an account for this commotion. And after saying these things[c][b], he dismissed the assembly.
+  to: For indeed we are in danger of being charged with rioting over today’s events, since there is no justification for this disorderly gathering and we will not be able to account for it.” After saying this, he dismissed the assembly.
+  rationale: The first draft and lexical rationale preserve the useful distinction between the 'disorderly gathering' and the assembly the clerk dismisses. I restore that meaning despite the automated review's preference for 'commotion' and clarify the lack of legitimate grounds; no MAINTAINER revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +134,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/019/040.job-46965.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The clerk warns that the unjustified gathering exposes them to a charge of rioting that they cannot answer, and then dismisses the assembly.
+  meaning_decisions:
+  - source_phrase: μηδενὸς αἰτίου ὑπάρχοντος
+    prior_rendering: since there is no cause for it
+    new_rendering: since there is no justification for this disorderly gathering
+    rationale: The clerk is denying legitimate grounds for the gathering, not claiming that the disturbance had no causal origin.
+  - source_phrase: ἀποδοῦναι λόγον περὶ τῆς συστροφῆς ταύτης
+    prior_rendering: give an account for this commotion
+    new_rendering: account for it
+    rationale: With 'this disorderly gathering' already explicit, the English idiom directly conveys their inability to provide an adequate explanation to the authorities.
+  - source_phrase: τῆς συστροφῆς ταύτης
+    prior_rendering: this commotion
+    new_rendering: this disorderly gathering
+    rationale: The noun refers to the tumultuous gathering itself, whose legal standing is at issue, rather than merely its noise or agitation.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale preserve the useful distinction between the 'disorderly gathering' and the assembly the clerk dismisses. I restore that meaning despite the automated review's preference for 'commotion' and clarify the lack of legitimate grounds; no MAINTAINER revision is recorded.

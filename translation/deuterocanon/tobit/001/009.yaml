@@ -20,15 +20,8 @@ source:
     note: NOT an ancient Hebrew witness. Neubauer's 1878 Hebrew is a back-translation from an Aramaic Munich MS. The actual ancient evidence is Qumran 4Q196-200 (Aramaic), published in DJD XIX (not redistributable). Use for translation reference only; do not treat as Vorlage.
     reference: TOB 1:9
 translation:
-  text: And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more smoothly, 'from the lineage of our father's family.' The Greek literally says 'from the seed of our father's family,' emphasizing descent within the paternal line.
-    reason: lexical_alternative
-  - marker: b
-    text: Traditional English often has 'Tobias' here; the Greek name is rendered more directly as 'Tobiah.'
-    reason: alternative_reading
+  text: When I became a man, I married Anna, a woman of our ancestral clan, and by her I fathered Tobiah.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγενόμην ἀνήρ
   chosen: I became a man
@@ -121,17 +114,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And when I became a man, I took Anna as my wife from the seed of our father''s family, and by her I fathered Tobiah.'
-  to: 'And when I became a man, I took Anna as my wife from the seed of our father''s family, and by her I fathered Tobiah.'
+  from: And when I became a man, I took Anna as my wife from the seed of our father's family, and by her I fathered Tobiah.
+  to: And when I became a man, I took Anna as my wife from the seed of our father's family, and by her I fathered Tobiah.
   rationale: Replaced 'our father's family' with 'our ancestral family' to more naturally and accurately reflect τῆς πατριᾶς ἡμῶν while preserving the formal sense. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.'
-  to: 'And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.'
+  from: And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.
+  to: And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["our father''s family"].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when I became a man[a], I took Anna as my wife from the seed of our ancestral family[b], and by her I fathered Tobiah.
+  to: When I became a man, I married Anna, a woman of our ancestral clan, and by her I fathered Tobiah.
+  rationale: The revision from 'our father's family' to 'our ancestral family' correctly avoids implying that Tobit and Anna shared the same immediate father. I preserve that gain, express their kinship as belonging to an ancestral clan, and retain the established names Anna and Tobiah.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -151,3 +150,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/001/009.job-39060.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: refined
+  confidence: high
+  meaning: On reaching manhood, Tobit married Anna from his ancestral clan and fathered Tobiah by her.
+  meaning_decisions:
+  - source_phrase: ἔλαβον Ἄνναν γυναῖκα
+    prior_rendering: I took Anna as my wife
+    new_rendering: I married Anna
+    rationale: The construction is the ordinary marriage idiom, which English conveys directly with 'married.'
+  - source_phrase: ἐκ τοῦ σπέρματος τῆς πατριᾶς ἡμῶν
+    prior_rendering: from the seed of our ancestral family
+    new_rendering: a woman of our ancestral clan
+    rationale: The phrase identifies Anna's descent within their shared ancestral kin group; it does not require retaining the seed idiom.
+  footnote_kinds: {}
+  history_weighed: The revision from 'our father's family' to 'our ancestral family' correctly avoids implying that Tobit and Anna shared the same immediate father. I preserve that gain, express their kinship as belonging to an ancestral clan, and retain the established names Anna and Tobiah.

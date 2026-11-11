@@ -17,15 +17,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.
-  philosophy: optimal-equivalence
+  text: Alexander the Macedonian, son of Philip, set out from the land of Kittim[a] and defeated Darius, king of the Persians and Medes. He became king in Darius’s place, having previously ruled over Greece.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Kittim is a traditional biblical place-name. It can refer more specifically to Cyprus or, more broadly, western lands depending on context.
+    text: A traditional biblical name for western lands, here applied to the Macedonian homeland.
     reason: cultural_note
-  - marker: b
-    text: Or 'defeated Darius.' The Greek verb literally means 'struck down.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐγένετο
   chosen: it happened
@@ -122,14 +119,20 @@ revisions:
   from: And it happened, after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place, first over Greece.
   to: And it happened, after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place, first over Greece.
   rationale: 'Adjusted the final clause to reflect πρότερον more naturally and completely: ''having first reigned over Greece'' instead of ''first over Greece.'''
-
 - timestamp: '2026-05-18T02:58:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.'
-  to: 'And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.'
+  from: And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.
+  to: And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''first over Greece''].'
+- timestamp: '2026-11-09T18:50:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened[a], after Alexander the Macedonian, the son of Philip, who had come out from the land of Kittim, struck down Darius king of the Persians and Medes, that he reigned in his place[b], having first reigned over Greece.
+  to: Alexander the Macedonian, son of Philip, set out from the land of Kittim[a] and defeated Darius, king of the Persians and Medes. He became king in Darius’s place, having previously ruled over Greece.
+  rationale: The earlier revision correctly recognized that Greece was Alexander’s previous sphere of rule; that gain is retained. The literal narrative formula and “struck down” are revised because they obscure the sequence or suggest more than the military context establishes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +152,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/001/001.job-47952.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Alexander of Macedonia defeated Darius and succeeded him as king after having previously ruled over Greece.
+  meaning_decisions:
+  - source_phrase: ΚΑΙ ἐγένετο μετὰ τὸ πατάξαι ... καὶ ἐπάταξεν
+    prior_rendering: And it happened ... struck down
+    new_rendering: Alexander ... defeated
+    rationale: The extended narrative opening is recast as direct English, and “defeated” conveys the military victory without suggesting that Alexander personally killed Darius.
+  - source_phrase: ἐξῆλθεν ἐκ τῆς γῆς Χεττιείμ
+    prior_rendering: had come out from the land of Kittim
+    new_rendering: set out from the land of Kittim
+    rationale: This describes Alexander’s departure on conquest, not merely his geographical origin.
+  - source_phrase: ἐβασίλευσεν ἀντʼ αὐτοῦ πρότερον ἐπὶ τὴν Ἑλλάδα
+    prior_rendering: he reigned in his place, having first reigned over Greece
+    new_rendering: He became king in Darius’s place, having previously ruled over Greece
+    rationale: The wording makes succession and the earlier period of Greek rule explicit.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier revision correctly recognized that Greece was Alexander’s previous sphere of rule; that gain is retained. The literal narrative formula and “struck down” are revised because they obscure the sequence or suggest more than the military context establishes.

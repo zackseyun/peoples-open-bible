@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּזָּעֵ֣ק שָׁא֗וּל וְ/כָל הָ/עָם֙ אֲשֶׁ֣ר אִתּ֔/וֹ וַ/יָּבֹ֖אוּ עַד הַ/מִּלְחָמָ֑ה וְ/הִנֵּ֨ה הָיְתָ֜ה חֶ֤רֶב אִישׁ֙ בְּ/רֵעֵ֔/הוּ מְהוּמָ֖ה גְּדוֹלָ֥ה מְאֹֽד־־׃
 translation:
-  text: Then Saul and all the people who were with him were summoned, and they came to the battle[a]. And behold, every man's sword was against his companion[b], with very great confusion.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Then Saul and all the people who were with him cried out' or 'were called together.' The Hebrew verb can be understood in more than one way here.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'a very great panic' or 'a very great tumult.'
-    reason: lexical_alternative
+  text: Then Saul and all the troops with him assembled and went to the battle. There they found the Philistines attacking one another with their swords in utter confusion.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּזָּעֵק
   chosen: were summoned
@@ -79,14 +72,20 @@ revisions:
   from: Then Saul and all the people who were with him were summoned, and they came to the battle. And behold, every man's sword was against his companion, with very great confusion.
   to: Then Saul and all the people who were with him rallied and came to the battle. And behold, every man's sword was against his companion, with very great confusion.
   rationale: Changed 'were summoned' to 'rallied' to better reflect the verb meaning of crying out/assembling rather than being summoned. Kept the rest substantially the same for accuracy and naturalness.
-
 - timestamp: '2026-05-16T04:40:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Saul and all the people who were with him rallied and came to the battle[a]. And behold, every man''s sword was against his companion[b], with very great confusion.'
-  to: 'Then Saul and all the people who were with him were summoned, and they came to the battle[a]. And behold, every man''s sword was against his companion[b], with very great confusion.'
-  rationale: 'Azure substituted ''rallied'' — active-voice rendering — for drafter''s documented Niphal passive ''were summoned''. Drafter explicitly chose passive/reflexive reading per Niphal binyan analysis; ''rallied'' imports Hiphil/active semantics.'
+  from: Then Saul and all the people who were with him rallied and came to the battle[a]. And behold, every man's sword was against his companion[b], with very great confusion.
+  to: Then Saul and all the people who were with him were summoned, and they came to the battle[a]. And behold, every man's sword was against his companion[b], with very great confusion.
+  rationale: Azure substituted 'rallied' — active-voice rendering — for drafter's documented Niphal passive 'were summoned'. Drafter explicitly chose passive/reflexive reading per Niphal binyan analysis; 'rallied' imports Hiphil/active semantics.
+- timestamp: '2026-11-09T17:23:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Saul and all the people who were with him were summoned, and they came to the battle[a]. And behold, every man's sword was against his companion[b], with very great confusion.
+  to: Then Saul and all the troops with him assembled and went to the battle. There they found the Philistines attacking one another with their swords in utter confusion.
+  rationale: The review’s “rallied” recognized the gathering sense, while the automated revert emphasized the Niphal form. “Assembled” accommodates that form’s reflexive force and the narrative’s mobilization context.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +105,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/020.job-59057.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Saul’s force gathers and reaches the battle, where the Philistines are attacking one another in extreme confusion.
+  meaning_decisions:
+  - source_phrase: וַיִּזָּעֵק
+    prior_rendering: were summoned
+    new_rendering: assembled
+    rationale: The Niphal can describe gathering together; this conveys mobilization without implying an unidentified person who summoned Saul.
+  - source_phrase: כָל הָעָם אֲשֶׁר אִתּוֹ
+    prior_rendering: all the people who were with him
+    new_rendering: all the troops with him
+    rationale: The context identifies these people as Saul’s fighting force.
+  - source_phrase: וְהִנֵּה הָיְתָה חֶרֶב אִישׁ בְּרֵעֵהוּ מְהוּמָה גְּדוֹלָה מְאֹד
+    prior_rendering: And behold, every man's sword was against his companion, with very great confusion
+    new_rendering: There they found the Philistines attacking one another with their swords in utter confusion
+    rationale: The swords signify actual fighting within the Philistine force, and the discovery is made explicit without weakening the confusion’s intensity.
+  footnote_kinds: {}
+  history_weighed: The review’s “rallied” recognized the gathering sense, while the automated revert emphasized the Niphal form. “Assembled” accommodates that form’s reflexive force and the narrative’s mobilization context.

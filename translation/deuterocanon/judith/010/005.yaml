@@ -17,12 +17,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'ritually clean loaves' or 'pure bread.' The Greek may imply food prepared in keeping with purity concerns.
-    reason: lexical_alternative
+  text: She gave her maid a skin of wine and a flask of oil, and filled a bag with barley meal, cakes of pressed figs, and ritually clean loaves. Then she wrapped up all her containers and loaded them onto her maid.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἅβρᾳ
   chosen: maid
@@ -133,14 +129,20 @@ revisions:
   from: And she gave her maid a skin of wine and a flask of oil, and she filled a bag with roasted grain and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
   to: And she gave her maid a skin of wine and a flask of oil, and she filled a bag with roasted grain and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
   rationale: Changed 'roasted grain' to 'barley meal' for ἀλφίτων, which refers to meal/flour rather than roasted grain. Kept the rest substantially the same as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.'
-  to: 'And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.'
+  from: And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
+  to: And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''roasted grain''].'
+- timestamp: '2026-11-09T19:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she gave her maid a skin of wine and a flask of oil[a], and she filled a bag with barley meal and cakes of pressed figs and clean loaves; then she wrapped up all her vessels and placed them on her.
+  to: She gave her maid a skin of wine and a flask of oil, and filled a bag with barley meal, cakes of pressed figs, and ritually clean loaves. Then she wrapped up all her containers and loaded them onto her maid.
+  rationale: I retained the current “barley meal,” supported by the review’s lexical distinction between meal and whole roasted grain; the automated revert carries no additional meaning-based evidence. The documented purity rationale is now expressed in the main text, and the final pronoun is clarified.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -160,3 +162,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/010/005.job-50698.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judith prepares food, wine, and oil for the journey, including bread suitable for her religious observance, and loads the provisions onto her maid.
+  meaning_decisions:
+  - source_phrase: ἄρτων καθαρῶν
+    prior_rendering: clean loaves
+    new_rendering: ritually clean loaves
+    rationale: Judith’s provision of her own food, illuminated by her later refusal to eat food that would defile her, makes religious suitability the contextual sense rather than ordinary cleanliness.
+  - source_phrase: τὰ ἄγγη αὐτῆς
+    prior_rendering: her vessels
+    new_rendering: her containers
+    rationale: These are the containers holding her provisions; the new wording conveys that concrete sense directly.
+  - source_phrase: ἐπέθηκε αὐτῇ
+    prior_rendering: placed them on her
+    new_rendering: loaded them onto her maid
+    rationale: The pronoun refers to the maid, and the action is loading the packed provisions onto her to carry, not placing them on Judith.
+  footnote_kinds: {}
+  history_weighed: I retained the current “barley meal,” supported by the review’s lexical distinction between meal and whole roasted grain; the automated revert carries no additional meaning-based evidence. The documented purity rationale is now expressed in the main text, and the final pronoun is clarified.

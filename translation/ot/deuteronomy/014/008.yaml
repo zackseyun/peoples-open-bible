@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אֶת הַ֠/חֲזִיר כִּֽי מַפְרִ֨יס פַּרְסָ֥ה הוּא֙ וְ/לֹ֣א גֵרָ֔ה טָמֵ֥א ה֖וּא לָ/כֶ֑ם מִ/בְּשָׂרָ/ם֙ לֹ֣א תֹאכֵ֔לוּ וּ/בְ/נִבְלָתָ֖/ם לֹ֥א תִגָּֽעוּ־־׃ס
 translation:
-  text: And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the swine.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'does not chew cud.'
-    reason: lexical_alternative
+  text: 'The pig is also unclean for you: it has divided hooves but does not chew the cud. You shall not eat the flesh of these animals or touch their carcasses.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַחֲזִיר
   chosen: the pig
@@ -110,14 +103,20 @@ revisions:
   from: And the pig, because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of their flesh, and you shall not touch their carcasses.
   to: And the pig, because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of their flesh, and you shall not touch their carcasses.
   rationale: Changed plural pronouns and nouns to singular ('their flesh/carcasses' to 'its flesh/carcass') to match the singular Hebrew reference to the pig and improve consistency.
-
 - timestamp: '2026-05-16T05:40:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.'
-  to: 'And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.'
-  rationale: 'Azure singularized to ''its flesh / its carcass'' against drafter''s documented preservation of Hebrew plural suffixes (-ם on מִבְּשָׂרָם, נִבְלָתָם). Drafter explicitly documented plural reflects class of unclean animals generically, not just the singular pig.'
+  from: And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.
+  to: And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.
+  rationale: Azure singularized to 'its flesh / its carcass' against drafter's documented preservation of Hebrew plural suffixes (-ם on מִבְּשָׂרָם, נִבְלָתָם). Drafter explicitly documented plural reflects class of unclean animals generically, not just the singular pig.
+- timestamp: '2026-11-09T17:31:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the pig[a], because it has a split hoof but does not chew the cud, is unclean for you. You shall not eat any of its flesh[b], and you shall not touch its carcass.
+  to: 'The pig is also unclean for you: it has divided hooves but does not chew the cud. You shall not eat the flesh of these animals or touch their carcasses.'
+  rationale: The revision record conflicts about singular versus plural pronouns, but the Hebrew plural suffixes and the drafter's documented explanation support the broader reference. I restore that meaning with an explicit English antecedent.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +136,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/014/008.job-61593.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The pig is unclean because it does not chew the cud, and Israel must neither eat the listed unclean animals nor touch their carcasses.
+  meaning_decisions:
+  - source_phrase: וְאֶת הַחֲזִיר כִּי מַפְרִיס פַּרְסָה הוּא וְלֹא גֵרָה טָמֵא הוּא לָכֶם
+    prior_rendering: And the pig, because it has a split hoof but does not chew the cud, is unclean for you.
+    new_rendering: 'The pig is also unclean for you: it has divided hooves but does not chew the cud.'
+    rationale: The direct statement and explanation clarify that possessing only the hoof criterion is insufficient.
+  - source_phrase: מִבְּשָׂרָם לֹא תֹאכֵלוּ וּבְנִבְלָתָם לֹא תִגָּעוּ
+    prior_rendering: You shall not eat any of its flesh, and you shall not touch its carcass.
+    new_rendering: You shall not eat the flesh of these animals or touch their carcasses.
+    rationale: The Hebrew plural suffixes extend the closing prohibition to the unclean animals just listed, rather than restricting it to the pig.
+  footnote_kinds: {}
+  history_weighed: The revision record conflicts about singular versus plural pronouns, but the Hebrew plural suffixes and the drafter's documented explanation support the broader reference. I restore that meaning with an explicit English antecedent.

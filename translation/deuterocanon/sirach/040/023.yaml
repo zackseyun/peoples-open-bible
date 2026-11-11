@@ -14,14 +14,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 40:23
 translation:
-  text: A companion and a friend conduct themselves for a time[b], but better than both is an intelligent wife[a].
-  philosophy: optimal-equivalence
+  text: A companion and a friend provide help for a time[a], but better than both is a discerning wife.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'woman'; the Greek parallel points more specifically toward a marital sense, hence 'wife.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'for a season' / 'at the proper time.' The Hebrew לעת and Greek εἰς καιρόν both involve the idea of time, and the exact nuance may be either temporary duration or timely usefulness.
+    text: Or, “provide help when needed.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: עמית
@@ -119,13 +116,12 @@ revisions:
   from: A companion and a friend conduct themselves for a time, but better than both is an intelligent wife.
   to: A companion and a friend are useful for a time, but better than both is an intelligent wife.
   rationale: Changed 'conduct themselves for a time' to 'are useful for a time' to better reflect the Hebrew sense here and produce more natural English; retained 'intelligent wife' for משכלת.
-
 - timestamp: '2026-05-18T03:09:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A companion and a friend are useful for a time[b][a], but better than both is an intelligent wife.'
-  to: 'A companion and a friend conduct themselves for a time, but better than both is an intelligent wife.'
+  from: A companion and a friend are useful for a time[b][a], but better than both is an intelligent wife.
+  to: A companion and a friend conduct themselves for a time, but better than both is an intelligent wife.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''conduct themselves''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -135,6 +131,13 @@ revisions:
   from: A companion and a friend conduct themselves for a time, but better than both is an intelligent wife.
   to: A companion and a friend conduct themselves for a time[b], but better than both is an intelligent wife[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('wife') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('for a time') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:08:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A companion and a friend conduct themselves for a time[b], but better than both is an intelligent wife[a].
+  to: A companion and a friend provide help for a time[a], but better than both is a discerning wife.
+  rationale: The recorded revision's “are useful” recovered the contextual meaning lost in “conduct themselves”; the subsequent automated revert supplies no meaning-based reason to lose that gain. I retain the documented marital sense and sharpen “intelligent” to practical discernment.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -154,3 +157,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/040/023.job-52136.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:08:43Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Companions and friends provide help for a time, but a discerning wife is more valuable.
+  meaning_decisions:
+  - source_phrase: עמית ורע לעת ינהגו
+    prior_rendering: A companion and a friend conduct themselves for a time
+    new_rendering: A companion and a friend provide help for a time
+    rationale: The comparison concerns the value of these relationships, not their behavior; making their helpfulness explicit restores the point obscured by “conduct themselves.” The temporal ambiguity remains in a note.
+  - source_phrase: אשה משכלת
+    prior_rendering: an intelligent wife
+    new_rendering: a discerning wife
+    rationale: The Hebrew describes practical understanding and sound judgment, which “discerning” conveys more precisely than general intelligence.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded revision's “are useful” recovered the contextual meaning lost in “conduct themselves”; the subsequent automated revert supplies no meaning-based reason to lose that gain. I retain the documented marital sense and sharpen “intelligent” to practical discernment.

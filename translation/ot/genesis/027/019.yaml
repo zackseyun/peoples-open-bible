@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יַעֲקֹ֜ב אֶל אָבִ֗י/ו אָנֹכִי֙ עֵשָׂ֣ו בְּכֹרֶ֔/ךָ עָשִׂ֕יתִי כַּ/אֲשֶׁ֥ר דִּבַּ֖רְתָּ אֵלָ֑/י קֽוּם נָ֣א שְׁבָ֗/ה וְ/אָכְלָ/ה֙ מִ/צֵּידִ֔/י בַּ/עֲב֖וּר תְּבָרֲכַ֥/נִּי נַפְשֶֽׁ/ךָ־־׃
 translation:
-  text: And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”
-  philosophy: optimal-equivalence
+  text: Jacob said to his father, “I am Esau your firstborn. I have done as you told me. Please sit up and eat some of my game, so that you may bless me[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'that your soul may bless me'; Hebrew נֶפֶשׁ ('soul/self') here functions idiomatically for the person.
+    text: Literally, “so that your soul may bless me”; here “soul” refers to Isaac himself.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'sit'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And ... said
@@ -113,9 +110,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”'
-  to: 'And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”'
+  from: And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”
+  to: And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”
   rationale: 'Drafter chose ''you may bless me'' for נַפְשֶׁךָ as documented idiomatic rendering (per theological_decisions, נֶפֶשׁ = idiom for person/self, not a doctrinal soul-claim; literal preserved in footnote). Drafter chose ''Please get up'' for קוּם נָא (contemporary register, with ''rise'' as explicit rejected alternative). Azure substituted both: ''your soul may bless me'' (literal that drafter rejected) and ''rise'' (rejected register alternative).'
+- timestamp: '2026-11-09T17:43:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jacob said to his father[a], “I am Esau your firstborn. I have done as you told me. Please rise, sit, and eat from my game[b], so that your soul may bless me.”
+  to: Jacob said to his father, “I am Esau your firstborn. I have done as you told me. Please sit up and eat some of my game, so that you may bless me[a].”
+  rationale: The reviews alternated between natural posture language and separate literal imperatives. The documented lexical and theological decisions explicitly favor 'you may bless me' for this idiom, and that meaning-based judgment outweighs the later source-transparent wording.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T22:10:53Z'
@@ -143,3 +147,30 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/027/019.job-37771.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob falsely identifies himself as Esau and asks Isaac to eat the game he claims to have brought and then bless him.
+  meaning_decisions:
+  - source_phrase: קוּם נָא שְׁבָה
+    prior_rendering: Please rise, sit
+    new_rendering: Please sit up
+    rationale: The combined commands ask Isaac to raise himself into a sitting position for the meal; 'sit up' conveys that movement naturally rather than suggesting that he must stand and then sit.
+  - source_phrase: וְאָכְלָה מִצֵּידִי
+    prior_rendering: and eat from my game
+    new_rendering: and eat some of my game
+    rationale: The preposition is partitive here, which English expresses naturally with 'some of.'
+  - source_phrase: תְּבָרֲכַנִּי נַפְשֶׁךָ
+    prior_rendering: your soul may bless me
+    new_rendering: you may bless me
+    rationale: The documented contextual sense of נֶפֶשׁ is the person performing the blessing. The personal pronoun communicates that meaning directly, while the footnote preserves the source expression.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The reviews alternated between natural posture language and separate literal imperatives. The documented lexical and theological decisions explicitly favor 'you may bless me' for this idiom, and that meaning-based judgment outweighs the later source-transparent wording.

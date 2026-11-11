@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַֽ/יְהִי יַ֣חַת הָ/רֹ֔אשׁ וְ/זִיזָ֖ה הַ/שֵּׁנִ֑י וִ/יע֤וּשׁ וּ/בְרִיעָה֙ לֹֽא הִרְבּ֣וּ בָנִ֔ים וַ/יִּֽהְיוּ֙ לְ/בֵ֣ית אָ֔ב לִ/פְקֻדָּ֖ה אֶחָֽת־־׃ס
 translation:
-  text: Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Zizah is rendered by some English versions as 'Ziza.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'one ancestral house for one division' / 'for one reckoning.' The Hebrew refers to a single paternal clan counted as one administrative unit.
-    reason: lexical_alternative
+  text: Jahath was the first and Zizah the second; Jeush and Beriah did not have many sons, so they were counted together as one ancestral family.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: was
@@ -97,14 +90,20 @@ revisions:
   from: Jahath was the first and Zizah the second; Jeush and Beriah did not have many sons, so they became one father’s house for one assignment.
   to: Jahath was the first and Zizah the second; Jeush and Beriah did not have many sons, so they became one father’s house for one assignment.
   rationale: Changed 'assignment' to 'reckoning' to more closely reflect לִפְקֻדָּה, a counting/enrollment term rather than a task assignment. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.'
-  to: 'Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.'
+  from: Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.
+  to: Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for one assignment''].'
+- timestamp: '2026-11-09T17:19:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jahath was the first and Zizah the second[a]; Jeush and Beriah did not have many sons[b], so they became one father’s house for one reckoning.
+  to: Jahath was the first and Zizah the second; Jeush and Beriah did not have many sons, so they were counted together as one ancestral family.
+  rationale: The review’s distinction between a reckoning and a task assignment usefully identifies enrollment as the issue. I carry that meaning into the main text and retain “first” where its pairing with “second” establishes an ordered sequence.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +123,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/023/011.job-44354.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jahath and Zizah came first and second, while the small families of Jeush and Beriah were counted as one ancestral family.
+  meaning_decisions:
+  - source_phrase: וַיִּהְיוּ לְבֵית אָב לִפְקֻדָּה אֶחָת
+    prior_rendering: so they became one father’s house for one reckoning
+    new_rendering: so they were counted together as one ancestral family
+    rationale: Their few sons led to their being treated as a single family unit in the enrollment; the revised wording expresses both the family grouping and its administrative purpose.
+  footnote_kinds: {}
+  history_weighed: The review’s distinction between a reckoning and a task assignment usefully identifies enrollment as the issue. I carry that meaning into the main text and retain “first” where its pairing with “second” establishes an ordered sequence.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ἀποκριθεὶς δὲ ὁ ἄγγελος εἶπεν ταῖς γυναιξίν· Μὴ φοβεῖσθε ὑμεῖς, οἶδα γὰρ ὅτι Ἰησοῦν τὸν ἐσταυρωμένον ζητεῖτε·
 translation:
-  text: But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The Greek explicitly includes ''you'' for emphasis: the reassurance is directed particularly to the women.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, more compactly, 'Jesus the crucified one' or 'Jesus who was crucified.'
-    reason: alternative_reading
+  text: But the angel said to the women, “You need not be afraid, for I know that you are looking for Jesus, who was crucified.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀποκριθεὶς
   chosen: answered
@@ -112,14 +105,20 @@ revisions:
   from: But the angel answered and said to the women, “Do not be afraid, you; for I know that you are seeking Jesus, the one who has been crucified.”
   to: But the angel answered and said to the women, “Do not be afraid, you; for I know that you are seeking Jesus, the one who has been crucified.”
   rationale: Removed the awkward emphatic 'you' after 'Do not be afraid' for more natural English, while retaining the full sense. Simplified 'the one who has been crucified' to 'who has been crucified' for smoother, formal English without loss of meaning.
-
 - timestamp: '2026-05-18T03:00:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”'
-  to: 'But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”'
+  from: But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”
+  to: But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one who has been crucified''].'
+- timestamp: '2026-11-09T17:15:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the angel answered and said to the women[a], “Do not be afraid[b]; for I know that you are seeking Jesus who has been crucified.”
+  to: But the angel said to the women, “You need not be afraid, for I know that you are looking for Jesus, who was crucified.”
+  rationale: I follow the review’s aim of natural English while preserving the emphatic reassurance identified in the lexical and theological notes. The automated revert and entries with no recorded text change do not outweigh that contextual meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -141,3 +140,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/028/005.job-57548.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The angel reassures the women in particular because he knows they are looking for the crucified Jesus.
+  meaning_decisions:
+  - source_phrase: ἀποκριθεὶς δὲ ὁ ἄγγελος εἶπεν ταῖς γυναιξίν
+    prior_rendering: But the angel answered and said to the women
+    new_rendering: But the angel said to the women
+    rationale: This is a conventional speech introduction, not an answer to a spoken question; “said” carries its function without suggesting an unreported exchange.
+  - source_phrase: Μὴ φοβεῖσθε ὑμεῖς
+    prior_rendering: Do not be afraid
+    new_rendering: You need not be afraid
+    rationale: 'Placing “you” first brings the explicit Greek pronoun’s emphasis into the main text: the women, unlike the terrified guards, receive reassurance.'
+  - source_phrase: Ἰησοῦν τὸν ἐσταυρωμένον ζητεῖτε
+    prior_rendering: you are seeking Jesus who has been crucified
+    new_rendering: you are looking for Jesus, who was crucified
+    rationale: The women are looking for Jesus at his burial place, not undertaking an abstract spiritual search; “who was crucified” naturally identifies him by the completed event.
+  footnote_kinds: {}
+  history_weighed: I follow the review’s aim of natural English while preserving the emphatic reassurance identified in the lexical and theological notes. The automated revert and entries with no recorded text change do not outweigh that contextual meaning.

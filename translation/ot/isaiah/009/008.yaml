@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/יָדְעוּ֙ הָ/עָ֣ם כֻּלּ֔/וֹ אֶפְרַ֖יִם וְ/יוֹשֵׁ֣ב שֹׁמְר֑וֹן בְּ/גַאֲוָ֛ה וּ/בְ/גֹ֥דֶל לֵבָ֖ב לֵ/אמֹֽר׃
 translation:
-  text: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in arrogance of heart,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'in greatness of heart.' Here the idiom carries the sense of proud self-exaltation, hence 'arrogance of heart.'
-    reason: lexical_alternative
+  text: 'And all the people—Ephraim and the inhabitants of Samaria—will know it. They say in pride and arrogance of heart:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיָדְעוּ
   chosen: And ... will know
@@ -83,14 +79,20 @@ revisions:
   from: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in arrogance of heart,
   to: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in greatness of heart,
   rationale: Replaced 'arrogance of heart' with the more literal 'greatness of heart' to reflect גֹדֶל לֵבָב more closely while preserving formal register. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T17:51:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in greatness of heart,[a]'
-  to: 'And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in arrogance of heart,[a]'
+  from: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in greatness of heart,[a]
+  to: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in arrogance of heart,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and in arrogance of heart''].'
+- timestamp: '2026-11-09T20:32:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the people will know—Ephraim and the inhabitants of Samaria—who say in pride and in arrogance of heart,[a]
+  to: 'And all the people—Ephraim and the inhabitants of Samaria—will know it. They say in pride and arrogance of heart:'
+  rationale: There is no MAINTAINER revision; the attempted change to 'greatness of heart' favored literal form but obscured the negative meaning established by the context and lexical notes. I retain the restored 'arrogance of heart' and drop its explanatory footnote because the English already conveys the idiom’s meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +112,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/009/008.job-66102.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:25Z'
+  change_level: refined
+  confidence: high
+  meaning: All the people of Ephraim and Samaria will come to recognize the reality of the Lord’s announced judgment, despite their proud boasting.
+  meaning_decisions:
+  - source_phrase: וְיָדְעוּ הָעָם כֻּלּוֹ
+    prior_rendering: And all the people will know
+    new_rendering: And all the people—Ephraim and the inhabitants of Samaria—will know it.
+    rationale: The supplied object 'it' refers to the Lord’s word announced in the preceding verse. Moving the identifying phrase beside the subject makes the sentence easier to follow while retaining the future sense supported by the context.
+  - source_phrase: בְּגַאֲוָה וּבְגֹדֶל לֵבָב לֵאמֹר
+    prior_rendering: who say in pride and in arrogance of heart,
+    new_rendering: 'They say in pride and arrogance of heart:'
+    rationale: A separate sentence clearly introduces the people’s boast without leaving a cumbersome relative clause after the declaration that they will know. The colon preserves the continuation into the next verse.
+  footnote_kinds: {}
+  history_weighed: There is no MAINTAINER revision; the attempted change to 'greatness of heart' favored literal form but obscured the negative meaning established by the context and lexical notes. I retain the restored 'arrogance of heart' and drop its explanatory footnote because the English already conveys the idiom’s meaning.

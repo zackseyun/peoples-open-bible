@@ -20,12 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: So, while disciplining us, you scourge our enemies by the ten thousands[a], so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'with countless lashes' for 'by the ten thousands'; the Greek expression ἐν μυριότητι μαστιγοῖς emphasizes an immense number or severity of blows.
-    reason: lexical_alternative
+  text: So, while disciplining us, you scourge our enemies with countless lashes, so that when we judge we may keep your goodness in mind, and when we are judged we may expect mercy.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παιδεύων
   chosen: disciplining
@@ -128,13 +124,12 @@ revisions:
   from: So, while disciplining us, you scourge our enemies by the ten thousands, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
   to: So, while disciplining us, you scourge our enemies ten thousand times, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
   rationale: Revised 'by the ten thousands' to 'ten thousand times' to more naturally and accurately reflect ἐν μυριότητι with μαστιγοῖς as an idiomatic expression of repeated/intense scourging. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So[a], while disciplining us, you scourge our enemies ten thousand times, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.'
-  to: 'So, while disciplining us, you scourge our enemies by the ten thousands, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.'
+  from: So[a], while disciplining us, you scourge our enemies ten thousand times, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
+  to: So, while disciplining us, you scourge our enemies by the ten thousands, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the ten thousands''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -144,6 +139,13 @@ revisions:
   from: So, while disciplining us, you scourge our enemies by the ten thousands, so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
   to: So, while disciplining us, you scourge our enemies by the ten thousands[a], so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('by the ten thousands') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T20:18:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So, while disciplining us, you scourge our enemies by the ten thousands[a], so that when we judge we may reflect on your goodness, and when we are judged we may expect mercy.
+  to: So, while disciplining us, you scourge our enemies with countless lashes, so that when we judge we may keep your goodness in mind, and when we are judged we may expect mercy.
+  rationale: The earlier review rightly sought to clarify the measure of scourging, but its wording ‘ten thousand times’ could suggest an exact count; the automated revert supplies no stronger meaning-based rationale, and there are no MAINTAINER revisions. I retain the documented distinction between corrective discipline and severe punishment, bringing the existing footnote’s clarification into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -163,3 +165,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/012/022.job-39189.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:20Z'
+  change_level: refined
+  confidence: high
+  meaning: God disciplines his people and severely punishes their enemies so that his people will judge with his goodness in mind and expect mercy when they are judged.
+  meaning_decisions:
+  - source_phrase: ἐν μυριότητι μαστιγοῖς
+    prior_rendering: you scourge our enemies by the ten thousands
+    new_rendering: you scourge our enemies with countless lashes
+    rationale: The expression conveys an immense measure of scourging, rather than an exact numerical tally; the new wording preserves the image while making its force clear. The earlier footnote is unnecessary because its point is now carried in the text.
+  - source_phrase: σου τὴν ἀγαθότητα μεριμνῶμεν κρίνοντες
+    prior_rendering: when we judge we may reflect on your goodness
+    new_rendering: when we judge we may keep your goodness in mind
+    rationale: The context calls for attentive regard to God’s goodness while exercising judgment, not merely reflection upon it; the new wording makes that practical connection clearer.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly sought to clarify the measure of scourging, but its wording ‘ten thousand times’ could suggest an exact count; the automated revert supplies no stronger meaning-based rationale, and there are no MAINTAINER revisions. I retain the documented distinction between corrective discipline and severe punishment, bringing the existing footnote’s clarification into the main text.

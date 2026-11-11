@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וּ/קְרָאתֶ֞ם בְּ/שֵׁ֣ם אֱלֹֽהֵי/כֶ֗ם וַֽ/אֲנִי֙ אֶקְרָ֣א בְ/שֵׁם יְהוָ֔ה וְ/הָיָ֧ה הָ/אֱלֹהִ֛ים אֲשֶׁר יַעֲנֶ֥ה בָ/אֵ֖שׁ ה֣וּא הָ/אֱלֹהִ֑ים וַ/יַּ֧עַן כָּל הָ/עָ֛ם וַ/יֹּאמְר֖וּ ט֥וֹב הַ/דָּבָֽר־־־׃
 translation:
-  text: Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The word is good.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'your gods,' if אֱלֹהֵיכֶם is taken as a true plural rather than a singular reference to the deity represented in the contest.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'The proposal is good' or 'The thing is good.' Hebrew דָּבָר can mean 'word,' 'matter,' or 'proposal.'
-    reason: lexical_alternative
+  text: Then call on the name of your god, and I will call on the name of Yahweh. The god who answers by fire—he is God.” All the people replied, “The proposal is good.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּקְרָאתֶם
   chosen: call on
@@ -116,14 +109,20 @@ revisions:
   from: Then call on the name of your god, and I will call on the name of the LORD; and the god who answers by fire, he is God." And all the people answered and said, "The word is good.
   to: Then call on the name of your god, and I will call on the name of the LORD; and the God who answers by fire, he is God." And all the people answered and said, "The thing is good.
   rationale: Capitalized the final occurrences of 'God' for consistency with הָאֱלֹהִים, and changed 'The word is good' to 'The thing is good' to better reflect הַדָּבָר in this context.
-
 - timestamp: '2026-05-16T07:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The thing is good.'
-  to: 'Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The word is good.'
-  rationale: 'Azure substituted ''The thing is good'' — drafter''s explicit rejected_alternative. Drafter chose ''The word is good'' as deliberately literal rendering of הַדָּבָר.'
+  from: Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The thing is good.
+  to: Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The word is good.
+  rationale: Azure substituted 'The thing is good' — drafter's explicit rejected_alternative. Drafter chose 'The word is good' as deliberately literal rendering of הַדָּבָר.
+- timestamp: '2026-11-09T17:22:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then call on the name of your god[a], and I will call on the name of Yahweh; and the God who answers by fire, he is God." And all the people answered and said[b], "The word is good.
+  to: Then call on the name of your god, and I will call on the name of Yahweh. The god who answers by fire—he is God.” All the people replied, “The proposal is good.”
+  rationale: The history debated 'word' versus 'thing,' but its own lexical discussion identifies approval of a proposal as the contextual meaning. I return to the first draft's distinction between the candidate 'god' and the climactic 'God,' rather than the review's capitalization based on Hebrew definiteness.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +144,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_kings/018/024.job-28136.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Elijah proposes that the deity who answers their invocation with fire be recognized as God, and the people approve the test.
+  meaning_decisions:
+  - source_phrase: הָאֱלֹהִים אֲשֶׁר יַעֲנֶה בָאֵשׁ הוּא הָאֱלֹהִים
+    prior_rendering: the God who answers by fire, he is God
+    new_rendering: The god who answers by fire—he is God
+    rationale: The first occurrence refers to whichever claimed deity answers the test; the second identifies that answering deity as God, preserving the emphatic verdict.
+  - source_phrase: וַיַּעַן כָּל הָעָם וַיֹּאמְרוּ טוֹב הַדָּבָר
+    prior_rendering: all the people answered and said, "The word is good"
+    new_rendering: All the people replied, “The proposal is good.”
+    rationale: The people approve Elijah's proposed test, not an isolated word; the paired speech verbs become the natural English 'replied.'
+  footnote_kinds: {}
+  history_weighed: The history debated 'word' versus 'thing,' but its own lexical discussion identifies approval of a proposal as the contextual meaning. I return to the first draft's distinction between the candidate 'god' and the climactic 'God,' rather than the review's capitalization based on Hebrew definiteness.

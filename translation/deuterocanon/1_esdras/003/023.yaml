@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'O men, does not wine prevail because it compels thus to act?'
-    reason: lexical_alternative
+  text: “Men, does not wine prevail, since it compels people to act this way?” After saying this, he fell silent.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὦ ἄνδρες
   chosen: Men
@@ -97,14 +93,20 @@ revisions:
   from: Men, does not wine prevail, since it compels one to act this way? And he fell silent after saying this.
   to: Men, does not wine prevail, since it compels one to act this way? And he fell silent after saying this.
   rationale: Replaced 'fell silent' with 'became silent' for a more natural and formally neutral rendering of ἐσίγησεν, while keeping the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.'
-  to: 'Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.'
+  from: Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.
+  to: Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And he fell silent''].'
+- timestamp: '2026-11-09T18:50:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Men[a], does not wine prevail, since it compels one to act this way? And he became silent after saying this.
+  to: “Men, does not wine prevail, since it compels people to act this way?” After saying this, he fell silent.
+  rationale: The recorded lexical decisions support both wine’s prevailing power and the idiomatic 'fell silent.' The automated changes between 'fell,' 'became,' and 'was' silent carry little weight beyond that narrative sense.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +126,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/003/023.job-47559.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:22Z'
+  change_level: refined
+  confidence: high
+  meaning: The first speaker concludes that wine prevails because it compels people to behave as he has described.
+  meaning_decisions:
+  - source_phrase: ὅτι οὕτως ἀναγκάζει ποιεῖν
+    prior_rendering: since it compels one to act this way
+    new_rendering: since it compels people to act this way
+    rationale: The implied object is the people whose behavior under wine’s influence the speaker has described.
+  - source_phrase: καὶ ἐσίγησεν οὕτως εἴπας
+    prior_rendering: And he became silent after saying this.
+    new_rendering: After saying this, he fell silent.
+    rationale: The verb marks the conclusion of his speech, not merely a continuing state of silence.
+  footnote_kinds: {}
+  history_weighed: The recorded lexical decisions support both wine’s prevailing power and the idiomatic 'fell silent.' The automated changes between 'fell,' 'became,' and 'was' silent carry little weight beyond that narrative sense.

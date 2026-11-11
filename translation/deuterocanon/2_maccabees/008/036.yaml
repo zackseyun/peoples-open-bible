@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And the one who had undertaken to pay tribute to the Romans from the capture of those in Jerusalem kept proclaiming that the Jews had as their defender one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from taking captive the people in Jerusalem'; the Greek phrase refers to the expected proceeds from the captivity of Jerusalem's inhabitants.
-    reason: lexical_alternative
-  - marker: b
-    text: The defender is not named explicitly here; the context implies God as the one fighting on behalf of the Jews.
-    reason: alternative_reading
+  text: The very man who had undertaken to pay tribute to the Romans with the proceeds from selling the people of Jerusalem into slavery kept proclaiming that the Jews had a defender who fought for them. For this reason, he said, they were invulnerable, because they obeyed the laws prescribed for them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ ... ἀναδεξάμενος
   chosen: the one who had undertaken
@@ -125,14 +118,20 @@ revisions:
   from: And the one who had undertaken to pay tribute to the Romans from the capture of those in Jerusalem kept proclaiming that the Jews had as their defender one who fought for them, and that for this reason the Jews were invulnerable, because they followed the laws that had been commanded to them.
   to: And the one who had undertaken to pay tribute to the Romans from the captivity of those in Jerusalem kept proclaiming that the Jews had as their champion one who fought for them, and that for this reason the Jews were invulnerable, because they followed the laws that had been commanded to them.
   rationale: Changed 'capture' to 'captivity' to better reflect αἰχμαλωσίας, and 'defender' to 'champion' for a more natural rendering of ὑπέρμαχον while preserving the sense of one who fights on their behalf.
-
 - timestamp: '2026-05-16T16:22:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the one who had undertaken to pay tribute to the Romans from the captivity of those in Jerusalem kept proclaiming that the Jews had as their champion one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.'
-  to: 'And the one who had undertaken to pay tribute to the Romans from the capture of those in Jerusalem kept proclaiming that the Jews had as their defender one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.'
-  rationale: 'Restored drafter ''from the capture of those in Jerusalem'' (preserving the chosen rendering of αἰχμαλωσίας as capture-event) and ''their defender one who fought for them'' (preserving the chosen rendering of ὑπέρμαχον as defender) per chosen renderings.'
+  from: And the one who had undertaken to pay tribute to the Romans from the captivity of those in Jerusalem kept proclaiming that the Jews had as their champion one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.
+  to: And the one who had undertaken to pay tribute to the Romans from the capture of those in Jerusalem kept proclaiming that the Jews had as their defender one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.
+  rationale: Restored drafter 'from the capture of those in Jerusalem' (preserving the chosen rendering of αἰχμαλωσίας as capture-event) and 'their defender one who fought for them' (preserving the chosen rendering of ὑπέρμαχον as defender) per chosen renderings.
+- timestamp: '2026-11-09T18:55:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the one who had undertaken to pay tribute to the Romans from the capture of those in Jerusalem kept proclaiming that the Jews had as their defender one who fought for them[a], and that for this reason the Jews were invulnerable[b], because they followed the laws that had been commanded to them.
+  to: The very man who had undertaken to pay tribute to the Romans with the proceeds from selling the people of Jerusalem into slavery kept proclaiming that the Jews had a defender who fought for them. For this reason, he said, they were invulnerable, because they obeyed the laws prescribed for them.
+  rationale: The history rightly preserves an active defender who fights for the Jews without explicitly naming him. I retain that indirectness, while the chapter’s stated slave-sale plan justifies making the source of the promised tribute clear.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -152,3 +151,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/036.job-49212.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Nicanor, who had planned to pay Rome’s tribute by enslaving Jerusalem’s people, now proclaimed that the law-observing Jews were invulnerable because a defender fought for them.
+  meaning_decisions:
+  - source_phrase: ἀπὸ τῆς τῶν ἐν Ἱεροσολύμοις αἰχμαλωσίας
+    prior_rendering: from the capture of those in Jerusalem
+    new_rendering: with the proceeds from selling the people of Jerusalem into slavery
+    rationale: Capture itself would not provide the tribute money; verses 10–11 establish that the intended funds would come from selling the captives.
+  - source_phrase: κατήγγελλεν ... καὶ διὰ τὸν τρόπον τοῦτον ἀτρώτους εἶναι τοὺς Ἰουδαίους
+    prior_rendering: kept proclaiming ... and that for this reason the Jews were invulnerable
+    new_rendering: kept proclaiming ... For this reason, he said, they were invulnerable
+    rationale: Splitting the sentence improves readability while explicitly keeping the claim of invulnerability within Nicanor’s reported proclamation.
+  - source_phrase: διὰ τὸ ἀκολουθεῖν τοῖς ἑαυτῶν προστεταγμένοις νόμοις
+    prior_rendering: because they followed the laws that had been commanded to them
+    new_rendering: because they obeyed the laws prescribed for them
+    rationale: Following prescribed laws means obeying them; the new wording retains their authoritative prescription without the cumbersome construction.
+  footnote_kinds: {}
+  history_weighed: The history rightly preserves an active defender who fights for the Jews without explicitly naming him. I retain that indirectness, while the chapter’s stated slave-sale plan justifies making the source of the promised tribute clear.

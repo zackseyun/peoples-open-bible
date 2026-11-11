@@ -4,12 +4,15 @@ source:
   edition: SBLGNT
   text: ⸂ὁ δὲ Ἰησοῦς ἔλεγεν· Πάτερ, ἄφες αὐτοῖς, οὐ γὰρ οἴδασιν τί ποιοῦσιν.⸃ διαμεριζόμενοι δὲ τὰ ἱμάτια αὐτοῦ ἔβαλον ⸀κλήρους.
 translation:
-  text: But Jesus was saying[a], “Father, forgive them, for they do not know what they are doing.” And dividing his garments, they cast lots.
-  philosophy: optimal-equivalence
+  text: But Jesus said, “Father, forgive them, for they do not know what they are doing[a].” And they cast lots to divide his garments[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Some manuscripts omit: “Father, forgive them, for they do not know what they are doing.”'
+    text: Some manuscripts omit Jesus’ prayer and its introduction.
     reason: textual_variant
+  - marker: b
+    text: The division of his garments echoes Psalm 22:18.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: was saying
@@ -90,7 +93,6 @@ revision_pass:
   timestamp: '2026-04-23T09:52:03Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +115,35 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/023/034.job-38903.json
+revisions:
+- timestamp: '2026-11-09T17:12:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Jesus was saying[a], “Father, forgive them, for they do not know what they are doing.” And dividing his garments, they cast lots.
+  to: But Jesus said, “Father, forgive them, for they do not know what they are doing[a].” And they cast lots to divide his garments[b].
+  rationale: The prior decision to include the prayer while noting its manuscript omission is retained, as is the deliberately unspecified “them.” The earlier preference for “was saying” overreads what the imperfect requires in this narrative setting.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus asks the Father to forgive those acting in ignorance, while his garments are divided by casting lots.
+  meaning_decisions:
+  - source_phrase: ἔλεγεν
+    prior_rendering: was saying
+    new_rendering: said
+    rationale: The imperfect introduces speech within the unfolding scene but does not require repeated utterance; simple past is natural English without excluding that possibility.
+  - source_phrase: διαμεριζόμενοι δὲ τὰ ἱμάτια αὐτοῦ ἔβαλον κλήρους
+    prior_rendering: And dividing his garments, they cast lots
+    new_rendering: And they cast lots to divide his garments
+    rationale: Casting lots determines the division of the garments, and the new construction makes that relationship clear.
+  footnote_kinds:
+    a: textual_variant
+    b: cross_reference
+  history_weighed: The prior decision to include the prayer while noting its manuscript omission is retained, as is the deliberately unspecified “them.” The earlier preference for “was saying” overreads what the imperfect requires in this narrative setting.

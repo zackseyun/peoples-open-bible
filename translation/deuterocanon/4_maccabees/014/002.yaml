@@ -18,14 +18,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: The king’s thoughts were more royal and more free[a][b].
-  philosophy: optimal-equivalence
+  text: Their reason was more kingly and freer than a king[a]!
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'more royal' for 'more kingly.' The Greek preserves a rhetorical link between 'king' and 'kingly.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'freer.' The Greek comparative ἐλευθερώτεροι emphasizes greater freedom or independence.
+    text: Literally, “reasonings more kingly and freer than a king”; the opening genitive is understood as expressing comparison rather than possession.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: βασιλέως
@@ -89,14 +86,20 @@ revisions:
   from: The king’s thoughts were more kingly and more free.
   to: The king’s thoughts were more kingly and more free.
   rationale: Replaced 'kingly' with 'royal' for more natural formal English while preserving the comparative sense; retained 'free' as a literal rendering of ἐλευθερώτεροι.
-
 - timestamp: '2026-05-18T03:00:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The king’s thoughts were more royal and more free[a][b].'
-  to: 'The king’s thoughts were more royal and more free[a][b].'
+  from: The king’s thoughts were more royal and more free[a][b].
+  to: The king’s thoughts were more royal and more free[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''more kingly''].'
+- timestamp: '2026-11-09T18:59:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The king’s thoughts were more royal and more free[a][b].
+  to: Their reason was more kingly and freer than a king[a]!
+  rationale: Earlier passes debated “kingly” versus “royal” while retaining a possessive reading of βασιλέως. The chapter’s praise of the brothers and its theme of reason’s sovereignty support going beyond that reading.
 cross_check:
   status: needs_review
   agreement: 0.2
@@ -116,3 +119,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/014/002.job-50074.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:21Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The brothers’ reason displays a sovereignty and freedom greater than a king’s.
+  meaning_decisions:
+  - source_phrase: βασιλέως λογισμοὶ βασιλικώτεροι καὶ ἐλευθερώτεροι
+    prior_rendering: The king’s thoughts were more royal and more free.
+    new_rendering: Their reason was more kingly and freer than a king!
+    rationale: The surrounding praise concerns the brothers’ rational resolve, not the tyrant’s thoughts; taking βασιλέως comparatively makes the rhetorical claim coherent.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier passes debated “kingly” versus “royal” while retaining a possessive reading of βασιλέως. The chapter’s praise of the brothers and its theme of reason’s sovereignty support going beyond that reading.

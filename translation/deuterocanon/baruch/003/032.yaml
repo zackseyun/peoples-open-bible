@@ -26,18 +26,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: But he who knows all things knows her[a]; he found her out by his understanding. He who prepared the earth for everlasting time filled it with four-footed animals[c][b];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'he discovered her' for 'he found her out.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek refers to wisdom with feminine pronouns ('her'), preserving the passage's personification of wisdom.
-    reason: cultural_note
-  - marker: c
-    text: Or 'for all time' or 'forever' for 'for everlasting time.'
-    reason: lexical_alternative
+  text: But he who knows all things knows her; he discovered her by his understanding. He who established the earth for all time filled it with four-footed animals;
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ εἰδὼς τὰ πάντα
   chosen: he who knows all things
@@ -138,14 +128,20 @@ revisions:
   from: But he who knows all things knows her; he found her out by his understanding. He who prepared the earth for everlasting time filled it with four-footed animals;
   to: But he who knows all things knows her; he discovered her by his understanding. He who established the earth for all time filled it with four-footed animals;
   rationale: Changed 'found her out' to 'discovered her' for more natural formal English, and 'prepared the earth for everlasting time' to 'established the earth for all time' for more accurate and idiomatic rendering of κατασκευάσας ... εἰς τὸν αἰῶνα χρόνον.
-
 - timestamp: '2026-05-15T16:24:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he who knows all things knows her[a]; he discovered her by his understanding. He who established the earth for all time filled it with four-footed animals[c][b];'
-  to: 'But he who knows all things knows her[a]; he found her out by his understanding. He who prepared the earth for everlasting time filled it with four-footed animals[c][b];'
-  rationale: 'Restored 3 chosen renderings preserving ἐξευρίσκω compound, κατασκευάζω ''prepare'' sense, and pleonastic αἰὼν χρόνος.'
+  from: But he who knows all things knows her[a]; he discovered her by his understanding. He who established the earth for all time filled it with four-footed animals[c][b];
+  to: But he who knows all things knows her[a]; he found her out by his understanding. He who prepared the earth for everlasting time filled it with four-footed animals[c][b];
+  rationale: Restored 3 chosen renderings preserving ἐξευρίσκω compound, κατασκευάζω 'prepare' sense, and pleonastic αἰὼν χρόνος.
+- timestamp: '2026-11-09T19:01:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he who knows all things knows her[a]; he found her out by his understanding. He who prepared the earth for everlasting time filled it with four-footed animals[c][b];
+  to: But he who knows all things knows her; he discovered her by his understanding. He who established the earth for all time filled it with four-footed animals;
+  rationale: The April revision made these same meaning-serving improvements, while the later automated revert defended the compound verb and temporal pleonasm chiefly on formal grounds. I adopt the clearer wording and retain the comprehensive divine knowledge, personification, and four-footed animals.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -165,3 +161,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/032.job-50402.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:32Z'
+  change_level: refined
+  confidence: high
+  meaning: The all-knowing God alone knows and discovers wisdom, and he established the enduring earth and filled it with animals.
+  meaning_decisions:
+  - source_phrase: ἐξεῦρεν αὐτήν
+    prior_rendering: he found her out
+    new_rendering: he discovered her
+    rationale: “Found her out” now commonly suggests exposing someone’s deception; “discovered her” conveys finding wisdom without that misleading implication.
+  - source_phrase: ὁ κατασκευάσας τὴν γῆν
+    prior_rendering: He who prepared the earth
+    new_rendering: He who established the earth
+    rationale: The context concerns God’s construction of the enduring earth, not merely preliminary preparation.
+  - source_phrase: εἰς τὸν αἰῶνα χρόνον
+    prior_rendering: for everlasting time
+    new_rendering: for all time
+    rationale: This carries the emphatic enduring duration in natural English without reproducing the Greek’s temporal redundancy.
+  footnote_kinds: {}
+  history_weighed: The April revision made these same meaning-serving improvements, while the later automated revert defended the compound verb and temporal pleonasm chiefly on formal grounds. I adopt the clearer wording and retain the comprehensive divine knowledge, personification, and four-footed animals.

@@ -21,12 +21,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.
-  philosophy: optimal-equivalence
+  text: A breeding stallion[a] is like a mocking friend; it neighs beneath every rider.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek wording is somewhat terse and unusual. The phrase translated 'for mounting' can in other contexts carry a sexual sense, but here the surrounding image of someone sitting on the horse supports the riding sense.
-    reason: lexical_alternative
+    text: Alternatively, 'A horse kept for riding'; the Greek expression has also been understood as referring to mounting for riding rather than breeding.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἵππος
   chosen: horse
@@ -93,14 +93,20 @@ revisions:
   from: A horse for mounting is like a mocking friend; under anyone sitting on it, it neighs.
   to: A horse for mounting is like a mocking friend; under anyone sitting on it, it neighs.
   rationale: Changed 'under anyone sitting on it' to 'under anyone who sits on it' for more natural formal English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T02:57:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.'
-  to: 'A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.'
+  from: A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.
+  to: A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''under anyone sitting on it''].'
+- timestamp: '2026-11-09T19:07:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A horse for mounting is like a mocking friend; under anyone who sits on it[a], it neighs.
+  to: A breeding stallion[a] is like a mocking friend; it neighs beneath every rider.
+  rationale: The recorded revisions addressed only the rider clause, while the lexical discussion preferred riding because someone sits on the horse. I depart from that preference because the breeding sense of ὀχεία is stronger lexical evidence, but preserve riding as an alternative.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -120,3 +126,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/036/006.job-51989.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:36Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A mocking friend is compared to a stallion that neighs regardless of who rides it.
+  meaning_decisions:
+  - source_phrase: ἵππος εἰς ὀχείαν
+    prior_rendering: A horse for mounting
+    new_rendering: A breeding stallion
+    rationale: The ordinary breeding sense of ὀχεία favors a stallion kept for breeding; the subsequent reference to a rider does not exclude that sense. The serious riding interpretation remains in a note.
+  - source_phrase: ὑποκάτω παντὸς ἐπικαθημένου
+    prior_rendering: under anyone who sits on it
+    new_rendering: beneath every rider
+    rationale: The participle identifies a rider, and the concise wording retains the unrestricted force of 'every.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded revisions addressed only the rider clause, while the lexical discussion preferred riding because someone sits on the horse. I depart from that preference because the breeding sense of ὀχεία is stronger lexical evidence, but preserve riding as an alternative.

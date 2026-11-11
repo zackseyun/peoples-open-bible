@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'facing Judea.' The Greek phrase is spatial, indicating position opposite or in front of Judea.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'build Kedron' or 'rebuild Kedron.' The Greek verb itself does not specify whether the site was being newly built or restored.
-    reason: lexical_alternative
+  text: The king ordered him to encamp facing Judea. He also ordered him to build up Kedron, fortify the cities, and wage war against the Jewish people. Meanwhile, the king was pursuing Tryphon.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐνετείλατο
   chosen: he commanded
@@ -118,14 +111,20 @@ revisions:
   from: And he commanded him to encamp opposite Judea; and he commanded him to build up Kedron and fortify the cities, and to fight against the people. But the king was pursuing Tryphon.
   to: And he commanded him to encamp opposite Judea; and he commanded him to build up Kedron and fortify the cities, and to fight against the people. But the king was pursuing Tryphon.
   rationale: Changed 'build up Kedron' to 'build Kedron' for a more direct rendering of οἰκοδομῆσαι without unnecessary expansion. The rest is accurate and natural.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.'
-  to: 'And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.'
+  from: And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.
+  to: And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to build up''].'
+- timestamp: '2026-11-09T18:54:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he commanded him to encamp opposite Judea[a]; and he commanded him to build Kedron and fortify the cities, and to fight against the people[b]. But the king was pursuing Tryphon.
+  to: The king ordered him to encamp facing Judea. He also ordered him to build up Kedron, fortify the cities, and wage war against the Jewish people. Meanwhile, the king was pursuing Tryphon.
+  rationale: The first draft’s 'build up' and its lexical rationale leave the construction’s extent appropriately open; the later preference for bare 'build' was based on source transparency rather than a clearer meaning. I preserve the spatial sense of the encampment and the ongoing aspect of the king’s pursuit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +144,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/039.job-48865.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king orders Cendebaeus to establish military positions and wage war against the Jewish people while he continues pursuing Tryphon.
+  meaning_decisions:
+  - source_phrase: οἰκοδομῆσαι τὴν Κεδρών
+    prior_rendering: build Kedron
+    new_rendering: build up Kedron
+    rationale: The command concerns developing Kedron as a military position; 'build up' allows construction or strengthening without implying that an entirely new settlement must be founded.
+  - source_phrase: ὅπως πολεμῇ τὸν λαόν
+    prior_rendering: to fight against the people
+    new_rendering: wage war against the Jewish people
+    rationale: The command is for military hostilities against the Jewish people collectively; the revised wording identifies the people and conveys the scale of the action.
+  - source_phrase: ὁ δὲ βασιλεὺς ἐδίωκε τὸν Τρύφωνα
+    prior_rendering: But the king was pursuing Tryphon
+    new_rendering: Meanwhile, the king was pursuing Tryphon
+    rationale: The clause distinguishes the king’s ongoing pursuit from the mission assigned to Cendebaeus, rather than introducing an opposition between them.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'build up' and its lexical rationale leave the construction’s extent appropriately open; the later preference for bare 'build' was based on source transparency rather than a clearer meaning. I preserve the spatial sense of the encampment and the ongoing aspect of the king’s pursuit.

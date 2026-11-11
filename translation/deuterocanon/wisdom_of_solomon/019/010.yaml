@@ -19,15 +19,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: 'For they still remembered the things in their time as foreigners: how[a], instead of the breeding of animals, the land brought forth gnats, and instead of creatures of the water[b], the river spewed out a multitude of frogs.'
-  philosophy: optimal-equivalence
+  text: 'For they still remembered what had happened while they lived as foreigners in Egypt: how the land brought forth gnats[a] instead of producing animals in the usual way, and the river spewed out a multitude of frogs instead of its usual water creatures.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'their sojourning' or 'their residence as aliens.' The Greek term refers to living in a place as foreigners.
-    reason: lexical_alternative
-  - marker: b
-    text: The exact insect denoted by the Greek may be understood more broadly than 'gnats'; 'mosquitoes' or similar small biting insects are sometimes suggested.
-    reason: lexical_alternative
+    text: Or, 'mosquitoes' or similar small biting insects; the precise insect is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐμέμνηντο
   chosen: they still remembered
@@ -133,14 +130,20 @@ revisions:
   from: 'For they still remembered the things in their time as foreigners: how, instead of the breeding of animals, the land brought forth gnats, and instead of creatures of the water, the river spewed out a multitude of frogs.'
   to: 'For they still remembered the things during their sojourn: how, instead of the birth of animals, the land brought forth gnats, and instead of water creatures, the river spewed out a multitude of frogs.'
   rationale: Revised 'in their time as foreigners' to 'during their sojourn' for a more accurate rendering of παροικία; changed 'the breeding of animals' to 'the birth of animals' to reflect γενέσεως more directly; simplified 'creatures of the water' to 'water creatures' for natural formal English.
-
 - timestamp: '2026-05-15T15:24:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'For they still remembered the things during their sojourn: how[a], instead of the birth of animals, the land brought forth gnats, and instead of water creatures[b], the river spewed out a multitude of frogs.'
   to: 'For they still remembered the things in their time as foreigners: how[a], instead of the breeding of animals, the land brought forth gnats, and instead of creatures of the water[b], the river spewed out a multitude of frogs.'
-  rationale: 'Restored 3 chosen renderings preserving παροικία social-foreignness, γένεσις ongoing process, and literary register.'
+  rationale: Restored 3 chosen renderings preserving παροικία social-foreignness, γένεσις ongoing process, and literary register.
+- timestamp: '2026-11-09T19:14:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For they still remembered the things in their time as foreigners: how[a], instead of the breeding of animals, the land brought forth gnats, and instead of creatures of the water[b], the river spewed out a multitude of frogs.'
+  to: 'For they still remembered what had happened while they lived as foreigners in Egypt: how the land brought forth gnats[a] instead of producing animals in the usual way, and the river spewed out a multitude of frogs instead of its usual water creatures.'
+  rationale: The earlier debate rightly preserved foreign-resident status and the vivid verb 'spewed out.' I keep those gains but use natural production language to clarify the contrast between ordinary creation and the plagues.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -160,3 +163,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/010.job-39491.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:14:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people remembered how, during their foreign residence in Egypt, the land and river produced the plague creatures instead of their ordinary animal life.
+  meaning_decisions:
+  - source_phrase: τῶν ἐν τῇ παροικίᾳ αὐτῶν
+    prior_rendering: the things in their time as foreigners
+    new_rendering: what had happened while they lived as foreigners in Egypt
+    rationale: This identifies the remembered events and the understood location while retaining their status as foreign residents, not importing exile language.
+  - source_phrase: ἀντὶ ... γενέσεως ζῴων
+    prior_rendering: instead of the breeding of animals
+    new_rendering: instead of producing animals in the usual way
+    rationale: The source contrasts ordinary animal generation with the land's extraordinary production of gnats; 'breeding' can misleadingly suggest deliberate animal husbandry.
+  - source_phrase: ἀντὶ δὲ ἐνύδρων
+    prior_rendering: instead of creatures of the water
+    new_rendering: instead of its usual water creatures
+    rationale: The contrast concerns the river's ordinary animal life versus its extraordinary outpouring of frogs, not an assertion that frogs have no connection with water.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier debate rightly preserved foreign-resident status and the vivid verb 'spewed out.' I keep those gains but use natural production language to clarify the contrast between ordinary creation and the plagues.

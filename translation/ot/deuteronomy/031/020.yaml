@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּֽי אֲבִיאֶ֜/נּוּ אֶֽל הָ/אֲדָמָ֣ה אֲשֶׁר נִשְׁבַּ֣עְתִּי לַ/אֲבֹתָ֗י/ו זָבַ֤ת חָלָב֙ וּ/דְבַ֔שׁ וְ/אָכַ֥ל וְ/שָׂבַ֖ע וְ/דָשֵׁ֑ן וּ/פָנָ֞ה אֶל אֱלֹהִ֤ים אֲחֵרִים֙ וַ/עֲבָד֔וּ/ם וְ/נִ֣אֲצ֔וּ/נִי וְ/הֵפֵ֖ר אֶת בְּרִיתִֽ/י־־׀־־־׃
 translation:
-  text: For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew shifts from singular ('him... he') to plural ('they will spurn me'), treating Israel both as one people and as many persons.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'despise me' for 'spurn me.'
-    reason: lexical_alternative
+  text: For when I bring them into the land I swore to give their fathers—a land flowing with milk and honey—and they eat their fill and grow fat, they will turn to other gods and serve them, spurn me, and break my covenant.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: For when
@@ -138,14 +131,20 @@ revisions:
   from: For when I bring him into the land that I swore to his fathers, a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them, and they will spurn me and break my covenant.
   to: For when I bring him into the land that I swore to his fathers, a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them, and they will spurn me and break my covenant.
   rationale: Removed 'they will' before 'spurn me' to keep the singular subject consistent throughout the verse and better reflect the Hebrew verbs.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.'
-  to: 'For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.'
+  from: For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.
+  to: For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will spurn me''].'
+- timestamp: '2026-11-09T17:33:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For when I bring him into the land that I swore to his fathers[a], a land flowing with milk and honey, and he eats and is satisfied and grows fat, then he will turn to other gods and serve them[b], and spurn me and break my covenant.
+  to: For when I bring them into the land I swore to give their fathers—a land flowing with milk and honey—and they eat their fill and grow fat, they will turn to other gods and serve them, spurn me, and break my covenant.
+  rationale: The automated review and revert disagree over singular and plural wording, but neither changes the collective referent. The abundance and fatness images are retained while the pronouns and implied promise are clarified.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +166,29 @@ cross_check:
   verdict_counts:
     major-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/deuteronomy/031/020.job-28383.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel will respond to the abundance of the promised land by turning to other gods, treating Yahweh with contempt, and breaking his covenant.
+  meaning_decisions:
+  - source_phrase: אֲבִיאֶנּוּ ... לַאֲבֹתָיו ... וְאָכַל וְשָׂבַע וְדָשֵׁן וּפָנָה
+    prior_rendering: I bring him ... his fathers ... he eats and is satisfied and grows fat ... he will turn
+    new_rendering: I bring them ... their fathers ... they eat their fill and grow fat ... they will turn
+    rationale: The singular and plural Hebrew forms concern the same people throughout; consistent English plurals prevent an apparent change of subject.
+  - source_phrase: הָאֲדָמָה אֲשֶׁר נִשְׁבַּעְתִּי לַאֲבֹתָיו
+    prior_rendering: the land that I swore to his fathers
+    new_rendering: the land I swore to give their fathers
+    rationale: Supplying the understood gift completes the oath expression in English without adding a new promise.
+  - source_phrase: וְאָכַל וְשָׂבַע
+    prior_rendering: he eats and is satisfied
+    new_rendering: they eat their fill
+    rationale: The English idiom conveys both eating and being fully satisfied, while the following fatness image retains the warning about abundance.
+  footnote_kinds: {}
+  history_weighed: The automated review and revert disagree over singular and plural wording, but neither changes the collective referent. The abundance and fatness images are retained while the pronouns and implied promise are clarified.

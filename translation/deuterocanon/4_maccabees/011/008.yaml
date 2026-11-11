@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Now look[a], being alien to God[b], you are making war against those who are devout toward God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'being estranged from God' or 'being foreign to God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'you fight against' or 'you wage war against.'
-    reason: lexical_alternative
+  text: 'Now look: you are estranged from God and wage war against those who worship him.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: νῦν
   chosen: Now
@@ -109,14 +102,20 @@ revisions:
   from: 'Now look: as one alien to God, you are making war against those who are devout toward God.'
   to: 'Now look: as one alien to God, you are making war against those who are devout toward God.'
   rationale: Replaced 'as one alien to God' with the more direct participial rendering 'being alien to God' for closer alignment with ὢν, and adjusted punctuation for smoother formal English.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now look[a], being alien to God[b], you are making war against those who are devout toward God.'
-  to: 'Now look[a], being alien to God[b], you are making war against those who are devout toward God.'
+  from: Now look[a], being alien to God[b], you are making war against those who are devout toward God.
+  to: Now look[a], being alien to God[b], you are making war against those who are devout toward God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as one alien to God''].'
+- timestamp: '2026-11-09T18:59:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now look[a], being alien to God[b], you are making war against those who are devout toward God.
+  to: 'Now look: you are estranged from God and wage war against those who worship him.”'
+  rationale: The prior passes chiefly adjusted the participial wording, while the lexical decisions correctly identified estrangement and active warfare. I retain those meanings and remove notes that merely offered equivalent English expressions.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +135,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/011/008.job-50006.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:19Z'
+  change_level: refined
+  confidence: high
+  meaning: He accuses the tyrant of being estranged from God and waging war against God's worshipers.
+  meaning_decisions:
+  - source_phrase: ἀλλότριος ὢν θεοῦ
+    prior_rendering: being alien to God
+    new_rendering: you are estranged from God
+    rationale: Makes the relational separation clear and avoids the potentially misleading sense that the tyrant is merely foreign or unfamiliar to God.
+  - source_phrase: πολεμεῖς τοὺς εὐσεβοῦντας εἰς τὸν θεόν
+    prior_rendering: you are making war against those who are devout toward God
+    new_rendering: wage war against those who worship him
+    rationale: Preserves the martial accusation while expressing devotion to God naturally and consistently with 'worship' in verse 5.
+  footnote_kinds: {}
+  history_weighed: The prior passes chiefly adjusted the participial wording, while the lexical decisions correctly identified estrangement and active warfare. I retain those meanings and remove notes that merely offered equivalent English expressions.

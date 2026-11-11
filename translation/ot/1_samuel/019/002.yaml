@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּגֵּ֤ד יְהוֹנָתָן֙ לְ/דָוִ֣ד לֵ/אמֹ֔ר מְבַקֵּ֛שׁ שָׁא֥וּל אָבִ֖/י לַ/הֲמִיתֶ֑/ךָ וְ/עַתָּה֙ הִשָּֽׁמֶר נָ֣א בַ/בֹּ֔קֶר וְ/יָשַׁבְתָּ֥ בַ/סֵּ֖תֶר וְ/נַחְבֵּֽאתָ־׃
 translation:
-  text: Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'remain in secret' / 'stay in hiding.' The Hebrew combines 'stay' with a noun meaning 'secret' or 'hiding place,' followed by 'hide yourself' for emphasis.
-    reason: lexical_alternative
+  text: Jonathan warned David, “My father Saul is seeking to kill you. So please be on your guard in the morning, and stay well hidden.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּגֵּד
   chosen: told
@@ -100,14 +96,20 @@ revisions:
   from: Jonathan told David, saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a hidden place and hide yourself.”
   to: Jonathan told David, saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a hidden place and hide yourself.”
   rationale: Changed 'a hidden place' to 'a secret place' for a more direct rendering of the Hebrew while keeping the formal tone. The rest of the draft is accurate and complete.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”'
-  to: 'Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”'
+  from: Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”
+  to: Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in a hidden place''].'
+- timestamp: '2026-11-09T17:23:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jonathan told David[a], saying, “Saul my father is seeking to kill you. So now, please be on your guard in the morning, and stay in a secret place and hide yourself.”
+  to: Jonathan warned David, “My father Saul is seeking to kill you. So please be on your guard in the morning, and stay well hidden.
+  rationale: The automated changes between 'hidden place' and 'secret place' chiefly pursued source transparency and do not alter the meaning. I retain the lexical decisions concerning Saul’s ongoing intent and the morning, while expressing the concealment instruction naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/019/002.job-59230.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonathan warns David of Saul’s murderous intent and urges him to remain carefully hidden in the morning.
+  meaning_decisions:
+  - source_phrase: וַיַּגֵּד יְהוֹנָתָן לְדָוִד לֵאמֹר
+    prior_rendering: Jonathan told David, saying
+    new_rendering: Jonathan warned David
+    rationale: The speech is a warning of immediate mortal danger; English can convey that function directly without the redundant speech formula.
+  - source_phrase: וְיָשַׁבְתָּ בַסֵּתֶר וְנַחְבֵּאתָ
+    prior_rendering: stay in a secret place and hide yourself
+    new_rendering: stay well hidden
+    rationale: The paired expressions insist on remaining concealed; the concise English retains both the continuing concealment and its emphasis.
+  footnote_kinds: {}
+  history_weighed: The automated changes between 'hidden place' and 'secret place' chiefly pursued source transparency and do not alter the meaning. I retain the lexical decisions concerning Saul’s ongoing intent and the morning, while expressing the concealment instruction naturally.

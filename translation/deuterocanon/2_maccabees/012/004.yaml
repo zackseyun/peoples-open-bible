@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.
-  philosophy: optimal-equivalence
+  text: After the city had passed a public resolution, the Jews accepted the invitation, wishing to live in peace and suspecting nothing[a]. The people of Joppa then took them out to sea and drowned them—no fewer than two hundred people.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'had nothing suspect about them'; the Greek phrase may describe either their apparent innocence or the absence of suspicious intent.
-    reason: lexical_alternative
+    text: Or 'with no suspicious intent.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τὸ κοινὸν τῆς πόλεως ψήφισμα
   chosen: the common resolution of the city
@@ -95,14 +95,20 @@ revisions:
   from: But after the common resolution of the city, and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them out and drowned them, no fewer than two hundred of them.
   to: But after the common resolution of the city, and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them out and drowned them, no fewer than two hundred of them.
   rationale: Changed 'took them out' to 'took them away' for a more natural rendering of ἀχθέντας without implying a specific location; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.'
-  to: 'But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.'
+  from: But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.
+  to: But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they took them out''].'
+- timestamp: '2026-11-09T18:56:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after the common resolution of the city[a], and when these men had accepted it as though they wanted peace and had nothing suspicious in mind, they took them away and drowned them, no fewer than two hundred of them.
+  to: After the city had passed a public resolution, the Jews accepted the invitation, wishing to live in peace and suspecting nothing[a]. The people of Joppa then took them out to sea and drowned them—no fewer than two hundred people.
+  rationale: The review avoided specifying where the victims were taken, but the invitation aboard boats makes taking them out to sea clear in context. The lexical discussion records an innocence-oriented alternative, which is preserved in a footnote rather than allowed to obscure the stronger contextual reading of unsuspecting victims.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -122,3 +128,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/012/004.job-49321.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Following a collective civic resolution, the unsuspecting Jews accepted the invitation in a desire for peace, and the people of Joppa drowned at least two hundred of them.
+  meaning_decisions:
+  - source_phrase: μετὰ δὲ τὸ κοινὸν τῆς πόλεως ψήφισμα
+    prior_rendering: But after the common resolution of the city
+    new_rendering: After the city had passed a public resolution
+    rationale: This makes the formal, collective civic decision intelligible in English.
+  - source_phrase: τούτων ἐπιδεξαμένων, ὡς ἂν εἰρηνεύειν θέλοντων καὶ μηδὲν ὑπόπτον ἐχόντων
+    prior_rendering: when these men had accepted it as though they wanted peace and had nothing suspicious in mind
+    new_rendering: the Jews accepted the invitation, wishing to live in peace and suspecting nothing
+    rationale: The Jews' genuine desire for peace and lack of suspicion explain their acceptance; the prior wording could misleadingly suggest that their peaceful intentions were merely apparent.
+  - source_phrase: ἀχθέντας αὐτοὺς ἐβύθισαν
+    prior_rendering: they took them away and drowned them
+    new_rendering: The people of Joppa then took them out to sea and drowned them
+    rationale: Explicit agents remove the ambiguity between victims and perpetrators, while the boats and drowning establish the maritime setting.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review avoided specifying where the victims were taken, but the invitation aboard boats makes taking them out to sea clear in context. The lexical discussion records an innocence-oriented alternative, which is preserved in a footnote rather than allowed to obscure the stronger contextual reading of unsuspecting victims.

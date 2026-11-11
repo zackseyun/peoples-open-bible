@@ -20,12 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, an imitation of the holy tent that you prepared from the beginning.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''tabernacle'': the Greek word can mean ''tent'' or, in biblical usage, the sacred tabernacle.'
-    reason: lexical_alternative
+  text: You told me to build a temple on your holy mountain and an altar in the city where you dwell, a copy of the holy tent you prepared from the beginning.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἶπας
   chosen: You said
@@ -131,14 +127,20 @@ revisions:
   from: You said to build a temple on your holy mountain, and an altar in the city of your dwelling, an imitation of the holy tent that you prepared from the beginning.
   to: You said to build a temple on your holy mountain, and an altar in the city of your dwelling, a copy of the holy tabernacle that you prepared from the beginning.
   rationale: Replaced 'imitation' with 'copy' for a more natural rendering of μίμημα in this context, and 'holy tent' with 'holy tabernacle' for more formal register and better consistency with biblical sanctuary terminology.
-
 - timestamp: '2026-05-16T17:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, a copy of the holy tabernacle that you prepared from the beginning.'
-  to: 'You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, an imitation of the holy tent that you prepared from the beginning.'
-  rationale: 'Restored drafter ''an imitation'' (preserving the chosen rendering of μίμημα) and ''the holy tent'' (preserving the chosen rendering reflecting Greek σκηνῆς) per chosen renderings.'
+  from: You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, a copy of the holy tabernacle that you prepared from the beginning.
+  to: You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, an imitation of the holy tent that you prepared from the beginning.
+  rationale: Restored drafter 'an imitation' (preserving the chosen rendering of μίμημα) and 'the holy tent' (preserving the chosen rendering reflecting Greek σκηνῆς) per chosen renderings.
+- timestamp: '2026-11-09T19:11:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You said to build a temple on your holy mountain[a], and an altar in the city of your dwelling, an imitation of the holy tent that you prepared from the beginning.
+  to: You told me to build a temple on your holy mountain and an altar in the city where you dwell, a copy of the holy tent you prepared from the beginning.
+  rationale: The earlier review’s “copy” clarifies patterned correspondence, and the automated revert supplies no meaning-based reason to reject it. “Holy tent” is retained to preserve the concrete sanctuary image without specifying more about its nature than the verse establishes; the misplaced tabernacle note is dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +160,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/009/008.job-39296.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:17Z'
+  change_level: refined
+  confidence: high
+  meaning: God instructed Solomon to build the temple and altar in his holy dwelling city after the pattern of the holy tent prepared from the beginning.
+  meaning_decisions:
+  - source_phrase: εἶπας οἰκοδομῆσαι
+    prior_rendering: You said to build
+    new_rendering: You told me to build
+    rationale: The infinitive conveys an instruction, and Solomon is its understood recipient; English needs that recipient to express the relationship clearly.
+  - source_phrase: ἐν πόλει κατασκηνώσεώς σου
+    prior_rendering: in the city of your dwelling
+    new_rendering: in the city where you dwell
+    rationale: The natural relative clause preserves God’s dwelling presence without a compressed genitive construction.
+  - source_phrase: μίμημα σκηνῆς ἁγίας
+    prior_rendering: an imitation of the holy tent
+    new_rendering: a copy of the holy tent
+    rationale: “Copy” clearly expresses correspondence to an earlier sacred model without the potentially disparaging sense of “imitation.”
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “copy” clarifies patterned correspondence, and the automated revert supplies no meaning-based reason to reject it. “Holy tent” is retained to preserve the concrete sanctuary image without specifying more about its nature than the verse establishes; the misplaced tabernacle note is dropped.

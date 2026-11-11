@@ -26,15 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 50:1
 translation:
-  text: Simon son of Yohanan the priest was the glory of his brothers and the splendor of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.
-  philosophy: optimal-equivalence
+  text: Simon son of Johanan the priest[a] was great among his brothers and the splendor of his people; in his generation the temple was repaired, and in his days the sanctuary was strengthened.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''Simon son of Onias, the great priest'' (or ''high priest''). The Hebrew witness here reads ''Simon son of Yohanan the priest.'''
-    reason: alternative_reading
-  - marker: b
-    text: Or 'the house was attended to/restored.' The Hebrew verb can denote being cared for or repaired; the Greek parallel points specifically to building work on the house.
-    reason: lexical_alternative
+    text: The Greek reads “Simon son of Onias, the high priest.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: גְּדוֹל
   chosen: was the glory of
@@ -148,14 +145,20 @@ revisions:
   from: Simon son of Yohanan the priest was the glory of his brothers and the splendor of his people; in his generation the house was repaired, and in his days the temple was strengthened.
   to: Simon son of Yohanan the priest was great among his brothers and the glory of his people; in his generation the house was repaired, and in his days the temple was strengthened.
   rationale: 'Revised the opening to reflect the Hebrew more closely: גְּדוֹל אֶחָיו is better rendered ''great among his brothers'' rather than ''the glory of his brothers.'' Retained ''the glory of his people'' for וְתִפְאֶרֶת עַמּוֹ and kept the rest unchanged as accurate and natural.'
-
 - timestamp: '2026-05-16T13:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Simon son of Yohanan the priest was great among his brothers and the glory of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.'
-  to: 'Simon son of Yohanan the priest was the glory of his brothers and the splendor of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.'
-  rationale: 'Restored drafter ''was the glory of his brothers and the splendor of his people'' (preserving the chosen glory/splendor pairing) per chosen renderings.'
+  from: Simon son of Yohanan the priest was great among his brothers and the glory of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.
+  to: Simon son of Yohanan the priest was the glory of his brothers and the splendor of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.
+  rationale: Restored drafter 'was the glory of his brothers and the splendor of his people' (preserving the chosen glory/splendor pairing) per chosen renderings.
+- timestamp: '2026-11-09T19:09:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Simon son of Yohanan the priest was the glory of his brothers and the splendor of his people[a]; in his generation the house was repaired[b], and in his days the temple was strengthened.
+  to: Simon son of Johanan the priest[a] was great among his brothers and the splendor of his people; in his generation the temple was repaired, and in his days the sanctuary was strengthened.
+  rationale: The earlier review rightly distinguished greatness from splendor; the automated revert supplied no stronger meaning-based reason for its glory/splendor pairing. I retain the Hebrew priestly title and the restoration sense established in the lexical discussion.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -175,3 +178,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/050/001.job-52359.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon was distinguished among his brothers and brought splendor to his people, and during his lifetime the temple was repaired and strengthened.
+  meaning_decisions:
+  - source_phrase: גְּדוֹל אֶחָיו
+    prior_rendering: was the glory of his brothers
+    new_rendering: was great among his brothers
+    rationale: The phrase distinguishes Simon’s greatness among his brothers rather than calling him their glory; the following phrase supplies the complementary praise of splendor.
+  - source_phrase: שִׁמְעוֹן בֶּן יוֹחָנָן
+    prior_rendering: Simon son of Yohanan
+    new_rendering: Simon son of Johanan
+    rationale: Johanan is the recognizable English form of the Hebrew name, without substituting the different name preserved in Greek.
+  - source_phrase: הַבָּיִת ... הֵיכָל
+    prior_rendering: the house ... the temple
+    new_rendering: the temple ... the sanctuary
+    rationale: The house is the temple complex, not an unidentified residence; sanctuary preserves the following reference to its sacred building.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review rightly distinguished greatness from splendor; the automated revert supplied no stronger meaning-based reason for its glory/splendor pairing. I retain the Hebrew priestly title and the restoration sense established in the lexical discussion.

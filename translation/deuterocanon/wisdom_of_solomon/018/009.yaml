@@ -21,18 +21,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For the holy children of good men were secretly offering sacrifices[a], and in unity they established the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand hymns of praise.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in secret.' The Greek κρυφῇ emphasizes that the sacrificial action was carried out covertly.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the law of divinity.' The phrase is unusual; 'the divine law' is chosen as the clearest English rendering of τὸν τῆς θειότητος νόμον.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the saints.' The Greek τοὺς ἁγίους more literally means 'the holy ones.'
-    reason: alternative_reading
+  text: 'For the holy descendants of good men were offering sacrifices in secret. In unity they bound themselves to the divine law: the holy ones would share alike in the same good things and dangers, while their fathers were already singing hymns of praise in anticipation.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κρυφῇ
   chosen: secretly
@@ -164,14 +154,20 @@ revisions:
   from: For the holy children of good men were secretly offering sacrifices, and in unity they established the divine law, that the holy ones would share alike in the same good things and dangers, while their fathers were already singing beforehand hymns of praise.
   to: For the holy children of good men were secretly offering sacrifices, and in harmony they agreed on the divine law, that the holy ones would share alike in the same good things and dangers, while their fathers were already singing beforehand praises.
   rationale: Changed 'in unity they established' to 'in harmony they agreed on' to better reflect ἐν ὁμονοίᾳ διέθεντο; changed 'hymns of praise' to 'praises' for closer alignment with αἴνους without unnecessary expansion.
-
 - timestamp: '2026-05-15T15:24:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the holy children of good men were secretly offering sacrifices[a], and in harmony they agreed on the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand praises.'
-  to: 'For the holy children of good men were secretly offering sacrifices[a], and in unity they established the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand hymns of praise.'
-  rationale: 'Restored 3 chosen renderings; azure substituted drafter''s explicitly rejected alternatives.'
+  from: For the holy children of good men were secretly offering sacrifices[a], and in harmony they agreed on the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand praises.
+  to: For the holy children of good men were secretly offering sacrifices[a], and in unity they established the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand hymns of praise.
+  rationale: Restored 3 chosen renderings; azure substituted drafter's explicitly rejected alternatives.
+- timestamp: '2026-11-09T19:13:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the holy children of good men were secretly offering sacrifices[a], and in unity they established the divine law, that the holy ones would share alike in the same good things and dangers[c][b], while their fathers were already singing beforehand hymns of praise.
+  to: 'For the holy descendants of good men were offering sacrifices in secret. In unity they bound themselves to the divine law: the holy ones would share alike in the same good things and dangers, while their fathers were already singing hymns of praise in anticipation.'
+  rationale: The automated revision recognized the mutual-agreement sense, but its revert emphasized the solemn force of the original wording. I preserve that solemnity through 'bound themselves,' retain the communal sharing and hymns of praise, and clarify the ancestral rather than youthful sense of 'children.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -191,3 +187,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/009.job-39387.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Israel’s holy descendants sacrificed secretly and bound themselves in unity to share good things and dangers, while their fathers sang praise in anticipation.
+  meaning_decisions:
+  - source_phrase: ὅσιοι παῖδες ἀγαθῶν
+    prior_rendering: the holy children of good men
+    new_rendering: the holy descendants of good men
+    rationale: The phrase identifies the Israelites by their ancestry, not by their youth; 'descendants' avoids suggesting that the sacrifices were being offered specifically by children.
+  - source_phrase: τὸν τῆς θειότητος νόμον ἐν ὁμονοίᾳ διέθεντο
+    prior_rendering: in unity they established the divine law
+    new_rendering: In unity they bound themselves to the divine law
+    rationale: The middle verb describes a communal, solemn arrangement. The new wording conveys their binding agreement without suggesting that they independently created God’s law.
+  - source_phrase: πατέρων ἤδη προαναμελπόντων αἴνους
+    prior_rendering: while their fathers were already singing beforehand hymns of praise
+    new_rendering: while their fathers were already singing hymns of praise in anticipation
+    rationale: '''In anticipation'' communicates the forward-looking force of the singing more clearly than an unexplained ''beforehand,'' while retaining the fathers as the singers in the supplied construction.'
+  footnote_kinds: {}
+  history_weighed: The automated revision recognized the mutual-agreement sense, but its revert emphasized the solemn force of the original wording. I preserve that solemnity through 'bound themselves,' retain the communal sharing and hymns of praise, and clarify the ancestral rather than youthful sense of 'children.'

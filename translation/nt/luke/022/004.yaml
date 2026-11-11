@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἀπελθὼν συνελάλησεν τοῖς ἀρχιερεῦσιν καὶ στρατηγοῖς τὸ πῶς ⸂αὐτοῖς παραδῷ αὐτόν⸃.
 translation:
-  text: And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'betray him.' The Greek verb can mean 'hand over,' 'deliver over,' or, in this context, 'betray.'
-    reason: lexical_alternative
-  - marker: b
-    text: The 'officers' were likely temple authorities or members of the temple guard, not Roman soldiers.
-    reason: cultural_note
+  text: He went to the chief priests and the officers of the temple guard and discussed how he could hand Jesus over to them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπελθὼν
   chosen: after he went away
@@ -90,14 +83,20 @@ revisions:
   from: And after he went away, he discussed with the chief priests and officers how he might hand him over to them.
   to: And after he went away, he discussed with the chief priests and officers how he might hand him over to them.
   rationale: Replaced 'And after he went away' with 'And he went away' for a more direct rendering of καὶ ἀπελθών, while retaining the rest of the verse with natural formal English.
-
 - timestamp: '2026-05-18T03:00:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].'
-  to: 'And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].'
+  from: And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].
+  to: And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after he went away''].'
+- timestamp: '2026-11-09T17:12:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he went away and discussed with the chief priests and officers how he might hand him over to them[a][b].
+  to: He went to the chief priests and the officers of the temple guard and discussed how he could hand Jesus over to them.
+  rationale: The automated history contains conflicting descriptions of the opening and records no maintainer ruling, so it carries little weight. I retained the concrete “hand over” wording and brought the earlier footnote’s identification of the officers into the text.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -119,3 +118,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/022/004.job-38931.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:45Z'
+  change_level: refined
+  confidence: high
+  meaning: Judas met with the chief priests and temple guard officers to discuss how to hand Jesus over to them.
+  meaning_decisions:
+  - source_phrase: καὶ ἀπελθὼν συνελάλησεν τοῖς ἀρχιερεῦσιν καὶ στρατηγοῖς
+    prior_rendering: And he went away and discussed with the chief priests and officers
+    new_rendering: He went to the chief priests and the officers of the temple guard and discussed
+    rationale: The departure leads directly to a meeting with these authorities; a finite sequence conveys the visit and discussion naturally.
+  - source_phrase: στρατηγοῖς
+    prior_rendering: officers
+    new_rendering: officers of the temple guard
+    rationale: Luke’s Jerusalem context, made explicit in verse 52, identifies these as temple guard authorities rather than Roman military officers.
+  - source_phrase: τὸ πῶς αὐτοῖς παραδῷ αὐτόν
+    prior_rendering: how he might hand him over to them
+    new_rendering: how he could hand Jesus over to them
+    rationale: The wording expresses deliberation about a workable arrangement and distinguishes Jesus from Judas without relying on consecutive masculine pronouns.
+  footnote_kinds: {}
+  history_weighed: The automated history contains conflicting descriptions of the opening and records no maintainer ruling, so it carries little weight. I retained the concrete “hand over” wording and brought the earlier footnote’s identification of the officers into the text.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֖אמֶר הַ/מֶּ֑לֶךְ הַֽ/מְדַבֵּ֤ר אֵלַ֨יִ/ךְ֙ וַֽ/הֲבֵאת֣/וֹ אֵלַ֔/י וְ/לֹֽא יֹסִ֥יף ע֖וֹד לָ/גַ֥עַת בָּֽ/ךְ־׃
 translation:
-  text: And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'he will no longer touch you'; the Hebrew idiom may imply hostile contact or harm, not merely physical touch.
-    reason: lexical_alternative
+  text: The king said, “If anyone threatens you, bring him to me, and he will never harm you again.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַמֶּלֶךְ
   chosen: the king
@@ -64,14 +60,20 @@ revisions:
   from: And the king said, “Whoever speaks to you, bring him to me, and he will not continue to touch you anymore.”
   to: And the king said, “Whoever speaks to you, bring him to me, and he will not continue to touch you anymore.”
   rationale: Replaced 'will not continue to touch you anymore' with the more natural and accurate 'will never touch you again,' reflecting the Hebrew idiom 'will not add again to touch you.'
-
 - timestamp: '2026-05-17T04:36:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”'
-  to: 'And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”'
+  from: And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”
+  to: And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to touch you''].'
+- timestamp: '2026-11-09T17:29:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king said[a], “Whoever speaks to you, bring him to me, and he will never touch you again.”
+  to: The king said, “If anyone threatens you, bring him to me, and he will never harm you again.”
+  rationale: The later wording usefully removed the draft’s cumbersome expression of repeated action. The recorded note already identifies hostile harm as the sense of “touch,” which I now place in the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -91,3 +93,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/014/010.job-45694.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king promises to deal with anyone who threatens her and prevent further harm.
+  meaning_decisions:
+  - source_phrase: הַמְדַבֵּר אֵלַיִךְ
+    prior_rendering: Whoever speaks to you
+    new_rendering: If anyone threatens you
+    rationale: In this context the king means hostile speech connected with the clan’s demands, not ordinary conversation.
+  - source_phrase: וְלֹא יֹסִיף עוֹד לָגַעַת בָּךְ
+    prior_rendering: he will never touch you again
+    new_rendering: he will never harm you again
+    rationale: The touch is hostile interference or injury; “harm” conveys the protective force rather than suggesting that all physical contact is forbidden.
+  footnote_kinds: {}
+  history_weighed: The later wording usefully removed the draft’s cumbersome expression of repeated action. The recorded note already identifies hostile harm as the sense of “touch,” which I now place in the main text.

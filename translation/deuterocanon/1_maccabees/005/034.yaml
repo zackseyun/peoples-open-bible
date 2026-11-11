@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “eight thousand men”; the Greek expression may be read as an approximate or rounded total.
-    reason: lexical_alternative
+  text: When Timothy’s troops realized it was Maccabeus, they fled from him. He dealt them a crushing blow, and about eight thousand of their men fell that day.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέγνω
   chosen: recognized
@@ -93,14 +89,20 @@ revisions:
   from: And Timothy’s camp recognized that it was Maccabeus, and they fled from before him; and he struck them with a great blow, and about eight thousand men of them fell on that day.
   to: And Timothy’s camp recognized that it was Maccabeus, and they fled from before him; and he struck them with a great blow, and about eight thousand men of them fell on that day.
   rationale: Adjusted the final clause from 'about eight thousand men of them fell' to 'as many as eight thousand of them fell' to reflect εἰς ὀκτακισχιλίους more accurately. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T02:58:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.'
-  to: 'And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.'
+  from: And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.
+  to: And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about eight thousand men''].'
+- timestamp: '2026-11-09T18:51:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Timothy’s camp recognized that it was Maccabeus[a], and they fled from before him; and he struck them with a great blow, and as many as eight thousand of them fell on that day.
+  to: When Timothy’s troops realized it was Maccabeus, they fled from him. He dealt them a crushing blow, and about eight thousand of their men fell that day.
+  rationale: The history alternates between 'about' and 'as many as,' while its lexical rationale supports an approximate tally. I retain that approximation and the battle idiom 'fell,' but translate the camp metonymy and great-blow construction by their military sense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +122,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/034.job-48240.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Timothy's troops flee when they recognize Maccabeus, and Judas inflicts a devastating defeat in which about eight thousand enemy men fall.
+  meaning_decisions:
+  - source_phrase: ἐπέγνω ἡ παρεμβολὴ Τιμοθέου ... καὶ ἔφυγον ἀπὸ προσώπου αὐτοῦ
+    prior_rendering: Timothy’s camp recognized that it was Maccabeus, and they fled from before him
+    new_rendering: When Timothy’s troops realized it was Maccabeus, they fled from him
+    rationale: The troops recognize Judas and flee; the temporal construction expresses the immediate connection without treating a physical camp as the acting subject.
+  - source_phrase: ἐπάταξεν αὐτοὺς πληγὴν μεγάλην
+    prior_rendering: he struck them with a great blow
+    new_rendering: He dealt them a crushing blow
+    rationale: The idiom describes a severe military defeat, not a single physical strike, while the established blow image remains effective in English.
+  - source_phrase: εἰς ὀκτακισχιλίους ἄνδρας
+    prior_rendering: as many as eight thousand of them
+    new_rendering: about eight thousand of their men
+    rationale: This gives the rounded casualty total and restores the explicit reference to men, consistently with the same numerical construction in verse 22.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'about' and 'as many as,' while its lexical rationale supports an approximate tally. I retain that approximation and the battle idiom 'fell,' but translate the camp metonymy and great-blow construction by their military sense.

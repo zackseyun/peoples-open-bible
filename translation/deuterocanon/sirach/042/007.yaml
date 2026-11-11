@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:7
 translation:
-  text: For whatever place you appoint[a], keep count by your hand; and every giving and receiving should be in writing.
-  philosophy: optimal-equivalence
+  text: Whatever you entrust to someone, count it yourself[a]; record everything you give or receive in writing.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew wording is somewhat compressed here. The Greek parallel reads, 'Whatever you hand over, do it by number and weight, and let every giving and receiving be in writing,' which supports the verse's sense of careful, documented accounting.
-    reason: alternative_reading
+    text: The Hebrew opening is compressed and uncertain; the Greek reads, “Whatever you hand over, do it by number and weight.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: על מקום
   chosen: For whatever place
@@ -111,14 +111,20 @@ revisions:
   from: For whatever place you appoint, keep count by your hand; and every giving and receiving should be in writing.
   to: For every deposit, let your hand keep count; and every giving and receiving should be in writing.
   rationale: Revised 'whatever place you appoint' to 'every deposit' to better reflect מקום in this context; adjusted word order for more natural English while preserving the sense of counting/recording by hand; retained the final clause with a slightly more formal flow.
-
 - timestamp: '2026-05-15T13:25:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For every deposit[a], let your hand keep count; and every giving and receiving should be in writing.'
-  to: 'For whatever place you appoint[a], keep count by your hand; and every giving and receiving should be in writing.'
-  rationale: 'Azure conflated מקום+תפקד into ''deposit'' (not in Hebrew); restored drafter''s two distinct chosen renderings.'
+  from: For every deposit[a], let your hand keep count; and every giving and receiving should be in writing.
+  to: For whatever place you appoint[a], keep count by your hand; and every giving and receiving should be in writing.
+  rationale: Azure conflated מקום+תפקד into 'deposit' (not in Hebrew); restored drafter's two distinct chosen renderings.
+- timestamp: '2026-11-09T19:09:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For whatever place you appoint[a], keep count by your hand; and every giving and receiving should be in writing.
+  to: Whatever you entrust to someone, count it yourself[a]; record everything you give or receive in writing.
+  rationale: The earlier review recognized a transaction rather than a literal location, although its “deposit” was overly specific. The automated objection protects individual word shapes but does not explain the sentence; I use the broader sense of entrusting and note the source difficulty.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -138,3 +144,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/042/007.job-52172.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:11Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Entrusted goods should be personally counted, and every giving and receiving should have a written record.
+  meaning_decisions:
+  - source_phrase: על מקום תפקד
+    prior_rendering: For whatever place you appoint
+    new_rendering: Whatever you entrust to someone
+    rationale: The transaction context and the Greek identify the practical concern as entrusting goods, not appointing a location.
+  - source_phrase: יד תספור
+    prior_rendering: keep count by your hand
+    new_rendering: count it yourself
+    rationale: The hand language emphasizes personal accounting rather than a particular physical counting technique.
+  - source_phrase: ומתת ולקח הכל בכתב
+    prior_rendering: and every giving and receiving should be in writing
+    new_rendering: record everything you give or receive in writing
+    rationale: The active instruction expresses the requirement for written documentation directly.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review recognized a transaction rather than a literal location, although its “deposit” was overly specific. The automated objection protects individual word shapes but does not explain the sentence; I use the broader sense of entrusting and note the source difficulty.

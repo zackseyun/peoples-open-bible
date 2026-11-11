@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְרָ֤א יִשַׁי֙ אֶל אֲבִ֣ינָדָ֔ב וַ/יַּעֲבִרֵ֖/הוּ לִ/פְנֵ֣י שְׁמוּאֵ֑ל וַ/יֹּ֕אמֶר גַּם בָּ/זֶ֖ה לֹֽא בָחַ֥ר יְהוָֽה־־־׃
 translation:
-  text: Then Jesse called Abinadab and made him pass before Samuel. And he said[a], “Yahweh has not chosen this one either.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''also this one''; rendered idiomatically as ''this one either'' in English.'
-    reason: lexical_alternative
+  text: Then Jesse called Abinadab and had him pass before Samuel. Samuel said, “Yahweh has not chosen this one either.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקְרָא
   chosen: called
@@ -84,7 +80,13 @@ revisions:
   from: Then Jesse called Abinadab and made him pass before Samuel. But he said, “The LORD has not chosen this one either.”
   to: Then Jesse called Abinadab and made him pass before Samuel. And he said, “The LORD has not chosen this one either.”
   rationale: Replaced “But he said” with “And he said” to match the Hebrew conjunction more accurately and maintain the narrative flow.
-
+- timestamp: '2026-11-09T17:22:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jesse called Abinadab and made him pass before Samuel. And he said[a], “Yahweh has not chosen this one either.”
+  to: Then Jesse called Abinadab and had him pass before Samuel. Samuel said, “Yahweh has not chosen this one either.”
+  rationale: The recorded revision changed “But” to “And” solely for conjunction matching; neither is needed once the speaker is named directly. I preserve the established “this one either” and drop its unnecessary literal-wording note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/016/008.job-59129.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesse presents Abinadab to Samuel, but Samuel declares that Yahweh has not chosen him either.
+  meaning_decisions:
+  - source_phrase: וַיַּעֲבִרֵהוּ לִפְנֵי שְׁמוּאֵל
+    prior_rendering: made him pass before Samuel
+    new_rendering: had him pass before Samuel
+    rationale: This retains Jesse's causative role without the unnecessary suggestion of compulsion that “made him” can carry.
+  - source_phrase: וַיֹּאמֶר
+    prior_rendering: And he said
+    new_rendering: Samuel said
+    rationale: Samuel is the understood speaker, but the prior pronoun can easily be read as referring to Jesse.
+  footnote_kinds: {}
+  history_weighed: The recorded revision changed “But” to “And” solely for conjunction matching; neither is needed once the speaker is named directly. I preserve the established “this one either” and drop its unnecessary literal-wording note.

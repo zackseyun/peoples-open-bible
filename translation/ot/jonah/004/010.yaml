@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר יְהוָ֔ה אַתָּ֥ה חַ֨סְתָּ֙ עַל הַ/קִּ֣יקָי֔וֹן אֲשֶׁ֛ר לֹא עָמַ֥לְתָּ בּ֖/וֹ וְ/לֹ֣א גִדַּלְתּ֑/וֹ שֶׁ/בִּן לַ֥יְלָה הָיָ֖ה וּ/בִן לַ֥יְלָה אָבָֽד־־־־׃
 translation:
-  text: Then Yahweh said[a], "You had compassion on the plant, for which you did not labor and which you did not make grow, which came up in a night and perished in a night."
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''the qiqayon''; the exact plant species is uncertain. Traditional English versions often render it ''vine.'''
-    reason: lexical_alternative
+  text: Then Yahweh said, “You had compassion on the plant, though you did not labor for it or make it grow. It came up in a night and perished in a night.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -107,14 +103,20 @@ revisions:
   from: Then the LORD said, "You had compassion on the plant, for which you did not labor and which you did not make grow, which came up in a night and perished in a night."
   to: Then the LORD said, "You had pity on the plant, for which you did not labor and which you did not make grow, which came into being in a night and perished in a night."
   rationale: Changed 'had compassion on' to 'had pity on' for a closer rendering of חסת in this context, and changed 'came up' to 'came into being' to better reflect 'was' (היה) without implying specifically sprouting.
-
 - timestamp: '2026-05-16T03:39:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Yahweh said[a], "You had pity on the plant, for which you did not labor and which you did not make grow, which came into being in a night and perished in a night."'
-  to: 'Then Yahweh said[a], "You had compassion on the plant, for which you did not labor and which you did not make grow, which came up in a night and perished in a night."'
-  rationale: 'Azure substituted ''had pity on'' (drafter''s explicit rejected alternative for חַסְתָּ — drafter chose ''compassion'' to fit rebuke context) and ''came into being'' for chosen ''came up'' (drafter''s idiom for sudden appearance).'
+  from: Then Yahweh said[a], "You had pity on the plant, for which you did not labor and which you did not make grow, which came into being in a night and perished in a night."
+  to: Then Yahweh said[a], "You had compassion on the plant, for which you did not labor and which you did not make grow, which came up in a night and perished in a night."
+  rationale: Azure substituted 'had pity on' (drafter's explicit rejected alternative for חַסְתָּ — drafter chose 'compassion' to fit rebuke context) and 'came into being' for chosen 'came up' (drafter's idiom for sudden appearance).
+- timestamp: '2026-11-09T18:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Yahweh said[a], "You had compassion on the plant, for which you did not labor and which you did not make grow, which came up in a night and perished in a night."
+  to: Then Yahweh said, “You had compassion on the plant, though you did not labor for it or make it grow. It came up in a night and perished in a night.
+  rationale: I retain 'compassion' and 'came up,' which the later revert restored, because both convey the context well. The chain of relative clauses becomes clear sentences while preserving the contrast that continues into verse 11.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +136,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/jonah/004/010.job-15197.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh points out that Jonah had compassion on a short-lived plant even though he did nothing to produce or grow it.
+  meaning_decisions:
+  - source_phrase: אֲשֶׁר לֹא עָמַלְתָּ בוֹ וְלֹא גִדַּלְתּוֹ
+    prior_rendering: for which you did not labor and which you did not make grow
+    new_rendering: though you did not labor for it or make it grow
+    rationale: 'The concessive connection makes clear why Yahweh stresses Jonah''s lack of investment in the plant: Jonah cared about it despite having done nothing to produce it.'
+  footnote_kinds: {}
+  history_weighed: I retain 'compassion' and 'came up,' which the later revert restored, because both convey the context well. The chain of relative clauses becomes clear sentences while preserving the contrast that continues into verse 11.

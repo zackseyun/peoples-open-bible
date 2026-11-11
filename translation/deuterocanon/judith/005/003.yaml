@@ -17,18 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he said to them, “Tell me, then, sons of Canaan[a], who is this people that dwells in the hill country[b], and which cities they inhabit, and the size of their military force[c], and in what their power and their strength consist, and who has risen over them as king, leading their army.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Canaanites.' The Greek reads literally 'sons of Canaan.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'that lives in the mountainous region.' The Greek literally says 'that is sitting in the hill country,' an idiom for dwelling there.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the number of their army' or 'the extent of their force.'
-    reason: lexical_alternative
+  text: 'He said to them, “Tell me, then, Canaanites: Who are these people who live in the hill country? Which cities do they inhabit? How large is their army? What is the source of their power and strength? Who rules them as king and commands their army?'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀναγγείλατέ
   chosen: Tell
@@ -147,13 +137,12 @@ revisions:
   from: And he said to them, “Tell me, then, sons of Canaan, who is this people that dwells in the hill country, and which cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king, leading their army.”
   to: And he said to them, “Tell me, then, sons of Canaan, who this people is that dwells in the hill country, and what cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king, leading their army.”
   rationale: Adjusted 'who is this people' to the more natural English order 'who this people is' and changed 'which cities' to 'what cities' for smoother formal English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T03:10:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to them[a], “Tell me, then, sons of Canaan, who this people is that dwells in the hill country, and what cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king[c][b], leading their army.”'
-  to: 'And he said to them, “Tell me, then, sons of Canaan, who is this people that dwells in the hill country, and which cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king, leading their army.”'
+  from: And he said to them[a], “Tell me, then, sons of Canaan, who this people is that dwells in the hill country, and what cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king[c][b], leading their army.”
+  to: And he said to them, “Tell me, then, sons of Canaan, who is this people that dwells in the hill country, and which cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king, leading their army.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''which cities they inhabit''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -163,6 +152,13 @@ revisions:
   from: And he said to them, “Tell me, then, sons of Canaan, who is this people that dwells in the hill country, and which cities they inhabit, and the size of their military force, and in what their power and their strength consist, and who has risen over them as king, leading their army.”
   to: And he said to them, “Tell me, then, sons of Canaan[a], who is this people that dwells in the hill country[b], and which cities they inhabit, and the size of their military force[c], and in what their power and their strength consist, and who has risen over them as king, leading their army.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('sons of Canaan') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('that dwells in the hill country') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('the size of their military force') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to them, “Tell me, then, sons of Canaan[a], who is this people that dwells in the hill country[b], and which cities they inhabit, and the size of their military force[c], and in what their power and their strength consist, and who has risen over them as king, leading their army.”
+  to: 'He said to them, “Tell me, then, Canaanites: Who are these people who live in the hill country? Which cities do they inhabit? How large is their army? What is the source of their power and strength? Who rules them as king and commands their army?'
+  rationale: The earlier review’s effort to repair the English question syntax was sound; the subsequent automated revert supplied no meaning-based reason to reverse it. I carry that improvement further with direct questions and retain both 'power' and 'strength.'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -182,3 +178,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/005/003.job-50569.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Holofernes demands information about Israel’s identity, cities, army, sources of strength, and royal leadership.
+  meaning_decisions:
+  - source_phrase: υἱοὶ Χαναάν
+    prior_rendering: sons of Canaan
+    new_rendering: Canaanites
+    rationale: The address identifies the assembled regional peoples rather than emphasizing literal sonship.
+  - source_phrase: τίς ὁ λαὸς οὗτος … καὶ τίνες αἱ κατοικοῦσιν πόλεις, καὶ τὸ πλῆθος τῆς δυνάμεως αὐτῶν
+    prior_rendering: who is this people that dwells in the hill country, and which cities they inhabit, and the size of their military force
+    new_rendering: Who are these people who live in the hill country? Which cities do they inhabit? How large is their army?
+    rationale: Separate, fully formed questions convey the force and content of Holofernes’ interrogation without the mixed English syntax.
+  - source_phrase: ἐν τίνι τὸ κράτος αὐτῶν καὶ ἡ ἰσχὺς αὐτῶν
+    prior_rendering: in what their power and their strength consist
+    new_rendering: What is the source of their power and strength?
+    rationale: Holofernes asks what their strength rests on; the new wording expresses that inquiry naturally while preserving both terms.
+  - source_phrase: τίς ἀνέστηκεν ἐπʼ αὐτῶν βασιλεὺς ἡγούμενος στρατιᾶς αὐτῶν
+    prior_rendering: who has risen over them as king, leading their army
+    new_rendering: Who rules them as king and commands their army?
+    rationale: The question concerns the king now exercising authority and military command, not the physical image of rising over people.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s effort to repair the English question syntax was sound; the subsequent automated revert supplied no meaning-based reason to reverse it. I carry that improvement further with direct questions and retain both 'power' and 'strength.'

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הִתְוַדּ֗וּ אֶֽת חַטָּאתָ/ם֮ אֲשֶׁ֣ר עָשׂוּ֒ וְ/הֵשִׁ֤יב אֶת אֲשָׁמ/וֹ֙ בְּ/רֹאשׁ֔/וֹ וַ/חֲמִישִׁת֖/וֹ יֹסֵ֣ף עָלָ֑י/ו וְ/נָתַ֕ן לַ/אֲשֶׁ֖ר אָשַׁ֥ם לֽ/וֹ־־׃
 translation:
-  text: then they shall confess the sin that they have committed[a], and he shall make full restitution for his guilt, adding a fifth to it[b], and give it to the one against whom he was guilty.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'to the one he wronged.' The Hebrew literally identifies the recipient as the person with respect to whom he incurred guilt.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Make full restitution for his guilt'' renders a Hebrew expression that can also be translated ''restore what he owes'' or ''repay his compensation''; the sense here is repayment of the principal amount, not a sacrificial guilt offering.'
-    reason: lexical_alternative
+  text: They must confess the sin they have committed, make full restitution, add a fifth to the amount, and pay the total to the person they wronged.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהִתְוַדּוּ
   chosen: then they shall confess
@@ -101,14 +94,20 @@ revisions:
   from: then they shall confess the sin that they have committed, and he shall make full restitution for his guilt, adding a fifth to it, and give it to the one against whom he was guilty.
   to: then they shall confess the sin that they have committed, and he shall make restitution for his guilt in full, adding a fifth to it, and give it to the one to whom he was guilty.
   rationale: Adjusted word order to reflect the Hebrew יותר closely ('make restitution for his guilt in full'), and revised the final clause from 'against whom he was guilty' to the more literal and natural 'to whom he was guilty.'
-
 - timestamp: '2026-05-16T10:07:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then they shall confess the sin that they have committed[a], and he shall make restitution for his guilt in full, adding a fifth to it[b], and give it to the one to whom he was guilty.'
-  to: 'then they shall confess the sin that they have committed[a], and he shall make full restitution for his guilt, adding a fifth to it[b], and give it to the one against whom he was guilty.'
-  rationale: 'Restored drafter ''make full restitution for his guilt'' (clear English word order) and ''against whom he was guilty'' (idiomatic English for the wronged party) per chosen renderings.'
+  from: then they shall confess the sin that they have committed[a], and he shall make restitution for his guilt in full, adding a fifth to it[b], and give it to the one to whom he was guilty.
+  to: then they shall confess the sin that they have committed[a], and he shall make full restitution for his guilt, adding a fifth to it[b], and give it to the one against whom he was guilty.
+  rationale: Restored drafter 'make full restitution for his guilt' (clear English word order) and 'against whom he was guilty' (idiomatic English for the wronged party) per chosen renderings.
+- timestamp: '2026-11-09T19:28:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then they shall confess the sin that they have committed[a], and he shall make full restitution for his guilt, adding a fifth to it[b], and give it to the one against whom he was guilty.
+  to: They must confess the sin they have committed, make full restitution, add a fifth to the amount, and pay the total to the person they wronged.
+  rationale: The history correctly distinguishes monetary restitution from a guilt offering and favors clear English word order over the more literal revision. Its footnotes identify the injured recipient and principal amount, which the main text now conveys without notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -128,3 +127,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/005/007.job-42073.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:28:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The guilty person must confess the sin and repay the injured person in full with an additional fifth.
+  meaning_decisions:
+  - source_phrase: וְהִתְוַדּוּ ... וְהֵשִׁיב ... וְנָתַן
+    prior_rendering: they shall confess ... he shall make full restitution ... and give it
+    new_rendering: They must confess ... make full restitution ... and pay the total
+    rationale: Consistent pronouns express the law's application to either the man or the woman named in verse 6, while 'must' makes the legal obligation clear.
+  - source_phrase: וְהֵשִׁיב אֶת אֲשָׁמוֹ בְּרֹאשׁוֹ
+    prior_rendering: make full restitution for his guilt
+    new_rendering: make full restitution
+    rationale: Here the noun denotes the compensation owed because of the wrong, not guilt as something repayable or a sacrificial offering.
+  - source_phrase: וַחֲמִישִׁתוֹ יֹסֵף עָלָיו
+    prior_rendering: adding a fifth to it
+    new_rendering: add a fifth to the amount
+    rationale: The added fifth is calculated on the full restitution amount.
+  - source_phrase: לַאֲשֶׁר אָשַׁם לוֹ
+    prior_rendering: to the one against whom he was guilty
+    new_rendering: to the person they wronged
+    rationale: This identifies the injured recipient directly in natural English; guilt is already established in verse 6.
+  footnote_kinds: {}
+  history_weighed: The history correctly distinguishes monetary restitution from a guilt offering and favors clear English word order over the more literal revision. Its footnotes identify the injured recipient and principal amount, which the main text now conveys without notes.

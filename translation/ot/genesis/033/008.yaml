@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֕אמֶר מִ֥י לְ/ךָ֛ כָּל הַ/מַּחֲנֶ֥ה הַ/זֶּ֖ה אֲשֶׁ֣ר פָּגָ֑שְׁתִּי וַ/יֹּ֕אמֶר לִ/מְצֹא חֵ֖ן בְּ/עֵינֵ֥י אֲדֹנִֽ/י־־׃
 translation:
-  text: And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”
-  philosophy: optimal-equivalence
+  text: Esau asked, “What did you mean by all those droves[a] I met?” Jacob replied, “To find favor with my lord.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “all this camp.” The Hebrew מַחֲנֶה often means “camp,” but here likely refers to the whole company or drove Jacob sent ahead.
+    text: Literally, “all this camp,” referring here to the droves of livestock Jacob had sent ahead.
     reason: lexical_alternative
-  - marker: b
-    text: Hebrew “to find favor in the eyes of my lord,” a standard idiom for gaining someone's favorable regard.
-    reason: cultural_note
-  - marker: c
-    text: Or 'What do you mean by all this company'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: מִי לְךָ
   chosen: What do you mean by
@@ -89,9 +83,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”'
-  to: 'And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”'
+  from: And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”
+  to: And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all this company''].'
+- timestamp: '2026-11-09T17:44:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “What do you mean by all this camp that I met?” And he said[c][b], “To find favor in the eyes of my lord.”
+  to: Esau asked, “What did you mean by all those droves[a] I met?” Jacob replied, “To find favor with my lord.”
+  rationale: The history alternates between “company” and “camp,” but its lexical rationale consistently identifies the livestock procession as the referent. I followed that contextual judgment rather than the more source-transparent wording.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T16:23:57Z'
@@ -118,3 +119,30 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/033/008.job-37871.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esau asks why Jacob sent the livestock ahead, and Jacob says he wanted Esau’s favor.
+  meaning_decisions:
+  - source_phrase: כָּל הַמַּחֲנֶה הַזֶּה
+    prior_rendering: all this camp
+    new_rendering: all those droves
+    rationale: Esau is referring to the livestock procession he encountered, not a stationary encampment.
+  - source_phrase: לִמְצֹא חֵן בְּעֵינֵי אֲדֹנִי
+    prior_rendering: To find favor in the eyes of my lord
+    new_rendering: To find favor with my lord
+    rationale: The English directly conveys the favorable regard Jacob sought while retaining the weight of “favor” and his deferential address.
+  - source_phrase: וַיֹּאמֶר ... וַיֹּאמֶר
+    prior_rendering: And he said ... And he said
+    new_rendering: Esau asked ... Jacob replied
+    rationale: Explicit speakers clarify the exchange without adding information beyond its context.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history alternates between “company” and “camp,” but its lexical rationale consistently identifies the livestock procession as the referent. I followed that contextual judgment rather than the more source-transparent wording.

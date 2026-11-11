@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אַל נָ֣א יָשִׂ֣ים אֲדֹנִ֣/י אֶת לִבּ֡/וֹ אֶל אִישׁ֩ הַ/בְּלִיַּ֨עַל הַ/זֶּ֜ה עַל נָבָ֗ל כִּ֤י כִ/שְׁמ/וֹ֙ כֶּן ה֔וּא נָבָ֣ל שְׁמ֔/וֹ וּ/נְבָלָ֖ה עִמּ֑/וֹ וַֽ/אֲנִי֙ אֲמָ֣תְ/ךָ֔ לֹ֥א רָאִ֛יתִי אֶת נַעֲרֵ֥י אֲדֹנִ֖/י אֲשֶׁ֥ר שָׁלָֽחְתָּ־׀־־־־־׃
 translation:
-  text: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
-  philosophy: optimal-equivalence
+  text: 'Please, my lord, do not take this scoundrel Nabal seriously, for he lives up to his name: his name is Nabal[a], and he is full of folly. But I, your servant, did not see the young men you sent.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The name 'Nabal' sounds like the Hebrew word for 'foolish' or 'folly,' and Abigail's statement is a deliberate wordplay.
+    text: Nabal means “fool”; the Hebrew word for “folly” echoes his name.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יָשִׂים אֶת־לִבּוֹ אֶל
@@ -90,7 +90,6 @@ revisions:
   from: 'Please, my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your female servant, did not see the young men of my lord whom you sent.'
   to: 'Please, my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your female servant, did not see the young men of my lord whom you sent.'
   rationale: Changed 'your female servant' to 'your servant' for more natural formal English while preserving the sense of אֲמָתְךָ. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -98,6 +97,13 @@ revisions:
   from: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
   to: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your female servant''].'
+- timestamp: '2026-11-09T18:24:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Please[a], my lord, do not set your heart on this worthless man, on Nabal, for as his name is, so is he: Nabal is his name, and folly is with him. But I, your servant, did not see the young men of my lord whom you sent.'
+  to: 'Please, my lord, do not take this scoundrel Nabal seriously, for he lives up to his name: his name is Nabal[a], and he is full of folly. But I, your servant, did not see the young men you sent.'
+  rationale: The earlier decisions rightly preserve Nabal’s recognizable name, the wordplay, and the moral meaning of the Belial expression. I depart from the source-shaped heart idiom because it misleadingly suggests desire in English, and retain the current 'your servant.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +123,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/025.job-59396.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:24:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Abigail asks David to disregard Nabal as a man whose character matches his foolish name and explains that she did not see David’s messengers.
+  meaning_decisions:
+  - source_phrase: אַל נָא יָשִׂים אֲדֹנִי אֶת לִבּוֹ אֶל אִישׁ הַבְּלִיַּעַל הַזֶּה עַל נָבָל
+    prior_rendering: Please, my lord, do not set your heart on this worthless man, on Nabal
+    new_rendering: Please, my lord, do not take this scoundrel Nabal seriously
+    rationale: In contemporary English, 'set your heart on' usually expresses desire. Here Abigail asks David not to give serious regard to a morally contemptible man.
+  - source_phrase: כִּי כִשְׁמוֹ כֶּן הוּא
+    prior_rendering: for as his name is, so is he
+    new_rendering: for he lives up to his name
+    rationale: The familiar English expression conveys the pointed correspondence between Nabal’s name and character.
+  - source_phrase: וּנְבָלָה עִמּוֹ
+    prior_rendering: and folly is with him
+    new_rendering: and he is full of folly
+    rationale: The clause characterizes Nabal by his folly rather than describing literal companionship.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier decisions rightly preserve Nabal’s recognizable name, the wordplay, and the moral meaning of the Belial expression. I depart from the source-shaped heart idiom because it misleadingly suggests desire in English, and retain the current 'your servant.'

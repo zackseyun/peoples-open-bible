@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: οὐ γὰρ ἔχομεν ἀρχιερέα μὴ δυνάμενον συμπαθῆσαι ταῖς ἀσθενείαις ἡμῶν, ⸀πεπειρασμένον δὲ κατὰ πάντα καθ’ ὁμοιότητα χωρὶς ἁμαρτίας.
 translation:
-  text: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way[a] according to likeness[b], yet without sin.
-  philosophy: optimal-equivalence
+  text: For we do not have a high priest who is unable to sympathize with our weaknesses, but one who has been tempted[a] in every way as we are, yet without sin.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “has been tempted in every way.”
+    text: Or, 'tested'; the Greek term can describe both temptation and testing.
     reason: alternative_reading
-  - marker: b
-    text: 'Literally, “according to likeness”; many translations make the comparison explicit: “as we are” or “in the same way as we are.”'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀρχιερέα
   chosen: high priest
@@ -97,13 +94,12 @@ revisions:
   from: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way according to likeness, yet without sin.
   to: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way as we are, yet without sin.
   rationale: Replaced 'according to likeness' with the more natural and accurate 'as we are' to reflect καθ’ ὁμοιότητα in context. Kept the rest substantially the same, preserving the formal contrast and 'tested' for πεπειρασμένον.
-
 - timestamp: '2026-05-18T03:10:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For we do not have a high priest unable to sympathize with our weaknesses[a], but one who has been tested in every way as we are[b], yet without sin.'
-  to: 'For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way according to likeness, yet without sin.'
+  from: For we do not have a high priest unable to sympathize with our weaknesses[a], but one who has been tested in every way as we are[b], yet without sin.
+  to: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way according to likeness, yet without sin.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''according to likeness''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -113,6 +109,13 @@ revisions:
   from: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way according to likeness, yet without sin.
   to: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way[a] according to likeness[b], yet without sin.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in every way') because the note names that rendering; [b] anchored to ('according to likeness') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:08:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For we do not have a high priest unable to sympathize with our weaknesses, but one who has been tested in every way[a] according to likeness[b], yet without sin.
+  to: For we do not have a high priest who is unable to sympathize with our weaknesses, but one who has been tempted[a] in every way as we are, yet without sin.
+  rationale: The review’s 'as we are' correctly clarified the comparison, while the automated revert restored opacity for source-transparency rather than meaning. I recover that clarification and choose 'tempted' on contextual grounds, retaining 'tested' as a serious alternative rather than allowing a theological concern to exclude it.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -134,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/hebrews/004/015.job-54405.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus can sympathize with human weakness because he has experienced temptation like the readers in every respect, yet without sin.
+  meaning_decisions:
+  - source_phrase: πεπειρασμένον
+    prior_rendering: has been tested
+    new_rendering: has been tempted
+    rationale: The comparison with human weakness and the explicit qualification 'without sin' support the moral dimension of temptation; this does not imply sinful inclination or failure.
+  - source_phrase: καθ’ ὁμοιότητα
+    prior_rendering: according to likeness
+    new_rendering: as we are
+    rationale: The comparison with the readers is clear from 'our weaknesses'; making it explicit conveys what the first hearers understood rather than leaving an undefined likeness.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review’s 'as we are' correctly clarified the comparison, while the automated revert restored opacity for source-transparency rather than meaning. I recover that clarification and choose 'tempted' on contextual grounds, retaining 'tested' as a serious alternative rather than allowing a theological concern to exclude it.

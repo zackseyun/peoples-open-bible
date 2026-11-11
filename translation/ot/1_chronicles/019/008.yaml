@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁמַ֖ע דָּוִ֑יד וַ/יִּשְׁלַח֙ אֶת יוֹאָ֔ב וְ/אֵ֥ת כָּל צָבָ֖א הַ/גִּבּוֹרִֽים־־׃
 translation:
-  text: When David heard[a], he sent Joab and all the army of the mighty men[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'he was informed' or 'he learned of it.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''The mighty men'' may refer to David''s valiant warriors or elite fighting force.'
-    reason: lexical_alternative
+  text: When David heard the news, he sent Joab and the whole army of mighty warriors.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁמַע
   chosen: heard
@@ -79,13 +72,12 @@ revisions:
   from: When David heard, he sent Joab and all the army of the mighty men.
   to: When David heard, he sent Joab and all the army, the mighty men.
   rationale: 'Added a comma to reflect the appositional structure and improve natural English: ''all the army, the mighty men'' rather than ''the army of the mighty men.'''
-
 - timestamp: '2026-05-18T03:09:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When David heard[a], he sent Joab and all the army[b], the mighty men.'
-  to: 'When David heard, he sent Joab and all the army of the mighty men.'
+  from: When David heard[a], he sent Joab and all the army[b], the mighty men.
+  to: When David heard, he sent Joab and all the army of the mighty men.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and all the army of the mighty men''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -95,6 +87,13 @@ revisions:
   from: When David heard, he sent Joab and all the army of the mighty men.
   to: When David heard[a], he sent Joab and all the army of the mighty men[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('The mighty men') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:19:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When David heard[a], he sent Joab and all the army of the mighty men[b].
+  to: When David heard the news, he sent Joab and the whole army of mighty warriors.
+  rationale: The earlier revision noticed the awkwardness of the construct phrase but proposed an uncertain appositional punctuation change; its later revert was automated, not a maintainer ruling. I retained the construct relationship and the force of mighty while expressing the phrase more clearly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +113,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/019/008.job-44872.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:48Z'
+  change_level: refined
+  confidence: high
+  meaning: On hearing of the enemy mobilization, David sends Joab with the whole force of mighty warriors.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁמַע דָּוִיד
+    prior_rendering: When David heard
+    new_rendering: When David heard the news
+    rationale: The preceding mobilization supplies what David heard; making that object explicit completes the English sentence naturally.
+  - source_phrase: כָּל צָבָא הַגִּבּוֹרִים
+    prior_rendering: all the army of the mighty men
+    new_rendering: the whole army of mighty warriors
+    rationale: Warriors identifies the men’s military role while retaining the strength expressed by mighty. The whole organized force remains explicit without suggesting an army belonging to a separate group of men.
+  footnote_kinds: {}
+  history_weighed: The earlier revision noticed the awkwardness of the construct phrase but proposed an uncertain appositional punctuation change; its later revert was automated, not a maintainer ruling. I retained the construct relationship and the force of mighty while expressing the phrase more clearly.

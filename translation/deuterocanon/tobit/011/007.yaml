@@ -16,11 +16,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And Raphael said[a], “I know that your father will open his eyes.”
-  philosophy: optimal-equivalence
+  text: And Raphael said, “I know that your father will regain his sight[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'your father will regain his sight.' The Greek literally says, 'will open his eyes,' an idiom for the restoration of sight.
+    text: Literally, “will open his eyes.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἐπίσταμαι
@@ -96,14 +96,20 @@ revisions:
   from: And Raphael said, “I know that your father will open his eyes.”
   to: And Raphael said, “I know that your father’s eyes will be opened.”
   rationale: Revised 'your father will open his eyes' to 'your father’s eyes will be opened' to reflect the Greek passive sense of ἀνοίξει τοὺς ὀφθαλμούς more naturally and accurately in English.
-
 - timestamp: '2026-05-16T13:37:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Raphael said[a], “I know that your father’s eyes will be opened.”'
-  to: 'And Raphael said[a], “I know that your father will open his eyes.”'
-  rationale: 'Restored drafter ''your father will open his eyes'' (preserving active-voice ἀνοίξει subject-action) per chosen renderings.'
+  from: And Raphael said[a], “I know that your father’s eyes will be opened.”
+  to: And Raphael said[a], “I know that your father will open his eyes.”
+  rationale: Restored drafter 'your father will open his eyes' (preserving active-voice ἀνοίξει subject-action) per chosen renderings.
+- timestamp: '2026-11-09T19:10:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Raphael said[a], “I know that your father will open his eyes.”
+  to: And Raphael said, “I know that your father will regain his sight[a].
+  rationale: The later revert correctly rejected the claim that the Greek verb is passive, but active voice alone does not communicate the idiom’s meaning in English. The earlier footnote and lexical discussion both identify restored sight as the intended sense.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +129,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/011/007.job-52551.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Raphael confidently assures Tobiah that his father will regain his sight.
+  meaning_decisions:
+  - source_phrase: ἀνοίξει τοὺς ὀφθαλμοὺς ὁ πατήρ σου
+    prior_rendering: your father will open his eyes
+    new_rendering: your father will regain his sight
+    rationale: The promise concerns healing blindness, not merely opening the eyelids; the idiom’s meaning is stated directly, with its literal image retained in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The later revert correctly rejected the claim that the Greek verb is passive, but active voice alone does not communicate the idiom’s meaning in English. The earlier footnote and lexical discussion both identify restored sight as the intended sense.

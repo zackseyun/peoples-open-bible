@@ -5,6 +5,7 @@ import subprocess
 from unittest.mock import patch
 
 from tests import test_1esdras7_word_application as original
+from tests.meaning_pass_baseline import pre_meaning_pass_view
 
 APPLIED = '9f4f2198128fa969948b4822cc423dba6f352228'
 WORKFLOW = '.github/workflows/corpus-integrity.yml'
@@ -17,6 +18,16 @@ def reviewed(path):
 
 class EsdrasSevenLiveSuccessorTests(original.EsdrasSevenWordTests):
     """Inherit all five candidate/source/normalization/live/export checks."""
+
+    def test_exact_live_scope_preserves493_other_yaml_records_including5_6_8(self):
+        # The meaning-first pass later revised the other verses on purpose; check
+        # them as they stood before it (tests/meaning_pass_baseline.py).
+        with pre_meaning_pass_view():
+            super().test_exact_live_scope_preserves493_other_yaml_records_including5_6_8()
+
+    def test_real_complete495_export_changes_only_target_notes_and_meaning(self):
+        with pre_meaning_pass_view():
+            super().test_real_complete495_export_changes_only_target_notes_and_meaning()
 
     def check_live_evidence(self):
         raw = (original.ROOT / original.EVIDENCE).read_bytes()

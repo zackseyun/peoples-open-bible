@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֨לֶּה֙ הַ/מְּלָכִ֔ים אֲשֶׁ֥ר מָלְכ֖וּ בְּ/אֶ֣רֶץ אֱד֑וֹם לִ/פְנֵ֥י מְלָךְ מֶ֖לֶךְ לִ/בְנֵ֥י יִשְׂרָאֵֽל־׃
 translation:
-  text: These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'before a king reigned over the Israelites.' The Hebrew literally says 'before a king reigned for/over the sons of Israel.'
-    reason: lexical_alternative
+  text: These are the kings who reigned in the land of Edom before any king reigned over the Israelites.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/אֵלֶּה
   chosen: These are
@@ -88,14 +84,20 @@ revisions:
   from: These are the kings who reigned in the land of Edom before any king reigned over the sons of Israel.
   to: These are the kings who reigned in the land of Edom before any king reigned over the sons of Israel.
   rationale: Replaced 'any king' with 'a king' to reflect the singular Hebrew more directly and avoid unnecessary interpretive expansion.
-
 - timestamp: '2026-05-17T09:41:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].'
-  to: 'These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].'
+  from: These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].
+  to: These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''any king reigned''].'
+- timestamp: '2026-11-09T17:44:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the kings who reigned in the land of Edom before a king reigned over the sons of Israel[a].
+  to: These are the kings who reigned in the land of Edom before any king reigned over the Israelites.
+  rationale: The first draft and lexical rationale support “any king,” despite a later preference for the formally singular “a king.” The earlier rationale itself recognizes “sons of Israel” as an ethnonym, which is carried directly into the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +120,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/036/031.job-65429.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:08Z'
+  change_level: refined
+  confidence: high
+  meaning: The following kings ruled Edom before Israel had any king.
+  meaning_decisions:
+  - source_phrase: לִפְנֵי מְלָךְ מֶלֶךְ
+    prior_rendering: before a king reigned
+    new_rendering: before any king reigned
+    rationale: The indefinite singular marks the beginning of kingship in Israel; “any king” expresses that temporal contrast naturally.
+  - source_phrase: לִבְנֵי יִשְׂרָאֵל
+    prior_rendering: over the sons of Israel
+    new_rendering: over the Israelites
+    rationale: This is the national designation, not a reference only to Israel’s male descendants or immediate sons.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale support “any king,” despite a later preference for the formally singular “a king.” The earlier rationale itself recognizes “sons of Israel” as an ethnonym, which is carried directly into the main text.

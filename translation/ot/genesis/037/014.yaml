@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר ל֗/וֹ לֶךְ נָ֨א רְאֵ֜ה אֶת שְׁל֤וֹם אַחֶ֨י/ךָ֙ וְ/אֶת שְׁל֣וֹם הַ/צֹּ֔אן וַ/הֲשִׁבֵ֖/נִי דָּבָ֑ר וַ/יִּשְׁלָחֵ֨/הוּ֙ מֵ/עֵ֣מֶק חֶבְר֔וֹן וַ/יָּבֹ֖א שְׁכֶֽמָ/ה־־־׃
 translation:
-  text: He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'see the welfare of your brothers and the welfare of the flock.' The Hebrew uses shalom ('peace, welfare, well-being') in both phrases.
-    reason: lexical_alternative
+  text: Israel said to him, “Please go and see whether your brothers and the flock are well, and bring me word.” So he sent him from the Valley of Hebron, and Joseph came to Shechem.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֶךְ נָא
   chosen: Go now
@@ -91,14 +87,20 @@ revisions:
   from: He said to him, “Go now, see whether your brothers are well and whether the flock is well, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
   to: He said to him, “Go now, see whether your brothers are well and whether the flock is well, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
   rationale: Revised 'see whether ... are well' to 'see about the well-being of ...' to more directly reflect שְׁלוֹם in both occurrences and preserve consistency. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T10:30:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.'
-  to: 'He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.'
+  from: He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
+  to: He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''see whether''].'
+- timestamp: '2026-11-09T17:45:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said to him[a], “Go now, see about the well-being of your brothers and the well-being of the flock, and bring me word.” So he sent him from the Valley of Hebron, and he came to Shechem.
+  to: Israel said to him, “Please go and see whether your brothers and the flock are well, and bring me word.” So he sent him from the Valley of Hebron, and Joseph came to Shechem.
+  rationale: The first draft's 'see whether ... are well' conveyed the inquiry more clearly than the later formal substitution, and the lexical rationale supports restoring that gain. I retain 'bring me word' and the named valley, which already communicate naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +123,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/037/014.job-65449.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:13Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel sends Joseph from Hebron to check the condition of his brothers and the flock and bring back a report, and Joseph arrives at Shechem.
+  meaning_decisions:
+  - source_phrase: לֶךְ נָא
+    prior_rendering: Go now
+    new_rendering: Please go
+    rationale: The particle urges or softens the request; it does not itself specify that Joseph must leave immediately.
+  - source_phrase: רְאֵה אֶת שְׁלוֹם אַחֶיךָ וְאֶת שְׁלוֹם הַצֹּאן
+    prior_rendering: see about the well-being of your brothers and the well-being of the flock
+    new_rendering: see whether your brothers and the flock are well
+    rationale: The command asks Joseph to ascertain their condition, which natural English expresses directly rather than through repeated abstract nouns.
+  - source_phrase: וַיֹּאמֶר לוֹ ... וַיָּבֹא שְׁכֶמָה
+    prior_rendering: He said to him ... and he came to Shechem
+    new_rendering: Israel said to him ... and Joseph came to Shechem
+    rationale: Explicit names distinguish the father who sends from the son who travels.
+  footnote_kinds: {}
+  history_weighed: The first draft's 'see whether ... are well' conveyed the inquiry more clearly than the later formal substitution, and the lexical rationale supports restoring that gain. I retain 'bring me word' and the named valley, which already communicate naturally.

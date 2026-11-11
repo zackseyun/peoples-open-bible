@@ -23,15 +23,8 @@ source:
     note: NOT an ancient Hebrew witness. Neubauer's 1878 Hebrew is a back-translation from an Aramaic Munich MS. The actual ancient evidence is Qumran 4Q196-200 (Aramaic), published in DJD XIX (not redistributable). Use for translation reference only; do not treat as Vorlage.
     reference: TOB 7:3
 translation:
-  text: And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “from the descendants of Naphtali” or “from the tribe of Naphtali.” The Greek literally says “from the sons of Naphtali.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or “the exiles in Nineveh.” The Greek says “the captives,” emphasizing their deported status.
-    reason: lexical_alternative
+  text: Raguel asked them, “Where are you from, brothers?” They replied, “We belong to the tribe of Naphtali and have come from the exiled community in Nineveh.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἠρώτησεν
   chosen: asked
@@ -109,14 +102,20 @@ revisions:
   from: And Raguel asked them, “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali, the captives in Nineveh.”
   to: And Raguel asked them, “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali, the captives in Nineveh.”
   rationale: Changed “the captives in Nineveh” to “the captives from Nineveh” to reflect ἐκ Νινευή more accurately. Kept the rest unchanged as natural and complete.
-
 - timestamp: '2026-05-18T02:58:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”'
-  to: 'And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”'
+  from: And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”
+  to: And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in Nineveh''].'
+- timestamp: '2026-11-09T19:10:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Raguel asked them[a], “Where are you from, brothers?” And they said to him, “We are from the sons of Naphtali[b], the captives from Nineveh.”
+  to: Raguel asked them, “Where are you from, brothers?” They replied, “We belong to the tribe of Naphtali and have come from the exiled community in Nineveh.”
+  rationale: The history alternates between 'in Nineveh' and 'from Nineveh,' reflecting the community’s residence and the travelers’ departure. The rendering carries both meanings and adopts the documented tribal sense rather than retaining 'sons' literally.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -136,3 +135,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/007/003.job-52484.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The visitors identify themselves as members of Naphtali’s tribe who have come from the exiled community in Nineveh.
+  meaning_decisions:
+  - source_phrase: Ἐκ τῶν υἱῶν Νεφθαλεὶ
+    prior_rendering: We are from the sons of Naphtali
+    new_rendering: We belong to the tribe of Naphtali
+    rationale: The expression identifies tribal descent, not Naphtali’s immediate sons.
+  - source_phrase: τῶν αἰχμαλώτων ἐκ Νινευή
+    prior_rendering: the captives from Nineveh
+    new_rendering: and have come from the exiled community in Nineveh
+    rationale: The travelers come from Nineveh’s deported Israelite community; the wording preserves both their place of departure and their imposed exile without suggesting that they are presently imprisoned.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'in Nineveh' and 'from Nineveh,' reflecting the community’s residence and the travelers’ departure. The rendering carries both meanings and adopts the documented tribal sense rather than retaining 'sons' literally.

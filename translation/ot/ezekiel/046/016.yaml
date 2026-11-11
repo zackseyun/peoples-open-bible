@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כֹּה אָמַ֞ר אֲדֹנָ֣/י יְהֹוִ֗ה כִּֽי יִתֵּ֨ן הַ/נָּשִׂ֤יא מַתָּנָה֙ לְ/אִ֣ישׁ מִ/בָּנָ֔י/ו נַחֲלָת֥/וֹ הִ֖יא לְ/בָנָ֣י/ו תִּֽהְיֶ֑ה אֲחֻזָּתָ֥/ם הִ֖יא בְּ/נַחֲלָֽה־־׃
 translation:
-  text: 'Thus says the Lord GOD: If the prince gives a gift to any one of his sons[a], it is his inheritance[b]; it shall belong to his sons as their property by inheritance.'
-  philosophy: optimal-equivalence
+  text: 'Thus says the Lord Yahweh: If the prince gives a gift to any one of his sons, it shall become that son''s inheritance and shall pass to his sons[a] as their inherited property.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''to a man from among his sons,'' an idiom meaning ''to any one of his sons.'''
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'as their possession in inheritance.'
-    reason: lexical_alternative
+    text: 'Alternatively, the pronouns may refer to the prince: the gift is part of his inheritance and belongs to his sons as their inherited property.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: כֹּה אָמַר
   chosen: Thus says
@@ -114,14 +111,20 @@ revisions:
   from: 'Thus says the Lord GOD: If the prince gives a gift to any one of his sons, it is his inheritance; it shall belong to his sons as their property by inheritance.'
   to: 'Thus says the Lord GOD: If the prince gives a gift to one of his sons, it is his inheritance; it shall belong to his sons as their possession by inheritance.'
   rationale: Changed 'any one of' to 'one of' for more natural English, and 'property' to 'possession' to better reflect אֲחֻזָּה in a formal translation.
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Thus says the Lord GOD: If the prince gives a gift to one of his sons[a], it is his inheritance[b]; it shall belong to his sons as their possession by inheritance.'
   to: 'Thus says the Lord GOD: If the prince gives a gift to any one of his sons[a], it is his inheritance[b]; it shall belong to his sons as their property by inheritance.'
-  rationale: 'Azure substituted ''one of his sons'' (drafter''s rejected alternative — drafter chose ''any one of'' for distributive idiom of אִישׁ) and ''possession'' (drafter''s rejected alternative for אֲחֻזָּתָם — drafter chose ''property'' for concrete landed-holding sense).'
+  rationale: Azure substituted 'one of his sons' (drafter's rejected alternative — drafter chose 'any one of' for distributive idiom of אִישׁ) and 'possession' (drafter's rejected alternative for אֲחֻזָּתָם — drafter chose 'property' for concrete landed-holding sense).
+- timestamp: '2026-11-09T17:41:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says the Lord GOD: If the prince gives a gift to any one of his sons[a], it is his inheritance[b]; it shall belong to his sons as their property by inheritance.'
+  to: 'Thus says the Lord Yahweh: If the prince gives a gift to any one of his sons, it shall become that son''s inheritance and shall pass to his sons[a] as their inherited property.'
+  rationale: I retain 'any one of his sons' and the concrete property language favored in the history. The lexical rationale explicitly understands the later sons as the recipient's sons, which I clarify while noting the alternative pronoun reference.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +146,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/ezekiel/046/016.job-28562.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A gift the prince gives a son becomes hereditary property that remains in the son's family line.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהֹוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: The standing ruling requires the divine name Yahweh even in this compound title.
+  - source_phrase: נַחֲלָתוֹ הִיא לְבָנָיו תִּהְיֶה אֲחֻזָּתָם הִיא בְּנַחֲלָה
+    prior_rendering: it is his inheritance; it shall belong to his sons as their property by inheritance
+    new_rendering: it shall become that son's inheritance and shall pass to his sons as their inherited property
+    rationale: Following the recorded recipient-son understanding, the rendering identifies whose inheritance is meant and makes its hereditary continuation clear; the credible prince-referent reading is preserved in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain 'any one of his sons' and the concrete property language favored in the history. The lexical rationale explicitly understands the later sons as the recipient's sons, which I clarify while noting the alternative pronoun reference.

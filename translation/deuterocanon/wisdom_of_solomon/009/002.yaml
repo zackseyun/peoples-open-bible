@@ -20,15 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: and by your wisdom you made man to rule over the creatures that came into being through you[b][a],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'humankind' or 'a human being'; Greek 'man' in the singular, likely representing humanity in creation language.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to have dominion over,' echoing the creation mandate language of Genesis.
-    reason: alternative_reading
+  text: and by your wisdom you formed humankind to rule over the creatures you made,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σοφίᾳ
   chosen: wisdom
@@ -116,14 +109,20 @@ revisions:
   from: and by your wisdom you made man to rule over the creatures that came into being through you,
   to: and by your wisdom you formed man to rule over the creatures made by you,
   rationale: Changed 'made' to 'formed' for κατεσκεύασας, and simplified 'that came into being through you' to the more natural and direct 'made by you' for τῶν ὑπὸ σοῦ γενομένων κτισμάτων.
-
 - timestamp: '2026-05-16T17:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and by your wisdom you formed man to rule over the creatures made by you[b][a],'
-  to: 'and by your wisdom you made man to rule over the creatures that came into being through you[b][a],'
-  rationale: 'Restored drafter ''you made man'' (preserving the chosen rendering of κατεσκεύασας) and ''the creatures that came into being through you'' (preserving the chosen rendering of γενομένων) per chosen renderings.'
+  from: and by your wisdom you formed man to rule over the creatures made by you[b][a],
+  to: and by your wisdom you made man to rule over the creatures that came into being through you[b][a],
+  rationale: Restored drafter 'you made man' (preserving the chosen rendering of κατεσκεύασας) and 'the creatures that came into being through you' (preserving the chosen rendering of γενομένων) per chosen renderings.
+- timestamp: '2026-11-09T19:11:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and by your wisdom you made man to rule over the creatures that came into being through you[b][a],
+  to: and by your wisdom you formed humankind to rule over the creatures you made,
+  rationale: The earlier review’s “formed” and direct description of divine agency improve the English without losing meaning; the automated revert defended the original verbal forms rather than a different interpretation. The recorded recognition that “man” represents humanity supports making that scope explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +142,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/009/002.job-39291.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God formed humanity through his wisdom to exercise rule over the creatures he created.
+  meaning_decisions:
+  - source_phrase: κατεσκεύασας
+    prior_rendering: you made
+    new_rendering: you formed
+    rationale: “Formed” conveys the purposeful making expressed by the verb in this account of humanity’s creation and vocation.
+  - source_phrase: ἄνθρωπον
+    prior_rendering: man
+    new_rendering: humankind
+    rationale: The singular represents humanity in the creation account, rather than restricting the vocation to males; the main text now states the sense previously confined to a note.
+  - source_phrase: τῶν ὑπὸ σοῦ γενομένων κτισμάτων
+    prior_rendering: the creatures that came into being through you
+    new_rendering: the creatures you made
+    rationale: The direct construction clearly identifies God as the creatures’ maker without an unnecessarily cumbersome expression of their origin.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “formed” and direct description of divine agency improve the English without losing meaning; the automated revert defended the original verbal forms rather than a different interpretation. The recorded recognition that “man” represents humanity supports making that scope explicit.

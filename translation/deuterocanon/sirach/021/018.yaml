@@ -21,15 +21,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Wisdom to a fool is like a ruined house[a], and the knowledge of one without understanding is words that cannot be examined[b].
-  philosophy: optimal-equivalence
+  text: To a fool, wisdom is like a ruined house; the knowledge of one without understanding amounts to incomprehensible talk[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a destroyed house' for 'a ruined house'; the Greek participle can carry the sense of something obliterated or made to disappear.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'incomprehensible words' for 'words that cannot be examined'; the Greek may emphasize either unintelligibility or the impossibility of probing the speech meaningfully.
-    reason: lexical_alternative
+    text: Or, 'words that cannot be meaningfully examined.' The Greek can emphasize either unintelligibility or speech that resists examination.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἶκος ἠφανισμένος
   chosen: a ruined house
@@ -103,13 +100,12 @@ revisions:
   from: Wisdom to a fool is like a ruined house, and the knowledge of one without understanding is words that cannot be examined.
   to: Wisdom to a fool is like a ruined house, and the knowledge of one without understanding is unsearchable words.
   rationale: Replaced 'words that cannot be examined' with 'unsearchable words' for a more natural and formally concise rendering of ἀδιεξέταστοι λόγοι, while preserving the sense.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Wisdom to a fool is like a ruined house[b][a], and the knowledge of one without understanding is unsearchable words.'
-  to: 'Wisdom to a fool is like a ruined house, and the knowledge of one without understanding is words that cannot be examined.'
+  from: Wisdom to a fool is like a ruined house[b][a], and the knowledge of one without understanding is unsearchable words.
+  to: Wisdom to a fool is like a ruined house, and the knowledge of one without understanding is words that cannot be examined.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''words that cannot be examined''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -119,6 +115,13 @@ revisions:
   from: Wisdom to a fool is like a ruined house, and the knowledge of one without understanding is words that cannot be examined.
   to: Wisdom to a fool is like a ruined house[a], and the knowledge of one without understanding is words that cannot be examined[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('a ruined house') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('words that cannot be examined') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Wisdom to a fool is like a ruined house[a], and the knowledge of one without understanding is words that cannot be examined[b].
+  to: To a fool, wisdom is like a ruined house; the knowledge of one without understanding amounts to incomprehensible talk[a].
+  rationale: I retain 'ruined house,' which the draft and lexical discussion understand as an image of uselessness. Neither 'unsearchable words' nor the restored 'words that cannot be examined' communicates the second line clearly, so I render its likely sense and note the alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +141,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/021/018.job-51546.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wisdom is useless to a fool, and the knowledge of someone without understanding amounts to unintelligible speech.
+  meaning_decisions:
+  - source_phrase: γνῶσις ἀσυνέτου ἀδιεξέταστοι λόγοι
+    prior_rendering: the knowledge of one without understanding is words that cannot be examined
+    new_rendering: the knowledge of one without understanding amounts to incomprehensible talk
+    rationale: The contrast concerns speech from which understanding cannot be gained, not words that are somehow exempt from scrutiny; the serious alternative remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain 'ruined house,' which the draft and lexical discussion understand as an image of uselessness. Neither 'unsearchable words' nor the restored 'words that cannot be examined' communicates the second line clearly, so I render its likely sense and note the alternative.

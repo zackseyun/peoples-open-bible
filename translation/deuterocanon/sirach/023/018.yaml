@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: A man transgressing from his bed says in his soul[a], “Who sees me?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly in context, 'A man who leaves his marriage bed.' The Greek says literally 'a man transgressing/straying from his bed,' a euphemistic expression in this context of sexual sin.
-    reason: lexical_alternative
+  text: A man who strays from his marriage bed says to himself, “Who sees me?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄνθρωπος
   chosen: A man
@@ -106,14 +102,20 @@ revisions:
   from: A man who strays from his bed says in his soul, “Who sees me?”
   to: A man who strays from his bed says in his soul, “Who sees me?”
   rationale: Changed 'who strays from his bed' to 'transgressing from his bed' to reflect the stronger moral sense of παραβαίνων more accurately while keeping the wording formal and concise.
-
 - timestamp: '2026-05-18T02:58:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A man transgressing from his bed says in his soul[a], “Who sees me?”'
-  to: 'A man transgressing from his bed says in his soul[a], “Who sees me?”'
+  from: A man transgressing from his bed says in his soul[a], “Who sees me?”
+  to: A man transgressing from his bed says in his soul[a], “Who sees me?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who strays''].'
+- timestamp: '2026-11-09T19:06:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man transgressing from his bed says in his soul[a], “Who sees me?”
+  to: A man who strays from his marriage bed says to himself, “Who sees me?”
+  rationale: The first draft's 'strays' preserves the bed image more naturally than the recorded revision's 'transgressing from.' I bring the earlier footnote's marital clarification into the text because the immediate context establishes adultery.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +135,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/023/018.job-51601.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An adulterous man reassures himself that no one sees his unfaithfulness.
+  meaning_decisions:
+  - source_phrase: παραβαίνων ἀπὸ τῆς κλίνης αὐτοῦ
+    prior_rendering: transgressing from his bed
+    new_rendering: who strays from his marriage bed
+    rationale: The marriage-bed image expresses marital unfaithfulness, not merely leaving a bed; the clarification preserves both the image and its moral force.
+  - source_phrase: λέγων ἐν τῇ ψυχῇ αὐτοῦ
+    prior_rendering: says in his soul
+    new_rendering: says to himself
+    rationale: This is an internal-speech formula, for which 'says to himself' communicates the meaning naturally without treating soul as a location.
+  footnote_kinds: {}
+  history_weighed: The first draft's 'strays' preserves the bed image more naturally than the recorded revision's 'transgressing from.' I bring the earlier footnote's marital clarification into the text because the immediate context establishes adultery.

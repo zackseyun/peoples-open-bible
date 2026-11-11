@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תֹּ֣אמֶר ל֗/וֹ אַל אוֹדֹ֞ת הָ/רָעָ֤ה הַ/גְּדוֹלָה֙ הַ/זֹּ֔את מֵ/אַחֶ֛רֶת אֲשֶׁר עָשִׂ֥יתָ עִמִּ֖/י לְ/שַׁלְּחֵ֑/נִי וְ/לֹ֥א אָבָ֖ה לִ/שְׁמֹ֥עַֽ לָֽ/הּ־־׃
 translation:
-  text: But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'Do not, because this great wrong—sending me away—is greater than the other that you did to me.' The Hebrew is compressed and difficult, so English must smooth the syntax.
-    reason: lexical_alternative
+  text: But she said to him, “No! Sending me away is an even greater wrong than what you have already done to me.” But he would not listen to her.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַל
   chosen: 'No'
@@ -78,14 +74,20 @@ revisions:
   from: But she said to him, “No, my brother, for this wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
   to: But she said to him, “No, my brother, for this wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
   rationale: 'Removed the supplied words ''my brother'' and adjusted the wording to reflect the Hebrew more closely: ''this great wrong of sending me away is greater than the other that you did to me.'''
-
 - timestamp: '2026-05-17T04:21:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.'
-  to: 'But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.'
+  from: But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
+  to: But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this wrong''].'
+- timestamp: '2026-11-09T17:28:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But she said to him[a], “No, because this great wrong of sending me away is greater than the other that you did to me.” But he would not listen to her.
+  to: But she said to him, “No! Sending me away is an even greater wrong than what you have already done to me.” But he would not listen to her.
+  rationale: The history rightly removes the supplied address “my brother” and identifies sending Tamar away as the wrong under protest. I retain those gains and the established comparison without attempting to explain why Tamar ranks the wrongs this way.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -105,3 +107,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/013/016.job-45663.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Tamar protests that sending her away is an even greater wrong than the assault, but Amnon again refuses to listen.
+  meaning_decisions:
+  - source_phrase: אַל אוֹדֹת הָרָעָה הַגְּדוֹלָה הַזֹּאת מֵאַחֶרֶת אֲשֶׁר עָשִׂיתָ עִמִּי לְשַׁלְּחֵנִי
+    prior_rendering: No, because this great wrong of sending me away is greater than the other that you did to me
+    new_rendering: No! Sending me away is an even greater wrong than what you have already done to me
+    rationale: The difficult, compressed construction is an urgent objection followed by a comparison of wrongs; the new syntax conveys both clearly without redundant comparative wording.
+  footnote_kinds: {}
+  history_weighed: The history rightly removes the supplied address “my brother” and identifies sending Tamar away as the wrong under protest. I retain those gains and the established comparison without attempting to explain why Tamar ranks the wrongs this way.

@@ -22,15 +22,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: so that those men[a], though desiring food, might, because of the appearance of the creatures that had been sent, turn away even from their necessary appetite, while these others, after becoming needy for a short time[b], might partake of a strange taste.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the sight of the things sent against them'; the Greek refers to the plague-creatures God sent, and the wording emphasizes their visible appearance as the cause of revulsion.
-    reason: lexical_alternative
-  - marker: b
-    text: '''A strange taste'' refers to food of an unfamiliar kind, likely anticipating the extraordinary character of the provision given to Israel.'
-    reason: cross_reference
+  text: This was so that the Egyptians, though longing for food, would be repelled by the sight of the creatures sent against them and lose their appetite even for the food they needed, while your people, after a brief shortage of food, would even enjoy an unusual delicacy.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπιθυμοῦντες
   chosen: desiring
@@ -136,7 +129,13 @@ revisions:
   from: so that those men, though desiring food, might, because of the appearance of the creatures that had been sent, turn away even from their necessary appetite, while these others, after becoming needy for a short time, might also partake of a strange taste.
   to: so that those men, though desiring food, might, because of the appearance of the creatures that had been sent, turn away even from their necessary appetite, while these others, after becoming needy for a short time, might partake of a strange taste.
   rationale: Removed 'also' before 'partake,' since καί is not present in the Greek. Kept the rest of the wording, which accurately reflects the source and reads naturally.
-
+- timestamp: '2026-11-09T19:12:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: so that those men[a], though desiring food, might, because of the appearance of the creatures that had been sent, turn away even from their necessary appetite, while these others, after becoming needy for a short time[b], might partake of a strange taste.
+  to: This was so that the Egyptians, though longing for food, would be repelled by the sight of the creatures sent against them and lose their appetite even for the food they needed, while your people, after a brief shortage of food, would even enjoy an unusual delicacy.
+  rationale: I follow the immediate contrast between Egypt’s plague creatures and Israel’s quail rather than the lexical note’s reference to manna. The recorded deletion of “also” rests on a mistaken claim that καί is absent; I represent its emphasis with “even.”
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -156,3 +155,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/016/003.job-39432.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God intended Egypt’s plague creatures to repel even hungry people from food, while Israel’s brief deprivation ended in unusual provision.
+  meaning_decisions:
+  - source_phrase: ἐκεῖνοι μὲν ... αὐτοὶ δὲ
+    prior_rendering: those men ... these others
+    new_rendering: the Egyptians ... your people
+    rationale: Naming the two groups makes the passage’s historical contrast explicit.
+  - source_phrase: διὰ τὴν δειχθεῖσαν τῶν ἐπαπεσταλμένων καὶ τὴν ἀναγκαίαν ὄρεξιν ἀποστρέφωνται
+    prior_rendering: because of the appearance of the creatures that had been sent, turn away even from their necessary appetite
+    new_rendering: be repelled by the sight of the creatures sent against them and lose their appetite even for the food they needed
+    rationale: The point is revulsion strong enough to overcome hunger, not a deliberate turning away from an abstract appetite.
+  - source_phrase: ἐπʼ ὀλίγον ἐνδεεῖς γενόμενοι
+    prior_rendering: after becoming needy for a short time
+    new_rendering: after a brief shortage of food
+    rationale: The surrounding references to hunger and quail establish that the temporary lack concerns food.
+  - source_phrase: καὶ ξένης μετάσχωσι γεύσεως
+    prior_rendering: might partake of a strange taste
+    new_rendering: would even enjoy an unusual delicacy
+    rationale: The phrase describes receiving unusual food, with καί emphasizing provision beyond mere necessity.
+  footnote_kinds: {}
+  history_weighed: I follow the immediate contrast between Egypt’s plague creatures and Israel’s quail rather than the lexical note’s reference to manna. The recorded deletion of “also” rests on a mistaken claim that καί is absent; I represent its emphasis with “even.”

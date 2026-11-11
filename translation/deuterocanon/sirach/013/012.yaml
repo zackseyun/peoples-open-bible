@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 13:12
 translation:
-  text: A cruel man will give a stumbling block and will not spare[b][a]; against the life of many he plots a plot.
-  philosophy: optimal-equivalence
+  text: A cruel man will cause others to stumble and show no mercy; he plots against the lives of many[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''A merciless man is one who does not keep words, and he will certainly not spare with respect to injury and bonds.'' The Greek parallel reflects a substantially different wording in the first half of the verse and supports the general sense of pitiless harm, but the main translation follows the extant Hebrew witness.'
+    text: The Greek instead describes a merciless man who will not keep confidences or spare you mistreatment and imprisonment.
     reason: textual_variant
-  - marker: b
-    text: 'Or more idiomatically, ''he schemes against many lives.'' The Hebrew repeats the same root for emphasis: literally, ''he plots a plot.'''
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: אַכְזָרִי
   chosen: a cruel man
@@ -112,14 +109,20 @@ revisions:
   from: A cruel man will give a stumbling block and will not spare; against the life of many he plots a plot.
   to: A cruel man gives a stumbling block and does not spare; against the lives of many he devises a scheme.
   rationale: Adjusted verbs to simple present for proverbial style, changed 'life' to 'lives' to reflect the plural sense with 'many,' and rendered the final phrase more naturally as 'devises a scheme' instead of the wooden 'plots a plot.'
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A cruel man gives a stumbling block and does not spare[b][a]; against the lives of many he devises a scheme.'
-  to: 'A cruel man will give a stumbling block and will not spare[b][a]; against the life of many he plots a plot.'
-  rationale: 'Restored future tense, singular נֶפֶשׁ, and cognate ''plots a plot''.'
+  from: A cruel man gives a stumbling block and does not spare[b][a]; against the lives of many he devises a scheme.
+  to: A cruel man will give a stumbling block and will not spare[b][a]; against the life of many he plots a plot.
+  rationale: Restored future tense, singular נֶפֶשׁ, and cognate 'plots a plot'.
+- timestamp: '2026-11-09T19:05:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A cruel man will give a stumbling block and will not spare[b][a]; against the life of many he plots a plot.
+  to: A cruel man will cause others to stumble and show no mercy; he plots against the lives of many[a].
+  rationale: The earlier review correctly sought natural English for the collective 'life' and cognate 'plots a plot'; the subsequent automated revert privileged grammatical shape instead. I recover those gains while retaining the warning's future tense and repairing the footnote presentation.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -139,3 +142,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/013/012.job-51311.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:09Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A cruel man brings others to ruin without compassion and plots against many lives.
+  meaning_decisions:
+  - source_phrase: יִתֵּן כֹּשֶׂל
+    prior_rendering: will give a stumbling block
+    new_rendering: will cause others to stumble
+    rationale: The natural English preserves the stumbling image while making its harmful effect intelligible.
+  - source_phrase: וְלֹא יַחְמוֹל
+    prior_rendering: and will not spare
+    new_rendering: and show no mercy
+    rationale: This clearly expresses the cruel man's pitilessness without leaving 'spare' without an object.
+  - source_phrase: עַל נֶפֶשׁ רַבִּים קוֹשֵׂר קָשֶר
+    prior_rendering: against the life of many he plots a plot
+    new_rendering: he plots against the lives of many
+    rationale: The collective Hebrew singular requires plural 'lives' in natural English, and the cognate construction expresses plotting rather than a separate object that must be repeated.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier review correctly sought natural English for the collective 'life' and cognate 'plots a plot'; the subsequent automated revert privileged grammatical shape instead. I recover those gains while retaining the warning's future tense and repairing the footnote presentation.

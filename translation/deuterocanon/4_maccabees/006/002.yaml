@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And first they stripped the old man[a], adorned with the dignity of godliness.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''piety'': ''the seemly grace associated with piety.'''
-    reason: lexical_alternative
+  text: First they stripped the old man, who was adorned with the dignity of godliness.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πρῶτον μὲν
   chosen: And first
@@ -106,14 +102,20 @@ revisions:
   from: And first they stripped the old man of the noble bearing with which he was adorned in regard to godliness.
   to: And first they stripped the old man of the noble bearing with which he was adorned in regard to godliness.
   rationale: Simplified the syntax for more natural formal English, while preserving the sense of περιέδυσαν as 'stripped' and ἐκκεκοσμημένον... εὐσχημοσύνην as being 'adorned with the dignity of godliness.'
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And first they stripped the old man[a], adorned with the dignity of godliness.'
-  to: 'And first they stripped the old man[a], adorned with the dignity of godliness.'
+  from: And first they stripped the old man[a], adorned with the dignity of godliness.
+  to: And first they stripped the old man[a], adorned with the dignity of godliness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the noble bearing with which he was adorned in regard to godliness''].'
+- timestamp: '2026-11-09T20:33:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And first they stripped the old man[a], adorned with the dignity of godliness.
+  to: First they stripped the old man, who was adorned with the dignity of godliness.
+  rationale: The current wording correctly distinguishes stripping the man from removing his dignity, unlike the potentially misleading first draft. With no maintainer revision recorded, I retained that gain and the established rendering “godliness,” dropping the footnote because it offered only synonymous wording.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -133,3 +135,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/006/002.job-49852.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:33:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The guards first stripped the old man, whose godliness gave him dignity.
+  meaning_decisions:
+  - source_phrase: ἐκκεκοσμημένον τὴν περὶ τὴν εὐσέβειαν εὐσχημοσύνην
+    prior_rendering: adorned with the dignity of godliness
+    new_rendering: who was adorned with the dignity of godliness
+    rationale: The relative clause clearly identifies dignity as Eleazar’s adornment, preserving the contrast with his physical stripping without suggesting that his godliness was taken away.
+  footnote_kinds: {}
+  history_weighed: The current wording correctly distinguishes stripping the man from removing his dignity, unlike the potentially misleading first draft. With no maintainer revision recorded, I retained that gain and the established rendering “godliness,” dropping the footnote because it offered only synonymous wording.

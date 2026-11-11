@@ -12,12 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the punishment he deserved,
-  philosophy: optimal-equivalence
+  text: For the very man who brought about these things has been executed on a stake[a] at the gates of Susa, together with his whole household, since God, who rules over all, swiftly repaid him with the punishment he deserved.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'was impaled' or 'was hanged on a stake.' The Greek verb can denote execution on a stake or cross; the exact Persian method need not have matched later Roman crucifixion.
-    reason: lexical_alternative
+    text: Or, 'impaled' or 'crucified'; the Greek term does not specify the precise method used in this Persian setting.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: διὰ τὸ
   chosen: because
@@ -118,14 +118,20 @@ revisions:
   from: because the very man who had brought about these things was crucified at the gate of Susa with his whole household, since God, who rules over all, swiftly repaid him with the punishment he deserved,
   to: because the very man who had brought about these things was crucified at the gate of Susa with his whole household, since God, who rules over all, swiftly repaid him with the judgment he deserved,
   rationale: Changed 'punishment' to 'judgment' to reflect κρίσιν more accurately and formally. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-16T15:52:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the judgment he deserved,'
-  to: 'because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the punishment he deserved,'
-  rationale: 'Restored drafter ''the punishment he deserved'' (preserving the chosen retributive nuance of κρίσιν as punishment) per chosen renderings.'
+  from: because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the judgment he deserved,
+  to: because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the punishment he deserved,
+  rationale: Restored drafter 'the punishment he deserved' (preserving the chosen retributive nuance of κρίσιν as punishment) per chosen renderings.
+- timestamp: '2026-11-09T19:00:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because the very man who had brought about these things was crucified at the gate of Susa with his whole household[a], since God, who rules over all, swiftly repaid him with the punishment he deserved,
+  to: For the very man who brought about these things has been executed on a stake[a] at the gates of Susa, together with his whole household, since God, who rules over all, swiftly repaid him with the punishment he deserved.
+  rationale: The existing execution footnote rightly warned against assuming Roman crucifixion, and that caution now shapes the main text. The history's debate over 'judgment' and 'punishment' supports retaining 'the punishment he deserved,' which conveys the full phrase's judicial and retributive meaning; there is no MAINTAINER revision.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +151,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/018.job-50296.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Haman and his entire household have been executed at Susa, a punishment attributed to God's swift and deserved judgment.
+  meaning_decisions:
+  - source_phrase: ἐσταυρῶσθαι
+    prior_rendering: was crucified
+    new_rendering: has been executed on a stake
+    rationale: The Greek describes punishment on a stake or cross; the broader wording avoids imposing the familiar Roman form of crucifixion on the Persian setting and preserves the completed state.
+  - source_phrase: πρὸς ταῖς Σούσων πύλαις
+    prior_rendering: at the gate of Susa
+    new_rendering: at the gates of Susa
+    rationale: The plural is natural English for a city's gates and does not require the earlier reduction to a single gate.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The existing execution footnote rightly warned against assuming Roman crucifixion, and that caution now shapes the main text. The history's debate over 'judgment' and 'punishment' supports retaining 'the punishment he deserved,' which conveys the full phrase's judicial and retributive meaning; there is no MAINTAINER revision.

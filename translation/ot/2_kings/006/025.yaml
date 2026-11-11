@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וַ/יְהִ֨י רָעָ֤ב גָּדוֹל֙ בְּ/שֹׁ֣מְר֔וֹן וְ/הִנֵּ֖ה צָרִ֣ים עָלֶ֑י/הָ עַ֣ד הֱי֤וֹת רֹאשׁ חֲמוֹר֙ בִּ/שְׁמֹנִ֣ים כֶּ֔סֶף וְ/רֹ֛בַע הַ/קַּ֥ב חרי יונים בַּ/חֲמִשָּׁה כָֽסֶף־־׃
 translation:
-  text: And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.
-  philosophy: optimal-equivalence
+  text: There was a severe famine in Samaria. The siege continued until a donkey’s head sold for eighty pieces of silver, and a quarter of a kab[a] of dove’s dung[b] for five pieces of silver.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'pigeon dung.' Some interpreters understand 'dove’s dung' as the literal substance; others take it as the name of a cheap food item or plant product sold during the famine.
-    reason: lexical_alternative
+    text: A quarter of a kab was about a cup, roughly 0.3 liters.
+    reason: cultural_note
+  - marker: b
+    text: Some understand “dove’s dung” as the name of a cheap plant food rather than actual dung.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And there was
@@ -107,14 +110,20 @@ revisions:
   from: And there was a great famine in Samaria; and behold, they were besieging it until a donkey’s head was worth eighty pieces of silver, and a fourth of a kab of dove’s dung was worth five pieces of silver.
   to: And there was a great famine in Samaria; and behold, they were besieging it until a donkey’s head was worth eighty pieces of silver, and a fourth of a kab of dove’s dung was worth five pieces of silver.
   rationale: Removed the repeated 'was worth' for a more literal and formal rendering of the price clauses, while preserving all source elements.
-
 - timestamp: '2026-05-18T02:58:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.'
-  to: 'And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.'
+  from: And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.
+  to: And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was worth five pieces of silver''].'
+- timestamp: '2026-11-09T17:27:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there was a great famine in Samaria; and behold[a], they were besieging it until a donkey’s head was eighty pieces of silver, and a fourth of a kab of dove’s dung was five pieces of silver.
+  to: There was a severe famine in Samaria. The siege continued until a donkey’s head sold for eighty pieces of silver, and a quarter of a kab[a] of dove’s dung[b] for five pieces of silver.
+  rationale: The first draft’s “was worth” correctly recognized price clauses, despite a later pass removing those words for literalness. I restore explicit pricing, retain the disturbing concrete items, and keep the documented uncertainty about dove’s dung.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +143,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/006/025.job-60421.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The prolonged siege causes such severe hunger that even a donkey’s head and a tiny quantity of dove’s dung command high prices.
+  meaning_decisions:
+  - source_phrase: רָעָב גָּדוֹל
+    prior_rendering: a great famine
+    new_rendering: a severe famine
+    rationale: The adjective describes the famine’s intensity, demonstrated by the desperate purchases that follow.
+  - source_phrase: צָרִים עָלֶיהָ עַד הֱיוֹת
+    prior_rendering: they were besieging it until ... was
+    new_rendering: The siege continued until ... sold for
+    rationale: The construction links the continuing siege to extreme scarcity and resulting prices; “sold for” makes the monetary clauses intelligible.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The first draft’s “was worth” correctly recognized price clauses, despite a later pass removing those words for literalness. I restore explicit pricing, retain the disturbing concrete items, and keep the documented uncertainty about dove’s dung.

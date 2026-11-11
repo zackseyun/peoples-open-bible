@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: אִם כֵּנִ֣ים אַתֶּ֔ם אֲחִי/כֶ֣ם אֶחָ֔ד יֵאָסֵ֖ר בְּ/בֵ֣ית מִשְׁמַרְ/כֶ֑ם וְ/אַתֶּם֙ לְכ֣וּ הָבִ֔יאוּ שֶׁ֖בֶר רַעֲב֥וֹן בָּתֵּי/כֶֽם־׃
 translation:
-  text: If you are honest[a], let one of your brothers be confined in your place of custody, and you[c][b], go and bring grain for the famine of your households.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'If you are truthful men.' The Hebrew adjective can be rendered more formally as 'true' or 'truthful.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'in the house of your custody.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'and you go, bring grain for the famine of your households'.
-    reason: previous_rendering
+  text: If you are honest, let one of your brothers remain here in custody, while the rest of you go and take grain back to your famine-stricken households.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כֵּנִים
   chosen: honest
@@ -109,12 +99,18 @@ revisions:
   from: If you are honest, let one of your brothers be confined in your place of custody, but you, go and bring grain for your hungry households.
   to: If you are honest, let one of your brothers be confined in your place of custody, and you, go and bring grain for the famine of your households.
   rationale: Replaced 'but' with 'and' to match the simple conjunction, and revised 'for your hungry households' to 'for the famine of your households' to more closely reflect the Hebrew wording without interpretive expansion.
+- timestamp: '2026-11-09T17:45:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you are honest[a], let one of your brothers be confined in your place of custody, and you[c][b], go and bring grain for the famine of your households.
+  to: If you are honest, let one of your brothers remain here in custody, while the rest of you go and take grain back to your famine-stricken households.
+  rationale: The earlier review rightly identified both the contrast between the brothers and the household phrase’s awkwardness, but the later revision reversed those gains for closer formal correspondence. I recover that clarity while retaining “households” and the explicit severity of famine rather than reducing it to ordinary hunger.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:47Z'
   unchanged: false
   changes_summary: Replaced 'but' with 'and' to match the simple conjunction, and revised 'for your hungry households' to 'for the famine of your households' to more closely reflect the Hebrew wording without interpretive expansion.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +133,29 @@ cross_check:
   verdict_counts:
     minor-issues: 4
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/042/019.job-37753.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joseph requires only one brother to remain in custody and directs the others to carry grain home for their famine-stricken households.
+  meaning_decisions:
+  - source_phrase: אֲחִיכֶם אֶחָד יֵאָסֵר בְּבֵית מִשְׁמַרְכֶם
+    prior_rendering: let one of your brothers be confined in your place of custody
+    new_rendering: let one of your brothers remain here in custody
+    rationale: One brother is to stay in the confinement where all have been held, not enter a place that belongs to them; the English makes that custodial relationship clear.
+  - source_phrase: וְאַתֶּם לְכוּ הָבִיאוּ
+    prior_rendering: and you, go and bring
+    new_rendering: while the rest of you go and take ... back
+    rationale: The independent pronoun contrasts the departing brothers with the one detained, and the grain’s destination is their home rather than Joseph’s location.
+  - source_phrase: שֶׁבֶר רַעֲבוֹן בָּתֵּיכֶם
+    prior_rendering: grain for the famine of your households
+    new_rendering: grain ... to your famine-stricken households
+    rationale: The compressed phrase means grain for the people at home who are suffering from famine; the new wording preserves that severity without the unnatural “famine of” construction.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly identified both the contrast between the brothers and the household phrase’s awkwardness, but the later revision reversed those gains for closer formal correspondence. I recover that clarity while retaining “households” and the explicit severity of famine rather than reducing it to ordinary hunger.

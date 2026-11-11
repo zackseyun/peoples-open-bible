@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'remained there in it.' The double locative likely emphasizes that he stayed in the city itself.
-    reason: lexical_alternative
+  text: Simon sent Jonathan son of Absalom to Joppa with a considerable force. Jonathan drove out those who were in the city and remained there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέστειλεν
   chosen: sent
@@ -91,14 +87,20 @@ revisions:
   from: And Jonathan son of Absalom sent a considerable force with him to Joppa, and he drove out those who were in it and remained there in it.
   to: And Jonathan son of Absalom sent a considerable force with him to Joppa, and he drove out those who were in it and remained there in it.
   rationale: Removed the redundant final 'in it,' since the Greek's second ἐν αὐτῇ is naturally represented by 'there' in English. Retained 'considerable force' and the rest of the wording.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.'
-  to: 'And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.'
+  from: And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.
+  to: And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remained there in it''].'
+- timestamp: '2026-11-09T18:52:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jonathan son of Absalom sent a considerable force with him to Joppa[a], and he drove out those who were in it and remained there.
+  to: Simon sent Jonathan son of Absalom to Joppa with a considerable force. Jonathan drove out those who were in the city and remained there.
+  rationale: The recorded review addressed only the redundant final location phrase and missed the mistaken subject of 'sent.' I retain its useful simplification to 'remained there' but correct the sentence’s central action from the Greek.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -118,3 +120,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/011.job-48735.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon sends Jonathan son of Absalom with a substantial force to Joppa, where Jonathan expels those present and remains.
+  meaning_decisions:
+  - source_phrase: ἀπέστειλεν Ἰωνάθαν τὸν τοῦ Ἀψαλώμου καὶ μετʼ αὐτοῦ δύναμιν ἱκανὴν
+    prior_rendering: Jonathan son of Absalom sent a considerable force with him
+    new_rendering: Simon sent Jonathan son of Absalom to Joppa with a considerable force
+    rationale: Jonathan is the object of 'sent,' as the accusative construction shows; Simon remains the subject from verse 10.
+  - source_phrase: ἐξέβαλεν τοὺς ἐν αὐτῇ ὄντας
+    prior_rendering: he drove out those who were in it
+    new_rendering: Jonathan drove out those who were in the city
+    rationale: Naming Jonathan makes the change of acting subject clear, while 'the city' clarifies the pronoun without specifying who was expelled.
+  footnote_kinds: {}
+  history_weighed: The recorded review addressed only the redundant final location phrase and missed the mistaken subject of 'sent.' I retain its useful simplification to 'remained there' but correct the sentence’s central action from the Greek.

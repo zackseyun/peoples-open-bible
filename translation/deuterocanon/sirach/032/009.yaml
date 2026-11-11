@@ -26,15 +26,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 32:9
 translation:
-  text: Before hail[a], lightning flashes forth; and before a modest man[b], favor goes before him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek witness supplied here reads instead, 'The sacrifice of a righteous man is acceptable, and its memorial will not be forgotten,' reflecting a different textual tradition or verse alignment than the extant Hebrew.
-    reason: textual_variant
-  - marker: b
-    text: Or 'the humble' / 'the lowly' for 'a modest man.' The Hebrew term can denote one who is humble or brought low.
-    reason: lexical_alternative
+  text: Among elders, do not push yourself forward, and do not keep troubling the leaders. As lightning flashes before hail, so favor goes before a humble man.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לִפְנֵי
   chosen: before
@@ -114,13 +107,12 @@ revisions:
   from: Before hail, lightning flashes forth; and before a modest man, favor goes before him.
   to: Before hail, lightning flashes forth; and before the humble, favor goes forth.
   rationale: 'Revised the second clause for lexical accuracy and naturalness: changed ''a modest man'' to ''the humble'' to better reflect דכא, and removed the added ''him'' since it is not in the Hebrew. Also matched the verb more closely with ''goes forth'' for consistency with ינצח.'
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Before hail[a], lightning flashes forth; and before the humble[b], favor goes forth.'
-  to: 'Before hail, lightning flashes forth; and before a modest man, favor goes before him.'
+  from: Before hail[a], lightning flashes forth; and before the humble[b], favor goes forth.
+  to: Before hail, lightning flashes forth; and before a modest man, favor goes before him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a modest man''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +122,13 @@ revisions:
   from: Before hail, lightning flashes forth; and before a modest man, favor goes before him.
   to: Before hail[a], lightning flashes forth; and before a modest man[b], favor goes before him.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('a modest man') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Before hail[a], lightning flashes forth; and before a modest man[b], favor goes before him.
+  to: Among elders, do not push yourself forward, and do not keep troubling the leaders. As lightning flashes before hail, so favor goes before a humble man.
+  rationale: An earlier review recognized the stronger lexical basis for “humble,” but an automated revert restored the draft without a meaning-based objection. I adopt that gain while retaining the masculine singular person and restoring the omitted opening counsel.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -149,3 +148,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/032/009.job-51858.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A young person should avoid pushing himself forward among elders and leaders, since humility brings favor ahead of him.
+  meaning_decisions:
+  - source_phrase: בין זקנים אל תתקומם, ושרים אל תרב לטרד
+    prior_rendering: Omitted.
+    new_rendering: Among elders, do not push yourself forward, and do not keep troubling the leaders
+    rationale: The supplied opening continues the instructions to the young man and gives the social setting for the following commendation of humility.
+  - source_phrase: ולפני דכא ינצח חן
+    prior_rendering: and before a modest man, favor goes before him
+    new_rendering: so favor goes before a humble man
+    rationale: “Humble” better conveys דכא in this ethical setting, and the revised syntax preserves the preceding-favor image without redundant wording.
+  footnote_kinds: {}
+  history_weighed: An earlier review recognized the stronger lexical basis for “humble,” but an automated revert restored the draft without a meaning-based objection. I adopt that gain while retaining the masculine singular person and restoring the omitted opening counsel.

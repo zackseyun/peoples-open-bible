@@ -23,11 +23,11 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: And he gave them over as subjects to all the kingdoms around us[a], for reproach and desolation among all the peoples around whom the Lord scattered them there.
-  philosophy: optimal-equivalence
+  text: He handed them over to the power of all the kingdoms around us, to suffer reproach and desolation[a] among all the surrounding peoples, where the Lord scattered them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'an impassable waste.' The Greek term rendered 'desolation' can more literally denote something untrodden or inaccessible.
+    text: Literally, 'an untrodden place' or 'an impassable waste.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔδωκεν
@@ -137,7 +137,13 @@ revisions:
   from: And he gave them over as subjects to all the kingdoms around us, for reproach and desolation among all the peoples around us, where the Lord scattered them.
   to: And he gave them over as subjects to all the kingdoms around us, for reproach and desolation among all the peoples around whom the Lord scattered them there.
   rationale: 'Adjusted the final clause to reflect the Greek more fully: ''around whom'' instead of repeating ''around us,'' and included ''there'' for ἐκεῖ. Kept the rest substantially unchanged.'
-
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he gave them over as subjects to all the kingdoms around us[a], for reproach and desolation among all the peoples around whom the Lord scattered them there.
+  to: He handed them over to the power of all the kingdoms around us, to suffer reproach and desolation[a] among all the surrounding peoples, where the Lord scattered them.
+  rationale: The lexical discussion supports political subjugation and devastation. The later revision's 'around whom ... there' obscures the geographical relationship, so I recover the clearer relationship already present in the first draft.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +163,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/002/004.job-50339.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Lord subjected the people to surrounding kingdoms and scattered them among neighboring peoples in disgrace and devastation.
+  meaning_decisions:
+  - source_phrase: ἔδωκεν αὐτοὺς ὑποχειρίους
+    prior_rendering: gave them over as subjects
+    new_rendering: handed them over to the power
+    rationale: The adjective describes subjugation to another's power, not simply membership among a kingdom's subjects.
+  - source_phrase: εἰς ὀνειδισμὸν καὶ ἄβατον
+    prior_rendering: for reproach and desolation
+    new_rendering: to suffer reproach and desolation
+    rationale: The supplied verb makes the resulting condition of the scattered people explicit.
+  - source_phrase: ἐν πᾶσι τοῖς λαοῖς τοῖς κύκλῳ οὗ διέσπειρεν αὐτοὺς Κύριος ἐκεῖ
+    prior_rendering: among all the peoples around whom the Lord scattered them there
+    new_rendering: among all the surrounding peoples, where the Lord scattered them
+    rationale: The surrounding peoples are the setting of their dispersion; the resumptive 'there' does not require a second English location expression.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The lexical discussion supports political subjugation and devastation. The later revision's 'around whom ... there' obscures the geographical relationship, so I recover the clearer relationship already present in the first draft.

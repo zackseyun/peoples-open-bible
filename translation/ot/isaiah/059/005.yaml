@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: בֵּיצֵ֤י צִפְעוֹנִי֙ בִּקֵּ֔עוּ וְ/קוּרֵ֥י עַכָּבִ֖ישׁ יֶאֱרֹ֑גוּ הָ/אֹכֵ֤ל מִ/בֵּֽיצֵי/הֶם֙ יָמ֔וּת וְ/הַ/זּוּרֶ֖ה תִּבָּקַ֥ע אֶפְעֶֽה׃
 translation:
-  text: They hatch viper's eggs and weave spider's webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'adder's eggs' for 'viper's eggs'; both terms refer to a poisonous snake.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew literally 'is split open'; the sense is that when one of their eggs is crushed, a venomous snake emerges.
-    reason: lexical_alternative
+  text: They hatch vipers’ eggs and weave spiders’ webs; whoever eats their eggs dies, and when one is crushed, a viper breaks out.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בֵּיצֵי צִפְעוֹנִי
   chosen: viper's eggs
@@ -99,14 +92,20 @@ revisions:
   from: They hatch viper's eggs and weave spider's webs; whoever eats from their eggs dies, and what is crushed breaks open into a viper.
   to: They hatch vipers' eggs and weave spiders' webs; whoever eats from their eggs dies, and what is crushed breaks open into a viper.
   rationale: 'Adjusted singular possessives to plurals for more natural and contextually consistent English: ''viper''s eggs'' to ''vipers'' eggs'' and ''spider''s webs'' to ''spiders'' webs.'''
-
 - timestamp: '2026-05-15T23:24:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They hatch vipers'' eggs and weave spiders'' webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.'
-  to: 'They hatch viper''s eggs and weave spider''s webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.'
-  rationale: 'Azure changed drafter''s singular possessive forms ''viper''s eggs'' / ''spider''s webs'' to plural possessive on stylistic grounds. Drafter explicitly chose singular possessive matching Hebrew construct phrases (בֵּיצֵי צִפְעוֹנִי, קוּרֵי עַכָּבִישׁ).'
+  from: They hatch vipers' eggs and weave spiders' webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.
+  to: They hatch viper's eggs and weave spider's webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.
+  rationale: Azure changed drafter's singular possessive forms 'viper's eggs' / 'spider's webs' to plural possessive on stylistic grounds. Drafter explicitly chose singular possessive matching Hebrew construct phrases (בֵּיצֵי צִפְעוֹנִי, קוּרֵי עַכָּבִישׁ).
+- timestamp: '2026-11-09T17:55:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They hatch viper's eggs and weave spider's webs[a]; whoever eats from their eggs dies[b], and what is crushed breaks open into a viper.
+  to: They hatch vipers’ eggs and weave spiders’ webs; whoever eats their eggs dies, and when one is crushed, a viper breaks out.
+  rationale: The existing lexical decisions and footnote support the picture of a crushed egg releasing a snake, which the main text now expresses directly. I also use natural generic plural possessives; the automated revert's insistence on singular possessives carries no meaning-based advantage.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -126,3 +125,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/059/005.job-66982.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:31Z'
+  change_level: refined
+  confidence: medium
+  meaning: What these people produce is both dangerously poisonous and insubstantial, like snake eggs and spiderwebs.
+  meaning_decisions:
+  - source_phrase: וְהַזּוּרֶה תִּבָּקַע אֶפְעֶה
+    prior_rendering: and what is crushed breaks open into a viper
+    new_rendering: and when one is crushed, a viper breaks out
+    rationale: The egg releases a venomous snake; it does not transform into one. Naming the implied egg through “one” and making the snake the subject clarifies the inherited understanding without explaining away the metaphor.
+  footnote_kinds: {}
+  history_weighed: The existing lexical decisions and footnote support the picture of a crushed egg releasing a snake, which the main text now expresses directly. I also use natural generic plural possessives; the automated revert's insistence on singular possessives carries no meaning-based advantage.

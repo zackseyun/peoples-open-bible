@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ γὰρ ὅτε ἦμεν πρὸς ὑμᾶς, τοῦτο παρηγγέλλομεν ὑμῖν, ὅτι εἴ τις οὐ θέλει ἐργάζεσθαι μηδὲ ἐσθιέτω.
 translation:
-  text: 'For even when we were with you, we kept commanding you this: if anyone is not willing to work[b], neither let him eat[a].'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'let him not eat.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says 'is not willing to work,' referring to unwillingness, not inability.
-    reason: lexical_alternative
+  text: 'For even when we were with you, we kept giving you this command: If anyone is unwilling to work, he is not to eat either.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καὶ γὰρ
   chosen: For even
@@ -106,7 +99,6 @@ revisions:
   from: 'For even when we were with you, we kept commanding you this: if anyone is not willing to work, neither let him eat.'
   to: 'For even when we were with you, we were commanding you this: if anyone is not willing to work, neither let him eat.'
   rationale: Changed 'we kept commanding' to 'we were commanding' for a more natural rendering of the imperfect while preserving the sense of repeated instruction. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -122,6 +114,13 @@ revisions:
   from: 'For even when we were with you, we kept commanding you this: if anyone is not willing to work, neither let him eat.'
   to: 'For even when we were with you, we kept commanding you this: if anyone is not willing to work[b], neither let him eat[a].'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('neither let him eat') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('is not willing to work') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:04:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For even when we were with you, we kept commanding you this: if anyone is not willing to work[b], neither let him eat[a].'
+  to: 'For even when we were with you, we kept giving you this command: If anyone is unwilling to work, he is not to eat either.'
+  rationale: The earlier review and subsequent revert differed over how to express the imperfect; I preserve the repeated instruction in more natural English. The distinction between unwillingness and inability is explicit in the translation, so its footnote is unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -141,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_thessalonians/003/010.job-53714.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:04:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul reminds them of his repeated command that anyone unwilling to work is not to eat either.
+  meaning_decisions:
+  - source_phrase: τοῦτο παρηγγέλλομεν ὑμῖν
+    prior_rendering: we kept commanding you this
+    new_rendering: we kept giving you this command
+    rationale: This preserves the repeated, authoritative instruction while expressing it more naturally in English.
+  - source_phrase: εἴ τις οὐ θέλει ἐργάζεσθαι μηδὲ ἐσθιέτω
+    prior_rendering: if anyone is not willing to work, neither let him eat
+    new_rendering: If anyone is unwilling to work, he is not to eat either
+    rationale: The wording preserves unwillingness rather than inability and gives the consequence clear directive force without the awkward placement of 'neither.'
+  footnote_kinds: {}
+  history_weighed: The earlier review and subsequent revert differed over how to express the imperfect; I preserve the repeated instruction in more natural English. The distinction between unwillingness and inability is explicit in the translation, so its footnote is unnecessary.

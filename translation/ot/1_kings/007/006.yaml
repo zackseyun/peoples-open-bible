@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/אֵ֨ת אוּלָ֤ם הָֽ/עַמּוּדִים֙ עָשָׂ֔ה חֲמִשִּׁ֤ים אַמָּה֙ אָרְכּ֔/וֹ וּ/שְׁלֹשִׁ֥ים אַמָּ֖ה רָחְבּ֑/וֹ וְ/אוּלָם֙ עַל פְּנֵי/הֶ֔ם וְ/עַמֻּדִ֥ים וְ/עָ֖ב עַל פְּנֵי/הֶֽם־־׃
 translation:
-  text: He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.
-  philosophy: optimal-equivalence
+  text: He built the Hall of Pillars, fifty cubits long and thirty cubits wide. A porch stood in front of it, with pillars and a canopy[a] in front of the porch.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'portico' for both occurrences of אוּלָם; the Hebrew uses the same term twice, but the second likely refers to a frontal porch-like feature attached to the Hall of Pillars.
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew word rendered 'canopy' (עָב) is uncertain in this architectural context; alternatives include 'threshold,' 'beamwork,' or another covered structural element.
-    reason: lexical_alternative
+    text: Or 'threshold' or 'beamwork'; the Hebrew architectural term is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אוּלָם
   chosen: Hall
@@ -96,14 +93,20 @@ revisions:
   from: He made the Hall of Pillars fifty cubits long and thirty cubits wide, with a porch in front of them, and pillars and a canopy in front of them.
   to: He made the Hall of Pillars fifty cubits long and thirty cubits wide, with a porch in front of them, and pillars and a canopy in front of them.
   rationale: Replaced 'canopy' with 'threshold' for closer lexical accuracy to עָב, while preserving the structure and formal tone of the draft.
-
 - timestamp: '2026-05-18T02:56:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.'
-  to: 'He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.'
+  from: He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.
+  to: He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and a canopy''].'
+- timestamp: '2026-11-09T17:22:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He made the Hall of Pillars fifty cubits long and thirty cubits wide[a], with a porch in front of them[b], and pillars and a threshold in front of them.
+  to: He built the Hall of Pillars, fifty cubits long and thirty cubits wide. A porch stood in front of it, with pillars and a canopy[a] in front of the porch.
+  rationale: The first draft and lexical record favored 'canopy,' while an automated pass substituted 'threshold' without settling the uncertainty. I follow the documented covering interpretation and preserve the other architectural possibilities in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +126,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/007/006.job-58200.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:04Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Solomon built the Hall of Pillars with a projecting porch and additional pillars and a covering at its front.
+  meaning_decisions:
+  - source_phrase: וְאֵת אוּלָם הָעַמּוּדִים עָשָׂה
+    prior_rendering: He made the Hall of Pillars
+    new_rendering: He built the Hall of Pillars
+    rationale: In this architectural context, 'built' naturally expresses what the general Hebrew verb 'made' means.
+  - source_phrase: וְאוּלָם עַל פְּנֵיהֶם וְעַמֻּדִים וְעָב עַל פְּנֵיהֶם
+    prior_rendering: with a porch in front of them, and pillars and a threshold in front of them
+    new_rendering: A porch stood in front of it, with pillars and a canopy in front of the porch
+    rationale: The likely sequence of front-facing structures is made intelligible in English, and the uncertain final element is understood as a projecting covering.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical record favored 'canopy,' while an automated pass substituted 'threshold' without settling the uncertainty. I follow the documented covering interpretation and preserve the other architectural possibilities in a note.

@@ -28,15 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:27
 translation:
-  text: And there is a wise man who is wise for himself[b][a]; the fruit of his understanding is upon his own body.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'for his soul'; here likely meaning 'for himself' or 'for his own life.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'body'; the noun can in some contexts mean 'corpse,' but here it refers to the living person who benefits from his understanding.
-    reason: lexical_alternative
+  text: There is also a wise man who uses his wisdom for his own good; his own body enjoys the fruit of his understanding.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיֵשׁ
   chosen: And there is
@@ -140,14 +133,20 @@ revisions:
   from: And there is a wise man who is wise for himself; the fruit of his understanding is upon his own body.
   to: And there is a wise man who is wise for himself; the fruit of his knowledge is upon his body.
   rationale: Changed 'understanding' to 'knowledge' to more directly reflect דַעְתּוֹ. Kept the rest of the wording, which is accurate and natural enough for a formal translation.
-
 - timestamp: '2026-05-16T12:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And there is a wise man who is wise for himself[b][a]; the fruit of his knowledge is upon his body.'
-  to: 'And there is a wise man who is wise for himself[b][a]; the fruit of his understanding is upon his own body.'
-  rationale: 'Restored drafter ''his understanding'' (preserving דַעְתּוֹ as practical-wisdom yield) and ''his own body'' (emphatic reflexive) per chosen renderings.'
+  from: And there is a wise man who is wise for himself[b][a]; the fruit of his knowledge is upon his body.
+  to: And there is a wise man who is wise for himself[b][a]; the fruit of his understanding is upon his own body.
+  rationale: Restored drafter 'his understanding' (preserving דַעְתּוֹ as practical-wisdom yield) and 'his own body' (emphatic reflexive) per chosen renderings.
+- timestamp: '2026-11-09T19:08:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And there is a wise man who is wise for himself[b][a]; the fruit of his understanding is upon his own body.
+  to: There is also a wise man who uses his wisdom for his own good; his own body enjoys the fruit of his understanding.
+  rationale: The later revert's 'understanding' rightly keeps practical discernment rather than merely information, and 'own body' preserves the contrast with verse 28. I retain both while expressing what it means for wisdom's fruit to be 'upon' him.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -167,3 +166,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/037/027.job-52039.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Another wise man applies his wisdom for his own benefit and enjoys its fruit in his bodily life.
+  meaning_decisions:
+  - source_phrase: ויש חכם לנפשו יחכם
+    prior_rendering: And there is a wise man who is wise for himself
+    new_rendering: There is also a wise man who uses his wisdom for his own good
+    rationale: The verse describes wisdom benefiting its possessor, not an isolated or merely inward kind of wisdom.
+  - source_phrase: פרי דעתו על גויתו
+    prior_rendering: the fruit of his understanding is upon his own body
+    new_rendering: his own body enjoys the fruit of his understanding
+    rationale: The fruit metaphor concerns tangible benefit to the living person, not fruit physically resting on his body.
+  footnote_kinds: {}
+  history_weighed: The later revert's 'understanding' rightly keeps practical discernment rather than merely information, and 'own body' preserves the contrast with verse 28. I retain both while expressing what it means for wisdom's fruit to be 'upon' him.

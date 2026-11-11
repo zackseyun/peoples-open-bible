@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/הָיָ֣ה כָל נֶ֣פֶשׁ חַיָּ֣ה אֲֽשֶׁר יִשְׁרֹ֡ץ אֶ֣ל כָּל אֲשֶׁר֩ יָב֨וֹא שָׁ֤ם נַחֲלַ֨יִם֙ יִֽחְיֶ֔ה וְ/הָיָ֥ה הַ/דָּגָ֖ה רַבָּ֣ה מְאֹ֑ד כִּי֩ בָ֨אוּ שָׁ֜מָּ/ה הַ/מַּ֣יִם הָ/אֵ֗לֶּה וְ/יֵרָֽפְאוּ֙ וָ/חָ֔י כֹּ֛ל אֲשֶׁר יָ֥בוֹא שָׁ֖מָּ/ה הַ/נָּֽחַל־׀־־־׃
 translation:
-  text: And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.
-  philosophy: optimal-equivalence
+  text: Every living creature that swarms in the water will live wherever the river[a] flows. There will be a great abundance of fish, because these waters flow there and the sea’s waters are healed; everything will live wherever the river flows.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew has a dual/plural form, literally 'streams' or 'rivers'; many translations smooth this to the singular 'river.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'these waters go there, so that the waters there are healed.' The Hebrew healing imagery is explicit.
-    reason: lexical_alternative
+    text: The Hebrew uses a dual form here, which can mean 'two streams'; later in this verse it uses the singular 'river.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: נֶפֶשׁ חַיָּה
   chosen: living creature
@@ -106,14 +103,20 @@ revisions:
   from: And every living creature that swarms, wherever the two streams go, will live. And there will be very many fish, because these waters go there and are healed; everything will live wherever the river goes.
   to: And every living creature that swarms, wherever the two streams go, will live. And there will be very many fish, because these waters go there and are healed; everything will live wherever the river goes.
   rationale: Changed 'the two streams' to 'the river' for lexical accuracy and completeness, since the Hebrew has singular 'the river' (with 'streams/rivers' earlier in the clause referring to the flowing waters), not specifically 'two streams.'
-
 - timestamp: '2026-05-18T02:54:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.'
-  to: 'And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.'
+  from: And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.
+  to: And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the two streams''].'
+- timestamp: '2026-11-09T17:40:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And every living creature that swarms[a], wherever the river goes, will live. And there will be very many fish, because these waters go there and are healed[b]; everything will live wherever the river goes.
+  to: Every living creature that swarms in the water will live wherever the river[a] flows. There will be a great abundance of fish, because these waters flow there and the sea’s waters are healed; everything will live wherever the river flows.
+  rationale: The conflicting automated records do not establish two separate channels, so I retain the current singular 'river' while noting the Hebrew dual form. The context and the existing alternative note support correcting the misleading suggestion that the sanctuary water itself needs healing.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +139,26 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/ezekiel/047/009.job-28563.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:37Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wherever the river reaches, aquatic creatures live and fish abound because the receiving waters are healed.
+  meaning_decisions:
+  - source_phrase: כָל נֶפֶשׁ חַיָּה אֲשֶׁר יִשְׁרֹץ
+    prior_rendering: every living creature that swarms
+    new_rendering: Every living creature that swarms in the water
+    rationale: The aquatic setting is understood from the sea and fish; stating it prevents 'swarms' from being mistaken for a reference only to insects.
+  - source_phrase: כִּי בָאוּ שָׁמָּה הַמַּיִם הָאֵלֶּה וְיֵרָפְאוּ
+    prior_rendering: because these waters go there and are healed
+    new_rendering: because these waters flow there and the sea’s waters are healed
+    rationale: The sanctuary water brings healing to the sea; the prior construction misleadingly makes the incoming river water itself the recipient of healing.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The conflicting automated records do not establish two separate channels, so I retain the current singular 'river' while noting the Hebrew dual form. The context and the existing alternative note support correcting the misleading suggestion that the sanctuary water itself needs healing.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בִּ/שְׁנַת֩ עֶשְׂרִ֨ים וָ/שֶׁ֜בַע שָׁנָ֗ה לְ/אָסָא֙ מֶ֣לֶךְ יְהוּדָ֔ה מָלַ֥ךְ זִמְרִ֛י שִׁבְעַ֥ת יָמִ֖ים בְּ/תִרְצָ֑ה וְ/הָ/עָ֣ם חֹנִ֔ים עַֽל גִּבְּת֖וֹן אֲשֶׁ֥ר לַ/פְּלִשְׁתִּֽים־׃
 translation:
-  text: In the twenty-seventh year of Asa king of Judah[a], Zimri became king for seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'at Gibbethon'; in this military context, 'against Gibbethon' likely conveys that the people were encamped in opposition to the city.
-    reason: lexical_alternative
+  text: In the twenty-seventh year of Asa's reign as king of Judah, Zimri reigned in Tirzah for seven days, while the Israelite army was encamped against Gibbethon, which belonged to the Philistines.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בִּ/שְׁנַת עֶשְׂרִים וָשֶׁבַע שָׁנָה
   chosen: In the twenty-seventh year
@@ -90,14 +86,20 @@ revisions:
   from: In the twenty-seventh year of Asa king of Judah, Zimri became king for seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
   to: In the twenty-seventh year of Asa king of Judah, Zimri reigned seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
   rationale: Changed 'became king for seven days' to 'reigned seven days' for a more direct and natural rendering of מָלַךְ.
-
 - timestamp: '2026-05-16T07:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the twenty-seventh year of Asa king of Judah[a], Zimri reigned seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.'
-  to: 'In the twenty-seventh year of Asa king of Judah[a], Zimri became king for seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.'
-  rationale: 'Azure substituted ''reigned'' — drafter''s explicit rejected_alternative. Drafter chose ''became king'' for ingressive sense of מָלַךְ (accession to kingship), especially given duration follows immediately. Also dropped ''for''.'
+  from: In the twenty-seventh year of Asa king of Judah[a], Zimri reigned seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
+  to: In the twenty-seventh year of Asa king of Judah[a], Zimri became king for seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
+  rationale: Azure substituted 'reigned' — drafter's explicit rejected_alternative. Drafter chose 'became king' for ingressive sense of מָלַךְ (accession to kingship), especially given duration follows immediately. Also dropped 'for'.
+- timestamp: '2026-11-09T17:22:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the twenty-seventh year of Asa king of Judah[a], Zimri became king for seven days in Tirzah, while the people were camped against Gibbethon, which belonged to the Philistines.
+  to: In the twenty-seventh year of Asa's reign as king of Judah, Zimri reigned in Tirzah for seven days, while the Israelite army was encamped against Gibbethon, which belonged to the Philistines.
+  rationale: The automated review's “reigned” better expressed duration, although a later automated revert restored the draft's accession wording. With no maintainer ruling requiring that wording, I adopt the clearer contextual sense and retain “against Gibbethon” without overstating the precise military action.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/016/015.job-58537.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:05Z'
+  change_level: refined
+  confidence: high
+  meaning: Zimri rules in Tirzah for only seven days while Israel's army is campaigning against Philistine-held Gibbethon.
+  meaning_decisions:
+  - source_phrase: מָלַךְ זִמְרִי שִׁבְעַת יָמִים בְּתִרְצָה
+    prior_rendering: Zimri became king for seven days in Tirzah
+    new_rendering: Zimri reigned in Tirzah for seven days
+    rationale: With a stated duration, the clause summarizes how long Zimri ruled; “became king for seven days” incorrectly attaches duration to the act of accession.
+  - source_phrase: וְהָעָם חֹנִים
+    prior_rendering: while the people were camped
+    new_rendering: while the Israelite army was encamped
+    rationale: The military camp, its commander, and the ensuing march establish that the people here are Israel's deployed forces.
+  footnote_kinds: {}
+  history_weighed: The automated review's “reigned” better expressed duration, although a later automated revert restored the draft's accession wording. With no maintainer ruling requiring that wording, I adopt the clearer contextual sense and retain “against Gibbethon” without overstating the precise military action.

@@ -17,15 +17,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But Judith was left alone in the tent[a], and Holofernes had collapsed on his bed[b], for the wine had overwhelmed him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had fallen forward on his bed.' The Greek participle can be rendered more literally, but the context suggests drunken collapse.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'for the wine had been poured around him' or similar; the expression is idiomatic for being overcome by wine.
-    reason: lexical_alternative
+  text: But Judith was left alone in the tent, and Holofernes had collapsed on his bed, for the wine had overwhelmed him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὑπελείφθη
   chosen: was left
@@ -106,14 +99,20 @@ revisions:
   from: But Judith was left alone in the tent, and Holofernes had collapsed on his bed, for the wine had overwhelmed him.
   to: But Judith was left alone in the tent, and Holofernes had fallen face down on his bed, for he was drenched with wine.
   rationale: Adjusted 'collapsed' to 'had fallen face down' to reflect προπεπτωκώς more precisely, and revised 'the wine had overwhelmed him' to 'he was drenched with wine' to represent the Greek wording more literally while keeping natural English.
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Judith was left alone in the tent[a], and Holofernes had fallen face down on his bed[b], for he was drenched with wine.'
-  to: 'But Judith was left alone in the tent[a], and Holofernes had collapsed on his bed[b], for the wine had overwhelmed him.'
-  rationale: 'Restored 2 chosen renderings preserving idiomatic drunken-collapse and Greek subject ὁ οἶνος.'
+  from: But Judith was left alone in the tent[a], and Holofernes had fallen face down on his bed[b], for he was drenched with wine.
+  to: But Judith was left alone in the tent[a], and Holofernes had collapsed on his bed[b], for the wine had overwhelmed him.
+  rationale: Restored 2 chosen renderings preserving idiomatic drunken-collapse and Greek subject ὁ οἶνος.
+- timestamp: '2026-11-09T19:01:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Judith was left alone in the tent[a], and Holofernes had collapsed on his bed[b], for the wine had overwhelmed him.
+  to: But Judith was left alone in the tent, and Holofernes had collapsed on his bed, for the wine had overwhelmed him.
+  rationale: The revision’s 'drenched with wine' risks suggesting spilled wine rather than intoxication, whereas the restored wording conveys the idiom correctly. I keep that wording and omit the unnecessary literal alternatives.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +132,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/013/003.job-50762.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:41Z'
+  change_level: kept
+  confidence: high
+  meaning: Judith was left alone with Holofernes, who had collapsed on his bed, overcome by wine.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The revision’s 'drenched with wine' risks suggesting spilled wine rather than intoxication, whereas the restored wording conveys the idiom correctly. I keep that wording and omit the unnecessary literal alternatives.

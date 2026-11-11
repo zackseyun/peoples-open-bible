@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he placed his fear upon all flesh[a], and to rule over beasts and birds.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'upon every living creature.' The Greek phrase is literally 'upon all flesh,' an idiom for living beings broadly.
-    reason: lexical_alternative
+  text: He made every living creature fear them and gave them dominion over beasts and birds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔθηκεν
   chosen: placed
@@ -122,14 +118,20 @@ revisions:
   from: And he placed his fear upon all flesh, and gave him dominion over beasts and birds.
   to: And he placed his fear upon all flesh, and gave him dominion over beasts and birds.
   rationale: Replaced 'gave him dominion' with 'to rule over' to reflect the Greek infinitive κατακυριεύειν more directly and avoid supplying an explicit object ('him') not present in the text.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he placed his fear upon all flesh[a], and to rule over beasts and birds.'
-  to: 'And he placed his fear upon all flesh[a], and to rule over beasts and birds.'
+  from: And he placed his fear upon all flesh[a], and to rule over beasts and birds.
+  to: And he placed his fear upon all flesh[a], and to rule over beasts and birds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''gave him dominion over''].'
+- timestamp: '2026-11-09T19:05:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he placed his fear upon all flesh[a], and to rule over beasts and birds.
+  to: He made every living creature fear them and gave them dominion over beasts and birds.
+  rationale: The lexical rationale explicitly identifies humanity as the object of the creatures’ fear and supports supplying the grant of dominion. I followed that evidence rather than the incomplete infinitive produced by the source-transparent pass; the automated revert supplies no contrary meaning-based reason.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +151,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/017/004.job-51406.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God caused other living creatures to fear human beings and granted humanity dominion over beasts and birds.
+  meaning_decisions:
+  - source_phrase: ἔθηκεν τὸν φόβον αὐτοῦ ἐπὶ πάσης σαρκός
+    prior_rendering: he placed his fear upon all flesh
+    new_rendering: He made every living creature fear them
+    rationale: The fear is fear of the representative human being, not fear experienced by God or necessarily fear of God; the new wording makes the intended relationship explicit.
+  - source_phrase: καὶ κατακυριεύειν θηρίων καὶ πετεινῶν
+    prior_rendering: and to rule over beasts and birds
+    new_rendering: and gave them dominion over beasts and birds
+    rationale: The infinitive expresses the grant of rule and requires a complete English clause; 'dominion' preserves its governing force.
+  footnote_kinds: {}
+  history_weighed: The lexical rationale explicitly identifies humanity as the object of the creatures’ fear and supports supplying the grant of dominion. I followed that evidence rather than the incomplete infinitive produced by the source-transparent pass; the automated revert supplies no contrary meaning-based reason.

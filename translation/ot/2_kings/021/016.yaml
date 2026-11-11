@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/גַם֩ דָּ֨ם נָקִ֜י שָׁפַ֤ךְ מְנַשֶּׁה֙ הַרְבֵּ֣ה מְאֹ֔ד עַ֛ד אֲשֶׁר מִלֵּ֥א אֶת יְרוּשָׁלִַ֖ם פֶּ֣ה לָ/פֶ֑ה לְ/בַ֤ד מֵֽ/חַטָּאת/וֹ֙ אֲשֶׁ֣ר הֶחֱטִ֣יא אֶת יְהוּדָ֔ה לַ/עֲשׂ֥וֹת הָ/רַ֖ע בְּ/עֵינֵ֥י יְהוָֽה־־־׃
 translation:
-  text: Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.
-  philosophy: optimal-equivalence
+  text: Moreover, Manasseh shed so much innocent blood that he filled Jerusalem with it from one end to the other[a]. This was in addition to his sin of causing Judah to do what was evil in the eyes of Yahweh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'filled Jerusalem mouth to mouth,' an idiom meaning throughout the city, from one end to the other.
+    text: Literally, “filled Jerusalem mouth to mouth,” meaning throughout the city, from one end to the other.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְגַם
@@ -119,14 +119,20 @@ revisions:
   from: Moreover, Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, doing what was evil in the eyes of the LORD.
   to: Moreover, Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, doing what was evil in the eyes of the LORD.
   rationale: Changed 'doing' to 'to do' to more directly reflect the Hebrew infinitive construction ('caused Judah to sin, to do what was evil').
-
 - timestamp: '2026-05-18T02:57:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.'
-  to: 'Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.'
+  from: Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.
+  to: Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''doing what was evil''].'
+- timestamp: '2026-11-09T18:27:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Moreover[a], Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other, besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh.
+  to: Moreover, Manasseh shed so much innocent blood that he filled Jerusalem with it from one end to the other[a]. This was in addition to his sin of causing Judah to do what was evil in the eyes of Yahweh.
+  rationale: The earlier review and revert focused on “doing” versus “to do,” but neither resolved the English clause’s awkwardness. I preserve the established distinction between innocent bloodshed and Manasseh’s responsibility for Judah’s sin, and retain the city-filling image with its literal note correctly placed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +155,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/021/016.job-60817.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:27:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Manasseh filled Jerusalem with innocent blood in addition to causing Judah to sin against Yahweh.
+  meaning_decisions:
+  - source_phrase: דָּם נָקִי שָׁפַךְ מְנַשֶּׁה הַרְבֵּה מְאֹד עַד אֲשֶׁר מִלֵּא אֶת יְרוּשָׁלִַם פֶּה לָפֶה
+    prior_rendering: Manasseh shed very much innocent blood, until he had filled Jerusalem from one end to the other
+    new_rendering: Manasseh shed so much innocent blood that he filled Jerusalem with it from one end to the other
+    rationale: The construction stresses the immense extent of the bloodshed; “so much ... that” expresses this naturally, and “with it” makes the object of the filling explicit.
+  - source_phrase: לְבַד מֵחַטָּאתוֹ אֲשֶׁר הֶחֱטִיא אֶת יְהוּדָה לַעֲשׂוֹת הָרַע בְּעֵינֵי יְהוָה
+    prior_rendering: besides his sin by which he caused Judah to sin, to do what was evil in the eyes of Yahweh
+    new_rendering: This was in addition to his sin of causing Judah to do what was evil in the eyes of Yahweh
+    rationale: The infinitive explains the evil conduct into which Manasseh caused Judah to fall; the new sentence preserves his culpability without an awkward chain of repeated sin expressions.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review and revert focused on “doing” versus “to do,” but neither resolved the English clause’s awkwardness. I preserve the established distinction between innocent bloodshed and Manasseh’s responsibility for Judah’s sin, and retain the city-filling image with its literal note correctly placed.

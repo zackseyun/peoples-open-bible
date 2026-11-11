@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אָ֘כֹ֤ל דְּבַ֣שׁ הַרְבּ֣וֹת לֹא ט֑וֹב וְ/חֵ֖קֶר כְּבֹדָ֣/ם כָּבֽוֹד־׃
 translation:
-  text: To eat much honey is not good[a], and to search out their glory is glory.
-  philosophy: optimal-equivalence
+  text: Eating too much honey is not good, nor is it honorable to seek your own glory[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''and searching out their glory is glory.'' The second line is difficult. It may mean that seeking honor for oneself is not honorable, or that investigating weighty matters is honorable. The Masoretic Text is rendered closely here.'
+    text: 'The Hebrew is difficult: literally, “and searching out their glory is glory.” Alternatively, the second line may mean, “but investigating weighty matters is honorable.”'
     reason: alternative_reading
 lexical_decisions:
 - source_word: אָכֹל
@@ -89,6 +89,13 @@ revisions:
   from: To eat much honey is not good[a], and to search out their glory is glory.
   to: To eat much honey is not good[a], and to search out their glory is glory.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and searching out''].'
+- timestamp: '2026-11-09T18:35:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: To eat much honey is not good[a], and to search out their glory is glory.
+  to: Eating too much honey is not good, nor is it honorable to seek your own glory[a].
+  rationale: The earlier passes preserved the difficult Hebrew closely, but their own note recognized the warning against seeking personal glory as a possible meaning. I adopt that contextually stronger reading rather than retain an unexplained “their,” while explicitly acknowledging the uncertainty.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -116,3 +123,26 @@ source_audit:
   scope: WLC Hebrew, immediate literary context, natural-English and interpretation-boundary review
   human_or_scholar_review: false
   review_summary: The second colon is famously difficult, but the current text closely represents the WLC reading וְחֵקֶר כְּבֹדָם כָּבוֹד and does not resolve its ambiguity. The note appropriately warns readers of the difficulty and records leading interpretive possibilities.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:35:49Z'
+  change_level: retranslated
+  confidence: low
+  meaning: Eating honey to excess is not good, and pursuing your own glory is not honorable.
+  meaning_decisions:
+  - source_phrase: אָכֹל דְּבַשׁ הַרְבּוֹת
+    prior_rendering: To eat much honey
+    new_rendering: Eating too much honey
+    rationale: The warning concerns excess, as verse 16 makes clear, rather than merely a substantial quantity.
+  - source_phrase: וְחֵקֶר כְּבֹדָם כָּבוֹד
+    prior_rendering: and to search out their glory is glory
+    new_rendering: nor is it honorable to seek your own glory
+    rationale: The most persuasive contextual reading carries the negative force of the first line into the second and understands the plural possessive generically of people pursuing their own glory; the unresolved Hebrew and a serious alternative remain visible in the note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier passes preserved the difficult Hebrew closely, but their own note recognized the warning against seeking personal glory as a possible meaning. I adopt that contextually stronger reading rather than retain an unexplained “their,” while explicitly acknowledging the uncertainty.

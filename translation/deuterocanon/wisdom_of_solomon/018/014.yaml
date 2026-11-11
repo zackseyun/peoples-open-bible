@@ -21,12 +21,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'and night, in its own swiftness, being in the middle.' The Greek is highly compressed and poetic.
-    reason: lexical_alternative
+  text: For while a calm silence encompassed all things, and the night in its swift course was halfway gone,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἡσύχου
   chosen: calm
@@ -105,14 +101,20 @@ revisions:
   from: For while a calm silence encompassed all things, and the night in its swift course was halfway through all things,
   to: For while a calm silence encompassed all things, and the night in its swift course was halfway through all things,
   rationale: Replaced the final phrase “was halfway through all things” with “was halfway gone” for lexical accuracy and natural English. The Greek μεσαζούσης refers to the night being at its midpoint, not to being halfway through ‘all things.’
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,'
-  to: 'For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,'
+  from: For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,
+  to: For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was halfway through''].'
+- timestamp: '2026-11-09T19:13:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For while a calm silence encompassed all things[a], and the night in its swift course was halfway gone,
+  to: For while a calm silence encompassed all things, and the night in its swift course was halfway gone,
+  rationale: The current 'halfway gone' correctly expresses the night's midpoint, preserving the useful correction identified in the review. The automated revert's preference for 'halfway through all things' does not convey the construction's meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -132,3 +134,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/014.job-39373.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:17Z'
+  change_level: kept
+  confidence: high
+  meaning: Everything lay wrapped in calm silence as the night reached its midpoint.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current 'halfway gone' correctly expresses the night's midpoint, preserving the useful correction identified in the review. The automated revert's preference for 'halfway through all things' does not convey the construction's meaning.

@@ -22,15 +22,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.
-  philosophy: optimal-equivalence
+  text: He told every man who was building a house, betrothed to a woman, planting a vineyard, or afraid of battle to return home, in accordance with the law[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The phrase 'according to the law' likely alludes to the battle exemptions in Deuteronomy 20:5–8.
+    text: See Deuteronomy 20:5–8 for these exemptions from military service.
     reason: cross_reference
-  - marker: b
-    text: Or 'the timid' / 'the cowardly' for 'the fearful.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: οἰκοδομοῦσιν οἰκίαν
   chosen: those building a house
@@ -118,14 +115,20 @@ revisions:
   from: And he said that those building a house, and those betrothed to women, and those planting vineyards, and the fearful, should each turn back to his house, according to the law.
   to: And he said that those building a house, and those betrothed to women, and those planting vineyards, and the fearful, should each turn back to his house, according to the law.
   rationale: Changed 'turn back' to 'return' for more natural formal English while preserving the sense of ἀποστρέφειν. Kept the rest substantially unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.'
-  to: 'And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.'
+  from: And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.
+  to: And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''should each turn back to his house''].'
+- timestamp: '2026-11-09T18:52:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said that those building a house[a], and those betrothed to women, and those planting vineyards, and the fearful, should each return to his house[b], according to the law.
+  to: He told every man who was building a house, betrothed to a woman, planting a vineyard, or afraid of battle to return home, in accordance with the law[a].
+  rationale: The record preserves the exemption categories, the directive to return, and the legal force of betrothal. I retain those gains while expressing the instruction directly and attaching the Deuteronomic reference to “the law,” which it explains.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +148,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/056.job-48141.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Judas follows the law by sending home men whose circumstances or fear exempt them from military service.
+  meaning_decisions:
+  - source_phrase: εἶπεν τοῖς ... ἀποστρέφειν ἕκαστον εἰς τὸν οἶκον αὐτοῦ
+    prior_rendering: he said that ... should each return to his house
+    new_rendering: He told every man ... to return home
+    rationale: The construction conveys a directive addressed to each eligible man, more naturally expressed as telling him to return home.
+  - source_phrase: μνηστευομένοις γυναῖκας καὶ φυτεύουσιν ἀμπελῶνας
+    prior_rendering: those betrothed to women, and those planting vineyards
+    new_rendering: betrothed to a woman, planting a vineyard
+    rationale: The plural objects are distributive across the men; the singular English construction makes that relationship clear while retaining the legally significant term “betrothed.”
+  - source_phrase: δειλοῖς
+    prior_rendering: the fearful
+    new_rendering: afraid of battle
+    rationale: The immediate military context identifies the relevant fear without adding a judgment of moral cowardice.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The record preserves the exemption categories, the directive to return, and the legal force of betrothal. I retain those gains while expressing the instruction directly and attaching the Deuteronomic reference to “the law,” which it explains.

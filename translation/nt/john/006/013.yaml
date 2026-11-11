@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: συνήγαγον οὖν, καὶ ἐγέμισαν δώδεκα κοφίνους κλασμάτων ἐκ τῶν πέντε ἄρτων τῶν κριθίνων ἃ ⸀ἐπερίσσευσαν τοῖς βεβρωκόσιν.
 translation:
-  text: So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'fragments' for 'pieces' (κλασμάτων).
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'which overflowed/abounded for those who had eaten'; the sense is that these were the portions left over after the meal.
-    reason: lexical_alternative
+  text: So they gathered them and filled twelve baskets with pieces left over from the five barley loaves after the people had eaten.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: συνήγαγον
   chosen: they gathered them
@@ -89,14 +82,20 @@ revisions:
   from: So they gathered them, and filled twelve baskets with pieces from the five barley loaves that were left over by those who had eaten.
   to: So they gathered them, and filled twelve baskets with pieces from the five barley loaves that were left over by those who had eaten.
   rationale: Removed the unnecessary relative pronoun 'that were' to better reflect the Greek and improve natural English while preserving the sense of what was left over by those who had eaten.
-
 - timestamp: '2026-05-18T02:59:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.'
-  to: 'So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.'
+  from: So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.
+  to: So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that were left over''].'
+- timestamp: '2026-11-09T17:10:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So they gathered them[b][a], and filled twelve baskets with pieces from the five barley loaves left over by those who had eaten.
+  to: So they gathered them and filled twelve baskets with pieces left over from the five barley loaves after the people had eaten.
+  rationale: The recorded notes focus on whether to retain 'that were,' but the underlying issue is the relationship of the surplus to the diners. I retain the five barley loaves and twelve filled baskets while expressing the remaining surplus more clearly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -119,3 +118,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/john/006/013.job-38558.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:27Z'
+  change_level: refined
+  confidence: high
+  meaning: The disciples collect enough pieces remaining from the five barley loaves to fill twelve baskets after the crowd has eaten.
+  meaning_decisions:
+  - source_phrase: κλασμάτων ἐκ τῶν πέντε ἄρτων τῶν κριθίνων ἃ ἐπερίσσευσαν τοῖς βεβρωκόσιν
+    prior_rendering: pieces from the five barley loaves left over by those who had eaten
+    new_rendering: pieces left over from the five barley loaves after the people had eaten
+    rationale: The relative clause describes the surplus remaining after the meal; the new ordering makes 'pieces' its clear referent and avoids the unnatural agency suggested by 'left over by.'
+  footnote_kinds: {}
+  history_weighed: The recorded notes focus on whether to retain 'that were,' but the underlying issue is the relationship of the surplus to the diners. I retain the five barley loaves and twelve filled baskets while expressing the remaining surplus more clearly.

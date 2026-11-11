@@ -4,12 +4,15 @@ source:
   edition: SBLGNT
   text: καὶ πορευθεὶς ἐκολλήθη ἑνὶ τῶν πολιτῶν τῆς χώρας ἐκείνης, καὶ ἔπεμψεν αὐτὸν εἰς τοὺς ἀγροὺς αὐτοῦ βόσκειν χοίρους·
 translation:
-  text: So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.
-  philosophy: optimal-equivalence
+  text: So he went to work for a citizen of that country[a], who sent him into his fields to feed pigs[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'joined himself to' or 'clung to'; the Greek verb suggests attaching oneself closely, even dependently, to someone.
+    text: Literally, 'attached himself to one of the citizens of that country,' suggesting a dependent relationship.
     reason: lexical_alternative
+  - marker: b
+    text: Pigs were regarded as unclean under Jewish law.
+    reason: cultural_note
 lexical_decisions:
 - source_word: πορευθεὶς
   chosen: went
@@ -87,14 +90,20 @@ revisions:
   from: So he went and attached himself to one of the citizens of that country, and he sent him into his fields to feed pigs.
   to: So he went and attached himself to one of the citizens of that country, and he sent him into his fields to feed pigs.
   rationale: Changed 'attached himself' to 'joined himself' for more natural formal English while preserving the sense of ἐκολλήθη. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.'
-  to: 'So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.'
+  from: So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.
+  to: So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''attached himself to''].'
+- timestamp: '2026-11-09T17:12:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he went and joined himself to one of the citizens of that country[a], and he sent him into his fields to feed pigs.
+  to: So he went to work for a citizen of that country[a], who sent him into his fields to feed pigs[b].
+  rationale: The earlier draft and lexical rationale recognized dependence in 'attached himself,' while the recorded automated review preferred 'joined himself.' I retain that dependence in the note, make the work relationship clear in the text, and clarify the change of subject.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +126,27 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/015/015.job-55742.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: In his need, the younger son becomes dependent on a local citizen who puts him to work feeding pigs.
+  meaning_decisions:
+  - source_phrase: πορευθεὶς ἐκολλήθη ἑνὶ τῶν πολιτῶν τῆς χώρας ἐκείνης
+    prior_rendering: he went and joined himself to one of the citizens of that country
+    new_rendering: he went to work for a citizen of that country
+    rationale: The following assignment to feed pigs establishes the practical relationship; the new wording conveys it without implying agreed wages, while the note preserves the source's emphasis on attachment and dependence.
+  - source_phrase: καὶ ἔπεμψεν αὐτὸν
+    prior_rendering: and he sent him
+    new_rendering: who sent him
+    rationale: The relative clause makes clear that the citizen, not the younger son, is the subject of 'sent.'
+  footnote_kinds:
+    a: literal_wording
+    b: cultural_background
+  history_weighed: The earlier draft and lexical rationale recognized dependence in 'attached himself,' while the recorded automated review preferred 'joined himself.' I retain that dependence in the note, make the work relationship clear in the text, and clarify the change of subject.

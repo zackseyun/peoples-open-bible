@@ -22,15 +22,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they were more burdensome to themselves than the darkness.' The Greek keeps the same 'heavy' imagery in both clauses.
-    reason: lexical_alternative
-  - marker: b
-    text: The 'darkness that was about to receive them' likely points beyond the immediate plague to a greater judgment, though the text does not define it more precisely.
-    reason: alternative_reading
+  text: But a heavy night lay over them alone, an image of the darkness that was about to receive them; yet they were a heavier burden to themselves than the darkness.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μόνοις δὲ ἐκείνοις
   chosen: upon those alone
@@ -112,14 +105,20 @@ revisions:
   from: But upon those alone heavy night was laid, an image of the darkness that was about to receive them; yet they were heavier to themselves than darkness.
   to: But upon those alone heavy night was laid, an image of the darkness that was about to receive them; yet they were heavier to themselves than darkness.
   rationale: Changed 'was laid' to 'was imposed' for a more natural and precise rendering of ἐπέτατο, while preserving the formal tone and structure. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.'
-  to: 'But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.'
+  from: But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.
+  to: But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was laid''].'
+- timestamp: '2026-11-09T19:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But upon those alone heavy night was imposed[a], an image of the darkness that was about to receive them[b]; yet they were heavier to themselves than darkness.
+  to: But a heavy night lay over them alone, an image of the darkness that was about to receive them; yet they were a heavier burden to themselves than the darkness.
+  rationale: 'The history consistently preserves the repeated weight imagery, which remains central to the rendering. The recorded caution about future darkness is also respected: the text leaves that darkness undefined rather than specifying a developed account of judgment.'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -139,3 +138,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/017/021.job-39452.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:57Z'
+  change_level: refined
+  confidence: high
+  meaning: The night covering the Egyptians foreshadowed a coming darkness, but they themselves were an even heavier burden than their surroundings.
+  meaning_decisions:
+  - source_phrase: μόνοις δὲ ἐκείνοις ἐπέτατο βαρεῖα νύξ
+    prior_rendering: But upon those alone heavy night was imposed
+    new_rendering: But a heavy night lay over them alone
+    rationale: This naturally expresses the night spread over that group alone while retaining the image of oppressive weight.
+  - source_phrase: ἑαυτοῖς δὲ ἦσαν βαρύτεροι σκότους
+    prior_rendering: yet they were heavier to themselves than darkness
+    new_rendering: yet they were a heavier burden to themselves than the darkness
+    rationale: “Burden” makes the English metaphor intelligible while “heavier” preserves its deliberate echo of “heavy night.”
+  footnote_kinds: {}
+  history_weighed: 'The history consistently preserves the repeated weight imagery, which remains central to the rendering. The recorded caution about future darkness is also respected: the text leaves that darkness undefined rather than specifying a developed account of judgment.'

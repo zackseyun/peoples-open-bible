@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But Menelaus[a], thinking that he had found a favorable opportunity, embezzled some of the gold vessels of the temple and gave them as a gift to Andronicus[b], and he had managed to sell others in Tyre and the surrounding cities.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'some gold objects' or 'certain golden articles.' The Greek term refers generally to gold items from the temple.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he happened to have sold others to Tyre and the surrounding cities.' The Greek expression may be rendered more literally, though the sense is that other items had already been sold there.
-    reason: lexical_alternative
+  text: Menelaus, thinking he had found a favorable opportunity, embezzled some of the temple’s gold objects and gave them as a gift to Andronicus. He had already sold others in Tyre and the surrounding cities.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: νομίσας
   chosen: thinking
@@ -133,14 +126,20 @@ revisions:
   from: But Menelaus, thinking that he had found a favorable opportunity, embezzled some of the gold vessels from the temple and gave them as a gift to Andronicus, and he had managed to sell others in Tyre and the surrounding cities.
   to: But Menelaus, thinking that he had found a favorable opportunity, misappropriated some of the gold vessels of the temple and gave them to Andronicus, and others he had sold in Tyre and the surrounding cities.
   rationale: Replaced 'embezzled' with 'misappropriated' for a more formal and contextually fitting rendering of νοσφισάμενος; removed 'as a gift' since ἐχαρίσατο is adequately conveyed by 'gave' here without expansion; smoothed the final clause to 'others he had sold' for more natural formal English while preserving the sense.
-
 - timestamp: '2026-05-15T15:09:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Menelaus[a], thinking that he had found a favorable opportunity, misappropriated some of the gold vessels of the temple and gave them to Andronicus[b], and others he had sold in Tyre and the surrounding cities.'
-  to: 'But Menelaus[a], thinking that he had found a favorable opportunity, embezzled some of the gold vessels of the temple and gave them as a gift to Andronicus[b], and he had managed to sell others in Tyre and the surrounding cities.'
-  rationale: 'Restored 3 chosen renderings preserving νοσφισάμενος legal-fraud force, χαρίζομαι middle voice, and τυγχάνω nuance.'
+  from: But Menelaus[a], thinking that he had found a favorable opportunity, misappropriated some of the gold vessels of the temple and gave them to Andronicus[b], and others he had sold in Tyre and the surrounding cities.
+  to: But Menelaus[a], thinking that he had found a favorable opportunity, embezzled some of the gold vessels of the temple and gave them as a gift to Andronicus[b], and he had managed to sell others in Tyre and the surrounding cities.
+  rationale: Restored 3 chosen renderings preserving νοσφισάμενος legal-fraud force, χαρίζομαι middle voice, and τυγχάνω nuance.
+- timestamp: '2026-11-09T18:55:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Menelaus[a], thinking that he had found a favorable opportunity, embezzled some of the gold vessels of the temple and gave them as a gift to Andronicus[b], and he had managed to sell others in Tyre and the surrounding cities.
+  to: Menelaus, thinking he had found a favorable opportunity, embezzled some of the temple’s gold objects and gave them as a gift to Andronicus. He had already sold others in Tyre and the surrounding cities.
+  rationale: I retain “embezzled” and “gave them as a gift,” which preserve the fraudulent appropriation and favor-seeking gift emphasized in the history. The earlier review’s smoother final clause was a genuine improvement; “already” conveys the completed state without the unsupported implication of “managed.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -160,3 +159,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/032.job-49058.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:02Z'
+  change_level: refined
+  confidence: high
+  meaning: Menelaus exploited the opportunity to divert temple gold to Andronicus, having already sold other temple gold in neighboring cities.
+  meaning_decisions:
+  - source_phrase: χρυσώματά τινα τῶν τοῦ ἱεροῦ
+    prior_rendering: some of the gold vessels of the temple
+    new_rendering: some of the temple’s gold objects
+    rationale: The source identifies gold articles generally and does not restrict them to vessels.
+  - source_phrase: ἕτερα ἐτύγχανεν πεπρακὼς
+    prior_rendering: he had managed to sell others
+    new_rendering: He had already sold others
+    rationale: The construction describes a completed sale already on record, without asserting difficulty overcome or special success in selling.
+  footnote_kinds: {}
+  history_weighed: I retain “embezzled” and “gave them as a gift,” which preserve the fraudulent appropriation and favor-seeking gift emphasized in the history. The earlier review’s smoother final clause was a genuine improvement; “already” conveys the completed state without the unsupported implication of “managed.”

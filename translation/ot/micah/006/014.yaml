@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: אַתָּ֤ה תֹאכַל֙ וְ/לֹ֣א תִשְׂבָּ֔ע וְ/יֶשְׁחֲ/ךָ֖ בְּ/קִרְבֶּ֑/ךָ וְ/תַסֵּג֙ וְ/לֹ֣א תַפְלִ֔יט וַ/אֲשֶׁ֥ר תְּפַלֵּ֖ט לַ/חֶ֥רֶב אֶתֵּֽן׃
 translation:
-  text: You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will move away, but you will not rescue anything, and what you do rescue I will give to the sword.
-  philosophy: optimal-equivalence
+  text: You will eat but not be satisfied; hunger will remain within you[a]. You will try to carry things to safety, but you will rescue nothing[b]; whatever you do rescue I will hand over to the sword.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew clause rendered 'your emptiness will remain within you' is difficult. It may also be understood as 'your humiliation will be in your midst' or 'your sinking will be within you.'
+    text: The Hebrew expression is uncertain; it may instead mean “your humiliation will be in your midst.”
+    reason: alternative_reading
+  - marker: b
+    text: Or, “You will store things away, but preserve nothing.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: תֹאכַל
@@ -104,14 +107,20 @@ revisions:
   from: You will eat, but you will not be satisfied, and your emptiness will remain within you; you will move away, but you will not rescue anything, and what you do rescue I will give to the sword.
   to: You will eat, but you will not be satisfied, and your emptiness will remain within you; you will remove, but you will not save, and what you do save I will give to the sword.
   rationale: Revised 'move away' to 'remove' to better reflect the sense of taking away/gathering up, and changed 'rescue anything'/'do rescue' to 'save' for a more direct and consistent rendering of the Hebrew.
-
 - timestamp: '2026-05-15T10:08:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will remove, but you will not save, and what you do save I will give to the sword.'
-  to: 'You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will move away, but you will not rescue anything, and what you do rescue I will give to the sword.'
-  rationale: 'Restored 3 chosen renderings preserving non-specific ''move away'' and wordplay ''rescue''.'
+  from: You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will remove, but you will not save, and what you do save I will give to the sword.
+  to: You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will move away, but you will not rescue anything, and what you do rescue I will give to the sword.
+  rationale: Restored 3 chosen renderings preserving non-specific 'move away' and wordplay 'rescue'.
+- timestamp: '2026-11-09T20:39:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You will eat[a], but you will not be satisfied, and your emptiness will remain within you; you will move away, but you will not rescue anything, and what you do rescue I will give to the sword.
+  to: You will eat but not be satisfied; hunger will remain within you[a]. You will try to carry things to safety, but you will rescue nothing[b]; whatever you do rescue I will hand over to the sword.
+  rationale: I retain the recorded contextual understanding of inner emptiness as hunger and the repeated verb “rescue.” No maintainer revision is recorded; the earlier review's recognition of removal better explains the action than the automated revert's “move away,” so I clarify the attempt to carry things to safety.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +140,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/micah/006/014.job-39978.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:39:43Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God warns that eating will not satisfy the people and that whatever they manage to rescue will ultimately be lost to war.
+  meaning_decisions:
+  - source_phrase: וְיֶשְׁחֲךָ בְּקִרְבֶּךָ
+    prior_rendering: and your emptiness will remain within you
+    new_rendering: hunger will remain within you
+    rationale: The contrast with eating without satisfaction favors continuing hunger, rather than the emotional or existential emptiness that the prior wording could suggest; the uncertain alternative remains in a footnote.
+  - source_phrase: וְתַסֵּג וְלֹא תַפְלִיט
+    prior_rendering: you will move away, but you will not rescue anything
+    new_rendering: You will try to carry things to safety, but you will rescue nothing
+    rationale: The causative verb and the following rescue language favor removing something from danger rather than simply departing; the protective purpose is made explicit without specifying possessions or family.
+  - source_phrase: לַחֶרֶב אֶתֵּן
+    prior_rendering: I will give to the sword
+    new_rendering: I will hand over to the sword
+    rationale: “Hand over” expresses surrender to destruction more naturally in English while retaining the sword image and God's agency.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: I retain the recorded contextual understanding of inner emptiness as hunger and the repeated verb “rescue.” No maintainer revision is recorded; the earlier review's recognition of removal better explains the action than the automated revert's “move away,” so I clarify the attempt to carry things to safety.

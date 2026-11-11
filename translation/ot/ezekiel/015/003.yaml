@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: הֲ/יֻקַּ֤ח מִמֶּ֨/נּוּ֙ עֵ֔ץ לַ/עֲשׂ֖וֹת לִ/מְלָאכָ֑ה אִם יִקְח֤וּ מִמֶּ֨/נּוּ֙ יָתֵ֔ד לִ/תְל֥וֹת עָלָ֖י/ו כָּל כֶּֽלִי־־׃
 translation:
-  text: Is wood taken from it to make anything useful? Or do they take from it a peg to hang every kind of vessel on it?[a][b][c]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'to make anything for work' / 'for any useful task.' The Hebrew phrase לַעֲשׂוֹת לִמְלָאכָה emphasizes practical usefulness.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Peg'' could also be rendered ''stake'' or ''nail,'' but the sense is a fixed support from which objects are hung.'
-    reason: lexical_alternative
-  - marker: c
-    text: '''Vessel'' here is a broad term for an article, implement, or container, not only pottery.'
-    reason: lexical_alternative
+  text: Can its wood be made into anything useful? Can it even be made into a peg to hang things on?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֲיֻקַּח
   chosen: Is ... taken
@@ -111,14 +101,20 @@ revisions:
   from: Is wood taken from it to make anything useful? Or do they take from it a peg to hang every kind of vessel on it?
   to: Is wood taken from it to make anything? Or do they take from it a peg to hang every vessel on it?
   rationale: Removed 'useful' and 'kind of' because they are not explicit in the source; simplified 'make anything useful' to 'make anything' and 'every kind of vessel' to 'every vessel' for closer lexical accuracy.
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Is wood taken from it to make anything? Or do they take from it a peg to hang every vessel on it?[a][b][c]'
-  to: 'Is wood taken from it to make anything useful? Or do they take from it a peg to hang every kind of vessel on it?[a][b][c]'
-  rationale: 'Azure stripped ''useful'' (drafter''s chosen rendering of לִמְלָאכָה utility sense) and ''kind of'' (drafter''s chosen for כָּל breadth idiom). Both substitutions assert non-explicitness without engaging documented HALOT-grounded rationale.'
+  from: Is wood taken from it to make anything? Or do they take from it a peg to hang every vessel on it?[a][b][c]
+  to: Is wood taken from it to make anything useful? Or do they take from it a peg to hang every kind of vessel on it?[a][b][c]
+  rationale: Azure stripped 'useful' (drafter's chosen rendering of לִמְלָאכָה utility sense) and 'kind of' (drafter's chosen for כָּל breadth idiom). Both substitutions assert non-explicitness without engaging documented HALOT-grounded rationale.
+- timestamp: '2026-11-09T17:37:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Is wood taken from it to make anything useful? Or do they take from it a peg to hang every kind of vessel on it?[a][b][c]
+  to: Can its wood be made into anything useful? Can it even be made into a peg to hang things on?
+  rationale: The automated review removed 'useful' and 'kind of,' but the subsequent revert restored their intended practical-use and breadth senses. I preserve those gains while expressing the questions naturally and replacing the potentially misleading 'vessel.'
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -138,3 +134,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/015/003.job-63653.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Vine wood cannot be fashioned into useful objects, not even a peg for hanging things.
+  meaning_decisions:
+  - source_phrase: הֲיֻקַּח מִמֶּנּוּ עֵץ לַעֲשׂוֹת לִמְלָאכָה אִם יִקְחוּ מִמֶּנּוּ יָתֵד
+    prior_rendering: Is wood taken from it to make anything useful? Or do they take from it a peg
+    new_rendering: Can its wood be made into anything useful? Can it even be made into a peg
+    rationale: The questions concern the wood's suitability for craftsmanship, not merely whether wood is taken from the vine. 'Even' conveys the descent from useful objects generally to something as modest as a peg.
+  - source_phrase: לִתְלוֹת עָלָיו כָּל כֶּלִי
+    prior_rendering: to hang every kind of vessel on it
+    new_rendering: to hang things on
+    rationale: The Hebrew term includes articles and implements, not just containers; the rhetorical question asks whether the peg can serve for hanging anything, not whether it can hold every kind of vessel.
+  footnote_kinds: {}
+  history_weighed: The automated review removed 'useful' and 'kind of,' but the subsequent revert restored their intended practical-use and breadth senses. I preserve those gains while expressing the questions naturally and replacing the potentially misleading 'vessel.'

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר בָּלָק֙ אֶל בִּלְעָ֔ם לְכָ/ה נָּא֙ אֶקָּ֣חֲ/ךָ֔ אֶל מָק֖וֹם אַחֵ֑ר אוּלַ֤י יִישַׁר֙ בְּ/עֵינֵ֣י הָ/אֱלֹהִ֔ים וְ/קַבֹּ֥ת/וֹ לִ֖/י מִ/שָּֽׁם־־־׃
 translation:
-  text: Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'it will be pleasing in the eyes of God.' The Hebrew idiom means 'be right' or 'be pleasing' in someone's sight.
-    reason: lexical_alternative
+  text: Then Balak said to Balaam, “Please come; let me take you to another place. Perhaps God will be pleased to let you curse them for me from there.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לְכָה נָּא
   chosen: Please come
@@ -96,14 +92,20 @@ revisions:
   from: Then Balak said to Balaam, “Please come, let me take you to another place. Perhaps it will seem right in the eyes of God, and you shall curse him for me from there.”
   to: Then Balak said to Balaam, “Please come, let me take you to another place. Perhaps it will seem right in the eyes of God, and you shall curse him for me from there.”
   rationale: Changed 'it will seem right' to 'it will be right' for a more direct rendering of the Hebrew while preserving natural English. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”'
-  to: 'Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”'
+  from: Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”
+  to: Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it will seem right in the eyes of God''].'
+- timestamp: '2026-11-09T18:31:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Balak said to Balaam[a], “Please come, let me take you to another place. Perhaps it will be right in the eyes of God, and you shall curse him for me from there.”
+  to: Then Balak said to Balaam, “Please come; let me take you to another place. Perhaps God will be pleased to let you curse them for me from there.”
+  rationale: The recorded discussion over “seem right” versus “be right” concerns the shape of the idiom more than its meaning. The lexical explanation identifies approval or pleasure as its sense, which I express directly while retaining Balak’s uncertainty.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +126,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/023/027.job-40938.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Balak proposes another location in the hope that God will approve Balaam’s cursing Israel from there.
+  meaning_decisions:
+  - source_phrase: אוּלַי יִישַׁר בְּעֵינֵי הָאֱלֹהִים וְקַבֹּתוֹ לִי מִשָּׁם
+    prior_rendering: Perhaps it will be right in the eyes of God, and you shall curse him for me from there
+    new_rendering: Perhaps God will be pleased to let you curse them for me from there
+    rationale: The idiom expresses divine approval, and the following curse depends on that hoped-for approval rather than being a certain outcome.
+  - source_phrase: וְקַבֹּתוֹ
+    prior_rendering: curse him
+    new_rendering: curse them
+    rationale: The object is Israel collectively, not an individual.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion over “seem right” versus “be right” concerns the shape of the idiom more than its meaning. The lexical explanation identifies approval or pleasure as its sense, which I express directly while retaining Balak’s uncertainty.

@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: לֹֽא תוּכַ֞ל לֶ/אֱכֹ֣ל בִּ/שְׁעָרֶ֗י/ךָ מַעְשַׂ֤ר דְּגָֽנְ/ךָ֙ וְ/תִֽירֹשְׁ/ךָ֣ וְ/יִצְהָרֶ֔/ךָ וּ/בְכֹרֹ֥ת בְּקָרְ/ךָ֖ וְ/צֹאנֶ֑/ךָ וְ/כָל נְדָרֶ֨י/ךָ֙ אֲשֶׁ֣ר תִּדֹּ֔ר וְ/נִדְבֹתֶ֖י/ךָ וּ/תְרוּמַ֥ת יָדֶֽ/ךָ־־׃
 translation:
-  text: You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.
-  philosophy: optimal-equivalence
+  text: You may not eat in your towns the tithe of your grain, new wine, or oil, the firstborn of your herd or flock, any offerings you vow to give, your freewill offerings, or the offerings you contribute[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'in your towns.' The Hebrew is literally 'within your gates,' an idiom for one's local settlements.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'your vows that you vow.' The expression likely refers to offerings associated with vows, not merely the vows as spoken promises.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the offering from your hand'; traditionally, 'the heave offering of your hand.'
+    text: Literally, “the contribution of your hand.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: לֹא תוּכַל לֶאֱכֹל
@@ -114,14 +108,20 @@ revisions:
   from: You may not eat within your gates the tithe of your grain, your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vow offerings that you vow, or your freewill offerings, or the contribution of your hand.
   to: You may not eat within your gates the tithe of your grain, your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vow offerings that you vow, or your freewill offerings, or the contribution of your hand.
   rationale: Changed 'vow offerings' to 'vows' for closer lexical accuracy to נדריך, which refers to vows rather than explicitly to offerings. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.'
-  to: 'You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.'
+  from: You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.
+  to: You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''any of your vow offerings that you vow''].'
+- timestamp: '2026-11-09T20:31:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You may not eat within your gates the tithe of your grain[a], your new wine, or your oil, or the firstborn of your herd or your flock, or any of your vows that you vow, or your freewill offerings[c][b], or the contribution of your hand.
+  to: You may not eat in your towns the tithe of your grain, new wine, or oil, the firstborn of your herd or flock, any offerings you vow to give, your freewill offerings, or the offerings you contribute[a].
+  rationale: No maintainer revision is recorded. The recorded rationales differ over “vows” versus “vow offerings”; the eating context and documented sacrificial distinctions support restoring the draft’s explicit reference to offerings, while the idioms are rendered by their meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +141,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/012/017.job-61563.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel must not eat its tithes and sacred offerings in its own towns.
+  meaning_decisions:
+  - source_phrase: בִּשְׁעָרֶיךָ
+    prior_rendering: within your gates
+    new_rendering: in your towns
+    rationale: The expression means the people's local settlements, not specifically the area inside a gate; the restriction contrasts local eating with eating at the chosen sanctuary.
+  - source_phrase: כָל נְדָרֶיךָ אֲשֶׁר תִּדֹּר
+    prior_rendering: any of your vows that you vow
+    new_rendering: any offerings you vow to give
+    rationale: The prohibition concerns eating, so the vows here denote the offerings promised by those vows, not the spoken promises themselves.
+  - source_phrase: תְּרוּמַת יָדֶךָ
+    prior_rendering: the contribution of your hand
+    new_rendering: the offerings you contribute
+    rationale: The hand expression identifies what the worshiper contributes; natural English makes the sacred gifts explicit without suggesting that the hand itself supplies a separate offering category.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: No maintainer revision is recorded. The recorded rationales differ over “vows” versus “vow offerings”; the eating context and documented sacrificial distinctions support restoring the draft’s explicit reference to offerings, while the idioms are rendered by their meaning.

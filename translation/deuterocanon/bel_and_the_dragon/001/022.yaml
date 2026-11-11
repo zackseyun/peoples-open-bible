@@ -10,15 +10,8 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And the king killed them[a], and he gave Bel over to Daniel[b], and he destroyed him and his temple.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'handed Bel over to Daniel.' The Greek expression literally uses 'gave' with an adjective meaning 'given up' or 'surrendered.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek pronoun is masculine, so some translations render 'destroyed him and his temple.' Here 'it' is used because the context concerns the idol of Bel being destroyed.
-    reason: alternative_reading
+  text: The king killed them and handed Bel over to Daniel, who destroyed the idol and its temple.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέκτεινεν
   chosen: killed
@@ -94,7 +87,13 @@ revisions:
   from: And the king killed them, and he gave Bel over to Daniel, and he destroyed it and its temple.
   to: And the king killed them, and he gave Bel over to Daniel, and he destroyed him and his temple.
   rationale: Changed 'it and its temple' to 'him and his temple' to match the masculine pronouns referring to Bel in the Greek and preserve consistency.
-
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king killed them[a], and he gave Bel over to Daniel[b], and he destroyed him and his temple.
+  to: The king killed them and handed Bel over to Daniel, who destroyed the idol and its temple.
+  rationale: The automated revision preferred masculine pronouns for grammatical correspondence, but the earlier lexical and theological deliberation correctly identified the physical referent as the idol. The new wording follows that contextual meaning and makes Daniel’s action explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -114,3 +113,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/bel_and_the_dragon/001/022.job-50476.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king kills the fraudulent priests and their families and surrenders Bel to Daniel, who destroys the idol and its temple.
+  meaning_decisions:
+  - source_phrase: καὶ ἔδωκεν τὸν Βὴλ ἔκδοτον τῷ Δανιήλ, καὶ κατέστρεψεν αὐτὸν καὶ τὸ ἱερὸν αὐτοῦ
+    prior_rendering: and he gave Bel over to Daniel, and he destroyed him and his temple
+    new_rendering: and handed Bel over to Daniel, who destroyed the idol and its temple
+    rationale: The transfer into Daniel’s power introduces Daniel’s destruction of Bel; identifying the actor removes an ambiguous English pronoun, and 'the idol' identifies what was physically destroyed without treating grammatical gender as personhood.
+  footnote_kinds: {}
+  history_weighed: The automated revision preferred masculine pronouns for grammatical correspondence, but the earlier lexical and theological deliberation correctly identified the physical referent as the idol. The new wording follows that contextual meaning and makes Daniel’s action explicit.

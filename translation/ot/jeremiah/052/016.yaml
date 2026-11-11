@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וּ/מִ/דַּלּ֣וֹת הָ/אָ֔רֶץ הִשְׁאִ֕יר נְבוּזַרְאֲדָ֖ן רַב טַבָּחִ֑ים לְ/כֹרְמִ֖ים וּ/לְ/יֹגְבִֽים־׃
 translation:
-  text: But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the chief of the executioners'; the Hebrew title is literally 'chief of the slaughterers/butchers,' likely an official court or military title.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'farmers' or 'field workers' for 'plowmen.'
-    reason: lexical_alternative
+  text: But Nebuzaradan, the captain of the guard, left some of the poorest people of the land behind to tend the vineyards and work the fields.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּ/מִ/דַּלּוֹת
   lemma: וּמִדַּלּוֹת
@@ -84,14 +77,20 @@ revisions:
   from: But some of the poorest of the land Nebuzaradan, the captain of the guard, left as vinedressers and plowmen.
   to: But some of the poorest of the land Nebuzaradan, the captain of the guard, left as vinedressers and plowmen.
   rationale: Changed 'plowmen' to 'farmers' to better reflect the broader sense of the Hebrew term for agricultural workers; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.'
-  to: 'But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.'
+  from: But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.
+  to: But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and plowmen''].'
+- timestamp: '2026-11-09T19:01:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But some of the poorest of the land Nebuzaradan[a], the captain of the guard[b], left as vinedressers and farmers.
+  to: But Nebuzaradan, the captain of the guard, left some of the poorest people of the land behind to tend the vineyards and work the fields.
+  rationale: The history alternates between 'plowmen' and 'farmers,' while the lexical discussion identifies agricultural field labor as the shared meaning. The new wording preserves that work and the distinct vineyard work without repeating the commander-title note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -111,3 +110,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/052/016.job-68315.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Nebuzaradan left some of the poorest people in Judah to cultivate its vineyards and fields.
+  meaning_decisions:
+  - source_phrase: וּמִדַּלּוֹת הָאָרֶץ הִשְׁאִיר נְבוּזַרְאֲדָן רַב טַבָּחִים
+    prior_rendering: But some of the poorest of the land Nebuzaradan, the captain of the guard, left
+    new_rendering: But Nebuzaradan, the captain of the guard, left some of the poorest people of the land behind
+    rationale: Natural English word order makes the agent clear, supplies the understood noun 'people,' and expresses their remaining behind in contrast to deportation.
+  - source_phrase: לְכֹרְמִים וּלְיֹגְבִים
+    prior_rendering: as vinedressers and farmers
+    new_rendering: to tend the vineyards and work the fields
+    rationale: This communicates the assigned agricultural functions directly and avoids suggesting either independent farm ownership or only the narrower task of plowing.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'plowmen' and 'farmers,' while the lexical discussion identifies agricultural field labor as the shared meaning. The new wording preserves that work and the distinct vineyard work without repeating the commander-title note.

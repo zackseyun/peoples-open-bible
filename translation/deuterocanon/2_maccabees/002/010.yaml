@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in the cavity of a dry well.' The Greek description of the place is compressed and somewhat awkward, combining terms for a hollow/cavity and a waterless well or pit.
-    reason: lexical_alternative
+  text: For when our ancestors were being taken away to Persia, the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well. They secured it there so that no one would know its location.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἤγοντο
   chosen: were being led away
@@ -136,14 +132,20 @@ revisions:
   from: For when our fathers were being led away into Persia, the devout priests took some of the fire from the altar secretly and hid it in the hollow of a dry well-like pit, where they secured it so that the place would be unknown to everyone.
   to: For when our fathers were being led away into Persia, the devout priests took some of the fire from the altar secretly and hid it in the hollow of a dry well-like pit, where they secured it so that the place would be unknown to everyone.
   rationale: Moved 'secretly' to modify 'took' more naturally, and simplified 'dry well-like pit' to 'dry well' for a more accurate and natural rendering of the Greek.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.'
-  to: 'For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.'
+  from: For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.
+  to: For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''dry well-like pit''].'
+- timestamp: '2026-11-09T18:55:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For when our fathers were being led away into Persia[a], the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well, where they secured it so that the place would be unknown to everyone.
+  to: For when our ancestors were being taken away to Persia, the devout priests secretly took some of the fire from the altar and hid it in the hollow of a dry well. They secured it there so that no one would know its location.
+  rationale: I retain the current simplification to 'dry well' and the improved placement of 'secretly'; the automated reverts offer no meaning-based reason to restore 'well-like pit.' The earlier understanding of forced removal and reverent preservation also remains intact.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -163,3 +165,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/002/010.job-48937.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:34Z'
+  change_level: refined
+  confidence: high
+  meaning: During their ancestors' deportation to Persia, devout priests secretly preserved altar fire in a dry well and concealed its location.
+  meaning_decisions:
+  - source_phrase: ἡμῶν οἱ πατέρες
+    prior_rendering: our fathers
+    new_rendering: our ancestors
+    rationale: The reference is to earlier generations of the people, not the writers' immediate fathers.
+  - source_phrase: ἤγοντο
+    prior_rendering: were being led away
+    new_rendering: were being taken away
+    rationale: This more clearly conveys forced removal rather than ordinary movement under someone's guidance.
+  - source_phrase: ὥστε πᾶσιν ἄγνωστον εἶναι τὸν τόπον
+    prior_rendering: so that the place would be unknown to everyone
+    new_rendering: so that no one would know its location
+    rationale: The purpose was to conceal the deposit's whereabouts; natural English expresses that directly.
+  footnote_kinds: {}
+  history_weighed: I retain the current simplification to 'dry well' and the improved placement of 'secretly'; the automated reverts offer no meaning-based reason to restore 'well-like pit.' The earlier understanding of forced removal and reverent preservation also remains intact.

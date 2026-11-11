@@ -22,18 +22,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “coming against him.” The Greek phrase can be rendered more neutrally as “coming to meet him,” but in this military context it implies hostile encounter.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “we are faint.” The Greek can denote a weakened or dispirited condition; here it is linked to having gone without food.
-    reason: lexical_alternative
-  - marker: c
-    text: “Having gone without food” could also be rendered “fasting,” but the wording does not by itself require a formal religious fast.
-    reason: lexical_alternative
+  text: When Judas’s men saw the army advancing against him, they said to him, “How can so few of us fight against such a great force? We are exhausted because we have had no food today.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρεμβολήν
   chosen: camp
@@ -119,14 +109,20 @@ revisions:
   from: But when they saw the camp coming to meet him, they said to Judas, “How can we, being so few, fight against such a great multitude? And we are exhausted, having gone without food today.”
   to: But when they saw the camp coming to meet him, they said to Judas, “How can we, being so few, fight against such a great multitude? And we are exhausted, having gone without food today.”
   rationale: Adjusted 'such a great multitude' to 'so great a multitude' for a slightly more formal register while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”'
-  to: 'But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”'
+  from: But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”
+  to: But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against such a great multitude''].'
+- timestamp: '2026-11-09T18:51:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when they saw the camp coming to meet him[a], they said to Judas, “How can we, being so few, fight against so great a multitude? And we are exhausted[c][b], having gone without food today.”
+  to: When Judas’s men saw the army advancing against him, they said to him, “How can so few of us fight against such a great force? We are exhausted because we have had no food today.”
+  rationale: The recorded register adjustment adds little meaning, while the earlier notes establish a hostile encounter and exhaustion from not eating. Those meanings now appear directly in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +142,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/017.job-48102.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas’s men feared the much larger approaching army and protested that hunger had left them exhausted.
+  meaning_decisions:
+  - source_phrase: ἴδαν τὴν παρεμβολὴν ἐρχομένην εἰς συνάντησιν αὐτῷ
+    prior_rendering: they saw the camp coming to meet him
+    new_rendering: Judas’s men saw the army advancing against him
+    rationale: The approaching entity is an army, and the encounter is hostile; the observers are Judas’s small force.
+  - source_phrase: ὀλιγοστοὶ ὄντες ... πρὸς πλῆθος τοσοῦτο
+    prior_rendering: being so few ... against so great a multitude
+    new_rendering: so few of us ... against such a great force
+    rationale: The direct question preserves the emphatic contrast in troop numbers without the cumbersome participial wording.
+  - source_phrase: ἐκλελύμεθα ἀσιτοῦντες σήμερον
+    prior_rendering: we are exhausted, having gone without food today
+    new_rendering: We are exhausted because we have had no food today
+    rationale: The causal relationship between hunger and exhaustion is explicit, without implying a religious fast.
+  footnote_kinds: {}
+  history_weighed: The recorded register adjustment adds little meaning, while the earlier notes establish a hostile encounter and exhaustion from not eating. Those meanings now appear directly in the main text.

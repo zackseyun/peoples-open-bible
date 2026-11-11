@@ -19,11 +19,11 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And not only that[a], but there will be an inspection of them, because they received the foreigners with hostility.
-  philosophy: optimal-equivalence
+  text: 'And that was not all: the people of Sodom will face judgment[a] for receiving foreigners with hostility.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'there will be a visitation upon them'; the Greek can imply divine visitation for judgment.
+    text: Literally, “there will be some visitation upon them.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: οὐ μόνον
@@ -101,14 +101,20 @@ revisions:
   from: And not only that, but there will be an inspection of them, because they received the foreigners with hostility.
   to: And not only that, but there will be a visitation upon them, because they received the strangers with hostility.
   rationale: Replaced 'inspection of them' with 'visitation upon them' to better reflect ἐπισκοπή in this context of divine judgment, and changed 'foreigners' to 'strangers' for a more natural formal rendering of τοὺς ἀλλοτρίους.
-
 - timestamp: '2026-05-16T17:22:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And not only that[a], but there will be a visitation upon them, because they received the strangers with hostility.'
-  to: 'And not only that[a], but there will be an inspection of them, because they received the foreigners with hostility.'
-  rationale: 'Restored drafter ''an inspection of them'' (preserving the chosen rendering of ἐπισκοπή) and ''the foreigners'' (preserving the chosen rendering with explicit ''foreigners'') per chosen renderings.'
+  from: And not only that[a], but there will be a visitation upon them, because they received the strangers with hostility.
+  to: And not only that[a], but there will be an inspection of them, because they received the foreigners with hostility.
+  rationale: Restored drafter 'an inspection of them' (preserving the chosen rendering of ἐπισκοπή) and 'the foreigners' (preserving the chosen rendering with explicit 'foreigners') per chosen renderings.
+- timestamp: '2026-11-09T19:13:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And not only that[a], but there will be an inspection of them, because they received the foreigners with hostility.
+  to: 'And that was not all: the people of Sodom will face judgment[a] for receiving foreigners with hostility.'
+  rationale: The earlier review correctly recognized the judicial force of “visitation,” despite the automated restoration of “inspection.” I carry that gain into clear English as “face judgment,” while preserving the visitation wording in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -128,3 +134,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/015.job-39505.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:26Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Sodom’s hostile reception of foreigners also makes its people liable to judgment.
+  meaning_decisions:
+  - source_phrase: τις ἐπισκοπὴ ἔσται αὐτῶν
+    prior_rendering: there will be an inspection of them
+    new_rendering: the people of Sodom will face judgment
+    rationale: In this account of deserved punishment, ἐπισκοπή denotes visitation for judgment, not a neutral inspection. The contrast resumed in verse 16 indicates that this clause concerns the former group, Sodom.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review correctly recognized the judicial force of “visitation,” despite the automated restoration of “inspection.” I carry that gain into clear English as “face judgment,” while preserving the visitation wording in a note.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὅμως μέντοι καὶ ἐκ τῶν ἀρχόντων πολλοὶ ἐπίστευσαν εἰς αὐτόν, ἀλλὰ διὰ τοὺς Φαρισαίους οὐχ ὡμολόγουν ἵνα μὴ ἀποσυνάγωγοι γένωνται,
 translation:
-  text: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'be put out of the synagogue' or 'be expelled from the synagogue.' The Greek denotes exclusion from synagogue community.
-    reason: lexical_alternative
+  text: Nevertheless, many even among the Jewish leaders believed in him. But for fear of the Pharisees, they did not acknowledge him openly, so that they would not be excluded from the synagogue community.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅμως μέντοι
   chosen: Nevertheless
@@ -91,13 +87,12 @@ revisions:
   from: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue.
   to: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing him, so that they might not become excluded from the synagogue.
   rationale: Changed 'confessing it' to 'confessing him' for closer alignment with the Greek, which has no explicit object other than the implied reference to him.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Nevertheless[a], even among the rulers many believed in him, but because of the Pharisees they were not confessing him, so that they might not become excluded from the synagogue.'
-  to: 'Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue.'
+  from: Nevertheless[a], even among the rulers many believed in him, but because of the Pharisees they were not confessing him, so that they might not become excluded from the synagogue.
+  to: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were not confessing it''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -107,6 +102,13 @@ revisions:
   from: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue.
   to: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('become excluded from the synagogue') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:13:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Nevertheless, even among the rulers many believed in him, but because of the Pharisees they were not confessing it, so that they might not become excluded from the synagogue[a].
+  to: Nevertheless, many even among the Jewish leaders believed in him. But for fear of the Pharisees, they did not acknowledge him openly, so that they would not be excluded from the synagogue community.
+  rationale: The revision and automated revert debated the implied object of 'confessing,' but neither recorded a human editorial ruling. The context supports public acknowledgment of Jesus, while the earlier note's explanation of community exclusion is now carried in the text; the stated belief remains unqualified.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +131,29 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/012/042.job-55110.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Many Jewish leaders believed in Jesus but concealed that allegiance because they feared the Pharisees and exclusion from the synagogue community.
+  meaning_decisions:
+  - source_phrase: καὶ ἐκ τῶν ἀρχόντων πολλοὶ
+    prior_rendering: even among the rulers many
+    new_rendering: many even among the Jewish leaders
+    rationale: The phrase identifies leaders within the Jewish community, not unspecified political rulers; the revised order and identification make that setting clear.
+  - source_phrase: διὰ τοὺς Φαρισαίους οὐχ ὡμολόγουν
+    prior_rendering: because of the Pharisees they were not confessing it
+    new_rendering: for fear of the Pharisees, they did not acknowledge him openly
+    rationale: The stated aim of avoiding exclusion establishes fear as the reason for their silence, and 'acknowledge him openly' conveys public allegiance rather than confession of wrongdoing.
+  - source_phrase: ἵνα μὴ ἀποσυνάγωγοι γένωνται
+    prior_rendering: so that they might not become excluded from the synagogue
+    new_rendering: so that they would not be excluded from the synagogue community
+    rationale: This is exclusion from communal religious participation, not merely removal from a building; 'community' supplies the distinction modern readers need.
+  footnote_kinds: {}
+  history_weighed: The revision and automated revert debated the implied object of 'confessing,' but neither recorded a human editorial ruling. The context supports public acknowledgment of Jesus, while the earlier note's explanation of community exclusion is now carried in the text; the stated belief remains unqualified.

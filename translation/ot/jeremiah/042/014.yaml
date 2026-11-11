@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: לֵ/אמֹ֗ר לֹ֚א כִּ֣י אֶ֤רֶץ מִצְרַ֨יִם֙ נָב֔וֹא אֲשֶׁ֤ר לֹֽא נִרְאֶה֙ מִלְחָמָ֔ה וְ/ק֥וֹל שׁוֹפָ֖ר לֹ֣א נִשְׁמָ֑ע וְ/לַ/לֶּ֥חֶם לֹֽא נִרְעָ֖ב וְ/שָׁ֥ם נֵשֵֽׁב־־׃
 translation:
-  text: saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'and there we will dwell.' The Hebrew verb can denote settled residence as well as simply remaining somewhere.
-    reason: lexical_alternative
+  text: saying, ‘No, we will go to the land of Egypt, where we will not see war or hear the trumpet sound the alarm or hunger for bread. We will live there’—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֵאמֹר
   chosen: saying
@@ -100,14 +96,20 @@ revisions:
   from: saying, ‘No, but we will go into the land of Egypt, where we will not see war, and the sound of the trumpet we will not hear, and for bread we will not be hungry; and there we will live.’
   to: saying, ‘No, but we will go into the land of Egypt, where we will not see war, and the sound of the trumpet we will not hear, and for bread we will not be hungry; and there we will live.’
   rationale: 'Improved English word order for naturalness while preserving all source elements: changed ‘and the sound of the trumpet we will not hear’ to ‘and we will not hear the sound of the trumpet,’ and ‘and for bread we will not be hungry’ to ‘and we will not be hungry for bread.’'
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’'
-  to: 'saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’'
+  from: saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’
+  to: saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and for bread we will not be hungry''].'
+- timestamp: '2026-11-09T17:59:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying[a], ‘No, but we will go into the land of Egypt, where we will not see war, and we will not hear the sound of the trumpet, and we will not be hungry for bread; and there we will live.’
+  to: saying, ‘No, we will go to the land of Egypt, where we will not see war or hear the trumpet sound the alarm or hunger for bread. We will live there’—
+  rationale: The earlier review’s natural English word order was a genuine gain, despite the automated revert’s preference for source-shaped constructions. I build on that gain, retain war and bread, and clarify the trumpet’s alarm function.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -127,3 +129,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/042/014.job-68046.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:59:38Z'
+  change_level: refined
+  confidence: high
+  meaning: The people imagine that living in Egypt will spare them war, military alarms, and hunger.
+  meaning_decisions:
+  - source_phrase: לֹא כִּי אֶרֶץ מִצְרַיִם נָבוֹא
+    prior_rendering: No, but we will go into the land of Egypt
+    new_rendering: No, we will go to the land of Egypt
+    rationale: The emphatic rejection and contrary plan are clear from “No” and the surrounding contrast; the awkward English “No, but” is unnecessary.
+  - source_phrase: וְקוֹל שׁוֹפָר לֹא נִשְׁמָע
+    prior_rendering: and we will not hear the sound of the trumpet
+    new_rendering: or hear the trumpet sound the alarm
+    rationale: The trumpet is a military alarm in this context, not merely a musical sound; its understood function is supplied in the main text.
+  - source_phrase: וְלַלֶּחֶם לֹא נִרְעָב
+    prior_rendering: and we will not be hungry for bread
+    new_rendering: or hunger for bread
+    rationale: This retains the concrete bread imagery while expressing the absence of hunger naturally within the coordinated negative clause.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s natural English word order was a genuine gain, despite the automated revert’s preference for source-shaped constructions. I build on that gain, retain war and bread, and clarify the trumpet’s alarm function.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּתֵּ֤ן יְהֽוֹנָתָן֙ אֶת כֵּלָ֔י/ו אֶל הַ/נַּ֖עַר אֲשֶׁר ל֑/וֹ וַ/יֹּ֣אמֶר ל֔/וֹ לֵ֖ךְ הָבֵ֥יא הָ/עִֽיר־־־׃
 translation:
-  text: Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'his weapons' could more broadly mean 'his equipment' or 'his gear'; the context of Jonathan's bow and arrows favors 'weapons.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the boy who was with him' / 'his servant boy.' The Hebrew describes the young attendant as belonging to Jonathan.
-    reason: lexical_alternative
-  - marker: c
-    text: The object of 'bring' is implicit in Hebrew and is supplied in English as 'them,' referring to Jonathan's weapons/equipment.
-    reason: lexical_alternative
+  text: Then Jonathan gave his weapons to his young attendant and said to him, “Go, take them to the city.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּתֵּן
   chosen: gave
@@ -87,14 +77,20 @@ revisions:
   from: Then Jonathan gave his weapons to the young man who belonged to him and said to him, “Go, bring them to the city.”
   to: Then Jonathan gave his weapons to the young man who belonged to him and said to him, “Go, bring them to the city.”
   rationale: Changed 'who belonged to him' to 'who was with him' for more natural and accurate rendering of אֲשֶׁר לוֹ in context; retained 'weapons' and 'them' to reflect the collective sense of his gear.
-
 - timestamp: '2026-05-18T02:56:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”'
-  to: 'Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”'
+  from: Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”
+  to: Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the young man who belonged to him''].'
+- timestamp: '2026-11-09T17:24:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jonathan gave his weapons to the young man who was with him and said to him[a], “Go[c][b], bring them to the city.”
+  to: Then Jonathan gave his weapons to his young attendant and said to him, “Go, take them to the city.”
+  rationale: The history debates 'belonged to him' and 'was with him' without a securely recorded change; 'his young attendant' preserves the service relationship naturally. The contextual choice 'weapons' is retained.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -116,3 +112,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/020/040.job-59286.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:02Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonathan gives his weapons to his attendant and sends him back to the city with them.
+  meaning_decisions:
+  - source_phrase: הַנַּעַר אֲשֶׁר לוֹ
+    prior_rendering: the young man who was with him
+    new_rendering: his young attendant
+    rationale: Preserves the personal service relationship expressed by 'who was his,' rather than reducing it to mere accompaniment.
+  - source_phrase: הָבֵיא הָעִיר
+    prior_rendering: bring them to the city
+    new_rendering: take them to the city
+    rationale: English uses 'take' for carrying the weapons away from the speaker to another destination; the understood object remains explicit.
+  footnote_kinds: {}
+  history_weighed: The history debates 'belonged to him' and 'was with him' without a securely recorded change; 'his young attendant' preserves the service relationship naturally. The contextual choice 'weapons' is retained.

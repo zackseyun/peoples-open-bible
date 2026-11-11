@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: אַ֣נְתְּה מַלְכָּ֗/א חָזֵ֤ה הֲוַ֨יְתָ֙ וַ/אֲל֨וּ צְלֵ֥ם חַד֙ שַׂגִּ֔יא צַלְמָ֨/א דִּכֵּ֥ן רַ֛ב וְ/זִיוֵ֥/הּ יַתִּ֖יר קָאֵ֣ם לְ/קָבְלָ֑/ךְ וְ/רֵוֵ֖/הּ דְּחִֽיל׃
 translation:
-  text: You[a], O king, were watching, and behold, there was one great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Aramaic צְלֵם can be rendered 'image' or 'statue'; 'statue' is chosen here because the context describes a large visible figure standing before the king.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'its brightness was surpassing.' The phrase emphasizes the figure's exceptional radiance or splendor.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'its aspect was dreadful.' The Aramaic describes an appearance that evokes fear.
-    reason: lexical_alternative
+  text: You, O king, were watching, and there before you stood one great statue. It was immense, with extraordinary splendor and a terrifying appearance.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַ֣נְתְּה
   chosen: You
@@ -107,14 +97,20 @@ revisions:
   from: You, O king, were watching, and behold, there was one great statue. That statue, immense and with extraordinary splendor, was standing before you, and its appearance was terrifying.
   to: You, O king, were watching, and behold, there was a single great statue. That statue was immense, and its splendor was extraordinary; it was standing before you, and its appearance was terrifying.
   rationale: 'Revised ''one great statue'' to ''a single great statue'' for more natural rendering of חד; restructured the second sentence to more directly reflect the source sequence: immense, its splendor extraordinary, standing before you, and its appearance terrifying.'
-
 - timestamp: '2026-05-16T04:40:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You[a], O king, were watching, and behold, there was a single great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.'
-  to: 'You[a], O king, were watching, and behold, there was one great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.'
-  rationale: 'Azure substituted ''a single great statue'' — matching drafter''s explicit rejected alternative ''a single great image''. Drafter preserved Aramaic numeral חַד as ''one'' rather than periphrastic ''a single''.'
+  from: You[a], O king, were watching, and behold, there was a single great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.
+  to: You[a], O king, were watching, and behold, there was one great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.
+  rationale: Azure substituted 'a single great statue' — matching drafter's explicit rejected alternative 'a single great image'. Drafter preserved Aramaic numeral חַד as 'one' rather than periphrastic 'a single'.
+- timestamp: '2026-11-09T17:29:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You[a], O king, were watching, and behold, there was one great statue[b]. That statue was immense, and its splendor was extraordinary; it was standing before you[c], and its appearance was terrifying.
+  to: You, O king, were watching, and there before you stood one great statue. It was immense, with extraordinary splendor and a terrifying appearance.
+  rationale: The recorded revision improved the description’s readability, while the later revert preserved one rather than a single. This rendering keeps one, statue, splendor, and terror, but integrates the repeated scene-setting clauses more naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +130,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/002/031.job-44287.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:33Z'
+  change_level: refined
+  confidence: high
+  meaning: The king saw one immense, splendid statue standing before him with a terrifying appearance.
+  meaning_decisions:
+  - source_phrase: וַאֲלוּ צְלֵם חַד שַׂגִּיא ... קָאֵם לְקָבְלָךְ
+    prior_rendering: and behold, there was one great statue ... it was standing before you
+    new_rendering: and there before you stood one great statue
+    rationale: Foregrounding the statue’s position conveys the presentational force of behold in natural English while retaining the single figure and its standing posture.
+  footnote_kinds: {}
+  history_weighed: The recorded revision improved the description’s readability, while the later revert preserved one rather than a single. This rendering keeps one, statue, splendor, and terror, but integrates the repeated scene-setting clauses more naturally.

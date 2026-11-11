@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֛ה כְּ/כַלֹּ֥ת הַ/שֹּׁטְרִ֖ים לְ/דַבֵּ֣ר אֶל הָ/עָ֑ם וּ/פָֽקְד֛וּ שָׂרֵ֥י צְבָא֖וֹת בְּ/רֹ֥אשׁ הָ/עָֽם־׃ס
 translation:
-  text: And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they shall muster commanders of the armies over the people.' The verb can carry senses such as appoint, muster, or set in charge, depending on context.
-    reason: lexical_alternative
+  text: When the officers have finished speaking to the troops, they shall appoint army commanders to lead them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And when
@@ -85,14 +81,20 @@ revisions:
   from: And when the officers have finished speaking to the people, they shall appoint commanders of the armies at the head of the people.
   to: And when the officers have finished speaking to the people, they shall appoint commanders of the armies at the head of the people.
   rationale: Removed 'the' before 'armies' for a more natural rendering of the plural construct without changing the sense; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:55:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.'
-  to: 'And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.'
+  from: And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.
+  to: And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''commanders of the armies''].'
+- timestamp: '2026-11-09T17:30:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the officers have finished speaking to the people[a], they shall appoint commanders of armies at the head of the people.
+  to: When the officers have finished speaking to the troops, they shall appoint army commanders to lead them.
+  rationale: The lexical discussion supports 'appoint' and understands 'at the head' as a leadership position, both of which are retained in meaning. The automated article changes and revert carry little weight compared with that contextual explanation.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -112,3 +114,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/020/009.job-61700.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:58Z'
+  change_level: refined
+  confidence: high
+  meaning: After announcing the exemptions, the officers must appoint military commanders to lead the fighting force.
+  meaning_decisions:
+  - source_phrase: לְדַבֵּר אֶל הָעָם
+    prior_rendering: speaking to the people
+    new_rendering: speaking to the troops
+    rationale: The military setting makes the audience specific.
+  - source_phrase: שָׂרֵי צְבָאוֹת בְּרֹאשׁ הָעָם
+    prior_rendering: commanders of armies at the head of the people
+    new_rendering: army commanders to lead them
+    rationale: The phrase concerns appointing military leaders over the force; the new wording avoids suggesting several distinct armies or merely a position at the front.
+  footnote_kinds: {}
+  history_weighed: The lexical discussion supports 'appoint' and understands 'at the head' as a leadership position, both of which are retained in meaning. The automated article changes and revert carry little weight compared with that contextual explanation.

@@ -12,12 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: I had heard from my birth[a], in the tribe of my ancestral family, that you, Lord, took Israel from among all the nations, and our fathers from among all their ancestors, as an everlasting inheritance, and you did for them what you spoke.
-  philosophy: optimal-equivalence
+  text: From birth I have heard within my ancestral tribe that you, Lord, chose Israel from among all the nations, and our fathers from among all their ancestors[a], as your everlasting inheritance, and that you fulfilled for them everything you had promised.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'you fulfilled for them what you said.' The Greek reads more literally, 'you did for them what you spoke.'
-    reason: lexical_alternative
+    text: Or “our fathers from among all the forebears of the nations.” The referent of “their” is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐγὼ ἤκουον
   chosen: I had heard
@@ -117,7 +117,6 @@ revision_pass:
   timestamp: '2026-04-23T15:37:50Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +136,42 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/015.job-50248.json
+revisions:
+- timestamp: '2026-11-09T18:59:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I had heard from my birth[a], in the tribe of my ancestral family, that you, Lord, took Israel from among all the nations, and our fathers from among all their ancestors, as an everlasting inheritance, and you did for them what you spoke.
+  to: From birth I have heard within my ancestral tribe that you, Lord, chose Israel from among all the nations, and our fathers from among all their ancestors[a], as your everlasting inheritance, and that you fulfilled for them everything you had promised.
+  rationale: The recorded alternatives already recognize selection in “took” and fulfillment in “did what you spoke,” so I brought those meanings into natural English. I retained “our fathers” and the everlasting inheritance language, but did not treat the earlier explanation of “their ancestors” as certain.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Esther recalls the ancestral teaching that God chose Israel and its fathers as his everlasting inheritance and fulfilled what he had promised them.
+  meaning_decisions:
+  - source_phrase: ἐγὼ ἤκουον ἐκ γενετῆς μου ἐν φυλῇ πατριάς μου
+    prior_rendering: I had heard from my birth, in the tribe of my ancestral family
+    new_rendering: From birth I have heard within my ancestral tribe
+    rationale: This is teaching repeatedly received in Esther’s ancestral community and recalled in the present prayer; the English removes the cumbersome kinship chain without losing its setting.
+  - source_phrase: ἔλαβες τὸν Ἰσραὴλ ἐκ πάντων τῶν ἐθνῶν
+    prior_rendering: took Israel from among all the nations
+    new_rendering: chose Israel from among all the nations
+    rationale: Taking Israel from among the nations means selecting it to belong to God, not merely relocating it.
+  - source_phrase: εἰς κληρονομίαν αἰώνιον
+    prior_rendering: as an everlasting inheritance
+    new_rendering: as your everlasting inheritance
+    rationale: The prayer’s repeated inheritance language identifies Israel as God’s possession; “your” makes that relationship explicit.
+  - source_phrase: ἐποίησας αὐτοῖς ὅσα ἐλάλησας
+    prior_rendering: you did for them what you spoke
+    new_rendering: you fulfilled for them everything you had promised
+    rationale: In this recollection of election and covenant faithfulness, God’s spoken words are promises that he carried out, and ὅσα includes everything he had said.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded alternatives already recognize selection in “took” and fulfillment in “did what you spoke,” so I brought those meanings into natural English. I retained “our fathers” and the everlasting inheritance language, but did not treat the earlier explanation of “their ancestors” as certain.

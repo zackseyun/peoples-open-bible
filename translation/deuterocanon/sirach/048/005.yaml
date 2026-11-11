@@ -16,11 +16,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 48:5
 translation:
-  text: who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.
-  philosophy: optimal-equivalence
+  text: You raised a corpse from death and from Sheol[a], by the will of Yahweh[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''by the word of the Most High.'' The Hebrew witness reads ''by the will of the LORD.'''
+    text: Sheol is the realm of the dead.
+    reason: lexical_alternative
+  - marker: b
+    text: 'Greek: ''by the word of the Most High.'''
     reason: textual_variant
 lexical_decisions:
 - source_word: המקים
@@ -109,14 +112,20 @@ revisions:
   from: who raised up a dead man from death, and from Sheol, by the will of the LORD.
   to: who raised up a dead man from death, and from Sheol, by the will of the LORD.
   rationale: Changed 'a dead man' to 'a corpse' for closer lexical accuracy to גוע, while preserving the formal structure and sense of the verse.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.'
-  to: 'who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.'
+  from: who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.
+  to: who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a dead man''].'
+- timestamp: '2026-11-09T19:09:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who raised up a corpse from death[a], and from Sheol, by the will of Yahweh.
+  to: You raised a corpse from death and from Sheol[a], by the will of Yahweh[b].
+  rationale: The history's substantive distinction between Yahweh's will and the Greek's divine word is preserved, as are the current corpse and Sheol wording. The standing ruling for the divine name outweighs the older rationale favoring 'the LORD.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +145,23 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/048/005.job-52322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:09Z'
+  change_level: refined
+  confidence: high
+  meaning: Elijah restored a dead person to life from the realm of death according to Yahweh's will.
+  meaning_decisions:
+  - source_phrase: המקים
+    prior_rendering: who raised up
+    new_rendering: You raised
+    rationale: A complete sentence continues the direct address begun in verse 4 without leaving an awkward English relative-clause fragment.
+  footnote_kinds:
+    a: name_or_term
+    b: textual_variant
+  history_weighed: The history's substantive distinction between Yahweh's will and the Greek's divine word is preserved, as are the current corpse and Sheol wording. The standing ruling for the divine name outweighs the older rationale favoring 'the LORD.'

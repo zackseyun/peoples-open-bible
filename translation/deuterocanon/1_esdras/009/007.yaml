@@ -28,12 +28,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “have married foreign women” or “have taken foreign women as wives.” The Greek verb literally means “have lived with,” but in this context it refers to unlawful unions with women from other peoples.
-    reason: lexical_alternative
+  text: Then Ezra stood up and said to them, “You have broken God's law by marrying foreign women, adding to Israel's sin.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀναστὰς
   chosen: rose
@@ -135,14 +131,20 @@ revisions:
   from: And Ezra rose and said to them, “You have acted lawlessly and have lived with foreign women, adding sin to Israel.”
   to: And Ezra rose and said to them, “You have acted lawlessly and have lived with foreign women, adding sin to Israel.”
   rationale: Changed 'have lived with' to 'have married' to more accurately reflect συνῳκίσατε in this context; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”'
-  to: 'And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”'
+  from: And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”
+  to: And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have lived with''].'
+- timestamp: '2026-11-09T18:50:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Ezra rose and said to them[a], “You have acted lawlessly and have married foreign women, adding sin to Israel.”
+  to: Then Ezra stood up and said to them, “You have broken God's law by marrying foreign women, adding to Israel's sin.
+  rationale: The review's move from 'lived with' to 'married' correctly made the contextual meaning explicit, and the current wording preserves that gain despite the revert rationale. I also retain the corporate dimension emphasized in the earlier theological discussion.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -162,3 +164,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/009/007.job-47903.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ezra accuses the people of violating God's law through foreign marriages and thereby increasing Israel's sin.
+  meaning_decisions:
+  - source_phrase: ἠνομήσατε καὶ συνῳκίσατε γυναιξὶν ἀλλογενέσιν
+    prior_rendering: have acted lawlessly and have married foreign women
+    new_rendering: have broken God's law by marrying foreign women
+    rationale: The marriage is the violation being charged, not a separate action alongside unspecified lawlessness; the context identifies the law as God's.
+  - source_phrase: προσθεῖναι ἁμαρτίαν τῷ Ἰσραήλ
+    prior_rendering: adding sin to Israel
+    new_rendering: adding to Israel's sin
+    rationale: The phrase means increasing the nation's corporate sin, which the revised English expresses naturally.
+  footnote_kinds: {}
+  history_weighed: The review's move from 'lived with' to 'married' correctly made the contextual meaning explicit, and the current wording preserves that gain despite the revert rationale. I also retain the corporate dimension emphasized in the earlier theological discussion.

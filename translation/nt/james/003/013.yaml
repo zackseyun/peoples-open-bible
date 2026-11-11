@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Τίς σοφὸς καὶ ἐπιστήμων ἐν ὑμῖν; δειξάτω ἐκ τῆς καλῆς ἀναστροφῆς τὰ ἔργα αὐτοῦ ἐν πραΰτητι σοφίας.
 translation:
-  text: Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'with the gentleness that comes from wisdom.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says 'let him show,' using a masculine singular form with representative force for any such person in the community.
-    reason: cultural_note
+  text: Who is wise and understanding among you? Let that person show it by good conduct, with works done in the gentleness that comes from wisdom.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τίς
   chosen: Who
@@ -104,14 +97,20 @@ revisions:
   from: Who is wise and understanding among you? Let him show his works by his good way of life, in the meekness of wisdom.
   to: Who is wise and understanding among you? Let him show his works by his good way of life, in the meekness of wisdom.
   rationale: Replaced 'good way of life' with 'good conduct' for a more natural and standard rendering of ἀναστροφή while preserving the formal sense. Kept 'works' and 'meekness of wisdom' as accurate and appropriately formal.
-
 - timestamp: '2026-05-18T03:02:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.'
-  to: 'Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.'
+  from: Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.
+  to: Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his good way of life''].'
+- timestamp: '2026-11-09T17:08:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Who is wise and understanding among you? Let him show his works by his good conduct[b][a], in the meekness of wisdom.
+  to: Who is wise and understanding among you? Let that person show it by good conduct, with works done in the gentleness that comes from wisdom.
+  rationale: I retain the current wording's 'good conduct' and its connection with James's emphasis on works; the automated revert carries little interpretive weight. The earlier gentleness footnote and recognition of the representative singular now supply their meaning directly in the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/james/003/013.job-46338.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Anyone who is truly wise must demonstrate that wisdom through good conduct and works marked by gentleness.
+  meaning_decisions:
+  - source_phrase: δειξάτω ἐκ τῆς καλῆς ἀναστροφῆς τὰ ἔργα αὐτοῦ
+    prior_rendering: Let him show his works by his good conduct
+    new_rendering: Let that person show it by good conduct, with works done
+    rationale: The question establishes wisdom as what must be demonstrated, and the following command identifies conduct and works as its evidence; the representative singular applies to anyone in the community.
+  - source_phrase: ἐν πραΰτητι σοφίας
+    prior_rendering: in the meekness of wisdom
+    new_rendering: in the gentleness that comes from wisdom
+    rationale: Unpacking the genitive makes clear that wisdom produces this gentle, non-self-assertive manner; 'gentleness' avoids suggesting timidity.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording's 'good conduct' and its connection with James's emphasis on works; the automated revert carries little interpretive weight. The earlier gentleness footnote and recognition of the representative singular now supply their meaning directly in the text.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: דַּבֵּ֛ר אֶל בְּנֵ֥י יִשְׂרָאֵ֖ל לֵ/אמֹ֑ר אִ֣ישׁ אִ֣ישׁ כִּי יִהְיֶֽה טָמֵ֣א לָ/נֶ֡פֶשׁ אוֹ֩ בְ/דֶ֨רֶךְ רְחֹקָ֜הׄ לָ/כֶ֗ם א֚וֹ לְ/דֹרֹ֣תֵי/כֶ֔ם וְ/עָ֥שָׂה פֶ֖סַח לַ/יהוָֽה־־־׀׃
 translation:
-  text: Speak to the sons of Israel[a], saying, ‘If any man becomes unclean by a dead body, or is on a distant journey, whether among you or among your generations[c][b], he shall still keep the Passover to Yahweh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'sons of Israel'; the phrase refers to the Israelite community as a whole.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'unclean because of a corpse.' The Hebrew idiom literally says 'unclean for a person/soul' and in this legal context refers to corpse impurity.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'throughout your generations.'
-    reason: lexical_alternative
+  text: '“Tell the Israelites: ‘If any man among you, now or in future generations, is ritually unclean because of a human corpse or is on a distant journey, he must still keep the Passover for Yahweh.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: דַּבֵּר
   chosen: Speak
@@ -113,14 +103,20 @@ revisions:
   from: Speak to the sons of Israel, saying, ‘If any man becomes unclean by a dead body, or is on a distant journey, whether among you or among your generations, he shall still keep the Passover to the LORD.
   to: Speak to the sons of Israel, saying, ‘If any man is unclean because of a dead body, or is on a distant journey, whether among you or throughout your generations, he shall keep the Passover to the LORD.
   rationale: Adjusted 'becomes unclean by a dead body' to 'is unclean because of a dead body' for more natural and precise rendering of לָנֶפֶשׁ; changed 'among your generations' to 'throughout your generations' for more idiomatic rendering of לְדֹרֹתֵיכֶם; removed 'still,' which is not explicit in the source.
-
 - timestamp: '2026-05-15T12:24:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Speak to the sons of Israel[a], saying, ‘If any man is unclean because of a dead body, or is on a distant journey, whether among you or throughout your generations[c][b], he shall keep the Passover to Yahweh.'
-  to: 'Speak to the sons of Israel[a], saying, ‘If any man becomes unclean by a dead body, or is on a distant journey, whether among you or among your generations[c][b], he shall still keep the Passover to Yahweh.'
-  rationale: 'Restored ''unclean by'', parallel ''among your generations'', and permissive ''still keep''.'
+  from: Speak to the sons of Israel[a], saying, ‘If any man is unclean because of a dead body, or is on a distant journey, whether among you or throughout your generations[c][b], he shall keep the Passover to Yahweh.
+  to: Speak to the sons of Israel[a], saying, ‘If any man becomes unclean by a dead body, or is on a distant journey, whether among you or among your generations[c][b], he shall still keep the Passover to Yahweh.
+  rationale: Restored 'unclean by', parallel 'among your generations', and permissive 'still keep'.
+- timestamp: '2026-11-09T18:28:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Speak to the sons of Israel[a], saying, ‘If any man becomes unclean by a dead body, or is on a distant journey, whether among you or among your generations[c][b], he shall still keep the Passover to Yahweh.
+  to: '“Tell the Israelites: ‘If any man among you, now or in future generations, is ritually unclean because of a human corpse or is on a distant journey, he must still keep the Passover for Yahweh.'
+  rationale: The earlier review’s “is unclean because of” and clearer generational wording improve the meaning, although an automated revert undid them. I restore those gains but retain “still,” because the context shows that impurity or travel does not remove the responsibility to keep the Passover.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +138,33 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/009/010.job-41231.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:28:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh tells Moses that, now and in future generations, a man prevented by corpse impurity or distant travel must nevertheless keep the Passover for him.
+  meaning_decisions:
+  - source_phrase: דַּבֵּר אֶל בְּנֵי יִשְׂרָאֵל לֵאמֹר
+    prior_rendering: Speak to the sons of Israel, saying
+    new_rendering: Tell the Israelites
+    rationale: This naturally expresses Moses’ task of conveying the instruction to the Israelite community.
+  - source_phrase: כִּי יִהְיֶה טָמֵא לָנֶפֶשׁ
+    prior_rendering: becomes unclean by a dead body
+    new_rendering: is ritually unclean because of a human corpse
+    rationale: The condition concerns the person’s purity status at the relevant time, not specifically the moment of becoming unclean.
+  - source_phrase: לָכֶם אוֹ לְדֹרֹתֵיכֶם
+    prior_rendering: whether among you or among your generations
+    new_rendering: among you, now or in future generations
+    rationale: The rule applies to the present community and succeeding generations; the temporal scope is clearer than “among your generations.”
+  - source_phrase: וְעָשָׂה פֶסַח לַיהוָה
+    prior_rendering: he shall still keep the Passover to Yahweh
+    new_rendering: he must still keep the Passover for Yahweh
+    rationale: The person remains responsible for the observance despite the obstacle, and “for Yahweh” naturally expresses its dedication to him.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “is unclean because of” and clearer generational wording improve the meaning, although an automated revert undid them. I restore those gains but retain “still,” because the context shows that impurity or travel does not remove the responsibility to keep the Passover.

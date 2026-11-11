@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: שׁ֣וּב וְ/אָמַרְתָּ֞ אֶל חִזְקִיָּ֣הוּ נְגִיד עַמִּ֗/י כֹּֽה אָמַ֤ר יְהוָה֙ אֱלֹהֵי֙ דָּוִ֣ד אָבִ֔י/ךָ שָׁמַ֨עְתִּי֙ אֶת תְּפִלָּתֶ֔/ךָ רָאִ֖יתִי אֶת דִּמְעָתֶ֑/ךָ הִנְ/נִי֙ רֹ֣פֶא לָ֔/ךְ בַּ/יּוֹם֙ הַ/שְּׁלִישִׁ֔י תַּעֲלֶ֖ה בֵּ֥ית יְהוָֽה־־־־־׃
 translation:
-  text: 'Go back and say to Hezekiah[a], the leader of my people, ‘Thus says Yahweh, the God of David your father: I have heard your prayer; I have seen your tears. Look, I am healing you. On the third day you will go up to the house of Yahweh.’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'I will heal you.' The Hebrew reads more literally, 'Look, I am healing you,' using a participle that can express imminent action.
-    reason: lexical_alternative
+  text: '“Go back and say to Hezekiah, the leader of my people, ‘Thus says Yahweh, the God of your ancestor David: I have heard your prayer; I have seen your tears. Look, I will heal you. On the third day you will go up to the house of Yahweh.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שׁוּב
   chosen: Go back
@@ -126,14 +122,20 @@ revisions:
   from: 'Go back and say to Hezekiah, the leader of my people, ‘Thus says the LORD, the God of David your father: I have heard your prayer; I have seen your tears. Look, I am healing you. On the third day you will go up to the house of the LORD.’'
   to: 'Go back and say to Hezekiah, the leader of my people, ‘Thus says the LORD, the God of David your father: I have heard your prayer; I have seen your tears. Behold, I will heal you. On the third day you shall go up to the house of the LORD.’'
   rationale: Replaced “Look, I am healing you” with “Behold, I will heal you” to better reflect הִנְנִי רֹפֶא לָךְ in formal register and future sense. Also changed “you will go up” to “you shall go up” for slightly more formal translation style.
-
 - timestamp: '2026-05-16T11:07:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Go back and say to Hezekiah[a], the leader of my people, ‘Thus says Yahweh, the God of David your father: I have heard your prayer; I have seen your tears. Behold, I will heal you. On the third day you shall go up to the house of Yahweh.’'
   to: 'Go back and say to Hezekiah[a], the leader of my people, ‘Thus says Yahweh, the God of David your father: I have heard your prayer; I have seen your tears. Look, I am healing you. On the third day you will go up to the house of Yahweh.’'
-  rationale: 'Restored drafter ''Look, I am healing you'' (deictic + participial imminence of הִנְנִי רֹפֶא) and ''you will go up'' (idiomatic temple-ascent) per chosen renderings.'
+  rationale: Restored drafter 'Look, I am healing you' (deictic + participial imminence of הִנְנִי רֹפֶא) and 'you will go up' (idiomatic temple-ascent) per chosen renderings.
+- timestamp: '2026-11-09T17:26:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Go back and say to Hezekiah[a], the leader of my people, ‘Thus says Yahweh, the God of David your father: I have heard your prayer; I have seen your tears. Look, I am healing you. On the third day you will go up to the house of Yahweh.’'
+  to: '“Go back and say to Hezekiah, the leader of my people, ‘Thus says Yahweh, the God of your ancestor David: I have heard your prayer; I have seen your tears. Look, I will heal you. On the third day you will go up to the house of Yahweh.'
+  rationale: The review and revert debated future wording versus participial immediacy, but neither was a maintainer decision. I retain the emphatic announcement and third-day assurance while choosing the future sense supported by the surrounding dialogue; its former footnote is now unnecessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -155,3 +157,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/020/005.job-60790.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:59Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh tells Isaiah to assure Hezekiah that he has heard his prayer, seen his tears, and will heal him so that he can return to Yahweh’s house on the third day.
+  meaning_decisions:
+  - source_phrase: אֱלֹהֵי דָּוִד אָבִיךָ
+    prior_rendering: the God of David your father
+    new_rendering: the God of your ancestor David
+    rationale: Here “father” identifies Hezekiah’s royal ancestor, not his immediate parent.
+  - source_phrase: הִנְנִי רֹפֶא לָךְ
+    prior_rendering: Look, I am healing you
+    new_rendering: Look, I will heal you
+    rationale: In this announcement the participle expresses promised forthcoming action, as the third-day assurance and Hezekiah’s question in verse 8 confirm; English future wording conveys that promise clearly.
+  footnote_kinds: {}
+  history_weighed: The review and revert debated future wording versus participial immediacy, but neither was a maintainer decision. I retain the emphatic announcement and third-day assurance while choosing the future sense supported by the surrounding dialogue; its former footnote is now unnecessary.

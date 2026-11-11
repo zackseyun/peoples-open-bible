@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'he deceived him' or 'he acted falsely.' The Greek verb can denote deceit generally; here it specifically refers to failing to keep the promised terms after receiving the payment and hostages.
-    reason: lexical_alternative
+  text: Simon sent the boys and the hundred talents of silver, but Tryphon broke his word and did not release Jonathan.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέστειλε
   chosen: sent
@@ -82,14 +78,20 @@ revisions:
   from: And he sent the boys and the hundred talents, but he broke his word and did not release Jonathan.
   to: And he sent the boys and the hundred talents, but he broke his word and did not release Jonathan.
   rationale: Changed 'boys' to 'young men' for a more accurate and formal rendering of παιδάρια in this context; retained the rest of the wording as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.'
-  to: 'And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.'
+  from: And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.
+  to: And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the boys''].'
+- timestamp: '2026-11-09T18:53:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he sent the young men and the hundred talents[a], but he broke his word and did not release Jonathan.
+  to: Simon sent the boys and the hundred talents of silver, but Tryphon broke his word and did not release Jonathan.
+  rationale: The history gives conflicting preferences for 'boys' and 'young men'; the source term and the preceding hostage demand favor 'boys.' I retain the well-supported 'broke his word' and drop the note because that wording already conveys the contextual sense.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -109,3 +111,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/019.job-48743.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Simon sends the demanded hostages and payment, but Tryphon breaks his promise to release Jonathan.
+  meaning_decisions:
+  - source_phrase: καὶ ἀπέστειλε τὰ παιδάρια
+    prior_rendering: And he sent the young men
+    new_rendering: Simon sent the boys
+    rationale: Naming Simon distinguishes the sender from Tryphon, while 'boys' preserves the age-marked term used for Jonathan's sons without assuming they were young adults.
+  - source_phrase: τὰ ἑκατὸν τάλαντα
+    prior_rendering: the hundred talents
+    new_rendering: the hundred talents of silver
+    rationale: The preceding demand identifies the payment as silver; making that understood material explicit clarifies the monetary expression.
+  - source_phrase: καὶ διεψεύσατο
+    prior_rendering: but he broke his word
+    new_rendering: but Tryphon broke his word
+    rationale: The Greek changes subjects without naming the new subject, but English needs to distinguish Tryphon's betrayal from Simon's payment.
+  footnote_kinds: {}
+  history_weighed: The history gives conflicting preferences for 'boys' and 'young men'; the source term and the preceding hostage demand favor 'boys.' I retain the well-supported 'broke his word' and drop the note because that wording already conveys the contextual sense.

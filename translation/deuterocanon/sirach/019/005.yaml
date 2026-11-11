@@ -21,14 +21,14 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.
-  philosophy: optimal-equivalence
+  text: Whoever rejoices in his heart[a] will be condemned; whoever hates idle talk has less to do with evil[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek λαλιάν can also be rendered 'talkativeness' or 'babbling'; the sense is likely excessive or idle speech rather than speech in general.
-    reason: lexical_alternative
+    text: Other Greek texts read, “Whoever delights in wickedness will be condemned.”
+    reason: textual_variant
   - marker: b
-    text: 'The Greek text is terse in the second clause: ''is diminished by evil'' could also be understood as ''is reduced through wickedness'' or, less likely, ''is diminished in evil.'''
+    text: Or, “is diminished by evil,” understanding evil as the cause of the loss rather than what is reduced.
     reason: alternative_reading
 lexical_decisions:
 - source_word: ὁ εὐφραινόμενος
@@ -114,14 +114,20 @@ revisions:
   from: Whoever rejoices in heart will be found guilty, and whoever hates chatter is diminished by evil.
   to: Whoever rejoices in heart will be found guilty, and whoever hates chatter is diminished by evil.
   rationale: Changed 'found guilty' to 'condemned' for a more direct rendering of καταγνωσθήσεται, and 'chatter' to 'talk' for a more neutral rendering of λαλιάν. Also changed 'is diminished by evil' to 'is lessened by evil' to stay closer to ἐλαττονοῦται.
-
 - timestamp: '2026-05-16T13:07:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.'
-  to: 'Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.'
-  rationale: 'Restored drafter ''will be found guilty'' (καταγνωσθήσεται verdictive force) and ''is diminished by evil'' (preserving the lessening-by-evil moral consequence) per chosen renderings.'
+  from: Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.
+  to: Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.
+  rationale: Restored drafter 'will be found guilty' (καταγνωσθήσεται verdictive force) and 'is diminished by evil' (preserving the lessening-by-evil moral consequence) per chosen renderings.
+- timestamp: '2026-11-09T19:07:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Whoever rejoices in heart will be condemned[b][a], and whoever hates talk is lessened by evil.
+  to: Whoever rejoices in his heart[a] will be condemned; whoever hates idle talk has less to do with evil[b].
+  rationale: The earlier notes correctly identify idle speech and the grammatical ambiguity of κακίᾳ, but their main wording obscures the likely commendation of restraint. I preserve the supplied καρδίᾳ and flag the materially different Greek reading rather than silently translating it.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -141,3 +147,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/019/005.job-51472.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The supplied wording links inward rejoicing with condemnation and avoidance of idle talk with less involvement in evil.
+  meaning_decisions:
+  - source_phrase: λαλιάν
+    prior_rendering: talk
+    new_rendering: idle talk
+    rationale: The surrounding warnings concern excessive or irresponsible speech, not speech in general.
+  - source_phrase: ἐλαττονοῦται κακίᾳ
+    prior_rendering: is lessened by evil
+    new_rendering: has less to do with evil
+    rationale: The contrast and following instructions favor a reduction in involvement with evil through restraint in speech; the instrumental reading remains a serious alternative.
+  footnote_kinds:
+    a: textual_variant
+    b: alternative_meaning
+  history_weighed: The earlier notes correctly identify idle speech and the grammatical ambiguity of κακίᾳ, but their main wording obscures the likely commendation of restraint. I preserve the supplied καρδίᾳ and flag the materially different Greek reading rather than silently translating it.

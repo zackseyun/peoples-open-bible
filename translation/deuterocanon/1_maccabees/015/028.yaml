@@ -9,15 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”
-  philosophy: optimal-equivalence
+  text: 'He sent Athenobius, one of his Friends[a], to confer with Simon and deliver this message: “You are holding Joppa, Gazara, and the citadel in Jerusalem—cities that belong to my kingdom.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the Acra in Jerusalem.” The Greek word means “citadel” or “fortress,” but it can also function here as the established name of Jerusalem’s Seleucid stronghold.
-    reason: lexical_alternative
-  - marker: b
-    text: Gazara is the Greek place-name form; the site is commonly identified with Gezer.
-    reason: cross_reference
+    text: '''Friends'' was a court title for members of a Hellenistic king’s inner circle.'
+    reason: cultural_note
 lexical_decisions:
 - source_word: ἀπέστειλεν
   chosen: sent
@@ -102,14 +99,20 @@ revisions:
   from: And he sent to him Athenobius, one of his Friends, to speak with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem, cities of my kingdom.”
   to: And he sent to him Athenobius, one of his Friends, to speak with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem, cities of my kingdom.”
   rationale: Changed 'to speak with him' to 'to confer with him' for a more precise rendering of κοινολογησόμενον and a more formal register. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”'
-  to: 'And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”'
+  from: And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”
+  to: And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to speak with him''].'
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he sent to him Athenobius[a], one of his Friends, to confer with him, saying, “You are holding Joppa and Gazara and the citadel in Jerusalem[b], cities of my kingdom.”
+  to: 'He sent Athenobius, one of his Friends[a], to confer with Simon and deliver this message: “You are holding Joppa, Gazara, and the citadel in Jerusalem—cities that belong to my kingdom.”'
+  rationale: I retain the current 'confer,' the official title 'Friends,' and the established place names; the recorded automated changes do not establish a substantive contrary decision. The footnote now explains the court title, while the earlier Acra and Gazara notes are dropped because they do not affect the accusation’s meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +132,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/028.job-48854.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Antiochus sent Athenobius to tell Simon that Joppa, Gazara, and Jerusalem’s citadel belonged to his kingdom.
+  meaning_decisions:
+  - source_phrase: κοινολογησόμενον αὐτῷ, λέγων
+    prior_rendering: to confer with him, saying
+    new_rendering: to confer with Simon and deliver this message
+    rationale: This identifies Simon as the person addressed and makes clear that Athenobius was conveying the king’s words.
+  - source_phrase: πόλεις τῆς βασιλείας μου
+    prior_rendering: cities of my kingdom
+    new_rendering: cities that belong to my kingdom
+    rationale: The king is asserting ownership and jurisdiction, not merely describing the cities’ geographical location.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current 'confer,' the official title 'Friends,' and the established place names; the recorded automated changes do not establish a substantive contrary decision. The footnote now explains the court title, while the earlier Acra and Gazara notes are dropped because they do not affect the accusation’s meaning.

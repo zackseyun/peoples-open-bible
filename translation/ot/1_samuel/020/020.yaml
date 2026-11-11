@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/אֲנִ֕י שְׁלֹ֥שֶׁת הַ/חִצִּ֖ים צִדָּ֣/ה אוֹרֶ֑ה לְ/שַֽׁלַּֽח לִ֖/י לְ/מַטָּרָֽה־׃
 translation:
-  text: And I will shoot the three arrows to the side of it[c][b][a], as though I were shooting for myself at a target.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'to the side of it'; the suffix likely refers to the stone or marker mentioned in the surrounding context.
-    reason: cross_reference
-  - marker: b
-    text: Or 'beside it.'
-    reason: lexical_alternative
-  - marker: c
-    text: 'The Hebrew expression is idiomatic: literally, ''to send for myself at a target,'' that is, to act as though practicing archery.'
-    reason: lexical_alternative
+  text: I will shoot three arrows beside it, as though I were shooting at a target.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַאֲנִי
   chosen: And I
@@ -79,14 +69,20 @@ revisions:
   from: And I will shoot the three arrows to the side of it, as though I were shooting for myself at a target.
   to: And I will shoot the three arrows to the side, as though I were shooting at a target for myself.
   rationale: Removed 'of it,' since no object is present in the source, and reordered the final phrase to reflect the Hebrew more naturally while preserving the sense of shooting at a target.
-
 - timestamp: '2026-05-16T05:09:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I will shoot the three arrows to the side[c][b][a], as though I were shooting at a target for myself.'
-  to: 'And I will shoot the three arrows to the side of it[c][b][a], as though I were shooting for myself at a target.'
-  rationale: 'Azure stripped 3fs suffix from drafter''s anaphoric ''to the side of it'' (chosen for stone/marker reference) and reordered ''at a target for myself''/''for myself at a target'' on pure preference.'
+  from: And I will shoot the three arrows to the side[c][b][a], as though I were shooting at a target for myself.
+  to: And I will shoot the three arrows to the side of it[c][b][a], as though I were shooting for myself at a target.
+  rationale: Azure stripped 3fs suffix from drafter's anaphoric 'to the side of it' (chosen for stone/marker reference) and reordered 'at a target for myself'/'for myself at a target' on pure preference.
+- timestamp: '2026-11-09T17:23:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will shoot the three arrows to the side of it[c][b][a], as though I were shooting for myself at a target.
+  to: I will shoot three arrows beside it, as though I were shooting at a target.
+  rationale: The review and automated revert disagree over whether “of it” is explicit in the Hebrew. I retain the contextual reference to the stone while simplifying the target-practice wording, whose meaning both passes recognized.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -106,3 +102,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/020/020.job-59266.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonathan will shoot three arrows beside the stone under the appearance of ordinary target practice.
+  meaning_decisions:
+  - source_phrase: שְׁלֹשֶׁת הַחִצִּים
+    prior_rendering: the three arrows
+    new_rendering: three arrows
+    rationale: This introduces the arrows into the plan; English does not require a definite article before an otherwise unidentified set.
+  - source_phrase: צִדָּה
+    prior_rendering: to the side of it
+    new_rendering: beside it
+    rationale: The shorter expression naturally conveys the intended location while retaining the contextual reference to the stone.
+  - source_phrase: לְשַׁלַּח לִי לְמַטָּרָה
+    prior_rendering: as though I were shooting for myself at a target
+    new_rendering: as though I were shooting at a target
+    rationale: The point is the appearance of ordinary target practice, not shooting for personal benefit.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert disagree over whether “of it” is explicit in the Hebrew. I retain the contextual reference to the stone while simplifying the target-practice wording, whose meaning both passes recognized.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּֽתְקַבְּצ֣וּ אֵ֠לָי/ו כָּל אִ֨ישׁ מָצ֜וֹק וְ/כָל אִ֨ישׁ אֲשֶׁר ל֤/וֹ נֹשֶׁא֙ וְ/כָל אִ֣ישׁ מַר נֶ֔פֶשׁ וַ/יְהִ֥י עֲלֵי/הֶ֖ם לְ/שָׂ֑ר וַ/יִּהְי֣וּ עִמּ֔/וֹ כְּ/אַרְבַּ֥ע מֵא֖וֹת אִֽישׁ־־־־־׃
 translation:
-  text: And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more interpretively, 'everyone who was in debt.' The Hebrew literally says 'everyone who had a creditor/exactor.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'bitter in soul,' an idiom for deep inner bitterness or anguish.
-    reason: cultural_note
+  text: Everyone in distress, everyone who was in debt, and everyone bitter in soul gathered around him, and he became their commander. About four hundred men were with him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּתְקַבְּצוּ
   chosen: gathered
@@ -98,14 +91,20 @@ revisions:
   from: And everyone in distress, everyone who had a creditor, and everyone bitter in soul gathered to him, and he became commander over them. About four hundred men were with him.
   to: And everyone in distress, everyone who had a creditor, and everyone bitter in soul gathered to him, and he became commander over them. About four hundred men were with him.
   rationale: Changed 'everyone who had a creditor' to 'everyone who was in debt' for more accurate and natural rendering of the Hebrew.
-
 - timestamp: '2026-05-18T02:56:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.'
-  to: 'And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.'
+  from: And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.
+  to: And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who had a creditor''].'
+- timestamp: '2026-11-09T17:23:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And everyone in distress[a], everyone who was in debt, and everyone bitter in soul gathered to him, and he became commander over them[b]. About four hundred men were with him.
+  to: Everyone in distress, everyone who was in debt, and everyone bitter in soul gathered around him, and he became their commander. About four hundred men were with him.
+  rationale: The review and automated revert disagree over “had a creditor,” but the current “was in debt” clearly conveys the expression’s meaning. I retain “bitter in soul” because it carries the depth of the distress, and drop the misplaced notes.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -128,3 +127,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/022/002.job-59306.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:20Z'
+  change_level: refined
+  confidence: high
+  meaning: People suffering distress, debt, or bitterness of soul gather to David, who becomes commander of about four hundred men.
+  meaning_decisions:
+  - source_phrase: וַיִּתְקַבְּצוּ אֵלָיו
+    prior_rendering: gathered to him
+    new_rendering: gathered around him
+    rationale: Expresses their assembly around David in natural English while preserving his role as the gathering point.
+  - source_phrase: וַיְהִי עֲלֵיהֶם לְשָׂר
+    prior_rendering: he became commander over them
+    new_rendering: he became their commander
+    rationale: States the same relationship of military leadership more naturally.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert disagree over “had a creditor,” but the current “was in debt” clearly conveys the expression’s meaning. I retain “bitter in soul” because it carries the depth of the distress, and drop the misplaced notes.

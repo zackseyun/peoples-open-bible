@@ -8,11 +8,11 @@ source:
   - 795
   validation: swete_direct
 translation:
-  text: A man's kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.
-  philosophy: optimal-equivalence
+  text: Human kindness is given sparingly and put off until tomorrow[a]; if someone gives again without grumbling, even that will make you marvel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'is given sparingly and put off till tomorrow.' The Greek around 'for tomorrow' is terse and elliptical, so the sense of delay may be implied rather than fully expressed.
+    text: Literally, 'and tomorrow's'; the Greek phrase is elliptical.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: χρηστότης
@@ -89,17 +89,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'A man''s kindness is sparing and for tomorrow; if he does it a second time without grumbling, even at this you will marvel.'
-  to: 'A man''s kindness is sparing and for tomorrow; if he does it a second time without grumbling, even at this you will marvel.'
+  from: A man's kindness is sparing and for tomorrow; if he does it a second time without grumbling, even at this you will marvel.
+  to: A man's kindness is sparing and for tomorrow; if he does it a second time without grumbling, even at this you will marvel.
   rationale: Replaced 'does it a second time' with 'repeats it' to more directly reflect δευτερώσῃ and added 'and' before the conditional clause to account for καί. Kept the formal tone and overall sense intact.
-
 - timestamp: '2026-05-18T02:58:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A man''s kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.'
-  to: 'A man''s kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.'
+  from: A man's kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.
+  to: A man's kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''does it a second time''].'
+- timestamp: '2026-11-09T19:04:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man's kindness is sparing and for tomorrow; and if he repeats it without grumbling[a], even at this you will marvel.
+  to: Human kindness is given sparingly and put off until tomorrow[a]; if someone gives again without grumbling, even that will make you marvel.
+  rationale: The history and existing footnote recognize postponement as the likely force of 'tomorrow,' though earlier wording left it obscure. I bring that interpretation into the text while noting the elliptical wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +125,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/005/015.job-73118.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:14Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Human generosity is limited and delayed, and even a second gift without complaint is remarkable.
+  meaning_decisions:
+  - source_phrase: ἡ χρηστότης ἀνθρώπου ἐν φειδῷ, καὶ ἡ αὔριον
+    prior_rendering: A man's kindness is sparing and for tomorrow
+    new_rendering: Human kindness is given sparingly and put off until tomorrow
+    rationale: The proverb concerns human giving generally, and the elliptical reference to tomorrow most plausibly describes postponement rather than a gift intended for tomorrow's use.
+  - source_phrase: καὶ ἐὰν δευτερώσῃ ἄνευ γογγυσμοῦ, καὶ τοῦτο θαυμάσεις
+    prior_rendering: and if he repeats it without grumbling, even at this you will marvel
+    new_rendering: if someone gives again without grumbling, even that will make you marvel
+    rationale: The repeated action is an act of giving; naming it makes the contrast with God's gifts immediately clear.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history and existing footnote recognize postponement as the likely force of 'tomorrow,' though earlier wording left it obscure. I bring that interpretation into the text while noting the elliptical wording.

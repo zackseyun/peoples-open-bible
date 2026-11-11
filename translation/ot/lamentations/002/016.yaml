@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: פָּצ֨וּ עָלַ֤יִ/ךְ פִּי/הֶם֙ כָּל א֣וֹיְבַ֔יִ/ךְ שָֽׁרְקוּ֙ וַ/יַּֽחַרְקוּ שֵׁ֔ן אָמְר֖וּ בִּלָּ֑עְנוּ אַ֣ךְ זֶ֥ה הַ/יּ֛וֹם שֶׁ/קִּוִּינֻ֖/הוּ מָצָ֥אנוּ רָאִֽינוּ־־׃ס
 translation:
-  text: All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'hiss'; the verb can also be rendered 'whistle,' but here it expresses derision from enemies.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'We have devoured her.' Hebrew 'swallowed her up' is a vivid metaphor for total destruction.
-    reason: lexical_alternative
+  text: All your enemies open their mouths wide to taunt you; they hiss and gnash their teeth. They say, “We have swallowed her up! Surely this is the day we hoped for; we have reached it, we have seen it!”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פָּצוּ
   chosen: open
@@ -113,14 +106,20 @@ revisions:
   from: All your enemies open their mouths against you; they hiss and gnash their teeth. They say, “We have swallowed her up! Surely this is the day we hoped for; we have found it, we have seen it.”
   to: All your enemies open their mouths against you; they hiss and gnash their teeth. They say, “We have swallowed her up! Surely this is the day we hoped for; we have found it, we have seen it.”
   rationale: Changed “swallowed her up” to “swallowed you up” for consistency with the second-person address in the verse and the Hebrew suffix.
-
 - timestamp: '2026-05-18T02:55:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”'
-  to: 'All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”'
+  from: All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”
+  to: All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''We have swallowed her up''].'
+- timestamp: '2026-11-09T19:16:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All your enemies open their mouths against you[a]; they hiss and gnash their teeth. They say, “We have swallowed you up! Surely this is the day we hoped for; we have found it[b], we have seen it.”
+  to: All your enemies open their mouths wide to taunt you; they hiss and gnash their teeth. They say, “We have swallowed her up! Surely this is the day we hoped for; we have reached it, we have seen it!”
+  rationale: 'I return to the first draft’s “her” in the quotation: בִּלָּעְנוּ has no object suffix, contrary to the later review’s rationale, and Jerusalem is its implied object. I preserve the swallowing image and the paired climactic claims while clarifying the taunting and the arrival of the hoped-for day.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +139,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/lamentations/002/016.job-46294.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:16:23Z'
+  change_level: refined
+  confidence: high
+  meaning: Jerusalem’s enemies taunt her and exult that the destruction they hoped for has finally happened.
+  meaning_decisions:
+  - source_phrase: פָּצוּ עָלַיִךְ פִּיהֶם כָּל אֹיְבַיִךְ
+    prior_rendering: All your enemies open their mouths against you
+    new_rendering: All your enemies open their mouths wide to taunt you
+    rationale: The following gestures and quotation establish hostile taunting; the new wording conveys that purpose while keeping the opened-mouth image.
+  - source_phrase: בִּלָּעְנוּ
+    prior_rendering: We have swallowed you up!
+    new_rendering: We have swallowed her up!
+    rationale: The Hebrew leaves the object unexpressed; “her” naturally presents the enemies boasting about the personified city.
+  - source_phrase: מָצָאנוּ רָאִינוּ
+    prior_rendering: we have found it, we have seen it
+    new_rendering: we have reached it, we have seen it
+    rationale: The object is the long-awaited day; reaching that day conveys the intended realization more clearly than finding it, while preserving the repeated triumphant claims.
+  footnote_kinds: {}
+  history_weighed: 'I return to the first draft’s “her” in the quotation: בִּלָּעְנוּ has no object suffix, contrary to the later review’s rationale, and Jerusalem is its implied object. I preserve the swallowing image and the paired climactic claims while clarifying the taunting and the arrival of the hoped-for day.'

@@ -10,12 +10,12 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For God loves nothing except the one who dwells with wisdom[a].
-  philosophy: optimal-equivalence
+  text: For God loves only the one who dwells with wisdom[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the one who dwells with Wisdom.' In context, wisdom is strongly personified in this chapter.
-    reason: lexical_alternative
+    text: Alternatively understood, “For God loves no one more than the one who dwells with wisdom.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οὐθὲν
   chosen: nothing
@@ -88,14 +88,20 @@ revisions:
   from: For God loves nothing except the one who lives with wisdom.
   to: For God loves nothing except the one who lives with wisdom.
   rationale: Changed 'lives with wisdom' to 'dwells with wisdom' to more closely reflect συνοικοῦντα while preserving natural, formal English.
-
 - timestamp: '2026-05-18T02:59:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For God loves nothing except the one who dwells with wisdom[a].'
-  to: 'For God loves nothing except the one who dwells with wisdom[a].'
+  from: For God loves nothing except the one who dwells with wisdom[a].
+  to: For God loves nothing except the one who dwells with wisdom[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one who lives with''].'
+- timestamp: '2026-11-09T19:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For God loves nothing except the one who dwells with wisdom[a].
+  to: For God loves only the one who dwells with wisdom[a].
+  rationale: The current 'dwells with' preserves the enduring companionship emphasized by the revision and lexical discussion, so I retain it. I recast 'nothing except' as 'only' while leaving the verse's tension intact and noting the comparative interpretation.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +121,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/007/028.job-39275.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:57Z'
+  change_level: refined
+  confidence: medium
+  meaning: God loves only those who live in companionship with wisdom.
+  meaning_decisions:
+  - source_phrase: οὐθὲν ... ἀγαπᾷ ... εἰ μὴ τὸν σοφίᾳ συνοικοῦντα
+    prior_rendering: loves nothing except the one who dwells with wisdom
+    new_rendering: loves only the one who dwells with wisdom
+    rationale: The negative exception identifies a person as the object of God's love; 'only' expresses it naturally without softening its exclusivity. The serious comparative interpretation is given separately rather than inserted into the main text.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current 'dwells with' preserves the enduring companionship emphasized by the revision and lexical discussion, so I retain it. I recast 'nothing except' as 'only' while leaving the verse's tension intact and noting the comparative interpretation.

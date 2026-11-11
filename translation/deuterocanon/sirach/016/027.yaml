@@ -21,12 +21,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.
-  philosophy: optimal-equivalence
+  text: He ordered his works forever and established their domains[a] for all generations; they neither hunger nor grow weary, and they never cease their work.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'their beginnings for their generations.' The Greek word can mean 'beginnings' or 'ruling domains'; the context favors assigned spheres of rule or function within creation.
-    reason: lexical_alternative
+    text: Or, “their beginnings”; the Greek word can mean either “beginnings” or “rule.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐκόσμησεν
   chosen: ordered
@@ -132,14 +132,20 @@ revisions:
   from: He ordered his works forever, and their dominions for their generations; they neither hungered nor grew weary, and they did not cease from their works.
   to: He ordered his works forever, and their dominions for their generations; they neither hungered nor grew weary, and they did not cease from their works.
   rationale: Changed 'dominions' to 'beginnings' for lexical accuracy, since ἀρχὰς here more naturally means 'beginnings' or 'first principles' rather than 'dominions.'
-
 - timestamp: '2026-05-18T02:57:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.'
-  to: 'He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.'
+  from: He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.
+  to: He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their dominions''].'
+- timestamp: '2026-11-09T19:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He ordered his works forever[a], and their beginnings for their generations; they neither hungered nor grew weary, and they did not cease from their works.
+  to: He ordered his works forever and established their domains[a] for all generations; they neither hunger nor grow weary, and they never cease their work.
+  rationale: The first draft and documented lexical reasoning favored dominions because of creation's assigned functions, whereas the later revision adopted “beginnings” primarily for lexical directness. I follow the stronger contextual reasoning, retain the serious alternative in a note, and express the continuing activity naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -159,3 +165,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/016/027.job-51399.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God established creation and its allotted domains to endure, and his works continue their tasks without hunger, weariness, or failure.
+  meaning_decisions:
+  - source_phrase: καὶ τὰς ἀρχὰς αὐτῶν εἰς γενεὰς αὐτῶν
+    prior_rendering: and their beginnings for their generations
+    new_rendering: and established their domains for all generations
+    rationale: Assigned domains fit the surrounding account of creation's continuing functions; supplying the shared ordering verb and expressing the duration naturally makes the clause intelligible.
+  - source_phrase: οὔτε ἐπείνασαν οὔτε ἐκοπίασαν, καὶ οὐκ ἐξέλιπον ἀπὸ τῶν ἔργων αὐτῶν
+    prior_rendering: they neither hungered nor grew weary, and they did not cease from their works
+    new_rendering: they neither hunger nor grow weary, and they never cease their work
+    rationale: The verbs summarize the enduring behavior of the created order; English present-tense statements convey that general force more clearly than a merely past description.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and documented lexical reasoning favored dominions because of creation's assigned functions, whereas the later revision adopted “beginnings” primarily for lexical directness. I follow the stronger contextual reasoning, retain the serious alternative in a note, and express the continuing activity naturally.

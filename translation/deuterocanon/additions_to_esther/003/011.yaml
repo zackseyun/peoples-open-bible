@@ -12,15 +12,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And Esther the queen fled to the Lord[a], seized by a struggle of death[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'took refuge in the Lord.' The Greek verb can denote fleeing to someone for refuge.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'gripped by a mortal struggle' or 'in agony of death.' The Greek expression combines the ideas of struggle and impending death.
-    reason: lexical_alternative
+  text: Then Queen Esther fled to the Lord for refuge, gripped by anguish at the threat of death.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κατέφυγεν
   chosen: fled to
@@ -96,14 +89,20 @@ revisions:
   from: And Esther the queen fled to the Lord, seized by a struggle of death,
   to: And Esther the queen fled to the Lord, overtaken by a deadly struggle,
   rationale: Replaced 'seized by a struggle of death' with 'overtaken by a deadly struggle' for more natural English while preserving the sense of being gripped by a mortal crisis.
-
 - timestamp: '2026-05-15T14:45:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Esther the queen fled to the Lord[a], overtaken by a deadly struggle[b],'
-  to: 'And Esther the queen fled to the Lord[a], seized by a struggle of death[b],'
-  rationale: 'Restored vivid κατειλημμένη and preserved genitive ἀγῶνι θανάτου (drafter''s rejected ''deadly'').'
+  from: And Esther the queen fled to the Lord[a], overtaken by a deadly struggle[b],
+  to: And Esther the queen fled to the Lord[a], seized by a struggle of death[b],
+  rationale: Restored vivid κατειλημμένη and preserved genitive ἀγῶνι θανάτου (drafter's rejected 'deadly').
+- timestamp: '2026-11-09T18:59:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Esther the queen fled to the Lord[a], seized by a struggle of death[b],
+  to: Then Queen Esther fled to the Lord for refuge, gripped by anguish at the threat of death.
+  rationale: The earlier review sought natural English but left “deadly struggle” open to misunderstanding, while the automated revert prioritized the genitive’s form. The lexical explanations establish both refuge and anguish under mortal threat, which the new wording carries directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -123,3 +122,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/011.job-50244.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esther turns urgently to the Lord for refuge while overwhelmed by anguish at the threat of death.
+  meaning_decisions:
+  - source_phrase: κατέφυγεν ἐπὶ τὸν κύριον
+    prior_rendering: fled to the Lord
+    new_rendering: fled to the Lord for refuge
+    rationale: The verb means fleeing to someone for protection, not simply moving toward that person.
+  - source_phrase: ἐν ἀγῶνι θανάτου κατειλημμένη
+    prior_rendering: seized by a struggle of death
+    new_rendering: gripped by anguish at the threat of death
+    rationale: Esther is overwhelmed by a mortal crisis, not described as physically dying; the wording preserves the intensity and the passive image of being gripped.
+  footnote_kinds: {}
+  history_weighed: The earlier review sought natural English but left “deadly struggle” open to misunderstanding, while the automated revert prioritized the genitive’s form. The lexical explanations establish both refuge and anguish under mortal threat, which the new wording carries directly.

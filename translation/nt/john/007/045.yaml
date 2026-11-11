@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἦλθον οὖν οἱ ὑπηρέται πρὸς τοὺς ἀρχιερεῖς καὶ Φαρισαίους, καὶ εἶπον αὐτοῖς ἐκεῖνοι· Διὰ τί οὐκ ἠγάγετε αὐτόν;
 translation:
-  text: So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “they said to them.” The Greek explicitly uses a demonstrative (“those men”), likely for emphasis, referring to the chief priests and Pharisees.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “Why did you not lead him here?” The verb can mean “lead” or “bring”; here “bring” best fits the context of officers sent to arrest Jesus.
-    reason: lexical_alternative
+  text: So the officers returned to the chief priests and Pharisees, who asked them, “Why did you not bring him?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὖν
   chosen: So
@@ -84,14 +77,20 @@ revisions:
   from: So the officers came to the chief priests and Pharisees, and those men said to them, “Why did you not bring him?”
   to: So the officers came to the chief priests and Pharisees, and those men said to them, “Why did you not bring him?”
   rationale: Replaced 'those men said to them' with 'they said to them' for more natural English while preserving the Greek sense; no lexical content changed.
-
 - timestamp: '2026-05-18T03:00:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”'
-  to: 'So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”'
+  from: So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”
+  to: So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those men''].'
+- timestamp: '2026-11-09T17:11:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So the officers came to the chief priests and Pharisees[a], and they said to them[b], “Why did you not bring him?”
+  to: So the officers returned to the chief priests and Pharisees, who asked them, “Why did you not bring him?”
+  rationale: The history alternates between 'those men' and 'they,' while the recorded rationale consistently identifies the chief priests and Pharisees as the speakers. I preserve that identification through a clear relative clause rather than either ambiguous pronouns or an awkward demonstrative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +112,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/007/045.job-54915.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:00Z'
+  change_level: refined
+  confidence: high
+  meaning: The officers return without Jesus, and the chief priests and Pharisees demand to know why they did not bring him.
+  meaning_decisions:
+  - source_phrase: Ἦλθον οὖν οἱ ὑπηρέται πρὸς τοὺς ἀρχιερεῖς καὶ Φαρισαίους
+    prior_rendering: So the officers came to the chief priests and Pharisees
+    new_rendering: So the officers returned to the chief priests and Pharisees
+    rationale: Verse 32 established that these authorities sent the officers; their coming here is their return to those who sent them.
+  - source_phrase: καὶ εἶπον αὐτοῖς ἐκεῖνοι
+    prior_rendering: and they said to them
+    new_rendering: who asked them
+    rationale: The Greek explicitly identifies the authorities as the speakers; the relative clause removes the English pronoun ambiguity.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'those men' and 'they,' while the recorded rationale consistently identifies the chief priests and Pharisees as the speakers. I preserve that identification through a clear relative clause rather than either ambiguous pronouns or an awkward demonstrative.

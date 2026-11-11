@@ -22,18 +22,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],
-  philosophy: optimal-equivalence
+  text: following the written instructions of David king of Israel and the magnificent arrangements of his son Solomon[a]. Take your places in the sanctuary, you Levites, according to your ancestral divisions, in front of your fellow Israelites.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'according to the majesty/magnificence of Solomon his son.' The Greek term can denote grandeur or magnificence; here it likely refers to the authoritative scale or dignity of Solomon's arrangement.
+    text: Literally, “according to the magnificence of Solomon his son.”
     reason: lexical_alternative
-  - marker: b
-    text: The Greek says 'in the holy [place],' which may also be rendered 'in the holy place.'
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek phrase is compressed. The Hebrew parallel more fully reflects the sense 'by your fathers' houses, according to your divisions.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: γραφήν
   chosen: writing
@@ -141,14 +135,20 @@ revisions:
   from: according to the writing of David king of Israel, and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division of service, O Levites, before your brothers, the sons of Israel,
   to: according to the writing of David king of Israel, and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division of service, O Levites, before your brothers, the sons of Israel,
   rationale: Removed 'of service' because it is not explicit in the Greek; otherwise retained the draft's wording and formal register.
-
 - timestamp: '2026-05-18T02:59:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],'
-  to: 'according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],'
+  from: according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],
+  to: according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''division of service''].'
+- timestamp: '2026-11-09T18:49:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: according to the writing of David king of Israel[a], and according to the greatness of Solomon his son; and standing in the sanctuary according to your ancestral division, O Levites, before your brothers, the sons of Israel[c][b],
+  to: following the written instructions of David king of Israel and the magnificent arrangements of his son Solomon[a]. Take your places in the sanctuary, you Levites, according to your ancestral divisions, in front of your fellow Israelites.
+  rationale: The earlier lexical rationale already connected Solomon’s greatness with his arrangements for worship; I make that connection explicit while retaining the literal expression in a note. The earlier participial wording obscured the command force of Josiah’s speech.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -168,3 +168,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/001/005.job-47460.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:27Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Levites must follow the royal arrangements for worship and stand in their ancestral divisions before their fellow Israelites.
+  meaning_decisions:
+  - source_phrase: κατὰ τὴν γραφὴν Δαυεὶδ βασιλέως Ἰσραήλ
+    prior_rendering: according to the writing of David king of Israel
+    new_rendering: following the written instructions of David king of Israel
+    rationale: The writing functions here as an authoritative prescription for organizing worship.
+  - source_phrase: κατὰ τὴν μεγαλειότητα Σαλωμὼν τοῦ υἱοῦ αὐτοῦ
+    prior_rendering: according to the greatness of Solomon his son
+    new_rendering: the magnificent arrangements of his son Solomon
+    rationale: In this organizational context, Solomon’s magnificence concerns the splendid arrangements for worship; the note preserves the broader source expression.
+  - source_phrase: στᾶντες ἐν τῷ ἁγίῳ κατὰ τὴν μεριδαρχίαν τὴν πατρικὴν ὑμῶν τῶν Λευειτῶν
+    prior_rendering: standing in the sanctuary according to your ancestral division, O Levites
+    new_rendering: Take your places in the sanctuary, you Levites, according to your ancestral divisions
+    rationale: Expresses the participle’s instructional force and the division-based arrangement naturally.
+  - source_phrase: τῶν ἔμπροσθεν τῶν ἀδελφῶν ὑμῶν υἱῶν Ἰσραήλ
+    prior_rendering: before your brothers, the sons of Israel
+    new_rendering: in front of your fellow Israelites
+    rationale: Clarifies the spatial relation and renders the communal kinship designation idiomatically.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier lexical rationale already connected Solomon’s greatness with his arrangements for worship; I make that connection explicit while retaining the literal expression in a note. The earlier participial wording obscured the command force of Josiah’s speech.

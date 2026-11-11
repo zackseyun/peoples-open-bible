@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמְר֔וּ לֹ֥א עֲשַׁקְתָּ֖/נוּ וְ/לֹ֣א רַצּוֹתָ֑/נוּ וְ/לֹֽא לָקַ֥חְתָּ מִ/יַּד אִ֖ישׁ מְאֽוּמָה־־׃
 translation:
-  text: And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man's hand.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''from any man''s hand.'' The phrase likely refers to taking any payment, gift, or bribe from anyone.'
-    reason: lexical_alternative
+  text: They replied, “You have not oppressed us or mistreated us, and you have not taken anything from anyone.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמְרוּ
   chosen: And they said
@@ -71,17 +67,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And they said, “You have not oppressed us, and you have not crushed us, and you have not taken anything from any man''s hand.”'
-  to: 'And they said, “You have not oppressed us, and you have not crushed us, and you have not taken anything from any man''s hand.”'
+  from: And they said, “You have not oppressed us, and you have not crushed us, and you have not taken anything from any man's hand.”
+  to: And they said, “You have not oppressed us, and you have not crushed us, and you have not taken anything from any man's hand.”
   rationale: Revised 'crushed us' to 'mistreated us' for better lexical accuracy and natural English; the Hebrew verb here refers to wronging/ill-treating rather than physically crushing.
-
 - timestamp: '2026-05-18T02:56:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man''s hand.”'
-  to: 'And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man''s hand.”'
+  from: And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man's hand.”
+  to: And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man's hand.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you have not crushed us''].'
+- timestamp: '2026-11-09T17:22:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they said[a], “You have not oppressed us, and you have not mistreated us, and you have not taken anything from any man's hand.”
+  to: They replied, “You have not oppressed us or mistreated us, and you have not taken anything from anyone.”
+  rationale: I preserve the current wording for the two forms of abuse so that the answer directly echoes Samuel’s questions. The earlier preference for “any man’s hand” rested on source form rather than a narrower meaning established by the context.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -101,3 +103,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/012/004.job-58996.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:45Z'
+  change_level: refined
+  confidence: high
+  meaning: The people affirm that Samuel has neither abused them nor taken anything from anyone.
+  meaning_decisions:
+  - source_phrase: מִיַּד אִישׁ
+    prior_rendering: from any man's hand
+    new_rendering: from anyone
+    rationale: The expression identifies the person from whom something might have been taken; neither a physical hand nor a restriction to males is the point.
+  footnote_kinds: {}
+  history_weighed: I preserve the current wording for the two forms of abuse so that the answer directly echoes Samuel’s questions. The earlier preference for “any man’s hand” rested on source form rather than a narrower meaning established by the context.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ ⸀ἡμεῖς μάρτυρες πάντων ὧν ἐποίησεν ἔν τε τῇ χώρᾳ τῶν Ἰουδαίων ⸀καὶ Ἰερουσαλήμ· ὃν καὶ ἀνεῖλαν κρεμάσαντες ἐπὶ ξύλου.
 translation:
-  text: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.
-  philosophy: optimal-equivalence
+  text: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem. They put him to death by hanging him on a tree[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'on wood' or, interpretively, 'on a cross.' The Greek says 'tree,' likely echoing Deuteronomy 21:23.
-    reason: lexical_alternative
+    text: The “tree” refers to the wooden cross; the wording echoes Deuteronomy 21:22–23.
+    reason: cross_reference
 lexical_decisions:
 - source_word: μάρτυρες
   chosen: witnesses
@@ -95,14 +95,20 @@ revisions:
   from: And we are witnesses of all that he did both in the country of the Jews and in Jerusalem. They also put him to death by hanging him on a tree.
   to: And we are witnesses of all that he did both in the country of the Jews and in Jerusalem. They also put him to death by hanging him on a tree.
   rationale: Changed 'country' to 'land' for a more natural and formally appropriate rendering of χώρα, while preserving the rest of the verse.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.'
-  to: 'And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.'
+  from: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.
+  to: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the country of the Jews''].'
+- timestamp: '2026-11-09T17:08:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem[a]. They also put him to death by hanging him on a tree.
+  to: And we are witnesses of all that he did both in the land of the Jews and in Jerusalem. They put him to death by hanging him on a tree[a].
+  rationale: The competing 'country' and 'land' renderings do not materially change the geography, so I keep the current 'land.' I also retain 'tree' for its scriptural resonance, clarify its reference in a correctly placed note, and remove the misleadingly additive 'also.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +128,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/010/039.job-46920.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:18Z'
+  change_level: refined
+  confidence: high
+  meaning: Peter affirms that they witnessed Jesus' deeds in the Jewish land and Jerusalem and recounts his death by crucifixion.
+  meaning_decisions:
+  - source_phrase: ὃν καὶ ἀνεῖλαν
+    prior_rendering: They also put him to death
+    new_rendering: They put him to death
+    rationale: The connective introduces Jesus' death within the account; English 'also' can misleadingly suggest an additional group of executioners.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The competing 'country' and 'land' renderings do not materially change the geography, so I keep the current 'land.' I also retain 'tree' for its scriptural resonance, clarify its reference in a correctly placed note, and remove the misleadingly additive 'also.'

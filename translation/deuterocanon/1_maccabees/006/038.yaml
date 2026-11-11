@@ -26,15 +26,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.
-  philosophy: optimal-equivalence
+  text: The king stationed the remaining cavalry on both flanks of the army. They stood in their phalanxes, brandishing their weapons and fully armored[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'brandishing' for 'shaking their weapons'; the Greek participle κατασείοντες implies a threatening waving or shaking, with the object left unstated.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'forming up in the phalanxes' / 'drawing together in the battle lines' for 'closing up in the phalanxes.' The Greek καταφρασσόμενοι is contextually difficult and likely describes tightening or arranging the formation.
-    reason: lexical_alternative
+    text: Or, “closing ranks in their formations.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τὴν ἐπίλοιπον ἵππον
   chosen: the remaining cavalry
@@ -108,14 +105,20 @@ revisions:
   from: And he stationed the remaining cavalry on both sides, at the two flanks of the camp, shaking their weapons and closing up in the phalanxes.
   to: And he stationed the remaining cavalry on both sides, at the two flanks of the camp, shaking their weapons and closing up in the phalanxes.
   rationale: Replaced 'shaking their weapons' with 'brandishing' for a more natural rendering of κατασείοντες, and changed 'closing up in the phalanxes' to 'fully armed in the phalanxes' to better reflect καταφρασσόμενοι.
-
 - timestamp: '2026-05-16T14:37:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.'
-  to: 'And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.'
-  rationale: 'Restored drafter ''shaking their weapons'' (preserving the chosen rendering of κατασείοντες) and ''closing up in the phalanxes'' (preserving the formative-action sense) per chosen renderings.'
+  from: And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.
+  to: And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.
+  rationale: Restored drafter 'shaking their weapons' (preserving the chosen rendering of κατασείοντες) and 'closing up in the phalanxes' (preserving the formative-action sense) per chosen renderings.
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he stationed the remaining cavalry on both sides[a], at the two flanks of the camp[b], brandishing and fully armed in the phalanxes.
+  to: The king stationed the remaining cavalry on both flanks of the army. They stood in their phalanxes, brandishing their weapons and fully armored[a].
+  rationale: 'The history preserves competing readings of the final participle: armor and closing ranks. I follow the current text’s armament reading with greater precision and retain the formative reading in a note.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +138,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/038.job-48312.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king deploys his remaining cavalry on both army flanks, where they stand in formation displaying their weapons and armor.
+  meaning_decisions:
+  - source_phrase: ἐπὶ τὰ δύο μέρη τῆς παρεμβολῆς
+    prior_rendering: at the two flanks of the camp
+    new_rendering: on both flanks of the army
+    rationale: The reference is to the sides of the deployed military force.
+  - source_phrase: κατασείοντες
+    prior_rendering: brandishing
+    new_rendering: brandishing their weapons
+    rationale: The understood object is supplied so the military gesture is clear.
+  - source_phrase: καταφρασσόμενοι
+    prior_rendering: fully armed
+    new_rendering: fully armored
+    rationale: The term most naturally describes protective armament, while a formation-tightening interpretation is also possible.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: 'The history preserves competing readings of the final participle: armor and closing ranks. I follow the current text’s armament reading with greater precision and retain the formative reading in a note.'

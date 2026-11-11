@@ -10,14 +10,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.
-  philosophy: optimal-equivalence
+  text: For it is not the power of the idols they swear by[a], but the punishment due to those who sin, that always pursues the transgression of the unrighteous.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the power of oaths' or 'the power of what they swear by.' The Greek expression is compressed and may refer either to the oath itself or to the entities invoked in swearing.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'the punishment of sinners always pursues the transgression of the unrighteous.'
+    text: Or 'the power of the oaths'; the Greek expression can refer to the oaths or to what is invoked in them.
     reason: alternative_reading
 lexical_decisions:
 - source_word: οὐ γὰρ
@@ -102,14 +99,20 @@ revisions:
   from: For it is not the power of the things by which they swear that pursues the transgression of the unrighteous, but the justice due to those who sin always does.
   to: For it is not the power of the things by which they swear that pursues the transgression of the unrighteous, but the justice due to those who sin always does.
   rationale: Replaced 'justice due to those who sin always does' with 'the punishment of those who sin, that always pursues' to reflect δίκη more naturally here as punitive justice/punishment and to preserve the Greek sentence structure more clearly. Retained 'the things by which they swear' for τῶν ὀμνυμένων.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.'
-  to: 'For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.'
+  from: For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.
+  to: For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''but the justice due to those who sin''].'
+- timestamp: '2026-11-09T19:13:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For it is not the power of the things by which they swear[a], but the punishment of those who sin[b], that always pursues the transgression of the unrighteous.
+  to: For it is not the power of the idols they swear by[a], but the punishment due to those who sin, that always pursues the transgression of the unrighteous.
+  rationale: I retain the later wording's punitive sense of δίκη while adding 'due' to recover the first draft's clearer sense of deserved justice. The context supports identifying the invoked objects as idols, and the meaningful alternative concerning the power of oaths remains in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -129,3 +132,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/014/031.job-39229.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:11Z'
+  change_level: refined
+  confidence: high
+  meaning: Retribution follows wrongdoing because sinners deserve punishment, not because the objects invoked in their oaths possess power.
+  meaning_decisions:
+  - source_phrase: ἡ τῶν ὀμνυμένων δύναμις
+    prior_rendering: the power of the things by which they swear
+    new_rendering: the power of the idols they swear by
+    rationale: The preceding argument identifies the invoked objects as idols; naming them makes the contrast intelligible while retaining the serious alternative about oaths in a note.
+  - source_phrase: ἡ τῶν ἁμαρτανόντων δίκη
+    prior_rendering: the punishment of those who sin
+    new_rendering: the punishment due to those who sin
+    rationale: Clarifies that this is the deserved penalty that pursues sinners, not punishment administered or possessed by them.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the later wording's punitive sense of δίκη while adding 'due' to recover the first draft's clearer sense of deserved justice. The context supports identifying the invoked objects as idols, and the meaningful alternative concerning the power of oaths remains in a note.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: הַ/חֶ֣רֶב בַּ/ח֔וּץ וְ/הַ/דֶּ֥בֶר וְ/הָ/רָעָ֖ב מִ/בָּ֑יִת אֲשֶׁ֤ר בַּ/שָּׂדֶה֙ בַּ/חֶ֣רֶב יָמ֔וּת וַ/אֲשֶׁ֣ר בָּ/עִ֔יר רָעָ֥ב וָ/דֶ֖בֶר יֹאכֲלֶֽ/נּוּ׃
 translation:
-  text: The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'plague' for 'pestilence' (דֶּבֶר).
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'famine and pestilence will eat him'; 'consume him' renders the Hebrew metaphor idiomatically.
-    reason: lexical_alternative
+  text: The sword is outside the city, and pestilence and famine are within. Whoever is in the open country will die by the sword; whoever is in the city will be consumed by famine and pestilence.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַחֶרֶב
   chosen: the sword
@@ -122,14 +115,20 @@ revisions:
   from: The sword is outside, and pestilence and famine are inside the house. Whoever is in the field will die by the sword, and whoever is in the city, famine and pestilence will consume him.
   to: The sword is outside, and pestilence and famine are inside the house. Whoever is in the field will die by the sword, and whoever is in the city, famine and pestilence will consume him.
   rationale: Removed 'the house' because the Hebrew says 'from inside/within,' not 'inside the house.' Kept the rest substantially the same for accuracy and natural English.
-
 - timestamp: '2026-05-18T02:55:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.'
-  to: 'The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.'
+  from: The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.
+  to: The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''inside the house''].'
+- timestamp: '2026-11-09T17:37:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The sword is outside[a], and pestilence and famine are inside. Whoever is in the field will die by the sword, and whoever is in the city[b], famine and pestilence will consume him.
+  to: The sword is outside the city, and pestilence and famine are within. Whoever is in the open country will die by the sword; whoever is in the city will be consumed by famine and pestilence.
+  rationale: The earlier review correctly questioned adding 'the house'; the subsequent automated revert supplies no stronger meaning-based reason for that addition. The surrounding field-and-city contrast supports the clarification while preserving the established judgment triad.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -152,3 +151,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/007/015.job-63504.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Death threatens both those outside the city and those within it, leaving neither group a safe refuge.
+  meaning_decisions:
+  - source_phrase: הַחֶרֶב בַּחוּץ וְהַדֶּבֶר וְהָרָעָב מִבָּיִת
+    prior_rendering: The sword is outside, and pestilence and famine are inside.
+    new_rendering: The sword is outside the city, and pestilence and famine are within.
+    rationale: The following contrast between open country and city identifies the relevant boundary; making it explicit avoids suggesting that the verse contrasts outdoors with individual houses.
+  - source_phrase: אֲשֶׁר בַּשָּׂדֶה
+    prior_rendering: Whoever is in the field
+    new_rendering: Whoever is in the open country
+    rationale: The expression denotes the countryside outside the city, not necessarily a particular cultivated field.
+  - source_phrase: וַאֲשֶׁר בָּעִיר רָעָב וָדֶבֶר יֹאכֲלֶנּוּ
+    prior_rendering: and whoever is in the city, famine and pestilence will consume him
+    new_rendering: whoever is in the city will be consumed by famine and pestilence
+    rationale: Natural English syntax preserves both the distributive warning and the image of consuming destruction.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly questioned adding 'the house'; the subsequent automated revert supplies no stronger meaning-based reason for that addition. The surrounding field-and-city contrast supports the clarification while preserving the established judgment triad.

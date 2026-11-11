@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: and may they know you[a], just as we also knew you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek uses a stronger verb in the first clause (roughly, 'come to know' or 'recognize fully') and a simpler 'know' in the second; the English smooths both as 'know' for naturalness.
-    reason: lexical_alternative
+  text: May they come to know you, just as we have come to know you.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπιγνώτωσάν
   lemma: ἐπιγινώσκω
@@ -102,14 +98,20 @@ revisions:
   from: and may they know you, just as we also have known you.
   to: and may they know you, just as we also have known you.
   rationale: Changed 'have known' to 'knew' to better reflect the Greek aorist ἔγνωμεν in natural formal English.
-
 - timestamp: '2026-05-18T02:58:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and may they know you[a], just as we also knew you.'
-  to: 'and may they know you[a], just as we also knew you.'
+  from: and may they know you[a], just as we also knew you.
+  to: and may they know you[a], just as we also knew you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have known''].'
+- timestamp: '2026-11-09T19:07:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and may they know you[a], just as we also knew you.
+  to: May they come to know you, just as we have come to know you.
+  rationale: The history is inconsistent about 'knew' and 'have known,' but the lexical rationale favors knowledge attained and still relevant. The new wording expresses that sense without forcing a sharp distinction between the two Greek verbs.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +131,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/005.job-51880.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:40Z'
+  change_level: refined
+  confidence: high
+  meaning: The prayer asks that others come to know God as his people have come to know him.
+  meaning_decisions:
+  - source_phrase: ἐπιγνώτωσάν σε
+    prior_rendering: may they know you
+    new_rendering: May they come to know you
+    rationale: The petition seeks recognition of God through his acts, without overstating the verb as complete or exhaustive knowledge.
+  - source_phrase: ἡμεῖς σε ἔγνωμεν
+    prior_rendering: we also knew you
+    new_rendering: we have come to know you
+    rationale: The knowledge attained remains relevant to the present prayer; a simple English past could suggest that this knowledge no longer continues.
+  footnote_kinds: {}
+  history_weighed: The history is inconsistent about 'knew' and 'have known,' but the lexical rationale favors knowledge attained and still relevant. The new wording expresses that sense without forcing a sharp distinction between the two Greek verbs.

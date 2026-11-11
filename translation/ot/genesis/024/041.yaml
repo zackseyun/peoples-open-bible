@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אָ֤ז תִּנָּקֶה֙ מֵ/אָ֣לָתִ֔/י כִּ֥י תָב֖וֹא אֶל מִשְׁפַּחְתִּ֑/י וְ/אִם לֹ֤א יִתְּנוּ֙ לָ֔/ךְ וְ/הָיִ֥יתָ נָקִ֖י מֵ/אָלָתִֽ/י־־׃
 translation:
-  text: Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.
-  philosophy: optimal-equivalence
+  text: When you go to my clan, you will be free from my oath[a] if they refuse to give her to you; then you will be free from my oath.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from my curse'; the Hebrew term can denote an oath with an implied curse or sanction.
+    text: The Hebrew term denotes a binding oath backed by a curse for violating it.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: תִּנָּקֶה
@@ -83,14 +83,20 @@ revisions:
   from: Then you will be free from my oath when you come to my family; and if they do not give her to you, you will be free from my oath.
   to: Then you will be free from my oath when you come to my family; and if they do not give her to you, you will be free from my oath.
   rationale: Removed 'her' because it is not present in the source text; otherwise retained the draft's wording and structure.
-
 - timestamp: '2026-05-17T08:06:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.'
-  to: 'Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.'
+  from: Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.
+  to: Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and if they do not give her to you''].'
+- timestamp: '2026-11-09T18:44:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then you will be free from my oath when you come to my family; and if they do not give to you[a], you will be free from my oath.
+  to: When you go to my clan, you will be free from my oath[a] if they refuse to give her to you; then you will be free from my oath.’
+  rationale: The first draft and lexical rationale correctly supplied 'her'; removing it for source-transparency left the English incomplete. I restore the implicit object and read the compressed conditions in light of Abraham’s earlier explanation in verse 8.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -112,3 +118,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/024/041.job-65068.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:44:53Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The servant would be released from his sworn obligation if he approached Abraham’s clan and they refused to give him the prospective bride.
+  meaning_decisions:
+  - source_phrase: אָז תִּנָּקֶה מֵאָלָתִי כִּי תָבוֹא אֶל מִשְׁפַּחְתִּי וְאִם לֹא יִתְּנוּ לָךְ
+    prior_rendering: Then you will be free from my oath when you come to my family; and if they do not give to you
+    new_rendering: When you go to my clan, you will be free from my oath if they refuse to give her to you
+    rationale: The family’s refusal qualifies the release from the oath; the revised syntax prevents readers from treating arrival alone as unconditional release.
+  - source_phrase: לֹא יִתְּנוּ לָךְ
+    prior_rendering: they do not give to you
+    new_rendering: they refuse to give her to you
+    rationale: English needs the object that the Hebrew leaves implicit, namely the prospective bride.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft and lexical rationale correctly supplied 'her'; removing it for source-transparency left the English incomplete. I restore the implicit object and read the compressed conditions in light of Abraham’s earlier explanation in verse 8.

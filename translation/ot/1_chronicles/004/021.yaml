@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: בְּנֵי֙ שֵׁלָ֣ה בֶן יְהוּדָ֔ה עֵ֚ר אֲבִ֣י לֵכָ֔ה וְ/לַעְדָּ֖ה אֲבִ֣י מָרֵשָׁ֑ה וּ/מִשְׁפְּח֛וֹת בֵּית עֲבֹדַ֥ת הַ/בֻּ֖ץ לְ/בֵ֥ית אַשְׁבֵּֽעַ־־׃
 translation:
-  text: 'The sons of Shelah son of Judah: Er the father of Lecah[a], and Laadah the father of Mareshah, and the clans of the house of linen workers of the house of Ashbea.'
-  philosophy: optimal-equivalence
+  text: 'The descendants of Shelah son of Judah: Er, the founder of Lecah[a]; Laadah, the founder of Mareshah; and the clans of fine-linen workers belonging to the household of Ashbea[b].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the clans of the house of those who worked fine linen, of Beth-ashbea.' The Hebrew phrase is compressed, and 'father of' earlier in the verse may also carry the sense 'founder of' or 'ancestor of.'
+    text: Literally, 'father of Lecah'; likewise for Mareshah, identifying a community’s founding ancestor or head.
     reason: lexical_alternative
+  - marker: b
+    text: Or, 'the clans of fine-linen workers at Beth-ashbea,' understanding the final expression as a place-name.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: בְּנֵי
   chosen: The sons of
@@ -98,7 +101,6 @@ revisions:
   from: 'The sons of Shelah son of Judah: Er the father of Lecah, and Laadah the father of Mareshah, and the clans of the house of linen workers at Beth-ashbea.'
   to: 'The sons of Shelah son of Judah: Er the father of Lecah, and Laadah the father of Mareshah, and the clans of the house of linen workers at Beth-ashbea.'
   rationale: Revised the final phrase from 'at Beth-ashbea' to 'of the house of Ashbea' to reflect לְבֵית אַשְׁבֵּעַ more accurately as a familial/house designation rather than a place-name. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -106,6 +108,13 @@ revisions:
   from: 'The sons of Shelah son of Judah: Er the father of Lecah[a], and Laadah the father of Mareshah, and the clans of the house of linen workers of the house of Ashbea.'
   to: 'The sons of Shelah son of Judah: Er the father of Lecah[a], and Laadah the father of Mareshah, and the clans of the house of linen workers of the house of Ashbea.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at Beth-ashbea''].'
+- timestamp: '2026-11-09T17:19:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'The sons of Shelah son of Judah: Er the father of Lecah[a], and Laadah the father of Mareshah, and the clans of the house of linen workers of the house of Ashbea.'
+  to: 'The descendants of Shelah son of Judah: Er, the founder of Lecah[a]; Laadah, the founder of Mareshah; and the clans of fine-linen workers belonging to the household of Ashbea[b].'
+  rationale: The history contains competing household and place-name readings, with little weight carried by the automated revert and entries that recorded no text change. I follow the current household reading, clarify the occupational phrase, and retain Beth-ashbea as a serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +134,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/004/021.job-44917.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Shelah’s descendants included the founding ancestors of Lecah and Mareshah and clans of fine-linen workers associated with Ashbea’s household.
+  meaning_decisions:
+  - source_phrase: בְּנֵי שֵׁלָה בֶן יְהוּדָה
+    prior_rendering: The sons of Shelah son of Judah
+    new_rendering: The descendants of Shelah son of Judah
+    rationale: The heading includes extended clans as well as named individuals, so 'descendants' conveys the actual scope of the list.
+  - source_phrase: אֲבִי לֵכָה ... אֲבִי מָרֵשָׁה
+    prior_rendering: the father of Lecah ... the father of Mareshah
+    new_rendering: the founder of Lecah ... the founder of Mareshah
+    rationale: The paternal idiom connects Er and Laadah to communities through founding or ancestral relationships.
+  - source_phrase: וּמִשְׁפְּחוֹת בֵּית עֲבֹדַת הַבֻּץ לְבֵית אַשְׁבֵּעַ
+    prior_rendering: and the clans of the house of linen workers of the house of Ashbea
+    new_rendering: and the clans of fine-linen workers belonging to the household of Ashbea
+    rationale: The compressed chain describes occupational clans associated with Ashbea’s household. The new wording clarifies that affiliation and restores the source’s specification of fine linen.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The history contains competing household and place-name readings, with little weight carried by the automated revert and entries that recorded no text change. I follow the current household reading, clarify the occupational phrase, and retain Beth-ashbea as a serious alternative.

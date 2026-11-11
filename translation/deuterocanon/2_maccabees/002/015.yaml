@@ -19,18 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: 'And the prayer had this form: “Lord God[a], creator of all things, the fearful and mighty and righteous and merciful one[c][b], the only king and good one,”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “fearsome” or “awesome” for “fearful,” since the Greek means one who inspires fear or awe.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “just” for “righteous.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or “kind” / “benevolent” for “good one.”
-    reason: lexical_alternative
+  text: 'The prayer was as follows: “Lord God, creator of all things, awe-inspiring and mighty, righteous and merciful, the only king, who is good,'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἦν δὲ ἡ προσευχὴ τὸν τρόπον ἔχουσα τοῦτον
   chosen: And the prayer had this form
@@ -137,7 +127,13 @@ revisions:
   from: 'And the prayer had this form: “Lord God, creator of all things, fearful and mighty and righteous and merciful, the only king and good one,”'
   to: 'And the prayer had this form: “Lord God, creator of all things, the fearful and mighty and righteous and merciful one, the only king and good one,”'
   rationale: 'Added ''the'' and ''one'' to reflect the repeated Greek article and substantival adjectives more accurately: ''the fearful and mighty and righteous and merciful one.'''
-
+- timestamp: '2026-11-09T18:55:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And the prayer had this form: “Lord God[a], creator of all things, the fearful and mighty and righteous and merciful one[c][b], the only king and good one,”'
+  to: 'The prayer was as follows: “Lord God, creator of all things, awe-inspiring and mighty, righteous and merciful, the only king, who is good,'
+  rationale: The recorded revision added 'the' and 'one' to mirror Greek articles, but those additions do not improve the meaning of an English prayer. I retain 'Lord,' 'creator,' 'mighty,' 'righteous,' 'merciful,' and 'good,' correct the misleading 'fearful,' and leave the quotation open because the prayer continues.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +153,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/002/015.job-48942.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The prayer begins by addressing God as creator, awe-inspiring and powerful, righteous and merciful, and the sole good king.
+  meaning_decisions:
+  - source_phrase: ὁ φοβερὸς
+    prior_rendering: the fearful
+    new_rendering: awe-inspiring
+    rationale: God inspires fear and reverent awe; 'fearful' ordinarily describes someone who is afraid and therefore miscommunicates the attribute today.
+  - source_phrase: ὁ φοβερὸς καὶ ὁ ἰσχυρὸς καὶ δίκαιος καὶ ἐλεήμων
+    prior_rendering: the fearful and mighty and righteous and merciful one
+    new_rendering: awe-inspiring and mighty, righteous and merciful
+    rationale: Natural English address does not require the Greek articles to become 'the … one'; the paired attributes retain the prayer's solemn cadence.
+  - source_phrase: ὁ μόνος βασιλεὺς καὶ χρηστός
+    prior_rendering: the only king and good one
+    new_rendering: the only king, who is good
+    rationale: This retains God's sole kingship and benevolent goodness while avoiding an unnatural English epithet.
+  footnote_kinds: {}
+  history_weighed: The recorded revision added 'the' and 'one' to mirror Greek articles, but those additions do not improve the meaning of an English prayer. I retain 'Lord,' 'creator,' 'mighty,' 'righteous,' 'merciful,' and 'good,' correct the misleading 'fearful,' and leave the quotation open because the prayer continues.

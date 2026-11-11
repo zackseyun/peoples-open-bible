@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֜אמֶר לְ/מַלְאֲכֵ֣י בֶן הֲדַ֗ד אִמְר֞וּ לַֽ/אדֹנִ֤/י הַ/מֶּ֨לֶךְ֙ כֹּל֩ אֲשֶׁר שָׁלַ֨חְתָּ אֶל עַבְדְּ/ךָ֤ בָ/רִֽאשֹׁנָה֙ אֶעֱשֶׂ֔ה וְ/הַ/דָּבָ֣ר הַ/זֶּ֔ה לֹ֥א אוּכַ֖ל לַ/עֲשׂ֑וֹת וַ/יֵּֽלְכוּ֙ הַ/מַּלְאָכִ֔ים וַ/יְשִׁבֻ֖/הוּ דָּבָֽר־־־׃
 translation:
-  text: So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “this matter”; Hebrew דָּבָר can mean “thing,” “matter,” or “word/message” depending on context.
-    reason: lexical_alternative
+  text: So he said to Ben-hadad’s messengers, “Tell my lord the king, ‘I will do everything you demanded of your servant the first time, but I cannot meet this demand.’” The messengers left and took his reply back to Ben-hadad.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַלְאֲכֵי
   chosen: messengers
@@ -99,14 +95,20 @@ revisions:
   from: So he said to the messengers of Ben-hadad, “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought him back word.
   to: So he said to the messengers of Ben-hadad, “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought him back word.
   rationale: Adjusted the final clause from 'brought him back word' to the more natural and accurate 'brought back word to him,' reflecting the Hebrew word order and idiomatic English.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.'
-  to: 'So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.'
+  from: So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.
+  to: So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''brought him back word''].'
+- timestamp: '2026-11-09T17:22:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he said to the messengers of Ben-hadad[a], “Say to my lord the king, ‘All that you sent to your servant the first time, I will do; but this thing I cannot do.’” And the messengers went and brought back word to him.
+  to: So he said to Ben-hadad’s messengers, “Tell my lord the king, ‘I will do everything you demanded of your servant the first time, but I cannot meet this demand.’” The messengers left and took his reply back to Ben-hadad.
+  rationale: The recorded changes concerned only the phrasing of the return message, whose meaning I retain. I go beyond the earlier source-transparent wording where it obscures the demand being communicated, while preserving Ahab’s diplomatic self-description as “your servant.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +128,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/020/009.job-58648.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ahab remains willing to fulfill Ben-hadad’s original demands but sends back a refusal of the new one.
+  meaning_decisions:
+  - source_phrase: כֹּל אֲשֶׁר שָׁלַחְתָּ אֶל עַבְדְּךָ בָרִאשֹׁנָה אֶעֱשֶׂה
+    prior_rendering: All that you sent to your servant the first time, I will do
+    new_rendering: I will do everything you demanded of your servant the first time
+    rationale: What Ben-hadad sent was a demand communicated through messengers, not something Ahab received to perform.
+  - source_phrase: וְהַדָּבָר הַזֶּה לֹא אוּכַל לַעֲשׂוֹת
+    prior_rendering: but this thing I cannot do
+    new_rendering: but I cannot meet this demand
+    rationale: The referent is the newly announced search and confiscation, so “demand” conveys the contextual meaning of “thing.”
+  - source_phrase: וַיֵּלְכוּ הַמַּלְאָכִים וַיְשִׁבֻהוּ דָּבָר
+    prior_rendering: And the messengers went and brought back word to him
+    new_rendering: The messengers left and took his reply back to Ben-hadad
+    rationale: The idiom describes delivering Ahab’s answer, and naming its recipient removes possible pronoun confusion.
+  footnote_kinds: {}
+  history_weighed: The recorded changes concerned only the phrasing of the return message, whose meaning I retain. I go beyond the earlier source-transparent wording where it obscures the demand being communicated, while preserving Ahab’s diplomatic self-description as “your servant.”

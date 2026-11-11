@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְבֹּ֞ץ אֶת כָּל אֹ֣כֶל שֶׁ֣בַע שָׁנִ֗ים אֲשֶׁ֤ר הָיוּ֙ בְּ/אֶ֣רֶץ מִצְרַ֔יִם וַ/יִּתֶּן אֹ֖כֶל בֶּ/עָרִ֑ים אֹ֧כֶל שְׂדֵה הָ/עִ֛יר אֲשֶׁ֥ר סְבִיבֹתֶ֖י/הָ נָתַ֥ן בְּ/תוֹכָֽ/הּ־־׀־־׃
 translation:
-  text: And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'the food of the field of the city that was around it he put within it.' The Hebrew repeats 'food' and uses a resumptive construction for emphasis.
-    reason: lexical_alternative
+  text: Joseph gathered all the food supplies from the seven years in Egypt and stored them in the cities. In each city he stored the food from the surrounding fields.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקְבֹּץ
   chosen: he gathered
@@ -88,14 +84,20 @@ revisions:
   from: And he gathered all the food of the seven years that occurred in the land of Egypt, and he put the food in the cities. In each city he put the food from the fields around it.
   to: And he gathered all the food of the seven years that occurred in the land of Egypt, and he put the food in the cities. In each city he put the food from the fields around it.
   rationale: Changed 'occurred' to 'were' for closer alignment with the source and more natural formal style; otherwise retained the draft.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.'
-  to: 'And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.'
+  from: And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.
+  to: And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that occurred in the land of Egypt''].'
+- timestamp: '2026-11-09T17:45:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he gathered all the food of the seven years that were in the land of Egypt[a], and he put the food in the cities. In each city he put the food from the fields around it.
+  to: Joseph gathered all the food supplies from the seven years in Egypt and stored them in the cities. In each city he stored the food from the surrounding fields.
+  rationale: The earlier history preserves the important arrangement of storing each city’s surrounding produce locally. I retain that arrangement but give less weight to the passes’ preference for a literal relative clause and the generic verb “put.”
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/041/048.job-65560.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:45Z'
+  change_level: refined
+  confidence: high
+  meaning: Joseph collects the food supplies of the seven years and stores each locality’s produce in its own city.
+  meaning_decisions:
+  - source_phrase: וַיִּקְבֹּץ אֶת כָּל אֹכֶל שֶׁבַע שָׁנִים אֲשֶׁר הָיוּ בְּאֶרֶץ מִצְרַיִם
+    prior_rendering: And he gathered all the food of the seven years that were in the land of Egypt
+    new_rendering: Joseph gathered all the food supplies from the seven years in Egypt
+    rationale: The phrase concerns the provisions collected during that period; the cumbersome relative clause adds no further meaning in English.
+  - source_phrase: וַיִּתֶּן אֹכֶל בֶּעָרִים ... נָתַן בְּתוֹכָהּ
+    prior_rendering: he put the food in the cities ... In each city he put the food
+    new_rendering: stored them in the cities ... In each city he stored the food
+    rationale: The surrounding plan and subsequent accumulation establish that these placements are storage for the famine.
+  footnote_kinds: {}
+  history_weighed: The earlier history preserves the important arrangement of storing each city’s surrounding produce locally. I retain that arrangement but give less weight to the passes’ preference for a literal relative clause and the generic verb “put.”

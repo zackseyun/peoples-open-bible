@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: הִנֵּה֩ הַ/יּ֨וֹם הַ/זֶּ֜ה רָא֣וּ עֵינֶ֗י/ךָ אֵ֣ת אֲשֶׁר נְתָנְ/ךָ֩ יְהוָ֨ה הַ/יּ֤וֹם בְּ/יָדִ/י֙ בַּ/מְּעָרָ֔ה וְ/אָמַ֥ר לַ/הֲרָגֲ/ךָ֖ וַ/תָּ֣חָס עָלֶ֑י/ךָ וָ/אֹמַ֗ר לֹא אֶשְׁלַ֤ח יָדִ/י֙ בַּֽ/אדֹנִ֔/י כִּי מְשִׁ֥יחַ יְהוָ֖ה הֽוּא־׀׀־־׃
 translation:
-  text: Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’
-  philosophy: optimal-equivalence
+  text: Look, this very day you have seen with your own eyes that Yahweh delivered you into my hand in the cave. Someone urged me to kill you[a], but I spared you. I said, ‘I will not raise my hand against my lord, for he is Yahweh’s anointed.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'and he said to kill you,' 'and it was said to kill you,' or 'and one said that I should kill you.' The Hebrew has an unspecified singular verb.
-    reason: alternative_reading
-  - marker: b
-    text: Or, 'but I had pity on you.' The Hebrew verb can express sparing out of compassion.
+    text: Literally, “and he said to kill you”; the Hebrew does not identify the speaker.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הִנֵּה
@@ -119,14 +116,20 @@ revisions:
   from: Look, this day your own eyes have seen that the LORD gave you today into my hand in the cave, and someone said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord, for he is the LORD’s anointed.’
   to: Look, this day your own eyes have seen that the LORD gave you today into my hand in the cave, and someone said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord, for he is the LORD’s anointed.’
   rationale: Changed ‘someone said to kill you’ to ‘I said to kill you’ to more directly reflect the Hebrew singular verb and avoid introducing an unspecified speaker. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’'
-  to: 'Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’'
+  from: Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’
+  to: Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and someone said to kill you''].'
+- timestamp: '2026-11-09T17:23:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Look[a], this day your own eyes have seen that Yahweh gave you today into my hand in the cave, and I said to kill you, but I spared you. I said, ‘I will not stretch out my hand against my lord[b], for he is Yahweh’s anointed.’
+  to: Look, this very day you have seen with your own eyes that Yahweh delivered you into my hand in the cave. Someone urged me to kill you[a], but I spared you. I said, ‘I will not raise my hand against my lord, for he is Yahweh’s anointed.’
+  rationale: The first draft and lexical discussion appropriately left the speaker unspecified; the later rationale for “I said” does not account for the third-person Hebrew form. I restore the unspecified agency while retaining David’s sparing of Saul and his repeated recognition of Saul’s anointed status.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -149,3 +152,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_samuel/024/011.job-28169.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:16Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: David says that Saul’s vulnerability in the cave proves he could have killed him, but he spared him despite being urged to kill Yahweh’s anointed.
+  meaning_decisions:
+  - source_phrase: נְתָנְךָ יְהוָה הַיּוֹם בְּיָדִי
+    prior_rendering: Yahweh gave you today into my hand
+    new_rendering: Yahweh delivered you into my hand
+    rationale: “Delivered” clarifies that Saul was placed within David’s power, while retaining the hand image; “this very day” carries the verse’s repeated temporal emphasis.
+  - source_phrase: וְאָמַר לַהֲרָגְךָ
+    prior_rendering: and I said to kill you
+    new_rendering: Someone urged me to kill you
+    rationale: The supplied Hebrew verb is third-person singular, not first-person; an unspecified speaker fits both the grammar and the men’s earlier encouragement.
+  - source_phrase: לֹא אֶשְׁלַח יָדִי בַּאדֹנִי
+    prior_rendering: I will not stretch out my hand against my lord
+    new_rendering: I will not raise my hand against my lord
+    rationale: This English idiom makes the refusal of violence clear and matches David’s declaration in verse 7.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical discussion appropriately left the speaker unspecified; the later rationale for “I said” does not account for the third-person Hebrew form. I restore the unspecified agency while retaining David’s sparing of Saul and his repeated recognition of Saul’s anointed status.

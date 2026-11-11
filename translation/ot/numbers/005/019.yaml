@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/הִשְׁבִּ֨יעַ אֹתָ֜/הּ הַ/כֹּהֵ֗ן וְ/אָמַ֤ר אֶל הָֽ/אִשָּׁה֙ אִם לֹ֨א שָׁכַ֥ב אִישׁ֙ אֹתָ֔/ךְ וְ/אִם לֹ֥א שָׂטִ֛ית טֻמְאָ֖ה תַּ֣חַת אִישֵׁ֑/ךְ הִנָּקִ֕י מִ/מֵּ֛י הַ/מָּרִ֥ים הַֽ/מְאָרֲרִ֖ים הָ/אֵֽלֶּה־־־׃
 translation:
-  text: Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'be innocent of these bitter waters that bring the curse.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'under your husband,' an idiom referring to the woman's married status and obligation within the marriage bond.
-    reason: cultural_note
-  - marker: c
-    text: Literally, 'the bitter waters, the curse-bringing ones.'
-    reason: lexical_alternative
+  text: Then the priest shall put her under oath and say to her, “If no other man has lain with you, and you have not defiled yourself by going astray while married to your husband, may you be unharmed by this bitter water that brings a curse.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהִשְׁבִּיעַ
   chosen: shall make her swear
@@ -122,14 +112,20 @@ revisions:
   from: Then the priest shall make her swear and shall say to the woman, ‘If no man has lain with you, and if you have not gone astray into uncleanness under your husband, be free from these bitter waters that bring a curse.’
   to: Then the priest shall make her swear and shall say to the woman, ‘If no man has lain with you, and if you have not gone astray into uncleanness under your husband, be free from these bitter waters that bring a curse.’
   rationale: Changed ‘into uncleanness’ to ‘in uncleanness’ for a more natural rendering of the Hebrew while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’'
-  to: 'Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’'
+  from: Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’
+  to: Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into uncleanness''].'
+- timestamp: '2026-11-09T18:32:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the priest shall make her swear and shall say to the woman[a], ‘If no man has lain with you, and if you have not gone astray in uncleanness under your husband[c][b], be free from these bitter waters that bring a curse.’
+  to: Then the priest shall put her under oath and say to her, “If no other man has lain with you, and you have not defiled yourself by going astray while married to your husband, may you be unharmed by this bitter water that brings a curse.”
+  rationale: The recorded revisions mainly debated in versus into uncleanness and did not settle the more important English ambiguities. The lexical notes identify both the marriage idiom and exemption from the ordeal's effects, which are now explicit in the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -152,3 +148,33 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/numbers/005/019.job-69463.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The priest must place the woman under oath and declare that the water will not harm her if she has remained sexually faithful within her marriage.
+  meaning_decisions:
+  - source_phrase: וְהִשְׁבִּיעַ אֹתָהּ הַכֹּהֵן
+    prior_rendering: the priest shall make her swear
+    new_rendering: the priest shall put her under oath
+    rationale: This identifies the formal legal act rather than suggesting an unspecified demand to swear.
+  - source_phrase: אִם לֹא שָׁכַב אִישׁ אֹתָךְ
+    prior_rendering: If no man has lain with you
+    new_rendering: If no other man has lain with you
+    rationale: The marital context excludes her husband from the prohibition; the oath concerns intercourse with another man, not marital intercourse.
+  - source_phrase: וְאִם לֹא שָׂטִית טֻמְאָה תַּחַת אִישֵׁךְ
+    prior_rendering: and if you have not gone astray in uncleanness under your husband
+    new_rendering: and you have not defiled yourself by going astray while married to your husband
+    rationale: The impurity results from marital unfaithfulness, and under your husband denotes her married status rather than physical position.
+  - source_phrase: הִנָּקִי מִמֵּי הַמָּרִים הַמְאָרֲרִים הָאֵלֶּה
+    prior_rendering: be free from these bitter waters that bring a curse
+    new_rendering: may you be unharmed by this bitter water that brings a curse
+    rationale: She must drink the water; the exemption is from its harmful effect, not from drinking it.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions mainly debated in versus into uncleanness and did not settle the more important English ambiguities. The lexical notes identify both the marriage idiom and exemption from the ordeal's effects, which are now explicit in the text.

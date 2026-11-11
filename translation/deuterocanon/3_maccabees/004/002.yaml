@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction[a] unexpectedly and suddenly decreed against them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'an unutterable mourning and a wholly lamenting cry with tears.' The Greek is highly rhetorical and compressed.
-    reason: lexical_alternative
+  text: But for the Jews there was unspeakable grief and a tearful cry of utter lamentation. Their hearts burned with overwhelming anguish as they groaned and mourned the destruction suddenly and unexpectedly decreed against them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄλεκτον
   chosen: unspeakable
@@ -147,13 +143,12 @@ revisions:
   from: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction unexpectedly and suddenly decreed against them.
   to: But for the Jews there was unspeakable grief and a tearful cry of utter lamentation, while their heart on every side, inflamed with groanings, bewailed the destruction suddenly and unexpectedly decreed against them.
   rationale: 'Improved natural English and closer lexical fit: changed ''an all-lamenting cry with tears'' to ''a tearful cry of utter lamentation''; adjusted word order around ''heart'' and ''inflamed with groanings'' for readability; rendered ἀπροσδόκητον ἐξαίφνης more naturally as ''suddenly and unexpectedly.'''
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But for the Jews there was unspeakable grief and a tearful cry of utter lamentation[a], while their heart on every side, inflamed with groanings, bewailed the destruction suddenly and unexpectedly decreed against them.'
-  to: 'But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction unexpectedly and suddenly decreed against them.'
+  from: But for the Jews there was unspeakable grief and a tearful cry of utter lamentation[a], while their heart on every side, inflamed with groanings, bewailed the destruction suddenly and unexpectedly decreed against them.
+  to: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction unexpectedly and suddenly decreed against them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all-lamenting''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -163,6 +158,13 @@ revisions:
   from: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction unexpectedly and suddenly decreed against them.
   to: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction[a] unexpectedly and suddenly decreed against them.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:56:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But for the Jews there was unspeakable grief and an all-lamenting cry with tears, while their heart, burning on every side with groanings, bewailed the destruction[a] unexpectedly and suddenly decreed against them.
+  to: But for the Jews there was unspeakable grief and a tearful cry of utter lamentation. Their hearts burned with overwhelming anguish as they groaned and mourned the destruction suddenly and unexpectedly decreed against them.
+  rationale: The earlier review rightly improved 'all-lamenting' to 'a tearful cry of utter lamentation'; the automated revert supplies no meaning-based reason to reject that improvement. The new sentence also corrects the earlier attachment of mourning to 'heart.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -182,3 +184,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/004/002.job-49572.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Jews responded to the sudden decree of destruction with indescribable grief, tears, groans, and consuming inward anguish.
+  meaning_decisions:
+  - source_phrase: πανόδυρτος μετὰ δακρύων βοή
+    prior_rendering: an all-lamenting cry with tears
+    new_rendering: a tearful cry of utter lamentation
+    rationale: This conveys the compound's intensity in natural English rather than reproducing an unfamiliar adjective.
+  - source_phrase: στεναγμοῖς πεπυρωμένης πάντοθεν αὐτῶν τῆς καρδίας, ὀλοφυρομένων
+    prior_rendering: their heart, burning on every side with groanings, bewailed
+    new_rendering: Their hearts burned with overwhelming anguish as they groaned and mourned
+    rationale: The Jews, not their collective heart, are the grammatical mourners; the English preserves the burning image and expresses its all-encompassing emotional force.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly improved 'all-lamenting' to 'a tearful cry of utter lamentation'; the automated revert supplies no meaning-based reason to reject that improvement. The new sentence also corrects the earlier attachment of mourning to 'heart.'

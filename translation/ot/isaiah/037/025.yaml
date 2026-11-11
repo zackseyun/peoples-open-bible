@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אֲנִ֥י קַ֖רְתִּי וְ/שָׁתִ֣יתִי מָ֑יִם וְ/אַחְרִב֙ בְּ/כַף פְּעָמַ֔/י כֹּ֖ל יְאֹרֵ֥י מָצֽוֹר־׃
 translation:
-  text: I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'all the canals/branches of the Nile of Egypt.' The Hebrew expression is idiomatic and may preserve a more specific reference to Egypt's waterways.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew Mazor; here likely a poetic or alternate name for Egypt, not 'siege' or 'fortification.'
-    reason: alternative_reading
+  text: I myself dug wells and drank water; with the soles of my feet I dried up all Egypt’s Nile channels.’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֲנִי
   chosen: I myself
@@ -91,14 +84,20 @@ revisions:
   from: I myself dug and drank water, and with the sole of my feet I dried up all the streams of Egypt.
   to: I myself dug and drank water, and with the sole of my feet I dried up all the streams of Egypt.
   rationale: Removed 'myself' because the Hebrew pronoun is not explicit here; otherwise retained the draft, which accurately and naturally renders the verse.
-
 - timestamp: '2026-05-17T18:24:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.'
-  to: 'I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.'
+  from: I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.
+  to: I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I myself''].'
+- timestamp: '2026-11-09T17:50:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I dug and drank water[b][a], and with the sole of my feet I dried up all the streams of Egypt.
+  to: I myself dug wells and drank water; with the soles of my feet I dried up all Egypt’s Nile channels.’
+  rationale: The review rationale denying an explicit pronoun conflicts with the supplied Hebrew; the first draft and lexical decision correctly recognized it. I also brought the documented Nile-channel sense into the text, making the earlier misplaced notes unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -118,3 +117,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/037/025.job-66604.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:50:32Z'
+  change_level: refined
+  confidence: high
+  meaning: Sennacherib boasts that he can obtain water wherever needed and dry up Egypt’s waterways beneath his feet.
+  meaning_decisions:
+  - source_phrase: אֲנִי
+    prior_rendering: I
+    new_rendering: I myself
+    rationale: The independent pronoun is explicit and continues the emphatic self-assertion of the preceding verse.
+  - source_phrase: קַרְתִּי וְשָׁתִיתִי מָיִם
+    prior_rendering: I dug and drank water
+    new_rendering: I myself dug wells and drank water
+    rationale: Wells supplies the understood object of digging for water, making the connection between the actions clear.
+  - source_phrase: בְּכַף פְּעָמַי כֹּל יְאֹרֵי מָצוֹר
+    prior_rendering: with the sole of my feet ... all the streams of Egypt
+    new_rendering: with the soles of my feet ... all Egypt’s Nile channels
+    rationale: Soles is natural English with plural feet, and Nile channels conveys the Egyptian waterways more precisely than streams while retaining the impossible drying-up boast.
+  footnote_kinds: {}
+  history_weighed: The review rationale denying an explicit pronoun conflicts with the supplied Hebrew; the first draft and lexical decision correctly recognized it. I also brought the documented Nile-channel sense into the text, making the earlier misplaced notes unnecessary.

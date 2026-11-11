@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/סָפַרְתָּ֣ לְ/ךָ֗ שֶׁ֚בַע שַׁבְּתֹ֣ת שָׁנִ֔ים שֶׁ֥בַע שָׁנִ֖ים שֶׁ֣בַע פְּעָמִ֑ים וְ/הָי֣וּ לְ/ךָ֗ יְמֵי֙ שֶׁ֚בַע שַׁבְּתֹ֣ת הַ/שָּׁנִ֔ים תֵּ֥שַׁע וְ/אַרְבָּעִ֖ים שָׁנָֽה׃
 translation:
-  text: You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.
-  philosophy: optimal-equivalence
+  text: You shall count off seven Sabbath cycles[a]—seven times seven years—making forty-nine years in all.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'seven weeks of years.' The Hebrew literally says 'seven sabbaths of years,' referring to seven seven-year cycles.
+    text: Literally, 'seven Sabbaths of years.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְסָפַרְתָּ
@@ -88,14 +88,20 @@ revisions:
   from: You shall count off seven sabbaths of years for yourself, seven years seven times, so that the days of the seven sabbaths of years shall amount to forty-nine years for you.
   to: You shall count off seven sabbaths of years for yourself, seven years seven times, so that the days of the seven sabbaths of years shall amount to forty-nine years for you.
   rationale: Replaced 'count off' with 'count' for a more formal register, removed 'so that' and 'amount to' to stay closer to the Hebrew syntax, and simplified 'for yourself'/'for you' placement for more natural formal English while preserving all source elements.
-
 - timestamp: '2026-05-18T02:58:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.'
-  to: 'You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.'
+  from: You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.
+  to: You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You shall count off''].'
+- timestamp: '2026-11-09T18:22:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall count for yourself seven sabbaths of years[a], seven years seven times, and the days of the seven sabbaths of years shall be for you forty-nine years.
+  to: You shall count off seven Sabbath cycles[a]—seven times seven years—making forty-nine years in all.
+  rationale: The first draft’s 'count off' appropriately conveyed counting a sequence, and the lexical rationale recognized that the final clause gives the arithmetic total. I retain the sevenfold emphasis but do not follow the later preference for reproducing Hebrew syntax where it obscures the calculation.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +121,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/008.job-45232.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Israelites must count seven seven-year Sabbath cycles, totaling forty-nine years.
+  meaning_decisions:
+  - source_phrase: שֶׁבַע שַׁבְּתֹת שָׁנִים
+    prior_rendering: seven sabbaths of years
+    new_rendering: seven Sabbath cycles
+    rationale: The phrase means seven cycles of seven years, each including the land’s Sabbath year; 'cycles' makes the unit clear while retaining the Sabbath connection.
+  - source_phrase: וְהָיוּ לְךָ יְמֵי שֶׁבַע שַׁבְּתֹת הַשָּׁנִים תֵּשַׁע וְאַרְבָּעִים שָׁנָה
+    prior_rendering: and the days of the seven sabbaths of years shall be for you forty-nine years
+    new_rendering: making forty-nine years in all
+    rationale: The clause states the total duration of the counted cycles; its 'days' wording is an idiom for elapsed time, not an additional unit to count.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft’s 'count off' appropriately conveyed counting a sequence, and the lexical rationale recognized that the final clause gives the arithmetic total. I retain the sevenfold emphasis but do not follow the later preference for reproducing Hebrew syntax where it obscures the calculation.

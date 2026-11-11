@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: שָׁ֩בוּ֩ עַל עֲוֺנֹ֨ת אֲבוֹתָ֜/ם הָ/רִֽאשֹׁנִ֗ים אֲשֶׁ֤ר מֵֽאֲנוּ֙ לִ/שְׁמ֣וֹעַ אֶת דְּבָרַ֔/י וְ/הֵ֣מָּה הָלְכ֗וּ אַחֲרֵ֛י אֱלֹהִ֥ים אֲחֵרִ֖ים לְ/עָבְדָ֑/ם הֵפֵ֤רוּ בֵֽית יִשְׂרָאֵל֙ וּ/בֵ֣ית יְהוּדָ֔ה אֶת בְּרִיתִ֕/י אֲשֶׁ֥ר כָּרַ֖תִּי אֶת אֲבוֹתָֽ/ם־־־־־׃ס
 translation:
-  text: They have returned to the iniquities of their first fathers[a], who refused to hear my words, and they themselves have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'their former fathers' or 'their forefathers.' The Hebrew literally says 'their first fathers,' referring to earlier generations.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'to hear my words'; in context this can also carry the sense 'to listen/obey.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'cut' my covenant.
-    reason: lexical_alternative
+  text: They have returned to the iniquities of their ancestors of old, who refused to listen to my words, and they themselves have gone after other gods to serve them. The house of Israel and the house of Judah have broken my covenant, which I made with their ancestors.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שָׁבוּ
   chosen: have returned
@@ -128,14 +118,20 @@ revisions:
   from: They have returned to the iniquities of their first fathers, who refused to hear my words, and they themselves have gone after other gods to serve them. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
   to: They have returned to the iniquities of their former fathers, who refused to hear my words, and they have gone after other gods to serve them. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
   rationale: Changed 'first fathers' to 'former fathers' for natural and accurate English; removed 'themselves' as unnecessary emphasis not required by the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They have returned to the iniquities of their former fathers[a], who refused to hear my words, and they have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.'
-  to: 'They have returned to the iniquities of their first fathers[a], who refused to hear my words, and they themselves have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.'
-  rationale: 'Azure substituted ''former fathers'' (drafter''s explicit rejected_alternative for אֲבוֹתָם הָרִאשֹׁנִים — drafter chose ''first fathers'' to mirror Hebrew emphasis on earlier generations) and dropped emphatic ''themselves'' from וְהֵמָּה (drafter documented independent pronoun''s emphatic force).'
+  from: They have returned to the iniquities of their former fathers[a], who refused to hear my words, and they have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
+  to: They have returned to the iniquities of their first fathers[a], who refused to hear my words, and they themselves have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
+  rationale: Azure substituted 'former fathers' (drafter's explicit rejected_alternative for אֲבוֹתָם הָרִאשֹׁנִים — drafter chose 'first fathers' to mirror Hebrew emphasis on earlier generations) and dropped emphatic 'themselves' from וְהֵמָּה (drafter documented independent pronoun's emphatic force).
+- timestamp: '2026-11-09T17:55:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They have returned to the iniquities of their first fathers[a], who refused to hear my words, and they themselves have gone after other gods to serve them[c][b]. The house of Israel and the house of Judah have broken my covenant that I made with their fathers.
+  to: They have returned to the iniquities of their ancestors of old, who refused to listen to my words, and they themselves have gone after other gods to serve them. The house of Israel and the house of Judah have broken my covenant, which I made with their ancestors.
+  rationale: The automated revision recognized the awkwardness of 'first fathers,' while the revert defended its reference to earlier generations and the emphasis of 'they themselves.' 'Ancestors of old' preserves that historical meaning more clearly, and I retain the defended pronoun emphasis, 'iniquities,' and both covenantal houses.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +153,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/011/010.job-67360.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel and Judah have repeated their ancestors' iniquities by rejecting God's words and serving other gods, thereby breaking his covenant.
+  meaning_decisions:
+  - source_phrase: אֲבוֹתָם הָרִאשֹׁנִים
+    prior_rendering: their first fathers
+    new_rendering: their ancestors of old
+    rationale: The phrase refers to earlier ancestral generations, not specifically to humanity's first ancestors or a first set of fathers.
+  - source_phrase: מֵאֲנוּ לִשְׁמֹעַ אֶת דְּבָרַי
+    prior_rendering: refused to hear my words
+    new_rendering: refused to listen to my words
+    rationale: The refusal is to attend and respond to God's words, not merely to experience their sound.
+  - source_phrase: אֶת אֲבוֹתָם
+    prior_rendering: with their fathers
+    new_rendering: with their ancestors
+    rationale: The covenant was made with the ancestral generation, whose relationship to the present people is the verse's point.
+  footnote_kinds: {}
+  history_weighed: The automated revision recognized the awkwardness of 'first fathers,' while the revert defended its reference to earlier generations and the emphasis of 'they themselves.' 'Ancestors of old' preserves that historical meaning more clearly, and I retain the defended pronoun emphasis, 'iniquities,' and both covenantal houses.

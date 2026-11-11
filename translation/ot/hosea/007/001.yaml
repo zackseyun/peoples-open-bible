@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: כְּ/רָפְאִ֣/י לְ/יִשְׂרָאֵ֗ל וְ/נִגְלָ֞ה עֲוֺ֤ן אֶפְרַ֨יִם֙ וְ/רָע֣וֹת שֹֽׁמְר֔וֹן כִּ֥י פָעֲל֖וּ שָׁ֑קֶר וְ/גַנָּ֣ב יָב֔וֹא פָּשַׁ֥ט גְּד֖וּד בַּ/חֽוּץ׃
 translation:
-  text: When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evil deeds of Samaria; for they practice falsehood. A thief comes in[c][b]; a raiding band strips outside.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'When I healed Israel' or 'As I was healing Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'they work deceit.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'a band of robbers plunders outside.'
-    reason: lexical_alternative
+  text: When I set out to heal Israel, the iniquity of Ephraim and the evil deeds of Samaria are exposed, for they practice deceit. A thief breaks in; a raiding band plunders outside.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כְּרָפְאִי
   chosen: When I would heal
@@ -118,14 +108,20 @@ revisions:
   from: When I would heal Israel, the iniquity of Ephraim is uncovered, and the evil deeds of Samaria; for they practice falsehood. A thief comes in; a raiding band strips outside.
   to: When I would heal Israel, the iniquity of Ephraim is uncovered, and the evils of Samaria; for they practice falsehood. A thief comes in; a band raids outside.
   rationale: Changed 'evil deeds' to 'evils' for closer lexical correspondence to the plural noun, and revised 'a raiding band strips outside' to 'a band raids outside' for more natural English while preserving the sense of plundering/raiding.
-
 - timestamp: '2026-05-15T23:39:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evils of Samaria; for they practice falsehood. A thief comes in[c][b]; a band raids outside.'
-  to: 'When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evil deeds of Samaria; for they practice falsehood. A thief comes in[c][b]; a raiding band strips outside.'
-  rationale: 'Azure substituted ''evils'' (drafter''s rejected alternative — drafter chose ''evil deeds'' for moral-action clarity) and collapsed ''a raiding band strips outside'' to ''a band raids outside'' (loses Hebrew פשט/גדוד rationale).'
+  from: When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evils of Samaria; for they practice falsehood. A thief comes in[c][b]; a band raids outside.
+  to: When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evil deeds of Samaria; for they practice falsehood. A thief comes in[c][b]; a raiding band strips outside.
+  rationale: Azure substituted 'evils' (drafter's rejected alternative — drafter chose 'evil deeds' for moral-action clarity) and collapsed 'a raiding band strips outside' to 'a band raids outside' (loses Hebrew פשט/גדוד rationale).
+- timestamp: '2026-11-09T17:47:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When I would heal Israel[a], the iniquity of Ephraim is uncovered, and the evil deeds of Samaria; for they practice falsehood. A thief comes in[c][b]; a raiding band strips outside.
+  to: When I set out to heal Israel, the iniquity of Ephraim and the evil deeds of Samaria are exposed, for they practice deceit. A thief breaks in; a raiding band plunders outside.
+  rationale: The history's defense of 'evil deeds' rightly preserves the moral sense, so that wording remains. I adopt the documented option 'set out to heal' and retain the contrast between intrusion and outdoor raiding while making both actions intelligible.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -145,3 +141,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/hosea/007/001.job-46093.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:49Z'
+  change_level: refined
+  confidence: high
+  meaning: God's effort to heal Israel exposes the iniquity of Ephraim and Samaria, whose deceit is accompanied by theft and open plundering.
+  meaning_decisions:
+  - source_phrase: כְּרָפְאִי לְיִשְׂרָאֵל
+    prior_rendering: When I would heal Israel
+    new_rendering: When I set out to heal Israel
+    rationale: Expresses God's intended restorative action without the potentially archaic or conditional sound of 'would heal.'
+  - source_phrase: פָעֲלוּ שָׁקֶר
+    prior_rendering: they practice falsehood
+    new_rendering: they practice deceit
+    rationale: Makes clear that the indictment concerns deceptive conduct, not merely spoken falsehood.
+  - source_phrase: וְגַנָּב יָבֹוא פָּשַׁט גְּדוּד בַּחוּץ
+    prior_rendering: A thief comes in; a raiding band strips outside
+    new_rendering: A thief breaks in; a raiding band plunders outside
+    rationale: The theft context implies illicit entry, while פשט with a raiding band describes plundering rather than an unexplained act of stripping.
+  footnote_kinds: {}
+  history_weighed: The history's defense of 'evil deeds' rightly preserves the moral sense, so that wording remains. I adopt the documented option 'set out to heal' and retain the contrast between intrusion and outdoor raiding while making both actions intelligible.

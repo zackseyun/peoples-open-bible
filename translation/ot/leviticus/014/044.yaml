@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וּ/בָא֙ הַ/כֹּהֵ֔ן וְ/רָאָ֕ה וְ/הִנֵּ֛ה פָּשָׂ֥ה הַ/נֶּ֖גַע בַּ/בָּ֑יִת צָרַ֨עַת מַמְאֶ֥רֶת הִ֛וא בַּ/בַּ֖יִת טָמֵ֥א הֽוּא׃
 translation:
-  text: then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.
-  philosophy: optimal-equivalence
+  text: then the priest shall come and inspect the house. If he finds that the contamination has spread in the house, it is a destructive affliction[a], and the house is unclean.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'leprosy.' The Hebrew term צָרַעַת refers to a broader category of ritual impurity than modern leprosy and is even used of houses here.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'malignant' or 'corrosive' for 'destructive.'
+    text: The Hebrew term tsaraath describes defiling conditions affecting people, clothing, and houses; it does not identify a specific modern disease or type of mold.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וּבָא
@@ -118,14 +115,20 @@ revisions:
   from: then the priest shall come and inspect, and if indeed the infection has spread in the house, it is a destructive skin disease in the house; it is unclean.
   to: then the priest shall come and inspect, and if indeed the infection has spread in the house, it is a destructive skin disease in the house; it is unclean.
   rationale: Changed 'skin disease' to 'mildew' for lexical accuracy, since the verse concerns an affliction in a house rather than on skin. Kept the rest substantially the same.
-
 - timestamp: '2026-05-18T02:57:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.'
-  to: 'then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.'
+  from: then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.
+  to: then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''skin disease''].'
+- timestamp: '2026-11-09T19:22:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then the priest shall come and inspect[a], and if indeed the infection has spread in the house, it is a destructive mildew in the house[b]; it is unclean.
+  to: then the priest shall come and inspect the house. If he finds that the contamination has spread in the house, it is a destructive affliction[a], and the house is unclean.
+  rationale: The earlier review correctly recognized that 'skin disease' is misleading for a house, but neither it nor the later automated revert records a text change or carries maintainer authority. I preserve that contextual gain while replacing the current 'mildew' with a broader term that does not identify an organism the Hebrew leaves unspecified.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -147,3 +150,34 @@ cross_check:
   verdict_counts:
     major-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/leviticus/014/044.job-28852.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:22:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The priest must inspect the house, and if the contamination has spread, it is a destructive affliction and the house is ritually unclean.
+  meaning_decisions:
+  - source_phrase: וְרָאָה וְהִנֵּה
+    prior_rendering: inspect, and if indeed
+    new_rendering: inspect the house. If he finds that
+    rationale: Makes the object of inspection explicit and expresses the observed finding in natural procedural English.
+  - source_phrase: הַנֶּגַע
+    prior_rendering: the infection
+    new_rendering: the contamination
+    rationale: Describes the condition affecting the house without suggesting a medically established infection.
+  - source_phrase: צָרַעַת מַמְאֶרֶת הִוא בַּבַּיִת
+    prior_rendering: it is a destructive mildew in the house
+    new_rendering: it is a destructive affliction[a]
+    rationale: Preserves the severity and the broader Hebrew category without identifying the condition specifically as mildew; its location in the house is already explicit.
+  - source_phrase: טָמֵא הוּא
+    prior_rendering: it is unclean
+    new_rendering: and the house is unclean
+    rationale: Clarifies that the house bears the unclean status, as the subsequent demolition and entry restrictions confirm.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier review correctly recognized that 'skin disease' is misleading for a house, but neither it nor the later automated revert records a text change or carries maintainer authority. I preserve that contextual gain while replacing the current 'mildew' with a broader term that does not identify an organism the Hebrew leaves unspecified.

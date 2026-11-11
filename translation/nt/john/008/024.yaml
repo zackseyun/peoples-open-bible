@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: εἶπον οὖν ὑμῖν ὅτι ἀποθανεῖσθε ἐν ταῖς ἁμαρτίαις ὑμῶν· ἐὰν γὰρ μὴ πιστεύσητε ὅτι ἐγώ εἰμι, ἀποθανεῖσθε ἐν ταῖς ἁμαρτίαις ὑμῶν.
 translation:
-  text: So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.
-  philosophy: optimal-equivalence
+  text: 'That is why I told you that you will die in your sins: unless you believe that I am he[a], you will die in your sins.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'that I am.' The Greek does not state an explicit predicate after 'I am,' and the wording may carry deeper resonance in John's Gospel.
+    text: Or, “I am.” The Greek has no expressed predicate after “I am.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: εἶπον οὖν
@@ -82,14 +82,20 @@ revisions:
   from: So I told you that you will die in your sins. For unless you believe that I am he, you will die in your sins.
   to: So I told you that you will die in your sins. For unless you believe that I am he, you will die in your sins.
   rationale: Revised 'I am he' to 'I am' to more directly reflect the Greek ἐγώ εἰμι without adding an implied predicate. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.'
-  to: 'So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.'
+  from: So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.
+  to: So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that I am he''].'
+- timestamp: '2026-11-09T17:10:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So I told you that you will die in your sins. For unless you believe that I am[a], you will die in your sins.
+  to: 'That is why I told you that you will die in your sins: unless you believe that I am he[a], you will die in your sins.”'
+  rationale: The current wording and automated history are inconsistent, but the first draft and documented deliberation support “I am he” with “I am” as an alternative. I follow that contextual reasoning rather than treating the automated literalizing revision or revert as decisive.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +119,26 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/john/008/024.job-27836.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jesus explains that unless his hearers believe his declaration of who he is, they will die in their sins.
+  meaning_decisions:
+  - source_phrase: εἶπον οὖν ὑμῖν
+    prior_rendering: So I told you
+    new_rendering: That is why I told you
+    rationale: The connective draws an inference from the preceding contrast between Jesus’ origin and theirs, rather than merely introducing another statement.
+  - source_phrase: ὅτι ἐγώ εἰμι
+    prior_rendering: that I am
+    new_rendering: that I am he
+    rationale: The self-identification naturally prompts their question about his identity in verse 25; “I am he” conveys that connection in English while the note preserves the serious absolute reading.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording and automated history are inconsistent, but the first draft and documented deliberation support “I am he” with “I am” as an alternative. I follow that contextual reasoning rather than treating the automated literalizing revision or revert as decisive.

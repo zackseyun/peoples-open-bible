@@ -26,14 +26,11 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: What is it, Israel? Why is it that you are in the land of enemies[a]? You have grown old in a foreign land; you have become defiled with the dead[b],
-  philosophy: optimal-equivalence
+  text: What has happened, Israel? Why are you in the land of your enemies? You have grown old in a foreign land; you have become defiled with the dead[a];
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'What is the matter, Israel? Why are you in the land of enemies?' The opening τί ἐστιν can function idiomatically as a lamenting exclamation or question.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Defiled with the dead'' may evoke either ritual impurity through association with the dead or a figurative condition of being as good as dead in exile; the Greek allows both resonances.'
+    text: This may refer to ritual impurity through contact with the dead or to Israel's deathlike condition in exile.
     reason: alternative_reading
 lexical_decisions:
 - source_word: τί ἐστιν
@@ -115,13 +112,12 @@ revisions:
   from: What is it, Israel? Why is it that you are in the land of enemies? You have grown old in a foreign land; you have become defiled with the dead,
   to: What is it, Israel? Why is it that you are in the land of your enemies? You have grown old in a foreign land; you have become defiled with the dead,
   rationale: Added 'your' before 'enemies' to reflect the possessive sense naturally in English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'What is it[a], Israel? Why is it that you are in the land of your enemies? You have grown old in a foreign land; you have become defiled with the dead[b],'
-  to: 'What is it, Israel? Why is it that you are in the land of enemies? You have grown old in a foreign land; you have become defiled with the dead,'
+  from: What is it[a], Israel? Why is it that you are in the land of your enemies? You have grown old in a foreign land; you have become defiled with the dead[b],
+  to: What is it, Israel? Why is it that you are in the land of enemies? You have grown old in a foreign land; you have become defiled with the dead,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the land of enemies''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -131,6 +127,13 @@ revisions:
   from: What is it, Israel? Why is it that you are in the land of enemies? You have grown old in a foreign land; you have become defiled with the dead,
   to: What is it, Israel? Why is it that you are in the land of enemies[a]? You have grown old in a foreign land; you have become defiled with the dead[b],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in the land of enemies') because the note names that rendering; [b] anchored to ('Defiled with the dead') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: What is it, Israel? Why is it that you are in the land of enemies[a]? You have grown old in a foreign land; you have become defiled with the dead[b],
+  to: What has happened, Israel? Why are you in the land of your enemies? You have grown old in a foreign land; you have become defiled with the dead[a];
+  rationale: The earlier review supplied 'your,' and an automated revert removed it solely to preserve the unexpressed possessive. I restore that clarification while retaining the earlier decision not to narrow the death-and-defilement imagery.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +153,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/010.job-50380.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:13Z'
+  change_level: refined
+  confidence: high
+  meaning: The speaker asks why Israel has aged in enemy territory and become associated with the defilement of death.
+  meaning_decisions:
+  - source_phrase: τί ἐστιν Ἰσραήλ; τί ὅτι
+    prior_rendering: What is it, Israel? Why is it that
+    new_rendering: What has happened, Israel? Why
+    rationale: The opening is a lamenting inquiry about Israel's condition, not a request to identify an unspecified thing.
+  - source_phrase: ἐν γῇ τῶν ἐχθρῶν
+    prior_rendering: in the land of enemies
+    new_rendering: in the land of your enemies
+    rationale: The enemies' relationship to Israel is understood; expressing it produces natural English without changing their identity.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review supplied 'your,' and an automated revert removed it solely to preserve the unexpressed possessive. I restore that clarification while retaining the earlier decision not to narrow the death-and-defilement imagery.

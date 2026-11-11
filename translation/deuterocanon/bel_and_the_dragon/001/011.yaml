@@ -10,12 +10,8 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: The king went with Daniēl into the house of Bel. And the priests of Bel said[a], “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “temple of Bel.” The Greek literally says “house of Bel,” a common way to refer to a deity’s shrine or temple.
-    reason: lexical_alternative
+  text: the king, accompanied by Daniel, into Bel’s temple. The priests of Bel said, “Look, we are going outside. But you, O king, set out the food, mix the wine with water and set it out, and shut the door
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ βασιλεὺς
   chosen: The king
@@ -114,13 +110,12 @@ revisions:
   from: The king went with Daniēl into the house of Bel. And the priests of Bel said, “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
   to: The king went with Daniēl into the house of Bel. And the priests of Bel said, “Look, we are going outside. But you, O king, set out the food, and mix the wine and set it out, and shut the door.”
   rationale: Revised 'after mixing the wine' to 'mix the wine and set it out' to reflect the Greek sequence more directly rather than making the mixing prior and subordinate.
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The king went with Daniēl into the house of Bel. And the priests of Bel said[a], “Look, we are going outside. But you, O king, set out the food, and mix the wine and set it out, and shut the door.”'
-  to: 'The king went with Daniēl into the house of Bel. And the priests of Bel said, “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”'
+  from: The king went with Daniēl into the house of Bel. And the priests of Bel said[a], “Look, we are going outside. But you, O king, set out the food, and mix the wine and set it out, and shut the door.”
+  to: The king went with Daniēl into the house of Bel. And the priests of Bel said, “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after mixing the wine, set it out''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +125,13 @@ revisions:
   from: The king went with Daniēl into the house of Bel. And the priests of Bel said, “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
   to: The king went with Daniēl into the house of Bel. And the priests of Bel said[a], “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:00:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The king went with Daniēl into the house of Bel. And the priests of Bel said[a], “Look, we are going outside. But you, O king, set out the food, and after mixing the wine, set it out, and shut the door.”
+  to: the king, accompanied by Daniel, into Bel’s temple. The priests of Bel said, “Look, we are going outside. But you, O king, set out the food, mix the wine with water and set it out, and shut the door
+  rationale: The history recognized both the temple setting and the customary preparation of wine but favored literal wording. Those contextual meanings now appear directly, while the mixing still precedes setting out the wine.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +151,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/bel_and_the_dragon/001/011.job-50465.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king and Daniel enter Bel’s temple, where the priests propose leaving the king to arrange the provisions and secure the door.
+  meaning_decisions:
+  - source_phrase: ὁ βασιλεὺς μετὰ Δανιὴλ εἰς τὸν οἶκον τοῦ Βήλ
+    prior_rendering: The king went with Daniēl into the house of Bel
+    new_rendering: the king, accompanied by Daniel, into Bel’s temple
+    rationale: This completes the movement verb in verse 10; “temple” states the contextual meaning of the deity’s “house,” and Daniel’s recognizable English name is restored.
+  - source_phrase: τὸν οἶνον κεράσας θές
+    prior_rendering: after mixing the wine, set it out
+    new_rendering: mix the wine with water and set it out
+    rationale: Mixing wine ordinarily meant diluting it with water before serving; the wording supplies that shared cultural knowledge and preserves the sequence.
+  footnote_kinds: {}
+  history_weighed: The history recognized both the temple setting and the customary preparation of wine but favored literal wording. Those contextual meanings now appear directly, while the mixing still precedes setting out the wine.

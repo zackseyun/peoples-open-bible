@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἔλεγεν δὲ ὅτι Τὸ ἐκ τοῦ ἀνθρώπου ἐκπορευόμενον ἐκεῖνο κοινοῖ τὸν ἄνθρωπον·
 translation:
-  text: And he was saying[a], “What comes out from the man—that defiles the man.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “makes the man unclean.” The Greek verb is purity-language used for rendering someone defiled or unclean.
-    reason: lexical_alternative
+  text: He went on to say, “What comes out of a person is what defiles that person.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: he was saying
@@ -96,13 +92,12 @@ revisions:
   from: And he was saying, “What comes out from the man—that defiles the man.”
   to: And he was saying, “What comes out of the man, that defiles the man.”
   rationale: Changed 'out from' to the more natural 'out of' while preserving the Greek sense and formal register.
-
 - timestamp: '2026-05-18T03:10:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he was saying[a], “What comes out of the man, that defiles the man.”'
-  to: 'And he was saying, “What comes out from the man—that defiles the man.”'
+  from: And he was saying[a], “What comes out of the man, that defiles the man.”
+  to: And he was saying, “What comes out from the man—that defiles the man.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''What comes out from the man''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -112,6 +107,13 @@ revisions:
   from: And he was saying, “What comes out from the man—that defiles the man.”
   to: And he was saying[a], “What comes out from the man—that defiles the man.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:15:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he was saying[a], “What comes out from the man—that defiles the man.”
+  to: He went on to say, “What comes out of a person is what defiles that person.
+  rationale: The April review correctly preferred the natural 'out of'; its automated reversal supplied no meaning-based reason to reject that improvement. I retain 'defiles' for the passage's purity language while making the generic human reference explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +136,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/007/020.job-56308.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus continues explaining that what comes out of a person is what makes that person unclean.
+  meaning_decisions:
+  - source_phrase: ἔλεγεν δὲ
+    prior_rendering: And he was saying
+    new_rendering: He went on to say
+    rationale: The imperfect introduces continued explanation here; natural English need not suggest that Jesus repeatedly uttered the same sentence.
+  - source_phrase: Τὸ ἐκ τοῦ ἀνθρώπου ἐκπορευόμενον ἐκεῖνο κοινοῖ τὸν ἄνθρωπον
+    prior_rendering: What comes out from the man—that defiles the man
+    new_rendering: What comes out of a person is what defiles that person
+    rationale: The saying concerns human beings generally, not a particular man or males alone; the emphatic construction remains in 'is what defiles.'
+  footnote_kinds: {}
+  history_weighed: The April review correctly preferred the natural 'out of'; its automated reversal supplied no meaning-based reason to reject that improvement. I retain 'defiles' for the passage's purity language while making the generic human reference explicit.

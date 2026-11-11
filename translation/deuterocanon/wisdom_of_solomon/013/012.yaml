@@ -10,15 +10,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But after using up the scraps[a] from his work to prepare food, he was filled[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'castoff pieces,' 'offcuts,' or 'waste from his work.' The Greek refers to what is thrown off from the artisan's labor.
-    reason: lexical_alternative
-  - marker: b
-    text: '''He was filled'' likely means he satisfied his hunger after using the leftover wood to prepare his meal.'
-    reason: lexical_alternative
+  text: He burns the scraps from his work to cook his food, then eats his fill.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀποβλήματα
   chosen: scraps
@@ -95,13 +88,12 @@ revisions:
   from: But after using up the scraps from his work to prepare food, he was filled.
   to: But after using up the scraps from his work in preparing food, he was filled.
   rationale: Adjusted 'to prepare food' to 'in preparing food' to more naturally reflect εἰς ἑτοιμασίαν τροφῆς while preserving the sense. Kept 'scraps,' 'using up,' and 'was filled' as accurate and formal enough.
-
 - timestamp: '2026-05-18T03:10:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after using up the scraps from his work in preparing food[b][a], he was filled.'
-  to: 'But after using up the scraps from his work to prepare food, he was filled.'
+  from: But after using up the scraps from his work in preparing food[b][a], he was filled.
+  to: But after using up the scraps from his work to prepare food, he was filled.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to prepare food''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -111,6 +103,13 @@ revisions:
   from: But after using up the scraps from his work to prepare food, he was filled.
   to: But after using up the scraps[a] from his work to prepare food, he was filled[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('scraps') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('He was filled') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:13:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after using up the scraps[a] from his work to prepare food, he was filled[b].
+  to: He burns the scraps from his work to cook his food, then eats his fill.
+  rationale: The recorded revision and automated revert concerned only 'to' versus 'in' preparing food, not the action's meaning. The lexical discussion and footnotes identify cooking fuel and satisfied hunger, which are now clear without notes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/013/012.job-39217.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The carpenter uses his wood scraps as cooking fuel and satisfies his hunger.
+  meaning_decisions:
+  - source_phrase: τὰ δὲ ἀποβλήματα τῆς ἐργασίας εἰς ἑτοιμασίαν τροφῆς ἀναλώσας
+    prior_rendering: But after using up the scraps from his work to prepare food
+    new_rendering: He burns the scraps from his work to cook his food
+    rationale: The wood scraps are consumed as cooking fuel, an implication clear to the first hearers; the connective continues the narrative rather than marking opposition.
+  - source_phrase: ἐνεπλήσθη
+    prior_rendering: he was filled
+    new_rendering: then eats his fill
+    rationale: The verb refers to satisfying his hunger after preparing the food, not to an unspecified kind of filling.
+  footnote_kinds: {}
+  history_weighed: The recorded revision and automated revert concerned only 'to' versus 'in' preparing food, not the action's meaning. The lexical discussion and footnotes identify cooking fuel and satisfied hunger, which are now clear without notes.

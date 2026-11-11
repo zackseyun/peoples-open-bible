@@ -21,17 +21,47 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'In those days Mattathias son of John, son of Simeon, a priest of the sons of Joarib, rose up from Jerusalem and settled in Modein.'
+  text: In those days Mattathias, son of John, son of Simeon, a priest from the family of Joarib, moved from Jerusalem and settled in Modein.
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In those days Mattathias son of John[a], son of Simeon, a priest of the sons of Joarib, came from Jerusalem and settled in Modein.'
-  to: 'In those days Mattathias son of John, son of Simeon, a priest of the sons of Joarib, rose up from Jerusalem and settled in Modein.'
+  from: In those days Mattathias son of John[a], son of Simeon, a priest of the sons of Joarib, came from Jerusalem and settled in Modein.
+  to: In those days Mattathias son of John, son of Simeon, a priest of the sons of Joarib, rose up from Jerusalem and settled in Modein.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rose up'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:51:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In those days Mattathias son of John, son of Simeon, a priest of the sons of Joarib, rose up from Jerusalem and settled in Modein.
+  to: In those days Mattathias, son of John, son of Simeon, a priest from the family of Joarib, moved from Jerusalem and settled in Modein.
+  rationale: The first recorded wording, 'came from Jerusalem,' already recognized movement between places. The later automated revert supplies no meaning-based reason to prefer 'rose up,' so I make the relocation explicit.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:13Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 1 Maccabees 2:1 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''rose up'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Mattathias, a priest descended from Joarib, moved from Jerusalem to Modein during this time.
+  meaning_decisions:
+  - source_phrase: ἱερεὺς τῶν υἱῶν Ἰωαρίβ
+    prior_rendering: a priest of the sons of Joarib
+    new_rendering: a priest from the family of Joarib
+    rationale: The expression identifies an ancestral priestly family, not merely Joarib’s immediate sons.
+  - source_phrase: ἀνέστη ... ἀπὸ Ἱερουσαλήμ
+    prior_rendering: rose up from Jerusalem
+    new_rendering: moved from Jerusalem
+    rationale: Together with settling in Modein, the phrase describes relocation; 'rose up from' does not communicate that clearly in English.
+  footnote_kinds: {}
+  history_weighed: The first recorded wording, 'came from Jerusalem,' already recognized movement between places. The later automated revert supplies no meaning-based reason to prefer 'rose up,' so I make the relocation explicit.

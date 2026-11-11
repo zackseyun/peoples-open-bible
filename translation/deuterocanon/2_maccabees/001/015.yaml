@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek Ναναίου may be represented in English as 'Nanea' or 'Nanaia.' The main text keeps the form closest to the Greek witness used here.
-    reason: lexical_alternative
+  text: After the priests of Nanaia had set out the money, Antiochus came with a few men into the enclosed temple precinct. As soon as he entered the temple, they shut it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: προθεμένων
   chosen: had set ... out
@@ -117,14 +113,20 @@ revisions:
   from: And when the priests of Nanea had set these things out, and he himself had come with a few men into the enclosure of the sanctuary, they shut the temple as soon as Antiochus entered.
   to: And when the priests of Nanea had set these things out, and he himself had come with a few men into the enclosure of the sanctuary, they shut the temple as soon as Antiochus entered.
   rationale: Replaced 'he himself' with 'he' for more natural English, and rendered τοῦ τεμένους as 'the temple precinct' rather than 'the sanctuary' to distinguish it from τὸ ἱερόν ('the temple') and preserve the contrast in the verse.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.'
-  to: 'And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.'
+  from: And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.
+  to: And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sanctuary''].'
+- timestamp: '2026-11-09T18:54:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the priests of Nanea had set these things out[a], and he had come with a few men into the enclosure of the temple precinct, they shut the temple as soon as Antiochus entered.
+  to: After the priests of Nanaia had set out the money, Antiochus came with a few men into the enclosed temple precinct. As soon as he entered the temple, they shut it.
+  rationale: I preserve the earlier review’s useful distinction between the sacred precinct and the temple itself. The lexical preference for leaving 'these things' unspecified is outweighed by the clear reference to the money in verse 14.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -144,3 +146,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/001/015.job-48906.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:25Z'
+  change_level: refined
+  confidence: high
+  meaning: The priests displayed the money and trapped Antiochus inside the temple after he approached with a small party.
+  meaning_decisions:
+  - source_phrase: προθεμένων αὐτὰ τῶν ἱερέων τοῦ Ναναίου
+    prior_rendering: when the priests of Nanea had set these things out
+    new_rendering: After the priests of Nanaia had set out the money
+    rationale: The pronoun refers to the money just mentioned, and the varying Greek forms designate the same goddess and her sanctuary.
+  - source_phrase: κἀκεῖνον προσελθόντος μετʼ ὀλίγων εἰς τὸν περίβολον τοῦ τεμένους
+    prior_rendering: and he had come with a few men into the enclosure of the temple precinct
+    new_rendering: Antiochus came with a few men into the enclosed temple precinct
+    rationale: Naming Antiochus makes the subject clear, while 'enclosed temple precinct' conveys the architectural sense without a cumbersome chain of nouns.
+  - source_phrase: συγκλείσαντες τὸ ἱερόν, ὡς εἰσῆλθεν Ἀντίοχος
+    prior_rendering: they shut the temple as soon as Antiochus entered
+    new_rendering: As soon as he entered the temple, they shut it
+    rationale: This explicitly distinguishes approaching within the precinct from entering the temple that the priests then closed.
+  footnote_kinds: {}
+  history_weighed: I preserve the earlier review’s useful distinction between the sacred precinct and the temple itself. The lexical preference for leaving 'these things' unspecified is outweighed by the clear reference to the money in verse 14.

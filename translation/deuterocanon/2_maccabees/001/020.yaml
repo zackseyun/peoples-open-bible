@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests[a] who had hidden it, to get the fire.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'sent ... upon/for the fire.' The Greek is concise; the translation makes explicit that Nehemiah sent the descendants of the priests to recover the hidden fire mentioned in the surrounding context.
-    reason: lexical_alternative
+  text: After many years had passed, when God saw fit, Nehemiah, who had been sent by the king of Persia, sent the descendants of the priests who had hidden the fire to retrieve it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διελθόντων ... ἐτῶν ἱκανῶν
   chosen: after many years had passed
@@ -103,13 +99,12 @@ revisions:
   from: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.
   to: But after many years had passed, when it pleased God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.
   rationale: Changed 'when it seemed good to God' to 'when it pleased God' for a more natural and direct rendering of ὅτε ἔδοξεν τῷ θεῷ. Kept the rest unchanged, including the implied object 'it' referring to the fire.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after many years had passed[a], when it pleased God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.'
-  to: 'But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.'
+  from: But after many years had passed[a], when it pleased God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.
+  to: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when it seemed good to God''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -119,6 +114,13 @@ revisions:
   from: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests who had hidden it, to get the fire.
   to: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests[a] who had hidden it, to get the fire.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the descendants of the priests') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:54:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after many years had passed, when it seemed good to God, Nehemiah, having been sent by the king of Persia, sent for the descendants of the priests[a] who had hidden it, to get the fire.
+  to: After many years had passed, when God saw fit, Nehemiah, who had been sent by the king of Persia, sent the descendants of the priests who had hidden the fire to retrieve it.
+  rationale: The history recognized divine approval but debated retaining the Greek idiom; 'God saw fit' expresses its meaning without implying emotional pleasure. The lexical rationale itself identifies the descendants as those dispatched, correcting the misleading current 'sent for.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -138,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/001/020.job-48911.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Many years later, at God’s chosen time, Nehemiah dispatched the descendants of the priests to recover the fire their ancestors had hidden.
+  meaning_decisions:
+  - source_phrase: ὅτε ἔδοξεν τῷ θεῷ
+    prior_rendering: when it seemed good to God
+    new_rendering: when God saw fit
+    rationale: The idiom expresses divine determination or approval, not uncertainty in God’s perception.
+  - source_phrase: τοὺς ἐκγόνους τῶν ἱερέων τῶν ἀποκρυψάντων ἔπεμψεν ἐπὶ τὸ πῦρ
+    prior_rendering: sent for the descendants of the priests who had hidden it, to get the fire
+    new_rendering: sent the descendants of the priests who had hidden the fire to retrieve it
+    rationale: 'The descendants are the direct object of ''sent'': Nehemiah dispatches them to recover the fire rather than merely summoning them.'
+  footnote_kinds: {}
+  history_weighed: The history recognized divine approval but debated retaining the Greek idiom; 'God saw fit' expresses its meaning without implying emotional pleasure. The lexical rationale itself identifies the descendants as those dispatched, correcting the misleading current 'sent for.'

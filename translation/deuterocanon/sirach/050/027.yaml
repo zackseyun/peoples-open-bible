@@ -26,14 +26,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 50:27
 translation:
-  text: Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, who poured forth wisdom from his heart[b].
-  philosophy: optimal-equivalence
+  text: This instruction in understanding and mastery of expression[a] is by Simon son of Jeshua, son of Eleazar, son of Sira, who poured forth wisdom from his heart[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''and mastery of expression'' reflects a difficult phrase (מוֹשֵׁל אוֹפַנִּים). The wording may point to skill in ordered speech or composition; the exact nuance is uncertain.'
-    reason: lexical_alternative
+    text: The Hebrew phrase rendered 'mastery of expression' is difficult; the Greek has 'knowledge.'
+    reason: textual_variant
   - marker: b
-    text: The Hebrew of the final clause is uncertain in the Geniza witness. The Greek parallel reads, 'who poured forth wisdom from his heart,' which guides the main text here.
+    text: The final Hebrew clauses are uncertain. The Greek reads, 'who poured forth wisdom from his heart,' and guides the translation here.
     reason: textual_variant
 lexical_decisions:
 - source_word: מוּסַר
@@ -128,14 +128,20 @@ revisions:
   from: Instruction in understanding and mastery of expression, by Shimon son of Yeshua, son of Eleazar son of Sira, who poured forth wisdom from his heart.
   to: Instruction in understanding and mastery of expression, by Shimon son of Yeshua, son of Eleazar son of Sira, which bubbled up in the interpretation of his heart, and which he uttered with understanding.
   rationale: 'Replaced the unsupported addition ''wisdom from his heart'' with a closer rendering of the final clauses: ''which bubbled up in the interpretation of his heart, and which he uttered with understanding.'' This restores both source verbs and avoids omitting the second clause.'
-
 - timestamp: '2026-05-15T14:13:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, which bubbled up in the interpretation of his heart[b], and which he uttered with understanding.'
-  to: 'Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, who poured forth wisdom from his heart[b].'
-  rationale: 'Restored 3 documented Greek-guided renderings (ἀνώμβρησεν, ἀπὸ καρδίας, σοφίαν) per documented policy.'
+  from: Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, which bubbled up in the interpretation of his heart[b], and which he uttered with understanding.
+  to: Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, who poured forth wisdom from his heart[b].
+  rationale: Restored 3 documented Greek-guided renderings (ἀνώμβρησεν, ἀπὸ καρδίας, σοφίαν) per documented policy.
+- timestamp: '2026-11-09T19:10:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Instruction in understanding and mastery of expression[a], by Shimon son of Yeshua, son of Eleazar son of Sira, who poured forth wisdom from his heart[b].
+  to: This instruction in understanding and mastery of expression[a] is by Simon son of Jeshua, son of Eleazar, son of Sira, who poured forth wisdom from his heart[b].
+  rationale: The intervening review tried to preserve both Hebrew clauses, but its wording did not establish a clear meaning; the documented Greek-guided rendering remains the best-supported English here. I retain that reading with its uncertainty noted rather than reproducing an unintelligible reconstruction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +161,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/050/027.job-52385.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:14Z'
+  change_level: refined
+  confidence: medium
+  meaning: The author identifies himself and presents his work as instruction in understanding and skilled expression drawn from his own wisdom.
+  meaning_decisions:
+  - source_phrase: מוּסַר שֵׂכֶל וּמוֹשֵׁל אוֹפַנִּים, לְשִׁמְעוֹן בֶּן יֵשׁוּעַ, בֶּן אֶלְעָזָר בֶּן סִירָא
+    prior_rendering: Instruction in understanding and mastery of expression, by Shimon son of Yeshua, son of Eleazar son of Sira
+    new_rendering: This instruction in understanding and mastery of expression is by Simon son of Jeshua, son of Eleazar, son of Sira
+    rationale: The supplied subject and copula make the concluding attribution a complete English sentence, while Simon and Jeshua use conventional English biblical name forms.
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: The intervening review tried to preserve both Hebrew clauses, but its wording did not establish a clear meaning; the documented Greek-guided rendering remains the best-supported English here. I retain that reading with its uncertainty noted rather than reproducing an unintelligible reconstruction.

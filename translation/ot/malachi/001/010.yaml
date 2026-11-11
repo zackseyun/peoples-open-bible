@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: מִ֤י גַם בָּ/כֶם֙ וְ/יִסְגֹּ֣ר דְּלָתַ֔יִם וְ/לֹֽא תָאִ֥ירוּ מִזְבְּחִ֖/י חִנָּ֑ם אֵֽין לִ֨/י חֵ֜פֶץ בָּ/כֶ֗ם אָמַר֙ יְהוָ֣ה צְבָא֔וֹת וּ/מִנְחָ֖ה לֹֽא אֶרְצֶ֥ה מִ/יֶּדְ/כֶֽם־־־־׃
 translation:
-  text: Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or, ''Who is there even among you who would shut the doors?'' The Hebrew can be read as a rhetorical question, but here it likely expresses a wish: that someone would close the temple doors rather than continue empty worship.'
-    reason: alternative_reading
-  - marker: b
-    text: '''Kindle my altar for nothing'' may also be rendered ''light my altar in vain.'''
-    reason: lexical_alternative
-  - marker: c
-    text: '''Offering'' translates Hebrew minḥah, which can more specifically mean ''grain offering'' in sacrificial contexts.'
-    reason: lexical_alternative
+  text: “Oh, that even one of you would shut the temple doors, so that you would not kindle the fire on my altar in vain! I have no pleasure in you,” says Yahweh of Armies, “and I will not accept an offering from your hands.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִי גַם בָּכֶם
   chosen: Oh, that there were even one among you
@@ -109,14 +99,20 @@ revisions:
   from: Oh, that there were even one among you who would shut the doors, so that you would not kindle my altar for nothing! I have no pleasure in you, says the LORD of hosts, and I will not accept an offering from your hand.
   to: Oh, that there were even one among you who would shut the doors, so that you would not kindle my altar for nothing! I have no pleasure in you, says the LORD of hosts, and I will not accept an offering from your hand.
   rationale: Changed 'for nothing' to 'in vain' for a more natural and formally appropriate rendering of חִנָּם, while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-17T07:51:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.'
-  to: 'Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.'
+  from: Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.
+  to: Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for nothing''].'
+- timestamp: '2026-11-09T18:23:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Oh[a], that there were even one among you who would shut the doors, so that you would not kindle my altar in vain! I have no pleasure in you, says Yahweh of hosts[c][b], and I will not accept an offering from your hand.
+  to: “Oh, that even one of you would shut the temple doors, so that you would not kindle the fire on my altar in vain! I have no pleasure in you,” says Yahweh of Armies, “and I will not accept an offering from your hands.”
+  rationale: I retain the established wish, the current “in vain,” and the broad “offering” rather than restricting it to grain. The recorded rationale identifies temple doors and an altar fire, so making those understood referents explicit preserves its meaning-based gains.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +133,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/malachi/001/010.job-42290.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:23:06Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh would rather the temple’s worship cease than continue receiving offerings from priests in whom he takes no pleasure.
+  meaning_decisions:
+  - source_phrase: מִי גַם בָּכֶם וְיִסְגֹּר דְּלָתַיִם
+    prior_rendering: Oh, that there were even one among you who would shut the doors
+    new_rendering: Oh, that even one of you would shut the temple doors
+    rationale: The shorter construction retains the anguished wish, and “temple” identifies the doors whose closure would stop the sacrificial service.
+  - source_phrase: וְלֹא תָאִירוּ מִזְבְּחִי חִנָּם
+    prior_rendering: so that you would not kindle my altar in vain
+    new_rendering: so that you would not kindle the fire on my altar in vain
+    rationale: The action is lighting the altar fire, not burning the altar itself.
+  - source_phrase: יְהוָה צְבָאוֹת
+    prior_rendering: Yahweh of hosts
+    new_rendering: Yahweh of Armies
+    rationale: The title is rendered consistently with its other occurrences in the chapter.
+  footnote_kinds: {}
+  history_weighed: I retain the established wish, the current “in vain,” and the broad “offering” rather than restricting it to grain. The recorded rationale identifies temple doors and an altar fire, so making those understood referents explicit preserves its meaning-based gains.

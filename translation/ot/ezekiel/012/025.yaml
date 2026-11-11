@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּ֣י אֲנִ֣י יְהוָ֗ה אֲדַבֵּר֙ אֵת֩ אֲשֶׁ֨ר אֲדַבֵּ֤ר דָּבָר֙ וְ/יֵ֣עָשֶׂ֔ה לֹ֥א תִמָּשֵׁ֖ךְ ע֑וֹד כִּ֣י בִֽ/ימֵי/כֶ֞ם בֵּ֣ית הַ/מֶּ֗רִי אֲדַבֵּ֤ר דָּבָר֙ וַ/עֲשִׂיתִ֔י/ו נְאֻ֖ם אֲדֹנָ֥/י יְהוִֽה׀׃פ
 translation:
-  text: For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the word that I speak.' The Hebrew expression is emphatic and can be rendered more formally.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'It will no longer be prolonged' or 'drawn out any longer.'
-    reason: lexical_alternative
+  text: For I am Yahweh; I will speak, and whatever word I speak will be fulfilled. It will no longer be delayed, for in your own days, rebellious house, I will speak a word and carry it out, declares the Lord Yahweh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -106,14 +99,20 @@ revisions:
   from: For I am the LORD; I will speak whatever word I speak, and it will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it, declares the Lord GOD.
   to: For I am Yahweh[a]; I will speak whatever word I speak, and it will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it, declares the Lord GOD.
   rationale: Simplified the opening clause from 'I will speak whatever word I speak' to 'the word that I speak' for clearer and more natural English while preserving the Hebrew sense. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.'
-  to: 'For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.'
-  rationale: 'Azure substituted ''the word that I speak'' — drafter''s explicit rejected alternative — for chosen ''whatever word I speak'' (emphatic relative construction). Also reverted Yahweh → the LORD against divine-name doctrine.'
+  from: For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.
+  to: For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.
+  rationale: Azure substituted 'the word that I speak' — drafter's explicit rejected alternative — for chosen 'whatever word I speak' (emphatic relative construction). Also reverted Yahweh → the LORD against divine-name doctrine.
+- timestamp: '2026-11-09T17:37:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For I am Yahweh[a]; the word that I speak will be done. It will no longer be delayed, for in your days, O rebellious house, I will speak a word and do it[b], declares the Lord GOD.
+  to: For I am Yahweh; I will speak, and whatever word I speak will be fulfilled. It will no longer be delayed, for in your own days, rebellious house, I will speak a word and carry it out, declares the Lord Yahweh.
+  rationale: The earlier simplification improved readability, but the draft and lexical rationale preserve an important emphasis in “whatever word I speak.” I retain that emphasis in natural English and make the speech-to-fulfillment connection explicit, while applying the standing divine-name ruling.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +135,37 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/012/025.job-63608.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:37:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh insists that whatever he announces will be carried out without further delay within the rebellious hearers’ own days.
+  meaning_decisions:
+  - source_phrase: אֲדַבֵּר אֵת אֲשֶׁר אֲדַבֵּר דָּבָר
+    prior_rendering: the word that I speak
+    new_rendering: I will speak, and whatever word I speak
+    rationale: The source explicitly asserts that Yahweh will speak and emphatically connects whatever he says with its accomplishment. The new wording recovers that force without the first draft’s awkward relative construction.
+  - source_phrase: וְיֵעָשֶׂה
+    prior_rendering: will be done
+    new_rendering: will be fulfilled
+    rationale: The subject is a prophetic word whose announced events will become reality; “fulfilled” conveys that more clearly than the potentially opaque “word ... will be done.”
+  - source_phrase: בִימֵיכֶם בֵּית הַמֶּרִי
+    prior_rendering: in your days, O rebellious house
+    new_rendering: in your own days, rebellious house
+    rationale: “Own” makes explicit the contrast with fulfillment postponed to distant generations, while removing the archaic vocative particle.
+  - source_phrase: וַעֲשִׂיתִיו
+    prior_rendering: and do it
+    new_rendering: and carry it out
+    rationale: The pronoun refers to the spoken declaration; “carry it out” naturally expresses Yahweh’s execution of what he announces.
+  - source_phrase: נְאֻם אֲדֹנָי יְהוִה
+    prior_rendering: declares the Lord GOD
+    new_rendering: declares the Lord Yahweh
+    rationale: The standing divine-name ruling applies to the compound title as well as to the opening name.
+  footnote_kinds: {}
+  history_weighed: The earlier simplification improved readability, but the draft and lexical rationale preserve an important emphasis in “whatever word I speak.” I retain that emphasis in natural English and make the speech-to-fulfillment connection explicit, while applying the standing divine-name ruling.

@@ -20,15 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'who cares for all.' The Greek relative construction can be rendered more directly in English.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'that you did not judge unjustly'; alternatively, 'that you judged justly.'
-    reason: alternative_reading
+  text: For you care for all, and there is no other god to whom you must prove that you have not judged unjustly.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὔτε γὰρ
   chosen: For ... no
@@ -128,14 +121,20 @@ revisions:
   from: For there is no god besides you, whose care is for all, so that you should show that you did not judge unjustly;
   to: For there is no god besides you, whose care is for all, so that you should show that you did not judge unjustly;
   rationale: Replaced 'whose care is for all' with the more natural and direct 'who cares for all' while preserving the Greek sense and formal register.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];'
-  to: 'For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];'
+  from: For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];
+  to: For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whose care is for all''].'
+- timestamp: '2026-11-09T20:31:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For there is no god besides you who cares for all[a], so that you should show that you did not judge unjustly[b];
+  to: For you care for all, and there is no other god to whom you must prove that you have not judged unjustly.
+  rationale: The history weighs 'whose care is for all' against the more natural 'who cares for all,' without a maintainer decision. I preserve universal care and the denial of unjust judgment while clarifying the final clause's meaning in the surrounding argument.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +154,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/012/013.job-39200.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God cares for all and is answerable to no other god for the justice of his judgments.
+  meaning_decisions:
+  - source_phrase: οὔτε γὰρ θεός ἐστιν πλὴν σοῦ, ᾧ μέλει περὶ πάντων
+    prior_rendering: For there is no god besides you who cares for all
+    new_rendering: For you care for all, and there is no other god
+    rationale: Reordering makes God's universal care explicit and avoids suggesting that the verse denies only the existence of other gods who care for all.
+  - source_phrase: ἵνα δείξῃς ὅτι οὐκ ἀδίκως ἔκρινας
+    prior_rendering: so that you should show that you did not judge unjustly
+    new_rendering: to whom you must prove that you have not judged unjustly
+    rationale: The surrounding rhetorical questions concern who could challenge God's judgments. This clause therefore identifies the accountability that another god might demand, not a purpose for God's care; the denial of unjust judgment remains intact.
+  footnote_kinds: {}
+  history_weighed: The history weighs 'whose care is for all' against the more natural 'who cares for all,' without a maintainer decision. I preserve universal care and the denial of unjust judgment while clarifying the final clause's meaning in the surrounding argument.

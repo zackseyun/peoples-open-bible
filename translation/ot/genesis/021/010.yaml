@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/תֹּ֨אמֶר֙ לְ/אַבְרָהָ֔ם גָּרֵ֛שׁ הָ/אָמָ֥ה הַ/זֹּ֖את וְ/אֶת בְּנָ֑/הּ כִּ֣י לֹ֤א יִירַשׁ֙ בֶּן הָ/אָמָ֣ה הַ/זֹּ֔את עִם בְּנִ֖/י עִם יִצְחָֽק־־־־׃
 translation:
-  text: So she said to Abraham[a], “Drive out this servant woman and her son, for the son of this servant woman will not inherit with my son Isaac.”
-  philosophy: optimal-equivalence
+  text: So she said to Abraham, “Drive out this servant woman[a] and her son, for the son of this servant woman will not share the inheritance with my son Isaac.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “Cast out this slave woman and her son.”
+    text: Here “servant woman” means an enslaved woman, not a hired servant.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: גָּרֵשׁ
@@ -76,14 +76,20 @@ revisions:
   from: So she said to Abraham, “Drive out this slave woman and her son, because the son of this slave woman will not inherit with my son, with Isaac.”
   to: So she said to Abraham, “Drive out this slave woman and her son, because the son of this slave woman will not inherit with my son, with Isaac.”
   rationale: Replaced 'because' with the more formal 'for' and smoothed the final phrase from 'with my son, with Isaac' to 'with my son Isaac' for more natural English while preserving the appositional sense.
-
 - timestamp: '2026-05-17T11:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So she said to Abraham[a], “Drive out this slave woman and her son, for the son of this slave woman will not inherit with my son Isaac.”'
-  to: 'So she said to Abraham[a], “Drive out this slave woman and her son, for the son of this slave woman will not inherit with my son Isaac.”'
+  from: So she said to Abraham[a], “Drive out this slave woman and her son, for the son of this slave woman will not inherit with my son Isaac.”
+  to: So she said to Abraham[a], “Drive out this slave woman and her son, for the son of this slave woman will not inherit with my son Isaac.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with my son, with Isaac''].'
+- timestamp: '2026-11-09T17:44:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So she said to Abraham[a], “Drive out this servant woman and her son, for the son of this servant woman will not inherit with my son Isaac.”
+  to: So she said to Abraham, “Drive out this servant woman[a] and her son, for the son of this servant woman will not share the inheritance with my son Isaac.”
+  rationale: I preserve the current wording’s forceful “Drive out,” repeated distancing description of Hagar, and natural apposition “my son Isaac.” The lexical history rightly stresses Hagar’s bonded status, which the revised note makes explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -105,3 +111,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/021/010.job-64981.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:01Z'
+  change_level: refined
+  confidence: high
+  meaning: Sarah demands that Abraham expel Hagar and her son so that her son Isaac will not share the inheritance with him.
+  meaning_decisions:
+  - source_phrase: לֹא יִירַשׁ ... עִם בְּנִי עִם יִצְחָק
+    prior_rendering: will not inherit with my son Isaac
+    new_rendering: will not share the inheritance with my son Isaac
+    rationale: The issue is joint participation in Abraham’s inheritance; the new wording states that clearly while preserving Sarah’s insistence.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I preserve the current wording’s forceful “Drive out,” repeated distancing description of Hagar, and natural apposition “my son Isaac.” The lexical history rightly stresses Hagar’s bonded status, which the revised note makes explicit.

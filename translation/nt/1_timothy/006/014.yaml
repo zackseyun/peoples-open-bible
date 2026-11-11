@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: τηρῆσαί σε τὴν ἐντολὴν ἄσπιλον ἀνεπίλημπτον μέχρι τῆς ἐπιφανείας τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ,
 translation:
-  text: that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus Christ[c][b][a],
-  philosophy: optimal-equivalence
+  text: that you keep the commandment without stain or reproach[a] until the appearing of our Lord Jesus Christ,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
+    text: 'The adjectives may instead describe Timothy: “keep the commandment, remaining unstained and above reproach.”'
     reason: alternative_reading
-  - marker: b
-    text: The adjectives 'unstained' and 'above reproach' may describe either 'the commandment' itself or Timothy's keeping of it; the Greek wording is compact enough to leave that relation somewhat compressed in English.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'that you keep the commandment unstained and above reproach'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: τηρῆσαί
   chosen: keep
@@ -116,15 +110,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus Messiah,"
-  to: "that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus the Messiah,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus Messiah,
+  to: that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus the Messiah,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: that you keep the commandment unstained and above reproach until the appearing of our Lord Jesus Christ[c][b][a],
+  to: that you keep the commandment without stain or reproach[a] until the appearing of our Lord Jesus Christ,
+  rationale: The automated revisions disagreed over whether the adjectives describe Timothy or the commandment as kept, so neither interpretation is presented as certain. “Jesus Christ” follows the standing ruling for this name construction rather than the conflicting automated title substitutions.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:36:53Z'
   unchanged: false
   changes_summary: 'Removed ''remaining'' to avoid adding wording not explicit in the Greek, and changed ''the Messiah'' to ''Christ'' for standard formal rendering of Ἰησοῦ Χριστοῦ. Also removed the unnecessary comma after ''commandment'' for smoother English. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +148,22 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_timothy/006/014.job-38882.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:16Z'
+  change_level: refined
+  confidence: medium
+  meaning: Timothy is charged to keep the commandment faithfully and without reproach until the appearing of the Lord Jesus Christ.
+  meaning_decisions:
+  - source_phrase: τηρῆσαί σε τὴν ἐντολὴν ἄσπιλον ἀνεπίλημπτον
+    prior_rendering: that you keep the commandment unstained and above reproach
+    new_rendering: that you keep the commandment without stain or reproach
+    rationale: The English more naturally expresses faithful keeping of the commandment while retaining the stain image and the demand for conduct beyond legitimate criticism; the alternative attachment to Timothy is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated revisions disagreed over whether the adjectives describe Timothy or the commandment as kept, so neither interpretation is presented as certain. “Jesus Christ” follows the standing ruling for this name construction rather than the conflicting automated title substitutions.

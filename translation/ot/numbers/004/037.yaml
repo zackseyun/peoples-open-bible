@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אֵ֤לֶּה פְקוּדֵי֙ מִשְׁפְּחֹ֣ת הַ/קְּהָתִ֔י כָּל הָ/עֹבֵ֖ד בְּ/אֹ֣הֶל מוֹעֵ֑ד אֲשֶׁ֨ר פָּקַ֤ד מֹשֶׁה֙ וְ/אַהֲרֹ֔ן עַל פִּ֥י יְהוָ֖ה בְּ/יַד מֹשֶֽׁה־־־׃ס
 translation:
-  text: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'through Moses' for 'by the hand of Moses.'
-    reason: lexical_alternative
+  text: These were the men counted from the Kohathite clans, all who served at the tent of meeting. Moses and Aaron counted them at Yahweh’s command, given through Moses.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פְקוּדֵי
   chosen: the counted men
@@ -97,13 +93,12 @@ revisions:
   from: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of the LORD by the hand of Moses.
   to: These were the counted men of the families of the Kohathites, all who served in the tent of meeting, whom Moses and Aaron counted at the command of the LORD by the hand of Moses.
   rationale: Changed 'everyone serving' to 'all who served' for more natural formal English and better agreement with the counted group; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:09:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'These were the counted men of the families of the Kohathites[a], all who served in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses.'
-  to: 'These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses.'
+  from: These were the counted men of the families of the Kohathites[a], all who served in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses.
+  to: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everyone serving''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -113,6 +108,13 @@ revisions:
   from: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses.
   to: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('by the hand of Moses') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:27:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These were the counted men of the families of the Kohathites, everyone serving in the tent of meeting, whom Moses and Aaron counted at the command of Yahweh by the hand of Moses[a].
+  to: These were the men counted from the Kohathite clans, all who served at the tent of meeting. Moses and Aaron counted them at Yahweh’s command, given through Moses.
+  rationale: The earlier review’s preference for “all who served” improves the census summary despite its subsequent automated reversal. The lexical record explicitly recognizes “through Moses” as the meaning of the hand idiom, so that sense now appears in the text rather than a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +135,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/004/037.job-41884.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:27:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: These were the Kohathite men serving the tent of meeting whom Moses and Aaron counted in obedience to Yahweh’s command communicated through Moses.
+  meaning_decisions:
+  - source_phrase: אֵלֶּה פְקוּדֵי מִשְׁפְּחֹת הַקְּהָתִי
+    prior_rendering: These were the counted men of the families of the Kohathites
+    new_rendering: These were the men counted from the Kohathite clans
+    rationale: Unpacks the construct chain and consistently identifies the kinship groups as clans.
+  - source_phrase: כָּל הָעֹבֵד בְּאֹהֶל מוֹעֵד
+    prior_rendering: everyone serving in the tent of meeting
+    new_rendering: all who served at the tent of meeting
+    rationale: Fits the historical report and describes sanctuary-related service without implying access to its interior.
+  - source_phrase: אֲשֶׁר פָּקַד מֹשֶׁה וְאַהֲרֹן עַל פִּי יְהוָה בְּיַד מֹשֶׁה
+    prior_rendering: whom Moses and Aaron counted at the command of Yahweh by the hand of Moses
+    new_rendering: Moses and Aaron counted them at Yahweh’s command, given through Moses
+    rationale: Splits the long sentence and renders the idiom of mediation by its meaning.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s preference for “all who served” improves the census summary despite its subsequent automated reversal. The lexical record explicitly recognizes “through Moses” as the meaning of the hand idiom, so that sense now appears in the text rather than a note.

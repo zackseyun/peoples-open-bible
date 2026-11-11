@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 13:4
 translation:
-  text: If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek tradition: ''The rich man does wrong, and he even blusters; the poor man is wronged, and he must even beg.'' The Hebrew witness preserved here gives a different warning about how a powerful person uses you when you are useful and shows no pity when you are brought low.'
-    reason: alternative_reading
+  text: If you are useful to him, he will exploit you; but if you are brought low, he will show you no mercy.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אִם תִּכְשַׁר לוֹ
   chosen: if you are useful to him
@@ -115,14 +111,20 @@ revisions:
   from: If you are useful to him, he will make use of you; and if you fall low, he will not spare you.
   to: If you are useful to him, he will make use of you; and if you fall low, he will not spare you.
   rationale: Replaced 'fall low' with 'bow down' to more closely reflect the Hebrew verb meaning 'bend/kneel/bow' while keeping the sentence natural and formal.
-
 - timestamp: '2026-05-18T02:57:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.'
-  to: 'If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.'
+  from: If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.
+  to: If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if you fall low''].'
+- timestamp: '2026-11-09T19:05:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you are useful to him[a], he will make use of you; and if you bow down, he will not spare you.
+  to: If you are useful to him, he will exploit you; but if you are brought low, he will show you no mercy.
+  rationale: The first draft and lexical record support decline rather than an act of deference, so I recover that meaning instead of the later 'bow down.' The old Greek note compares a different saying and is not retained as a variant of this verse.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +144,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/013/004.job-51303.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:09Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The rich man exploits you when you are useful and shows no compassion when you are brought low.
+  meaning_decisions:
+  - source_phrase: יַעֲבֹד בָּךְ
+    prior_rendering: he will make use of you
+    new_rendering: he will exploit you
+    rationale: The surrounding warnings establish self-serving exploitation rather than neutral employment or cooperation.
+  - source_phrase: וְאִם תִּכְרַע
+    prior_rendering: and if you bow down
+    new_rendering: but if you are brought low
+    rationale: The contrast concerns usefulness followed by weakness or decline, not a voluntary gesture of homage.
+  - source_phrase: לֹא יַחְמֹל עָלֶיךָ
+    prior_rendering: he will not spare you
+    new_rendering: he will show you no mercy
+    rationale: This makes the lack of compassion explicit while retaining the warning's force.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical record support decline rather than an act of deference, so I recover that meaning instead of the later 'bow down.' The old Greek note compares a different saying and is not retained as a variant of this verse.

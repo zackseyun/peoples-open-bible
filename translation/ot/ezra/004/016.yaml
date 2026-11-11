@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: מְהוֹדְעִ֤ין אֲנַ֨חְנָה֙ לְ/מַלְכָּ֔/א דִּ֠י הֵ֣ן קִרְיְתָ֥/א דָךְ֙ תִּתְבְּנֵ֔א וְ/שׁוּרַיָּ֖/ה יִֽשְׁתַּכְלְל֑וּן לָ/קֳבֵ֣ל דְּנָ֔ה חֲלָק֙ בַּ/עֲבַ֣ר נַהֲרָ֔/א לָ֥א אִיתַ֖י לָֽ/ךְ׃פ
 translation:
-  text: We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no possession in the province Beyond the River.
-  philosophy: optimal-equivalence
+  text: We inform the king that if this city is rebuilt and its walls are completed, you will lose control[a] of the province Beyond the River[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Aramaic 'portion/share' could also be rendered 'share' or, more specifically in context, 'revenue.'
-    reason: lexical_alternative
+    text: Or, “you will have no revenue from the province Beyond the River.”
+    reason: alternative_reading
   - marker: b
-    text: Or 'Beyond the River,' the official Persian name for the trans-Euphrates province.
+    text: Beyond the River was the Persian administrative name for the region west of the Euphrates.
     reason: cultural_note
 lexical_decisions:
 - source_word: מְהוֹדְעִין
@@ -111,14 +111,20 @@ revisions:
   from: We make known to the king that if this city is rebuilt and its walls are completed, then because of this you will have no possession in the province Beyond the River.
   to: We make known to the king that if this city is rebuilt and its walls are completed, then because of this you will have no portion Beyond the River.
   rationale: Changed 'possession in the province Beyond the River' to 'portion Beyond the River' for closer lexical accuracy to חֲלָק and to avoid adding 'province,' which is not in the source. Retained the formal conditional structure.
-
 - timestamp: '2026-05-16T10:22:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no portion Beyond the River.'
-  to: 'We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no possession in the province Beyond the River.'
-  rationale: 'Restored drafter ''possession in the province Beyond the River'' preserving the administrative-political stake sense and standard Persian provincial designation.'
+  from: We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no portion Beyond the River.
+  to: We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no possession in the province Beyond the River.
+  rationale: Restored drafter 'possession in the province Beyond the River' preserving the administrative-political stake sense and standard Persian provincial designation.
+- timestamp: '2026-11-09T17:41:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We make known to the king that if this city is rebuilt and its walls are completed[b][a], then because of this you will have no possession in the province Beyond the River.
+  to: We inform the king that if this city is rebuilt and its walls are completed, you will lose control[a] of the province Beyond the River[b].
+  rationale: The revision favored the literal “portion,” while the subsequent automated revert restored the broader political stake and the provincial designation. I preserve those contextual gains but render the threatened loss of imperial control more directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +144,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/004/016.job-43031.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The writers warn that completing Jerusalem’s reconstruction will cost the king his imperial control west of the Euphrates.
+  meaning_decisions:
+  - source_phrase: מְהוֹדְעִין אֲנַחְנָה לְמַלְכָּא
+    prior_rendering: We make known to the king
+    new_rendering: We inform the king
+    rationale: This is formal notification in royal correspondence; “inform” conveys that function naturally without weakening its register.
+  - source_phrase: לָקֳבֵל דְּנָה חֲלָק בַּעֲבַר נַהֲרָא לָא אִיתַי לָךְ
+    prior_rendering: then because of this you will have no possession in the province Beyond the River
+    new_rendering: you will lose control of the province Beyond the River
+    rationale: In this political warning, having no share in the region means losing the king’s imperial hold over it; the conditional sentence already expresses the consequence. A narrower fiscal understanding remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The revision favored the literal “portion,” while the subsequent automated revert restored the broader political stake and the provincial designation. I preserve those contextual gains but render the threatened loss of imperial control more directly.

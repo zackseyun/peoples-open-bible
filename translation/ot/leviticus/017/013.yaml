@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אִ֨ישׁ אִ֜ישׁ מִ/בְּנֵ֣י יִשְׂרָאֵ֗ל וּ/מִן הַ/גֵּר֙ הַ/גָּ֣ר בְּ/תוֹכָ֔/ם אֲשֶׁ֨ר יָצ֜וּד צֵ֥יד חַיָּ֛ה אוֹ ע֖וֹף אֲשֶׁ֣ר יֵאָכֵ֑ל וְ/שָׁפַךְ֙ אֶת דָּמ֔/וֹ וְ/כִסָּ֖/הוּ בֶּ/עָפָֽר־־־׃
 translation:
-  text: And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the resident foreigner living among them.' The Hebrew גר denotes a non-Israelite residing within the community.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'cover it with dust/earth'; the pronoun most naturally refers to the blood.
-    reason: lexical_alternative
+  text: Any Israelite or foreigner living among them who hunts a wild animal or bird that may be eaten shall pour out its blood and cover the blood with earth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אִישׁ אִישׁ
   chosen: any man
@@ -99,14 +92,20 @@ revisions:
   from: And any man from the sons of Israel, or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten, shall pour out its blood and cover it with dust.
   to: And any man from the sons of Israel, or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten, shall pour out its blood and cover it with dust.
   rationale: Changed 'dust' to 'earth' for a more natural and contextually fitting rendering of בֶּעָפָר in this burial-like covering context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.'
-  to: 'And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.'
+  from: And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.
+  to: And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and cover it with dust''].'
+- timestamp: '2026-11-09T18:19:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And any man from the sons of Israel[a], or from the sojourner who sojourns among them, who hunts game—whether wild animal or bird—that may be eaten[b], shall pour out its blood and cover it with earth.
+  to: Any Israelite or foreigner living among them who hunts a wild animal or bird that may be eaten shall pour out its blood and cover the blood with earth.
+  rationale: I retain the current “earth,” supported by the review's explanation of the covering material; the automated revert supplies no contrary meaning-based argument. The documented decision that the blood, not the animal, is covered is now explicit in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/017/013.job-45452.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:19:06Z'
+  change_level: refined
+  confidence: high
+  meaning: Any Israelite or resident foreigner who hunts permissible game must pour out its blood and cover the blood with earth.
+  meaning_decisions:
+  - source_phrase: וְאִישׁ אִישׁ מִבְּנֵי יִשְׂרָאֵל וּמִן הַגֵּר הַגָּר בְּתוֹכָם
+    prior_rendering: And any man from the sons of Israel, or from the sojourner who sojourns among them
+    new_rendering: Any Israelite or foreigner living among them
+    rationale: The wording identifies the two groups subject to this general legal requirement without suggesting a male-only rule or a temporary visitor.
+  - source_phrase: יָצוּד צֵיד חַיָּה אוֹ עוֹף אֲשֶׁר יֵאָכֵל
+    prior_rendering: hunts game—whether wild animal or bird—that may be eaten
+    new_rendering: hunts a wild animal or bird that may be eaten
+    rationale: The concrete objects of the hunt carry the sense of the cognate “hunts game” construction without an interrupting restatement.
+  - source_phrase: וְכִסָּהוּ בֶּעָפָר
+    prior_rendering: and cover it with earth
+    new_rendering: and cover the blood with earth
+    rationale: Naming the blood makes the pronoun's intended referent unmistakable and prevents readers from understanding the command as burial of the animal.
+  footnote_kinds: {}
+  history_weighed: I retain the current “earth,” supported by the review's explanation of the covering material; the automated revert supplies no contrary meaning-based argument. The documented decision that the blood, not the animal, is covered is now explicit in the main text.

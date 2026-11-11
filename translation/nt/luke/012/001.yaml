@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἐν οἷς ἐπισυναχθεισῶν τῶν μυριάδων τοῦ ὄχλου, ὥστε καταπατεῖν ἀλλήλους, ἤρξατο λέγειν πρὸς τοὺς μαθητὰς αὐτοῦ πρῶτον· Προσέχετε ἑαυτοῖς ἀπὸ τῆς ζύμης, ⸂ἥτις ἐστὶν ὑπόκρισις, τῶν Φαρισαίων⸃.
 translation:
-  text: Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the myriads of the crowd'; Greek μυριάδες can denote 'tens of thousands' or, more generally, a very large multitude.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Watch yourselves' / 'Be on your guard against the leaven of the Pharisees.'
-    reason: lexical_alternative
+  text: 'Meanwhile, a crowd of many thousands gathered, so large that people were trampling one another. Jesus began by speaking to his disciples: “Beware of the leaven of the Pharisees, which is hypocrisy.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἐν οἷς
   chosen: Meanwhile, when
@@ -120,14 +113,20 @@ revisions:
   from: Meanwhile, when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware for yourselves of the leaven of the Pharisees, which is hypocrisy.”
   to: Meanwhile, when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware for yourselves of the leaven of the Pharisees, which is hypocrisy.”
   rationale: Removed 'for yourselves,' which is not natural English here and overtranslates ἑαυτοῖς; 'Beware of' adequately conveys the reflexive sense in context while preserving the meaning.
-
 - timestamp: '2026-05-18T03:01:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”'
-  to: 'Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”'
+  from: Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”
+  to: Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Beware for yourselves''].'
+- timestamp: '2026-11-09T17:11:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Meanwhile[a], when the many thousands of the crowd had gathered together, so that they were trampling one another, he began to say first to his disciples, “Beware of the leaven of the Pharisees[b], which is hypocrisy.”
+  to: 'Meanwhile, a crowd of many thousands gathered, so large that people were trampling one another. Jesus began by speaking to his disciples: “Beware of the leaven of the Pharisees, which is hypocrisy.'
+  rationale: The earlier review correctly recognized that 'for yourselves' was unnecessary in the warning; the current 'Beware of' preserves that gain. I retain the documented leaven image and audience priority while making the narrative introduction natural.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +148,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/012/001.job-55629.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:35Z'
+  change_level: refined
+  confidence: high
+  meaning: As an enormous crowd gathers, Jesus first warns his disciples against the Pharisees' hypocrisy, pictured as leaven.
+  meaning_decisions:
+  - source_phrase: ἐπισυναχθεισῶν τῶν μυριάδων τοῦ ὄχλου, ὥστε καταπατεῖν ἀλλήλους
+    prior_rendering: when the many thousands of the crowd had gathered together, so that they were trampling one another
+    new_rendering: a crowd of many thousands gathered, so large that people were trampling one another
+    rationale: The Greek describes a huge gathering whose crowding results in trampling; the new wording conveys that relationship without reproducing the genitive construction.
+  - source_phrase: ἤρξατο λέγειν πρὸς τοὺς μαθητὰς αὐτοῦ πρῶτον
+    prior_rendering: he began to say first to his disciples
+    new_rendering: Jesus began by speaking to his disciples
+    rationale: Naming the already-understood subject and restructuring the clause make clear that the disciples receive his initial address.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized that 'for yourselves' was unnecessary in the warning; the current 'Beware of' preserves that gain. I retain the documented leaven image and audience priority while making the narrative introduction natural.

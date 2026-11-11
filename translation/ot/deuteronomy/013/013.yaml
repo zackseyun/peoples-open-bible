@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כִּֽי תִשְׁמַ֞ע בְּ/אַחַ֣ת עָרֶ֗י/ךָ אֲשֶׁר֩ יְהוָ֨ה אֱלֹהֶ֜י/ךָ נֹתֵ֥ן לְ/ךָ֛ לָ/שֶׁ֥בֶת שָׁ֖ם לֵ/אמֹֽר־׃
 translation:
-  text: If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],
-  philosophy: optimal-equivalence
+  text: 'If you hear this report about one of your cities[a], which Yahweh your God is giving you to live in:'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'When you hear'—the Hebrew conjunction can introduce a conditional or temporal clause in legal material.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to dwell there' or 'to settle there.'
-    reason: lexical_alternative
+    text: Or, “in one of your cities.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: כִּי
   chosen: If
@@ -101,14 +98,20 @@ revisions:
   from: If you hear it said in one of your cities that the LORD your God is giving you to live there, saying,
   to: If you hear it said in one of your cities that the LORD your God is giving you to live there, saying,
   rationale: Changed 'to live there' to 'to dwell there' for a more formal register and closer match to the source; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:56:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],'
-  to: 'If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],'
+  from: If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],
+  to: If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to live there''].'
+- timestamp: '2026-11-09T17:30:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you hear it said in one of your cities that Yahweh your God is giving you to dwell there[a], saying[b],
+  to: 'If you hear this report about one of your cities[a], which Yahweh your God is giving you to live in:'
+  rationale: The automated history oscillates between “live” and “dwell” without establishing a difference in meaning, and contains no maintainer ruling. I retain the conditional legal setting and divine gift while clarifying the report's introduction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +134,26 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/deuteronomy/013/013.job-28346.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A report concerning apostasy in one of the cities Yahweh gives Israel introduces the next legal case.
+  meaning_decisions:
+  - source_phrase: כִּי תִשְׁמַע בְּאַחַת עָרֶיךָ
+    prior_rendering: If you hear it said in one of your cities
+    new_rendering: If you hear this report about one of your cities[a]
+    rationale: The following verses concern a report about a particular city's apostasy. The alternative locative understanding is retained in a footnote.
+  - source_phrase: לֵאמֹר
+    prior_rendering: it said ... saying
+    new_rendering: 'this report ... :'
+    rationale: A single introduction and a colon carry the quotative function without duplicating it in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated history oscillates between “live” and “dwell” without establishing a difference in meaning, and contains no maintainer ruling. I retain the conditional legal setting and divine gift while clarifying the report's introduction.

@@ -19,18 +19,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''spurious,'' ''false,'' or ''base'': the Greek says he regarded them as not genuine.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the final state' or 'the outcome of the righteous.'
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'boasts [of] father God'; that is, he claims God as his father.
-    reason: lexical_alternative
+  text: He regards us as counterfeit and keeps away from our ways as though they were unclean; he calls the final destiny of the righteous blessed and boasts that God is his father.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κίβδηλον
   chosen: counterfeit
@@ -142,14 +132,20 @@ revisions:
   from: We were regarded by him as counterfeit, and he keeps away from our ways as from uncleannesses; he pronounces the end of the righteous blessed, and boasts that God is his father.
   to: We were regarded by him as counterfeit, and he keeps away from our ways as from uncleannesses; he pronounces the end of the righteous blessed, and boasts that God is his father.
   rationale: Changed 'regarded' to 'considered' for a slightly more natural rendering of ἐλογίσθημεν, and 'pronounces' to 'calls' for a more direct and natural rendering of μακαρίζει. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.'
-  to: 'We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.'
+  from: We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.
+  to: We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were regarded''].'
+- timestamp: '2026-11-09T19:11:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We were considered by him to be counterfeit[a], and he keeps away from our ways as from uncleannesses; he calls the end of the righteous blessed[c][b], and boasts that God is his father.
+  to: He regards us as counterfeit and keeps away from our ways as though they were unclean; he calls the final destiny of the righteous blessed and boasts that God is his father.
+  rationale: The draft and lexical decisions establish the counterfeit image, purity language, and final-outcome sense, all of which remain. The recorded changes between 'regarded' and 'considered' carry little semantic weight; I recast the passive naturally and preserve the established fatherhood claim without adding Christological specificity.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -169,3 +165,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/016.job-39579.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: They resent his judgment of them as false and unclean, his confidence in the blessed destiny of the righteous, and his claim that God is his father.
+  meaning_decisions:
+  - source_phrase: εἰς κίβδηλον ἐλογίσθημεν αὐτῷ
+    prior_rendering: We were considered by him to be counterfeit
+    new_rendering: He regards us as counterfeit
+    rationale: The active construction naturally expresses his settled judgment while preserving the meaningful image of counterfeit worth.
+  - source_phrase: ὡς ἀπὸ ἀκαθαρσιῶν
+    prior_rendering: as from uncleannesses
+    new_rendering: as though they were unclean
+    rationale: This expresses his avoidance of their conduct as defiling without the unnatural English plural 'uncleannesses.'
+  - source_phrase: μακαρίζει ἔσχατα δικαίων
+    prior_rendering: he calls the end of the righteous blessed
+    new_rendering: he calls the final destiny of the righteous blessed
+    rationale: The phrase concerns the righteous person's ultimate outcome, not merely the moment of dying; 'final destiny' carries that scope clearly.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical decisions establish the counterfeit image, purity language, and final-outcome sense, all of which remain. The recorded changes between 'regarded' and 'considered' carry little semantic weight; I recast the passive naturally and preserve the established fatherhood claim without adding Christological specificity.

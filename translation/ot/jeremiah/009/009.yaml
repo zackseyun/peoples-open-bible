@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: עַל הֶ֨/הָרִ֜ים אֶשָּׂ֧א בְכִ֣י וָ/נֶ֗הִי וְ/עַל נְא֤וֹת מִדְבָּר֙ קִינָ֔ה כִּ֤י נִצְּתוּ֙ מִ/בְּלִי אִ֣ישׁ עֹבֵ֔ר וְ/לֹ֥א שָׁמְע֖וּ ק֣וֹל מִקְנֶ֑ה מֵ/ע֤וֹף הַ/שָּׁמַ֨יִם֙ וְ/עַד בְּהֵמָ֔ה נָדְד֖וּ הָלָֽכוּ־־־־׃
 translation:
-  text: Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.
-  philosophy: optimal-equivalence
+  text: I will weep and wail over the mountains and take up a lament over the wilderness pastures, for they are burned up[a]; no one passes through, and no sound of livestock is heard. Birds of the sky and beasts alike have fled; they are gone.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'they are laid waste' for 'they are burned up.' The Hebrew passive verb can denote devastation more generally, though the imagery of burning is likely present.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'no man passes through,' with 'man' used generically for any person.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'birds of the sky.' Hebrew 'heavens' is a common way to refer to the sky.
-    reason: lexical_alternative
+    text: Or, “laid waste.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֶשָּׂא
   chosen: I will lift up
@@ -107,14 +101,20 @@ revisions:
   from: Over the mountains I will lift up weeping and wailing, and over the pastures of the wilderness a lament, because they are burned up so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled; they are gone.
   to: Over the mountains I will lift up weeping and wailing, and over the pastures of the wilderness a lament, because they are burned up so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled; they are gone.
   rationale: Changed 'are burned up' to 'are laid waste' to better reflect the broader sense of the source term without over-specifying burning. Kept the rest substantially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:56:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.'
-  to: 'Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.'
+  from: Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.
+  to: Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they are burned up''].'
+- timestamp: '2026-11-09T17:55:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Over the mountains I will lift up weeping and wailing[a], and over the pastures of the wilderness a lament, because they are laid waste so that no man passes through, and they do not hear the sound of livestock. From the birds of the heavens to the beasts, they have fled[c][b]; they are gone.
+  to: I will weep and wail over the mountains and take up a lament over the wilderness pastures, for they are burned up[a]; no one passes through, and no sound of livestock is heard. Birds of the sky and beasts alike have fled; they are gone.
+  rationale: The history contains conflicting rationales for 'burned up' and 'laid waste,' with no maintainer ruling. The concrete burning sense supported by the lexical record is restored, while the broader devastation sense remains available in a note.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -134,3 +134,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/009/009.job-67313.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:36Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The speaker laments a devastated countryside emptied of people, livestock, birds, and beasts.
+  meaning_decisions:
+  - source_phrase: עַל הֶהָרִים אֶשָּׂא בְכִי וָנֶהִי וְעַל נְאוֹת מִדְבָּר קִינָה
+    prior_rendering: Over the mountains I will lift up weeping and wailing, and over the pastures of the wilderness a lament
+    new_rendering: I will weep and wail over the mountains and take up a lament over the wilderness pastures
+    rationale: Natural English verbs carry the mourning's force while preserving the parallel objects of lament.
+  - source_phrase: כִּי נִצְּתוּ
+    prior_rendering: because they are laid waste
+    new_rendering: for they are burned up[a]
+    rationale: The verb supports the concrete sense of burning, which conveys more of the devastation's imagery; the broader understanding remains in a note.
+  - source_phrase: מִבְּלִי אִישׁ עֹבֵר וְלֹא שָׁמְעוּ קוֹל מִקְנֶה
+    prior_rendering: so that no man passes through, and they do not hear the sound of livestock
+    new_rendering: no one passes through, and no sound of livestock is heard
+    rationale: The generic absence of people is stated naturally, and the passive avoids assigning 'they' to an unclear or nonexistent group of hearers.
+  - source_phrase: מֵעוֹף הַשָּׁמַיִם וְעַד בְּהֵמָה
+    prior_rendering: From the birds of the heavens to the beasts
+    new_rendering: Birds of the sky and beasts alike
+    rationale: The expression encompasses airborne and land animals alike; 'sky' identifies the birds' realm without suggesting a separate heavenly location.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history contains conflicting rationales for 'burned up' and 'laid waste,' with no maintainer ruling. The concrete burning sense supported by the lexical record is restored, while the broader devastation sense remains available in a note.

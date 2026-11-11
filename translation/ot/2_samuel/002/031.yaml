@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/עַבְדֵ֣י דָוִ֗ד הִכּוּ֙ מִ/בִּנְיָמִ֔ן וּ/בְ/אַנְשֵׁ֖י אַבְנֵ֑ר שְׁלֹשׁ מֵא֧וֹת וְ/שִׁשִּׁ֛ים אִ֖ישׁ מֵֽתוּ־׃
 translation:
-  text: But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'And David’s servants struck down ...' The Hebrew conjunction can be read simply as 'and'; the main text uses 'but' to reflect the contrast with the previous verse’s casualty report.
-    reason: lexical_alternative
+  text: But David’s men had killed three hundred and sixty men from Benjamin and from Abner’s forces.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְ/עַבְדֵי
   chosen: But ... servants
@@ -80,14 +76,20 @@ revisions:
   from: But David’s servants struck down from Benjamin and from Abner’s men three hundred and sixty men, who died.
   to: But David’s servants struck down from Benjamin and from Abner’s men three hundred and sixty men, who died.
   rationale: Reordered the sentence for natural English and removed the redundant clause 'who died,' since death is already conveyed by 'struck down.'
-
 - timestamp: '2026-05-17T05:51:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].'
-  to: 'But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].'
+  from: But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].
+  to: But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who died''].'
+- timestamp: '2026-11-09T17:28:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But David’s servants struck down three hundred and sixty men from Benjamin and from Abner’s men[a].
+  to: But David’s men had killed three hundred and sixty men from Benjamin and from Abner’s forces.
+  rationale: The revision history debated whether to retain 'who died' after 'struck down.' I render both Hebrew verbs together as 'had killed,' making the fatalities explicit without a redundant clause.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -107,3 +109,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/031.job-46041.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:21Z'
+  change_level: refined
+  confidence: high
+  meaning: David’s force has killed three hundred and sixty men on Abner’s side, far more than its own losses.
+  meaning_decisions:
+  - source_phrase: עַבְדֵי דָוִד
+    prior_rendering: David’s servants
+    new_rendering: David’s men
+    rationale: The phrase identifies David’s fighting force in this casualty report.
+  - source_phrase: הִכּוּ ... מֵתוּ
+    prior_rendering: struck down
+    new_rendering: had killed
+    rationale: The Hebrew explicitly states both the blows and their fatal result. 'Had killed' carries both together and places the losses within the battle just recounted.
+  - source_phrase: בְאַנְשֵׁי אַבְנֵר
+    prior_rendering: from Abner’s men
+    new_rendering: from Abner’s forces
+    rationale: The phrase denotes Abner’s combatants; 'forces' makes their military role explicit and avoids repeated uses of 'men.'
+  footnote_kinds: {}
+  history_weighed: The revision history debated whether to retain 'who died' after 'struck down.' I render both Hebrew verbs together as 'had killed,' making the fatalities explicit without a redundant clause.

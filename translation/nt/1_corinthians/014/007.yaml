@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὅμως τὰ ἄψυχα φωνὴν διδόντα, εἴτε αὐλὸς εἴτε κιθάρα, ἐὰν διαστολὴν τοῖς φθόγγοις μὴ ⸀δῷ, πῶς γνωσθήσεται τὸ αὐλούμενον ἢ τὸ κιθαριζόμενον;
 translation:
-  text: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'whether flute or lyre.' The Greek κιθάρα refers to an ancient stringed instrument more specifically like a lyre, though 'harp' is used here for readability.
-    reason: lexical_alternative
+  text: Even with lifeless instruments that produce sound, such as a flute or lyre, how will anyone recognize what is being played if the notes are not distinct?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅμως
   chosen: Even
@@ -90,14 +86,20 @@ revisions:
   from: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes, how will what is being played on the flute or on the harp be recognized?
   to: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes, how will what is being played on the flute or on the harp be recognized?
   rationale: Changed 'what is being played' to 'what is played' for more natural formal English while preserving the passive sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?'
-  to: 'Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?'
+  from: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?
+  to: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''what is being played on the flute''].'
+- timestamp: '2026-11-09T17:05:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Even lifeless things that produce sound—whether flute or harp—if they do not give a distinction in the notes[a], how will what is played on the flute or on the harp be recognized?
+  to: Even with lifeless instruments that produce sound, such as a flute or lyre, how will anyone recognize what is being played if the notes are not distinct?
+  rationale: Earlier revisions focused chiefly on the passive wording rather than the awkward conditional construction. I follow the lexical explanation of distinct notes and adopt its historically more precise 'lyre' instead of 'harp.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/014/007.job-52920.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Even musical instruments must produce distinguishable notes for listeners to recognize what is being played.
+  meaning_decisions:
+  - source_phrase: τὰ ἄψυχα φωνὴν διδόντα
+    prior_rendering: lifeless things that produce sound
+    new_rendering: lifeless instruments that produce sound
+    rationale: The flute and lyre identify the nonliving objects in view as musical instruments; making that referent explicit clarifies the comparison.
+  - source_phrase: κιθάρα
+    prior_rendering: harp
+    new_rendering: lyre
+    rationale: A lyre is the more accurate recognizable English name for the ancient stringed instrument.
+  - source_phrase: ἐὰν διαστολὴν τοῖς φθόγγοις μὴ δῷ, πῶς γνωσθήσεται τὸ αὐλούμενον ἢ τὸ κιθαριζόμενον
+    prior_rendering: if they do not give a distinction in the notes, how will what is played on the flute or on the harp be recognized
+    new_rendering: how will anyone recognize what is being played if the notes are not distinct
+    rationale: 'The reordered question communicates the musical analogy naturally: distinguishable notes are necessary for recognizing the music.'
+  footnote_kinds: {}
+  history_weighed: Earlier revisions focused chiefly on the passive wording rather than the awkward conditional construction. I follow the lexical explanation of distinct notes and adopt its historically more precise 'lyre' instead of 'harp.'

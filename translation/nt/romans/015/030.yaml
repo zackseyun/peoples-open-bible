@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: Παρακαλῶ δὲ ὑμᾶς, ἀδελφοί, διὰ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ καὶ διὰ τῆς ἀγάπης τοῦ πνεύματος συναγωνίσασθαί μοι ἐν ταῖς προσευχαῖς ὑπὲρ ἐμοῦ πρὸς τὸν θεόν,
 translation:
-  text: I urge you[a], brothers, through our Lord Jesus Christ and through the love of the Spirit, to strive together with me in prayers to God for me[c][b],
-  philosophy: optimal-equivalence
+  text: I urge you, brothers and sisters, by our Lord Jesus Christ and by the love the Spirit gives[a], to join me in the struggle by praying to God for me,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or ''Christ'': Greek Christos, a title meaning ''Anointed One'' or ''Messiah.'''
-    reason: alternative_reading
-  - marker: b
-    text: '''Brothers'' is grammatically masculine in Greek and may address the whole believing community, that is, brothers and sisters.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the Spirit's love' / 'the love produced by the Spirit'; the Greek genitive can be understood in more than one way.
+    text: Or 'by the Spirit’s love.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: Παρακαλῶ
@@ -24,7 +18,7 @@ lexical_decisions:
   - I exhort
   - I beg
   lexicon: BDAG
-  rationale: "παρακαλέω here introduces an earnest appeal rather than mere request. 'I urge' is natural modern English and preserves the apostolic force without sounding archaic. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'παρακαλέω here introduces an earnest appeal rather than mere request. ''I urge'' is natural modern English and preserves the apostolic force without sounding archaic. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -131,12 +125,11 @@ revisions:
   rationale: Replaced 'the Messiah' with 'Christ' for closer lexical correspondence to Χριστοῦ and more natural consistency in this formal register. No other changes needed.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now I urge you, brothers, through our Lord Jesus Christ and through the love of the Spirit, to strive together with me in prayers to God for me,
   to: Now I urge you, brothers, through our Lord Jesus Messiah and through the love of the Spirit, to strive together with me in prayers to God for me,
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -148,9 +141,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "I urge you, brothers, through our Lord Jesus Messiah and through the love of the Spirit, to strive together with me in prayers to God for me,"
-  to: "I urge you, brothers, through our Lord Jesus the Messiah and through the love of the Spirit, to strive together with me in prayers to God for me,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: I urge you, brothers, through our Lord Jesus Messiah and through the love of the Spirit, to strive together with me in prayers to God for me,
+  to: I urge you, brothers, through our Lord Jesus the Messiah and through the love of the Spirit, to strive together with me in prayers to God for me,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:18:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I urge you[a], brothers, through our Lord Jesus Christ and through the love of the Spirit, to strive together with me in prayers to God for me[c][b],
+  to: I urge you, brothers and sisters, by our Lord Jesus Christ and by the love the Spirit gives[a], to join me in the struggle by praying to God for me,
+  rationale: The current 'Jesus Christ' follows the standing ruling for name constructions despite the history’s conflicting automated changes. The earlier notes recognize both the congregation-wide address and Spirit-produced love; I bring those meanings into the text while retaining the alternative genitive understanding.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -173,3 +173,34 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/015/030.job-8043.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:44Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul earnestly appeals to the whole Roman congregation, on the basis of their Lord and Spirit-given love, to share his struggle by praying for him.
+  meaning_decisions:
+  - source_phrase: ἀδελφοί
+    prior_rendering: brothers
+    new_rendering: brothers and sisters
+    rationale: Paul addresses the believing community as a whole; the inclusive sense previously confined to a footnote is now explicit.
+  - source_phrase: διὰ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ
+    prior_rendering: through our Lord Jesus Christ
+    new_rendering: by our Lord Jesus Christ
+    rationale: This is the basis of an earnest appeal, not a description of how the urging is transmitted.
+  - source_phrase: διὰ τῆς ἀγάπης τοῦ πνεύματος
+    prior_rendering: through the love of the Spirit
+    new_rendering: by the love the Spirit gives
+    rationale: Spirit-given love among believers best fits the appeal for shared prayer; the serious alternative of the Spirit’s own love is footnoted.
+  - source_phrase: συναγωνίσασθαί μοι ἐν ταῖς προσευχαῖς ὑπὲρ ἐμοῦ πρὸς τὸν θεόν
+    prior_rendering: to strive together with me in prayers to God for me
+    new_rendering: to join me in the struggle by praying to God for me
+    rationale: This expresses shared strenuous effort in natural English without reducing the request to merely joining in prayer.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current 'Jesus Christ' follows the standing ruling for name constructions despite the history’s conflicting automated changes. The earlier notes recognize both the congregation-wide address and Spirit-produced love; I bring those meanings into the text while retaining the alternative genitive understanding.

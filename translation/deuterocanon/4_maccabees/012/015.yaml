@@ -18,14 +18,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But you will wail miserably for putting to death, without cause, the champions of virtue[a][b].
-  philosophy: optimal-equivalence
+  text: But you will wail in misery for having put the champions of virtue[a] to death without just cause.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the athletes of virtue' or 'the fighters for virtue'; the Greek term evokes contestants in a struggle and is used honorifically here.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'unjustly' or 'without justification.' The Greek says literally 'without cause.'
+    text: The word “champions” evokes contestants in an athletic contest.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: σὺ δὲ
@@ -119,14 +116,20 @@ revisions:
   from: But you will wail miserably for putting to death, without cause, the champions of virtue.
   to: But you will wail bitterly for having unjustly put to death the champions of virtue.
   rationale: Replaced 'miserably' with 'bitterly' for a more natural rendering of κακῶς with οἰμώξεις, and changed 'without cause' to 'unjustly' to render ἀναίτιως more idiomatically while preserving the sense.
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But you will wail bitterly for having unjustly put to death the champions of virtue[a][b].'
-  to: 'But you will wail miserably for putting to death, without cause, the champions of virtue[a][b].'
-  rationale: 'Restored 2 chosen renderings preserving κακῶς wretchedness and ἀναίτιως semantic openness (not ''unjustly'').'
+  from: But you will wail bitterly for having unjustly put to death the champions of virtue[a][b].
+  to: But you will wail miserably for putting to death, without cause, the champions of virtue[a][b].
+  rationale: Restored 2 chosen renderings preserving κακῶς wretchedness and ἀναίτιως semantic openness (not 'unjustly').
+- timestamp: '2026-11-09T18:59:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But you will wail miserably for putting to death, without cause, the champions of virtue[a][b].
+  to: But you will wail in misery for having put the champions of virtue[a] to death without just cause.”
+  rationale: I retain the recorded concern that κακῶς expresses wretchedness, rather than merely bitterness, and preserve “champions of virtue.” “Without just cause” clarifies the earlier wording without replacing it with a narrower moral label.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +149,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/012/015.job-50040.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:15Z'
+  change_level: refined
+  confidence: high
+  meaning: In contrast to the brothers, the tyrant will wail in misery for killing the champions of virtue without just cause.
+  meaning_decisions:
+  - source_phrase: κακῶς οἰμώξεις
+    prior_rendering: will wail miserably
+    new_rendering: will wail in misery
+    rationale: This locates the wailing in the tyrant’s suffering rather than allowing “miserably” to sound like a judgment about how poorly he wails.
+  - source_phrase: ἀναίτιως ἀποκτεῖναι
+    prior_rendering: for putting to death, without cause
+    new_rendering: for having put ... to death without just cause
+    rationale: The completed killing explains his future misery, and the absence of cause means absence of valid justification, not absence of any motive.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the recorded concern that κακῶς expresses wretchedness, rather than merely bitterness, and preserve “champions of virtue.” “Without just cause” clarifies the earlier wording without replacing it with a narrower moral label.

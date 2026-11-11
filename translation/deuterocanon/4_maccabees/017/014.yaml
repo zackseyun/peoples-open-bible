@@ -18,11 +18,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: The tyrant kept struggling[a], but the world and the life of mankind were watching.
-  philosophy: optimal-equivalence
+  text: The tyrant was contending against them, while the world and all humanity[a] looked on.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'The tyrant was contending; but the world and the life of mankind were watching.' The object of 'kept struggling against them' is implicit from the surrounding context.
+    text: Literally, “the world and the life of humankind”; both are portrayed as spectators.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὁ τύραννος
@@ -106,14 +106,20 @@ revisions:
   from: The tyrant kept struggling against them, but the world and the life of mankind were watching.
   to: The tyrant kept struggling against them, but the world and the life of mankind were watching.
   rationale: Removed 'against them' because it is not expressed in the Greek. Retained the formal sense of the clause and kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T02:59:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The tyrant kept struggling[a], but the world and the life of mankind were watching.'
-  to: 'The tyrant kept struggling[a], but the world and the life of mankind were watching.'
+  from: The tyrant kept struggling[a], but the world and the life of mankind were watching.
+  to: The tyrant kept struggling[a], but the world and the life of mankind were watching.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''kept struggling against them''].'
+- timestamp: '2026-11-09T18:59:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The tyrant kept struggling[a], but the world and the life of mankind were watching.
+  to: The tyrant was contending against them, while the world and all humanity[a] looked on.
+  rationale: The first draft and lexical rationale correctly supplied “against them”; its removal was motivated by source transparency rather than meaning. I preserve the cosmic-human spectacle but explain the unusual expression about human life in a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -133,3 +139,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/017/014.job-50175.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The tyrant opposed the martyrs in a contest portrayed as a spectacle before the world and humanity.
+  meaning_decisions:
+  - source_phrase: ὁ τύραννος ἀντηγωνίζετο
+    prior_rendering: The tyrant kept struggling
+    new_rendering: The tyrant was contending against them
+    rationale: The verb identifies the tyrant as the opposing contestant, not merely someone struggling; its contextual object is made explicit.
+  - source_phrase: ὁ δὲ κόσμος καὶ ὁ τῶν ἀνθρώπων βίος ἐθεώρει
+    prior_rendering: but the world and the life of mankind were watching
+    new_rendering: while the world and all humanity looked on
+    rationale: The collective expression presents human life as the audience alongside the world; the new wording makes that sense intelligible while retaining the spectator imagery.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale correctly supplied “against them”; its removal was motivated by source transparency rather than meaning. I preserve the cosmic-human spectacle but explain the unusual expression about human life in a footnote.

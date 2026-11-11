@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'send him on his way with support'; the Greek verb can include the idea of providing assistance for a journey, not only personal escort.
-    reason: lexical_alternative
-  - marker: b
-    text: Some translators render 'to rebuild Jerusalem' from the broader context, but the Greek verb here is simply 'to build.'
-    reason: lexical_alternative
+  text: Then King Darius stood up and kissed him. He wrote letters for him to all the stewards, district governors, generals, and satraps, directing them to provide support for his journey and that of everyone going up with him to rebuild Jerusalem.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τότε
   chosen: Then
@@ -154,14 +147,20 @@ revisions:
   from: Then King Darius stood up and kissed him, and wrote letters for him to all the treasurers and regional governors and generals and satraps, that they should escort him and all those with him who were going up to build Jerusalem.
   to: Then King Darius stood up and kissed him, and wrote letters for him to all the treasurers and regional governors and generals and satraps, that they should escort him and all those with him who were going up to build Jerusalem.
   rationale: Changed 'treasurers' to 'stewards' for better lexical accuracy of οἰκονόμους; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.'
-  to: 'Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.'
+  from: Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.
+  to: Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''treasurers''].'
+- timestamp: '2026-11-09T19:51:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then King Darius stood up and kissed him[a], and wrote letters for him to all the stewards and regional governors and generals and satraps[b], that they should escort him and all those with him who were going up to build Jerusalem.
+  to: Then King Darius stood up and kissed him. He wrote letters for him to all the stewards, district governors, generals, and satraps, directing them to provide support for his journey and that of everyone going up with him to rebuild Jerusalem.
+  rationale: I retain the current 'stewards' rather than the first draft’s narrower 'treasurers.' The earlier note about journey assistance is brought into the text, while the source-transparency argument against 'rebuild' yields to the clear restoration context.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -181,3 +180,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/047.job-47647.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:51:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Darius warmly receives the request and writes to his officials to support the journey of the young man and everyone accompanying him to rebuild Jerusalem.
+  meaning_decisions:
+  - source_phrase: τοπάρχας
+    prior_rendering: regional governors
+    new_rendering: district governors
+    rationale: The term denotes rulers of local districts, distinguished here from the satraps governing larger provinces.
+  - source_phrase: ἵνα προπέμψωσιν αὐτὸν καὶ τοὺς μετʼ αὐτοῦ πάντας
+    prior_rendering: that they should escort him and all those with him
+    new_rendering: directing them to provide support for his journey and that of everyone going up with him
+    rationale: The verb encompasses sending travelers onward with assistance, not necessarily accompanying them personally as an escort.
+  - source_phrase: οἰκοδομῆσαι τὴν Ἰερουσαλήμ
+    prior_rendering: to build Jerusalem
+    new_rendering: to rebuild Jerusalem
+    rationale: The project is the restoration of the devastated city, so 'rebuild' conveys the contextual meaning.
+  footnote_kinds: {}
+  history_weighed: I retain the current 'stewards' rather than the first draft’s narrower 'treasurers.' The earlier note about journey assistance is brought into the text, while the source-transparency argument against 'rebuild' yields to the clear restoration context.

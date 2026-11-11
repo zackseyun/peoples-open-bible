@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: כִּי נֵ֨דֶר֙ נָדַ֣ר עַבְדְּ/ךָ֔ בְּ/שִׁבְתִּ֥/י בִ/גְשׁ֛וּר בַּ/אֲרָ֖ם לֵ/אמֹ֑ר אִם ישיב יְשִׁיבֵ֤/נִי יְהוָה֙ יְר֣וּשָׁלִַ֔ם וְ/עָבַדְתִּ֖י אֶת יְהוָֽה־־־׃
 translation:
-  text: For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’
-  philosophy: optimal-equivalence
+  text: '“For your servant made a vow while I was living in Geshur in Aram: ‘If Yahweh indeed brings me back to Jerusalem, then I will worship Yahweh[a].’”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more formally, 'For your servant vowed a vow.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew expression 'if the LORD indeed brings me back' uses an emphatic repetition of the verb 'bring back/return.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'I will worship the LORD.' The Hebrew verb can denote service rendered to God in worship.
-    reason: lexical_alternative
+    text: Or, “serve Yahweh.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: נֵדֶר נָדַר
   chosen: made a vow
@@ -104,14 +98,20 @@ revisions:
   from: For your servant made a vow while I was living in Geshur in Aram, saying, ‘If the LORD indeed brings me back to Jerusalem, then I will serve the LORD.’
   to: For your servant made a vow while I was living in Geshur in Aram, saying, ‘If the LORD indeed brings me back to Jerusalem, then I will serve the LORD.’
   rationale: Changed 'living' to 'dwelling' for a slightly more formal register while preserving the sense of the Hebrew.
-
 - timestamp: '2026-05-17T04:06:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’'
-  to: 'For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’'
+  from: For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’
+  to: For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''while I was living''].'
+- timestamp: '2026-11-09T17:29:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For your servant made a vow while I was dwelling in Geshur in Aram[a], saying, ‘If Yahweh indeed brings me back to Jerusalem[c][b], then I will serve Yahweh.’
+  to: '“For your servant made a vow while I was living in Geshur in Aram: ‘If Yahweh indeed brings me back to Jerusalem, then I will worship Yahweh[a].’”'
+  rationale: The recorded living/dwelling changes concern register rather than meaning. I retain the deferential self-reference and emphatic return, but choose the documented worship sense in light of the vow’s sacrificial fulfillment.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +133,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/015/008.job-61019.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Absalom explains that while living in Geshur he vowed to worship Yahweh if Yahweh brought him back to Jerusalem.
+  meaning_decisions:
+  - source_phrase: וְעָבַדְתִּי אֶת יְהוָה
+    prior_rendering: then I will serve Yahweh
+    new_rendering: then I will worship Yahweh
+    rationale: The vow’s fulfillment through sacrifices in verse 12 favors worshipful service rather than an otherwise unspecified change of allegiance or occupation.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded living/dwelling changes concern register rather than meaning. I retain the deferential self-reference and emphatic return, but choose the documented worship sense in light of the vow’s sacrificial fulfillment.

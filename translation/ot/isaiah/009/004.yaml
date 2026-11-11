@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: כִּ֤י כָל סְאוֹן֙ סֹאֵ֣ן בְּ/רַ֔עַשׁ וְ/שִׂמְלָ֖ה מְגוֹלָלָ֣ה בְ/דָמִ֑ים וְ/הָיְתָ֥ה לִ/שְׂרֵפָ֖ה מַאֲכֹ֥לֶת אֵֽשׁ־׃
 translation:
-  text: For every boot of the tramping warrior in the battle's tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.
-  philosophy: optimal-equivalence
+  text: For every boot that tramped in the din of battle[a], and every garment rolled in blood, will be burned as fuel for the fire.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'every boot that tramps in tumult'; the Hebrew expression is rare and difficult, and some render the first phrase more abstractly in terms of battle noise rather than footwear.
+    text: Literally 'every boot booting in the quaking'; the Hebrew noun and its verb occur only here and most likely refer to a soldier's boot.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כִּי
@@ -113,14 +113,20 @@ revisions:
   from: For every boot of the tramping warrior in the battle’s tumult, and every garment rolled in blood, will be burned as fuel for the fire.
   to: For every boot of the tramping warrior in the tumult, and every garment rolled in blood, will be for burning, fuel for the fire.
   rationale: Adjusted 'in the battle’s tumult' to 'in the tumult' for closer lexical accuracy, since 'battle' is not explicit in the source. Changed 'will be burned as fuel for the fire' to 'will be for burning, fuel for the fire' to reflect the Hebrew wording more closely.
-
 - timestamp: '2026-05-15T22:39:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For every boot of the tramping warrior in the tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.'
-  to: 'For every boot of the tramping warrior in the battle''s tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.'
+  from: For every boot of the tramping warrior in the tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.
+  to: For every boot of the tramping warrior in the battle's tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.
   rationale: 'Azure substituted ''in the tumult'' — drafter''s explicit rejected alternative for בְּרַעַשׁ. Drafter''s documented rationale: martial context justifies the explicitation ''battle''s tumult''. Azure cited only literalism without engaging.'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: For every boot of the tramping warrior in the battle's tumult[a], and every garment rolled in blood, will be for burning, fuel for the fire.
+  to: For every boot that tramped in the din of battle[a], and every garment rolled in blood, will be burned as fuel for the fire.
+  rationale: The 2026-04-23 pass removed 'battle', but the 2026-05-15 revert restored it on the drafter's reasoning about the martial context, which I agree with; I also return to the drafter's 'will be burned as fuel for the fire'.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +146,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/009/004.job-66098.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: Every piece of the invader's war gear, boots and bloodstained garments alike, will be burned up, because the war is over.
+  meaning_decisions:
+  - source_phrase: כָל סְאוֹן סֹאֵן בְּרַעַשׁ
+    prior_rendering: every boot of the tramping warrior in the battle's tumult
+    new_rendering: every boot that tramped in the din of battle
+    rationale: Keeps the drafter's martial sense of רַעַשׁ while making the boot itself the subject, as in the Hebrew.
+  - source_phrase: וְהָיְתָה לִשְׂרֵפָה מַאֲכֹלֶת אֵשׁ
+    prior_rendering: will be for burning, fuel for the fire
+    new_rendering: will be burned as fuel for the fire
+    rationale: The drafter's first wording states the Hebrew's 'for burning, food for fire' in natural English.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The 2026-04-23 pass removed 'battle', but the 2026-05-15 revert restored it on the drafter's reasoning about the martial context, which I agree with; I also return to the drafter's 'will be burned as fuel for the fire'.

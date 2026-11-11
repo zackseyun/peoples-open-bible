@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּפֹּ֧ל אַבְרָהָ֛ם עַל פָּנָ֖י/ו וַ/יִּצְחָ֑ק וַ/יֹּ֣אמֶר בְּ/לִבּ֗/וֹ הַ/לְּ/בֶ֤ן מֵאָֽה שָׁנָה֙ יִוָּלֵ֔ד וְ/אִ֨ם שָׂרָ֔ה הֲ/בַת תִּשְׁעִ֥ים שָׁנָ֖ה תֵּלֵֽד־־־־׃
 translation:
-  text: Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Will a son be born to a man a hundred years old?” The Hebrew uses 'son/child' language here.
-    reason: lexical_alternative
+  text: Then Abraham fell facedown and laughed. He said to himself, “Can a child be born to a man a hundred years old? Can Sarah, who is ninety years old, give birth?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּפֹּל
   chosen: fell
@@ -110,14 +106,20 @@ revisions:
   from: Then Abraham fell on his face and laughed, and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, a woman ninety years old, give birth?”
   to: Then Abraham fell on his face and laughed, and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, a woman ninety years old, give birth?”
   rationale: Replaced 'a woman ninety years old' with 'who is ninety years old' to more directly reflect the Hebrew without adding an extra noun not present in the source.
-
 - timestamp: '2026-05-17T11:21:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”'
-  to: 'Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”'
+  from: Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”
+  to: Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a woman ninety years old''].'
+- timestamp: '2026-11-09T17:42:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Abraham fell on his face and laughed[a], and said in his heart, “Will a child be born to a man a hundred years old? And will Sarah, who is ninety years old, give birth?”
+  to: Then Abraham fell facedown and laughed. He said to himself, “Can a child be born to a man a hundred years old? Can Sarah, who is ninety years old, give birth?”
+  rationale: The revisions concern Sarah's age wording, and the documented theological decision rightly leaves the laughter morally unqualified. I preserve that neutrality and omit the misleading child/son note, since בן here belongs to the man's age expression.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +141,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/017/017.job-64899.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:23Z'
+  change_level: refined
+  confidence: high
+  meaning: Abraham falls facedown and laughs, inwardly questioning how he and Sarah could have a child at their advanced ages.
+  meaning_decisions:
+  - source_phrase: וַיִּפֹּל אַבְרָהָם עַל פָּנָיו
+    prior_rendering: Abraham fell on his face
+    new_rendering: Abraham fell facedown
+    rationale: This describes prostration, not an accidental fall onto his face; 'fell facedown' preserves the bodily action without that misleading suggestion.
+  - source_phrase: וַיֹּאמֶר בְּלִבּוֹ
+    prior_rendering: said in his heart
+    new_rendering: He said to himself
+    rationale: The expression marks inward, unspoken speech. The new wording makes that distinction clear before Abraham speaks aloud in the next verse.
+  - source_phrase: הַלְּבֶן מֵאָה שָׁנָה יִוָּלֵד ... תֵּלֵד
+    prior_rendering: Will a child be born ... And will Sarah ... give birth?
+    new_rendering: Can a child be born ... Can Sarah ... give birth?
+    rationale: The paired rhetorical questions express astonishment at the possibility of childbirth at these ages, rather than merely asking whether it will happen.
+  footnote_kinds: {}
+  history_weighed: The revisions concern Sarah's age wording, and the documented theological decision rightly leaves the laughter morally unqualified. I preserve that neutrality and omit the misleading child/son note, since בן here belongs to the man's age expression.

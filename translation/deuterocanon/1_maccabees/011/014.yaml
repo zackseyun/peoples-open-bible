@@ -29,12 +29,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'those from those places were rebelling.'
-    reason: lexical_alternative
+  text: But King Alexander was in Cilicia in those days, because the people of that region were rebelling.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἀλέξανδρος
   chosen: Alexander
@@ -111,14 +107,20 @@ revisions:
   from: But King Alexander was in Cilicia in those days, because the people from those regions were rebelling.
   to: But King Alexander was in Cilicia in those days, because the people from those regions were rebelling.
   rationale: Replaced 'the people from those regions' with 'those from those regions' to more closely reflect the Greek expression without adding 'people.'
-
 - timestamp: '2026-05-18T02:58:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.'
-  to: 'But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.'
+  from: But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.
+  to: But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the people from those regions''].'
+- timestamp: '2026-11-09T18:53:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But King Alexander was in Cilicia in those days[a], because those from those regions were rebelling.
+  to: But King Alexander was in Cilicia in those days, because the people of that region were rebelling.
+  rationale: The first draft and lexical rationale already supplied 'people,' while the later recorded rationale favored closer formal correspondence. I follow the first draft’s clarity and make the geographical reference direct.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +140,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/014.job-48611.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Alexander was away in Cilicia because the people of that region were rebelling.
+  meaning_decisions:
+  - source_phrase: οἱ ἀπὸ τῶν τόπων ἐκείνων
+    prior_rendering: those from those regions
+    new_rendering: the people of that region
+    rationale: The expression refers to Cilicia’s inhabitants; naming the people and connecting the region to Cilicia removes an unnecessarily opaque repetition.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale already supplied 'people,' while the later recorded rationale favored closer formal correspondence. I follow the first draft’s clarity and make the geographical reference direct.

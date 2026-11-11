@@ -10,12 +10,8 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Bel extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And crying out with a loud voice[a], he said, “Great are you, Lord, the God of the
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek source provided for this verse ends with 'of the' (τοῦ), so the English line is necessarily incomplete here rather than reconstructed from context.
-    reason: textual_variant
+  text: The king cried out in a loud voice, “Great are you, Lord, the God of
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀναβοήσας
   lemma: ἀναβοάω
@@ -95,7 +91,13 @@ revisions:
   from: And crying out with a loud voice, he said, “Great are you, Lord God of the
   to: And crying out with a loud voice, he said, “Great are you, Lord, the God of the
   rationale: Added the article before 'God' to reflect ὁ θεός and inserted a comma after 'Lord' for clearer apposition. Kept the verse incomplete as in the provided source text.
-
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And crying out with a loud voice[a], he said, “Great are you, Lord, the God of the
+  to: The king cried out in a loud voice, “Great are you, Lord, the God of
+  rationale: The revision’s clear apposition 'Lord, the God' is retained. The final genitive is allowed to continue into verse 42 without inserting an English article that would produce 'the Daniel.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/bel_and_the_dragon/001/041.job-50495.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: refined
+  confidence: high
+  meaning: The king loudly praises the greatness of Daniel’s God.
+  meaning_decisions:
+  - source_phrase: καὶ ἀναβοήσας φωνῇ μεγάλῃ εἶπεν
+    prior_rendering: And crying out with a loud voice, he said
+    new_rendering: The king cried out in a loud voice
+    rationale: The understood speaker is made explicit, and the speech-introduction construction is rendered as a single natural English action.
+  - source_phrase: τοῦ
+    prior_rendering: of the
+    new_rendering: of
+    rationale: The Greek article introduces Daniel’s name in the next verse; English does not use 'the' before that proper name.
+  footnote_kinds: {}
+  history_weighed: The revision’s clear apposition 'Lord, the God' is retained. The final genitive is allowed to continue into verse 42 without inserting an English article that would produce 'the Daniel.'

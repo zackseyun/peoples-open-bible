@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἀπέθανε τὸ τρίτον ⸀τῶν κτισμάτων τῶν ἐν τῇ θαλάσσῃ, τὰ ἔχοντα ψυχάς, καὶ τὸ τρίτον τῶν πλοίων ⸀διεφθάρησαν.
 translation:
-  text: And a third of the creatures in the sea—the ones that have living souls—died[a], and a third of the ships were destroyed.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''that had life'' or ''living creatures.'' Greek: ''the ones having souls/lives.'''
-    reason: lexical_alternative
+  text: A third of the living creatures in the sea died, and a third of the ships were destroyed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέθανε
   chosen: died
@@ -95,14 +91,20 @@ revisions:
   from: And a third of the creatures in the sea—the ones that have living souls—died, and a third of the ships were destroyed.
   to: And a third of the creatures in the sea that have life died, and a third of the ships were destroyed.
   rationale: Removed the em dash apposition for smoother formal English and revised 'living souls' to 'have life' to reflect ψυχάς more naturally here without importing a technical sense.
-
 - timestamp: '2026-05-16T20:37:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And a third of the creatures in the sea that have life died[a], and a third of the ships were destroyed.'
-  to: 'And a third of the creatures in the sea—the ones that have living souls—died[a], and a third of the ships were destroyed.'
-  rationale: 'Restored drafter ''the ones that have living souls'' (preserving the chosen relative-clause structure and ''living souls'' rendering) with em-dash apposition per chosen renderings.'
+  from: And a third of the creatures in the sea that have life died[a], and a third of the ships were destroyed.
+  to: And a third of the creatures in the sea—the ones that have living souls—died[a], and a third of the ships were destroyed.
+  rationale: Restored drafter 'the ones that have living souls' (preserving the chosen relative-clause structure and 'living souls' rendering) with em-dash apposition per chosen renderings.
+- timestamp: '2026-11-09T17:17:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And a third of the creatures in the sea—the ones that have living souls—died[a], and a third of the ships were destroyed.
+  to: A third of the living creatures in the sea died, and a third of the ships were destroyed.
+  rationale: The April review correctly recognized that ψυχάς marks animate life here; the later automated revert restored lexical transparency rather than a different contextual meaning. I preserve the review's gain in the more natural phrase “living creatures.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -122,3 +124,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/008/009.job-47254.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A third of the sea's living creatures die, and a third of its ships are destroyed.
+  meaning_decisions:
+  - source_phrase: τῶν κτισμάτων τῶν ἐν τῇ θαλάσσῃ, τὰ ἔχοντα ψυχάς
+    prior_rendering: the creatures in the sea—the ones that have living souls
+    new_rendering: the living creatures in the sea
+    rationale: Here ψυχάς identifies animate life rather than describing the creatures' inner spiritual life; “living creatures” conveys the full contextual distinction without suggesting a technical claim about animal souls.
+  footnote_kinds: {}
+  history_weighed: The April review correctly recognized that ψυχάς marks animate life here; the later automated revert restored lexical transparency rather than a different contextual meaning. I preserve the review's gain in the more natural phrase “living creatures.”

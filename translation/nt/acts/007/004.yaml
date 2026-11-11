@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: τότε ἐξελθὼν ἐκ γῆς Χαλδαίων κατῴκησεν ἐν Χαρράν. κἀκεῖθεν μετὰ τὸ ἀποθανεῖν τὸν πατέρα αὐτοῦ μετῴκισεν αὐτὸν εἰς τὴν γῆν ταύτην εἰς ἣν ὑμεῖς νῦν κατοικεῖτε,
 translation:
-  text: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father[b] died, God moved him[a] into this land in which you now live,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'he moved him'; the Greek does not state the subject explicitly, though the context indicates God.
-    reason: lexical_alternative
-  - marker: b
-    text: Stephen says this move happened after his father died. Compare Genesis 11:32; 12:4 for the related chronology.
-    reason: cross_reference
+  text: Then Abraham left the land of the Chaldeans and settled in Haran. After his father died, God moved him from there to this land, where you now live.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τότε
   chosen: Then
@@ -125,13 +118,12 @@ revisions:
   from: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, God moved him into this land in which you now live,
   to: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, he moved him into this land in which you now live,
   rationale: Replaced 'God moved him' with 'he moved him' to reflect the Greek text, which does not explicitly supply 'God' here. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then[a], after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, he moved him into this land in which you now live[b],'
-  to: 'Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, God moved him into this land in which you now live,'
+  from: Then[a], after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, he moved him into this land in which you now live[b],
+  to: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, God moved him into this land in which you now live,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''God moved him''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -141,6 +133,13 @@ revisions:
   from: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father died, God moved him into this land in which you now live,
   to: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father[b] died, God moved him[a] into this land in which you now live,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('God moved him') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('his father') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:06:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then, after he had gone out from the land of the Chaldeans, he settled in Haran. And from there, after his father[b] died, God moved him[a] into this land in which you now live,
+  to: Then Abraham left the land of the Chaldeans and settled in Haran. After his father died, God moved him from there to this land, where you now live.
+  rationale: The automated revision briefly replaced 'God moved him' with an ambiguous pronoun, but the lexical record correctly identifies God as the actor; I retain that clarity on contextual grounds. I also preserve Stephen's sequence after his father's death without attempting to harmonize the chronology.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -160,3 +159,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/007/004.job-46625.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:06:50Z'
+  change_level: refined
+  confidence: high
+  meaning: Abraham left the Chaldeans' land, settled in Haran, and after his father's death was moved by God to the land Stephen's hearers now inhabit.
+  meaning_decisions:
+  - source_phrase: τότε ἐξελθὼν ἐκ γῆς Χαλδαίων κατῴκησεν ἐν Χαρράν
+    prior_rendering: Then, after he had gone out from the land of the Chaldeans, he settled in Haran
+    new_rendering: Then Abraham left the land of the Chaldeans and settled in Haran
+    rationale: Two coordinated actions communicate the same sequence more directly, with Abraham named as the understood subject.
+  footnote_kinds: {}
+  history_weighed: The automated revision briefly replaced 'God moved him' with an ambiguous pronoun, but the lexical record correctly identifies God as the actor; I retain that clarity on contextual grounds. I also preserve Stephen's sequence after his father's death without attempting to harmonize the chronology.

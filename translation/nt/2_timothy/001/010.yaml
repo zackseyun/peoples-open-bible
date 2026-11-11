@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: φανερωθεῖσαν δὲ νῦν διὰ τῆς ἐπιφανείας τοῦ σωτῆρος ἡμῶν ⸂Ἰησοῦ Χριστοῦ⸃, καταργήσαντος μὲν τὸν θάνατον φωτίσαντος δὲ ζωὴν καὶ ἀφθαρσίαν διὰ τοῦ εὐαγγελίου,
 translation:
-  text: but has now been revealed through the appearing of our Savior Jesus Christ[a], who indeed abolished death and brought life and incorruptibility to light through the gospel[b],
-  philosophy: optimal-equivalence
+  text: but has now been revealed through the appearing of our Savior Jesus Christ, who abolished death and brought life and immortality[a] to light through the gospel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Jesus the Messiah.' The Greek Χριστός can function as a title ('Messiah') or as a name-like designation ('Christ').
-    reason: alternative_reading
-  - marker: b
-    text: Or 'immortality.' The Greek term emphasizes imperishability or freedom from corruption.
+    text: The Greek term means imperishability, including freedom from decay and corruption.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: φανερωθεῖσαν
@@ -136,10 +133,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "but has now been revealed through the appearing of our Savior Jesus Messiah, who indeed abolished death and brought life and incorruptibility to light through the gospel,"
-  to: "but has now been revealed through the appearing of our Savior Jesus the Messiah, who indeed abolished death and brought life and incorruptibility to light through the gospel,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: but has now been revealed through the appearing of our Savior Jesus Messiah, who indeed abolished death and brought life and incorruptibility to light through the gospel,
+  to: but has now been revealed through the appearing of our Savior Jesus the Messiah, who indeed abolished death and brought life and incorruptibility to light through the gospel,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: but has now been revealed through the appearing of our Savior Jesus Christ[a], who indeed abolished death and brought life and incorruptibility to light through the gospel[b],
+  to: but has now been revealed through the appearing of our Savior Jesus Christ, who abolished death and brought life and immortality[a] to light through the gospel.
+  rationale: I keep 'Jesus Christ' under the standing rule for name constructions rather than following the older automated title reversions. The earlier concern to preserve freedom from decay remains in the footnote, while the strong claim that Christ abolished death is unchanged.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -162,3 +165,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_timothy/001/010.job-53727.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:53Z'
+  change_level: refined
+  confidence: high
+  meaning: God's grace has now been revealed through Jesus Christ, who abolished death and disclosed imperishable life through the gospel.
+  meaning_decisions:
+  - source_phrase: ἀφθαρσίαν
+    prior_rendering: incorruptibility
+    new_rendering: immortality
+    rationale: In contrast with death, the term describes imperishable life; 'incorruptibility' can suggest resistance to moral corruption in contemporary English. 'Immortality' communicates the central contrast, while the note preserves freedom from decay.
+  - source_phrase: μὲν ... δὲ
+    prior_rendering: indeed ... and
+    new_rendering: and
+    rationale: The paired particles balance death's abolition against life's disclosure; coordinating the two strong statements carries that balance without adding an unnecessary 'indeed.'
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I keep 'Jesus Christ' under the standing rule for name constructions rather than following the older automated title reversions. The earlier concern to preserve freedom from decay remains in the footnote, while the strong claim that Christ abolished death is unchanged.

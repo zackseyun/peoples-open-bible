@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 16:21
 translation:
-  text: If I have sinned[a], no eye sees me; or if I lie, who knows it in every hiding place[b]?
-  philosophy: optimal-equivalence
+  text: If I have sinned, no eye sees me; if I lie in any hidden place, who will know[a]?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek parallel differs substantially here, reading in part that many of his works are in hidden places. The Hebrew witness is followed as the main text because it survives for this verse and is the primary source for Sirach where extant.
+    text: The Greek differs substantially, speaking instead of an unseen storm and works hidden from view.
     reason: textual_variant
-  - marker: b
-    text: Or 'in every secret place.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: אִם חָטָאתִי
   lemma: אִם
@@ -125,13 +122,12 @@ revisions:
   from: If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?
   to: If I have sinned, no eye sees me; or if I lie, who knows it in every secret place?
   rationale: Changed 'hiding place' to 'secret place' for a more natural and formally appropriate rendering of בְּכָל סֵתֶר while preserving the sense.
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If I have sinned[a], no eye sees me; or if I lie[b], who knows it in every secret place?'
-  to: 'If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?'
+  from: If I have sinned[a], no eye sees me; or if I lie[b], who knows it in every secret place?
+  to: If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every hiding place''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -141,6 +137,13 @@ revisions:
   from: If I have sinned, no eye sees me; or if I lie, who knows it in every hiding place?
   to: If I have sinned[a], no eye sees me; or if I lie, who knows it in every hiding place[b]?
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('in every hiding place') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If I have sinned[a], no eye sees me; or if I lie, who knows it in every hiding place[b]?
+  to: If I have sinned, no eye sees me; if I lie in any hidden place, who will know[a]?
+  rationale: The history consistently gives priority to the surviving Hebrew rather than blending in the divergent Greek, and I retain that choice. The debate over “hiding place” versus “secret place” is less important than clarifying how the spatial phrase relates to the lie.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -160,3 +163,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/016/021.job-51393.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:30Z'
+  change_level: refined
+  confidence: medium
+  meaning: The same speaker assumes that concealed sins and lies can remain unknown.
+  meaning_decisions:
+  - source_phrase: אוֹ אִם אֲכַזֵב, בְּכָל סֵתֶר מִי יוֹדֵעַ
+    prior_rendering: or if I lie, who knows it in every hiding place?
+    new_rendering: if I lie in any hidden place, who will know?
+    rationale: Reordering makes the secrecy qualify the concealed wrongdoing rather than seeming to locate the person who knows it; “any” expresses the unrestricted scope naturally.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The history consistently gives priority to the surviving Hebrew rather than blending in the divergent Greek, and I retain that choice. The debate over “hiding place” versus “secret place” is less important than clarifying how the spatial phrase relates to the lie.

@@ -4,14 +4,14 @@ source:
   edition: SBLGNT
   text: ἦν δὲ παρασκευὴ τοῦ πάσχα, ὥρα ⸂ἦν ὡς⸃ ἕκτη. καὶ λέγει τοῖς Ἰουδαίοις· Ἴδε ὁ βασιλεὺς ὑμῶν.
 translation:
-  text: It was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
-  philosophy: optimal-equivalence
+  text: It was the day of preparation for the Passover[a], about noon[b]. Pilate said to the Jewish leaders, “Behold your king!”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, possibly in modern terms, 'about noon,' depending on how the hour is reckoned.
-    reason: cultural_note
+    text: Or, “the Friday of Passover week,” taking “preparation” as the customary name for the day before the Sabbath.
+    reason: alternative_reading
   - marker: b
-    text: '''The Jews'' may in context refer more specifically to the Judean authorities or Jewish leaders.'
+    text: The Greek says “about the sixth hour.” If reckoned from midnight rather than sunrise, this would mean about six in the morning.
     reason: alternative_reading
 lexical_decisions:
 - source_word: παρασκευὴ
@@ -20,7 +20,7 @@ lexical_decisions:
   - Preparation
   - preparation day
   lexicon: BDAG
-  rationale: "In this context παρασκευή refers to the day of preparation before a feast/Sabbath. Expanding to 'day of preparation' makes the temporal sense clear in natural English while staying close to the Greek. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'In this context παρασκευή refers to the day of preparation before a feast/Sabbath. Expanding to ''day of preparation'' makes the temporal sense clear in natural English while staying close to the Greek. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: τοῦ πάσχα
   chosen: for the Passover
   alternatives:
@@ -97,13 +97,12 @@ revisions:
   from: Now it was the day of preparation for the Passover; it was about the sixth hour. And he says to the Jews, “Behold, your king!”
   to: Now it was the day of preparation for the Passover; it was about the sixth hour. And he says to the Jews, “Behold, your king!”
   rationale: Changed 'for the Passover' to 'of the Passover' for closer alignment with τοῦ πάσχα. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now it was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”'
-  to: 'Now it was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”'
+  from: Now it was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
+  to: Now it was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the Passover''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -112,6 +111,13 @@ revisions:
   from: Now it was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
   to: It was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:11:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: It was the day of preparation of the Passover[a]; it was about the sixth hour. And he says to the Jews, “Behold[b], your king!”
+  to: It was the day of preparation for the Passover[a], about noon[b]. Pilate said to the Jewish leaders, “Behold your king!”
+  rationale: The earlier 'for the Passover' conveys the relationship more naturally than the review’s genitive-mirroring 'of'; neither the automated revert nor the discourse cleanup settles the chronology. I use the usual daylight reckoning, preserve the serious alternatives in notes, and retain the forceful public presentation of 'Behold your king!'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +137,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/019/014.job-7556.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:26Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: On the Passover preparation day, around noon, Pilate presents Jesus to the Jewish leaders as their king.
+  meaning_decisions:
+  - source_phrase: παρασκευὴ τοῦ πάσχα
+    prior_rendering: the day of preparation of the Passover
+    new_rendering: the day of preparation for the Passover
+    rationale: The genitive expresses the day’s relationship to Passover, most naturally conveyed by 'for'; the serious alternative identifying Friday during the festival is footnoted.
+  - source_phrase: ὥρα ἦν ὡς ἕκτη
+    prior_rendering: it was about the sixth hour
+    new_rendering: about noon
+    rationale: The ordinary daylight reckoning gives noon and makes the time intelligible to modern readers; the alternative reckoning is retained in a note.
+  - source_phrase: καὶ λέγει τοῖς Ἰουδαίοις
+    prior_rendering: And he says to the Jews
+    new_rendering: Pilate said to the Jewish leaders
+    rationale: Past-tense narration is natural English, the implied speaker is made explicit, and the audience is the authorities conducting the confrontation.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier 'for the Passover' conveys the relationship more naturally than the review’s genitive-mirroring 'of'; neither the automated revert nor the discourse cleanup settles the chronology. I use the usual daylight reckoning, preserve the serious alternatives in notes, and retain the forceful public presentation of 'Behold your king!'

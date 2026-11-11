@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἀκούσας δὲ ὄχλου διαπορευομένου ἐπυνθάνετο ⸀τί εἴη τοῦτο·
 translation:
-  text: And hearing a crowd passing by[a], he was asking what this meant.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'he was asking what this might be.' The imperfect verb can suggest repeated inquiry, and the optative in the indirect question can be rendered with a slightly more tentative sense.
-    reason: lexical_alternative
+  text: When he heard a crowd passing by, he asked what was happening.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀκούσας
   chosen: hearing
@@ -78,14 +74,20 @@ revisions:
   from: And hearing a crowd passing by, he began asking what this was.
   to: And hearing a crowd passing by, he began asking what this was.
   rationale: Changed 'began asking' to 'was asking' to better reflect the imperfect ἐπυνθάνετο, and changed 'what this was' to 'what this meant' for more natural English in context.
-
 - timestamp: '2026-05-16T23:22:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And hearing a crowd passing by[a], he was asking what this meant.'
-  to: 'And hearing a crowd passing by[a], he was asking what this meant.'
-  rationale: 'Restored drafter ''he began asking what this was'' (preserving the chosen inceptive ''began'' and ''what this was'' simple form) per chosen renderings.'
+  from: And hearing a crowd passing by[a], he was asking what this meant.
+  to: And hearing a crowd passing by[a], he was asking what this meant.
+  rationale: Restored drafter 'he began asking what this was' (preserving the chosen inceptive 'began' and 'what this was' simple form) per chosen renderings.
+- timestamp: '2026-11-09T17:12:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And hearing a crowd passing by[a], he was asking what this meant.
+  to: When he heard a crowd passing by, he asked what was happening.
+  rationale: The history alternates between “began asking” and “was asking,” both possible treatments of the imperfect. The rendering keeps the contextual inquiry recognized by the review without making repetition, onset, or tentativeness explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/018/036.job-55834.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:06Z'
+  change_level: refined
+  confidence: high
+  meaning: The blind man hears a crowd passing and asks what is happening.
+  meaning_decisions:
+  - source_phrase: ἀκούσας δὲ ὄχλου διαπορευομένου ἐπυνθάνετο
+    prior_rendering: And hearing a crowd passing by, he was asking
+    new_rendering: When he heard a crowd passing by, he asked
+    rationale: The temporal clause makes the relationship clear, while ordinary English “asked” reports the inquiry without forcing either repeated questioning or a special emphasis on its onset.
+  - source_phrase: τί εἴη τοῦτο
+    prior_rendering: what this meant
+    new_rendering: what was happening
+    rationale: He is asking about the passing activity he can hear, rather than seeking an abstract explanation of its significance.
+  footnote_kinds: {}
+  history_weighed: The history alternates between “began asking” and “was asking,” both possible treatments of the imperfect. The rendering keeps the contextual inquiry recognized by the review without making repetition, onset, or tentativeness explicit.

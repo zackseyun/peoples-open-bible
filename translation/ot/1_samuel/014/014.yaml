@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/תְּהִ֞י הַ/מַּכָּ֣ה הָ/רִאשֹׁנָ֗ה אֲשֶׁ֨ר הִכָּ֧ה יוֹנָתָ֛ן וְ/נֹשֵׂ֥א כֵלָ֖י/ו כְּ/עֶשְׂרִ֣ים אִ֑ישׁ כְּ/בַ/חֲצִ֥י מַעֲנָ֖ה צֶ֥מֶד שָׂדֶֽה׃
 translation:
-  text: That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.
-  philosophy: optimal-equivalence
+  text: In their first attack, Jonathan and his armor-bearer killed about twenty men within roughly half a furrow’s length in a field a yoke of oxen could plow in a day[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'about half a furrow of a yoke of a field,' likely referring to the area a yoke of oxen could plow.
-    reason: lexical_alternative
+    text: Literally, “about half a furrow of a yoke of field.” The measure is uncertain; another understanding is an area of approximately half an acre.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הַמַּכָּה
   chosen: slaughter
@@ -91,14 +91,20 @@ revisions:
   from: That first slaughter, which Jonathan and his armor-bearer struck down, was about twenty men within about half a furrow in an acre of a field.
   to: That first slaughter, which Jonathan and his armor-bearer struck down, was about twenty men within about half a furrow in an acre of a field.
   rationale: Changed 'struck down' to 'made' to reflect the Hebrew idiom more naturally and accurately with 'slaughter' as the subject/result; retained the rest of the wording.
-
 - timestamp: '2026-05-18T02:56:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.'
-  to: 'That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.'
+  from: That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.
+  to: That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''struck down''].'
+- timestamp: '2026-11-09T17:23:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: That first slaughter[a], which Jonathan and his armor-bearer made, was about twenty men within about half a furrow in an acre of a field.
+  to: In their first attack, Jonathan and his armor-bearer killed about twenty men within roughly half a furrow’s length in a field a yoke of oxen could plow in a day[a].
+  rationale: The earlier change to “slaughter ... made” improved the grammar but still obscured the straightforward casualty count. The documented yoke-based measure is retained, while its conventional conversion to an acre is not treated as exact.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -118,3 +124,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/014.job-59052.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:27Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jonathan and his armor-bearer kill approximately twenty men in their first attack within a confined stretch of ground.
+  meaning_decisions:
+  - source_phrase: הַמַּכָּה הָרִאשֹׁנָה אֲשֶׁר הִכָּה יוֹנָתָן וְנֹשֵׂא כֵלָיו כְּעֶשְׂרִים אִישׁ
+    prior_rendering: That first slaughter, which Jonathan and his armor-bearer made, was about twenty men
+    new_rendering: In their first attack, Jonathan and his armor-bearer killed about twenty men
+    rationale: The Hebrew counts the casualties of the initial assault; the new sentence states the action and its lethal result without an awkward cognate construction.
+  - source_phrase: כְּבַחֲצִי מַעֲנָה צֶמֶד שָׂדֶה
+    prior_rendering: within about half a furrow in an acre of a field
+    new_rendering: within roughly half a furrow’s length in a field a yoke of oxen could plow in a day
+    rationale: The rendering preserves the furrow-based description while explaining the customary agricultural unit rather than equating it precisely with a modern acre; the uncertain alternative area reading is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier change to “slaughter ... made” improved the grammar but still obscured the straightforward casualty count. The documented yoke-based measure is retained, while its conventional conversion to an acre is not treated as exact.

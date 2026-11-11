@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: λέγοντες ὅτι ⸀Τὸ δεσμωτήριον εὕρομεν κεκλεισμένον ἐν πάσῃ ἀσφαλείᾳ καὶ τοὺς φύλακας ἑστῶτας ⸀ἐπὶ τῶν θυρῶν, ἀνοίξαντες δὲ ἔσω οὐδένα εὕρομεν.
 translation:
-  text: saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'locked with complete security.' The Greek emphasizes that the prison was found fully secured.
-    reason: lexical_alternative
+  text: saying, “We found the prison securely locked and the guards standing at the doors; but when we opened the doors, we found no one inside.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: δεσμωτήριον
   chosen: prison
@@ -88,14 +84,20 @@ revisions:
   from: saying, “We found the prison securely locked, and the guards standing at the doors; but when we opened them, we found no one inside.”
   to: saying, “We found the prison securely locked, and the guards standing at the doors; but when we opened them, we found no one inside.”
   rationale: Changed “opened them” to “opened it” to match the singular “prison”/“prison house” implied by the Greek, while retaining the natural reference to the doors in context.
-
 - timestamp: '2026-05-18T03:00:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”'
-  to: 'saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”'
+  from: saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”
+  to: saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when we opened them''].'
+- timestamp: '2026-11-09T17:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying[a], “We found the prison securely locked, and the guards standing at the doors; but when we opened it, we found no one inside.”
+  to: saying, “We found the prison securely locked and the guards standing at the doors; but when we opened the doors, we found no one inside.”
+  rationale: The review and revert disagreed over supplying 'it' or 'them' after 'opened,' although the Greek supplies neither. Explicitly naming the doors preserves their shared meaning, while 'securely locked' already carries the earlier footnote’s emphasis.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/005/023.job-47091.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The officers reported that the prison was securely locked and guarded, yet empty when they opened it.
+  meaning_decisions:
+  - source_phrase: ἀνοίξαντες
+    prior_rendering: when we opened it
+    new_rendering: when we opened the doors
+    rationale: The Greek leaves the object unstated; the doors are the clear contextual object, and naming them avoids an unnecessary English pronoun ambiguity.
+  footnote_kinds: {}
+  history_weighed: The review and revert disagreed over supplying 'it' or 'them' after 'opened,' although the Greek supplies neither. Explicitly naming the doors preserves their shared meaning, while 'securely locked' already carries the earlier footnote’s emphasis.

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: לְ/שֻׁפִּ֤ים וּ/לְ/חֹסָה֙ לַֽ/מַּעֲרָ֔ב עִ֚ם שַׁ֣עַר שַׁלֶּ֔כֶת בַּֽ/מְסִלָּ֖ה הָ/עוֹלָ֑ה מִשְׁמָ֖ר לְ/עֻמַּ֥ת מִשְׁמָֽר׃
 translation:
-  text: For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.
-  philosophy: optimal-equivalence
+  text: The west side, including the Shallecheth Gate on the road leading uphill, was assigned to Shuppim and Hosah, with guard posts facing one another[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or possibly 'the Gate of Casting Out'; 'Shallecheth' is likely a proper gate name derived from a verb meaning 'to cast out' or 'throw down.'
-    reason: lexical_alternative
+    text: Or, 'with one watch corresponding to another.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לְשֻׁפִּים
   chosen: For Shuppim
@@ -80,14 +80,20 @@ revisions:
   from: For Shuppim and Hosah, the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard opposite guard.
   to: For Shuppim and Hosah, the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard opposite guard.
   rationale: Replaced 'opposite' with 'corresponding to' for מִשְׁמָר לְעֻמַּת מִשְׁמָר, which more naturally conveys one guard station matching another without implying adversarial opposition.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.'
-  to: 'For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.'
+  from: For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.
+  to: For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''guard opposite guard''].'
+- timestamp: '2026-11-09T17:20:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For Shuppim and Hosah[a], the lot fell to the west, with the Gate of Shallecheth on the ascending highway, guard corresponding to guard.
+  to: The west side, including the Shallecheth Gate on the road leading uphill, was assigned to Shuppim and Hosah, with guard posts facing one another[a].
+  rationale: The first draft and lexical rationale favor a spatial arrangement, while the review’s 'corresponding' sought to avoid suggesting hostility. 'Guard posts facing one another' preserves the spatial sense without that implication, and the note retains the serious alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -107,3 +113,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/026/016.job-44842.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Shuppim and Hosah received the western assignment, including the Shallecheth Gate beside the uphill road, with guard posts arranged opposite one another.
+  meaning_decisions:
+  - source_phrase: לְשֻׁפִּים וּלְחֹסָה לַמַּעֲרָב עִם שַׁעַר שַׁלֶּכֶת
+    prior_rendering: For Shuppim and Hosah, the lot fell to the west, with the Gate of Shallecheth
+    new_rendering: The west side, including the Shallecheth Gate ... was assigned to Shuppim and Hosah
+    rationale: The revised structure makes the recipients and the extent of their western assignment clear.
+  - source_phrase: בַּמְסִלָּה הָעוֹלָה
+    prior_rendering: on the ascending highway
+    new_rendering: on the road leading uphill
+    rationale: The phrase describes the road’s ascent, without suggesting a modern highway.
+  - source_phrase: מִשְׁמָר לְעֻמַּת מִשְׁמָר
+    prior_rendering: guard corresponding to guard
+    new_rendering: guard posts facing one another
+    rationale: The surrounding locations favor a spatial arrangement of guard stations; the alternative understanding as corresponding watches is preserved in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale favor a spatial arrangement, while the review’s 'corresponding' sought to avoid suggesting hostility. 'Guard posts facing one another' preserves the spatial sense without that implication, and the note retains the serious alternative.

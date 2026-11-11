@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּקְרֵ֕ב אֵ֖ת קָרְבַּ֣ן הָ/עָ֑ם וַ/יִּקַּ֞ח אֶת שְׂעִ֤יר הַֽ/חַטָּאת֙ אֲשֶׁ֣ר לָ/עָ֔ם וַ/יִּשְׁחָטֵ֥/הוּ וַֽ/יְחַטְּאֵ֖/הוּ כָּ/רִאשֽׁוֹן־׃
 translation:
-  text: Then he presented the people's offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.
-  philosophy: optimal-equivalence
+  text: Then he presented the people's offering. He took the male goat for their sin offering[a], slaughtered it, and offered it as a sin offering, just as he had done with his own.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'offered it as a sin offering.' The Hebrew verb can also carry the sense of purifying/purging in priestly ritual contexts.
-    reason: lexical_alternative
+    text: Or “purification offering.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיַּקְרֵב
   chosen: presented
@@ -93,17 +93,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Then he presented the people''s offering, and he took the goat of the sin offering that was for the people, and slaughtered it and made a sin offering with it, as with the first one.'
-  to: 'Then he presented the people''s offering, and he took the goat of the sin offering that was for the people, and slaughtered it and made a sin offering with it, as with the first one.'
+  from: Then he presented the people's offering, and he took the goat of the sin offering that was for the people, and slaughtered it and made a sin offering with it, as with the first one.
+  to: Then he presented the people's offering, and he took the goat of the sin offering that was for the people, and slaughtered it and made a sin offering with it, as with the first one.
   rationale: Revised 'made a sin offering with it' to 'offered it for sin' for a more natural and formally accurate rendering of ויחטאהו, while preserving the verse's structure and meaning.
-
 - timestamp: '2026-05-18T02:56:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then he presented the people''s offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.'
-  to: 'Then he presented the people''s offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.'
+  from: Then he presented the people's offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.
+  to: Then he presented the people's offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''made a sin offering with it''].'
+- timestamp: '2026-11-09T18:16:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then he presented the people's offering[a], and he took the goat of the sin offering that was for the people, and slaughtered it and offered it for sin, as with the first one.
+  to: Then he presented the people's offering. He took the male goat for their sin offering[a], slaughtered it, and offered it as a sin offering, just as he had done with his own.
+  rationale: The draft and lexical rationale correctly understood the difficult verb as performing the sin-offering rite, while the later 'offered it for sin' made that meaning less precise. I preserve the earlier insight through the clearer wording 'offered it as a sin offering,' without adding an atonement statement absent from this verse.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +132,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/leviticus/009/015.job-69425.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Aaron began the people’s offerings by sacrificing their male goat as a sin offering using the same procedure as for his own sin offering.
+  meaning_decisions:
+  - source_phrase: שְׂעִיר הַחַטָּאת אֲשֶׁר לָעָם
+    prior_rendering: the goat of the sin offering that was for the people
+    new_rendering: the male goat for their sin offering
+    rationale: This makes the animal’s designation clear in natural English and preserves the male sex expressed by שְׂעִיר.
+  - source_phrase: וַיְחַטְּאֵהוּ
+    prior_rendering: offered it for sin
+    new_rendering: offered it as a sin offering
+    rationale: The verb describes performing the sin-offering rite with the goat, not simply offering something because of sin or purifying the goat itself.
+  - source_phrase: כָּרִאשׁוֹן
+    prior_rendering: as with the first one
+    new_rendering: just as he had done with his own
+    rationale: The comparison refers to Aaron’s earlier sin offering; naming that relationship makes the backward reference clear.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The draft and lexical rationale correctly understood the difficult verb as performing the sin-offering rite, while the later 'offered it for sin' made that meaning less precise. I preserve the earlier insight through the clearer wording 'offered it as a sin offering,' without adding an atonement statement absent from this verse.

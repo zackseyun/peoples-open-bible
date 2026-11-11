@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀καὶ ἐξελθοῦσα εἶπεν τῇ μητρὶ αὐτῆς· Τί ⸀αἰτήσωμαι; ἡ δὲ εἶπεν· Τὴν κεφαλὴν Ἰωάννου τοῦ ⸀βαπτίζοντος.
 translation:
-  text: And after going out, she said to her mother[a], “What should I ask for?” And she said, “The head of John the Baptizer.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, following traditional English usage, “John the Baptist.”
-    reason: lexical_alternative
+  text: She went out and asked her mother, “What should I ask for?” Her mother said, “The head of John the Baptizer.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξελθοῦσα
   chosen: after going out
@@ -69,13 +65,12 @@ revisions:
   from: And after going out, she said to her mother, “What should I ask for?” And she said, “The head of John the Baptizer.”
   to: And she went out and said to her mother, “What should I ask for?” And she said, “The head of John the Baptizer.”
   rationale: Replaced 'after going out' with the more natural and direct 'went out,' which more closely reflects the participial sequence in Greek while improving English flow. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And she went out and said to her mother[a], “What should I ask for?” And she said, “The head of John the Baptizer.”'
-  to: 'And after going out, she said to her mother, “What should I ask for?” And she said, “The head of John the Baptizer.”'
+  from: And she went out and said to her mother[a], “What should I ask for?” And she said, “The head of John the Baptizer.”
+  to: And after going out, she said to her mother, “What should I ask for?” And she said, “The head of John the Baptizer.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after going out''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -85,6 +80,13 @@ revisions:
   from: And after going out, she said to her mother, “What should I ask for?” And she said, “The head of John the Baptizer.”
   to: And after going out, she said to her mother[a], “What should I ask for?” And she said, “The head of John the Baptizer.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:14:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after going out, she said to her mother[a], “What should I ask for?” And she said, “The head of John the Baptizer.”
+  to: She went out and asked her mother, “What should I ask for?” Her mother said, “The head of John the Baptizer.”
+  rationale: The earlier review's “went out” conveys the sequence more naturally than “after going out”; the later wholesale revert supplies no meaning-based objection. I retain the deliberative question and “Baptizer,” while making the mother's response explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/006/024.job-56267.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:07Z'
+  change_level: refined
+  confidence: high
+  meaning: The girl consulted her mother, who told her to request John's head.
+  meaning_decisions:
+  - source_phrase: ἡ δὲ εἶπεν
+    prior_rendering: And she said
+    new_rendering: Her mother said
+    rationale: Naming the speaker prevents the English pronoun from appearing to refer to the girl who asked the question.
+  footnote_kinds: {}
+  history_weighed: The earlier review's “went out” conveys the sequence more naturally than “after going out”; the later wholesale revert supplies no meaning-based objection. I retain the deliberative question and “Baptizer,” while making the mother's response explicit.

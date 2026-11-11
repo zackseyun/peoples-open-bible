@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: צָד֣וּ צְעָדֵ֔י/נוּ מִ/לֶּ֖כֶת בִּ/רְחֹבֹתֵ֑י/נוּ קָרַ֥ב קִצֵּ֛י/נוּ מָלְא֥וּ יָמֵ֖י/נוּ כִּי בָ֥א קִצֵּֽי/נוּ־׃ס
 translation:
-  text: They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'They tracked our steps' or 'They lay in wait for our steps.' The Hebrew verb conveys hostile pursuit.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Our days were full'' is a Hebrew idiom meaning that the allotted time had run out or been completed.'
-    reason: cultural_note
-  - marker: c
-    text: Or 'our doom' for 'our end'; the Hebrew word means 'end' and in context implies destruction.
-    reason: lexical_alternative
+  text: They stalked our every step, so that we could not walk in our streets. Our end drew near; our days had run out, for our end had come.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: צָדוּ
   chosen: They hunted
@@ -97,14 +87,20 @@ revisions:
   from: They hunted our steps, so that we could not walk in our streets. Our end drew near; our days were full, for our end had come.
   to: They hunted our steps, so that we could not walk in our streets. Our end drew near; our days were full, for our end had come.
   rationale: Changed 'were full' to 'were fulfilled' to more naturally and accurately reflect the sense of completed days in formal English; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:54:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.'
-  to: 'They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.'
+  from: They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.
+  to: They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''our days were full''].'
+- timestamp: '2026-11-09T18:15:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They hunted our steps[a], so that we could not walk in our streets. Our end drew near; our days were fulfilled[c][b], for our end had come.
+  to: They stalked our every step, so that we could not walk in our streets. Our end drew near; our days had run out, for our end had come.
+  rationale: The history alternated between days being “full” and “fulfilled,” but its rationale consistently identifies the completion of allotted time. “Had run out” carries that meaning directly, while the repeated “our end” retains the poem’s mounting finality.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +120,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/lamentations/004/018.job-46265.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:15:58Z'
+  change_level: refined
+  confidence: high
+  meaning: Enemy pursuit prevented movement through the city, and the people’s allotted time ran out as their destruction arrived.
+  meaning_decisions:
+  - source_phrase: צָדוּ צְעָדֵינוּ
+    prior_rendering: They hunted our steps
+    new_rendering: They stalked our every step
+    rationale: The image depicts hostile tracking that makes any movement dangerous; the new wording preserves both the predatory force and the concrete steps in natural English.
+  - source_phrase: מָלְאוּ יָמֵינוּ
+    prior_rendering: our days were fulfilled
+    new_rendering: our days had run out
+    rationale: The idiom means their allotted time was complete, not that their days had achieved fulfillment or satisfaction.
+  footnote_kinds: {}
+  history_weighed: The history alternated between days being “full” and “fulfilled,” but its rationale consistently identifies the completion of allotted time. “Had run out” carries that meaning directly, while the repeated “our end” retains the poem’s mounting finality.

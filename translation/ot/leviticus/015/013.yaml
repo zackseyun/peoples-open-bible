@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/כִֽי יִטְהַ֤ר הַ/זָּב֙ מִ/זּוֹב֔/וֹ וְ/סָ֨פַר ל֜/וֹ שִׁבְעַ֥ת יָמִ֛ים לְ/טָהֳרָת֖/וֹ וְ/כִבֶּ֣ס בְּגָדָ֑י/ו וְ/רָחַ֧ץ בְּשָׂר֛/וֹ בְּ/מַ֥יִם חַיִּ֖ים וְ/טָהֵֽר־׃
 translation:
-  text: And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.
-  philosophy: optimal-equivalence
+  text: When the man's discharge has stopped, he shall count seven days for his cleansing, wash his clothes, and bathe his body in fresh running water[a]; then he shall be clean.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'living water'; that is, fresh or flowing water.
+    text: 'Literally, ''living water'': fresh water from a spring or flowing source.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הַזָּב
@@ -107,14 +107,20 @@ revisions:
   from: And when the man with the discharge is cleansed from his discharge, then he shall count seven days for his cleansing, and wash his clothes and bathe his body in fresh water; then he shall be clean.
   to: And when the man with the discharge is cleansed from his discharge, then he shall count seven days for his cleansing, and wash his clothes and bathe his body in fresh water; then he shall be clean.
   rationale: Replaced 'fresh water' with 'living water' for closer lexical accuracy to the Hebrew while keeping the rest of the draft unchanged.
-
 - timestamp: '2026-05-18T02:56:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.'
-  to: 'And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.'
+  from: And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.
+  to: And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in fresh water''].'
+- timestamp: '2026-11-09T18:19:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the man with the discharge is cleansed from his discharge[a], then he shall count seven days for his cleansing, and wash his clothes and bathe his body in living water; then he shall be clean.
+  to: When the man's discharge has stopped, he shall count seven days for his cleansing, wash his clothes, and bathe his body in fresh running water[a]; then he shall be clean.
+  rationale: The draft and lexical notes recognized the practical sense of 'living water,' while an automated pass favored the literal expression. The distinction between the discharge ending and subsequent ritual cleansing governs this rendering.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +140,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/015/013.job-45082.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:19:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Once the discharge has ended, the man must count seven days and wash his clothes and body in the prescribed water before becoming clean.
+  meaning_decisions:
+  - source_phrase: יִטְהַר הַזָּב מִזּוֹבוֹ
+    prior_rendering: the man with the discharge is cleansed from his discharge
+    new_rendering: the man's discharge has stopped
+    rationale: The opening describes recovery from the discharge, not completed ritual cleansing, which follows the seven-day period and washing.
+  - source_phrase: בְּמַיִם חַיִּים
+    prior_rendering: in living water
+    new_rendering: in fresh running water
+    rationale: Here the idiom specifies the water used for washing; the English should convey its practical meaning rather than suggest a spiritual substance, while the literal expression remains in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The draft and lexical notes recognized the practical sense of 'living water,' while an automated pass favored the literal expression. The distinction between the discharge ending and subsequent ritual cleansing governs this rendering.

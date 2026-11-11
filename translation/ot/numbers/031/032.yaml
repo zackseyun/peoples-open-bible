@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִי֙ הַ/מַּלְק֔וֹחַ יֶ֣תֶר הַ/בָּ֔ז אֲשֶׁ֥ר בָּזְז֖וּ עַ֣ם הַ/צָּבָ֑א צֹ֗אן שֵׁשׁ מֵא֥וֹת אֶ֛לֶף וְ/שִׁבְעִ֥ים אֶ֖לֶף וַ/חֲמֵֽשֶׁת אֲלָפִֽים־־׃
 translation:
-  text: The plunder[a], the remainder of the spoil that the people of the army had plundered, was 675,000 sheep.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the booty, the rest of the spoil.' The Hebrew uses two closely related war-booty terms (מַלְקוֹחַ and בָּז), likely for stylistic or classificatory nuance.
-    reason: lexical_alternative
+  text: The plunder remaining from the spoil the soldiers had taken consisted of 675,000 sheep and goats,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: '... Was'
@@ -18,7 +14,7 @@ lexical_decisions:
   - And there was
   - Now ... was
   lexicon: HALOT
-  rationale: "The waw-consecutive of היה introduces the inventory statement. 'Now ... was' gives natural English narrative progression while preserving the simple existential/copular force. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The waw-consecutive of היה introduces the inventory statement. ''Now ... was'' gives natural English narrative progression while preserving the simple existential/copular force. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: הַמַּלְקוֹחַ
   chosen: the plunder
   alternatives:
@@ -90,7 +86,6 @@ revisions:
   from: Now the plunder, the remainder of the spoil that the people of the army had taken, was 675,000 sheep.
   to: Now the plunder, the remainder of the spoil that the people of the army had plundered, was 675,000 sheep.
   rationale: Changed 'had taken' to 'had plundered' to reflect the verb more precisely and to maintain consistency with 'plunder/spoil.'
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -98,6 +93,13 @@ revisions:
   from: Now the plunder[a], the remainder of the spoil that the people of the army had plundered, was 675,000 sheep.
   to: The plunder[a], the remainder of the spoil that the people of the army had plundered, was 675,000 sheep.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T18:32:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The plunder[a], the remainder of the spoil that the people of the army had plundered, was 675,000 sheep.
+  to: The plunder remaining from the spoil the soldiers had taken consisted of 675,000 sheep and goats,
+  rationale: The recorded review favored 'plundered' to mirror the source verb, while the lexical rationale acknowledged that 'taken' is more natural with 'spoil.' I retain the current recognition of a remainder without speculating about why it remained, and preserve the exact total.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/031/032.job-41297.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The remaining captured plunder included 675,000 sheep and goats.
+  meaning_decisions:
+  - source_phrase: הַמַּלְקוֹחַ יֶתֶר הַבָּז אֲשֶׁר בָּזְזוּ עַם הַצָּבָא
+    prior_rendering: The plunder, the remainder of the spoil that the people of the army had plundered
+    new_rendering: The plunder remaining from the spoil the soldiers had taken
+    rationale: This preserves the distinction between the remaining plunder and the spoil originally seized without the unnatural 'people of the army' or a redundant English cognate repetition.
+  - source_phrase: צֹאן
+    prior_rendering: sheep
+    new_rendering: sheep and goats
+    rationale: The Hebrew collective covers both; the inventory does not establish a narrower sheep-only meaning.
+  footnote_kinds: {}
+  history_weighed: The recorded review favored 'plundered' to mirror the source verb, while the lexical rationale acknowledged that 'taken' is more natural with 'spoil.' I retain the current recognition of a remainder without speculating about why it remained, and preserve the exact total.

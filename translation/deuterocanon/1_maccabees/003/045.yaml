@@ -22,17 +22,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her offspring, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the nations; and delight was taken away from Jacob[c][b], and flute and harp ceased.
-  philosophy: optimal-equivalence
+  text: Jerusalem lay deserted like a wilderness; none of her children[a] came or went. The sanctuary was being trampled down; foreigners occupied the citadel, a lodging place for the nations. Delight had been taken from Jacob; flute and harp had fallen silent.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek γενημάτων literally means 'offspring' or 'things born'; in context it may mean 'those born in her,' that is, her inhabitants.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Acra,' the fortified citadel in Jerusalem.
-    reason: alternative_reading
-  - marker: c
-    text: '''Harp'' could also be rendered ''lyre.'''
+    text: The unusual Greek expression, literally “from her offspring,” is understood here as referring to the city’s native inhabitants.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀοίκητος
@@ -170,14 +164,20 @@ revisions:
   from: And Jerusalem was uninhabited like a wilderness; no one was entering or going out from her offspring, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the nations; and delight was taken away from Jacob, and flute and harp ceased.
   to: And Jerusalem was uninhabited like a wilderness; there was no one entering or going out from her, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the Gentiles; and delight was taken away from Jacob, and flute and harp ceased.
   rationale: Replaced 'from her offspring' with 'from her' to reflect the sense of the Greek more accurately in context; changed 'nations' to 'Gentiles' for a more natural and contextually appropriate rendering of ἔθνεσιν. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-15T14:45:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the Gentiles; and delight was taken away from Jacob[c][b], and flute and harp ceased.'
-  to: 'And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her offspring, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the nations; and delight was taken away from Jacob[c][b], and flute and harp ceased.'
-  rationale: 'Restored γενημάτων (azure dropped Greek noun entirely) and ''nations'' over interpretive ''Gentiles''.'
+  from: And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the Gentiles; and delight was taken away from Jacob[c][b], and flute and harp ceased.
+  to: And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her offspring, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the nations; and delight was taken away from Jacob[c][b], and flute and harp ceased.
+  rationale: Restored γενημάτων (azure dropped Greek noun entirely) and 'nations' over interpretive 'Gentiles'.
+- timestamp: '2026-11-09T18:52:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jerusalem was uninhabited like a wilderness[a]; there was no one entering or going out from her offspring, and the sanctuary was being trampled down, and sons of foreigners were in the citadel, a lodging place for the nations; and delight was taken away from Jacob[c][b], and flute and harp ceased.
+  to: Jerusalem lay deserted like a wilderness; none of her children[a] came or went. The sanctuary was being trampled down; foreigners occupied the citadel, a lodging place for the nations. Delight had been taken from Jacob; flute and harp had fallen silent.
+  rationale: The revert correctly objected to dropping γενημάτων entirely, so I retain its mother-city imagery and explain the unusual wording in a note. I also retain “nations” and the poetic movement from desolation and desecration to lost delight and music.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -197,3 +197,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/045.job-48130.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:27Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem’s native life and joy have disappeared while its sanctuary is dishonored and foreigners occupy its citadel.
+  meaning_decisions:
+  - source_phrase: Ἰερουσαλὴμ ἦν ἀοίκητος ὡς ἔρημος
+    prior_rendering: Jerusalem was uninhabited like a wilderness
+    new_rendering: Jerusalem lay deserted like a wilderness
+    rationale: The wording preserves the wilderness image and the lament over the emptied city without suggesting that the foreign occupants mentioned next were absent.
+  - source_phrase: οὐκ ἦν ὁ εἰσπορευόμενος καὶ ἐκπορευόμενος ἐκ τῶν γενημάτων αὐτῆς
+    prior_rendering: there was no one entering or going out from her offspring
+    new_rendering: none of her children came or went
+    rationale: The likely reference is to Jerusalem’s native people; the mother-city image is retained while the normal activity of inhabitants is expressed clearly.
+  - source_phrase: υἱοὶ ἀλλογενῶν ἐν τῇ ἄκρᾳ
+    prior_rendering: sons of foreigners were in the citadel
+    new_rendering: foreigners occupied the citadel
+    rationale: The expression identifies foreign people, not their parentage, and the military setting establishes their occupation of the stronghold.
+  - source_phrase: ἐξῆρθη τέρψις ἐξ Ἰακώβ, καὶ ἐξέλιπεν αὐλὸς καὶ κινύρα
+    prior_rendering: delight was taken away from Jacob, and flute and harp ceased
+    new_rendering: Delight had been taken from Jacob; flute and harp had fallen silent
+    rationale: The instruments’ cessation means the disappearance of their music; the parallel lament is preserved rather than explained away.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revert correctly objected to dropping γενημάτων entirely, so I retain its mother-city imagery and explain the unusual wording in a note. I also retain “nations” and the poetic movement from desolation and desecration to lost delight and music.

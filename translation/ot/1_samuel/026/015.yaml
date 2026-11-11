@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּאמֶר֩ דָּוִ֨ד אֶל אַבְנֵ֜ר הֲ/לוֹא אִ֣ישׁ אַתָּ֗ה וּ/מִ֤י כָמ֨וֹ/ךָ֙ בְּ/יִשְׂרָאֵ֔ל וְ/לָ֨/מָּה֙ לֹ֣א שָׁמַ֔רְתָּ אֶל אֲדֹנֶ֖י/ךָ הַ/מֶּ֑לֶךְ כִּי בָא֙ אַחַ֣ד הָ/עָ֔ם לְ/הַשְׁחִ֖ית אֶת הַ/מֶּ֥לֶךְ אֲדֹנֶֽי/ךָ־־־־־׃
 translation:
-  text: David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
-  philosophy: optimal-equivalence
+  text: David said to Abner, “Are you not a warrior[a]? Who in Israel is your equal? Why then have you not kept watch over your lord the king? Someone came to kill your lord the king.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “And who is your equal in Israel?”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “one of the people,” meaning one person from among the camp.
+    text: Literally, “Are you not a man?”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הֲלוֹא אִישׁ אַתָּה
@@ -84,14 +81,20 @@ revisions:
   from: David said to Abner, “Are you not a man? And who is like you in Israel? So why have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
   to: David said to Abner, “Are you not a man? And who is like you in Israel? So why have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
   rationale: Changed 'So why' to 'Why then' for a more formal and natural rendering of the conjunction, while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”'
-  to: 'David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”'
+  from: David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
+  to: David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''So why have you not kept watch over''].'
+- timestamp: '2026-11-09T17:23:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David said to Abner[b][a], “Are you not a man? And who is like you in Israel? Why then have you not kept watch over your lord the king? For one of the people came to destroy the king your lord.”
+  to: David said to Abner, “Are you not a warrior[a]? Who in Israel is your equal? Why then have you not kept watch over your lord the king? Someone came to kill your lord the king.”
+  rationale: I retain the history’s emphasis on Abner’s protective duty, but depart from its source-literal defense of “man” and “destroy” to convey the military taunt and lethal threat. The earlier note identifying the intruder as someone from Saul’s camp is not established by the wording or context.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +114,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/026/015.job-59426.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David taunts Abner’s reputation as Israel’s outstanding warrior because he failed to protect the king from someone who came to kill him.
+  meaning_decisions:
+  - source_phrase: הֲלוֹא אִישׁ אַתָּה
+    prior_rendering: Are you not a man?
+    new_rendering: Are you not a warrior?
+    rationale: David is challenging Abner’s military stature and competence, not asking whether he is male or an adult.
+  - source_phrase: וּמִי כָמוֹךָ בְּיִשְׂרָאֵל
+    prior_rendering: And who is like you in Israel?
+    new_rendering: Who in Israel is your equal?
+    rationale: The comparison concerns Abner’s unrivaled standing, which intensifies the accusation that follows.
+  - source_phrase: כִּי בָא אַחַד הָעָם
+    prior_rendering: For one of the people came
+    new_rendering: Someone came
+    rationale: The expression identifies a single person without requiring that person to belong to Saul’s camp.
+  - source_phrase: לְהַשְׁחִית אֶת הַמֶּלֶךְ אֲדֹנֶיךָ
+    prior_rendering: to destroy the king your lord
+    new_rendering: to kill your lord the king
+    rationale: Abishai’s stated intention in verse 8 establishes that the threatened destruction is the king’s death.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the history’s emphasis on Abner’s protective duty, but depart from its source-literal defense of “man” and “destroy” to convey the military taunt and lethal threat. The earlier note identifying the intruder as someone from Saul’s camp is not established by the wording or context.

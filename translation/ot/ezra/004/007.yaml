@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וּ/בִ/ימֵ֣י אַרְתַּחְשַׁ֗שְׂתָּא כָּתַ֨ב בִּשְׁלָ֜ם מִתְרְדָ֤ת טָֽבְאֵל֙ וּ/שְׁאָ֣ר כנות/ו עַל ארתחששתא מֶ֣לֶךְ פָּרָ֑ס וּ/כְתָב֙ הַֽ/נִּשְׁתְּוָ֔ן כָּת֥וּב אֲרָמִ֖ית וּ/מְתֻרְגָּ֥ם אֲרָמִֽית־׃פ
 translation:
-  text: And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.
-  philosophy: optimal-equivalence
+  text: During the reign of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of their associates[a] wrote to Artaxerxes, king of Persia. The letter was written in Aramaic script and in the Aramaic language[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'The document was written in the Aramaic script and translated into Aramaic.' The Hebrew/Aramaic wording is difficult, and interpreters differ on whether the distinction is between script and language or between writing and translation.
+    text: Literally, “his associates.”
     reason: lexical_alternative
   - marker: b
-    text: Or 'and the rest of their associates.' The suffix in 'his associates' is singular in form, but the group reference may be collective.
-    reason: lexical_alternative
+    text: Or “written in Aramaic and translated from Aramaic”; the relationship between writing and translation in the Hebrew wording is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וּבִימֵי
   chosen: And in the days of
@@ -99,14 +99,20 @@ revisions:
   from: And in the days of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia. The text of the letter was written in Aramaic and translated in Aramaic.
   to: And in the days of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia. The text of the letter was written in Aramaic and translated in Aramaic.
   rationale: Changed the final phrase from 'translated in Aramaic' to 'translated from Aramaic' to better reflect the sense of the clause in natural English while preserving the source wording.
-
 - timestamp: '2026-05-18T02:57:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.'
-  to: 'And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.'
+  from: And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.
+  to: And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and translated in Aramaic''].'
+- timestamp: '2026-11-09T17:41:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in the days of Artaxerxes[a], Bishlam, Mithredath, Tabeel, and the rest of his associates wrote to Artaxerxes king of Persia[b]. The text of the letter was written in Aramaic and translated from Aramaic.
+  to: During the reign of Artaxerxes, Bishlam, Mithredath, Tabeel, and the rest of their associates[a] wrote to Artaxerxes, king of Persia. The letter was written in Aramaic script and in the Aramaic language[b].
+  rationale: The recorded history is inconsistent over 'in' versus 'from Aramaic' and contains no maintainer ruling. I favor the documented script–language interpretation rather than treating the disputed direction of translation as certain.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +132,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/004/007.job-43030.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: During Artaxerxes’s reign, named men and their associates wrote to the Persian king, using Aramaic writing and language.
+  meaning_decisions:
+  - source_phrase: וּשְׁאָר כנותו
+    prior_rendering: and the rest of his associates
+    new_rendering: and the rest of their associates
+    rationale: The associates belong to the named group in the sentence; the collective English reference is clearer, while the singular Hebrew suffix is preserved in a note.
+  - source_phrase: וּכְתָב הַנִּשְׁתְּוָן כָּתוּב אֲרָמִית וּמְתֻרְגָּם אֲרָמִית
+    prior_rendering: The text of the letter was written in Aramaic and translated from Aramaic.
+    new_rendering: The letter was written in Aramaic script and in the Aramaic language
+    rationale: The repeated reference to Aramaic is best understood here as distinguishing script from language; the serious alternative involving translation remains in a footnote.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The recorded history is inconsistent over 'in' versus 'from Aramaic' and contains no maintainer ruling. I favor the documented script–language interpretation rather than treating the disputed direction of translation as certain.

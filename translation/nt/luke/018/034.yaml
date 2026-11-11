@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ αὐτοὶ οὐδὲν τούτων συνῆκαν, καὶ ἦν τὸ ῥῆμα τοῦτο κεκρυμμένον ἀπ’ αὐτῶν, καὶ οὐκ ἐγίνωσκον τὰ λεγόμενα.
 translation:
-  text: And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'this saying' or 'this message' for 'this word.'
-    reason: lexical_alternative
-  - marker: b
-    text: The passive 'was hidden from them' does not state who or what concealed it.
-    reason: alternative_reading
-  - marker: c
-    text: Or 'what was being said.'
-    reason: lexical_alternative
+  text: But they understood none of this. The meaning of this saying was hidden from them, and they did not grasp what he was saying.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: συνῆκαν
   chosen: understood
@@ -90,14 +80,20 @@ revisions:
   from: And they understood none of these things, and this word was hidden from them, and they did not know the things being said.
   to: And they understood none of these things, and this word was hidden from them, and they did not know the things being said.
   rationale: Changed 'word' to 'saying' for more natural and contextually fitting rendering of ῥῆμα, and changed 'did not know' to 'did not understand' for better alignment with the sense of ἐγίνωσκον here.
-
 - timestamp: '2026-05-16T23:22:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.'
-  to: 'And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.'
-  rationale: 'Restored drafter ''this word was hidden from them'' (preserving the chosen ''word'' rendering of ῥῆμα) and ''they did not know the things being said'' (preserving the chosen ''know'' rendering) per chosen renderings.'
+  from: And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.
+  to: And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.
+  rationale: Restored drafter 'this word was hidden from them' (preserving the chosen 'word' rendering of ῥῆμα) and 'they did not know the things being said' (preserving the chosen 'know' rendering) per chosen renderings.
+- timestamp: '2026-11-09T17:12:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they understood none of these things[a], and this saying was hidden from them[c][b], and they did not understand the things being said.
+  to: But they understood none of this. The meaning of this saying was hidden from them, and they did not grasp what he was saying.
+  rationale: The review's movement from “word” and “know” to “saying” and “understand” correctly identified the contextual meaning; the automated revert rationales add little contrary evidence. The threefold emphasis and the unexplained hiddenness remain intact.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -119,3 +115,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/018/034.job-55832.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Twelve cannot understand Jesus' prediction because its meaning remains hidden from them.
+  meaning_decisions:
+  - source_phrase: καὶ αὐτοὶ οὐδὲν τούτων συνῆκαν
+    prior_rendering: And they understood none of these things
+    new_rendering: But they understood none of this
+    rationale: The connection contrasts Jesus' explicit prediction with the disciples' incomprehension; “none of this” naturally refers to the whole preceding prediction.
+  - source_phrase: ἦν τὸ ῥῆμα τοῦτο κεκρυμμένον ἀπ’ αὐτῶν
+    prior_rendering: this saying was hidden from them
+    new_rendering: The meaning of this saying was hidden from them
+    rationale: They heard the saying, but its meaning remained concealed; making this explicit avoids suggesting that the spoken words themselves were withheld, while leaving the agent of concealment unstated.
+  - source_phrase: οὐκ ἐγίνωσκον τὰ λεγόμενα
+    prior_rendering: they did not understand the things being said
+    new_rendering: they did not grasp what he was saying
+    rationale: This naturally conveys failure to comprehend Jesus' words and retains Luke's third statement of their incomprehension.
+  footnote_kinds: {}
+  history_weighed: The review's movement from “word” and “know” to “saying” and “understand” correctly identified the contextual meaning; the automated revert rationales add little contrary evidence. The threefold emphasis and the unexplained hiddenness remain intact.

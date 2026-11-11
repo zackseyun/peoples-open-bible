@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֗י מִ/קְצֵה֙ עֶשְׂרִ֣ים שָׁנָ֔ה אֲשֶׁר בָּנָ֥ה שְׁלֹמֹ֖ה אֶת שְׁנֵ֣י הַ/בָּתִּ֑ים אֶת בֵּ֥ית יְהוָ֖ה וְ/אֶת בֵּ֥ית הַ/מֶּֽלֶךְ־־־־׃
 translation:
-  text: And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king's house—
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'after twenty years.' The Hebrew idiom marks the completion of a twenty-year period.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'the two houses,' namely, the house of the LORD and the king's house.
-    reason: lexical_alternative
+  text: Twenty years had now passed, during which Solomon had built the two buildings—the house of Yahweh and the royal palace.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened
@@ -98,17 +91,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And it happened at the end of twenty years, during which Solomon had built the two houses—the house of the LORD and the king''s house—'
-  to: 'And it happened at the end of twenty years, during which Solomon had built the two houses—the house of the LORD and the king''s house—'
+  from: And it happened at the end of twenty years, during which Solomon had built the two houses—the house of the LORD and the king's house—
+  to: And it happened at the end of twenty years, during which Solomon had built the two houses—the house of the LORD and the king's house—
   rationale: Changed 'during which' to 'in which' for a more direct and formal rendering of the relative clause; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:57:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king''s house—'
-  to: 'And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king''s house—'
+  from: And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king's house—
+  to: And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king's house—
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''during which''].'
+- timestamp: '2026-11-09T17:21:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened at the end of twenty years[b][a], in which Solomon had built the two houses—the house of Yahweh and the king's house—
+  to: Twenty years had now passed, during which Solomon had built the two buildings—the house of Yahweh and the royal palace.
+  rationale: The earlier draft and lexical discussion used 'during which,' which clearly connects the building activity to the twenty-year period. The automated changes between 'during' and 'in' carry little interpretive weight; I use the clearer phrase and make the temporal introduction a complete sentence.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/009/010.job-58311.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Twenty years had elapsed while Solomon built Yahweh’s house and the royal palace.
+  meaning_decisions:
+  - source_phrase: וַיְהִי מִקְצֵה עֶשְׂרִים שָׁנָה
+    prior_rendering: And it happened at the end of twenty years
+    new_rendering: Twenty years had now passed
+    rationale: A complete sentence naturally establishes the end of the building period as the setting for the following transaction.
+  - source_phrase: שְׁנֵי הַבָּתִּים ... וְאֶת בֵּית הַמֶּלֶךְ
+    prior_rendering: the two houses ... and the king’s house
+    new_rendering: the two buildings ... and the royal palace
+    rationale: These are the temple and palace construction projects, not two ordinary houses; Yahweh’s house designation remains intact.
+  footnote_kinds: {}
+  history_weighed: The earlier draft and lexical discussion used 'during which,' which clearly connects the building activity to the twenty-year period. The automated changes between 'during' and 'in' carry little interpretive weight; I use the clearer phrase and make the temporal introduction a complete sentence.

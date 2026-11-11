@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/עַתָּ֕ה אֱמֶ֖ת אַגִּ֣יד לָ֑/ךְ הִנֵּה עוֹד֩ שְׁלֹשָׁ֨ה מְלָכִ֜ים עֹמְדִ֣ים לְ/פָרַ֗ס וְ/הָֽ/רְבִיעִי֙ יַעֲשִׁ֤יר עֹֽשֶׁר גָּדוֹל֙ מִ/כֹּ֔ל וּ/כְ/חֶזְקָת֣/וֹ בְ/עָשְׁר֔/וֹ יָעִ֣יר הַ/כֹּ֔ל אֵ֖ת מַלְכ֥וּת יָוָֽן־־׃
 translation:
-  text: 'And now I will tell you the truth: behold[a], three more kings will arise for Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches[c][b], he will stir up everyone against the kingdom of Greece.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'three additional kings will stand up for Persia.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the fourth will gain great wealth beyond all.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'he will rouse all against the kingdom of Greece.'
-    reason: lexical_alternative
+  text: 'Now I will tell you the truth: three more kings will arise to rule Persia, and the fourth will become far richer than all the others. When his wealth has made him powerful, he will stir up everyone against the kingdom of Greece.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: And now
@@ -127,14 +117,20 @@ revisions:
   from: 'And now I will tell you the truth: behold, three more kings will arise for Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches, he will stir up everyone against the kingdom of Greece.'
   to: 'And now I will tell you the truth: behold, three more kings will arise in Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches, he will stir up all against the kingdom of Greece.'
   rationale: Changed 'for Persia' to 'in Persia' for more natural and accurate English, and changed 'everyone' to 'all' to more closely reflect the source wording.
-
 - timestamp: '2026-05-16T04:26:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'And now I will tell you the truth: behold[a], three more kings will arise in Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches[c][b], he will stir up all against the kingdom of Greece.'
   to: 'And now I will tell you the truth: behold[a], three more kings will arise for Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches[c][b], he will stir up everyone against the kingdom of Greece.'
-  rationale: 'Azure substituted ''in Persia'' (drafter''s rejected alt — לְ tracks ''for'' directionally, not ''in''/בְ) and ''all'' (drafter''s rejected alt — הַכֹּל in עור-context means persons, idiomatic ''everyone'').'
+  rationale: Azure substituted 'in Persia' (drafter's rejected alt — לְ tracks 'for' directionally, not 'in'/בְ) and 'all' (drafter's rejected alt — הַכֹּל in עור-context means persons, idiomatic 'everyone').
+- timestamp: '2026-11-09T17:30:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And now I will tell you the truth: behold[a], three more kings will arise for Persia, and the fourth will become far richer than all of them; and when he becomes strong through his riches[c][b], he will stir up everyone against the kingdom of Greece.'
+  to: 'Now I will tell you the truth: three more kings will arise to rule Persia, and the fourth will become far richer than all the others. When his wealth has made him powerful, he will stir up everyone against the kingdom of Greece.'
+  rationale: The automated revision and revert debated 'in Persia' versus 'for Persia' chiefly on formal grounds; 'to rule Persia' expresses the relationship both were addressing. I retain the later history's personal sense of 'everyone' and its understanding of action against Greece.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -157,3 +153,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/daniel/011/002.job-61256.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Three further Persian kings and then an exceptionally wealthy fourth king will arise, and the fourth will use his wealth-backed power to mobilize opposition to Greece.
+  meaning_decisions:
+  - source_phrase: עֹמְדִים לְפָרַס
+    prior_rendering: will arise for Persia
+    new_rendering: will arise to rule Persia
+    rationale: The phrase concerns royal succession in the Persian realm, not kings appearing on Persia's behalf; the royal relationship is made explicit.
+  - source_phrase: וּכְחֶזְקָתוֹ בְעָשְׁרוֹ
+    prior_rendering: when he becomes strong through his riches
+    new_rendering: When his wealth has made him powerful
+    rationale: The new construction makes the connection between wealth and political power immediately clear.
+  footnote_kinds: {}
+  history_weighed: The automated revision and revert debated 'in Persia' versus 'for Persia' chiefly on formal grounds; 'to rule Persia' expresses the relationship both were addressing. I retain the later history's personal sense of 'everyone' and its understanding of action against Greece.

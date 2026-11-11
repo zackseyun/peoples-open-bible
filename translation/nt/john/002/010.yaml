@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ λέγει αὐτῷ· Πᾶς ἄνθρωπος πρῶτον τὸν καλὸν οἶνον τίθησιν, καὶ ὅταν ⸀μεθυσθῶσιν τὸν ἐλάσσω· σὺ τετήρηκας τὸν καλὸν οἶνον ἕως ἄρτι.
 translation:
-  text: And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'when they are drunk' or 'when they have drunk freely.' The Greek verb commonly means 'become drunk'; some translations soften the expression to emphasize reduced discernment rather than explicit intoxication.
-    reason: lexical_alternative
-  - marker: b
-    text: Greek 'Every man' uses a generic singular expression meaning people generally, not males only.
-    reason: cultural_note
+  text: And he said to him, “Everyone serves the good wine first, and then the inferior wine when the guests have become drunk. But you have kept the good wine until now.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λέγει αὐτῷ
   chosen: he said to him
@@ -107,14 +100,20 @@ revisions:
   from: And he said to him, “Every man sets out the good wine first, and when they have become drunk, then the inferior. But you have kept the good wine until now.”
   to: And he said to him, “Every man sets out the good wine first, and when they have become drunk, then the inferior. But you have kept the good wine until now.”
   rationale: Changed 'Every man' to 'Everyone' for more natural and inclusive formal English; otherwise retained the draft, which accurately reflects the Greek.
-
 - timestamp: '2026-05-18T03:00:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”'
-  to: 'And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”'
+  from: And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”
+  to: And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Every man''].'
+- timestamp: '2026-11-09T17:09:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to him[a], “Everyone sets out the good wine first, and when they have become drunk, then the inferior[b]. But you have kept the good wine until now.”
+  to: And he said to him, “Everyone serves the good wine first, and then the inferior wine when the guests have become drunk. But you have kept the good wine until now.”
+  rationale: The current “Everyone” accurately conveys the generic expression despite the recorded discussion of “Every man.” I also preserve the deliberation’s insistence on the plain sense of drunkenness, while clarifying the implied guests and wine rather than retaining the Greek ellipsis.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +135,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/002/010.job-54697.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The master of the feast told the bridegroom that he had reversed the usual practice by keeping the good wine until after inferior wine would normally be served.
+  meaning_decisions:
+  - source_phrase: τίθησιν
+    prior_rendering: sets out
+    new_rendering: serves
+    rationale: In this banquet setting the action is serving wine, not merely placing it somewhere.
+  - source_phrase: καὶ ὅταν μεθυσθῶσιν τὸν ἐλάσσω
+    prior_rendering: and when they have become drunk, then the inferior
+    new_rendering: and then the inferior wine when the guests have become drunk
+    rationale: The supplied subject “the guests” and repeated noun “wine” clarify the Greek’s compressed construction while retaining its explicit reference to drunkenness.
+  footnote_kinds: {}
+  history_weighed: The current “Everyone” accurately conveys the generic expression despite the recorded discussion of “Every man.” I also preserve the deliberation’s insistence on the plain sense of drunkenness, while clarifying the implied guests and wine rather than retaining the Greek ellipsis.

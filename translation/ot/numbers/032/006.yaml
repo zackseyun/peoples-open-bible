@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר מֹשֶׁ֔ה לִ/בְנֵי גָ֖ד וְ/לִ/בְנֵ֣י רְאוּבֵ֑ן הַ/אַֽחֵי/כֶ֗ם יָבֹ֨אוּ֙ לַ/מִּלְחָמָ֔ה וְ/אַתֶּ֖ם תֵּ֥שְׁבוּ פֹֽה־׃
 translation:
-  text: But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “go to battle.” The Hebrew says “go to the war,” using a common idiom for entering military conflict.
-    reason: lexical_alternative
-  - marker: b
-    text: “Your brothers” refers to their fellow Israelites from the other tribes.
-    reason: cultural_note
+  text: But Moses said to the Gadites and Reubenites, “Should your brothers go to war while you sit here?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: said
@@ -78,14 +71,20 @@ revisions:
   from: But Moses said to the sons of Gad and to the sons of Reuben, “Shall your brothers go to the war while you sit here?”
   to: But Moses said to the sons of Gad and to the sons of Reuben, “Shall your brothers go to the war while you sit here?”
   rationale: Changed 'go to the war' to 'go to war' for natural English while preserving the meaning; no other changes needed.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”'
-  to: 'But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”'
+  from: But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”
+  to: But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the war''].'
+- timestamp: '2026-11-09T18:32:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Moses said to the sons of Gad and to the sons of Reuben[b][a], “Shall your brothers go to war while you sit here?”
+  to: But Moses said to the Gadites and Reubenites, “Should your brothers go to war while you sit here?
+  rationale: The current natural phrase 'go to war' is retained despite the automated revert rationale favoring 'the war.' The lexical rationale rightly recognizes the solidarity expressed by 'brothers' and the sharp contrast in 'sit here'; both are preserved.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -105,3 +104,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/032/006.job-41919.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses rebukes them for apparently expecting their fellow Israelites to fight while they remain behind.
+  meaning_decisions:
+  - source_phrase: לִבְנֵי גָד וְלִבְנֵי רְאוּבֵן
+    prior_rendering: to the sons of Gad and to the sons of Reuben
+    new_rendering: to the Gadites and Reubenites
+    rationale: The conventional tribal designations make the identity of those addressed clear.
+  - source_phrase: הַאַחֵיכֶם יָבֹאוּ לַמִּלְחָמָה
+    prior_rendering: Shall your brothers go to war
+    new_rendering: Should your brothers go to war
+    rationale: The question challenges the fairness of their proposal rather than simply asking what will happen.
+  footnote_kinds: {}
+  history_weighed: The current natural phrase 'go to war' is retained despite the automated revert rationale favoring 'the war.' The lexical rationale rightly recognizes the solidarity expressed by 'brothers' and the sharp contrast in 'sit here'; both are preserved.

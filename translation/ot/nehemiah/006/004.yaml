@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלְח֥וּ אֵלַ֛/י כַּ/דָּבָ֥ר הַ/זֶּ֖ה אַרְבַּ֣ע פְּעָמִ֑ים וָ/אָשִׁ֥יב אוֹתָ֖/ם כַּ/דָּבָ֥ר הַ/זֶּֽה׃ס
 translation:
-  text: They sent to me four times in this way[a], and I answered them in the same way.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'according to this word' in both clauses; the phrase refers to the same message being sent and the same kind of answer being returned.
-    reason: lexical_alternative
+  text: They sent me the same message four times, and I gave them the same answer each time.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּשְׁלְחוּ
   chosen: They sent
@@ -76,14 +72,20 @@ revisions:
   from: They sent to me four times with this same message, and I answered them in the same way.
   to: They sent to me four times with this same message, and I answered them in the same way.
   rationale: Replaced 'with this same message' with 'in this way' to more directly reflect the Hebrew wording and avoid adding 'message,' which is not explicit in the source.
-
 - timestamp: '2026-05-18T02:54:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They sent to me four times in this way[a], and I answered them in the same way.'
-  to: 'They sent to me four times in this way[a], and I answered them in the same way.'
+  from: They sent to me four times in this way[a], and I answered them in the same way.
+  to: They sent to me four times in this way[a], and I answered them in the same way.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with this same message''].'
+- timestamp: '2026-11-09T18:25:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They sent to me four times in this way[a], and I answered them in the same way.
+  to: They sent me the same message four times, and I gave them the same answer each time.
+  rationale: The first draft and lexical rationale correctly identify the repeated message, while the recorded automated objection favored leaving its implied object unstated. I follow the contextual meaning and make both the repeated invitation and repeated answer explicit.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -103,3 +105,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/006/004.job-42636.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:22Z'
+  change_level: refined
+  confidence: high
+  meaning: Nehemiah received the same invitation four times and gave the same refusal each time.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁלְחוּ אֵלַי כַּדָּבָר הַזֶּה אַרְבַּע פְּעָמִים
+    prior_rendering: They sent to me four times in this way
+    new_rendering: They sent me the same message four times
+    rationale: The repeated phrase refers to the invitation’s content, not merely the manner of sending it; “message” makes the understood object explicit.
+  - source_phrase: וָאָשִׁיב אוֹתָם כַּדָּבָר הַזֶּה
+    prior_rendering: and I answered them in the same way
+    new_rendering: and I gave them the same answer each time
+    rationale: This makes clear that Nehemiah repeated his refusal on every occasion rather than merely answering in a similar style.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identify the repeated message, while the recorded automated objection favored leaving its implied object unstated. I follow the contextual meaning and make both the repeated invitation and repeated answer explicit.

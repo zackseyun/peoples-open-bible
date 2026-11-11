@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ֠/אֵת עֲשֶׂ֜רֶת חֲרִצֵ֤י הֶֽ/חָלָב֙ הָ/אֵ֔לֶּה תָּבִ֖יא לְ/שַׂר הָ/אָ֑לֶף וְ/אֶת אַחֶ֨י/ךָ֙ תִּפְקֹ֣ד לְ/שָׁל֔וֹם וְ/אֶת עֲרֻבָּתָ֖/ם תִּקָּֽח־־־׃
 translation:
-  text: Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and bring back some token from them.
-  philosophy: optimal-equivalence
+  text: Also take these ten pieces of cheese to the commander of their thousand-man unit. Check on your brothers’ welfare and bring back a token from them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “their pledge,” that is, some item or sign brought back as proof of your brothers’ condition.
+    text: Literally, “take their pledge,” probably a token confirming their welfare.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: חֲרִצֵי הֶחָלָב
@@ -84,14 +84,20 @@ revisions:
   from: Also bring these ten cuts of cheese to the commander of the thousand, check on your brothers’ welfare, and bring back some token from them.
   to: Also bring these ten cuts of cheese to the commander of the thousand, check on your brothers’ welfare, and take their pledge.
   rationale: Replaced interpretive 'bring back some token from them' with the more literal 'take their pledge' to better reflect עֲרֻבָּתָם. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-16T05:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and take their pledge.'
-  to: 'Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and bring back some token from them.'
+  from: Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and take their pledge.
+  to: Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and bring back some token from them.
   rationale: 'Azure conflated TWO rejected alternatives: ''their pledge'' (rejected for עֲרֻבָּתָם — drafter chose ''some token from them'' as idiomatic) and ''take'' (rejected for תִּקָּח — drafter chose ''bring back'' to make directional sense toward Jesse explicit).'
+- timestamp: '2026-11-09T17:23:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Also bring these ten cuts of cheese to the commander of the thousand[a], check on your brothers’ welfare, and bring back some token from them.
+  to: Also take these ten pieces of cheese to the commander of their thousand-man unit. Check on your brothers’ welfare and bring back a token from them[a].
+  rationale: The review’s “take their pledge” preserved the literal expression but obscured the likely purpose of Jesse’s request. I retain the current wording’s contextual understanding of a token brought back, while acknowledging the uncertain expression in a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -111,3 +117,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/018.job-59160.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: David must also deliver cheese to his brothers’ commander, check their welfare, and obtain a token to bring back to Jesse.
+  meaning_decisions:
+  - source_phrase: חֲרִצֵי הֶחָלָב
+    prior_rendering: cuts of cheese
+    new_rendering: pieces of cheese
+    rationale: The phrase denotes portions of a dairy product; “pieces of cheese” is natural English without suggesting a particular shape or thickness.
+  - source_phrase: לְשַׂר הָאָלֶף
+    prior_rendering: to the commander of the thousand
+    new_rendering: to the commander of their thousand-man unit
+    rationale: The thousand is a military unit, and the context identifies it as the unit in which David’s brothers serve.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review’s “take their pledge” preserved the literal expression but obscured the likely purpose of Jesse’s request. I retain the current wording’s contextual understanding of a token brought back, while acknowledging the uncertain expression in a footnote.

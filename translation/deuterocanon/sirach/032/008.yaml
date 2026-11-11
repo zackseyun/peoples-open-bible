@@ -26,12 +26,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 32:8
 translation:
-  text: Speak briefly[a], though you know much, and be like one who knows and keeps silent.
-  philosophy: optimal-equivalence
+  text: Say much in few words[a]; be like one who knows yet keeps silent.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew text is somewhat compressed and may be elliptical: literally, something like ''Speak little—much; and be like one knowing and keeping silent together.'' The translation brings out the likely sense of restrained speech. The Greek parallel for this verse in Swete does not correspond to this Hebrew line, so the Hebrew is followed as the primary witness here.'
-    reason: textual_variant
+    text: Or, “Speak briefly, though you know much”; the Hebrew is compressed.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: כל
   chosen: briefly
@@ -124,14 +124,20 @@ revisions:
   from: Speak briefly, though you know much, and be like one who knows and yet keeps silent.
   to: Speak briefly, though you know much, and be like one who knows and yet keeps silent.
   rationale: Removed 'yet' for a more formal, less interpretive rendering while preserving the sense; otherwise retained the draft's accurate and natural wording.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Speak briefly[a], though you know much, and be like one who knows and keeps silent.'
-  to: 'Speak briefly[a], though you know much, and be like one who knows and keeps silent.'
+  from: Speak briefly[a], though you know much, and be like one who knows and keeps silent.
+  to: Speak briefly[a], though you know much, and be like one who knows and keeps silent.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and yet keeps silent''].'
+- timestamp: '2026-11-09T19:07:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Speak briefly[a], though you know much, and be like one who knows and keeps silent.
+  to: Say much in few words[a]; be like one who knows yet keeps silent.
+  rationale: The earlier passes chiefly debated “yet,” which expresses the meaningful tension well and was present in the first draft. I read the compressed opening as saying much concisely, while retaining the earlier understanding as a serious alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -151,3 +157,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/032/008.job-51857.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The young speaker should convey substantial meaning concisely and show that knowledge does not require continual speech.
+  meaning_decisions:
+  - source_phrase: כל לאמר ומעט הרבה
+    prior_rendering: Speak briefly, though you know much
+    new_rendering: Say much in few words
+    rationale: The juxtaposition of little and much most naturally calls for concise expression of substantial content; it need not supply an unstated clause about how much the speaker knows.
+  - source_phrase: ודמה ליודע ומחריש יחדו
+    prior_rendering: and be like one who knows and keeps silent
+    new_rendering: be like one who knows yet keeps silent
+    rationale: “Yet” makes clear the deliberate conjunction of knowledge and voluntary silence rather than treating them as unrelated qualities.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier passes chiefly debated “yet,” which expresses the meaningful tension well and was present in the first draft. I read the compressed opening as saying much concisely, while retaining the earlier understanding as a serious alternative.

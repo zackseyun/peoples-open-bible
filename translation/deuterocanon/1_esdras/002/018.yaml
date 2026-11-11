@@ -23,15 +23,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute[b][a], but will even oppose kings.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'they will certainly not continue to pay tribute.' The Greek phrase literally says they 'will certainly not endure to pay,' which may emphasize refusal to remain under imperial tribute rather than mere inability.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek source for this verse is the primary witness. Its wording here does not closely match the supplied MT-parallel material, so the translation follows the Greek directly while reflecting the broader restoration context signaled by the parallel tradition.
-    reason: textual_variant
+  text: So if this city is rebuilt and its walls are completed, its people will certainly refuse to pay tribute and will even oppose kings.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐὰν οὖν
   chosen: Therefore, if
@@ -120,13 +113,12 @@ revisions:
   from: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute, but will even oppose kings.
   to: Therefore, if this city is rebuilt and the walls are completed, they will certainly not continue to pay tribute, but will even oppose kings.
   rationale: Changed 'endure to pay tribute' to 'continue to pay tribute' for more natural English while preserving the sense of refusing ongoing tribute payment.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore[a], if this city is rebuilt and the walls are completed, they will certainly not continue to pay tribute[b], but will even oppose kings.'
-  to: 'Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute, but will even oppose kings.'
+  from: Therefore[a], if this city is rebuilt and the walls are completed, they will certainly not continue to pay tribute[b], but will even oppose kings.
+  to: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute, but will even oppose kings.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will certainly not endure to pay''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -136,6 +128,13 @@ revisions:
   from: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute, but will even oppose kings.
   to: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute[b][a], but will even oppose kings.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('tribute') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:49:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore, if this city is rebuilt and the walls are completed, they will certainly not endure to pay tribute[b][a], but will even oppose kings.
+  to: So if this city is rebuilt and its walls are completed, its people will certainly refuse to pay tribute and will even oppose kings.
+  rationale: The earlier revision recognized the unnaturalness of “endure to pay,” although “continue to pay” did not fully convey the charge of refusal. The lexical rationale supports refusal to remain under imperial tribute, which the new wording expresses directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -155,3 +154,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/002/018.job-47528.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The complainants warn that a rebuilt and fortified Jerusalem will refuse imperial tribute and oppose kings.
+  meaning_decisions:
+  - source_phrase: φορολογίαν οὐ μὴ ὑπομείνωσιν δοῦναι
+    prior_rendering: they will certainly not endure to pay tribute
+    new_rendering: its people will certainly refuse to pay tribute
+    rationale: The emphatic negative concerns unwillingness to submit to the tribute obligation, not an inability to endure payment; the implied human subject is made explicit.
+  footnote_kinds: {}
+  history_weighed: The earlier revision recognized the unnaturalness of “endure to pay,” although “continue to pay” did not fully convey the charge of refusal. The lexical rationale supports refusal to remain under imperial tribute, which the new wording expresses directly.

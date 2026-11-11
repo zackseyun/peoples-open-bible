@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/יוֹאָ֗ב שָׁ֚ב מֵ/אַחֲרֵ֣י אַבְנֵ֔ר וַ/יִּקְבֹּ֖ץ אֶת כָּל הָ/עָ֑ם וַ/יִּפָּ֨קְד֜וּ מֵ/עַבְדֵ֥י דָוִ֛ד תִּשְׁעָֽה עָשָׂ֥ר אִ֖ישׁ וַ/עֲשָׂה אֵֽל־־־־׃
 translation:
-  text: And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''nineteen men, and Asahel.'' The wording indicates Asahel is counted in addition to the nineteen.'
-    reason: lexical_alternative
+  text: Joab returned from pursuing Abner and gathered all his men. When they were counted, nineteen of David’s men were missing, besides Asahel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שָׁב
   chosen: returned
@@ -81,14 +77,20 @@ revisions:
   from: And Joab returned from pursuing Abner, and he gathered all the troops. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
   to: And Joab returned from pursuing Abner, and he gathered all the troops. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
   rationale: Changed 'troops' to 'people' for closer lexical accuracy to the source term while keeping the rest of the verse unchanged.
-
 - timestamp: '2026-05-17T05:51:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.'
-  to: 'And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.'
+  from: And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
+  to: And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he gathered all the troops''].'
+- timestamp: '2026-11-09T17:28:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Joab returned from pursuing Abner[a], and he gathered all the people. When they were counted, nineteen men of David’s servants were missing, besides Asahel.
+  to: Joab returned from pursuing Abner and gathered all his men. When they were counted, nineteen of David’s men were missing, besides Asahel.
+  rationale: The first draft and its lexical explanation correctly identified the assembled group as troops. I recover that clarity, retain the counting and missing-men language, and omit the note because 'besides Asahel' already makes the total clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -108,3 +110,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/030.job-46036.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:21Z'
+  change_level: refined
+  confidence: high
+  meaning: After ending the pursuit, Joab assembles his force and finds nineteen of David’s men missing in addition to Asahel.
+  meaning_decisions:
+  - source_phrase: וַיִּקְבֹּץ אֶת כָּל הָעָם
+    prior_rendering: and he gathered all the people
+    new_rendering: and gathered all his men
+    rationale: The group being assembled and counted is Joab’s fighting force.
+  - source_phrase: מֵעַבְדֵי דָוִד תִּשְׁעָה עָשָׂר אִישׁ
+    prior_rendering: nineteen men of David’s servants
+    new_rendering: nineteen of David’s men
+    rationale: David’s servants here are his military retainers; the new wording states their role naturally rather than suggesting domestic servants.
+  footnote_kinds: {}
+  history_weighed: The first draft and its lexical explanation correctly identified the assembled group as troops. I recover that clarity, retain the counting and missing-men language, and omit the note because 'besides Asahel' already makes the total clear.

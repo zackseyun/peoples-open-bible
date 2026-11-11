@@ -25,17 +25,43 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And at daybreak Judas appeared in the plain with three thousand men; but they did not have armor and a sword as they wished.'
+  text: At daybreak Judas appeared on the plain with three thousand men, but they were not as well supplied with armor and swords as they wished.
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T04:00:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And at daybreak Judas appeared in the plain with three thousand men[a]; but they did not have armor and swords as they wished.'
-  to: 'And at daybreak Judas appeared in the plain with three thousand men; but they did not have armor and a sword as they wished.'
+  from: And at daybreak Judas appeared in the plain with three thousand men[a]; but they did not have armor and swords as they wished.
+  to: And at daybreak Judas appeared in the plain with three thousand men; but they did not have armor and a sword as they wished.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a sword'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T18:51:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And at daybreak Judas appeared in the plain with three thousand men; but they did not have armor and a sword as they wished.
+  to: At daybreak Judas appeared on the plain with three thousand men, but they were not as well supplied with armor and swords as they wished.
+  rationale: The recorded revert restored 'a sword,' but that English singular misleadingly suggests one weapon for the entire force. The first draft's plural better conveys the military equipment meant, while the qualification about their wishes is preserved.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:13Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 1 Maccabees 4:6 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a sword'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas appears on the plain at dawn with three thousand men who are inadequately supplied with armor and swords.
+  meaning_decisions:
+  - source_phrase: καλύμματα καὶ μάχαιραν οὐκ εἶχον καθὼς ἠβούλοντο
+    prior_rendering: they did not have armor and a sword as they wished
+    new_rendering: they were not as well supplied with armor and swords as they wished
+    rationale: The clause describes inadequate equipment without requiring that every man lacked both items; the singular 'sword' has a distributive sense across the force.
+  footnote_kinds: {}
+  history_weighed: The recorded revert restored 'a sword,' but that English singular misleadingly suggests one weapon for the entire force. The first draft's plural better conveys the military equipment meant, while the qualification about their wishes is preserved.

@@ -28,14 +28,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 39:28
 translation:
-  text: There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.
-  philosophy: optimal-equivalence
+  text: There are winds[a] created for judgment; in their fury they dislodge mountains. At the time of wrath they display their might and stir up a storm from the open country[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'winds created for punishment.' Hebrew רוחות and Greek πνεύματα can denote either 'spirits' or 'winds.'
-    reason: lexical_alternative
+    text: Or, “spirits.” Both the Hebrew and the Greek word can mean winds or spirits.
+    reason: alternative_reading
   - marker: b
-    text: The latter clause is bracketed in the Cairo Geniza Hebrew edition, indicating some textual uncertainty; the Greek witness supports including the fuller sense of the verse.
+    text: The second half of the verse is bracketed as uncertain in the supplied Hebrew edition; the Greek also contains a second half, with different wording.
     reason: textual_variant
 lexical_decisions:
 - source_word: רוחות
@@ -141,14 +141,20 @@ revisions:
   from: There are spirits created for judgment, and in their anger they move mountains; at the time of wrath they display their might, and they stir up a storm from the wasteland.
   to: There are spirits created for judgment, and in their anger they move mountains; at the time of wrath they display their might, and they stir up a storm from the wasteland.
   rationale: Changed 'wasteland' to 'open country' for שדה, which more naturally and accurately reflects 'field/open country' here. Retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.'
-  to: 'There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.'
+  from: There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.
+  to: There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they stir up a storm from the wasteland''].'
+- timestamp: '2026-11-09T19:08:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There are spirits created for judgment[a], and in their anger they move mountains; at the time of wrath they display their might[b], and they stir up a storm from the open country.
+  to: There are winds[a] created for judgment; in their fury they dislodge mountains. At the time of wrath they display their might and stir up a storm from the open country[b].
+  rationale: I retain the current “open country,” which better reflects שדה than the draft's “wasteland.” The earlier preference for spirits rested on personalization, but the surrounding natural agents are also personified; winds are better supported here, with spirits retained as a serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -168,3 +174,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/039/028.job-52106.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Winds created for divine judgment unleash their destructive strength at the time of wrath.
+  meaning_decisions:
+  - source_phrase: רוחות
+    prior_rendering: spirits
+    new_rendering: winds
+    rationale: The mountain-displacing force and ensuing storm favor winds in this catalogue of destructive natural agents; their personified anger does not require a separate class of spiritual beings.
+  - source_phrase: ובאפם הרים יעתיקו
+    prior_rendering: and in their anger they move mountains
+    new_rendering: in their fury they dislodge mountains
+    rationale: Preserves the personification while making the physical violence clear; “move mountains” can sound like the modern idiom for accomplishing an extraordinary task.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: I retain the current “open country,” which better reflects שדה than the draft's “wasteland.” The earlier preference for spirits rested on personalization, but the surrounding natural agents are also personified; winds are better supported here, with spirits retained as a serious alternative.

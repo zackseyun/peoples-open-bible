@@ -28,12 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 7:36
 translation:
-  text: In all your words remember your end, and you will never sin.[a]
-  philosophy: optimal-equivalence
+  text: In all you do[a], remember your end, and you will never sin[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew witness (Kahana, Cairo Geniza composite) reads approximately, 'Do not turn your heart away from one who loves, for from him you will be loved.' The Hebrew here appears substantially different from the Greek tradition, so the main text follows the Greek parallel.
+    text: Or 'In everything you say'; the Greek can refer to words or to matters and actions.
     reason: alternative_reading
+  - marker: b
+    text: The supplied Hebrew instead reads approximately, 'Do not turn your heart away from one who loves you, for you will be loved by him.' The main text follows the Greek.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ἐν πᾶσι τοῖς λόγοις σου
   chosen: In all your words
@@ -127,14 +130,20 @@ revisions:
   from: In all your words remember your end, and you will never sin.
   to: Do not lift up your heart from one who loves you, for from him you will be loved.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: rendered אַל תִּשָּׂא לֵב as ''Do not lift up your heart,'' מֵאוֹהֵב as ''from one who loves you,'' and כִּי מִמֶּנוּ תֵּאָהֵב as ''for from him you will be loved.'''
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not lift up your heart from one who loves you[a], for from him you will be loved.'
-  to: 'In all your words remember your end, and you will never sin.[a]'
-  rationale: 'Restored documented Greek-primary translation (Hebrew is corrupt/divergent witness).'
+  from: Do not lift up your heart from one who loves you[a], for from him you will be loved.
+  to: In all your words remember your end, and you will never sin.[a]
+  rationale: Restored documented Greek-primary translation (Hebrew is corrupt/divergent witness).
+- timestamp: '2026-11-09T19:05:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In all your words remember your end, and you will never sin.[a]
+  to: In all you do[a], remember your end, and you will never sin[b].
+  rationale: I follow the documented Greek-based decision rather than the temporary literal rendering of the divergent Hebrew. I retain the breadth of 'your end' and the unqualified warning about sin, while giving the speech-focused understanding in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -154,3 +163,23 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/007/036.job-51177.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:42Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Remembering one's end in all one's conduct is presented as a safeguard against sin.
+  meaning_decisions:
+  - source_phrase: ἐν πᾶσι τοῖς λόγοις σου
+    prior_rendering: In all your words
+    new_rendering: In all you do
+    rationale: In this conclusion to a chapter about conduct across many relationships, λόγοι most naturally encompasses one's affairs and actions rather than speech alone.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: I follow the documented Greek-based decision rather than the temporary literal rendering of the divergent Hebrew. I retain the breadth of 'your end' and the unqualified warning about sin, while giving the speech-focused understanding in a note.

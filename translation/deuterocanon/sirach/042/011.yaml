@@ -28,18 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:11
 translation:
-  text: Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.
-  philosophy: optimal-equivalence
+  text: My son, keep a strict watch over your virgin daughter, lest she bring you a shameful name, make you the subject of city gossip and the people’s curses, and expose you to disgrace before the assembly at the gate[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'a name of disgrace' may also be rendered 'an evil name' or 'shameful repute.' The Greek parallel expands the idea toward becoming an object of public mockery.
+    text: Literally, “make you sit in the gathering at the gate”; the city gate was a place of public assembly and judgment.
     reason: lexical_alternative
-  - marker: b
-    text: The final clause is difficult in Hebrew. Literally, it speaks of causing you to sit 'in the gathering/crowd at the gate.' The gate was the public place of civic assembly and judgment. The Greek parallel similarly points to public shame before a crowd.
-    reason: cultural_note
-  - marker: c
-    text: Masada preserves the shorter wording 'Over a daughter keep watch; gossip in the city and an assembly of people ...' where the Cairo Geniza text here is fuller.
-    reason: textual_variant
 lexical_decisions:
 - source_word: בני
   chosen: Keep
@@ -141,14 +135,20 @@ revisions:
   from: Keep a strict watch over your virgin daughter, lest she make you a byword of disgrace—gossip in the city and a curse among the people—and seat you in the assembly at the gate.
   to: Keep a strict watch over your virgin daughter, lest she make you a byword of disgrace—gossip in the city and a curse among the people—and seat you in the assembly at the gate.
   rationale: 'Adjusted punctuation and prepositions for closer alignment to the Hebrew sequence: rendered the appositional phrases without em dash, changed ''gossip in the city'' to ''a gossip of the city,'' and ''among the people'' to ''of the people.'''
-
 - timestamp: '2026-05-16T12:37:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.'
-  to: 'Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.'
-  rationale: 'Restored drafter ''gossip in the city and a curse among the people'' (locative-among prepositions) and em-dash isolation per chosen renderings.'
+  from: Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.
+  to: Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.
+  rationale: Restored drafter 'gossip in the city and a curse among the people' (locative-among prepositions) and em-dash isolation per chosen renderings.
+- timestamp: '2026-11-09T19:09:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Keep a strict watch over your virgin daughter[a], lest she make you a byword of disgrace, a gossip of the city and a curse of the people[c][b], and seat you in the assembly at the gate.
+  to: My son, keep a strict watch over your virgin daughter, lest she bring you a shameful name, make you the subject of city gossip and the people’s curses, and expose you to disgrace before the assembly at the gate[a].
+  rationale: The first draft’s natural gossip language better conveys the meaning than the later “a gossip of the city.” I also recover the overlooked vocative and use the documented public-shame setting to clarify the gate clause while retaining its image in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -168,3 +168,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/042/011.job-52176.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:11Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A father is urged to watch his virgin daughter closely to avoid a damaged reputation and public disgrace.
+  meaning_decisions:
+  - source_phrase: בני
+    prior_rendering: Keep
+    new_rendering: My son
+    rationale: In an instruction addressed to a father, בני is naturally the familiar vocative “my son,” not the feminine imperative “build”; the command to keep watch follows in החזק משמר.
+  - source_phrase: פן תעשה לך שם סרה דבת עיר וקללת עם
+    prior_rendering: lest she make you a byword of disgrace, a gossip of the city and a curse of the people
+    new_rendering: lest she bring you a shameful name, make you the subject of city gossip and the people’s curses
+    rationale: The father becomes the subject of gossip and cursing, not a gossip himself; the new syntax makes the damaged reputation explicit.
+  - source_phrase: והושיבתך בעדר שער
+    prior_rendering: and seat you in the assembly at the gate
+    new_rendering: and expose you to disgrace before the assembly at the gate
+    rationale: The sequence concerns public humiliation, whereas unexplained seating in the assembly might suggest honor or civic participation.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft’s natural gossip language better conveys the meaning than the later “a gossip of the city.” I also recover the overlooked vocative and use the documented public-shame setting to clarify the gate clause while retaining its image in a note.

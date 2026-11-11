@@ -18,11 +18,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.
-  philosophy: optimal-equivalence
+  text: It makes every heart feel rich; people take no notice of king or satrap, and it makes everyone talk in terms of vast sums of money[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more dynamically, 'it makes everyone talk about money.' The Greek says literally 'it makes all/everything speak through talents,' with 'talents' referring to monetary units.
+    text: Literally, “makes all speak in terms of talents”; a talent was a large unit of weight used to measure gold or silver.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: πάσας καρδίας
@@ -104,14 +104,20 @@ revisions:
   from: and it makes every heart rich, and it remembers neither king nor satrap; and it makes everyone speak in terms of talents.
   to: and it makes every heart rich, and it remembers neither king nor satrap; and it makes everyone speak in terms of talents.
   rationale: Changed 'everyone' to 'everything' to reflect Greek πάντα more accurately. Retained the rest as faithful and natural.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.'
-  to: 'and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.'
+  from: and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.
+  to: and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everyone''].'
+- timestamp: '2026-11-09T18:50:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and it makes every heart rich[a], and it remembers neither king nor satrap; and it makes everything speak in terms of talents.
+  to: It makes every heart feel rich; people take no notice of king or satrap, and it makes everyone talk in terms of vast sums of money[a].
+  rationale: The first draft and lexical rationale correctly understood everyone, whereas the later change to everything followed grammatical form at the expense of sense. The documented monetary meaning is retained and clarified, along with the drinkers’ implied disregard for authority.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +137,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/003/020.job-47556.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Wine makes people feel wealthy, disregard rulers, and speak in terms of enormous amounts of money.
+  meaning_decisions:
+  - source_phrase: πάσας καρδίας ποιεῖ πλουσίας
+    prior_rendering: makes every heart rich
+    new_rendering: makes every heart feel rich
+    rationale: Wine changes the drinker’s sense of wealth, not the amount of wealth actually possessed; the heart image is retained.
+  - source_phrase: οὐ μέμνηται βασιλέα οὐδὲ σατράπην
+    prior_rendering: it remembers neither king nor satrap
+    new_rendering: people take no notice of king or satrap
+    rationale: The drinkers, not wine itself, disregard royal and provincial authority.
+  - source_phrase: πάντα διὰ ταλάντων ποιεῖ λαλεῖν
+    prior_rendering: it makes everything speak in terms of talents
+    new_rendering: it makes everyone talk in terms of vast sums of money
+    rationale: Speaking identifies human speakers, and talents evokes exceptionally large monetary amounts rather than abilities or ordinary sums.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale correctly understood everyone, whereas the later change to everything followed grammatical form at the expense of sense. The documented monetary meaning is retained and clarified, along with the drinkers’ implied disregard for authority.

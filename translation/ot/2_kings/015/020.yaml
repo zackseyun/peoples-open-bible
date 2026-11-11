@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּצֵא֩ מְנַחֵ֨ם אֶת הַ/כֶּ֜סֶף עַל יִשְׂרָאֵ֗ל עַ֚ל כָּל גִּבּוֹרֵ֣י הַ/חַ֔יִל לָ/תֵת֙ לְ/מֶ֣לֶךְ אַשּׁ֔וּר חֲמִשִּׁ֧ים שְׁקָלִ֛ים כֶּ֖סֶף לְ/אִ֣ישׁ אֶחָ֑ד וַ/יָּ֨שָׁב֙ מֶ֣לֶךְ אַשּׁ֔וּר וְ/לֹא עָ֥מַד שָׁ֖ם בָּ/אָֽרֶץ־־־־׃
 translation:
-  text: Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from all the wealthy men' or 'from all the mighty men of valor.' The Hebrew phrase can denote men of military strength, social standing, or wealth; the taxation context favors the sense of men of means.
-    reason: lexical_alternative
+  text: Menahem exacted the money from all the wealthy men in Israel, fifty shekels of silver from each man, to pay the king of Assyria. So the king of Assyria withdrew and did not remain in the land.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּצֵא
   chosen: exacted
@@ -97,14 +93,20 @@ revisions:
   from: Then Menahem exacted the money from Israel, from all the mighty men of wealth, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
   to: Then Menahem exacted the money from Israel, from all the mighty men of wealth, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
   rationale: Changed 'mighty men of wealth' to 'mighty men of valor' to reflect גִּבּוֹרֵי הַחַיִל more accurately.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.'
-  to: 'Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.'
+  from: Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
+  to: Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from all the mighty men of wealth''].'
+- timestamp: '2026-11-09T17:27:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Menahem exacted the money from Israel[a], from all the mighty men of valor, to give to the king of Assyria fifty shekels of silver from each man. So the king of Assyria turned back and did not remain there in the land.
+  to: Menahem exacted the money from all the wealthy men in Israel, fifty shekels of silver from each man, to pay the king of Assyria. So the king of Assyria withdrew and did not remain in the land.
+  rationale: The recorded passes disagree over wealth and valor, but the lexical rationale and the current footnote both recognize that the taxation context favors wealthy men. No maintainer decision requires the military reading.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +126,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/015/020.job-60648.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Menahem financed the payment to Assyria by imposing a levy on Israel’s wealthy men, after which the Assyrian king withdrew.
+  meaning_decisions:
+  - source_phrase: עַל כָּל גִּבּוֹרֵי הַחַיִל
+    prior_rendering: from all the mighty men of valor
+    new_rendering: from all the wealthy men in Israel
+    rationale: The taxation context identifies men of means, not specifically courageous soldiers; the new wording carries that contextual sense directly.
+  - source_phrase: לָתֵת לְמֶלֶךְ אַשּׁוּר חֲמִשִּׁים שְׁקָלִים כֶּסֶף לְאִישׁ אֶחָד
+    prior_rendering: to give to the king of Assyria fifty shekels of silver from each man
+    new_rendering: fifty shekels of silver from each man, to pay the king of Assyria
+    rationale: Reordering makes clear that fifty shekels was each man’s assessment toward the payment.
+  - source_phrase: וַיָּשָׁב
+    prior_rendering: turned back
+    new_rendering: withdrew
+    rationale: The verb describes the Assyrian king’s withdrawal after receiving payment, not merely a change of direction.
+  footnote_kinds: {}
+  history_weighed: The recorded passes disagree over wealth and valor, but the lexical rationale and the current footnote both recognize that the taxation context favors wealthy men. No maintainer decision requires the military reading.

@@ -25,15 +25,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”
-  philosophy: optimal-equivalence
+  text: Judas said, “Far be it from me to do such a thing—to flee from them! Our time has drawn near[a]; let us die bravely for the sake of our brothers and leave no stain on our honor.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'let us die with courage'; more literally, 'let us die manfully.' The Greek expression uses a term associated with courage or valor.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'our glory' can also be understood as 'our honor' or 'our reputation' in this context.
-    reason: lexical_alternative
+    text: 'Alternatively, the clause may be understood conditionally: “If our time has drawn near.”'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Μή μοι γένοιτο
   chosen: Far be it from me
@@ -137,14 +134,20 @@ revisions:
   from: And Judas said, “Far be it from me to do this thing—to flee from them. But if our time has drawn near, let us die bravely for the sake of our brothers, and let us not leave a cause for reproach against our glory.”
   to: And Judas said, “Far be it from me to do this thing—to flee from them. But if our time has drawn near, let us die bravely for the sake of our brothers, and let us not leave a cause for reproach against our glory.”
   rationale: Changed 'But if' to 'And if' to reflect καὶ more closely, and revised 'against our glory' to 'to our glory' for a more literal and natural rendering of τῇ δόξῃ ἡμῶν.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”'
-  to: 'And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”'
+  from: And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”
+  to: And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''against our glory''].'
+- timestamp: '2026-11-09T18:53:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas said[a], “Far be it from me to do this thing—to flee from them. And if our time has drawn near, let us die bravely for the sake of our brothers[b], and let us not leave a cause for reproach to our glory.”
+  to: Judas said, “Far be it from me to do such a thing—to flee from them! Our time has drawn near[a]; let us die bravely for the sake of our brothers and leave no stain on our honor.”
+  rationale: The earlier passes mostly debated conjunctions and prepositions, while consistently preserving courageous death for their brothers and concern for their renown. I retain those meanings, but follow the supplied Greek’s statement about their time and give the prior conditional reading in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -164,3 +167,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/010.job-48429.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judas refuses to flee and calls for a courageous death on behalf of their brothers that will preserve their honor.
+  meaning_decisions:
+  - source_phrase: καὶ ἤγγικεν ὁ καιρὸς ἡμῶν
+    prior_rendering: And if our time has drawn near
+    new_rendering: Our time has drawn near
+    rationale: The supplied Greek states the approach of their decisive time without an explicit conditional particle; the established conditional understanding is retained in a note.
+  - source_phrase: μὴ καταλίπωμεν αἰτίαν τῇ δόξῃ ἡμῶν
+    prior_rendering: let us not leave a cause for reproach to our glory
+    new_rendering: leave no stain on our honor
+    rationale: In this military honor-and-shame setting, the phrase concerns leaving grounds to disgrace their earned renown; the English idiom preserves that lasting consequence.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier passes mostly debated conjunctions and prepositions, while consistently preserving courageous death for their brothers and concern for their renown. I retain those meanings, but follow the supplied Greek’s statement about their time and give the prior conditional reading in a note.

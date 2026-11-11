@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: עוּרִ֤י עוּרִי֙ דְּבוֹרָ֔ה ע֥וּרִי ע֖וּרִי דַּבְּרִי שִׁ֑יר ק֥וּם בָּרָ֛ק וּֽ/שֲׁבֵ֥ה שֶׁבְיְ/ךָ֖ בֶּן אֲבִינֹֽעַם־־׃
 translation:
-  text: Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'sing a song.' The Hebrew verb is literally 'speak,' which may intentionally preserve the poetic force of the summons.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'take captive your captives,' a Hebrew idiom for triumph over enemies by seizing them as prisoners.
-    reason: lexical_alternative
+  text: Awake, awake, Deborah! Awake, awake, sing a song! Rise up, Barak son of Abinoam, and lead away your captives!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עוּרִי
   lemma: עור
@@ -82,14 +75,20 @@ revisions:
   from: Awake, awake, Deborah! Awake, awake, speak a song! Rise up, Barak, and take captive your captives, son of Abinoam.
   to: Awake, awake, Deborah! Awake, awake, speak a song! Rise up, Barak, and take captive your captives, son of Abinoam.
   rationale: Changed 'speak a song' to 'sing a song' for more natural and accurate English rendering of the imperative. Kept the repeated imperatives and 'take captive your captives' to preserve the Hebrew wording.
-
 - timestamp: '2026-05-18T02:55:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.'
-  to: 'Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.'
+  from: Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.
+  to: Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''speak a song''].'
+- timestamp: '2026-11-09T18:14:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Awake[a], awake, Deborah! Awake, awake, sing a song! Rise up, Barak, and take captive your captives[b], son of Abinoam.
+  to: Awake, awake, Deborah! Awake, awake, sing a song! Rise up, Barak son of Abinoam, and lead away your captives!
+  rationale: I retain the review's natural 'sing a song' and the fourfold summons to awaken despite the automated revert rationale. The earlier lexical discussion permits leading captives away, which conveys the military idiom more clearly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -112,3 +111,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/005/012.job-69054.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:14:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Deborah is summoned to rouse herself and sing, while Barak is summoned to rise and lead away his captives.
+  meaning_decisions:
+  - source_phrase: וּשֲׁבֵה שֶׁבְיְךָ
+    prior_rendering: and take captive your captives
+    new_rendering: and lead away your captives
+    rationale: The cognate expression calls for military triumph through taking prisoners, not for recapturing people already held captive; the new wording retains the captive image without the misleading English tautology.
+  footnote_kinds: {}
+  history_weighed: I retain the review's natural 'sing a song' and the fourfold summons to awaken despite the automated revert rationale. The earlier lexical discussion permits leading captives away, which conveys the military idiom more clearly.

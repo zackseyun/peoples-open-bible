@@ -9,18 +9,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.
-  philosophy: optimal-equivalence
+  text: All our brothers in the region of Tob[a] have been killed. Our enemies have taken their wives and children captive and carried off their possessions; they killed about a thousand men there.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''in the [place/people] of Toubiou''; the exact place-name form is difficult, and ''the region of Tob'' reflects the likely geographic sense.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'their baggage' or 'their property' for 'their goods' (Greek ὑποσκευήν).
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'they killed about one thousand men there'; Greek literally, 'they destroyed about one thousand men there.'
-    reason: lexical_alternative
+    text: Or, 'among the people of Tobias'; the Greek designation is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἱ ἀδελφοὶ ἡμῶν
   chosen: our brothers
@@ -101,14 +95,20 @@ revisions:
   from: And all our brothers who are in the region of Tob have been killed, and they have taken their wives and their children and their goods captive, and they destroyed about one thousand men there.
   to: And all our brothers who are in the region of Tob have been killed, and they have taken their wives and their children and their goods captive, and they destroyed about one thousand men there.
   rationale: 'Improved natural English and accuracy: rendered ὑποσκευήν as ''possessions'' instead of ''goods,'' smoothed ''their wives and children captive'' by removing repeated ''their,'' and changed ''they destroyed'' to ''have destroyed'' for tense consistency with the surrounding perfects.'
-
 - timestamp: '2026-05-16T15:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.'
-  to: 'And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.'
-  rationale: 'Restored drafter ''their goods'' (preserving the chosen rendering of ὑποσκευή as goods) and ''they destroyed'' (preserving simple past) per chosen renderings.'
+  from: And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.
+  to: And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.
+  rationale: Restored drafter 'their goods' (preserving the chosen rendering of ὑποσκευή as goods) and 'they destroyed' (preserving simple past) per chosen renderings.
+- timestamp: '2026-11-09T18:52:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all our brothers who are in the region of Tob have been killed[a], and they have taken their wives and children captive, along with their possessions[c][b], and have destroyed about one thousand men there.
+  to: All our brothers in the region of Tob[a] have been killed. Our enemies have taken their wives and children captive and carried off their possessions; they killed about a thousand men there.”
+  rationale: The review’s clearer 'possessions' is retained, but its tense harmonization is not necessary, and the recorded simple-past rendering is restored. The uncertain Tob designation remains in the main text with a serious alternative noted; equivalent vocabulary notes are dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +128,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/013.job-48219.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The letter reported that the men of the Israelite community in Tob had been killed, their families captured, and their possessions seized, with about a thousand men dead.
+  meaning_decisions:
+  - source_phrase: καὶ αἰχμαλωτίκασι τὰς γυναῖκας αὐτῶν καὶ τὰ τέκνα αὐτῶν καὶ τὴν ὑποσκευήν
+    prior_rendering: they have taken their wives and children captive, along with their possessions
+    new_rendering: Our enemies have taken their wives and children captive and carried off their possessions
+    rationale: The implied hostile subject is identified, and natural English distinguishes taking people captive from seizing property.
+  - source_phrase: ἀπώλεσαν ἐκεῖ ὡς μίαν χιλιάδα ἀνδρῶν
+    prior_rendering: have destroyed about one thousand men there
+    new_rendering: they killed about a thousand men there
+    rationale: With men as its object, the verb means killing; the simple past also reflects the source’s aorist rather than extending the preceding perfects.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review’s clearer 'possessions' is retained, but its tense harmonization is not necessary, and the recorded simple-past rendering is restored. The uncertain Tob designation remains in the main text with a serious alternative noted; equivalent vocabulary notes are dropped.

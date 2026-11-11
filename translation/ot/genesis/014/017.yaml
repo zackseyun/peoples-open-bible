@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֵּצֵ֣א מֶֽלֶךְ סְדֹם֮ לִ/קְרָאת/וֹ֒ אַחֲרֵ֣י שׁוּב֗/וֹ מֵֽ/הַכּוֹת֙ אֶת כְּדָרלָעֹ֔מֶר וְ/אֶת הַ/מְּלָכִ֖ים אֲשֶׁ֣ר אִתּ֑/וֹ אֶל עֵ֣מֶק שָׁוֵ֔ה ה֖וּא עֵ֥מֶק הַ/מֶּֽלֶךְ־־־־׃
 translation:
-  text: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King's Valley).
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''the Valley of Shaveh''; that is, ''the King''s Valley.'''
-    reason: cultural_note
-  - marker: b
-    text: Traditional English often has 'Chedorlaomer'; the Hebrew name is rendered here more directly as 'Kedorlaomer.'
-    reason: lexical_alternative
+  text: After Abram returned from defeating Chedorlaomer and the kings who were with him, the king of Sodom went out to the Valley of Shaveh (that is, the King’s Valley) to meet him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֵּצֵא
   chosen: Then ... went out
@@ -90,14 +83,20 @@ revisions:
   from: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him, at the Valley of Shaveh (that is, the King's Valley).
   to: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him, at the Valley of Shaveh (that is, the King's Valley).
   rationale: Changed 'at the Valley of Shaveh' to 'to the Valley of Shaveh' to reflect the directional force of 'to/unto the Valley' more accurately.
-
 - timestamp: '2026-05-17T08:51:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King''s Valley).'
-  to: 'Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King''s Valley).'
+  from: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King's Valley).
+  to: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King's Valley).
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the Valley of Shaveh''].'
+- timestamp: '2026-11-09T17:42:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king of Sodom went out to meet him after his return from defeating Kedorlaomer and the kings who were with him[a], to the Valley of Shaveh (that is[b], the King's Valley).
+  to: After Abram returned from defeating Chedorlaomer and the kings who were with him, the king of Sodom went out to the Valley of Shaveh (that is, the King’s Valley) to meet him.
+  rationale: The history debated 'at' versus 'to' for the valley. The revised sentence preserves movement toward the valley while achieving the clear meeting-location sense sought by the first draft.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +119,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/014/017.job-64847.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:08Z'
+  change_level: refined
+  confidence: high
+  meaning: After Abram's victory over Chedorlaomer and his allied kings, the king of Sodom goes to meet Abram in the King's Valley.
+  meaning_decisions:
+  - source_phrase: אַחֲרֵי שׁוּבוֹ מֵהַכּוֹת
+    prior_rendering: after his return from defeating
+    new_rendering: After Abram returned from defeating
+    rationale: Making Abram the explicit subject prevents the return and victory from being mistakenly attributed to the king of Sodom.
+  - source_phrase: כְּדָרלָעֹמֶר
+    prior_rendering: Kedorlaomer
+    new_rendering: Chedorlaomer
+    rationale: The recognizable English form follows the standing instruction for proper names.
+  - source_phrase: אֶל עֵמֶק שָׁוֵה
+    prior_rendering: to the Valley of Shaveh
+    new_rendering: went out to the Valley of Shaveh ... to meet him
+    rationale: Placing the destination beside 'went out' preserves the directional sense without leaving the location awkwardly detached at the sentence's end.
+  footnote_kinds: {}
+  history_weighed: The history debated 'at' versus 'to' for the valley. The revised sentence preserves movement toward the valley while achieving the clear meeting-location sense sought by the first draft.

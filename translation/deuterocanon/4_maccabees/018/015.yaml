@@ -16,14 +16,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: David sang to us[a], the hymn-writer, saying[b], “Many are the afflictions of the righteous.”
-  philosophy: optimal-equivalence
+  text: 'He sang to us the words of David the psalmist: “Many are the afflictions of the righteous[a].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, “David the psalmist sang to us, saying, ‘Many are the afflictions of the righteous.’”
-    reason: lexical_alternative
-  - marker: b
-    text: The quotation echoes Ps 33:20 LXX (Ps 34:19 in many English versifications).
+    text: Psalm 33:20 in the Septuagint; Psalm 34:19 in most English Bibles.
     reason: cross_reference
 lexical_decisions:
 - source_word: τὸν ὑμνογράφον
@@ -107,7 +104,13 @@ revisions:
   from: David sang to us of the hymn-writer, saying, “Many are the afflictions of the righteous.”
   to: David sang to us, the hymn-writer, saying, “Many are the afflictions of the righteous.”
   rationale: 'Reordered the apposition to reflect the Greek more accurately: David is the hymn-writer, not the subject of a song. Kept the quotation otherwise unchanged.'
-
+- timestamp: '2026-11-09T18:59:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David sang to us[a], the hymn-writer, saying[b], “Many are the afflictions of the righteous.”
+  to: 'He sang to us the words of David the psalmist: “Many are the afflictions of the righteous[a].”'
+  rationale: The recorded revision correctly recognized that David himself is the hymn-writer, but it did not correct the mistaken subject of “sang.” The accusative construction and the continuing account of the father’s teaching require the father to remain the singer.
 cross_check:
   status: needs_review
   agreement: 0.2
@@ -127,3 +130,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/018/015.job-50200.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Their father sang David’s words to the family, teaching them that the righteous suffer many afflictions.
+  meaning_decisions:
+  - source_phrase: τὸν ὑμνογράφον ἐμελῴδει ἡμῖν Δαυεὶδ
+    prior_rendering: David sang to us, the hymn-writer
+    new_rendering: He sang to us the words of David the psalmist
+    rationale: David is marked as the accusative object, not the subject of the verb; the father remains the subject from the preceding verses, and David represents the sacred song he sang.
+  - source_phrase: τὸν ὑμνογράφον
+    prior_rendering: the hymn-writer
+    new_rendering: the psalmist
+    rationale: In this quotation from a psalm, “psalmist” naturally conveys David’s role as the composer of the sacred song.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The recorded revision correctly recognized that David himself is the hymn-writer, but it did not correct the mistaken subject of “sang.” The accusative construction and the continuing account of the father’s teaching require the father to remain the singer.

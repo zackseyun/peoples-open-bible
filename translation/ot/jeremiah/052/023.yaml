@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּֽהְיוּ֙ הָֽ/רִמֹּנִ֔ים תִּשְׁעִ֥ים וְ/שִׁשָּׁ֖ה ר֑וּחָ/ה כָּל הָ/רִמּוֹנִ֥ים מֵאָ֛ה עַל הַ/שְּׂבָכָ֖ה סָבִֽיב־־׃
 translation:
-  text: There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.
-  philosophy: optimal-equivalence
+  text: There were ninety-six pomegranates facing outward[a], and one hundred in all around the latticework.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'toward the outside,' 'in one direction,' or possibly 'windward.' The Hebrew term is difficult; the sense is that ninety-six were counted from one side, while the total around the lattice was one hundred.
-    reason: lexical_alternative
+    text: Or possibly, 'on one side'; the Hebrew expression is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הָרִמֹּנִים
   chosen: pomegranates
@@ -72,14 +72,20 @@ revisions:
   from: There were ninety-six pomegranates on the visible side; all the pomegranates on the lattice all around were one hundred.
   to: There were ninety-six pomegranates on the visible side; all the pomegranates on the lattice all around were one hundred.
   rationale: Changed 'on the visible side' to 'toward the outside' for a more accurate and natural rendering of רוּחָה, while preserving the rest of the verse.
-
 - timestamp: '2026-05-18T02:57:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.'
-  to: 'There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.'
+  from: There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.
+  to: There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''on the visible side''].'
+- timestamp: '2026-11-09T18:01:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There were ninety-six pomegranates toward the outside[a]; all the pomegranates on the lattice all around were one hundred.
+  to: There were ninety-six pomegranates facing outward[a], and one hundred in all around the latticework.
+  rationale: The history alternates between 'on the visible side' and 'toward the outside,' reflecting a genuinely difficult expression. I build from the current outward sense while avoiding the earlier footnote’s more specific explanation of the count.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -102,3 +108,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/052/023.job-68322.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:01:28Z'
+  change_level: refined
+  confidence: medium
+  meaning: Ninety-six pomegranate ornaments faced outward, while the latticework carried one hundred in total.
+  meaning_decisions:
+  - source_phrase: רוּחָה
+    prior_rendering: toward the outside
+    new_rendering: facing outward
+    rationale: This expresses the best-supported outward-facing sense without specifying how the remaining four ornaments were concealed or arranged.
+  - source_phrase: כָּל הָרִמּוֹנִים מֵאָה עַל הַשְּׂבָכָה סָבִיב
+    prior_rendering: all the pomegranates on the lattice all around were one hundred
+    new_rendering: one hundred in all around the latticework
+    rationale: The clause gives the total surrounding the latticework, which natural English can state directly.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history alternates between 'on the visible side' and 'toward the outside,' reflecting a genuinely difficult expression. I build from the current outward sense while avoiding the earlier footnote’s more specific explanation of the count.

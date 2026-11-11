@@ -26,15 +26,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 3:16
 translation:
-  text: For one who despises his father is insolent[b][a], and one who provokes his mother is cursed by his Creator.
-  philosophy: optimal-equivalence
+  text: For one who despises his father is insolent[a], and one who curses his mother provokes his Creator[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'acts presumptuously'; the Greek parallel intensifies this as 'is a blasphemer.'
-    reason: lexical_alternative
+    text: 'Greek: “is like a blasphemer.”'
+    reason: textual_variant
   - marker: b
-    text: 'Greek parallel: ''is cursed by the Lord.'' The Hebrew reads ''is cursed by his Creator.'''
-    reason: alternative_reading
+    text: 'Greek: “one who provokes his mother is cursed by the Lord.”'
+    reason: textual_variant
 lexical_decisions:
 - source_word: מֵזִיד
   chosen: is insolent
@@ -133,14 +133,20 @@ revisions:
   from: For one who despises his father is insolent, and one who provokes his mother is cursed by his Creator.
   to: For one who despises his father is insolent, and one who curses his mother provokes his Creator.
   rationale: 'Revised the second clause for lexical accuracy and completeness: the Hebrew says ''one who curses his mother'' and ''provokes his Creator,'' not ''one who provokes his mother is cursed by his Creator.'''
-
 - timestamp: '2026-05-16T13:07:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For one who despises his father is insolent[b][a], and one who curses his mother provokes his Creator.'
-  to: 'For one who despises his father is insolent[b][a], and one who provokes his mother is cursed by his Creator.'
-  rationale: 'Restored drafter ''one who provokes his mother is cursed by his Creator'' preserving the chosen subject-verb construction per chosen renderings.'
+  from: For one who despises his father is insolent[b][a], and one who curses his mother provokes his Creator.
+  to: For one who despises his father is insolent[b][a], and one who provokes his mother is cursed by his Creator.
+  rationale: Restored drafter 'one who provokes his mother is cursed by his Creator' preserving the chosen subject-verb construction per chosen renderings.
+- timestamp: '2026-11-09T19:04:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For one who despises his father is insolent[b][a], and one who provokes his mother is cursed by his Creator.
+  to: For one who despises his father is insolent[a], and one who curses his mother provokes his Creator[b].
+  rationale: The April revision correctly identified the Hebrew's active verbs and their objects, while the automated revert restored an erroneous mixture of Hebrew and Greek readings. I adopt that substantive correction and preserve the genuine Greek differences in notes.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -160,3 +166,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/003/016.job-51043.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Despising one's father is insolent wrongdoing, and cursing one's mother provokes one's Creator.
+  meaning_decisions:
+  - source_phrase: וּמַכְעִיס בּוֹרְאוֹ מְקַלֵּל אִמּוֹ
+    prior_rendering: one who provokes his mother is cursed by his Creator
+    new_rendering: one who curses his mother provokes his Creator
+    rationale: 'Both Hebrew participles are active: the person curses his mother and thereby provokes his Creator; the prior wording reverses the actions and their objects.'
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: The April revision correctly identified the Hebrew's active verbs and their objects, while the automated revert restored an erroneous mixture of Hebrew and Greek readings. I adopt that substantive correction and preserve the genuine Greek differences in notes.

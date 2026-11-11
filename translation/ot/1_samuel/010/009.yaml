@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיָ֗ה כְּ/הַפְנֹת֤/וֹ שִׁכְמ/וֹ֙ לָ/לֶ֨כֶת֙ מֵ/עִ֣ם שְׁמוּאֵ֔ל וַ/יַּהֲפָךְ ל֥/וֹ אֱלֹהִ֖ים לֵ֣ב אַחֵ֑ר וַ/יָּבֹ֛אוּ כָּל הָ/אֹת֥וֹת הָ/אֵ֖לֶּה בַּ/יּ֥וֹם הַ/הֽוּא־־׃ס
 translation:
-  text: And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'when he turned his back to leave.' The Hebrew literally says 'turned his shoulder,' an idiom for departing.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'God gave him a different heart.' The Hebrew is literally 'God changed for him another heart.'
-    reason: alternative_reading
+  text: As Saul turned to leave Samuel, God gave him another heart, and all these signs happened that day.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And it happened
@@ -106,14 +99,20 @@ revisions:
   from: And it happened, when he turned his shoulder to go from Samuel, that God changed for him another heart, and all these signs came about on that day.
   to: And it happened, when he turned his shoulder to go from Samuel, that God changed for him another heart, and all these signs came about on that day.
   rationale: Changed 'shoulder' to 'back' for the idiom, 'changed for him another heart' to the more natural and accurate 'gave him another heart,' and 'came about' to 'came to pass' for formal register.
-
 - timestamp: '2026-05-16T05:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.'
-  to: 'And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.'
-  rationale: 'Azure substituted ''back'' for ''shoulder'' (drafter''s explicit rejected_alternative for שִׁכְמוֹ), ''gave'' for ''changed'' (loses Hiphil הפך = turn/change semantic), and ''came to pass'' for ''came about'' (stylistic register preference).'
+  from: And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.
+  to: And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.
+  rationale: Azure substituted 'back' for 'shoulder' (drafter's explicit rejected_alternative for שִׁכְמוֹ), 'gave' for 'changed' (loses Hiphil הפך = turn/change semantic), and 'came to pass' for 'came about' (stylistic register preference).
+- timestamp: '2026-11-09T17:23:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened[a], when he turned his back to go from Samuel, that God gave him another heart[b], and all these signs came to pass on that day.
+  to: As Saul turned to leave Samuel, God gave him another heart, and all these signs happened that day.
+  rationale: The history objects that “gave” can hide the verb of change, but “gave him another heart” already conveys a real inward change and preserves the heart image. I retain that wording while expressing the departure idiom naturally.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -135,3 +134,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_samuel/010/009.job-28157.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:16Z'
+  change_level: refined
+  confidence: high
+  meaning: As Saul leaves Samuel, God changes him inwardly, and all the predicted signs occur that day.
+  meaning_decisions:
+  - source_phrase: וְהָיָה כְּהַפְנֹתוֹ שִׁכְמוֹ לָלֶכֶת מֵעִם שְׁמוּאֵל
+    prior_rendering: And it happened, when he turned his back to go from Samuel
+    new_rendering: As Saul turned to leave Samuel
+    rationale: Turning the shoulder or back is simply the gesture of departure here; “turned to leave” avoids suggesting rejection or contempt.
+  - source_phrase: וַיָּבֹאוּ כָּל הָאֹתוֹת הָאֵלֶּה בַּיּוֹם הַהוּא
+    prior_rendering: all these signs came to pass on that day
+    new_rendering: all these signs happened that day
+    rationale: The clause reports that every predicted event occurred that same day.
+  footnote_kinds: {}
+  history_weighed: The history objects that “gave” can hide the verb of change, but “gave him another heart” already conveys a real inward change and preserves the heart image. I retain that wording while expressing the departure idiom naturally.

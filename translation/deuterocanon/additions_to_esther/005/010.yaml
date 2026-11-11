@@ -12,15 +12,8 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: For Haman son of Hammedatha[a], a Macedonian, being alien to the true Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek: ''a Macedonian.'' This ethnic label belongs to the Greek addition''s wording and may reflect the historical setting or polemical framing of the translator/tradition.'
-    reason: cultural_note
-  - marker: b
-    text: The Greek phrase behind 'alien to the true Persian blood' is syntactically difficult; the sense is that Haman was not genuinely of Persian lineage.
-    reason: lexical_alternative
+  text: For Haman son of Hammedatha, a Macedonian who was not in fact of Persian descent and whose character was far removed from our kindness, was nevertheless welcomed by us as a guest.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἁμὰν Ἁμαδάθου
   chosen: Haman son of Hammedatha
@@ -105,14 +98,20 @@ revisions:
   from: For Haman son of Hammedatha, a Macedonian, being alien to the true Persian blood and far removed from our goodwill, though he had been received by us as a guest,
   to: For Haman son of Hammedatha, a Macedonian, being alien to the Persian blood and far removed from our goodwill, though he had been received by us as a guest,
   rationale: Removed 'true' before 'Persian blood' because ταῖς ἀληθείας does not naturally support that rendering here; retained the rest as accurate and formal.
-
 - timestamp: '2026-05-16T15:37:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For Haman son of Hammedatha[a], a Macedonian, being alien to the Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],'
-  to: 'For Haman son of Hammedatha[a], a Macedonian, being alien to the true Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],'
-  rationale: 'Restored drafter ''the true Persian blood'' (preserving the chosen explicit ''true'' modifier for ταῖς ἀληθείας) per chosen renderings.'
+  from: For Haman son of Hammedatha[a], a Macedonian, being alien to the Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],
+  to: For Haman son of Hammedatha[a], a Macedonian, being alien to the true Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],
+  rationale: Restored drafter 'the true Persian blood' (preserving the chosen explicit 'true' modifier for ταῖς ἀληθείας) per chosen renderings.
+- timestamp: '2026-11-09T19:00:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For Haman son of Hammedatha[a], a Macedonian, being alien to the true Persian blood and far removed from our goodwill, though he had been received by us as a guest[b],
+  to: For Haman son of Hammedatha, a Macedonian who was not in fact of Persian descent and whose character was far removed from our kindness, was nevertheless welcomed by us as a guest.
+  rationale: The review correctly questioned attaching “true” to Persian blood; the automated restoration did not supply a stronger meaning-based reason. I retain the explicit Macedonian identification and guest relationship while clarifying ancestry and character.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -132,3 +131,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/010.job-50288.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Haman was a Macedonian outsider whose character differed from the king’s kindness, yet the king welcomed him as a guest.
+  meaning_decisions:
+  - source_phrase: ταῖς ἀληθείας ἀλλότριος τοῦ τῶν Περσῶν αἵματος
+    prior_rendering: being alien to the true Persian blood
+    new_rendering: who was not in fact of Persian descent
+    rationale: The phrase identifies Haman as genuinely foreign to Persian ancestry; it does not distinguish supposedly true Persian blood from another kind.
+  - source_phrase: πολὺ διεστηκὼς τῆς ἡμετέρας χρηστότητος
+    prior_rendering: far removed from our goodwill
+    new_rendering: whose character was far removed from our kindness
+    rationale: The contrast concerns Haman’s moral disposition, not exclusion from royal favor, since the next verse says he received that favor abundantly.
+  - source_phrase: ἐπιξενωθεὶς ἡμῖν
+    prior_rendering: though he had been received by us as a guest
+    new_rendering: was nevertheless welcomed by us as a guest
+    rationale: A finite clause produces a complete English sentence while preserving the contrast between his foreignness and the king’s hospitality.
+  footnote_kinds: {}
+  history_weighed: The review correctly questioned attaching “true” to Persian blood; the automated restoration did not supply a stronger meaning-based reason. I retain the explicit Macedonian identification and guest relationship while clarifying ancestry and character.

@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,
-  philosophy: optimal-equivalence
+  text: 'They met the Nabateans, who welcomed them peaceably and told Judas and Jonathan everything that had happened to their brothers[a] in Gilead:'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'they greeted them peacefully' or 'they met them in peace.' The Greek verb can denote going out to meet or receiving someone, and the adverb emphasizes peaceful intent.
+    text: “Brothers” here means fellow Israelites.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: συνήντησαν
@@ -95,14 +95,20 @@ revisions:
   from: And they met the Nabateans, and they received them peaceably, and they told them everything that had happened to their brothers in Gilead,
   to: And they met the Nabateans, and they received them peaceably, and they told them everything that had happened to their brothers in Gilead,
   rationale: Changed 'received them peaceably' to 'greeted them peaceably' for more accurate rendering of ὑπήντησαν αὐτοῖς εἰρηνικῶς.
-
 - timestamp: '2026-05-18T02:58:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,'
-  to: 'And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,'
+  from: And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,
+  to: And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they received them peaceably''].'
+- timestamp: '2026-11-09T18:51:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they met the Nabateans[a], and they greeted them peaceably, and they told them everything that had happened to their brothers in Gilead,
+  to: 'They met the Nabateans, who welcomed them peaceably and told Judas and Jonathan everything that had happened to their brothers[a] in Gilead:'
+  rationale: The history alternates between 'received' and 'greeted,' but both recognize a peaceful reception. The following report establishes that the Nabateans supply the information, a relationship the repeated pronouns previously obscured.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -122,3 +128,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/025.job-48231.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Nabateans receive Judas and Jonathan peacefully and inform them about the suffering of their fellow Israelites in Gilead.
+  meaning_decisions:
+  - source_phrase: καὶ ὑπήντησαν αὐτοῖς εἰρηνικῶς, καὶ διηγήσαντο αὐτοῖς
+    prior_rendering: and they greeted them peaceably, and they told them
+    new_rendering: who welcomed them peaceably and told Judas and Jonathan
+    rationale: The Nabateans are the welcoming party and the source of the information that follows; explicit subjects and recipients remove the current wording's ambiguity.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history alternates between 'received' and 'greeted,' but both recognize a peaceful reception. The following report establishes that the Nabateans supply the information, a relationship the repeated pronouns previously obscured.

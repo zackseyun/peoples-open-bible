@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐὰν δὲ εἴπωμεν· Ἐξ ἀνθρώπων, ⸂ὁ λαὸς ἅπας⸃ καταλιθάσει ἡμᾶς, πεπεισμένος γάρ ἐστιν Ἰωάννην προφήτην εἶναι·
 translation:
-  text: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “that John is a prophet.” The Greek infinitive does not itself specify tense; English may render it either way depending on context.
-    reason: lexical_alternative
+  text: But if we say, ‘Of human origin,’ all the people will stone us, because they are convinced that John was a prophet.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐὰν δὲ εἴπωμεν
   chosen: But if we say
@@ -82,13 +78,12 @@ revisions:
   from: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet.
   to: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John is a prophet.
   rationale: Changed ‘was a prophet’ to ‘is a prophet’ to reflect the Greek present infinitive εἶναι and preserve the people's present conviction more accurately.
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if we say[a], ‘From men,’ all the people will stone us, for they are convinced that John is a prophet.'
-  to: 'But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet.'
+  from: But if we say[a], ‘From men,’ all the people will stone us, for they are convinced that John is a prophet.
+  to: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that John was a prophet''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -98,6 +93,13 @@ revisions:
   from: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet.
   to: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('that John was a prophet') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if we say, ‘From men,’ all the people will stone us, for they are convinced that John was a prophet[a].
+  to: But if we say, ‘Of human origin,’ all the people will stone us, because they are convinced that John was a prophet.”
+  rationale: The history alternates between 'is a prophet' and 'was a prophet,' but the automated revert supplies no additional interpretive evidence. I retain 'was a prophet' as natural English referring to John’s prior ministry; the tense alternative does not require a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +122,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/020/006.job-55883.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The leaders fear that denying John’s divine authorization will provoke the people to stone them because the people regard him as a prophet.
+  meaning_decisions:
+  - source_phrase: Ἐξ ἀνθρώπων
+    prior_rendering: From men
+    new_rendering: Of human origin
+    rationale: This repeats the human-origin alternative in verse 4 without suggesting a specifically male source.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'is a prophet' and 'was a prophet,' but the automated revert supplies no additional interpretive evidence. I retain 'was a prophet' as natural English referring to John’s prior ministry; the tense alternative does not require a footnote.

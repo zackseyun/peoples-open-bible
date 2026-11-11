@@ -25,12 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'the right horn'; in military usage this refers to the right wing or flank of the army.
-    reason: lexical_alternative
+  text: When Demetrius heard that Nicanor and his forces had fought a battle, he sent Bacchides and Alcimus into the land of Judah a second time, with the army’s right wing accompanying them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἤκουσεν
   chosen: heard
@@ -111,14 +107,20 @@ revisions:
   from: And Demetrius heard that Nicanor and his forces had made war, and he proceeded to send Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
   to: And Demetrius heard that Nicanor and his forces had made war, and he proceeded to send Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
   rationale: Replaced 'proceeded to send' with the simpler and more direct 'sent' for a more natural and formally appropriate rendering of προσέθετο ... ἀποστεῖλαι, while preserving the full sense and all source elements.
-
 - timestamp: '2026-05-18T02:59:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.'
-  to: 'And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.'
+  from: And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
+  to: And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he proceeded to send''].'
+- timestamp: '2026-11-09T18:53:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Demetrius heard that Nicanor and his forces had made war[a], and he sent Bacchides and Alcimus into the land of Judah a second time, and the right wing with them.
+  to: When Demetrius heard that Nicanor and his forces had fought a battle, he sent Bacchides and Alcimus into the land of Judah a second time, with the army’s right wing accompanying them.
+  rationale: The earlier discussion chiefly concerned the redundant expression 'proceeded to send'; the current direct verb is retained. The military sense of 'right wing' is also retained, making the misplaced literal-horn note unnecessary.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -138,3 +140,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/001.job-48420.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:19Z'
+  change_level: refined
+  confidence: high
+  meaning: After hearing of Nicanor’s fighting, Demetrius sends Bacchides and Alcimus back into Judah with the army’s right wing.
+  meaning_decisions:
+  - source_phrase: ἐποίησεν Νικάνωρ καὶ αἱ δυνάμεις αὐτοῦ πόλεμον
+    prior_rendering: Nicanor and his forces had made war
+    new_rendering: Nicanor and his forces had fought a battle
+    rationale: This renders the warfare idiom naturally in the immediate battle narrative without adding Nicanor’s death, which the supplied Greek does not state.
+  - source_phrase: καὶ τὸ δεξιὸν κέρας μετʼ αὐτῶν
+    prior_rendering: and the right wing with them
+    new_rendering: with the army’s right wing accompanying them
+    rationale: The military force accompanying the two leaders is made explicit rather than left as a sentence fragment.
+  footnote_kinds: {}
+  history_weighed: The earlier discussion chiefly concerned the redundant expression 'proceeded to send'; the current direct verb is retained. The military sense of 'right wing' is also retained, making the misplaced literal-horn note unnecessary.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: διὰ τοῦτο κἀγὼ μηκέτι στέγων ἔπεμψα εἰς τὸ γνῶναι τὴν πίστιν ὑμῶν, μή πως ἐπείρασεν ὑμᾶς ὁ πειράζων καὶ εἰς κενὸν γένηται ὁ κόπος ἡμῶν.
 translation:
-  text: For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'your faithfulness' or 'your trust.' The Greek word can carry overlapping senses depending on context.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'in vain' or 'for nothing.'
-    reason: lexical_alternative
+  text: For this reason, when I could bear it no longer, I sent Timothy to find out about your faith. I was afraid that the tempter might have tempted you and that our labor might prove to be in vain.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διὰ τοῦτο
   chosen: For this reason
@@ -129,14 +122,20 @@ revisions:
   from: For this reason, when I could bear it no longer, I sent to learn about your faith, lest somehow the tempter had tempted you and our labor might become empty.
   to: For this reason, when I could bear it no longer, I sent to learn about your faith, lest somehow the tempter had tempted you and our labor might become empty.
   rationale: Changed 'become empty' to 'be in vain' for a more natural and accurate rendering of εἰς κενὸν γένηται. Kept the rest of the draft, which faithfully represents the Greek.
-
 - timestamp: '2026-05-18T03:00:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.'
-  to: 'For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.'
+  from: For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.
+  to: For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''might become''].'
+- timestamp: '2026-11-09T17:05:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For this reason[a], when I could bear it no longer, I sent to learn about your faith[b], lest somehow the tempter had tempted you and our labor might be in vain.
+  to: For this reason, when I could bear it no longer, I sent Timothy to find out about your faith. I was afraid that the tempter might have tempted you and that our labor might prove to be in vain.
+  rationale: The current text and the recorded review rationale favor “in vain” over the first draft’s “become empty,” and I retain that gain despite the inconsistent revert record. I preserve the shift from “we” to “I” and the tempter/tempted wording while making the implied object and apprehension explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +157,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_thessalonians/003/005.job-53244.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul sent Timothy to learn about their faith because he feared that the tempter’s influence might make their labor fruitless.
+  meaning_decisions:
+  - source_phrase: ἔπεμψα εἰς τὸ γνῶναι τὴν πίστιν ὑμῶν
+    prior_rendering: I sent to learn about your faith
+    new_rendering: I sent Timothy to find out about your faith
+    rationale: Timothy is the understood object from verse 2; supplying his name makes the English complete without introducing a new event.
+  - source_phrase: μή πως ἐπείρασεν ὑμᾶς ὁ πειράζων
+    prior_rendering: lest somehow the tempter had tempted you
+    new_rendering: I was afraid that the tempter might have tempted you
+    rationale: This expresses Paul’s apprehension about what might already have happened, rather than suggesting that sending Timothy could prevent a past temptation.
+  - source_phrase: καὶ εἰς κενὸν γένηται ὁ κόπος ἡμῶν
+    prior_rendering: and our labor might be in vain
+    new_rendering: and that our labor might prove to be in vain
+    rationale: The wording keeps the feared outcome prospective and conveys the possibility that their strenuous labor would yield no lasting result.
+  footnote_kinds: {}
+  history_weighed: The current text and the recorded review rationale favor “in vain” over the first draft’s “become empty,” and I retain that gain despite the inconsistent revert record. I preserve the shift from “we” to “I” and the tempter/tempted wording while making the implied object and apprehension explicit.

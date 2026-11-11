@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ἀπῆλθεν δὲ Ἁνανίας καὶ εἰσῆλθεν εἰς τὴν οἰκίαν, καὶ ἐπιθεὶς ἐπ’ αὐτὸν τὰς χεῖρας εἶπεν· Σαοὺλ ἀδελφέ, ὁ κύριος ἀπέσταλκέν με, ⸀Ἰησοῦς ὁ ὀφθείς σοι ἐν τῇ ὁδῷ ᾗ ἤρχου, ὅπως ἀναβλέψῃς καὶ πλησθῇς πνεύματος ἁγίου.
 translation:
-  text: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming[b][a]—so that you may regain your sight and be filled with the Holy Spirit.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “on the road on which you were traveling.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or “that you may see again.”
-    reason: lexical_alternative
+  text: So Ananias went into the house. He laid his hands on Saul and said, “Brother Saul, the Lord Jesus, who appeared to you on the road to Damascus, has sent me so that you may regain your sight and be filled with the Holy Spirit.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπῆλθεν
   chosen: went
@@ -137,13 +130,12 @@ revisions:
   from: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming—so that you may regain your sight and be filled with the Holy Spirit.”
   to: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord Jesus, who appeared to you on the road by which you were coming, has sent me so that you may regain your sight and be filled with the Holy Spirit.”
   rationale: 'Reordered the apposition to read more naturally and accurately in English: ''the Lord Jesus, who appeared to you...'' instead of ''the Lord has sent me—Jesus, the one who appeared to you...''. This preserves that ''Jesus'' identifies ''the Lord'' and avoids an awkward interruption.'
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Ananias went and entered the house[a], and laying his hands on him he said, “Brother Saul, the Lord Jesus, who appeared to you on the road by which you were coming[b], has sent me so that you may regain your sight and be filled with the Holy Spirit.”'
-  to: 'So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming—so that you may regain your sight and be filled with the Holy Spirit.”'
+  from: So Ananias went and entered the house[a], and laying his hands on him he said, “Brother Saul, the Lord Jesus, who appeared to you on the road by which you were coming[b], has sent me so that you may regain your sight and be filled with the Holy Spirit.”
+  to: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming—so that you may regain your sight and be filled with the Holy Spirit.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one who appeared to you''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -153,6 +145,13 @@ revisions:
   from: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming—so that you may regain your sight and be filled with the Holy Spirit.”
   to: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming[b][a]—so that you may regain your sight and be filled with the Holy Spirit.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('on the road by which you were coming') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:06:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Ananias went and entered the house, and laying his hands on him he said, “Brother Saul, the Lord has sent me—Jesus, the one who appeared to you on the road by which you were coming[b][a]—so that you may regain your sight and be filled with the Holy Spirit.”
+  to: So Ananias went into the house. He laid his hands on Saul and said, “Brother Saul, the Lord Jesus, who appeared to you on the road to Damascus, has sent me so that you may regain your sight and be filled with the Holy Spirit.”
+  rationale: The April revision correctly identified the awkward placement of 'Jesus'; its wholesale automated revert offers no meaning-based reason to retain that awkwardness. I preserve the earlier gains concerning brotherhood, restored sight, and the Holy Spirit while restoring the clearer apposition.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -172,3 +171,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/009/017.job-46647.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:25Z'
+  change_level: refined
+  confidence: high
+  meaning: Ananias obeys the Lord, addresses Saul as a brother, and announces that Jesus has sent him to restore Saul’s sight and bring him the fullness of the Holy Spirit.
+  meaning_decisions:
+  - source_phrase: ὁ κύριος ἀπέσταλκέν με, Ἰησοῦς ὁ ὀφθείς σοι
+    prior_rendering: the Lord has sent me—Jesus, the one who appeared to you
+    new_rendering: the Lord Jesus, who appeared to you, has sent me
+    rationale: Places the identifying apposition beside 'Lord' so that the sender’s identity is immediately clear.
+  - source_phrase: ἐν τῇ ὁδῷ ᾗ ἤρχου
+    prior_rendering: on the road by which you were coming
+    new_rendering: on the road to Damascus
+    rationale: Expresses the journey’s understood destination without the awkward relative construction.
+  - source_phrase: ἐπιθεὶς ἐπ’ αὐτὸν τὰς χεῖρας εἶπεν
+    prior_rendering: and laying his hands on him he said
+    new_rendering: He laid his hands on Saul and said
+    rationale: Uses a direct sentence and identifies the recipient of Ananias’s action.
+  footnote_kinds: {}
+  history_weighed: The April revision correctly identified the awkward placement of 'Jesus'; its wholesale automated revert offers no meaning-based reason to retain that awkwardness. I preserve the earlier gains concerning brotherhood, restored sight, and the Holy Spirit while restoring the clearer apposition.

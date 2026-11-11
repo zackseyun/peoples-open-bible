@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אֵיכָ֤ה תֹֽאמְרוּ֙ חֲכָמִ֣ים אֲנַ֔חְנוּ וְ/תוֹרַ֥ת יְהוָ֖ה אִתָּ֑/נוּ אָכֵן֙ הִנֵּ֣ה לַ/שֶּׁ֣קֶר עָשָׂ֔ה עֵ֖ט שֶׁ֥קֶר סֹפְרִֽים׃
 translation:
-  text: How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But look, the lying pen of the scribes has made it into a lie.
-  philosophy: optimal-equivalence
+  text: How can you say, ‘We are wise, and we have Yahweh’s law’? But look, the lying pen of the scribes has made it into a lie[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “Surely, look, the pen of the scribes has made falsehood,” or “the false pen of the scribes has worked falsely.” The Hebrew is compact and allows more than one way of expressing the scribes’ falsification.
-    reason: lexical_alternative
+    text: Or, “the lying pen of the scribes has worked falsely”; the compact Hebrew does not explicitly name the object of their falsification.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֵיכָה
   chosen: How can
@@ -107,14 +107,20 @@ revisions:
   from: How can you say, ‘We are wise, and the law of the LORD is with us’? But look, the lying pen of the scribes has made it into a lie.
   to: How can you say, ‘We are wise, and the law of the LORD is with us’? But behold, the lying pen of the scribes has made it a lie.
   rationale: Replaced ‘look’ with the more formal ‘behold’ for register, and simplified ‘has made it into a lie’ to the more literal and natural ‘has made it a lie.’
-
 - timestamp: '2026-05-16T07:55:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But behold, the lying pen of the scribes has made it a lie.'
-  to: 'How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But look, the lying pen of the scribes has made it into a lie.'
-  rationale: 'Azure substituted ''But behold'' (drafter''s rejected_alternative ''Surely, behold'' — drafter chose ''But look'' for deictic force in readable modern English) and dropped ''into'' from ''has made it into a lie'' (drafter explicitly chose ''into'' for resultative force of לַשֶּׁקֶר).'
+  from: How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But behold, the lying pen of the scribes has made it a lie.
+  to: How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But look, the lying pen of the scribes has made it into a lie.
+  rationale: Azure substituted 'But behold' (drafter's rejected_alternative 'Surely, behold' — drafter chose 'But look' for deictic force in readable modern English) and dropped 'into' from 'has made it into a lie' (drafter explicitly chose 'into' for resultative force of לַשֶּׁקֶר).
+- timestamp: '2026-11-09T17:55:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: How can you say[a], ‘We are wise, and the law of Yahweh is with us’? But look, the lying pen of the scribes has made it into a lie.
+  to: How can you say, ‘We are wise, and we have Yahweh’s law’? But look, the lying pen of the scribes has made it into a lie[a].
+  rationale: I retain the current “But look” and resultative “made it into a lie,” rather than the automated change toward a more formal surface rendering. The documented uncertainty about the scribes’ action is preserved in a focused note attached to that action.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +143,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/008/008.job-67291.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:03Z'
+  change_level: refined
+  confidence: medium
+  meaning: The claim to wisdom through possession of Yahweh’s law is contradicted by the scribes’ dishonest handling of it.
+  meaning_decisions:
+  - source_phrase: וְ/תוֹרַת יְהוָה אִתָּנוּ
+    prior_rendering: and the law of Yahweh is with us
+    new_rendering: and we have Yahweh’s law
+    rationale: The boast concerns their possession of divine instruction; “is with us” can misleadingly sound as though the law endorses their conduct.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current “But look” and resultative “made it into a lie,” rather than the automated change toward a more formal surface rendering. The documented uncertainty about the scribes’ action is preserved in a focused note attached to that action.

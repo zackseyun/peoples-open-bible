@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: λέγων· Ἥμαρτον παραδοὺς αἷμα ⸀ἀθῷον. οἱ δὲ εἶπαν· Τί πρὸς ἡμᾶς; σὺ ⸀ὄψῃ.
 translation:
-  text: saying, “I have sinned by betraying innocent blood[a].” But they said, “What is that to us? You will see to it[b].”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “having betrayed innocent blood.”
-    reason: lexical_alternative
-  - marker: b
-    text: Or, “You see to it,” an idiomatic dismissal meaning “That is your responsibility.”
-    reason: alternative_reading
+  text: He said, “I have sinned by betraying innocent blood.” But they replied, “What is that to us? That is your responsibility.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἥμαρτον
   chosen: I have sinned
@@ -79,14 +72,20 @@ revisions:
   from: saying, “I have sinned by betraying innocent blood.” But they said, “What is that to us? You will see to it.”
   to: saying, “I have sinned by betraying innocent blood.” But they said, “What is that to us? You see to it.”
   rationale: Changed “You will see to it” to “You see to it” to better reflect the Greek σὺ ὄψῃ as an idiomatic dismissive imperative-like future in context. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'saying[a], “I have sinned by betraying innocent blood.” But they said[b], “What is that to us? You see to it.”'
-  to: 'saying, “I have sinned by betraying innocent blood.” But they said, “What is that to us? You will see to it.”'
+  from: saying[a], “I have sinned by betraying innocent blood.” But they said[b], “What is that to us? You see to it.”
+  to: saying, “I have sinned by betraying innocent blood.” But they said, “What is that to us? You will see to it.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will see to it''].'
+- timestamp: '2026-11-09T17:16:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: saying, “I have sinned by betraying innocent blood[a].” But they said, “What is that to us? You will see to it[b].”
+  to: He said, “I have sinned by betraying innocent blood.” But they replied, “What is that to us? That is your responsibility.”
+  rationale: The April revision recognized the dismissive force of the idiom, while the later blanket revert supplied no new semantic evidence. I carry that gain further and retain “innocent blood,” whose image connects Judas’s confession with the blood language that follows.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +108,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/027/004.job-57494.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas confesses his sin of betraying an innocent man, but the leaders dismiss his guilt as his own responsibility.
+  meaning_decisions:
+  - source_phrase: σὺ ὄψῃ
+    prior_rendering: You will see to it
+    new_rendering: That is your responsibility
+    rationale: The future form functions as a brusque dismissal, not a prediction or a promise that Judas will remedy matters; the new wording brings the earlier footnote’s meaning into the text.
+  footnote_kinds: {}
+  history_weighed: The April revision recognized the dismissive force of the idiom, while the later blanket revert supplied no new semantic evidence. I carry that gain further and retain “innocent blood,” whose image connects Judas’s confession with the blood language that follows.

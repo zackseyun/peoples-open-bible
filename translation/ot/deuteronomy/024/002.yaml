@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/יָצְאָ֖ה מִ/בֵּית֑/וֹ וְ/הָלְכָ֖ה וְ/הָיְתָ֥ה לְ/אִישׁ אַחֵֽר־׃
 translation:
-  text: and she leaves his house and goes and becomes another man's wife,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'to another man.' The Hebrew idiom means that she enters marriage with another man.
-    reason: lexical_alternative
+  text: and she leaves his house and becomes another man's wife,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיָצְאָה
   chosen: and she leaves
@@ -64,17 +60,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'and she leaves his house and goes and becomes another man''s wife,'
-  to: 'and she goes out from his house and goes and becomes another man''s wife,'
+  from: and she leaves his house and goes and becomes another man's wife,
+  to: and she goes out from his house and goes and becomes another man's wife,
   rationale: Added 'goes out from' to more fully represent וְיָצְאָה מִבֵּיתוֹ ('and she goes out from his house') rather than simply 'leaves his house.'
-
 - timestamp: '2026-05-18T02:55:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and she goes out from his house and goes and becomes another man''s wife,[a]'
-  to: 'and she leaves his house and goes and becomes another man''s wife,[a]'
+  from: and she goes out from his house and goes and becomes another man's wife,[a]
+  to: and she leaves his house and goes and becomes another man's wife,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and she leaves''].'
+- timestamp: '2026-11-09T20:32:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and she leaves his house and goes and becomes another man's wife,[a]
+  to: and she leaves his house and becomes another man's wife,
+  rationale: The history supports retaining 'leaves his house' rather than the more source-shaped 'goes out from his house'; no MAINTAINER revision is recorded. The established interpretation of becoming another man's wife is retained, with only the redundant movement wording streamlined.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -94,3 +96,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/024/002.job-61782.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:47Z'
+  change_level: refined
+  confidence: high
+  meaning: The divorced woman leaves her former husband's house and becomes the wife of another man.
+  meaning_decisions:
+  - source_phrase: וְהָלְכָה וְהָיְתָה לְאִישׁ אַחֵר
+    prior_rendering: and goes and becomes another man's wife
+    new_rendering: and becomes another man's wife
+    rationale: The separate 'goes' continues the departure already expressed; combining the sequence makes natural English without losing the movement from her former household into another marriage. The earlier footnote is unnecessary because the main text already conveys the marital idiom.
+  footnote_kinds: {}
+  history_weighed: The history supports retaining 'leaves his house' rather than the more source-shaped 'goes out from his house'; no MAINTAINER revision is recorded. The established interpretation of becoming another man's wife is retained, with only the redundant movement wording streamlined.

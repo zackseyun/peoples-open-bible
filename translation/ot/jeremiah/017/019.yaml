@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: כֹּה אָמַ֨ר יְהוָ֜ה אֵלַ֗/י הָלֹ֤ךְ וְ/עָֽמַדְתָּ֙ בְּ/שַׁ֣עַר בְּנֵֽי עם אֲשֶׁ֨ר יָבֹ֤אוּ ב/וֹ֙ מַלְכֵ֣י יְהוּדָ֔ה וַ/אֲשֶׁ֖ר יֵ֣צְאוּ ב֑/וֹ וּ/בְ/כֹ֖ל שַׁעֲרֵ֥י יְרוּשָׁלִָֽם־־׃
 translation:
-  text: 'Thus Yahweh said to me: Go and stand in the gate of the people[a], by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
-  philosophy: optimal-equivalence
+  text: 'This is what Yahweh said to me: Go and stand at the People''s Gate[a], through which the kings of Judah enter and leave, and at all the gates of Jerusalem.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''the gate of the sons of the people''; possibly a specific gate name, often understood as ''the People''s Gate.'''
+    text: Literally, “the gate of the sons of the people,” apparently the designation of a particular gate.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כֹּה
@@ -100,7 +100,6 @@ revisions:
   from: 'Thus the LORD said to me: Go and stand in the gate of the sons of the people, by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
   to: 'Thus the LORD said to me: Go and stand in the gate of the sons of the people, by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
   rationale: Changed 'the gate of the sons of the people' to 'the gate of the people' for more natural English while preserving the likely sense of the Hebrew phrase. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -108,6 +107,13 @@ revisions:
   from: 'Thus Yahweh said to me: Go and stand in the gate of the people[a], by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
   to: 'Thus Yahweh said to me: Go and stand in the gate of the people[a], by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the sons of the people''].'
+- timestamp: '2026-11-09T17:56:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus Yahweh said to me: Go and stand in the gate of the people[a], by which the kings of Judah enter and by which they go out, and in all the gates of Jerusalem.'
+  to: 'This is what Yahweh said to me: Go and stand at the People''s Gate[a], through which the kings of Judah enter and leave, and at all the gates of Jerusalem.'
+  rationale: The earlier revision recognized that 'sons of the people' obscures the gate designation in English, a gain retained in the current text. I build on that clarification rather than the automated revert's preference for the literal construct chain.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +136,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/017/019.job-67484.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh commands Jeremiah to station himself at the gate used by Judah's kings and at every gate of Jerusalem.
+  meaning_decisions:
+  - source_phrase: בְּשַׁעַר בְּנֵי עָם
+    prior_rendering: in the gate of the people
+    new_rendering: at the People's Gate
+    rationale: The phrase identifies the particular gate where Jeremiah is to stand; 'People's Gate' expresses that designation naturally, with its uncertain literal form preserved in a note.
+  - source_phrase: אֲשֶׁר יָבֹאוּ בוֹ ... וַאֲשֶׁר יֵצְאוּ בוֹ
+    prior_rendering: by which the kings of Judah enter and by which they go out
+    new_rendering: through which the kings of Judah enter and leave
+    rationale: '''Through'' clearly identifies the gate as the route of royal passage, while the coordinated verbs retain both directions.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier revision recognized that 'sons of the people' obscures the gate designation in English, a gain retained in the current text. I build on that clarification rather than the automated revert's preference for the literal construct chain.

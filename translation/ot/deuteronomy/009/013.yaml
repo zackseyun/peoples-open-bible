@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֥אמֶר יְהוָ֖ה אֵלַ֣/י לֵ/אמֹ֑ר רָאִ֨יתִי֙ אֶת הָ/עָ֣ם הַ/זֶּ֔ה וְ/הִנֵּ֥ה עַם קְשֵׁה עֹ֖רֶף הֽוּא־־־׃
 translation:
-  text: Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'I saw this people, and indeed it is a stiff-necked people.'
-    reason: lexical_alternative
+  text: 'Then Yahweh said to me, “I have seen this people: they are indeed a stiff-necked people.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -103,14 +99,20 @@ revisions:
   from: Then the LORD said to me, ‘I have seen this people, and behold, they are a stiff-necked people.’
   to: Then the LORD said to me, ‘I have seen this people, and behold, they are a stiff-necked people.’
   rationale: Added “saying” to reflect לֵאמֹר and changed “they are” to “it is” to match the singular Hebrew subject עַם (“people”).
-
 - timestamp: '2026-05-18T02:55:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’'
-  to: 'Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’'
+  from: Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’
+  to: Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they are''].'
+- timestamp: '2026-11-09T17:32:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Yahweh said to me[a], saying, ‘I have seen this people, and behold, it is a stiff-necked people.’
+  to: 'Then Yahweh said to me, “I have seen this people: they are indeed a stiff-necked people.'
+  rationale: The first draft’s “they are” and the lexical rationale for omitting redundant “saying” better serve the meaning than the automated source-mirroring additions. The stiff-necked image remains intact, and “indeed” carries the emphasis the earlier note recognized.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +134,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/009/013.job-61495.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:24Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh declares that his observation of Israel confirms that they are a stubbornly resistant people.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר יְהוָה אֵלַי לֵאמֹר
+    prior_rendering: Then Yahweh said to me, saying
+    new_rendering: Then Yahweh said to me
+    rationale: The Hebrew speech-introduction formula requires only one introduction in natural English.
+  - source_phrase: וְהִנֵּה עַם קְשֵׁה עֹרֶף הוּא
+    prior_rendering: and behold, it is a stiff-necked people
+    new_rendering: they are indeed a stiff-necked people
+    rationale: Preserves the emphatic assessment while using natural English agreement for a collective people.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “they are” and the lexical rationale for omitting redundant “saying” better serve the meaning than the automated source-mirroring additions. The stiff-necked image remains intact, and “indeed” carries the emphasis the earlier note recognized.

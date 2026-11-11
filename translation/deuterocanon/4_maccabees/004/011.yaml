@@ -18,18 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.
-  philosophy: optimal-equivalence
+  text: Apollonius collapsed half-dead on the lifeless stones of the temple courtyard[a], stretched out his hands to heaven, and tearfully begged the Hebrews to pray for him so as to appease the heavenly host.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the precinct of the sanctuary.' The Greek term refers to an enclosed sacred area.
+    text: Literally, “the lifeless enclosure of the temple.”
     reason: lexical_alternative
-  - marker: b
-    text: Or 'to pray for him.' Literally, 'to pray concerning him.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the heavenly army' or 'the host of heaven.' The Greek leaves the precise referent somewhat open.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: καταπεσὼν
   chosen: having fallen
@@ -132,14 +126,20 @@ revisions:
   from: So Apollonius, having fallen half-dead upon the lifeless enclosure of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray concerning him, so that they might appease the heavenly host.
   to: So Apollonius, having fallen half-dead upon the lifeless enclosure of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray concerning him, so that they might appease the heavenly host.
   rationale: Replaced 'enclosure' with 'court' for a more natural rendering of περίβολος in this context, and changed 'pray concerning him' to 'pray for him' for more natural English while preserving the sense.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.'
-  to: 'So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.'
+  from: So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.
+  to: So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to pray concerning him''].'
+- timestamp: '2026-11-09T18:57:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Apollonius[a], having fallen half-dead upon the lifeless court of the sanctuary, stretched out his hands to heaven and with tears begged the Hebrews to pray for him[c][b], so that they might appease the heavenly host.
+  to: Apollonius collapsed half-dead on the lifeless stones of the temple courtyard[a], stretched out his hands to heaven, and tearfully begged the Hebrews to pray for him so as to appease the heavenly host.
+  rationale: The current “pray for him” accurately conveys the intercession requested, despite the automated preference for “concerning him.” I preserved “half-dead” and the documented openness of “heavenly host,” while clarifying the otherwise misleading description of the courtyard.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +159,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/004/011.job-49797.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Apollonius collapsed near death and tearfully begged the Hebrews to intercede for him and appease the heavenly host.
+  meaning_decisions:
+  - source_phrase: ἐπὶ τὸν ἄψυχον τοῦ ἱεροῦ περίβολον
+    prior_rendering: upon the lifeless court of the sanctuary
+    new_rendering: on the lifeless stones of the temple courtyard
+    rationale: “Lifeless court” could suggest an empty or deserted courtyard; the source instead describes inanimate surroundings, here clarified through their stone construction.
+  - source_phrase: καταπεσὼν ... τὰς χεῖρας ἐκτείνων ... παρεκάλει
+    prior_rendering: having fallen ... stretched out his hands ... begged
+    new_rendering: collapsed ... stretched out his hands ... begged
+    rationale: Coordinated English verbs carry the dramatic sequence without a cumbersome participial opening.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The current “pray for him” accurately conveys the intercession requested, despite the automated preference for “concerning him.” I preserved “half-dead” and the documented openness of “heavenly host,” while clarifying the otherwise misleading description of the courtyard.

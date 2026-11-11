@@ -20,15 +20,12 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For they wandered even farther in the ways of error[a], supposing as gods even the dishonored creatures among the animals of their enemies[b], having been deceived like foolish infants.
-  philosophy: optimal-equivalence
+  text: For they wandered even farther along the paths of error, taking as gods even animals that their enemies despised[a]; they were deceived like foolish infants.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'were led further astray.' The Greek can emphasize either their own wandering or their being misled.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'taking as gods even the dishonorable animals of their enemies.'
-    reason: lexical_alternative
+    text: Or, “even the contemptible creatures among their enemies’ animals.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: τῶν πλάνης ὁδῶν
   chosen: the ways of error
@@ -118,14 +115,20 @@ revisions:
   from: For they wandered even farther in the ways of error, supposing as gods even the dishonored creatures among the animals of their enemies, having been deceived like foolish infants.
   to: For they wandered even farther in the ways of error, supposing as gods even the dishonored animals of their enemies, having been deceived like foolish infants.
   rationale: Replaced 'creatures among the animals' with 'animals' for a more direct and natural rendering of the Greek, while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-16T17:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For they wandered even farther in the ways of error[a], supposing as gods even the dishonored animals of their enemies[b], having been deceived like foolish infants.'
-  to: 'For they wandered even farther in the ways of error[a], supposing as gods even the dishonored creatures among the animals of their enemies[b], having been deceived like foolish infants.'
-  rationale: 'Restored drafter ''the dishonored creatures among the animals of their enemies'' (preserving the chosen compound noun structure) per chosen renderings.'
+  from: For they wandered even farther in the ways of error[a], supposing as gods even the dishonored animals of their enemies[b], having been deceived like foolish infants.
+  to: For they wandered even farther in the ways of error[a], supposing as gods even the dishonored creatures among the animals of their enemies[b], having been deceived like foolish infants.
+  rationale: Restored drafter 'the dishonored creatures among the animals of their enemies' (preserving the chosen compound noun structure) per chosen renderings.
+- timestamp: '2026-11-09T20:18:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For they wandered even farther in the ways of error[a], supposing as gods even the dishonored creatures among the animals of their enemies[b], having been deceived like foolish infants.
+  to: For they wandered even farther along the paths of error, taking as gods even animals that their enemies despised[a]; they were deceived like foolish infants.
+  rationale: The earlier review usefully identified the awkwardness of 'creatures among the animals'; the subsequent automated revert restored that structure without supplying further evidence about its meaning. With no MAINTAINER revision, I favor the established reading reflected in the main text while preserving the history’s possessive reading as an alternative.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -145,3 +148,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/012/024.job-39195.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:18:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: They wandered still farther into error by regarding animals their enemies despised as gods, deceived like foolish infants.
+  meaning_decisions:
+  - source_phrase: θεοὺς ὑπολαμβάνοντες
+    prior_rendering: supposing as gods
+    new_rendering: taking as gods
+    rationale: This naturally expresses their mistaken identification of animals as gods without suggesting mere speculation.
+  - source_phrase: τὰ καὶ ἐν ζῴοις τῶν ἐχθρῶν ἄτιμα
+    prior_rendering: even the dishonored creatures among the animals of their enemies
+    new_rendering: even animals that their enemies despised
+    rationale: This adopts the well-established understanding that the animals were contemptible in their enemies’ estimation. 'Despised' conveys their low standing more clearly than 'dishonored'; the alternative possessive reading is retained in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review usefully identified the awkwardness of 'creatures among the animals'; the subsequent automated revert restored that structure without supplying further evidence about its meaning. With no MAINTAINER revision, I favor the established reading reflected in the main text while preserving the history’s possessive reading as an alternative.

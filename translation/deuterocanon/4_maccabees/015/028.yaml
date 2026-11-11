@@ -18,12 +18,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the daughter remembered the steadfastness of Abraham[a], who feared God.
-  philosophy: optimal-equivalence
+  text: But Abraham's daughter remembered the steadfastness of her God-fearing ancestor[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the godly Abraham' or 'Abraham the God-fearing.'
-    reason: lexical_alternative
+    text: An allusion to Abraham's willingness to offer Isaac; see Genesis 22:1–19.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ἀλλὰ
   chosen: But
@@ -103,13 +103,12 @@ revisions:
   from: But the daughter remembered the steadfastness of Abraham, who feared God.
   to: But the daughter remembered the steadfastness of God-fearing Abraham.
   rationale: Reordered the phrase to reflect the Greek more directly and rendered θεοσεβοῦς attributively as 'God-fearing' modifying Abraham, avoiding the relative clause 'who feared God.'
-
 - timestamp: '2026-05-18T03:10:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the daughter remembered the steadfastness of God-fearing Abraham[a].'
-  to: 'But the daughter remembered the steadfastness of Abraham, who feared God.'
+  from: But the daughter remembered the steadfastness of God-fearing Abraham[a].
+  to: But the daughter remembered the steadfastness of Abraham, who feared God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who feared God''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -119,6 +118,13 @@ revisions:
   from: But the daughter remembered the steadfastness of Abraham, who feared God.
   to: But the daughter remembered the steadfastness of Abraham[a], who feared God.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Abraham') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:59:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the daughter remembered the steadfastness of Abraham[a], who feared God.
+  to: But Abraham's daughter remembered the steadfastness of her God-fearing ancestor[a].
+  rationale: The earlier debate about adjectival versus relative wording does not materially affect the meaning, and the explicit reference to fearing God is retained. I go beyond the earlier reluctance to identify whose daughter she is because the Abraham comparison supplies that relationship in context.
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -138,3 +144,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/015/028.job-50132.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As a descendant of Abraham, the mother instead recalled his steadfast devotion to God when faced with the sacrifice of his son.
+  meaning_decisions:
+  - source_phrase: ἡ θυγάτηρ
+    prior_rendering: the daughter
+    new_rendering: Abraham's daughter
+    rationale: The mother is called a daughter in relation to Abraham; leaving the relationship unstated makes the reference obscure.
+  - source_phrase: τῆς θεοσεβοῦς Ἀβραὰμ καρτερίας
+    prior_rendering: the steadfastness of Abraham, who feared God
+    new_rendering: the steadfastness of her God-fearing ancestor
+    rationale: With Abraham named at the start, 'ancestor' clarifies the ancestral relationship without repeating his name, and 'God-fearing' preserves the explicit religious character of his steadfastness.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier debate about adjectival versus relative wording does not materially affect the meaning, and the explicit reference to fearing God is retained. I go beyond the earlier reluctance to identify whose daughter she is because the Abraham comparison supplies that relationship in context.

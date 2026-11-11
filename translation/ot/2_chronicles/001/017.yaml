@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַֽ֠/יַּעֲלוּ וַ/יּוֹצִ֨יאוּ מִ/מִּצְרַ֤יִם מֶרְכָּבָה֙ בְּ/שֵׁ֣שׁ מֵא֣וֹת כֶּ֔סֶף וְ/ס֖וּס בַּ/חֲמִשִּׁ֣ים וּ/מֵאָ֑ה וְ֠/כֵן לְ/כָל מַלְכֵ֧י הַֽ/חִתִּ֛ים וּ/מַלְכֵ֥י אֲרָ֖ם בְּ/יָדָ֥/ם יוֹצִֽיאוּ־׃
 translation:
-  text: They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'They brought up and brought out from Egypt.' The Hebrew uses ordinary motion verbs in a trade context; 'imported'/'exported' renders the commercial sense.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'Aram'; traditionally 'Syria.'
-    reason: alternative_reading
-  - marker: c
-    text: Hebrew 'by their hand,' an idiom meaning 'through them' or 'through their agents.'
-    reason: lexical_alternative
+  text: The king’s merchants imported chariots from Egypt at 600 shekels of silver each and horses at 150 shekels each. They likewise exported them to all the kings of the Hittites and the kings of Aram.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעֲלוּ
   chosen: They imported
@@ -106,14 +96,20 @@ revisions:
   from: They imported from Egypt a chariot for six hundred shekels of silver, and a horse for one hundred fifty; and so they exported them by their hand to all the kings of the Hittites and the kings of Aram.
   to: They imported from Egypt a chariot for six hundred shekels of silver, and a horse for one hundred fifty; and so they exported them by their hand to all the kings of the Hittites and the kings of Aram.
   rationale: Removed 'by their hand,' which is an overly literal rendering of an idiom better left implicit in natural English here. Kept the import/export wording and pricing intact.
-
 - timestamp: '2026-05-17T01:51:24Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.'
-  to: 'They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.'
+  from: They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.
+  to: They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by their hand''].'
+- timestamp: '2026-11-09T17:26:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They imported from Egypt a chariot for six hundred shekels of silver[a], and a horse for one hundred fifty[c][b]; and so they exported them to all the kings of the Hittites and the kings of Aram.
+  to: The king’s merchants imported chariots from Egypt at 600 shekels of silver each and horses at 150 shekels each. They likewise exported them to all the kings of the Hittites and the kings of Aram.
+  rationale: The earlier review rightly retained import/export language and removed the literal agency idiom “by their hand”; the automated revert adds no substantive rationale. Naming the merchants carries that agency directly, so its footnote and the other unnecessary notes are dropped.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/001/017.job-59538.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:02Z'
+  change_level: refined
+  confidence: high
+  meaning: The king’s merchants import Egyptian chariots and horses at stated prices and also export them to Hittite and Aramean kings.
+  meaning_decisions:
+  - source_phrase: וַיַּעֲלוּ וַיּוֹצִיאוּ
+    prior_rendering: They imported
+    new_rendering: The king’s merchants imported
+    rationale: The subject is understood from the preceding verse; naming the merchants makes their agency explicit within this verse.
+  - source_phrase: מֶרְכָּבָה בְּשֵׁשׁ מֵאוֹת כֶּסֶף וְסוּס בַּחֲמִשִּׁים וּמֵאָה
+    prior_rendering: a chariot for six hundred shekels of silver, and a horse for one hundred fifty
+    new_rendering: chariots ... at 600 shekels of silver each and horses at 150 shekels each
+    rationale: The singular items establish unit prices in an ongoing trade, not a purchase of only one chariot and one horse; the repeated unit removes any uncertainty about the second price.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly retained import/export language and removed the literal agency idiom “by their hand”; the automated revert adds no substantive rationale. Naming the merchants carries that agency directly, so its footnote and the other unnecessary notes are dropped.

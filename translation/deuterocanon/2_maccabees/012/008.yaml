@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and after taking in hand also those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'those in Jamnia who intended to do the same thing to the Jews living there.' The Greek wording is syntactically compressed and continues into the next verse.
-    reason: lexical_alternative
+  text: He also learned that the people of Jamnia intended to do the same to the Jews living there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μεταλαβὼν
   lemma: μεταλαμβάνω
@@ -93,14 +89,20 @@ revisions:
   from: and after taking in hand also those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,
   to: and having also dealt with those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,
   rationale: Replaced 'after taking in hand' with 'having also dealt with' for more natural formal English while preserving the sense of μεταλαβών; kept the rest essentially the same, with 'against' making the implied hostility clear from the context.
-
 - timestamp: '2026-05-18T02:59:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and having also dealt with those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]'
-  to: 'and after taking in hand also those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]'
+  from: and having also dealt with those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]
+  to: and after taking in hand also those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after taking in hand''].'
+- timestamp: '2026-11-09T18:56:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and after taking in hand also those in Jamnia who were wanting to carry out the same kind of action against the Jews living there,[a]
+  to: He also learned that the people of Jamnia intended to do the same to the Jews living there.
+  rationale: Both the draft and review construed μεταλαβών as handling a new target, but its use in verse 5 and the sequence leading to the attack in verse 9 favor receiving news. The automated revert carries no meaning-based reason to retain the earlier misconstrual.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -120,3 +122,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/012/008.job-49325.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas also received news that people in Jamnia intended to commit the same atrocity against their resident Jews.
+  meaning_decisions:
+  - source_phrase: μεταλαβὼν δὲ καὶ τοὺς ἐν Ἰαμνίᾳ
+    prior_rendering: and after taking in hand also those in Jamnia
+    new_rendering: He also learned that the people of Jamnia
+    rationale: As in verse 5, μεταλαβών introduces receipt of information; the attack itself follows in verse 9, rather than having already occurred.
+  - source_phrase: τὸν αὐτὸν ἐπιτελεῖν βουλομένους τρόπον
+    prior_rendering: who were wanting to carry out the same kind of action
+    new_rendering: intended to do the same
+    rationale: This expresses a planned repetition of the preceding atrocity rather than a vague or merely ongoing desire.
+  footnote_kinds: {}
+  history_weighed: Both the draft and review construed μεταλαβών as handling a new target, but its use in verse 5 and the sequence leading to the attack in verse 9 favor receiving news. The automated revert carries no meaning-based reason to retain the earlier misconstrual.

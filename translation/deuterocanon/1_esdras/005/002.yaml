@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “with musicians.” The Greek μουσικῶν can refer either to music generally or to musical performers.
-    reason: lexical_alternative
+  text: Darius sent a thousand horsemen with them to escort them all the way back to Jerusalem in peace and with music,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: συναπέστειλεν
   chosen: sent with
@@ -104,14 +100,20 @@ revisions:
   from: And Darius sent with them a thousand horsemen, until they had restored them to Jerusalem in peace and with music,
   to: And Darius sent with them a thousand horsemen, until they had restored them to Jerusalem in peace and with music,
   rationale: Changed 'restored them' to 'brought them back' to reflect ἀποκαταστῆσαι more naturally in English in this context, while preserving the sense of return to Jerusalem. All other elements retained.
-
 - timestamp: '2026-05-18T02:59:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,'
-  to: 'And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,'
+  from: And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,
+  to: And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''until they had restored''].'
+- timestamp: '2026-11-09T18:50:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Darius sent with them a thousand horsemen[a], until they had brought them back to Jerusalem in peace and with music,
+  to: Darius sent a thousand horsemen with them to escort them all the way back to Jerusalem in peace and with music,
+  rationale: The recorded revision recognized that 'brought them back' conveys the journey better than the first draft's 'restored them.' I retain that gain and clarify the horsemen's role as an escort; the automated revert supplies no contrary meaning-based evidence.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -131,3 +133,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/005/002.job-47687.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:22Z'
+  change_level: refined
+  confidence: high
+  meaning: Darius provided a thousand mounted troops to accompany the returning people all the way to Jerusalem in peace and with music.
+  meaning_decisions:
+  - source_phrase: ἕως τοῦ ἀποκαταστῆσαι αὐτοὺς εἰς Ἰερουσαλήμ
+    prior_rendering: until they had brought them back to Jerusalem
+    new_rendering: to escort them all the way back to Jerusalem
+    rationale: The construction describes the escort continuing until the return was accomplished; the new wording makes that purpose and extent natural in English.
+  footnote_kinds: {}
+  history_weighed: The recorded revision recognized that 'brought them back' conveys the journey better than the first draft's 'restored them.' I retain that gain and clarify the horsemen's role as an escort; the automated revert supplies no contrary meaning-based evidence.

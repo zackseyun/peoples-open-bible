@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored[a], to gladness.
-  philosophy: optimal-equivalence
+  text: Once they had taken their places, he urged them to give themselves to feasting and make this part of the banquet a time of rejoicing, since they were being so lavishly honored[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to set aside the present banquet occasion, long honored, as a portion for gladness.' The Greek expression καταθέσθαι μέρος is idiomatic and can be rendered more literally as 'to set down/appoint a part.'
-    reason: lexical_alternative
+    text: Alternatively, the participle may describe the guests celebrating this part of the banquet rather than receiving honor.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὃ δὲ καὶ γενομένου
   chosen: And when this had happened
@@ -87,13 +87,12 @@ revisions:
   from: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored, to gladness.
   to: And when this had happened, he urged them, having given themselves over to feasting, to devote the present part of the banquet, long honored, to gladness.
   rationale: Changed 'occasion' to 'part' to more directly reflect μέρος. Retained the rest of the wording as accurate and suitably formal.
-
 - timestamp: '2026-05-18T03:10:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when this had happened[a], he urged them, having given themselves over to feasting, to devote the present part of the banquet, long honored, to gladness.'
-  to: 'And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored, to gladness.'
+  from: And when this had happened[a], he urged them, having given themselves over to feasting, to devote the present part of the banquet, long honored, to gladness.
+  to: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored, to gladness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the present occasion of the banquet''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -103,6 +102,13 @@ revisions:
   from: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored, to gladness.
   to: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored[a], to gladness.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('long honored') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:56:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when this had happened, he urged them, having given themselves over to feasting, to devote the present occasion of the banquet, long honored[a], to gladness.
+  to: Once they had taken their places, he urged them to give themselves to feasting and make this part of the banquet a time of rejoicing, since they were being so lavishly honored[a].
+  rationale: The earlier review noticed the force of “part,” but both recorded versions left “long honored” obscure. I retain the feasting and rejoicing while correcting the participle’s reference to the guests and noting its possible middle-voice interpretation.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -122,3 +128,34 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/017.job-49608.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:43Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Once the guests have taken their places, the king urges them to enjoy the banquet in joyful celebration.
+  meaning_decisions:
+  - source_phrase: ὃ δὲ καὶ γενομένου
+    prior_rendering: And when this had happened
+    new_rendering: Once they had taken their places
+    rationale: Identifies the preceding event to which the clause refers.
+  - source_phrase: εἰς εὐωχίαν δόντας ἑαυτούς
+    prior_rendering: having given themselves over to feasting
+    new_rendering: to give themselves to feasting
+    rationale: Presents the guests’ wholehearted participation as part of the king’s urging rather than as an already completed action.
+  - source_phrase: τὸ παρὸν τῆς συμποσίας … εἰς εὐφροσύνην καταθέσθαι μέρος
+    prior_rendering: to devote the present occasion of the banquet … to gladness
+    new_rendering: make this part of the banquet a time of rejoicing
+    rationale: Expresses the allocation idiom naturally while retaining the reference to the present part of the banquet.
+  - source_phrase: ἐπὶ πολὺ γεραιρομένους
+    prior_rendering: long honored
+    new_rendering: since they were being so lavishly honored
+    rationale: The plural participle refers to the guests, not to an ancient banquet custom; the phrase is best understood as abundant honor rather than long duration.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review noticed the force of “part,” but both recorded versions left “long honored” obscure. I retain the feasting and rejoicing while correcting the participle’s reference to the guests and noting its possible middle-voice interpretation.

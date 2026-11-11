@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וּ/מָדַ֣ד אֶת הַ/בַּ֔יִת אֹ֖רֶךְ מֵאָ֣ה אַמָּ֑ה וְ/הַ/גִּזְרָ֤ה וְ/הַ/בִּנְיָה֙ וְ/קִ֣ירוֹתֶ֔י/הָ אֹ֖רֶךְ מֵאָ֥ה אַמָּֽה־׃
 translation:
-  text: 'Then he measured the temple: its length was a hundred cubits; and the separate area[a], the building, and its walls had a length of a hundred cubits.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the separate place.' The Hebrew term refers to a distinct area set apart in the temple complex.
-    reason: lexical_alternative
+  text: 'Then he measured the temple: it was a hundred cubits long. The separate area, the building, and its walls together measured a hundred cubits in length.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּמָדַד
   chosen: Then he measured
@@ -82,7 +78,6 @@ revisions:
   from: 'Then he measured the temple: its length was a hundred cubits; and the separate area, the building, and its walls also had a length of a hundred cubits.'
   to: 'Then he measured the temple: its length was a hundred cubits; and the separate area, the building, and its walls also had a length of a hundred cubits.'
   rationale: Removed 'also' for closer adherence to the source and smoother formal English; otherwise retained the draft's accurate rendering.
-
 - timestamp: '2026-05-18T02:54:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -90,6 +85,13 @@ revisions:
   from: 'Then he measured the temple: its length was a hundred cubits; and the separate area[a], the building, and its walls had a length of a hundred cubits.'
   to: 'Then he measured the temple: its length was a hundred cubits; and the separate area[a], the building, and its walls had a length of a hundred cubits.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''also had a length of a hundred cubits''].'
+- timestamp: '2026-11-09T17:40:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then he measured the temple: its length was a hundred cubits; and the separate area[a], the building, and its walls had a length of a hundred cubits.'
+  to: 'Then he measured the temple: it was a hundred cubits long. The separate area, the building, and its walls together measured a hundred cubits in length.'
+  rationale: The recorded passes differ only over “also,” not over the two hundred-cubit measurements. I preserve those measurements and add “together” to make the combined extent unambiguous; the synonymous “separate place” note adds nothing necessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/041/013.job-64355.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:30Z'
+  change_level: refined
+  confidence: high
+  meaning: The temple is one hundred cubits long, and the separate area together with the western building and its walls spans another one-hundred-cubit length.
+  meaning_decisions:
+  - source_phrase: וְהַגִּזְרָה וְהַבִּנְיָה וְקִירוֹתֶיהָ אֹרֶךְ מֵאָה אַמָּה
+    prior_rendering: the separate area, the building, and its walls had a length of a hundred cubits
+    new_rendering: The separate area, the building, and its walls together measured a hundred cubits in length
+    rationale: The hundred cubits is the combined span of these elements, not a separate measurement assigned to each.
+  footnote_kinds: {}
+  history_weighed: The recorded passes differ only over “also,” not over the two hundred-cubit measurements. I preserve those measurements and add “together” to make the combined extent unambiguous; the synonymous “separate place” note adds nothing necessary.

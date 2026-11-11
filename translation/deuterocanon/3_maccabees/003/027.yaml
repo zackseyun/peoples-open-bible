@@ -17,15 +17,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But whoever shelters any of the Jews[a], from old man to infant, even to those at the breast, will be beaten to death with the most hateful tortures[b], together with his whole household.
-  philosophy: optimal-equivalence
+  text: But whoever shelters any Jew, from an elderly person to a young child—even an infant at the breast—will be beaten to death[a] with the most loathsome tortures, together with his whole household.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'even to sucklings' or 'even to babes at the breast' for the rare term referring to nursing infants.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek verb here refers to a brutal execution by beating; some render more technically 'will be cudgelled to death' or 'will be tortured on the wheel.'
-    reason: lexical_alternative
+    text: Or, “will be tortured to death on the wheel.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: σκεπάσῃ
   chosen: shelters
@@ -107,14 +104,20 @@ revisions:
   from: But whoever shelters any of the Jews, from old man to infant, even to those at the breast, will be beaten to death with the most hateful tortures, together with his whole household.
   to: But whoever shelters any of the Jews, from old man to infant, even those at the breast, will be beaten to death with the most grievous tortures, together with his whole household.
   rationale: Changed 'even to those at the breast' to the more natural 'even those at the breast.' Changed 'most hateful tortures' to 'most grievous tortures' for more accurate lexical sense and formal register.
-
 - timestamp: '2026-05-16T19:37:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But whoever shelters any of the Jews[a], from old man to infant, even those at the breast, will be beaten to death with the most grievous tortures[b], together with his whole household.'
-  to: 'But whoever shelters any of the Jews[a], from old man to infant, even to those at the breast, will be beaten to death with the most hateful tortures[b], together with his whole household.'
-  rationale: 'Restored drafter ''even to those at the breast'' (preserving the chosen ''to those'') and ''with the most hateful tortures'' (preserving the chosen rendering) per chosen renderings.'
+  from: But whoever shelters any of the Jews[a], from old man to infant, even those at the breast, will be beaten to death with the most grievous tortures[b], together with his whole household.
+  to: But whoever shelters any of the Jews[a], from old man to infant, even to those at the breast, will be beaten to death with the most hateful tortures[b], together with his whole household.
+  rationale: Restored drafter 'even to those at the breast' (preserving the chosen 'to those') and 'with the most hateful tortures' (preserving the chosen rendering) per chosen renderings.
+- timestamp: '2026-11-09T18:57:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But whoever shelters any of the Jews[a], from old man to infant, even to those at the breast, will be beaten to death with the most hateful tortures[b], together with his whole household.
+  to: But whoever shelters any Jew, from an elderly person to a young child—even an infant at the breast—will be beaten to death[a] with the most loathsome tortures, together with his whole household.
+  rationale: The history rightly preserves the emotional force of the torture language rather than replacing it solely with “grievous.” I retain execution by beating and the nursing image, but clarify the age range and reduce the procedural notes to one serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +137,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/003/027.job-49567.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:13Z'
+  change_level: refined
+  confidence: high
+  meaning: The decree threatens anyone who shelters a Jew of any age with brutal execution together with the shelterer’s entire household.
+  meaning_decisions:
+  - source_phrase: ἀπὸ γεραιοῦ μέχρι νηπίου καὶ μέχρι ὑπομαστιγίων
+    prior_rendering: from old man to infant, even to those at the breast
+    new_rendering: from an elderly person to a young child—even an infant at the breast
+    rationale: The range is comprehensive rather than restricted to elderly males, and distinguishing young children from nursing infants makes the escalating inclusion clear while retaining the breast image.
+  - source_phrase: ἐχθίσταις βασάνοις
+    prior_rendering: with the most hateful tortures
+    new_rendering: with the most loathsome tortures
+    rationale: “Loathsome” conveys the tortures’ odious character in natural English without reducing the description to severity alone.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history rightly preserves the emotional force of the torture language rather than replacing it solely with “grievous.” I retain execution by beating and the nursing image, but clarify the age range and reduce the procedural notes to one serious alternative.

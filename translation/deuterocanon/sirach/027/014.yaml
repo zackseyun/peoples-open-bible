@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.
-  philosophy: optimal-equivalence
+  text: The talk of those who swear much[a] makes your hair stand on end, and their quarrels make you cover your ears.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek πολυκόρυφου is lexically difficult. It may refer to a person given to excessive swearing or cursing, or more broadly to loud, outrageous, or boastful speech. The main text adopts 'one who swears much' as the best contextual fit, but the exact nuance is uncertain.
-    reason: lexical_alternative
+    text: The Greek term is uncertain; it may refer to frequent oaths or curses, or more broadly to loud, boastful speech.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: λαλιὰ
   chosen: talk
@@ -87,14 +87,20 @@ revisions:
   from: The talk of one who swears much makes the hair stand up, and their quarrel is a stopping of the ears.
   to: The talk of one who swears much makes the hair stand up, and their quarrel is a stopping of the ears.
   rationale: Replaced the awkward literal phrase 'is a stopping of the ears' with the more natural but still formal 'stops the ears.'
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.'
-  to: 'The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.'
+  from: The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.
+  to: The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a stopping of the ears''].'
+- timestamp: '2026-11-09T19:06:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The talk of one who swears much makes the hair stand up[a], and their quarrel stops the ears.
+  to: The talk of those who swear much[a] makes your hair stand on end, and their quarrels make you cover your ears.
+  rationale: The earlier revision improves 'a stopping of the ears,' but its own rationale identifies listeners shutting their ears as the intended meaning. That meaning is now explicit, while the earlier acknowledgment of the difficult Greek term remains in a shorter note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -114,3 +120,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/027/014.job-51708.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:50Z'
+  change_level: refined
+  confidence: medium
+  meaning: Habitual swearing produces horrifying speech, and the resulting quarrels make listeners cover their ears.
+  meaning_decisions:
+  - source_phrase: ὀρθώσει τρίχας
+    prior_rendering: makes the hair stand up
+    new_rendering: makes your hair stand on end
+    rationale: The established English expression preserves the bodily image and clearly conveys horror or alarm.
+  - source_phrase: ἡ μάχη αὐτῶν ἐμφραγμὸς ὤτιων
+    prior_rendering: their quarrel stops the ears
+    new_rendering: their quarrels make you cover your ears
+    rationale: The listeners shut out intolerable speech; the current wording can instead suggest that the quarrel physically obstructs hearing.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revision improves 'a stopping of the ears,' but its own rationale identifies listeners shutting their ears as the intended meaning. That meaning is now explicit, while the earlier acknowledgment of the difficult Greek term remains in a shorter note.

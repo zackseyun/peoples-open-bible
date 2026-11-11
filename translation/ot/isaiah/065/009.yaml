@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הוֹצֵאתִ֤י מִֽ/יַּעֲקֹב֙ זֶ֔רַע וּ/מִ/יהוּדָ֖ה יוֹרֵ֣שׁ הָרָ֑/י וִ/ירֵשׁ֣וּ/הָ בְחִירַ֔/י וַ/עֲבָדַ֖/י יִשְׁכְּנוּ שָֽׁמָּ/ה־׃
 translation:
-  text: And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'seed from Jacob.' The Hebrew זֶרַע is a collective singular that can mean 'seed,' 'offspring,' or 'descendants.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'will inherit them.' The same Hebrew root is used for both 'an heir' and 'will possess them,' emphasizing inheritance and possession together.
-    reason: lexical_alternative
+  text: And I will bring forth offspring from Jacob, and from Judah heirs to my mountains; my chosen ones will inherit the land, and my servants will dwell there.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהוֹצֵאתִי
   chosen: And I will bring forth
@@ -109,14 +102,20 @@ revisions:
   from: And I will bring forth offspring from Jacob, and from Judah an heir of my mountains; my chosen ones will possess them, and my servants will dwell there.
   to: And I will bring forth offspring from Jacob, and from Judah an heir of my mountains; my chosen ones will possess them, and my servants will dwell there.
   rationale: Changed 'them' to 'it' to match the singular antecedent 'my mountains' as a collective singular in the source (הָרָי).
-
 - timestamp: '2026-05-17T17:36:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.'
-  to: 'And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.'
+  from: And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.
+  to: And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will possess them''].'
+- timestamp: '2026-11-09T17:54:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will bring forth offspring from Jacob[a], and from Judah an heir of my mountains; my chosen ones will possess it[b], and my servants will dwell there.
+  to: And I will bring forth offspring from Jacob, and from Judah heirs to my mountains; my chosen ones will inherit the land, and my servants will dwell there.
+  rationale: The history's switch from ‘them’ to ‘it’ noticed the singular object suffix but incorrectly treated ‘my mountains’ as singular. I make the implied land explicit and read the singular heir collectively in light of the offspring and chosen ones.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -136,3 +135,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/065/009.job-67069.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:54:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh will bring forth descendants from Jacob and Judah who will inherit his mountainous land and dwell there as his chosen servants.
+  meaning_decisions:
+  - source_phrase: וּמִיהוּדָה יוֹרֵשׁ הָרָי
+    prior_rendering: and from Judah an heir of my mountains
+    new_rendering: and from Judah heirs to my mountains
+    rationale: The singular inheritor is collective in parallel with ‘offspring’ and the following plural chosen ones; English ‘an heir’ can misleadingly suggest one individual.
+  - source_phrase: וִירֵשׁוּהָ בְחִירַי
+    prior_rendering: my chosen ones will possess it
+    new_rendering: my chosen ones will inherit the land
+    rationale: The feminine singular suffix points to the implied land, while ‘my mountains’ is plural; making the land explicit resolves the reference and ‘inherit’ preserves the repeated inheritance root.
+  footnote_kinds: {}
+  history_weighed: The history's switch from ‘them’ to ‘it’ noticed the singular object suffix but incorrectly treated ‘my mountains’ as singular. I make the implied land explicit and read the singular heir collectively in light of the offspring and chosen ones.

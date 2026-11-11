@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: φοβοῦμαι ὑμᾶς μή πως εἰκῇ κεκοπίακα εἰς ὑμᾶς.
 translation:
-  text: I fear for you[a], that somehow I have labored over you in vain.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'I am afraid for you, lest somehow I have labored for you in vain.'
-    reason: lexical_alternative
+  text: I fear for you—that my labor for you may have been in vain.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: φοβοῦμαι
   chosen: I fear
@@ -84,14 +80,20 @@ revisions:
   from: I fear for you, that somehow I may have labored over you in vain.
   to: I fear for you, that somehow I may have labored over you in vain.
   rationale: Changed 'may have labored' to 'have labored' to reflect the Greek perfect indicative κεκοπίακα rather than a potential construction. Retained 'for you' and 'over you in vain' as natural and faithful.
-
 - timestamp: '2026-05-18T03:00:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I fear for you[a], that somehow I have labored over you in vain.'
-  to: 'I fear for you[a], that somehow I have labored over you in vain.'
+  from: I fear for you[a], that somehow I have labored over you in vain.
+  to: I fear for you[a], that somehow I have labored over you in vain.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I may have labored''].'
+- timestamp: '2026-11-09T17:09:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I fear for you[a], that somehow I have labored over you in vain.
+  to: I fear for you—that my labor for you may have been in vain.
+  rationale: The first draft and lexical rationale recognized the need for “may” in a clause expressing fear. The later appeal to the Greek perfect indicative does not remove that uncertainty, so I restore it in natural English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +113,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/galatians/004/011.job-54282.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:00Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul fears for the Galatians because his strenuous work on their behalf may have proved fruitless.
+  meaning_decisions:
+  - source_phrase: μή πως εἰκῇ κεκοπίακα εἰς ὑμᾶς
+    prior_rendering: that somehow I have labored over you in vain
+    new_rendering: that my labor for you may have been in vain
+    rationale: This is a feared possibility, not a settled verdict; “may” conveys the apprehension introduced by μή πως, and “for you” naturally describes the direction of Paul’s strenuous effort.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale recognized the need for “may” in a clause expressing fear. The later appeal to the Greek perfect indicative does not remove that uncertainty, so I restore it in natural English.

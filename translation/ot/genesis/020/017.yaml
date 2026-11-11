@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּתְפַּלֵּ֥ל אַבְרָהָ֖ם אֶל הָ/אֱלֹהִ֑ים וַ/יִּרְפָּ֨א אֱלֹהִ֜ים אֶת אֲבִימֶ֧לֶךְ וְ/אֶת אִשְׁתּ֛/וֹ וְ/אַמְהֹתָ֖י/ו וַ/יֵּלֵֽדוּ־־־׃
 translation:
-  text: Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his maidservants'; the Hebrew term can also denote female slaves.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'and they gave birth'; the wording here brings out the result of God's healing in context.
-    reason: lexical_alternative
+  text: Then Abraham prayed to God, and God healed Abimelech, his wife, and his female servants, so the women gave birth.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּתְפַּלֵּל
   chosen: prayed
@@ -95,14 +88,20 @@ revisions:
   from: Then Abraham prayed to God, and God healed Abimelech, his wife, and his female servants, so that they gave birth.
   to: Then Abraham prayed to God, and God healed Abimelech, his wife, and his female servants, so that they gave birth.
   rationale: Replaced 'so that they gave birth' with 'and they gave birth' to reflect the Hebrew conjunction without adding an explicit result clause not stated in the text.
-
 - timestamp: '2026-05-17T10:42:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.'
-  to: 'Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.'
+  from: Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.
+  to: Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that they gave birth''].'
+- timestamp: '2026-11-09T17:43:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Abraham prayed to God[a], and God healed Abimelech, his wife, and his female servants[b], and they gave birth.
+  to: Then Abraham prayed to God, and God healed Abimelech, his wife, and his female servants, so the women gave birth.
+  rationale: The recorded debate concerns whether to express the result relationship or reproduce a simple conjunction. I follow the documented contextual reading of childbirth as the result of healing and identify the women as the birth-givers to remove an English ambiguity.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +125,21 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/020/017.job-64972.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:35Z'
+  change_level: refined
+  confidence: high
+  meaning: In response to Abraham’s prayer, God heals Abimelech and the women of his household, and the women give birth.
+  meaning_decisions:
+  - source_phrase: וַיֵּלֵדוּ
+    prior_rendering: and they gave birth
+    new_rendering: so the women gave birth
+    rationale: The final clause gives the result of the healing, and its birth-giving subject is the women, not every person in the preceding list; actual childbirth is retained rather than reduced to the ability to conceive.
+  footnote_kinds: {}
+  history_weighed: The recorded debate concerns whether to express the result relationship or reproduce a simple conjunction. I follow the documented contextual reading of childbirth as the result of healing and identify the women as the birth-givers to remove an English ambiguity.

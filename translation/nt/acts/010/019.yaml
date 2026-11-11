@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: τοῦ δὲ Πέτρου διενθυμουμένου περὶ τοῦ ὁράματος εἶπεν ⸂αὐτῷ τὸ πνεῦμα⸃· Ἰδοὺ ⸀ἄνδρες ⸀ζητοῦντές σε·
 translation:
-  text: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you[a].”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “are looking for you.”
-    reason: lexical_alternative
+  text: While Peter was still pondering the vision, the Spirit said to him, “Look, men are looking for you.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διενθυμουμένου
   chosen: was still pondering
@@ -95,13 +91,12 @@ revisions:
   from: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you.”
   to: While Peter was pondering the vision, the Spirit said to him, “Behold, men are seeking you.”
   rationale: Removed 'still' because it is not explicit in the Greek, and changed 'Look' to the more formal 'Behold' to reflect Ἰδοὺ with appropriate register.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'While Peter was pondering the vision[a], the Spirit said to him, “Behold, men are seeking you.”'
-  to: 'While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you.”'
+  from: While Peter was pondering the vision[a], the Spirit said to him, “Behold, men are seeking you.”
+  to: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was still pondering''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -111,6 +106,13 @@ revisions:
   from: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you.”
   to: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you[a].”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('are seeking you') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: While Peter was still pondering the vision, the Spirit said to him, “Look, men are seeking you[a].”
+  to: While Peter was still pondering the vision, the Spirit said to him, “Look, men are looking for you.
+  rationale: The history’s dispute over 'still' and 'Look' concerned explicitness and register rather than meaning. Both fit the continuing scene, while the earlier footnote’s 'looking for you' is brought into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -133,3 +135,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/010/019.job-53878.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:03Z'
+  change_level: refined
+  confidence: high
+  meaning: While Peter continued reflecting on the vision, the Spirit told him that men were looking for him.
+  meaning_decisions:
+  - source_phrase: ζητοῦντές σε
+    prior_rendering: are seeking you
+    new_rendering: are looking for you
+    rationale: The men are asking for Peter at his lodging, not seeking him in a spiritual or abstract sense; this wording conveys their immediate purpose.
+  footnote_kinds: {}
+  history_weighed: The history’s dispute over 'still' and 'Look' concerned explicitness and register rather than meaning. Both fit the continuing scene, while the earlier footnote’s 'looking for you' is brought into the main text.

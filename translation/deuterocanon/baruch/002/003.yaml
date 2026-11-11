@@ -24,12 +24,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: for a man to eat the flesh of his son[a], and a man the flesh of his daughter.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek supplied here is a clause rather than a complete sentence; the English preserves that incomplete structure instead of reconstructing surrounding wording.
-    reason: textual_variant
+  text: Some among us ate the flesh of their own sons, and others the flesh of their own daughters.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τοῦ φαγείν
   chosen: for ... to eat
@@ -100,14 +96,20 @@ revisions:
   from: for a man to eat the flesh of his own son, and a man the flesh of his own daughter.
   to: for a man to eat the flesh of his own son, and a man the flesh of his own daughter.
   rationale: Removed 'own' twice, since it is not explicit in the Greek; otherwise retained the structure and sense of the draft.
-
 - timestamp: '2026-05-16T20:07:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'for a man to eat the flesh of his son[a], and a man the flesh of his daughter.'
-  to: 'for a man to eat the flesh of his son[a], and a man the flesh of his daughter.'
-  rationale: 'Restored drafter ''his own son'' and ''his own daughter'' (preserving the chosen explicit ''own'' for emphasis) per chosen renderings.'
+  from: for a man to eat the flesh of his son[a], and a man the flesh of his daughter.
+  to: for a man to eat the flesh of his son[a], and a man the flesh of his daughter.
+  rationale: Restored drafter 'his own son' and 'his own daughter' (preserving the chosen explicit 'own' for emphasis) per chosen renderings.
+- timestamp: '2026-11-09T19:01:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: for a man to eat the flesh of his son[a], and a man the flesh of his daughter.
+  to: Some among us ate the flesh of their own sons, and others the flesh of their own daughters.
+  rationale: The earlier insistence on an isolated fragment is unnecessary now that the whole chapter supplies its connection. I retain the grave word 'flesh' and the familial emphasis recognized in the first draft, while dropping the note about incomplete syntax.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -127,3 +129,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/002/003.job-50338.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: People among the confessing community ate the flesh of their own sons and daughters.
+  meaning_decisions:
+  - source_phrase: τοῦ φαγείν ἡμᾶς ἄνθρωπον σάρκας υἱοῦ αὐτοῦ καὶ ἄνθρωπον σάρκας θυγατρὸς αὐτοῦ
+    prior_rendering: for a man to eat the flesh of his son, and a man the flesh of his daughter
+    new_rendering: Some among us ate the flesh of their own sons, and others the flesh of their own daughters
+    rationale: The clause identifies the horror introduced in verse 2; it does not express a purpose. 'Among us' restores the explicit ἡμᾶς, and the distributive wording conveys the repeated generic singular naturally.
+  footnote_kinds: {}
+  history_weighed: The earlier insistence on an isolated fragment is unnecessary now that the whole chapter supplies its connection. I retain the grave word 'flesh' and the familial emphasis recognized in the first draft, while dropping the note about incomplete syntax.

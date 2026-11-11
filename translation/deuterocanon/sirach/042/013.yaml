@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:13
 translation:
-  text: For from a garment comes a moth, and from a woman a woman’s wickedness[a].
-  philosophy: optimal-equivalence
+  text: For a moth comes from a garment, and a woman’s wickedness comes from a woman[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'and from a woman, a woman’s evil.' The Hebrew is terse and proverbial; the Greek likewise reads 'from a woman, a woman’s wickedness.'
-    reason: lexical_alternative
+    text: The second line can refer to one woman acquiring wickedness from another, as the preceding warning suggests.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: בגד
   chosen: garment
@@ -117,15 +117,14 @@ revisions:
   reviewer_model: gpt-5.4
   category: revision_pass
   from: For from a garment comes a moth, and from a woman a woman’s wickedness.
-  to: 'For from a garment comes a moth, and from a woman comes a woman''s wickedness.'
+  to: For from a garment comes a moth, and from a woman comes a woman's wickedness.
   rationale: Added the second occurrence of 'comes' to reflect the parallel Hebrew structure and improve natural English while preserving the formal sense.
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For from a garment comes a moth[a], and from a woman comes a woman''s wickedness.'
-  to: 'For from a garment comes a moth, and from a woman a woman’s wickedness.'
+  from: For from a garment comes a moth[a], and from a woman comes a woman's wickedness.
+  to: For from a garment comes a moth, and from a woman a woman’s wickedness.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a woman’s wickedness''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -135,6 +134,13 @@ revisions:
   from: For from a garment comes a moth, and from a woman a woman’s wickedness.
   to: For from a garment comes a moth, and from a woman a woman’s wickedness[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('wickedness') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:09:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For from a garment comes a moth, and from a woman a woman’s wickedness[a].
+  to: For a moth comes from a garment, and a woman’s wickedness comes from a woman[a].
+  rationale: The earlier review’s repetition of “comes” was a useful clarification that the mechanical revert did not meaningfully rebut. I retain the established garment, moth, woman, and wickedness language without softening the saying, replacing the redundant old note with its serious contextual alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -154,3 +160,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/042/013.job-52178.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: The proverb traces a woman’s wickedness to a woman as it traces a moth to a garment, reinforcing the warning about women’s company.
+  meaning_decisions:
+  - source_phrase: כי מבגד יצא עש ומאשה רעת אשה
+    prior_rendering: For from a garment comes a moth, and from a woman a woman’s wickedness
+    new_rendering: For a moth comes from a garment, and a woman’s wickedness comes from a woman
+    rationale: Natural subject-first order and an explicit second verb clarify the parallel without changing the pointed proverb or resolving its possible reference to another woman’s influence.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review’s repetition of “comes” was a useful clarification that the mechanical revert did not meaningfully rebut. I retain the established garment, moth, woman, and wickedness language without softening the saying, replacing the redundant old note with its serious contextual alternative.

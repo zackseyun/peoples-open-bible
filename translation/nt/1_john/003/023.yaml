@@ -4,21 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ αὕτη ἐστὶν ἡ ἐντολὴ αὐτοῦ, ἵνα ⸀πιστεύσωμεν τῷ ὀνόματι τοῦ υἱοῦ αὐτοῦ Ἰησοῦ Χριστοῦ καὶ ἀγαπῶμεν ἀλλήλους, καθὼς ἔδωκεν ἐντολὴν ⸀ἡμῖν.
 translation:
-  text: 'And this is his command: that we believe in the name of his Son Jesus Christ and love one another[d][c][b][a], just as he gave us command.'
-  philosophy: optimal-equivalence
+  text: 'And this is his command: that we believe in the name[a] of his Son Jesus Christ and love one another, just as he commanded us.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'trust in the name of his Son.'
+    text: The 'name' signifies the Son's revealed identity and authority, not merely his spoken name.
     reason: lexical_alternative
-  - marker: c
-    text: Greek literally, 'just as he gave us command' or 'gave us a command.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'just as he gave us command'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ἐντολή
   chosen: command
@@ -132,15 +123,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'And this is his command: that we believe in the name of his Son Jesus Messiah and love one another, just as he gave us command.'"
-  to: "'And this is his command: that we believe in the name of his Son Jesus the Messiah and love one another, just as he gave us command.'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: '''And this is his command: that we believe in the name of his Son Jesus Messiah and love one another, just as he gave us command.'''
+  to: '''And this is his command: that we believe in the name of his Son Jesus the Messiah and love one another, just as he gave us command.'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:04:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And this is his command: that we believe in the name of his Son Jesus Christ and love one another[d][c][b][a], just as he gave us command.'
+  to: 'And this is his command: that we believe in the name[a] of his Son Jesus Christ and love one another, just as he commanded us.'
+  rationale: The history correctly identifies 'gave us command' as unidiomatic, despite a later source-transparency reversal; 'commanded us' carries its meaning directly. I retain 'Jesus Christ' under the standing ruling for name constructions and preserve 'name' with a short explanatory note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:36:09Z'
   unchanged: false
   changes_summary: 'Changed ''Jesus Messiah'' to ''Jesus Christ'' for standard formal register and consistency with the Greek name/title; removed the comma after ''Son''; and revised ''gave us a command'' to ''gave us command'' to reflect the anarthrous Greek more naturally in formal translation. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -163,3 +160,22 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_john/003/023.job-38858.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:04:39Z'
+  change_level: refined
+  confidence: high
+  meaning: God's command unites faith in his Son Jesus Christ with mutual love as commanded.
+  meaning_decisions:
+  - source_phrase: ἔδωκεν ἐντολὴν ἡμῖν
+    prior_rendering: he gave us command
+    new_rendering: he commanded us
+    rationale: The construction means that he issued a command; the English verb conveys that meaning naturally and retains the verbal connection with 'command.'
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history correctly identifies 'gave us command' as unidiomatic, despite a later source-transparency reversal; 'commanded us' carries its meaning directly. I retain 'Jesus Christ' under the standing ruling for name constructions and preserve 'name' with a short explanatory note.

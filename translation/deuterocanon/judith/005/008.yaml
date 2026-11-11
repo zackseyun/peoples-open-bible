@@ -17,15 +17,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.
-  philosophy: optimal-equivalence
+  text: They abandoned the ways of their ancestors and worshiped the God of heaven, the God they had come to know. They were driven out of the land where their former gods were worshiped[a], fled to Mesopotamia, and lived there as foreigners for a long time.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the God whom they recognized.' The Greek may emphasize decisive recognition as well as knowledge.
+    text: Literally, “they drove them out from the presence of their gods”; those who expelled them are not identified.
     reason: lexical_alternative
-  - marker: b
-    text: The clause 'they drove them out from before their gods' is syntactically compressed in Greek; the sense is that they were expelled in connection with their former gods and then fled to Mesopotamia.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐξέβησαν ἐξ ὁδοῦ τῶν γονέων αὐτῶν
   chosen: They departed from the way of their fathers
@@ -110,14 +107,20 @@ revisions:
   from: They departed from the way of their fathers and worshiped the God of heaven, the God whom they had come to know. And they drove them out from before their gods, and fled to Mesopotamia, and lived there as foreigners for many days.
   to: They departed from the way of their fathers and worshiped the God of heaven, the God whom they had come to know. And they drove them out from before their gods, and fled to Mesopotamia, and lived there as foreigners for many days.
   rationale: Changed 'they drove them out' to 'they were driven out' to reflect the Greek passive/unspecified subject sense and preserve the narrative flow. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.'
-  to: 'They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.'
+  from: They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.
+  to: They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they drove them out from before their gods''].'
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They departed from the way of their fathers and worshiped the God of heaven[a], the God whom they had come to know. And they were driven out from before their gods, and fled to Mesopotamia[b], and lived there as foreigners for many days.
+  to: They abandoned the ways of their ancestors and worshiped the God of heaven, the God they had come to know. They were driven out of the land where their former gods were worshiped[a], fled to Mesopotamia, and lived there as foreigners for a long time.
+  rationale: The earlier review’s passive rendering correctly clarified that Israel’s ancestors were the people expelled, although the Greek verb itself is active with an unnamed plural subject. I preserve that clarification and explain the cultic geography obscured by 'from before their gods.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +140,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/005/008.job-50574.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: After abandoning ancestral religious practices for the God of heaven, Israel’s ancestors were expelled and lived as foreigners in Mesopotamia for a long time.
+  meaning_decisions:
+  - source_phrase: ἐξέβησαν ἐξ ὁδοῦ τῶν γονέων αὐτῶν
+    prior_rendering: They departed from the way of their fathers
+    new_rendering: They abandoned the ways of their ancestors
+    rationale: The way metaphor refers to inherited religious practices, and 'ancestors' fits the multigenerational account while retaining that metaphor.
+  - source_phrase: ἐξέβαλον αὐτοὺς ἀπὸ προσώπου τῶν θεῶν αὐτῶν
+    prior_rendering: they were driven out from before their gods
+    new_rendering: They were driven out of the land where their former gods were worshiped[a]
+    rationale: The compressed clause describes expulsion from the homeland associated with ancestral worship, not expulsion performed by the gods; the passive leaves the human agents unnamed.
+  - source_phrase: ἡμέρας πολλάς
+    prior_rendering: for many days
+    new_rendering: for a long time
+    rationale: This conventional duration expression does not specify a short period measured in days.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review’s passive rendering correctly clarified that Israel’s ancestors were the people expelled, although the Greek verb itself is active with an unnamed plural subject. I preserve that clarification and explain the cultic geography obscured by 'from before their gods.'

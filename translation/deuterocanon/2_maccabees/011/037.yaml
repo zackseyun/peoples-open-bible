@@ -24,15 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Therefore hurry[a], and send some men[b], so that we too may learn what your intention is.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'send some people' or 'send certain representatives'; the Greek indefinite τινας does not specify the group more precisely.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'that we too may know of what sort of opinion you are'; the translation renders the idiom as 'what your intention is.'
-    reason: lexical_alternative
+  text: Therefore, act quickly and send representatives, so that we too may learn your position.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διό
   chosen: Therefore
@@ -111,14 +104,20 @@ revisions:
   from: Therefore hurry, and send some men, so that we too may learn what your intention is.
   to: Therefore hurry, and send some men, so that we too may know what your opinion is.
   rationale: Changed 'learn what your intention is' to 'know what your opinion is' for closer alignment with ἐπιγνῶμεν and γνώμης, preserving the sense of their stated view rather than intention.
-
 - timestamp: '2026-05-16T16:22:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore hurry[a], and send some men[b], so that we too may know what your opinion is.'
-  to: 'Therefore hurry[a], and send some men[b], so that we too may learn what your intention is.'
-  rationale: 'Restored drafter ''we too may learn what your intention is'' (preserving the chosen rendering of ἐπιγνῶμεν and γνώμης as intention) per chosen renderings.'
+  from: Therefore hurry[a], and send some men[b], so that we too may know what your opinion is.
+  to: Therefore hurry[a], and send some men[b], so that we too may learn what your intention is.
+  rationale: Restored drafter 'we too may learn what your intention is' (preserving the chosen rendering of ἐπιγνῶμεν and γνώμης as intention) per chosen renderings.
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore hurry[a], and send some men[b], so that we too may learn what your intention is.
+  to: Therefore, act quickly and send representatives, so that we too may learn your position.
+  rationale: The history’s disagreement between “opinion” and “intention” reflects two aspects of the expression. “Position” carries both in this diplomatic context, and the revised text makes the earlier explanatory notes unnecessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -138,3 +137,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/011/037.job-49316.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: refined
+  confidence: high
+  meaning: The Roman envoys urge the Jews to send representatives quickly so they can learn the Jews’ position.
+  meaning_decisions:
+  - source_phrase: πέμψατέ τινας
+    prior_rendering: send some men
+    new_rendering: send representatives
+    rationale: Their diplomatic function is clear from the preceding request, while the Greek indefinite does not itself specify gender.
+  - source_phrase: ὁποῖοί ἐστε γνώμης
+    prior_rendering: what your intention is
+    new_rendering: your position
+    rationale: The envoys seek the Jews’ considered stance in the negotiations, encompassing their view and intended response rather than merely a future plan.
+  footnote_kinds: {}
+  history_weighed: The history’s disagreement between “opinion” and “intention” reflects two aspects of the expression. “Position” carries both in this diplomatic context, and the revised text makes the earlier explanatory notes unnecessary.

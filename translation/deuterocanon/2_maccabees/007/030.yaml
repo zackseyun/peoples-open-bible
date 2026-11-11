@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “What are you waiting for?” The Greek question is elliptical and can be rendered either way in English.
-    reason: lexical_alternative
+  text: As she was finishing her speech, the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἔτι δὲ ταύτης καταληγούσης
   chosen: And while she was still finishing
@@ -124,14 +120,20 @@ revisions:
   from: And while she was still finishing, the young man said, “Why are you waiting? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
   to: And while she was still finishing, the young man said, “Why are you waiting? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
   rationale: Changed “Why are you waiting?” to “What are you waiting for?” for more natural English while preserving the sense of Τίνα μένετε. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”'
-  to: 'And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”'
+  from: And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
+  to: And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Why are you waiting?''].'
+- timestamp: '2026-11-09T19:00:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And while she was still finishing[a], the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
+  to: As she was finishing her speech, the young man said, “What are you waiting for? I do not obey the king’s command, but I obey the command of the law that was given to our fathers through Moses.”
+  rationale: The recorded review supports the natural challenge “What are you waiting for?”; the automated revert provides no meaning-based reason to replace it, and no maintainer revision is recorded. I retain the established obedience contrast and ancestral “our fathers,” while clarifying the opening and dropping the misplaced footnote that merely repeats the question.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -151,3 +153,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/030.job-49164.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:34Z'
+  change_level: refined
+  confidence: high
+  meaning: As his mother finishes speaking, the young man challenges his captors to proceed and declares that he obeys the law given through Moses rather than the king’s command.
+  meaning_decisions:
+  - source_phrase: Ἔτι δὲ ταύτης καταληγούσης
+    prior_rendering: And while she was still finishing
+    new_rendering: As she was finishing her speech
+    rationale: 'Makes the understood object—her speech—explicit while preserving the temporal overlap: the young man speaks as his mother is bringing her appeal to a close.'
+  footnote_kinds: {}
+  history_weighed: The recorded review supports the natural challenge “What are you waiting for?”; the automated revert provides no meaning-based reason to replace it, and no maintainer revision is recorded. I retain the established obedience contrast and ancestral “our fathers,” while clarifying the opening and dropping the misplaced footnote that merely repeats the question.

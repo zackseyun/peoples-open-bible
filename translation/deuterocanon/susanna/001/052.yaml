@@ -10,14 +10,11 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil days[b], now the sins that you were doing before have come upon you.”
-  philosophy: optimal-equivalence
+  text: Once they had been separated, Daniel called one of them and said, “You have grown old in wickedness[a]; now the sins you have committed have caught up with you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek source as extracted here ends with 'τὸ', which appears to continue into the next word or phrase ('before'/'formerly') across the verse boundary; the translation reflects that likely sense.
-    reason: textual_variant
-  - marker: b
-    text: Or 'Old man, grown old in evil.' The Greek address is compressed and can be rendered more literally, but the main text brings out its rebuking force.
+    text: Literally, “you who have grown old in evil days.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: διεχωρίσθησαν
@@ -111,14 +108,20 @@ revisions:
   from: But when they had been separated, one from the other, he called one of them and said to him, “You who have grown old in evil days, now your sins have come upon you, which you were doing before.”
   to: But when they had been separated, one from the other, he called one of them and said to him, “You who have grown old in evil, now the sins that you were doing before have come upon you.”
   rationale: 'Revised ''grown old in evil days'' to ''grown old in evil'' for closer lexical accuracy, since ''days'' is not directly expressed as a separate idea in natural English here. Reordered the final clause to reflect the Greek more clearly: ''the sins that you were doing before have come upon you.'''
-
 - timestamp: '2026-05-15T14:13:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil[b], now the sins that you were doing before have come upon you.”'
-  to: 'But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil days[b], now the sins that you were doing before have come upon you.”'
-  rationale: 'Restored drafter''s documented ''days'' (ἡμερῶν is lexically attested in Greek); azure dropped it on stylistic grounds.'
+  from: But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil[b], now the sins that you were doing before have come upon you.”
+  to: But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil days[b], now the sins that you were doing before have come upon you.”
+  rationale: Restored drafter's documented 'days' (ἡμερῶν is lexically attested in Greek); azure dropped it on stylistic grounds.
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when they had been separated[a], one from the other, he called one of them and said to him, “You who have grown old in evil days[b], now the sins that you were doing before have come upon you.”
+  to: Once they had been separated, Daniel called one of them and said, “You have grown old in wickedness[a]; now the sins you have committed have caught up with you.
+  rationale: The review and revert disputed whether “days” should remain explicit, but both recognized a rebuke of longstanding wickedness. I preserve that meaning and document the literal wording, while avoiding the current duplication of “before” and “formerly” across verses 52–53.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +141,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/052.job-52469.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Daniel confronts the first elder with his long history of wickedness and declares that his sins have now caught up with him.
+  meaning_decisions:
+  - source_phrase: Πεπαιλαιωμένε ἡμερῶν κακῶν
+    prior_rendering: You who have grown old in evil days
+    new_rendering: You have grown old in wickedness
+    rationale: The following accusation identifies the evil as the elder's longstanding conduct, not merely the troubled times through which he has lived; the literal expression remains in a note.
+  - source_phrase: νῦν ἥκασιν αἱ ἁμαρτίαι σου ἃς ἐποίεις
+    prior_rendering: now the sins that you were doing before have come upon you
+    new_rendering: now the sins you have committed have caught up with you
+    rationale: The arrival metaphor announces accountability for his sins, which “caught up with you” conveys naturally; the temporal word supplied by the current wording belongs at the beginning of verse 53.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review and revert disputed whether “days” should remain explicit, but both recognized a rebuke of longstanding wickedness. I preserve that meaning and document the literal wording, while avoiding the current duplication of “before” and “formerly” across verses 52–53.

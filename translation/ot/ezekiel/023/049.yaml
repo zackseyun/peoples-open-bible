@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/נָתְנ֤וּ זִמַּתְ/כֶ֨נָה֙ עֲלֵי/כֶ֔ן וַ/חֲטָאֵ֥י גִלּוּלֵי/כֶ֖ן תִּשֶּׂ֑אינָה וִ/ידַעְתֶּ֕ם כִּ֥י אֲנִ֖י אֲדֹנָ֥/י יְהוִֽה׃פ
 translation:
-  text: They will put your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.
-  philosophy: optimal-equivalence
+  text: They will punish you for your lewdness, and you will bear the consequences of your sins of idolatry[a]; then you will know that I am the Lord Yahweh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew גִלּוּלִים is a strongly contemptuous term for idols, sometimes rendered more vividly as 'filthy idols' or 'dung-idols.'
+    text: Ezekiel uses a contemptuous Hebrew term for the idols involved, associated with filth or dung.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְנָתְנוּ
@@ -96,14 +96,20 @@ revisions:
   from: They will put your lewdness upon you, and you will bear the sins of your idols; then you will know that I am the Lord GOD.
   to: They will bring your lewdness upon you, and you will bear the sins of your idols; then you will know that I am the Lord YHWH.
   rationale: Changed 'put' to 'bring' for a more natural rendering of the verb, and rendered the divine name as 'YHWH' instead of 'GOD' to reflect the source more transparently.
-
 - timestamp: '2026-05-16T01:53:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They will bring your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.'
-  to: 'They will put your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.'
-  rationale: 'Azure substituted ''bring'' for drafter''s chosen ''put'' (וְנָתְנוּ Qal of נתן + עַל = concrete ''put upon''). ''Bring'' is not in drafter''s alternatives; no lexical engagement.'
+  from: They will bring your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.
+  to: They will put your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.
+  rationale: Azure substituted 'bring' for drafter's chosen 'put' (וְנָתְנוּ Qal of נתן + עַל = concrete 'put upon'). 'Bring' is not in drafter's alternatives; no lexical engagement.
+- timestamp: '2026-11-09T17:39:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They will put your lewdness upon you[a], and you will bear the sins of your idols; then you will know that I am the Lord YHWH.
+  to: They will punish you for your lewdness, and you will bear the consequences of your sins of idolatry[a]; then you will know that I am the Lord Yahweh.
+  rationale: The automated revert defended concrete “put upon,” but the surrounding judgment shows that the phrase denotes punishment rather than the placement of lewdness itself. I make that consequence explicit and apply the standing Yahweh ruling to the divine name.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +132,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/023/049.job-63919.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sisters will bear judgment for their lewdness and idolatrous sins and thereby recognize Yahweh as their Lord.
+  meaning_decisions:
+  - source_phrase: וְנָתְנוּ זִמַּתְכֶנָה עֲלֵיכֶן
+    prior_rendering: They will put your lewdness upon you
+    new_rendering: They will punish you for your lewdness
+    rationale: The surrounding execution scene establishes that the attackers inflict the consequences of the misconduct, not the misconduct itself.
+  - source_phrase: וַחֲטָאֵי גִלּוּלֵיכֶן תִּשֶּׂאינָה
+    prior_rendering: and you will bear the sins of your idols
+    new_rendering: and you will bear the consequences of your sins of idolatry
+    rationale: These are the sisters’ sins involving their idols, not sins committed by the idols; bearing them here means bearing their consequences in judgment.
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord YHWH
+    new_rendering: the Lord Yahweh
+    rationale: Uses the required English form of the divine name while retaining the title.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The automated revert defended concrete “put upon,” but the surrounding judgment shows that the phrase denotes punishment rather than the placement of lewdness itself. I make that consequence explicit and apply the standing Yahweh ruling to the divine name.

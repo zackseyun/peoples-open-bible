@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר דָּוִ֜ד אֶל אָכִ֗ישׁ אִם נָא֩ מָצָ֨אתִי חֵ֤ן בְּ/עֵינֶ֨י/ךָ֙ יִתְּנוּ לִ֣/י מָק֗וֹם בְּ/אַחַ֛ת עָרֵ֥י הַ/שָּׂדֶ֖ה וְ/אֵ֣שְׁבָה שָּׁ֑ם וְ/לָ֨/מָּה יֵשֵׁ֧ב עַבְדְּ/ךָ֛ בְּ/עִ֥יר הַ/מַּמְלָכָ֖ה עִמָּֽ/ךְ־־־׃
 translation:
-  text: Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, “in one of the cities of the field,” meaning a town in the countryside as opposed to the royal city.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “and I will dwell there.”
-    reason: lexical_alternative
-  - marker: c
-    text: Hebrew literally, “the city of the kingdom.”
-    reason: lexical_alternative
+  text: Then David said to Achish, “If I have found favor with you, please have a place assigned to me in one of the towns in the countryside, so that I may live there. Why should your servant live with you in the royal city?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מָצָאתִי חֵן בְּעֵינֶיךָ
   chosen: I have now found favor in your eyes
@@ -107,14 +97,20 @@ revisions:
   from: Then David said to Achish, “If I have now found favor in your eyes, let them give me a place in one of the country towns, so that I may live there. For why should your servant live with you in the royal city?”
   to: Then David said to Achish, “If I have now found favor in your eyes, let them give me a place in one of the country towns, so that I may live there. For why should your servant live with you in the royal city?”
   rationale: Revised 'country towns' to 'towns in the countryside' for a more natural and closer rendering of 'cities of the field/countryside.'
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”'
-  to: 'Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”'
+  from: Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”
+  to: Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in one of the country towns''].'
+- timestamp: '2026-11-09T17:24:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David said to Achish[a], “If I have now found favor in your eyes, let them give me a place in one of the towns in the countryside, so that I may live there[c][b]. For why should your servant live with you in the royal city?”
+  to: Then David said to Achish, “If I have found favor with you, please have a place assigned to me in one of the towns in the countryside, so that I may live there. Why should your servant live with you in the royal city?”
+  rationale: I retain the current wording’s clear contrast between countryside towns and the royal city, together with the deferential 'your servant.' The lexical notes recognize נא as polite request language and the plural grant as indefinite, which guide the refinements.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/027/005.job-59438.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:13Z'
+  change_level: refined
+  confidence: high
+  meaning: David deferentially asks Achish to assign him a place in a countryside town rather than keep him in the royal city.
+  meaning_decisions:
+  - source_phrase: אם נא מצאתי חן בעיניך
+    prior_rendering: If I have now found favor in your eyes
+    new_rendering: If I have found favor with you, please
+    rationale: '''Favor with you'' conveys the idiom of approval, while ''please'' carries the request-softening force of נא rather than treating it as a statement about time.'
+  - source_phrase: יתנו לי מקום
+    prior_rendering: let them give me a place
+    new_rendering: have a place assigned to me
+    rationale: The unspecified plural refers to granting a place under Achish’s authority; English can express the royal authorization without introducing an unexplained 'them.'
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s clear contrast between countryside towns and the royal city, together with the deferential 'your servant.' The lexical notes recognize נא as polite request language and the plural grant as indefinite, which guide the refinements.

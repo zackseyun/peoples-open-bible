@@ -23,12 +23,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Menelaus left Lysimachus[a], his own brother, as successor to the high priesthood, while Sostratus left Crates, the one over the Cyprians.
-  philosophy: optimal-equivalence
+  text: Menelaus left his own brother Lysimachus in charge of the high priesthood in his absence, while Sostratus left Crates, the official in charge of the Cypriots[a], to act in his place.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the official in charge of the Cyprians' or 'the governor over the Cyprians.' The Greek does not make the precise administrative title explicit.
-    reason: lexical_alternative
+    text: Possibly, “the commander of the Cypriot troops”; the precise office is not specified.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀπέλιπεν
   chosen: left
@@ -79,7 +79,6 @@ revision_pass:
   timestamp: '2026-04-23T15:33:23Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -99,3 +98,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/029.job-49055.json
+revisions:
+- timestamp: '2026-11-09T18:55:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Menelaus left Lysimachus[a], his own brother, as successor to the high priesthood, while Sostratus left Crates, the one over the Cyprians.
+  to: Menelaus left his own brother Lysimachus in charge of the high priesthood in his absence, while Sostratus left Crates, the official in charge of the Cypriots[a], to act in his place.
+  rationale: The earlier wording properly avoided assigning Crates a precise governorship, and I preserve that caution. The context requires clarifying that these are replacements during absence, not permanent successors.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Menelaus and Sostratus each left a replacement to carry out his duties during his absence.
+  meaning_decisions:
+  - source_phrase: ἀπέλιπεν τῆς ἀρχιερωσύνης διάδοχον
+    prior_rendering: left ... as successor to the high priesthood
+    new_rendering: left ... in charge of the high priesthood in his absence
+    rationale: Menelaus is leaving to answer a royal summons, not permanently surrendering his office; “successor” would suggest a transfer the subsequent narrative does not support.
+  - source_phrase: Σώστρατος δὲ Κράτητα τὸν ἐπὶ τῶν Κυπρίων
+    prior_rendering: while Sostratus left Crates, the one over the Cyprians
+    new_rendering: while Sostratus left Crates, the official in charge of the Cypriots, to act in his place
+    rationale: The parallel construction supplies Crates’s temporary replacement role, while “official in charge” conveys authority without imposing an uncertain administrative title.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier wording properly avoided assigning Crates a precise governorship, and I preserve that caution. The context requires clarifying that these are replacements during absence, not permanent successors.

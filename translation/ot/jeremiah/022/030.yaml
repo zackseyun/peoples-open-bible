@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כֹּ֣ה אָמַ֣ר יְהוָ֗ה כִּתְב֞וּ אֶת הָ/אִ֤ישׁ הַ/זֶּה֙ עֲרִירִ֔י גֶּ֖בֶר לֹא יִצְלַ֣ח בְּ/יָמָ֑י/ו כִּי֩ לֹ֨א יִצְלַ֜ח מִ/זַּרְע֗/וֹ אִ֚ישׁ יֹשֵׁב֙ עַל כִּסֵּ֣א דָוִ֔ד וּ/מֹשֵׁ֥ל ע֖וֹד בִּ/יהוּדָֽה׀־־־׃
 translation:
-  text: 'Thus says Yahweh: Write this man down as childless[a], a man who will not prosper in his days; for none of his offspring will prosper[b] to sit on the throne of David and rule again in Judah.'
-  philosophy: optimal-equivalence
+  text: 'Thus says Yahweh: Record this man as childless[a], a man who will not prosper in his lifetime; for none of his offspring will succeed in sitting on David’s throne and ruling again in Judah.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or ''record this man as without an heir.'' The Hebrew says ''childless,'' but the following clause shows the focus is dynastic succession: none of his offspring will succeed on David''s throne.'
-    reason: lexical_alternative
-  - marker: b
-    text: That is, no descendant of Jeconiah would successfully reign as Davidic king in Judah.
-    reason: cultural_note
+    text: Or “without an heir”; the following clause concerns succession to David’s throne.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -112,14 +109,20 @@ revisions:
   from: 'Thus says the LORD: Write this man down as childless, a man who will not prosper in his days; for none of his offspring will prosper to sit on the throne of David and rule again in Judah.'
   to: 'Thus says the LORD: Write this man down as childless, a man who will not prosper in his days; for none of his offspring will prosper, sitting on the throne of David and ruling again in Judah.'
   rationale: 'Added a comma and adjusted the final clause to better reflect the Hebrew structure: the offspring will not prosper as one sitting on David’s throne and ruling in Judah. Preserved the formal tone and core wording.'
-
 - timestamp: '2026-05-16T07:39:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Thus says Yahweh: Write this man down as childless[a], a man who will not prosper in his days; for none of his offspring will prosper[b], sitting on the throne of David and ruling again in Judah.'
   to: 'Thus says Yahweh: Write this man down as childless[a], a man who will not prosper in his days; for none of his offspring will prosper[b] to sit on the throne of David and rule again in Judah.'
-  rationale: 'Azure converted drafter''s deliberate infinitive ''to sit ... and rule'' (drafter chose to make ל-infinitive purposive/resultative sense explicit) to participial ''sitting ... ruling'' — pattern matching rejected_alternative ''sitting on David''s throne''.'
+  rationale: Azure converted drafter's deliberate infinitive 'to sit ... and rule' (drafter chose to make ל-infinitive purposive/resultative sense explicit) to participial 'sitting ... ruling' — pattern matching rejected_alternative 'sitting on David's throne'.
+- timestamp: '2026-11-09T17:57:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says Yahweh: Write this man down as childless[a], a man who will not prosper in his days; for none of his offspring will prosper[b] to sit on the throne of David and rule again in Judah.'
+  to: 'Thus says Yahweh: Record this man as childless[a], a man who will not prosper in his lifetime; for none of his offspring will succeed in sitting on David’s throne and ruling again in Judah.'
+  rationale: The review and revert agreed that the sentence denies successful Davidic rule but differed over its English construction. Although one recorded rationale calls the Hebrew construction infinitival, the WLC uses participles; the new wording preserves the intended outcome without relying on that grammatical claim.
 cross_check:
   status: moderate_agreement
   agreement: 0.88
@@ -141,3 +144,30 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/jeremiah/022/030.job-28709.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:52Z'
+  change_level: refined
+  confidence: high
+  meaning: Coniah is to be recorded as a man whose life will not prosper and whose offspring will not successfully continue Davidic rule in Judah.
+  meaning_decisions:
+  - source_phrase: כִּתְבוּ אֶת הָאִישׁ הַזֶּה
+    prior_rendering: Write this man down
+    new_rendering: Record this man
+    rationale: “Record” makes the command’s formal registration of his status clear.
+  - source_phrase: בְּיָמָיו
+    prior_rendering: in his days
+    new_rendering: in his lifetime
+    rationale: This expresses the temporal idiom directly without changing its scope.
+  - source_phrase: לֹא יִצְלַח מִזַּרְעוֹ אִישׁ יֹשֵׁב עַל כִּסֵּא דָוִד וּמֹשֵׁל עוֹד בִּיהוּדָה
+    prior_rendering: none of his offspring will prosper to sit on the throne of David and rule again in Judah
+    new_rendering: none of his offspring will succeed in sitting on David’s throne and ruling again in Judah
+    rationale: “Succeed in” naturally conveys the denial of successful occupation of the royal position, avoiding the obscure English construction “prosper to sit.”
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review and revert agreed that the sentence denies successful Davidic rule but differed over its English construction. Although one recorded rationale calls the Hebrew construction infinitival, the WLC uses participles; the new wording preserves the intended outcome without relying on that grammatical claim.

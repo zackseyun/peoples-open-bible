@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when the other man realized that he had been outmaneuvered by the man’s boldness[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the great and holy temple.' The Greek uses a superlative ('greatest'), which may function idiomatically as an exalted description of the temple.
-    reason: lexical_alternative
+  text: When Nicanor realized that Judas had skillfully outmaneuvered him, he went to the great and holy temple while the priests were offering the prescribed sacrifices and ordered them to hand Judas over.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Συγνοὺς
   chosen: when ... realized
@@ -147,14 +143,20 @@ revisions:
   from: But when the other man realized that he had been outmaneuvered by the man’s boldness, he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
   to: But when the other man realized that he had been skillfully outmaneuvered by the man, he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
   rationale: Replaced “by the man’s boldness” with “by the man” to reflect the Greek more accurately; rendered γενναίως with “skillfully” rather than attaching it to “boldness.”
-
 - timestamp: '2026-05-16T16:07:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when the other man realized that he had been skillfully outmaneuvered by the man[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.'
-  to: 'But when the other man realized that he had been outmaneuvered by the man’s boldness[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.'
-  rationale: 'Restored drafter ''outmaneuvered by the man''s boldness'' (preserving the chosen explicit ''boldness'' as the means of outmaneuvering) per chosen renderings.'
+  from: But when the other man realized that he had been skillfully outmaneuvered by the man[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
+  to: But when the other man realized that he had been outmaneuvered by the man’s boldness[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
+  rationale: Restored drafter 'outmaneuvered by the man's boldness' (preserving the chosen explicit 'boldness' as the means of outmaneuvering) per chosen renderings.
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when the other man realized that he had been outmaneuvered by the man’s boldness[a], he came to the greatest and holy temple, while the priests were offering the customary sacrifices, and ordered them to hand over the man.
+  to: When Nicanor realized that Judas had skillfully outmaneuvered him, he went to the great and holy temple while the priests were offering the prescribed sacrifices and ordered them to hand Judas over.
+  rationale: The automated review correctly treated γενναίως as qualifying the outmaneuvering; its later policy revert offers no stronger contextual reason to make boldness the means. The earlier temple footnote recognizes the exalted use of the superlative, which is now rendered naturally in the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -174,3 +176,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/031.job-49419.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Realizing that Judas had outmaneuvered him, Nicanor went to the holy temple during the sacrifices and demanded that the priests surrender Judas.
+  meaning_decisions:
+  - source_phrase: ὁ ἕτερος ... ὑπὸ τοῦ ἀνδρός ... τὸν ἄνδρα
+    prior_rendering: the other man ... by the man’s boldness ... the man
+    new_rendering: Nicanor ... Judas ... Judas
+    rationale: The personal references are unambiguous in context; their names prevent English readers from having to disentangle repeated references to “the man.”
+  - source_phrase: γενναίως ... ἐστρατήγηται
+    prior_rendering: had been outmaneuvered by the man’s boldness
+    new_rendering: Judas had skillfully outmaneuvered him
+    rationale: The adverb qualifies the successful outmaneuvering rather than identifying boldness as a separate means by which it occurred.
+  - source_phrase: τὸ μέγιστον καὶ ἅγιον ἱερόν
+    prior_rendering: the greatest and holy temple
+    new_rendering: the great and holy temple
+    rationale: The superlative is an exalted description of the temple, not necessarily a comparison ranking it against other temples.
+  - source_phrase: τὰς καθηκούσας θυσίας
+    prior_rendering: the customary sacrifices
+    new_rendering: the prescribed sacrifices
+    rationale: The adjective presents the sacrifices as the proper, required offerings rather than merely a local custom.
+  footnote_kinds: {}
+  history_weighed: The automated review correctly treated γενναίως as qualifying the outmaneuvering; its later policy revert offers no stronger contextual reason to make boldness the means. The earlier temple footnote recognizes the exalted use of the superlative, which is now rendered naturally in the main text.

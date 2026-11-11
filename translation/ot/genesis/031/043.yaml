@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֨עַן לָבָ֜ן וַ/יֹּ֣אמֶר אֶֽל יַעֲקֹ֗ב הַ/בָּנ֨וֹת בְּנֹתַ֜/י וְ/הַ/בָּנִ֤ים בָּנַ/י֙ וְ/הַ/צֹּ֣אן צֹאנִ֔/י וְ/כֹ֛ל אֲשֶׁר אַתָּ֥ה רֹאֶ֖ה לִ/י ה֑וּא וְ/לִ/בְנֹתַ֞/י מָֽה אֶֽעֱשֶׂ֤ה לָ/אֵ֨לֶּה֙ הַ/יּ֔וֹם א֥וֹ לִ/בְנֵי/הֶ֖ן אֲשֶׁ֥ר יָלָֽדוּ־־־־׃
 translation:
-  text: Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'or for their sons whom they have borne,' if בְּנֵיהֶן is taken more narrowly as male offspring rather than children generally.
-    reason: lexical_alternative
+  text: Then Laban answered Jacob, “These daughters are my daughters, these children are my children, and this flock is my flock; all that you see is mine. But what can I do today about these daughters of mine, or about the children they have borne?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעַן
   chosen: answered
@@ -102,14 +98,20 @@ revisions:
   from: Then Laban answered and said to Jacob, “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do today for these my daughters, or for their children whom they have borne?”
   to: Then Laban answered and said to Jacob, “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do today for these my daughters, or for their children whom they have borne?”
   rationale: Changed 'today' to 'this day' for a more formal register and closer alignment with the Hebrew הַיּוֹם. No other changes needed.
-
 - timestamp: '2026-05-17T09:41:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”'
-  to: 'Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”'
+  from: Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”
+  to: Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''But what can I do today for these my daughters''].'
+- timestamp: '2026-11-09T17:44:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Laban answered and said to Jacob[a], “The daughters are my daughters, and the sons are my sons, and the flock is my flock, and all that you see is mine. But what can I do this day for these my daughters, or for their children whom they have borne?”
+  to: Then Laban answered Jacob, “These daughters are my daughters, these children are my children, and this flock is my flock; all that you see is mine. But what can I do today about these daughters of mine, or about the children they have borne?
+  rationale: The register-only change from “today” to “this day” carries little meaning-based weight. I preserve Laban’s emphatic ownership claims but avoid narrowing the disputed final question to a benefactive sense.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +133,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/031/043.job-65300.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Laban asserts his claim over the family and flock but questions what he can now do about his daughters and their children.
+  meaning_decisions:
+  - source_phrase: וַיַּעַן לָבָן וַיֹּאמֶר אֶל יַעֲקֹב
+    prior_rendering: Then Laban answered and said to Jacob
+    new_rendering: Then Laban answered Jacob
+    rationale: The paired Hebrew verbs introduce a reply and do not describe two separate acts.
+  - source_phrase: וְהַבָּנִים בָּנַי
+    prior_rendering: and the sons are my sons
+    new_rendering: these children are my children
+    rationale: The kinship term refers to Laban’s descendants and sustains his possessive claim without suggesting that they are his immediate sons.
+  - source_phrase: וְלִבְנֹתַי מָה אֶעֱשֶׂה לָאֵלֶּה הַיּוֹם אוֹ לִבְנֵיהֶן אֲשֶׁר יָלָדוּ
+    prior_rendering: But what can I do this day for these my daughters, or for their children whom they have borne?
+    new_rendering: But what can I do today about these daughters of mine, or about the children they have borne?
+    rationale: “About” preserves the rhetorical question’s range without making it specifically a question about helping them or explicitly threatening them.
+  footnote_kinds: {}
+  history_weighed: The register-only change from “today” to “this day” carries little meaning-based weight. I preserve Laban’s emphatic ownership claims but avoid narrowing the disputed final question to a benefactive sense.

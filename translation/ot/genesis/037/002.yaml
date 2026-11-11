@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: אֵ֣לֶּה תֹּלְד֣וֹת יַעֲקֹ֗ב יוֹסֵ֞ף בֶּן שְׁבַֽע עֶשְׂרֵ֤ה שָׁנָה֙ הָיָ֨ה רֹעֶ֤ה אֶת אֶחָי/ו֙ בַּ/צֹּ֔אן וְ/ה֣וּא נַ֗עַר אֶת בְּנֵ֥י בִלְהָ֛ה וְ/אֶת בְּנֵ֥י זִלְפָּ֖ה נְשֵׁ֣י אָבִ֑י/ו וַ/יָּבֵ֥א יוֹסֵ֛ף אֶת דִּבָּתָ֥/ם רָעָ֖ה אֶל אֲבִי/הֶֽם׀־־־־־־־׃
 translation:
-  text: 'These are the generations of Jacob: Joseph[a], being seventeen years old, was shepherding the flock with his brothers. He was a youth with the sons of Bilhah and the sons of Zilpah, his father''s wives[c][b], and Joseph brought a bad report about them to their father.'
-  philosophy: optimal-equivalence
+  text: This is the history of Jacob's family. Joseph, a young man[a] of seventeen, was tending the flock with his brothers—the sons of Bilhah and Zilpah, his father's wives. Joseph brought a bad report about them to their father.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'This is the account/family history of Jacob.' The Hebrew toledot often introduces a new section in Genesis and can denote what proceeds from a person, not merely biological descendants.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'their father'; the text explicitly uses the plural possessive, referring to Jacob as the father shared by Joseph and the brothers.
-    reason: lexical_alternative
-  - marker: c
-    text: Or "was shepherding the flock with his brothers. Now he was a young man with the sons of Bilhah and with the sons of Zilpah, his father's wives,".
-    reason: previous_rendering
+    text: Alternatively, the clause may mean that Joseph served as an assistant to the sons of Bilhah and Zilpah.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: תֹּלְדוֹת
   chosen: generations
@@ -98,12 +92,18 @@ revisions:
   from: 'These are the generations of Jacob: Joseph, being seventeen years old, was shepherding the flock with his brothers; and he, a youth, was with the sons of Bilhah and the sons of Zilpah, his father''s wives, and Joseph brought a bad report about them to their father.'
   to: 'These are the generations of Jacob: Joseph, being seventeen years old, was shepherding the flock with his brothers. He was a youth with the sons of Bilhah and the sons of Zilpah, his father''s wives, and Joseph brought a bad report about them to their father.'
   rationale: Adjusted punctuation to avoid an overlong sentence and removed the second 'and he' for more natural English while preserving the Hebrew structure and meaning. Kept 'generations,' 'youth,' and 'bad report' as accurate renderings.
+- timestamp: '2026-11-09T17:45:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'These are the generations of Jacob: Joseph[a], being seventeen years old, was shepherding the flock with his brothers. He was a youth with the sons of Bilhah and the sons of Zilpah, his father''s wives[c][b], and Joseph brought a bad report about them to their father.'
+  to: This is the history of Jacob's family. Joseph, a young man[a] of seventeen, was tending the flock with his brothers—the sons of Bilhah and Zilpah, his father's wives. Joseph brought a bad report about them to their father.
+  rationale: The earlier review correctly recognized that the circumstantial clause identifies the brothers Joseph was working with, though later punctuation obscured that connection. I retain 'bad report' without deciding whether it was truthful or malicious, and keep the shared 'their father.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:07Z'
   unchanged: false
   changes_summary: Adjusted punctuation to avoid an overlong sentence and removed the second 'and he' for more natural English while preserving the Hebrew structure and meaning. Kept 'generations,' 'youth,' and 'bad report' as accurate renderings.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +125,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/037/002.job-37724.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:13Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jacob's family history begins with seventeen-year-old Joseph tending the flock alongside his brothers and bringing their father an unfavorable report about them.
+  meaning_decisions:
+  - source_phrase: אֵלֶּה תֹּלְדוֹת יַעֲקֹב
+    prior_rendering: These are the generations of Jacob
+    new_rendering: This is the history of Jacob's family
+    rationale: The heading introduces the ensuing family narrative, not merely a list of descendants or successive generations.
+  - source_phrase: יוֹסֵף בֶּן שְׁבַע עֶשְׂרֵה שָׁנָה ... וְהוּא נַעַר אֶת בְּנֵי בִלְהָה וְאֶת בְּנֵי זִלְפָּה
+    prior_rendering: Joseph, being seventeen years old ... He was a youth with the sons of Bilhah and the sons of Zilpah
+    new_rendering: Joseph, a young man of seventeen ... with his brothers—the sons of Bilhah and Zilpah
+    rationale: Integrating Joseph's youth with his stated age removes the unclear 'a youth with' construction and makes the circumstantial identification of his companions explicit; the attendant interpretation remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review correctly recognized that the circumstantial clause identifies the brothers Joseph was working with, though later punctuation obscured that connection. I retain 'bad report' without deciding whether it was truthful or malicious, and keep the shared 'their father.'

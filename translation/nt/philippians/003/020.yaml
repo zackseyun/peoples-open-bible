@@ -4,21 +4,12 @@ source:
   edition: SBLGNT
   text: ἡμῶν γὰρ τὸ πολίτευμα ἐν οὐρανοῖς ὑπάρχει, ἐξ οὗ καὶ σωτῆρα ἀπεκδεχόμεθα κύριον Ἰησοῦν Χριστόν,
 translation:
-  text: For our citizenship is in heaven[a], from where we also eagerly await a Savior[d][c][b], the Lord Jesus Christ.
-  philosophy: optimal-equivalence
+  text: For our citizenship is in heaven[a], and we eagerly await a Savior from there, the Lord Jesus Christ.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “commonwealth.”
-    reason: lexical_alternative
-  - marker: b
-    text: Greek “in the heavens.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or “the Lord Jesus the Messiah.”
+    text: Or "our commonwealth is in heaven."
     reason: alternative_reading
-  - marker: d
-    text: Or 'the Lord Jesus the Messiah'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: πολίτευμα
   chosen: citizenship
@@ -114,15 +105,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "For our citizenship is in heaven, from where we also eagerly await a Savior, the Lord Jesus Messiah."
-  to: "For our citizenship is in heaven, from where we also eagerly await a Savior, the Lord Jesus the Messiah."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: For our citizenship is in heaven, from where we also eagerly await a Savior, the Lord Jesus Messiah.
+  to: For our citizenship is in heaven, from where we also eagerly await a Savior, the Lord Jesus the Messiah.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:15:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For our citizenship is in heaven[a], from where we also eagerly await a Savior[d][c][b], the Lord Jesus Christ.
+  to: For our citizenship is in heaven[a], and we eagerly await a Savior from there, the Lord Jesus Christ.
+  rationale: The lexical deliberation supports 'citizenship' while recognizing the corporate alternative 'commonwealth,' which remains footnoted. The title-string history contains conflicting automated changes; I retain the current 'Lord Jesus Christ' under the standing name-construction ruling and remove redundant notes.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:55Z'
   unchanged: false
   changes_summary: 'Replaced ''the Messiah'' with ''Christ'' to reflect the Greek title Χριστόν in a formal, conventional register and to preserve consistency with standard rendering of the full name/title ''Lord Jesus Christ.'' [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +141,22 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/philippians/003/020.job-38497.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:50Z'
+  change_level: refined
+  confidence: high
+  meaning: In contrast to earthly-minded people, believers belong to heaven's community and eagerly await the Lord Jesus Christ as Savior from there.
+  meaning_decisions:
+  - source_phrase: ἐξ οὗ καὶ σωτῆρα ἀπεκδεχόμεθα
+    prior_rendering: from where we also eagerly await a Savior
+    new_rendering: and we eagerly await a Savior from there
+    rationale: The reordered clause clearly identifies heaven as the place from which the Savior is awaited, rather than the location of those waiting.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The lexical deliberation supports 'citizenship' while recognizing the corporate alternative 'commonwealth,' which remains footnoted. The title-string history contains conflicting automated changes; I retain the current 'Lord Jesus Christ' under the standing name-construction ruling and remove redundant notes.

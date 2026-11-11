@@ -22,12 +22,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more specifically, 'on the Sabbath day'; the Greek here says literally 'on the day of rest.'
-    reason: lexical_alternative
+  text: When Nicanor learned that Judas and his men were in the region of Samaria, he resolved to attack them on the Sabbath, confident that he could do so without risk.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μεταλαβών
   chosen: learned
@@ -118,14 +114,20 @@ revisions:
   from: But when Nicanor learned that those with Judas were in the regions of Samaria, he resolved to attack them on the day of rest with complete security.
   to: But when Nicanor learned that those with Judas were in the regions of Samaria, he resolved to attack them on the day of rest with complete security.
   rationale: Replaced 'when ... learned' with the more direct participial structure 'having learned' to reflect μεταλαβών more closely; otherwise retained the draft, which is accurate and natural.
-
 - timestamp: '2026-05-18T02:59:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.'
-  to: 'But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.'
+  from: But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.
+  to: But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he resolved''].'
+- timestamp: '2026-11-09T18:57:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Nicanor[a], having learned that those with Judas were in the regions of Samaria, resolved to attack them on the day of rest with complete security.
+  to: When Nicanor learned that Judas and his men were in the region of Samaria, he resolved to attack them on the Sabbath, confident that he could do so without risk.
+  rationale: The earlier decisions correctly identify the information received, the military attack, and Nicanor’s expected safety. Their preference for keeping “day of rest” was source-transparent rather than meaning-driven; the immediate context establishes the Sabbath beyond reasonable doubt.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +147,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/015/001.job-49435.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Nicanor planned to attack Judas’s party on the Sabbath, expecting to do so without danger to himself.
+  meaning_decisions:
+  - source_phrase: τοὺς περὶ τὸν Ἰούδαν
+    prior_rendering: those with Judas
+    new_rendering: Judas and his men
+    rationale: The Greek idiom identifies Judas’s party as a whole; the new wording makes the military group immediately recognizable.
+  - source_phrase: τῇ τῆς καταπαύσεως ἡμέρᾳ
+    prior_rendering: on the day of rest
+    new_rendering: on the Sabbath
+    rationale: The following exchange explicitly identifies this day as the Sabbath, so its identity belongs in the main text rather than a footnote.
+  - source_phrase: μετὰ πάσης ἀσφαλείας
+    prior_rendering: with complete security
+    new_rendering: confident that he could do so without risk
+    rationale: The phrase expresses Nicanor’s expectation of safety, not the narrator’s assurance that the attack would actually be safe.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly identify the information received, the military attack, and Nicanor’s expected safety. Their preference for keeping “day of rest” was source-transparent rather than meaning-driven; the immediate context establishes the Sabbath beyond reasonable doubt.

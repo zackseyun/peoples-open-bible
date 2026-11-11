@@ -17,17 +17,14 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.
-  philosophy: optimal-equivalence
+  text: But the ungodly summoned Death with their hands and their words; regarding him as a friend, they pined for him[a] and made a covenant with him, because they deserve to belong to his company[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, 'him' refers to Death, personified from the preceding context.
-    reason: cross_reference
+    text: Or, 'they wasted away.' The Greek image is of melting away.
+    reason: alternative_reading
   - marker: b
-    text: Or 'they made a pact with him.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'to be of his lot.'
+    text: Literally, 'to be of his portion.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀσεβεῖς
@@ -137,14 +134,20 @@ revisions:
   from: But the ungodly, with their hands and with their words, called for him; considering him a friend, they wasted away, and they made a covenant with him, because they are worthy to belong to his portion.
   to: But the ungodly, with their hands and with their words, called for him; considering him a friend, they wasted away, and they made a covenant with him, because they are worthy to belong to his portion.
   rationale: Removed the second 'with' before 'their words' for smoother English while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.'
-  to: 'But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.'
+  from: But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.
+  to: But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with their hands and with their words''].'
+- timestamp: '2026-11-09T19:10:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the ungodly[a], with their hands and their words, called for him; considering him a friend, they wasted away, and they made a covenant with him[c][b], because they are worthy to belong to his portion.
+  to: But the ungodly summoned Death with their hands and their words; regarding him as a friend, they pined for him[a] and made a covenant with him, because they deserve to belong to his company[b].
+  rationale: The recorded revisions mainly concern a repeated 'with' and contain no maintainer judgment. I retain the solemn covenant language, make Death explicit, and render the wasting as longing within the friendship-and-alliance sequence while preserving the alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -164,3 +167,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/001/016.job-39327.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:59Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The ungodly summon Death by their deeds and words, long for him as a friend, and bind themselves to him in a covenant because they deserve to be among his own.
+  meaning_decisions:
+  - source_phrase: προσεκαλέσαντο αὐτόν
+    prior_rendering: called for him
+    new_rendering: summoned Death
+    rationale: Naming Death makes the established antecedent clear after intervening references to God and Hades, while retaining the personification and active invitation.
+  - source_phrase: ἐτάκησαν
+    prior_rendering: they wasted away
+    new_rendering: they pined for him
+    rationale: Within the sequence of summoning Death, regarding him as a friend, and making an alliance, the melting or wasting is best understood as pining for him; the other serious reading is preserved in a note.
+  - source_phrase: ἄξιοί εἰσιν
+    prior_rendering: they are worthy
+    new_rendering: they deserve
+    rationale: The phrase expresses fitting moral desert, not commendation; 'deserve' preserves its bitter irony more clearly.
+  - source_phrase: τῆς ἐκείνου μερίδος εἶναι
+    prior_rendering: to belong to his portion
+    new_rendering: to belong to his company
+    rationale: The expression identifies those who belong to Death's allotted group; 'his company' conveys that affiliation, with the portion image retained in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The recorded revisions mainly concern a repeated 'with' and contain no maintainer judgment. I retain the solemn covenant language, make Death explicit, and render the wasting as longing within the friendship-and-alliance sequence while preserving the alternative.

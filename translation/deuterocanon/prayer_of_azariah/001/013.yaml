@@ -8,11 +8,11 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
-  philosophy: optimal-equivalence
+  text: just as you promised them that their offspring[a] would become as numerous as the stars of heaven and the sand on the seashore.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'their offspring' or 'their descendants.' The Greek says 'their seed,' preserving the wording of the ancestral promise.
+    text: Literally, 'their seed,' echoing the promise in Genesis 22:17.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐλάλησας
@@ -104,14 +104,20 @@ revisions:
   from: just as you spoke to them, saying that their seed would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
   to: just as you spoke to them, saying that their seed would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
   rationale: Replaced 'seed' with 'offspring' for more natural formal English while preserving the sense of σπέρμα; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.'
-  to: 'just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.'
+  from: just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
+  to: just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''their seed''].'
+- timestamp: '2026-11-09T19:04:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: just as you spoke to them[a], saying that their offspring would be multiplied like the stars of heaven in number and like the sand by the shore of the sea.
+  to: just as you promised them that their offspring[a] would become as numerous as the stars of heaven and the sand on the seashore.
+  rationale: I retain the current 'offspring,' which clearly conveys the collective descendants despite the automated revert rationale favoring 'seed.' A literal note preserves the promise’s traditional seed wording and its deliberate scriptural echo.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -131,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/013.job-50924.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:14Z'
+  change_level: refined
+  confidence: high
+  meaning: They recall God’s promise that the patriarchs’ offspring would become as numerous as the stars and the sand.
+  meaning_decisions:
+  - source_phrase: ἐλάλησας πρὸς αὐτοὺς λέγων
+    prior_rendering: you spoke to them, saying
+    new_rendering: you promised them
+    rationale: The speech being recalled is the patriarchal promise, which grounds the appeal for mercy.
+  - source_phrase: πολυπληθῦναι ... ὡς τὰ ἄστρα τοῦ οὐρανοῦ τῷ πλήθει καὶ ὡς τὴν ἄμμον τὴν παρὰ τὸ χεῖλος τῆς θαλάσσης
+    prior_rendering: would be multiplied like the stars of heaven in number and like the sand by the shore of the sea
+    new_rendering: would become as numerous as the stars of heaven and the sand on the seashore
+    rationale: Expresses the promised numerical abundance directly while preserving both images.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current 'offspring,' which clearly conveys the collective descendants despite the automated revert rationale favoring 'seed.' A literal note preserves the promise’s traditional seed wording and its deliberate scriptural echo.

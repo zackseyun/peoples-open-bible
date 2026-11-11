@@ -16,15 +16,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 15:14
 translation:
-  text: God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.
-  philosophy: optimal-equivalence
+  text: From the beginning God created human beings and placed them under the power of their own impulses[a]; he gave them over to their own inclinations[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''and he left him in the hand of his own counsel.'' The Hebrew first clause after ''created man'' is textually difficult; the Greek supports the broader sense of human self-direction.'
+    text: The Hebrew word is uncertain; possible meanings include “his violence” or “the one who seizes him.”
     reason: alternative_reading
   - marker: b
-    text: Or 'humankind.' Hebrew אדם is singular but can represent humanity collectively.
-    reason: lexical_alternative
+    text: 'The Greek has a single clause after creation: “and left him in the power of his own counsel.”'
+    reason: textual_variant
 lexical_decisions:
 - source_word: מִבְּרֵאשִׁית
   lemma: מִן
@@ -128,14 +128,20 @@ revisions:
   from: He himself, from the beginning, created man, and placed him in the hand of his own impulse; he gave him over to the hand of his own inclination.
   to: He himself, from the beginning, created man, and placed him in the hand of his own impulse; he gave him over to the hand of his own inclination.
   rationale: Replaced 'He himself' with 'God' to reflect the explicit subject אֱלֹהִים. Replaced 'impulse' with 'violence' for חוֹתְפוֹ, which more naturally reflects force/violence rather than inner impulse. Kept 'inclination' for יִצְרוֹ as a natural rendering of the term.
-
 - timestamp: '2026-05-18T02:57:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.'
-  to: 'God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.'
+  from: God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.
+  to: God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his own impulse''].'
+- timestamp: '2026-11-09T19:05:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: God[a], from the beginning, created man, and placed him in the hand of his own violence[b]; he gave him over to the hand of his own inclination.
+  to: From the beginning God created human beings and placed them under the power of their own impulses[a]; he gave them over to their own inclinations[b].
+  rationale: The history alternates between 'impulse' and 'violence' for the difficult word, without a MAINTAINER decision. I retain the correction to the explicit subject 'God' and recover the contextual 'impulse' reading, while noting its uncertainty and the shorter Greek wording.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +161,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/015/014.job-51366.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:12Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: From creation, God placed human beings under the direction of their own impulses and inclinations.
+  meaning_decisions:
+  - source_phrase: אָדָם
+    prior_rendering: man
+    new_rendering: human beings
+    rationale: The creation statement concerns humanity collectively; plural English makes that scope clear and carries the subsequent generic references naturally.
+  - source_phrase: בְּיַד חוֹתְפוֹ
+    prior_rendering: in the hand of his own violence
+    new_rendering: under the power of their own impulses
+    rationale: The difficult word is best understood provisionally through the parallel reference to inclination and the passage's concern with human self-direction. 'Under the power of' conveys the hand idiom, while a note preserves the uncertain alternatives.
+  - source_phrase: וַיִּתְּנֵהוּ בְּיַד יִצְרוֹ
+    prior_rendering: he gave him over to the hand of his own inclination
+    new_rendering: he gave them over to their own inclinations
+    rationale: Renders the control idiom naturally while retaining both the force of 'gave over' and the morally unqualified term 'inclination.'
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The history alternates between 'impulse' and 'violence' for the difficult word, without a MAINTAINER decision. I retain the correction to the explicit subject 'God' and recover the contextual 'impulse' reading, while noting its uncertainty and the shorter Greek wording.

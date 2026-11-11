@@ -21,11 +21,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he blessed them[a], and was gathered to his fathers.
-  philosophy: optimal-equivalence
+  text: And he blessed them and was gathered to his fathers[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'was gathered to his fathers,' a traditional expression for death.
+    text: Literally, “was added to his fathers,” a traditional expression for death.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ηὐλόγησεν
@@ -87,14 +87,20 @@ revisions:
   from: And he blessed them, and was added to his fathers.
   to: And he blessed them, and was added to his fathers.
   rationale: Revised 'was added to his fathers' to 'was gathered to his fathers' for more natural formal English and a more standard rendering of the idiom, while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he blessed them[a], and was gathered to his fathers.'
-  to: 'And he blessed them[a], and was gathered to his fathers.'
+  from: And he blessed them[a], and was gathered to his fathers.
+  to: And he blessed them[a], and was gathered to his fathers.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was added''].'
+- timestamp: '2026-11-09T18:52:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he blessed them[a], and was gathered to his fathers.
+  to: And he blessed them and was gathered to his fathers[a].
+  rationale: The current “was gathered to his fathers” preserves the ancestral death image more intelligibly than the first draft's “was added.” I retain that gain and replace the earlier redundant, misplaced note with a brief explanation of the expression.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +120,18 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/002/069.job-48084.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:16Z'
+  change_level: kept
+  confidence: high
+  meaning: Mattathias blessed his sons and then died, joining his ancestors.
+  meaning_decisions: []
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The current “was gathered to his fathers” preserves the ancestral death image more intelligibly than the first draft's “was added.” I retain that gain and replace the earlier redundant, misplaced note with a brief explanation of the expression.

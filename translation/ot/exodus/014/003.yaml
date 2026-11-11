@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וְ/אָמַ֤ר פַּרְעֹה֙ לִ/בְנֵ֣י יִשְׂרָאֵ֔ל נְבֻכִ֥ים הֵ֖ם בָּ/אָ֑רֶץ סָגַ֥ר עֲלֵי/הֶ֖ם הַ/מִּדְבָּֽר׃
 translation:
-  text: For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’
-  philosophy: optimal-equivalence
+  text: For Pharaoh will say about the Israelites, ‘They are lost in the land[a]; the wilderness has hemmed them in.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'They are bewildered in the land' or 'They are entangled in the land.' The Hebrew participle can denote confusion, perplexity, or being trapped/disoriented.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'sons of Israel.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the wilderness has hemmed them in.'
-    reason: lexical_alternative
+    text: Or, “They are trapped in the land.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאָמַר
   chosen: For ... will say
@@ -91,14 +85,20 @@ revisions:
   from: For Pharaoh will say of the sons of Israel, ‘They are wandering in confusion in the land; the wilderness has shut them in.’
   to: For Pharaoh will say of the sons of Israel, ‘They are wandering in confusion in the land; the wilderness has shut them in.’
   rationale: Replaced ‘wandering in confusion’ with ‘confused’ to more directly reflect the Hebrew and avoid adding the idea of wandering, which is not explicit in the source.
-
 - timestamp: '2026-05-18T02:55:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’'
-  to: 'For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’'
+  from: For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’
+  to: For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''wandering in confusion''].'
+- timestamp: '2026-11-09T17:34:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For Pharaoh will say of the sons of Israel[a], ‘They are confused in the land[c][b]; the wilderness has shut them in.’
+  to: For Pharaoh will say about the Israelites, ‘They are lost in the land[a]; the wilderness has hemmed them in.’
+  rationale: The review’s objection to adding wandering is sound, so no movement beyond the route reversal is asserted. The documented range between disorientation and entrapment informs the main wording and the alternative note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +120,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/014/003.job-62607.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:25Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Pharaoh will interpret Israel’s changed route as evidence that they are disoriented and trapped by the wilderness.
+  meaning_decisions:
+  - source_phrase: לִבְנֵי יִשְׂרָאֵל
+    prior_rendering: of the sons of Israel
+    new_rendering: about the Israelites
+    rationale: Pharaoh is speaking about the whole people, not addressing them or referring only to their men.
+  - source_phrase: נְבֻכִים הֵם בָּאָרֶץ
+    prior_rendering: They are confused in the land
+    new_rendering: They are lost in the land
+    rationale: The context concerns apparent disorientation on their route, not merely mental confusion; lost conveys that situation without asserting continued wandering.
+  - source_phrase: סָגַר עֲלֵיהֶם הַמִּדְבָּר
+    prior_rendering: the wilderness has shut them in
+    new_rendering: the wilderness has hemmed them in
+    rationale: Hemmed them in naturally conveys the surrounding terrain’s apparent confinement while preserving the image.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review’s objection to adding wandering is sound, so no movement beyond the route reversal is asserted. The documented range between disorientation and entrapment informs the main wording and the alternative note.

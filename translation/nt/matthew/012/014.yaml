@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ⸂ἐξελθόντες δὲ οἱ Φαρισαῖοι συμβούλιον ἔλαβον κατ’ αὐτοῦ⸃ ὅπως αὐτὸν ἀπολέσωσιν.
 translation:
-  text: But the Pharisees went out and conspired against him, how they might destroy him[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'kill him' or 'put him to death.' The Greek says 'destroy him,' which can include lethal intent in context.
-    reason: lexical_alternative
+  text: But the Pharisees went out and conspired to kill him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξελθόντες
   chosen: went out
@@ -87,14 +83,20 @@ revisions:
   from: But the Pharisees went out and conspired against him, how they might destroy him.
   to: But the Pharisees went out and took counsel against him, how they might destroy him.
   rationale: Replaced 'conspired' with 'took counsel' to more directly reflect συμβούλιον ἔλαβον and maintain a more formal register; retained the rest.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the Pharisees went out and took counsel against him[a], how they might destroy him.'
-  to: 'But the Pharisees went out and conspired against him, how they might destroy him.'
+  from: But the Pharisees went out and took counsel against him[a], how they might destroy him.
+  to: But the Pharisees went out and conspired against him, how they might destroy him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''conspired''].'
+- timestamp: '2026-11-09T17:14:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the Pharisees went out and conspired against him, how they might destroy him[a].
+  to: But the Pharisees went out and conspired to kill him.
+  rationale: The history’s preference for “conspired” over the source-shaped “took counsel” fits the hostile context and is retained. I bring the lethal meaning previously offered in a footnote into the main text because the narrative supports it.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/012/014.job-56940.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Pharisees responded by leaving and conspiring to kill Jesus.
+  meaning_decisions:
+  - source_phrase: συμβούλιον ἔλαβον κατ’ αὐτοῦ ὅπως αὐτὸν ἀπολέσωσιν
+    prior_rendering: conspired against him, how they might destroy him
+    new_rendering: conspired to kill him
+    rationale: The idiom describes a hostile joint plot, and in this narrative “destroy him” means killing Jesus rather than merely damaging his standing; the direct purpose construction conveys that meaning clearly.
+  footnote_kinds: {}
+  history_weighed: The history’s preference for “conspired” over the source-shaped “took counsel” fits the hostile context and is retained. I bring the lethal meaning previously offered in a footnote into the main text because the narrative supports it.

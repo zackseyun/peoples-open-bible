@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/הָיָ֨ה לָ/הֶ֤ם כ/קסום שָׁוְא֙ בְּ/עֵ֣ינֵי/הֶ֔ם שְׁבֻעֵ֥י שְׁבֻע֖וֹת לָ/הֶ֑ם וְ/הֽוּא מַזְכִּ֥יר עָוֺ֖ן לְ/הִתָּפֵֽשׂ־־׃פ
 translation:
-  text: And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.
-  philosophy: optimal-equivalence
+  text: To the people of Jerusalem this will seem like a false omen, though they are bound by solemn oaths[a]; but the king will bring their guilt to mind, so that they may be taken captive.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''sworn oaths to them'' or ''oaths upon oaths for them.'' The phrase is difficult; the main text understands it as referring to binding solemn oaths that they nevertheless disregard.'
-    reason: lexical_alternative
+    text: Or, “they have sworn solemn oaths to them.” The difficult Hebrew phrase may refer to oaths of allegiance to the Babylonians.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְהָיָה
   chosen: And it will be
@@ -84,14 +84,20 @@ revisions:
   from: And it will be to them like a false divination in their eyes, though sworn oaths are binding on them; but he brings guilt to remembrance, so that they may be captured.
   to: And it will be to them like a false divination in their eyes, though sworn oaths are binding on them; but he brings guilt to remembrance, so that they may be captured.
   rationale: Adjusted the middle clause to reflect the Hebrew more closely rather than adding 'binding,' preserving the awkward repetition 'sworn sworn oaths' from the source. Kept the rest substantially the same.
-
 - timestamp: '2026-05-18T02:54:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.'
-  to: 'And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.'
+  from: And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.
+  to: And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though sworn oaths are binding on them''].'
+- timestamp: '2026-11-09T17:39:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it will be to them like a false divination in their eyes; they have sworn sworn oaths to them[a], but he brings guilt to remembrance, so that they may be captured.
+  to: To the people of Jerusalem this will seem like a false omen, though they are bound by solemn oaths[a]; but the king will bring their guilt to mind, so that they may be taken captive.
+  rationale: The first draft and lexical rationale understood the difficult middle phrase as binding solemn oaths; the later repetition “sworn sworn” gained no meaning. With no MAINTAINER ruling recorded, that earlier interpretation is recovered while the oath’s possible Babylonian recipient remains in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -111,3 +117,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/021/028.job-63838.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:11Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem dismisses the omen despite its solemn obligations, but the Babylonian king recalls its guilt so that its people may be captured.
+  meaning_decisions:
+  - source_phrase: וְהָיָה לָהֶם כִּקְסָם שָׁוְא בְּעֵינֵיהֶם
+    prior_rendering: And it will be to them like a false divination in their eyes
+    new_rendering: To the people of Jerusalem this will seem like a false omen
+    rationale: The wording identifies the people whose judgment is being reported and renders the perception idiom naturally.
+  - source_phrase: שְׁבֻעֵי שְׁבֻעוֹת לָהֶם
+    prior_rendering: they have sworn sworn oaths to them
+    new_rendering: though they are bound by solemn oaths
+    rationale: The repetition expresses solemn sworn obligations, not an English repetition of “sworn”; the main text leaves the recipient of the oaths unspecified.
+  - source_phrase: וְהוּא מַזְכִּיר עָוֺן לְהִתָּפֵשׂ
+    prior_rendering: but he brings guilt to remembrance, so that they may be captured
+    new_rendering: but the king will bring their guilt to mind, so that they may be taken captive
+    rationale: The preceding context identifies the king as the subject, and the guilt belongs to those facing capture.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale understood the difficult middle phrase as binding solemn oaths; the later repetition “sworn sworn” gained no meaning. With no MAINTAINER ruling recorded, that earlier interpretation is recovered while the oath’s possible Babylonian recipient remains in a footnote.

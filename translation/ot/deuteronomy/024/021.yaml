@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: כִּ֤י תִבְצֹר֙ כַּרְמְ/ךָ֔ לֹ֥א תְעוֹלֵ֖ל אַחֲרֶ֑י/ךָ לַ/גֵּ֛ר לַ/יָּת֥וֹם וְ/לָ/אַלְמָנָ֖ה יִהְיֶֽה׃
 translation:
-  text: When you harvest the grapes of your vineyard[a], you shall not go over it again after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'you shall not glean it afterward' or 'you shall not pick over it again.' The Hebrew verb refers to making a second pass to collect what remains.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Sojourner'' refers to a non-native resident living among Israel; alternatively, ''resident alien.'''
-    reason: cultural_note
-  - marker: c
-    text: Or 'orphan.' The Hebrew term is literally 'fatherless' in many contexts.
-    reason: lexical_alternative
+  text: When you harvest the grapes of your vineyard, you shall not go back to pick the grapes that remain. Leave them for the resident foreigner, the fatherless, and the widow.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: When
@@ -96,14 +86,20 @@ revisions:
   from: When you harvest the grapes of your vineyard, you shall not go over it again after yourself; it shall be for the sojourner, the fatherless, and the widow.
   to: When you gather the grapes of your vineyard, you shall not glean after yourself; it shall be for the sojourner, the fatherless, and the widow.
   rationale: Replaced 'harvest the grapes' with 'gather the grapes' to reflect the vineyard-specific verb more directly, and changed 'go over it again after yourself' to 'glean after yourself' for a more accurate and natural rendering of the prohibition.
-
 - timestamp: '2026-05-16T05:40:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When you gather the grapes of your vineyard[a], you shall not glean after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.'
-  to: 'When you harvest the grapes of your vineyard[a], you shall not go over it again after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.'
-  rationale: 'Azure substituted ''gather'' (drafter''s rejected alt for תִבְצֹר) and ''glean'' (drafter''s rejected alt for לֹא תְעוֹלֵל — drafter explicitly rejected ''glean'' because it makes owner sound like the gleaning poor).'
+  from: When you gather the grapes of your vineyard[a], you shall not glean after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.
+  to: When you harvest the grapes of your vineyard[a], you shall not go over it again after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.
+  rationale: Azure substituted 'gather' (drafter's rejected alt for תִבְצֹר) and 'glean' (drafter's rejected alt for לֹא תְעוֹלֵל — drafter explicitly rejected 'glean' because it makes owner sound like the gleaning poor).
+- timestamp: '2026-11-09T17:31:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When you harvest the grapes of your vineyard[a], you shall not go over it again after yourself; it shall be for the sojourner, the fatherless[c][b], and the widow.
+  to: When you harvest the grapes of your vineyard, you shall not go back to pick the grapes that remain. Leave them for the resident foreigner, the fatherless, and the widow.
+  rationale: I keep “harvest the grapes,” as the later history preferred, and respect the concern that “glean” could obscure the owner’s role. The new wording states the second-pass prohibition directly without the source-shaped “after yourself”; redundant alternative notes are dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -123,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/024/021.job-61800.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After the grape harvest, the owner must leave the remaining grapes for the foreign resident, the fatherless, and the widow.
+  meaning_decisions:
+  - source_phrase: לֹא תְעוֹלֵל אַחֲרֶיךָ
+    prior_rendering: you shall not go over it again after yourself
+    new_rendering: you shall not go back to pick the grapes that remain
+    rationale: The instruction forbids collecting leftover grapes after the main harvest; “after yourself” does not communicate that naturally in English.
+  - source_phrase: לַגֵּר לַיָּתוֹם וְלָאַלְמָנָה יִהְיֶה
+    prior_rendering: it shall be for the sojourner, the fatherless, and the widow
+    new_rendering: Leave them for the resident foreigner, the fatherless, and the widow
+    rationale: The plural pronoun clearly refers to the remaining grapes, and the imperative expresses their required reservation for the protected groups.
+  footnote_kinds: {}
+  history_weighed: I keep “harvest the grapes,” as the later history preferred, and respect the concern that “glean” could obscure the owner’s role. The new wording states the second-pass prohibition directly without the source-shaped “after yourself”; redundant alternative notes are dropped.

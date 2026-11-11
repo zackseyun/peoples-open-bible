@@ -4,25 +4,15 @@ source:
   edition: SBLGNT
   text: Ἤδη δὲ τῆς ἑορτῆς μεσούσης ⸀ἀνέβη Ἰησοῦς εἰς τὸ ἱερὸν καὶ ἐδίδασκεν.
 translation:
-  text: When the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'about the middle of the feast.'
-    reason: lexical_alternative
-  - marker: b
-    text: Greek 'the temple' here uses ἱερόν, referring to the temple complex or courts, not specifically the inner sanctuary.
-    reason: cultural_note
-  - marker: c
-    text: Or 'was teaching.' The Greek imperfect may emphasize ongoing action.
-    reason: lexical_alternative
+  text: When the feast was already half over, Jesus went up into the temple courts and taught.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἤδη
   chosen: already
   alternatives:
   - by this time
   lexicon: BDAG
-  rationale: "Marks that the action occurs at a point already reached in the feast; 'already' is the most natural concise equivalent. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Marks that the action occurs at a point already reached in the feast; ''already'' is the most natural concise equivalent. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -89,13 +79,12 @@ revisions:
   from: Now when the feast was already half over, Jesus went up into the temple and began teaching.
   to: Now when the feast was already half over, Jesus went up into the temple and began teaching.
   rationale: Changed 'began teaching' to 'was teaching' to reflect the imperfect ἐδίδασκεν more accurately without adding an inceptive nuance not explicit in the Greek.
-
 - timestamp: '2026-05-18T02:59:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now when the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.'
-  to: 'Now when the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.'
+  from: Now when the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
+  to: Now when the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''began teaching''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -104,6 +93,13 @@ revisions:
   from: Now when the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
   to: When the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:10:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the feast was already half over[c][b][a], Jesus went up into the temple and was teaching.
+  to: When the feast was already half over, Jesus went up into the temple courts and taught.
+  rationale: I retain the current midpoint setting and the earlier review's caution against insisting on an inceptive meaning. The documented distinction between the temple complex and the sanctuary is now conveyed by 'temple courts.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +121,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/007/014.job-54891.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Halfway through the feast, Jesus went into the temple courts and taught.
+  meaning_decisions:
+  - source_phrase: εἰς τὸ ἱερὸν
+    prior_rendering: into the temple
+    new_rendering: into the temple courts
+    rationale: The term denotes the temple complex, and public teaching took place in its courts rather than inside the sanctuary.
+  - source_phrase: ἐδίδασκεν
+    prior_rendering: was teaching
+    new_rendering: taught
+    rationale: The English simple past naturally narrates the teaching activity without making it momentary or explicitly asserting its onset.
+  footnote_kinds: {}
+  history_weighed: I retain the current midpoint setting and the earlier review's caution against insisting on an inceptive meaning. The documented distinction between the temple complex and the sanctuary is now conveyed by 'temple courts.'

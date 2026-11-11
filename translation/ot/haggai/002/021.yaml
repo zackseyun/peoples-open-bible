@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אֱמֹ֕ר אֶל זְרֻבָּבֶ֥ל פַּֽחַת יְהוּדָ֖ה לֵ/אמֹ֑ר אֲנִ֣י מַרְעִ֔ישׁ אֶת הַ/שָּׁמַ֖יִם וְ/אֶת הָ/אָֽרֶץ־־־־׃
 translation:
-  text: 'Speak to Zerubbabel[a], governor of Judah, saying: I am shaking the heavens and the earth.'
-  philosophy: optimal-equivalence
+  text: 'Tell Zerubbabel, governor of Judah: I will shake[a] the heavens and the earth.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'I will shake the heavens and the earth.' The Hebrew participle can be rendered as an imminent future or a simple future.
-    reason: lexical_alternative
+    text: Or, “I am shaking,” or “I am about to shake.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֱמֹר
   chosen: Speak
@@ -83,7 +83,6 @@ revisions:
   from: 'Speak to Zerubbabel, governor of Judah, saying: I am about to shake the heavens and the earth.'
   to: 'Speak to Zerubbabel, governor of Judah, saying: I am about to shake the heavens and the earth.'
   rationale: Removed 'about to' because the Hebrew participle states 'I am shaking' rather than explicitly 'I am about to shake.'
-
 - timestamp: '2026-05-18T02:58:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -91,6 +90,13 @@ revisions:
   from: 'Speak to Zerubbabel[a], governor of Judah, saying: I am shaking the heavens and the earth.'
   to: 'Speak to Zerubbabel[a], governor of Judah, saying: I am shaking the heavens and the earth.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''am about to shake''].'
+- timestamp: '2026-11-09T17:47:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Speak to Zerubbabel[a], governor of Judah, saying: I am shaking the heavens and the earth.'
+  to: 'Tell Zerubbabel, governor of Judah: I will shake[a] the heavens and the earth.'
+  rationale: The first draft favored imminence, while the later review favored the participle’s surface present form. The context supports a coming action, so the main text uses the future and retains both alternatives in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +116,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/haggai/002/021.job-65879.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh directs Haggai to announce to Zerubbabel that he will shake the heavens and the earth.
+  meaning_decisions:
+  - source_phrase: אֱמֹר אֶל זְרֻבָּבֶל ... לֵאמֹר
+    prior_rendering: Speak to Zerubbabel ... saying
+    new_rendering: 'Tell Zerubbabel ...:'
+    rationale: Expresses the single command to convey the following message without reproducing the Hebrew speech-introduction formula.
+  - source_phrase: אֲנִי מַרְעִישׁ
+    prior_rendering: I am shaking
+    new_rendering: I will shake
+    rationale: The following promises and 'on that day' place the shaking in a predictive context; the future conveys that without asserting that it has already begun or fixing its precise imminence.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft favored imminence, while the later review favored the participle’s surface present form. The context supports a coming action, so the main text uses the future and retains both alternatives in a correctly placed note.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὁ δὲ εἶπεν· Λέγω σοι, Πέτρε, οὐ ⸀φωνήσει σήμερον ἀλέκτωρ ⸀ἕως τρίς ⸂με ἀπαρνήσῃ εἰδέναι⸃.
 translation:
-  text: But he said[a], “I tell you, Peter, a rooster will not crow today until you deny three times that you know me.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “the rooster will not crow today before you deny three times that you know me.”
-    reason: lexical_alternative
+  text: But Jesus said, “I tell you, Peter, before a rooster crows today, you will deny three times that you know me.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Λέγω σοι
   chosen: I tell you
@@ -95,7 +91,6 @@ revision_pass:
   timestamp: '2026-04-23T09:51:46Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +113,33 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/022/034.job-27782.json
+revisions:
+- timestamp: '2026-11-09T17:12:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he said[a], “I tell you, Peter, a rooster will not crow today until you deny three times that you know me.”
+  to: But Jesus said, “I tell you, Peter, before a rooster crows today, you will deny three times that you know me.”
+  rationale: I retain the documented insistence that Peter will deny knowing Jesus, not merely an unspecified denial. The earlier “before” alternative becomes the main wording because it states the timing more naturally; its redundant note is dropped.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus tells Peter that he will deny knowing him three times before a rooster crows that day.
+  meaning_decisions:
+  - source_phrase: οὐ φωνήσει σήμερον ἀλέκτωρ ἕως τρίς με ἀπαρνήσῃ εἰδέναι
+    prior_rendering: a rooster will not crow today until you deny three times that you know me
+    new_rendering: before a rooster crows today, you will deny three times that you know me
+    rationale: Recasting the negative temporal construction directly states the predicted sequence and avoids suggesting that Peter’s denial is a condition governing the rooster’s crowing.
+  - source_phrase: ὁ δὲ εἶπεν
+    prior_rendering: But he said
+    new_rendering: But Jesus said
+    rationale: The understood speaker is named to make the response to Peter immediately clear.
+  footnote_kinds: {}
+  history_weighed: I retain the documented insistence that Peter will deny knowing Jesus, not merely an unspecified denial. The earlier “before” alternative becomes the main wording because it states the timing more naturally; its redundant note is dropped.

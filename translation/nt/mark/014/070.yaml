@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ὁ δὲ πάλιν ἠρνεῖτο. καὶ μετὰ μικρὸν πάλιν οἱ παρεστῶτες ἔλεγον τῷ Πέτρῳ· Ἀληθῶς ἐξ αὐτῶν εἶ, καὶ γὰρ Γαλιλαῖος εἶ ⸂καὶ ἡ λαλιά σου ὁμοιάζει⸃·
 translation:
-  text: But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”
-  philosophy: optimal-equivalence
+  text: But he denied it again. A little later, those standing nearby again said to Peter, “Surely you are one of them, for you too are a Galilean, and your accent is like theirs[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your accent is similar' or 'your way of speaking is like theirs.' The Greek λαλιά can refer to speech-pattern, dialect, or accent.
-    reason: lexical_alternative
-  - marker: b
-    text: Some manuscripts omit 'and your speech matches it.'
+    text: Some manuscripts omit “and your accent is like theirs.”
     reason: textual_variant
 lexical_decisions:
 - source_word: ἠρνεῖτο
@@ -109,14 +106,20 @@ revisions:
   from: But he again denied it. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean, and your speech matches it.”
   to: But he again denied it. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean, and your speech matches it.”
   rationale: Revised the final clause from 'your speech matches it' to 'your speech is similar' to more directly reflect ἡ λαλιά σου ὁμοιάζει without adding an implied object not present in the Greek.
-
 - timestamp: '2026-05-18T03:00:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”'
-  to: 'But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”'
+  from: But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”
+  to: But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''matches it''].'
+- timestamp: '2026-11-09T17:14:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he again denied it[a]. And after a little while, those standing nearby again were saying to Peter, “Surely you are one of them, for you are also a Galilean[b], and your speech is similar.”
+  to: But he denied it again. A little later, those standing nearby again said to Peter, “Surely you are one of them, for you too are a Galilean, and your accent is like theirs[a].”
+  rationale: I retain the supplied text’s disputed final clause and mark its omission in other manuscripts. The earlier preference for leaving the comparison unstated produced “similar” without a reference, so I make the Galilean speech comparison explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +142,26 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/014/070.job-38755.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Peter denies the accusation again, but the bystanders renew it, citing his Galilean origin and matching accent.
+  meaning_decisions:
+  - source_phrase: καὶ μετὰ μικρὸν πάλιν οἱ παρεστῶτες ἔλεγον τῷ Πέτρῳ
+    prior_rendering: And after a little while, those standing nearby again were saying to Peter
+    new_rendering: A little later, those standing nearby again said to Peter
+    rationale: The natural English narrative construction retains the short interval and renewed accusation without an unnecessarily cumbersome progressive.
+  - source_phrase: καὶ ἡ λαλιά σου ὁμοιάζει
+    prior_rendering: and your speech is similar
+    new_rendering: and your accent is like theirs
+    rationale: The context concerns regional speech identifying Peter as Galilean; the comparison with the group’s speech is understood and needs to be expressed in English.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I retain the supplied text’s disputed final clause and mark its omission in other manuscripts. The earlier preference for leaving the comparison unstated produced “similar” without a reference, so I make the Galilean speech comparison explicit.

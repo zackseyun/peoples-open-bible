@@ -24,15 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'agreements' or 'terms of peace' for 'treaty' (συνθηκῶν).
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'to send Maccabeus bound' or 'as a prisoner.'
-    reason: lexical_alternative
+  text: The king became enraged. Provoked by the slanders of that utterly wicked man, he wrote to Nicanor, declaring that he was deeply displeased with the treaty and ordering him to send Maccabaeus to Antioch as a prisoner at once.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔθυμος γενόμενος
   chosen: became enraged
@@ -134,14 +127,20 @@ revisions:
   from: But the king became enraged, and, provoked by the slanders of that utterly wicked man, wrote to Nikanor, saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch in chains at once.
   to: But the king became enraged, and, provoked by the slanders of that utterly wicked man, wrote to Nikanor, saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch in chains at once.
   rationale: Changed 'in chains' to 'as a prisoner' for closer lexical accuracy to δέσμιον ('prisoner, captive').
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.'
-  to: 'But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.'
+  from: But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.
+  to: But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in chains''].'
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the king became enraged[a], and, provoked by the slanders of that utterly wicked man, wrote to Nikanor[b], saying that he took the treaty very badly and ordering him to send Maccabeus to Antioch as a prisoner at once.
+  to: The king became enraged. Provoked by the slanders of that utterly wicked man, he wrote to Nicanor, declaring that he was deeply displeased with the treaty and ordering him to send Maccabaeus to Antioch as a prisoner at once.
+  rationale: The current “as a prisoner” preserves the review’s useful correction of the draft’s more specific “in chains.” The source’s strong condemnation of Alcimus remains intact, while the notes offering synonymous treaty and custody expressions are dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -161,3 +160,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/027.job-49415.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Alcimus’s slanders enraged the king, who condemned the treaty and ordered Judas sent immediately to Antioch as a prisoner.
+  meaning_decisions:
+  - source_phrase: φάσκων βαρέως φέρειν
+    prior_rendering: saying that he took the treaty very badly
+    new_rendering: declaring that he was deeply displeased with the treaty
+    rationale: This idiom expresses serious displeasure at the agreement; the new wording makes the substance of the royal letter clearer without the colloquial ambiguity of “took ... very badly.”
+  footnote_kinds: {}
+  history_weighed: The current “as a prisoner” preserves the review’s useful correction of the draft’s more specific “in chains.” The source’s strong condemnation of Alcimus remains intact, while the notes offering synonymous treaty and custody expressions are dropped.

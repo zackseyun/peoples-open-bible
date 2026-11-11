@@ -24,12 +24,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 2:4
 translation:
-  text: Accept whatever comes upon you, and in the changes of your humiliation[a] be patient.
-  philosophy: optimal-equivalence
+  text: Accept whatever comes upon you, and be patient when you are brought low[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''in your brokenness''; Greek parallel: ''in the changes of your humiliation.'' The main text follows the likely sense with both witnesses in view.'
-    reason: alternative_reading
+    text: The Hebrew says, 'in your brokenness'; the Greek reads, 'in the reversals of your humiliation.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: כָּל הַבָּא עָלֶיךָ
   chosen: whatever comes upon you
@@ -102,13 +102,12 @@ revisions:
   from: Accept whatever comes upon you, and in the changes of your humiliation be patient.
   to: Accept whatever comes upon you, and be patient in your humiliation.
   rationale: Replaced 'in the changes of your humiliation' with 'in your humiliation' for lexical accuracy and natural English; the Hebrew speaks of humiliation/brokenness, not 'changes.'
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Accept whatever comes upon you[a], and be patient in your humiliation.'
-  to: 'Accept whatever comes upon you, and in the changes of your humiliation be patient.'
+  from: Accept whatever comes upon you[a], and be patient in your humiliation.
+  to: Accept whatever comes upon you, and in the changes of your humiliation be patient.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the changes of your humiliation''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -118,6 +117,13 @@ revisions:
   from: Accept whatever comes upon you, and in the changes of your humiliation be patient.
   to: Accept whatever comes upon you, and in the changes of your humiliation[a] be patient.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in the changes of your humiliation') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Accept whatever comes upon you, and in the changes of your humiliation[a] be patient.
+  to: Accept whatever comes upon you, and be patient when you are brought low[a].
+  rationale: The review correctly identified the difficulty with 'changes of your humiliation'; its automated reversal supplies no meaning-based reason to retain that wording. The new rendering preserves the substance of both witnesses without combining them into an obscure phrase.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -137,3 +143,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/002/004.job-51013.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The learner should accept what comes and endure patiently when circumstances bring him low.
+  meaning_decisions:
+  - source_phrase: וּבְשִׁבְרְךָ הַאֲרֵךְ רוּחַ
+    prior_rendering: and in the changes of your humiliation be patient
+    new_rendering: and be patient when you are brought low
+    rationale: The prior construction does not clearly communicate adversity or humiliation in English. 'Brought low' preserves the image shared by the Hebrew's brokenness and the Greek's humiliating reversals, while rendering the patience idiom naturally.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review correctly identified the difficulty with 'changes of your humiliation'; its automated reversal supplies no meaning-based reason to retain that wording. The new rendering preserves the substance of both witnesses without combining them into an obscure phrase.

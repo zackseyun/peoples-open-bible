@@ -19,11 +19,14 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.
-  philosophy: optimal-equivalence
+  text: But through the devil’s envy death entered the world, and those who belong to his side[a] experience it[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more literally, 'those who are of his portion test it/him.' The Greek idiom is difficult; the sense is likely that those aligned with the devil come under death's power.
+    text: '''His'' may refer to the devil or to personified death, as in Wisdom 1:16.'
+    reason: alternative_reading
+  - marker: b
+    text: Literally, 'test it,' here meaning to undergo or experience death.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: φθόνῳ
@@ -116,14 +119,20 @@ revisions:
   from: But through the devil’s envy death entered into the world, and those who belong to his portion experience it.
   to: But through the devil’s envy death entered into the world, and those who belong to his portion experience it.
   rationale: Revised the second clause from 'experience it' to 'test it' to more directly reflect πειράζουσιν ('test/tempt/try'). Kept 'his portion' as a formal rendering of μερίς.
-
 - timestamp: '2026-05-18T02:59:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.'
-  to: 'But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.'
+  from: But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.
+  to: But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''experience''].'
+- timestamp: '2026-11-09T19:11:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But through the devil’s envy death entered into the world[a], and those who belong to his portion test it.
+  to: But through the devil’s envy death entered the world, and those who belong to his side[a] experience it[b].
+  rationale: The first draft and lexical rationale correctly read the verb as experiencing death; the later automated move to 'test it' obscures that meaning. I clarify 'portion' as allegiance while retaining the pronoun's possible reference to either the devil or death.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -143,3 +152,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/024.job-39592.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Death entered the world through the devil's envy, and those who belong to his side experience it.
+  meaning_decisions:
+  - source_phrase: οἱ τῆς ἐκείνου μερίδος ὄντες
+    prior_rendering: those who belong to his portion
+    new_rendering: those who belong to his side
+    rationale: The idiom expresses belonging or allegiance, not possession of an allocated share; the pronoun's possible reference to either the devil or death remains open.
+  - source_phrase: πειράζουσιν δὲ αὐτόν
+    prior_rendering: test it
+    new_rendering: experience it
+    rationale: With death as its object, the verb means undergoing its reality; 'test it' misleadingly suggests an experiment performed on death.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The first draft and lexical rationale correctly read the verb as experiencing death; the later automated move to 'test it' obscures that meaning. I clarify 'portion' as allegiance while retaining the pronoun's possible reference to either the devil or death.

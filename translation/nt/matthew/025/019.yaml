@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: μετὰ δὲ ⸂πολὺν χρόνον⸃ ἔρχεται ὁ κύριος τῶν δούλων ἐκείνων καὶ συναίρει ⸂λόγον μετ’ αὐτῶν⸃
 translation:
-  text: After a long time[a], the master of those servants comes and settles accounts with them.
-  philosophy: optimal-equivalence
+  text: After a long time, the master of those servants[a] returned and settled accounts with them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the lord of those servants comes and settles accounts with them.' The Greek κύριος can mean 'lord' or 'master,' and δοῦλοι can be rendered 'servants' or 'slaves'; here the main text chooses the household-economic sense most explicit in the parable.
-    reason: alternative_reading
+    text: Greek doulos denotes a servant in bondage, not a hired worker.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: μετὰ δὲ πολὺν χρόνον
   chosen: After a long time
@@ -74,7 +74,6 @@ revision_pass:
   timestamp: '2026-04-23T09:57:50Z'
   unchanged: true
   changes_summary: No changes needed.
-
 revisions:
 - timestamp: '2026-06-22T16:35:20Z'
   adjudicator: codex-reader-report
@@ -83,7 +82,13 @@ revisions:
   from: Now after a long time[a], the master of those slaves comes and settles accounts with them.
   to: After a long time[a], the master of those slaves comes and settles accounts with them.
   rationale: Reader report identified leading 'Now' as sounding like unnecessary added content. The Greek δέ is only a light connective here, and 'After a long time' preserves the temporal sense without adding an English discourse marker.
-
+- timestamp: '2026-11-09T17:15:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After a long time[a], the master of those servants comes and settles accounts with them.
+  to: After a long time, the master of those servants[a] returned and settled accounts with them.
+  rationale: I preserve the review's removal of unnecessary 'Now' and the established accounting idiom. The standing servant ruling governs the main text rather than the earlier preference for 'slaves,' with bonded status explained at the correctly placed marker.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +111,22 @@ cross_check:
   verdict_counts:
     agree: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/025/019.job-57398.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:07Z'
+  change_level: refined
+  confidence: high
+  meaning: After a lengthy absence, the master returned to hold his servants accountable for the property entrusted to them.
+  meaning_decisions:
+  - source_phrase: ἔρχεται ... καὶ συναίρει λόγον μετ’ αὐτῶν
+    prior_rendering: comes and settles accounts with them
+    new_rendering: returned and settled accounts with them
+    rationale: The historical presents continue a past-tense narrative, and the preceding departure makes this coming a return; natural English conveys both without changing tense abruptly.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I preserve the review's removal of unnecessary 'Now' and the established accounting idiom. The standing servant ruling governs the main text rather than the earlier preference for 'slaves,' with bonded status explained at the correctly placed marker.

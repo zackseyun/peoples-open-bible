@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they shone in the temple.' The Greek verb can be rendered more literally as the lamps shining.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Temple'' here may more specifically denote the sanctuary area.'
-    reason: lexical_alternative
+  text: They burned incense on the altar and lit the lamps on the lampstand. The lamps shone in the temple.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐθυμίασαν
   chosen: they burned incense
@@ -118,14 +111,20 @@ revisions:
   from: And they burned incense on the altar, and they lit the lamps that were on the lampstand, and they gave light in the temple.
   to: And they burned incense on the altar, and they lit the lamps that were on the lampstand, and they gave light in the temple.
   rationale: Changed the final clause from 'they gave light in the temple' to 'they shone in the temple' to more directly reflect the Greek verb and its subject, the lamps.
-
 - timestamp: '2026-05-18T02:58:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.'
-  to: 'And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.'
+  from: And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.
+  to: And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they gave light''].'
+- timestamp: '2026-11-09T18:51:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they burned incense on the altar[a], and they lit the lamps that were on the lampstand[b], and they shone in the temple.
+  to: They burned incense on the altar and lit the lamps on the lampstand. The lamps shone in the temple.
+  rationale: The recorded review usefully identified the lamps as the subject of 'shone,' despite the later automated revert rationale. I preserve that gain and make the subject explicit; the existing notes add no distinct meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +144,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/050.job-48195.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:57Z'
+  change_level: refined
+  confidence: high
+  meaning: They resume burning incense and light the lampstand’s lamps, which shine in the temple.
+  meaning_decisions:
+  - source_phrase: καὶ ἐφαίνοντο ἐν τῷ ναῷ
+    prior_rendering: and they shone in the temple
+    new_rendering: The lamps shone in the temple
+    rationale: Naming the lamps prevents the repeated 'they' from appearing to refer to the priests.
+  footnote_kinds: {}
+  history_weighed: The recorded review usefully identified the lamps as the subject of 'shone,' despite the later automated revert rationale. I preserve that gain and make the subject explicit; the existing notes add no distinct meaning.

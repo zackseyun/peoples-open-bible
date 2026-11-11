@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: כִּֽי הִנֵּ֤ה יְהוָה֙ בָּ/אֵ֣שׁ יָב֔וֹא וְ/כַ/סּוּפָ֖ה מַרְכְּבֹתָ֑י/ו לְ/הָשִׁ֤יב בְּ/חֵמָה֙ אַפּ֔/וֹ וְ/גַעֲרָת֖/וֹ בְּ/לַהֲבֵי אֵֽשׁ־־׃
 translation:
-  text: For look[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to repay his anger in fury and his rebuke with flames of fire.
-  philosophy: optimal-equivalence
+  text: For look, Yahweh will come in fire, and his chariots will come like a whirlwind, to unleash his anger in fury[a] and his rebuke in flames of fire.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with fire'; the Hebrew preposition can express accompaniment as well as sphere.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to render back his anger in wrath'; the Hebrew verb can mean 'return' or 'repay' in a judicial sense.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'like a storm' or 'like the tempest.'
+    text: Literally, “to render back his anger in fury”; the expression describes carrying out his anger in judgment.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כִּי
@@ -132,14 +126,20 @@ revisions:
   from: For look, the LORD will come in fire, and his chariots like the whirlwind, to repay his anger in fury and his rebuke in flames of fire.
   to: For behold, the LORD will come in fire, and his chariots like the whirlwind, to render his anger with fury and his rebuke with flames of fire.
   rationale: Replaced 'look' with the more formal 'behold'; changed 'repay his anger in fury' to 'render his anger with fury' to better reflect the sense of bringing back/executing anger rather than repaying anger itself; kept the parallel structure with 'his rebuke with flames of fire.'
-
 - timestamp: '2026-05-15T23:24:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For behold[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to render his anger with fury and his rebuke with flames of fire.'
-  to: 'For look[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to repay his anger in fury and his rebuke with flames of fire.'
-  rationale: 'Azure substituted ''behold'' (drafter''s rejected alternative — drafter chose ''look'' over archaic ''behold''), ''to render'' (rejected — drafter chose ''to repay'' for judicial fit), and ''with fury'' for ''in fury''.'
+  from: For behold[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to render his anger with fury and his rebuke with flames of fire.
+  to: For look[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to repay his anger in fury and his rebuke with flames of fire.
+  rationale: Azure substituted 'behold' (drafter's rejected alternative — drafter chose 'look' over archaic 'behold'), 'to render' (rejected — drafter chose 'to repay' for judicial fit), and 'with fury' for 'in fury'.
+- timestamp: '2026-11-09T17:53:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For look[a], Yahweh will come in fire, and his chariots like the whirlwind[c][b], to repay his anger in fury and his rebuke with flames of fire.
+  to: For look, Yahweh will come in fire, and his chariots will come like a whirlwind, to unleash his anger in fury[a] and his rebuke in flames of fire.
+  rationale: The earlier review rightly identified the problem with making anger itself the thing repaid, and the later automated revert offered no stronger meaning-based reason to retain that wording. I keep “look” and the fire, chariot, and whirlwind imagery.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -161,3 +161,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/isaiah/066/015.job-28672.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:53:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh will arrive with overwhelming, fiery power to execute his furious judgment.
+  meaning_decisions:
+  - source_phrase: וְכַסּוּפָה מַרְכְּבֹתָיו
+    prior_rendering: and his chariots like the whirlwind
+    new_rendering: and his chariots will come like a whirlwind
+    rationale: Supplies the understood motion in the compressed Hebrew clause so that the chariots’ stormlike arrival is clear.
+  - source_phrase: לְהָשִׁיב בְּחֵמָה אַפּוֹ וְגַעֲרָתוֹ בְּלַהֲבֵי אֵשׁ
+    prior_rendering: to repay his anger in fury and his rebuke with flames of fire
+    new_rendering: to unleash his anger in fury and his rebuke in flames of fire
+    rationale: Anger is being executed in judgment, not itself repaid; the new wording preserves the force and parallel fiery imagery.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review rightly identified the problem with making anger itself the thing repaid, and the later automated revert offered no stronger meaning-based reason to retain that wording. I keep “look” and the fire, chariot, and whirlwind imagery.

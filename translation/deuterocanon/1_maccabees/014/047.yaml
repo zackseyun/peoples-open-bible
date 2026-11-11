@@ -9,18 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.
-  philosophy: optimal-equivalence
+  text: Simon accepted the appointment and agreed to serve as high priest, to be commander and ethnarch[a] of the Jews and priests, and to preside over them all.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the Judeans.' The Greek Ἰουδαίων can refer to Jews as a people or to Judeans in a geo-ethnic sense.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Ethnarch'' is a historical political title, roughly a ruler or leader of a people.'
+    text: Ethnarch was a political title meaning ruler of a people.
     reason: cultural_note
-  - marker: c
-    text: Or 'to preside over all of them' or 'to be in charge of them all.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐπεδέξατο
   chosen: accepted it
@@ -127,14 +121,20 @@ revisions:
   from: And Simon accepted it, and agreed to serve as high priest and to be commander and ethnarch of the Jews and priests, and to stand over them all.
   to: And Simon accepted it, and agreed to serve as high priest and to be commander and ethnarch of the Jews and priests, and to stand over them all.
   rationale: Revised 'serve as high priest' to the more direct 'be high priest' for closer lexical accuracy, and changed 'to stand over them all' to 'to be over them all' for more natural formal English while preserving the sense of leadership.
-
 - timestamp: '2026-05-16T14:22:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.'
-  to: 'And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.'
-  rationale: 'Restored drafter ''serve as high priest'' (preserving the active-service force) and ''to stand over them all'' (preserving the explicit standing-authority sense) per chosen renderings.'
+  from: And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.
+  to: And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.
+  rationale: Restored drafter 'serve as high priest' (preserving the active-service force) and 'to stand over them all' (preserving the explicit standing-authority sense) per chosen renderings.
+- timestamp: '2026-11-09T18:53:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Simon accepted it[a], and agreed to be high priest and to be commander and ethnarch of the Jews and priests[c][b], and to be over them all.
+  to: Simon accepted the appointment and agreed to serve as high priest, to be commander and ethnarch[a] of the Jews and priests, and to preside over them all.
+  rationale: The first draft and lexical rationale rightly preserved the active force of serving as high priest, despite the inconsistent automated history. The historically specific title ethnarch is retained with one explanatory note, while the literal standing-over image is rendered by its governing sense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -154,3 +154,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/014/047.job-48824.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Simon accepted the appointment and consented to exercise the high priesthood, military command, and national leadership over the Jews and priests.
+  meaning_decisions:
+  - source_phrase: ἐπεδέξατο Σίμων
+    prior_rendering: Simon accepted it
+    new_rendering: Simon accepted the appointment
+    rationale: The implied object is the arrangement assigning Simon the offices and powers just described.
+  - source_phrase: ἀρχιερατεύσαι
+    prior_rendering: be high priest
+    new_rendering: serve as high priest
+    rationale: The verb denotes exercising the high-priestly office, not merely bearing its title.
+  - source_phrase: τοῦ προστῆσαι ἁπάντων
+    prior_rendering: to be over them all
+    new_rendering: to preside over them all
+    rationale: This conveys active governing leadership more clearly than the spatially framed prior wording.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft and lexical rationale rightly preserved the active force of serving as high priest, despite the inconsistent automated history. The historically specific title ethnarch is retained with one explanatory note, while the literal standing-over image is rendered by its governing sense.

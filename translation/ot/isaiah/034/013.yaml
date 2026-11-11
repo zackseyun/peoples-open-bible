@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/עָלְתָ֤ה אַרְמְנֹתֶ֨י/הָ֙ סִירִ֔ים קִמּ֥וֹשׂ וָ/ח֖וֹחַ בְּ/מִבְצָרֶ֑י/הָ וְ/הָיְתָה֙ נְוֵ֣ה תַנִּ֔ים חָצִ֖יר לִ/בְנ֥וֹת יַעֲנָֽה׃
 translation:
-  text: Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.
-  philosophy: optimal-equivalence
+  text: Thorns will grow over her palaces, nettles and brambles in her fortresses; and she will become a haunt of jackals, a dwelling place for ostriches[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or simply, 'for ostriches.' The Hebrew reads literally, 'for daughters of the ostrich,' an idiomatic expression for ostriches.
+    text: Literally, “a courtyard for ostriches.”
     reason: lexical_alternative
-  - marker: b
-    text: '''Jackals'' is the likely sense here; older English versions often have ''dragons.'''
-    reason: alternative_reading
 lexical_decisions:
 - source_word: וְעָלְתָה
   chosen: will grow over
@@ -116,14 +113,20 @@ revisions:
   from: Thorns will grow over her palaces, nettles and brambles in her fortresses; and she will become a haunt of jackals, a pasture for daughters of the ostrich.
   to: Thorns will grow over her palaces, nettles and brambles in her fortresses; and she will become a haunt of jackals, a pasture for daughters of the ostrich.
   rationale: Replaced 'daughters of the ostrich' with 'ostriches' for natural English while preserving the Hebrew idiom's meaning. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-17T20:06:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.'
-  to: 'Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.'
+  from: Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.
+  to: Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for daughters of the ostrich''].'
+- timestamp: '2026-11-09T17:52:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Thorns will grow over her palaces[a], nettles and brambles in her fortresses; and she will become a haunt of jackals[b], a pasture for ostriches.
+  to: Thorns will grow over her palaces, nettles and brambles in her fortresses; and she will become a haunt of jackals, a dwelling place for ostriches[a].
+  rationale: The earlier revision’s natural rendering “ostriches” correctly conveys the Hebrew idiom and is retained; the automated revert supplies no meaning-based reason to restore “daughters of the ostrich.” There is no MAINTAINER revision, and the documented choice of “pasture” has been reconsidered in light of the parallel habitation phrases; the misplaced ostrich note and unnecessary jackal note are dropped.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -143,3 +146,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/034/013.job-66547.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:52:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Thorny plants will overrun the land’s palaces and fortresses, and jackals and ostriches will inhabit it.
+  meaning_decisions:
+  - source_phrase: חָצִיר לִבְנוֹת יַעֲנָה
+    prior_rendering: a pasture for ostriches
+    new_rendering: a dwelling place for ostriches
+    rationale: Here חָצִיר is best understood as a court or enclosure serving as an animal habitation, parallel to the preceding haunt of jackals, rather than specifically as grazing land. The footnote preserves the architectural image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier revision’s natural rendering “ostriches” correctly conveys the Hebrew idiom and is retained; the automated revert supplies no meaning-based reason to restore “daughters of the ostrich.” There is no MAINTAINER revision, and the documented choice of “pasture” has been reconsidered in light of the parallel habitation phrases; the misplaced ostrich note and unnecessary jackal note are dropped.

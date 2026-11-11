@@ -17,15 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from their dwelling as foreigners.' The Greek παροικία carries the sense of residing as an outsider or sojourner.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'multiplied greatly in gold and silver and in exceedingly many livestock.' The Greek can emphasize great increase in possessions.
-    reason: lexical_alternative
+  text: Their God told them to leave the place where they were living as foreigners and go to the land of Canaan. They settled there and grew wealthy, with gold, silver, and a great abundance of livestock.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἶπεν
   chosen: told
@@ -128,14 +121,20 @@ revisions:
   from: And their God told them to go out from their sojourning and to go into the land of Canaan; and they settled there, and became very abundant in gold and silver and in very many livestock.
   to: And their God told them to go out from their sojourning and to go into the land of Canaan; and they settled there, and became very abundant in gold and silver and in very many livestock.
   rationale: Changed 'became very abundant' to 'became very wealthy' for more natural English while preserving the sense of increasing in possessions.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.'
-  to: 'And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.'
+  from: And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.
+  to: And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''became very abundant''].'
+- timestamp: '2026-11-09T19:01:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And their God told them to go out from their sojourning and to go into the land of Canaan[a]; and they settled there[b], and became very wealthy in gold and silver and in very many livestock.
+  to: Their God told them to leave the place where they were living as foreigners and go to the land of Canaan. They settled there and grew wealthy, with gold, silver, and a great abundance of livestock.
+  rationale: The review’s change from 'abundant' to 'wealthy' correctly recognized that the increase concerns possessions; I retain that gain and restore the sense of growth. The lexical discussion’s emphasis on foreign residence is carried in the main text rather than an abstract noun and footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -155,3 +154,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/005/009.job-50575.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God directed Israel’s ancestors to leave their foreign residence for Canaan, where they settled and gained great wealth.
+  meaning_decisions:
+  - source_phrase: ἐξελθεῖν ἐκ τῆς παροικίας αὐτῶν
+    prior_rendering: to go out from their sojourning
+    new_rendering: to leave the place where they were living as foreigners
+    rationale: They are instructed to leave a place of foreign residence, not to depart from an abstract activity called 'sojourning.'
+  - source_phrase: ἐπληθύνθησαν χρυσίῳ καὶ ἀργυρίῳ καὶ ἐν κτήνεσιν πολλοῖς σφόδρα
+    prior_rendering: became very wealthy in gold and silver and in very many livestock
+    new_rendering: grew wealthy, with gold, silver, and a great abundance of livestock
+    rationale: '''Grew'' preserves the increase in possessions, while ''a great abundance of livestock'' naturally expresses the emphatic quantity without treating ''livestock'' as a count noun.'
+  footnote_kinds: {}
+  history_weighed: The review’s change from 'abundant' to 'wealthy' correctly recognized that the increase concerns possessions; I retain that gain and restore the sense of growth. The lexical discussion’s emphasis on foreign residence is carried in the main text rather than an abstract noun and footnote.

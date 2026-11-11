@@ -19,12 +19,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
-  philosophy: optimal-equivalence
+  text: For while he was overseeing the binding of sheaves in the field, the scorching heat[a] struck his head, and he took to his bed and died in Bethulia, his city. They buried him with his ancestors in the field between Dothaim and Balamon.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the scorching heat came upon his head.' The Greek καύσων can refer either to burning heat or to a scorching hot wind.
-    reason: lexical_alternative
+    text: Or, 'a scorching wind.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐτύγγανε
   chosen: he happened to be
@@ -109,14 +109,20 @@ revisions:
   from: For he happened to be binding sheaves in the field, and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
   to: For he happened to be binding sheaves in the field, and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
   rationale: Changed 'sheaves' to 'the sheaf' to reflect the singular τὸ δράγμα more precisely. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.'
-  to: 'For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.'
+  from: For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
+  to: For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''binding sheaves''].'
+- timestamp: '2026-11-09T19:01:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For he happened to be binding the sheaf in the field[a], and the hot wind came upon his head, and he fell onto his bed and died in Bethulia, his city. And they buried him with his fathers in the field between Dothaim and Balamon.
+  to: For while he was overseeing the binding of sheaves in the field, the scorching heat[a] struck his head, and he took to his bed and died in Bethulia, his city. They buried him with his ancestors in the field between Dothaim and Balamon.
+  rationale: The recorded changes concentrated on singular versus plural 'sheaf,' but the larger construction supports an overseer rather than a worker binding sheaves himself. I retain the documented wind interpretation as an alternative and render the illness and burial expressions by their contextual meaning.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +142,34 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/008/003.job-50646.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Manasseh was fatally overcome by heat while overseeing harvest work, died in Bethulia, and was buried with his ancestors.
+  meaning_decisions:
+  - source_phrase: ἐτύγγανε γὰρ ἐπὶ τοῦ δεσμεύοντος τὸ δράγμα ἐν τῷ πεδίῳ
+    prior_rendering: For he happened to be binding the sheaf in the field
+    new_rendering: For while he was overseeing the binding of sheaves in the field
+    rationale: The construction places him over the worker binding the sheaf rather than directly describing him as binding it himself; the English describes the harvest activity without forcing a generic singular.
+  - source_phrase: ὁ καύσων ἦλθεν ἐπὶ τὴν κεφαλὴν αὐτοῦ
+    prior_rendering: the hot wind came upon his head
+    new_rendering: the scorching heat[a] struck his head
+    rationale: The narrative emphasizes the heat's harmful effect on him. 'Scorching heat' does not require a particular wind, while the serious alternative remains in a note and the reference to his head is retained.
+  - source_phrase: ἔπεσεν ἐπὶ τὴν κλίνην
+    prior_rendering: he fell onto his bed
+    new_rendering: he took to his bed
+    rationale: The phrase describes his becoming bedridden after being overcome in the field, not necessarily a physical fall onto a bed.
+  - source_phrase: μετὰ τῶν πατέρων αὐτοῦ
+    prior_rendering: with his fathers
+    new_rendering: with his ancestors
+    rationale: This conventional burial expression refers to earlier generations of his family.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded changes concentrated on singular versus plural 'sheaf,' but the larger construction supports an overseer rather than a worker binding sheaves himself. I retain the documented wind interpretation as an alternative and render the illness and burial expressions by their contextual meaning.

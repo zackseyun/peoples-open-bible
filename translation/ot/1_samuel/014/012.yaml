@@ -4,21 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּעֲנוּ֩ אַנְשֵׁ֨י הַ/מַּצָּבָ֜ה אֶת יוֹנָתָ֣ן וְ/אֶת נֹשֵׂ֣א כֵלָ֗י/ו וַ/יֹּֽאמְרוּ֙ עֲל֣וּ אֵלֵ֔י/נוּ וְ/נוֹדִ֥יעָה אֶתְ/כֶ֖ם דָּבָ֑ר וַ/יֹּ֨אמֶר יוֹנָתָ֜ן אֶל נֹשֵׂ֤א כֵלָי/ו֙ עֲלֵ֣ה אַחֲרַ֔/י כִּֽי נְתָנָ֥/ם יְהוָ֖ה בְּ/יַ֥ד יִשְׂרָאֵֽל־׀־פ־־׃
 translation:
-  text: And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”
-  philosophy: optimal-equivalence
+  text: The men of the garrison called out to Jonathan and his armor-bearer, “Come up to us, and we will show you something[a]!” Then Jonathan said to his armor-bearer, “Climb up after me, for Yahweh has given them into Israel’s hands.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “the men of the outpost.”
+    text: Literally, “we will make something known to you.”
     reason: lexical_alternative
-  - marker: b
-    text: Hebrew, “we will make known to you a thing.”
-    reason: lexical_alternative
-  - marker: c
-    text: 'Hebrew idiom: “has given them into the hand of Israel,” that is, into Israel’s power.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'answered Jonathan and his armor-bearer and said'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: אַנְשֵׁי הַמַּצָּבָה
   chosen: the men of the garrison
@@ -113,9 +104,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”'
-  to: 'And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”'
+  from: And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”
+  to: And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and we will let you know something''].'
+- timestamp: '2026-11-09T17:23:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the men of the garrison answered Jonathan and his armor-bearer and said[a], “Come up to us, and we will tell you something.” Then Jonathan said to his armor-bearer, “Come up after me[d][c][b], for Yahweh has given them into the hand of Israel.”
+  to: The men of the garrison called out to Jonathan and his armor-bearer, “Come up to us, and we will show you something[a]!” Then Jonathan said to his armor-bearer, “Climb up after me, for Yahweh has given them into Israel’s hands.”
+  rationale: Earlier reviews tried several ways to smooth the redundant speech introduction, but none addressed the misleadingly informational force of “tell you something.” The new wording conveys the taunt while retaining its deliberate vagueness and Jonathan’s confident interpretation.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:56:32Z'
@@ -142,3 +140,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/1_samuel/014/012.job-38271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Philistines issue a mocking challenge to climb up, which Jonathan recognizes as the sign of Yahweh’s promised victory for Israel.
+  meaning_decisions:
+  - source_phrase: וַיַּעֲנוּ ... וַיֹּאמְרוּ
+    prior_rendering: answered Jonathan and his armor-bearer and said
+    new_rendering: called out to Jonathan and his armor-bearer
+    rationale: This conventional speech introduction describes the garrison addressing the two men across the intervening terrain; it need not imply a reply to previously spoken words.
+  - source_phrase: וְנוֹדִיעָה אֶתְכֶם דָּבָר
+    prior_rendering: and we will tell you something
+    new_rendering: and we will show you something
+    rationale: The words are a mocking challenge, not an offer of information; “show” carries the implied threat while leaving its content unspecified.
+  - source_phrase: עֲלֵה אַחֲרַי
+    prior_rendering: Come up after me
+    new_rendering: Climb up after me
+    rationale: The upward movement is a climb to the elevated garrison, as the terrain and the following verse establish.
+  - source_phrase: בְּיַד יִשְׂרָאֵל
+    prior_rendering: into the hand of Israel
+    new_rendering: into Israel’s hands
+    rationale: The natural English form retains the image and its meaning of power over the enemy.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier reviews tried several ways to smooth the redundant speech introduction, but none addressed the misleadingly informational force of “tell you something.” The new wording conveys the taunt while retaining its deliberate vagueness and Jonathan’s confident interpretation.

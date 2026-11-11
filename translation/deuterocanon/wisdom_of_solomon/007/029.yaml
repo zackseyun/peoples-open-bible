@@ -10,17 +10,52 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: 'For she is more beautiful than the sun, and above every arrangement of the stars. Compared with the light, she is found to be earlier.'
+  text: For she is more beautiful than the sun and surpasses every constellation. Compared with light, she proves superior[a].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Or, “she is found to be earlier than light.”
+    reason: alternative_reading
 revisions:
 - timestamp: '2026-05-18T04:00:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For she is more beautiful than the sun[a], and above every arrangement of the stars. Compared with the light, she is found to be superior.'
-  to: 'For she is more beautiful than the sun, and above every arrangement of the stars. Compared with the light, she is found to be earlier.'
+  from: For she is more beautiful than the sun[a], and above every arrangement of the stars. Compared with the light, she is found to be superior.
+  to: For she is more beautiful than the sun, and above every arrangement of the stars. Compared with the light, she is found to be earlier.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''earlier'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T19:12:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For she is more beautiful than the sun, and above every arrangement of the stars. Compared with the light, she is found to be earlier.
+  to: For she is more beautiful than the sun and surpasses every constellation. Compared with light, she proves superior[a].
+  rationale: The change to 'earlier' was an automated revert, not a human ruling, and its rationale supplies no contextual argument for chronology. I restore the first draft's evaluative sense because verse 30 explains wisdom's superiority, while retaining temporal priority as an alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:21Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Wisdom of Solomon 7:29 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''earlier'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Wisdom surpasses the sun and the constellations in beauty and is superior even to light.
+  meaning_decisions:
+  - source_phrase: ὑπὲρ πᾶσαν ἄστρων θέσιν
+    prior_rendering: above every arrangement of the stars
+    new_rendering: surpasses every constellation
+    rationale: The phrase continues a comparison of excellence, not physical height; 'constellation' naturally names an arrangement of stars.
+  - source_phrase: φωτὶ συγκρινομένη εὑρίσκεται προτέρα
+    prior_rendering: Compared with the light, she is found to be earlier
+    new_rendering: Compared with light, she proves superior
+    rationale: 'The comparison and the explanation in verse 30 support priority in excellence rather than chronology: light gives way to night, whereas wisdom is not overcome by evil.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The change to 'earlier' was an automated revert, not a human ruling, and its rationale supplies no contextual argument for chronology. I restore the first draft's evaluative sense because verse 30 explains wisdom's superiority, while retaining temporal priority as an alternative.

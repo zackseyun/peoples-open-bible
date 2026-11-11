@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֜עַשׂ לֻֽלְאֹ֣ת תְּכֵ֗לֶת עַ֣ל שְׂפַ֤ת הַ/יְרִיעָה֙ הָֽ/אֶחָ֔ת מִ/קָּצָ֖ה בַּ/מַּחְבָּ֑רֶת כֵּ֤ן עָשָׂה֙ בִּ/שְׂפַ֣ת הַ/יְרִיעָ֔ה הַ/קִּ֣יצוֹנָ֔ה בַּ/מַּחְבֶּ֖רֶת הַ/שֵּׁנִֽית׃
 translation:
-  text: He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in the coupling' / 'at the joining.' The Hebrew term refers to the place or arrangement where the curtains were joined together.
-    reason: lexical_alternative
+  text: They made loops of blue yarn along the edge of the end curtain in the first joined set, and did the same along the edge of the end curtain in the second joined set.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֻלְאֹת
   chosen: loops
@@ -101,14 +97,20 @@ revisions:
   from: He made loops of blue yarn on the edge of the first curtain, at the end in the first set joined together; likewise he made them on the edge of the outermost curtain in the second set joined together.
   to: He made loops of blue yarn on the edge of the first curtain, at the end in the first set joined together; likewise he made them on the edge of the outermost curtain in the second set joined together.
   rationale: Removed the unnecessary comma after 'curtain' for smoother, more natural English while preserving the meaning and completeness of the draft.
-
 - timestamp: '2026-05-18T02:54:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.'
-  to: 'He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.'
+  from: He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.
+  to: He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the first set joined together''].'
+- timestamp: '2026-11-09T17:36:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He made loops of blue yarn on the edge of the first curtain at the end of the first set joined together[a]; likewise he made them on the edge of the outermost curtain in the second set joined together.
+  to: They made loops of blue yarn along the edge of the end curtain in the first joined set, and did the same along the edge of the end curtain in the second joined set.
+  rationale: The earlier wording correctly interprets the joining term as a connected set of curtains. I preserve that gain while clarifying the end-curtain location, which punctuation changes alone did not resolve.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -130,3 +132,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/exodus/036/011.job-28934.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Blue-yarn loops are made along the end curtain of each joined set so the two sets can be connected.
+  meaning_decisions:
+  - source_phrase: וַיַּעַשׂ ... כֵּן עָשָׂה
+    prior_rendering: He made ... likewise he made them
+    new_rendering: They made ... and did the same
+    rationale: The collective subject follows verse 8, while the corresponding action on the second set remains explicit.
+  - source_phrase: עַל שְׂפַת הַיְרִיעָה הָאֶחָת מִקָּצָה בַּמַּחְבָּרֶת
+    prior_rendering: on the edge of the first curtain at the end of the first set joined together
+    new_rendering: along the edge of the end curtain in the first joined set
+    rationale: The phrase locates an end curtain within the first group, rather than identifying a numbered first curtain and then adding a confusing second location.
+  - source_phrase: בִּשְׂפַת הַיְרִיעָה הַקִּיצוֹנָה בַּמַּחְבֶּרֶת הַשֵּׁנִית
+    prior_rendering: on the edge of the outermost curtain in the second set joined together
+    new_rendering: along the edge of the end curtain in the second joined set
+    rationale: Parallel wording makes the corresponding positions in the two joined sets clear.
+  footnote_kinds: {}
+  history_weighed: The earlier wording correctly interprets the joining term as a connected set of curtains. I preserve that gain while clarifying the end-curtain location, which punctuation changes alone did not resolve.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὁ ⸀δὲ ἔφη· Τί γὰρ κακὸν ἐποίησεν; οἱ δὲ περισσῶς ἔκραζον λέγοντες· Σταυρωθήτω.
 translation:
-  text: But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, “Why, what wrong has he done?”
-    reason: lexical_alternative
-  - marker: b
-    text: Traditional English often has “Crucify him.” The Greek is more literally, “Let him be crucified.”
-    reason: alternative_reading
+  text: He asked, “Why, what evil has he done?” But they kept shouting all the more, “Crucify him!”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔφη
   chosen: he said
@@ -97,14 +90,20 @@ revisions:
   from: But he said, “For what evil has he done?” But they kept crying out all the more, saying, “Let him be crucified.”
   to: But he said, “For what evil has he done?” But they kept crying out all the more, saying, “Let him be crucified.”
   rationale: Removed 'For' from the question to reflect τί γὰρ more naturally in English here, and changed 'kept crying out' to 'cried out' for a closer rendering of the imperfect with περισσῶς ('all the more').
-
 - timestamp: '2026-05-16T20:52:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”'
-  to: 'But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”'
-  rationale: 'Restored drafter ''For what evil has he done?'' (preserving the chosen rendering of τί γὰρ) and ''kept crying out'' (preserving the chosen imperfect aspect) per chosen renderings.'
+  from: But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”
+  to: But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”
+  rationale: Restored drafter 'For what evil has he done?' (preserving the chosen rendering of τί γὰρ) and 'kept crying out' (preserving the chosen imperfect aspect) per chosen renderings.
+- timestamp: '2026-11-09T17:16:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he said[a], “What evil has he done?” But they cried out all the more, saying[b], “Let him be crucified.”
+  to: He asked, “Why, what evil has he done?” But they kept shouting all the more, “Crucify him!”
+  rationale: The recorded reviews and automated revert disagree chiefly about formal representation of γάρ and the imperfect, without a maintainer decision. I retain “evil,” recover the sustained shouting, and express the question and demand by their conversational force.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -126,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/matthew/027/023.job-27617.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Pilate challenged the demand by asking what evil Jesus had done, but the crowd responded with increasingly insistent cries for crucifixion.
+  meaning_decisions:
+  - source_phrase: ὁ δὲ ἔφη· Τί γὰρ κακὸν ἐποίησεν;
+    prior_rendering: But he said, “What evil has he done?”
+    new_rendering: He asked, “Why, what evil has he done?”
+    rationale: “Asked” identifies the speech as a question, and “why” conveys the challenging force of τί γάρ in response to the demand for crucifixion.
+  - source_phrase: οἱ δὲ περισσῶς ἔκραζον λέγοντες
+    prior_rendering: But they cried out all the more, saying
+    new_rendering: But they kept shouting all the more
+    rationale: The imperfect describes sustained or repeated shouting, while the intensifier marks the crowd’s escalating insistence.
+  - source_phrase: Σταυρωθήτω
+    prior_rendering: Let him be crucified.
+    new_rendering: Crucify him!
+    rationale: The direct command preserves the demand’s force and matches its rendering in verse 22.
+  footnote_kinds: {}
+  history_weighed: The recorded reviews and automated revert disagree chiefly about formal representation of γάρ and the imperfect, without a maintainer decision. I retain “evil,” recover the sustained shouting, and express the question and demand by their conversational force.

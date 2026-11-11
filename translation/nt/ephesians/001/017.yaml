@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: ἵνα ὁ θεὸς τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, ὁ πατὴρ τῆς δόξης, δώῃ ὑμῖν πνεῦμα σοφίας καὶ ἀποκαλύψεως ἐν ἐπιγνώσει αὐτοῦ,
 translation:
-  text: that the God of our Lord Jesus Christ[a], the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him[c][b],
-  philosophy: optimal-equivalence
+  text: I pray that the God of our Lord Jesus Christ, the Father of glory, may give you the Spirit of wisdom and revelation[a] so that you may know him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the Spirit of wisdom and revelation.' The Greek πνεῦμα can be understood either as a God-given spirit/disposition or as a reference to the Holy Spirit.
+    text: Or, 'a spirit of wisdom and revelation,' understood as a God-given capacity for spiritual understanding rather than a direct reference to the Holy Spirit.
     reason: alternative_reading
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'the glorious Father.' The phrase is literally 'the Father of glory.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἵνα
   chosen: that
@@ -124,10 +118,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "that the God of our Lord Jesus Messiah, the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him,"
-  to: "that the God of our Lord Jesus the Messiah, the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: that the God of our Lord Jesus Messiah, the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him,
+  to: that the God of our Lord Jesus the Messiah, the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:08:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: that the God of our Lord Jesus Christ[a], the Father of glory, may give you a spirit of wisdom and revelation in the knowledge of him[c][b],
+  to: I pray that the God of our Lord Jesus Christ, the Father of glory, may give you the Spirit of wisdom and revelation[a] so that you may know him.
+  rationale: The history recognizes the ambiguity of 'spirit,' but its appeal to the missing article is not decisive; the immediate context and Ephesians 3:5 favor the Holy Spirit, with the alternative preserved. I keep the current 'Jesus Christ' under the standing name-construction ruling and retain the weighty title 'Father of glory.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +150,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/ephesians/001/017.job-54086.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul asks the glorious Father, the God of Jesus Christ, to give the readers the Spirit's wisdom and revelation so that they may know God.
+  meaning_decisions:
+  - source_phrase: ἵνα
+    prior_rendering: that
+    new_rendering: I pray that
+    rationale: The clause states the content of Paul's prayers; supplying the understood prayer verb makes that connection explicit.
+  - source_phrase: πνεῦμα σοφίας καὶ ἀποκαλύψεως
+    prior_rendering: a spirit of wisdom and revelation
+    new_rendering: the Spirit of wisdom and revelation
+    rationale: The preceding reference to the Holy Spirit and Paul's association of revelation with the Spirit elsewhere in Ephesians favor this identification. The absence of the Greek article does not settle the question, so the serious alternative remains in a footnote.
+  - source_phrase: ἐν ἐπιγνώσει αὐτοῦ
+    prior_rendering: in the knowledge of him
+    new_rendering: so that you may know him
+    rationale: The requested wisdom and revelation concern knowing God; the new clause conveys their intended outcome rather than leaving an opaque abstract phrase.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history recognizes the ambiguity of 'spirit,' but its appeal to the missing article is not decisive; the immediate context and Ephesians 3:5 favor the Holy Spirit, with the alternative preserved. I keep the current 'Jesus Christ' under the standing name-construction ruling and retain the weighty title 'Father of glory.'

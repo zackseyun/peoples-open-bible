@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/הָיְתָ֨ה לָ/הֶ֧ם תְּרוּמִיָּ֛ה מִ/תְּרוּמַ֥ת הָ/אָ֖רֶץ קֹ֣דֶשׁ קָדָשִׁ֑ים אֶל גְּב֖וּל הַ/לְוִיִּֽם־׃
 translation:
-  text: And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a reserved portion' for תְּרוּמִיָּה; the Hebrew term is related to a contribution or offering set apart for sacred use.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'most holy'; compare the superlative expression sometimes rendered 'holy of holies.' Here it describes the sanctity of the land portion.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the border of the Levites.'
-    reason: lexical_alternative
+  text: They shall receive a special allotment from the land set apart as an offering. It shall be most holy and lie beside the Levites' territory.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהָיְתָה
   chosen: And it shall be
@@ -89,14 +79,20 @@ revisions:
   from: And it shall be for them a special allotment from the contribution of the land, a most holy place, beside the territory of the Levites.
   to: And it shall be for them a special allotment from the contribution of the land, a most holy place, beside the territory of the Levites.
   rationale: Removed 'place' because the Hebrew says 'most holy' as a predicate description, not explicitly 'a most holy place.' Kept the rest substantially the same for accuracy and natural formal English.
-
 - timestamp: '2026-05-18T02:54:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.'
-  to: 'And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.'
+  from: And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.
+  to: And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a most holy place''].'
+- timestamp: '2026-11-09T17:40:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it shall be for them a special allotment from the contribution of the land[a], most holy[c][b], beside the territory of the Levites.
+  to: They shall receive a special allotment from the land set apart as an offering. It shall be most holy and lie beside the Levites' territory.
+  rationale: I retain the current text's 'most holy,' preserving the review's useful distinction between the land's holiness and the sanctuary's Holy of Holies. The automated revert adds no meaning-based reason to restore 'place'; no maintainer revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +115,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/048/012.job-64512.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:31Z'
+  change_level: refined
+  confidence: high
+  meaning: The faithful priests receive a most holy portion of the land offering beside the Levites' territory.
+  meaning_decisions:
+  - source_phrase: וְהָיְתָה לָהֶם תְּרוּמִיָּה מִתְּרוּמַת הָאָרֶץ
+    prior_rendering: And it shall be for them a special allotment from the contribution of the land
+    new_rendering: They shall receive a special allotment from the land set apart as an offering
+    rationale: Expresses the grant directly and clarifies that the larger contribution is land offered and set apart.
+  - source_phrase: קֹדֶשׁ קָדָשִׁים אֶל גְּבוּל הַלְוִיִּם
+    prior_rendering: most holy, beside the territory of the Levites
+    new_rendering: It shall be most holy and lie beside the Levites' territory
+    rationale: Makes holiness and location explicit predicates of the allotment rather than loosely attached phrases.
+  footnote_kinds: {}
+  history_weighed: I retain the current text's 'most holy,' preserving the review's useful distinction between the land's holiness and the sanctuary's Holy of Holies. The automated revert adds no meaning-based reason to restore 'place'; no maintainer revision is recorded.

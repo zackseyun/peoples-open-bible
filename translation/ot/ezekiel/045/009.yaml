@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: כֹּֽה אָמַ֞ר אֲדֹנָ֣/י יְהוִ֗ה רַב לָ/כֶם֙ נְשִׂיאֵ֣י יִשְׂרָאֵ֔ל חָמָ֤ס וָ/שֹׁד֙ הָסִ֔ירוּ וּ/מִשְׁפָּ֥ט וּ/צְדָקָ֖ה עֲשׂ֑וּ הָרִ֤ימוּ גְרֻשֹֽׁתֵי/כֶם֙ מֵ/עַ֣ל עַמִּ֔/י נְאֻ֖ם אֲדֹנָ֥/י יְהוִֽה־־׃
 translation:
-  text: 'Thus says the Lord GOD: Enough from you[a], princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your evictions from my people, declares the Lord GOD.'
-  philosophy: optimal-equivalence
+  text: 'Thus says the Lord Yahweh: You have gone too far, princes of Israel! Put an end to violence and plunder, and practice justice and righteousness. Stop driving my people from their land[a], declares the Lord Yahweh.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your expulsions' or 'your acts of dispossession.' The Hebrew term refers to driving people out; in this context it likely includes forced removal from land or property.
-    reason: lexical_alternative
+    text: Or, 'Stop expelling my people'; the Hebrew term can refer more broadly to acts of driving people out.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֲדֹנָי יְהוִה
   chosen: the Lord GOD
@@ -137,14 +137,20 @@ revisions:
   from: 'Thus says the Lord GOD: Enough from you, princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your evictions from my people, declares the Lord GOD.'
   to: 'Thus says the Lord GOD: Enough, princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your expulsions from my people, declares the Lord GOD.'
   rationale: Changed 'Enough from you' to 'Enough' for a more natural rendering of רַב לָכֶם, and revised 'evictions' to 'expulsions' to more broadly reflect גְרֻשׁוֹתֵיכֶם without narrowing it to a modern legal sense.
-
 - timestamp: '2026-05-16T02:13:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Thus says the Lord GOD: Enough[a], princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your expulsions from my people, declares the Lord GOD.'
   to: 'Thus says the Lord GOD: Enough from you[a], princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your evictions from my people, declares the Lord GOD.'
-  rationale: 'Azure dropped ''from you'' (erasing confrontational address of רַב לָכֶם) and substituted ''expulsions'' (drafter''s rejected alternative — drafter chose narrower ''evictions'' for land-allotment context).'
+  rationale: Azure dropped 'from you' (erasing confrontational address of רַב לָכֶם) and substituted 'expulsions' (drafter's rejected alternative — drafter chose narrower 'evictions' for land-allotment context).
+- timestamp: '2026-11-09T17:40:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says the Lord GOD: Enough from you[a], princes of Israel! Remove violence and plunder, and do justice and righteousness. Put away your evictions from my people, declares the Lord GOD.'
+  to: 'Thus says the Lord Yahweh: You have gone too far, princes of Israel! Put an end to violence and plunder, and practice justice and righteousness. Stop driving my people from their land[a], declares the Lord Yahweh.'
+  rationale: 'The automated revert raised two meaningful concerns: preserving the confrontational address and the land-dispossession context. The new wording preserves both while replacing awkward English idioms, and the broader sense of expulsions remains in a note.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -167,3 +173,34 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/045/009.job-64444.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh rebukes Israel's princes and commands them to replace violence, plunder, and dispossession with justice and righteousness.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: The standing ruling requires Yahweh for the divine name, including when it follows the title 'Lord.'
+  - source_phrase: רַב לָכֶם
+    prior_rendering: Enough from you
+    new_rendering: You have gone too far
+    rationale: This natural English rebuke preserves the idiom's force and its direct confrontation of the princes.
+  - source_phrase: חָמָס וָשֹׁד הָסִירוּ וּמִשְׁפָּט וּצְדָקָה עֲשׂוּ
+    prior_rendering: Remove violence and plunder, and do justice and righteousness.
+    new_rendering: Put an end to violence and plunder, and practice justice and righteousness.
+    rationale: The commands require cessation of abusive conduct and active just and righteous governance, not the physical removal of objects.
+  - source_phrase: הָרִימוּ גְרֻשֹׁתֵיכֶם מֵעַל עַמִּי
+    prior_rendering: Put away your evictions from my people
+    new_rendering: Stop driving my people from their land
+    rationale: The idiom demands an end to forced dispossession; the land-allotment context supplies what the people are being driven from.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: 'The automated revert raised two meaningful concerns: preserving the confrontational address and the land-dispossession context. The new wording preserves both while replacing awkward English idioms, and the broader sense of expulsions remains in a note.'

@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ἐγώ εἰμι ὁ ἄρτος ὁ ζῶν ὁ ἐκ τοῦ οὐρανοῦ καταβάς· ἐάν τις φάγῃ ἐκ τούτου τοῦ ἄρτου ⸀ζήσει εἰς τὸν αἰῶνα, καὶ ὁ ἄρτος δὲ ὃν ἐγὼ δώσω ἡ σάρξ μού ⸀ἐστιν ὑπὲρ τῆς τοῦ κόσμου ζωῆς.
 translation:
-  text: I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'eats of this bread.' The Greek preposition can be rendered more literally this way, but 'eats from this bread' is more natural in current English.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he will live into the age.' The expression means enduringly or forever.
-    reason: lexical_alternative
-  - marker: c
-    text: Greek 'flesh,' not 'body.' The wording is intentionally concrete.
-    reason: lexical_alternative
+  text: I am the living bread that came down from heaven. If anyone eats of this bread, they will live forever. And the bread that I will give for the life of the world is my flesh.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ ἄρτος ὁ ζῶν
   chosen: the living bread
@@ -120,14 +110,20 @@ revisions:
   from: I am the living bread that came down from heaven. If anyone eats from this bread, he will live forever. And the bread that I will give for the life of the world is my flesh.
   to: I am the living bread that came down from heaven. If anyone eats from this bread, he will live forever. And the bread that I will give for the life of the world is my flesh.
   rationale: Changed 'eats from this bread' to 'eats of this bread' for a more natural and formally consistent rendering of ἐκ τούτου τοῦ ἄρτου. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.'
-  to: 'I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.'
+  from: I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.
+  to: I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''If anyone eats from this bread''].'
+- timestamp: '2026-11-09T17:10:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I am the living bread that came down from heaven[a]. If anyone eats of this bread, he will live forever[c][b]. And the bread that I will give for the life of the world is my flesh.
+  to: I am the living bread that came down from heaven. If anyone eats of this bread, they will live forever. And the bread that I will give for the life of the world is my flesh.
+  rationale: The review and revert records concern “eats from” versus “eats of”; the current “eats of” stands. I also preserve the deliberately concrete “flesh,” future self-giving, and broad “world,” dropping notes whose points the main text already carries.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -150,3 +146,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/low_agreement_recheck/nt/john/006/051.job-27831.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:14Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus is the living bread from heaven that gives everlasting life, and the bread he will give for the world's life is his flesh.
+  meaning_decisions:
+  - source_phrase: ἐάν τις φάγῃ ... ζήσει εἰς τὸν αἰῶνα
+    prior_rendering: If anyone eats of this bread, he will live forever
+    new_rendering: If anyone eats of this bread, they will live forever
+    rationale: The Greek indefinite expression and verb do not specify male sex; singular “they” conveys the promise's general personal scope.
+  footnote_kinds: {}
+  history_weighed: The review and revert records concern “eats from” versus “eats of”; the current “eats of” stands. I also preserve the deliberately concrete “flesh,” future self-giving, and broad “world,” dropping notes whose points the main text already carries.

@@ -20,14 +20,11 @@ source:
   - 163
   validation: no_reference
 translation:
-  text: 'And now this is what I ask[a], O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you do the vow which I vowed to the King of heaven that it should be done by your mouth[b].'
-  philosophy: optimal-equivalence
+  text: 'Now, my lord king, this is what I ask and request from you, the great favor I seek from you: I beg you to fulfill by your command[a] the vow I made to the King of heaven.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'fulfill the vow.' The Greek literally says 'do the vow,' an idiom for carrying out what was vowed.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'by your mouth'; that is, by your spoken command or authorization.
+    text: Literally, “from your mouth,” referring to the king's spoken authorization.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀξιῶ
@@ -130,7 +127,6 @@ revisions:
   from: 'And now this is what I ask, O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you do the vow which I vowed to the King of heaven that it should be done by your mouth.'
   to: 'And now this is what I ask, O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you fulfill the vow which I vowed to the King of heaven to perform by your mouth.'
   rationale: Changed 'do the vow' to 'fulfill the vow' for natural English while preserving the sense of carrying out a vow; changed 'that it should be done by your mouth' to 'to perform by your mouth' to reflect the infinitive construction more directly and naturally.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -146,6 +142,13 @@ revisions:
   from: 'And now this is what I ask, O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you do the vow which I vowed to the King of heaven that it should be done by your mouth.'
   to: 'And now this is what I ask[a], O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you do the vow which I vowed to the King of heaven that it should be done by your mouth[b].'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('by your mouth') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:51:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And now this is what I ask[a], O lord king, and what I request from you, and this is the greatness that comes from you: therefore I beg that you do the vow which I vowed to the King of heaven that it should be done by your mouth[b].'
+  to: 'Now, my lord king, this is what I ask and request from you, the great favor I seek from you: I beg you to fulfill by your command[a] the vow I made to the King of heaven.”'
+  rationale: The earlier review's move to “fulfill the vow” improved the meaning in English, while the subsequent automated revert carries little interpretive weight. The recorded explanations of royal generosity and spoken authorization support making both senses explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -165,3 +168,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/068.job-47668.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The young man asks the king to grant the great favor of fulfilling, through royal authorization, the vow he made to the King of heaven.
+  meaning_decisions:
+  - source_phrase: ἡ μεγαλωσύνη ἡ παρὰ σοῦ
+    prior_rendering: the greatness that comes from you
+    new_rendering: the great favor I seek from you
+    rationale: In the context of the king's offered reward, the phrase concerns royal generosity expressed in a great favor, not greatness as an abstract quality.
+  - source_phrase: ποιήσῃς τὴν εὐχὴν ἣν ηὐξάμην
+    prior_rendering: you do the vow which I vowed
+    new_rendering: you to fulfill ... the vow I made
+    rationale: English fulfills a vow rather than does it; the wording retains the young man's solemn commitment and the king's requested role in carrying it out.
+  - source_phrase: ποιῆσαι ἐκ στόματός σου
+    prior_rendering: that it should be done by your mouth
+    new_rendering: by your command
+    rationale: The mouth represents the king's authoritative spoken command, not a physical means of performing the work.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review's move to “fulfill the vow” improved the meaning in English, while the subsequent automated revert carries little interpretive weight. The recorded explanations of royal generosity and spoken authorization support making both senses explicit.

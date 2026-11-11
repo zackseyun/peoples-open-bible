@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּתֹּ֣ם הַ/כֶּ֗סֶף מֵ/אֶ֣רֶץ מִצְרַיִם֮ וּ/מֵ/אֶ֣רֶץ כְּנַעַן֒ וַ/יָּבֹאוּ֩ כָל מִצְרַ֨יִם אֶל יוֹסֵ֤ף לֵ/אמֹר֙ הָֽבָ/ה לָּ֣/נוּ לֶ֔חֶם וְ/לָ֥/מָּה נָמ֖וּת נֶגְדֶּ֑/ךָ כִּ֥י אָפֵ֖ס כָּֽסֶף־־־׃
 translation:
-  text: When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "the silver was gone"; Hebrew כֶּסֶף can mean either "silver" or "money."
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, "all Egypt came to Joseph."
-    reason: lexical_alternative
-  - marker: c
-    text: '"Bread" here may stand more broadly for food in the famine context.'
-    reason: lexical_alternative
+  text: When the people of Egypt and Canaan had run out of money, all the Egyptians came to Joseph and said, “Give us food. Why should we die before your eyes? We have no money left.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּתֹּם
   chosen: was gone
@@ -99,14 +89,20 @@ revisions:
   from: When the money from the land of Egypt and from the land of Canaan was gone, all the Egyptians came to Joseph, saying, "Give us bread. Why should we die before your eyes? For the money is gone."
   to: When the money from the land of Egypt and from the land of Canaan was gone, all the Egyptians came to Joseph, saying, "Give us bread. Why should we die before your eyes? For the money is gone."
   rationale: Changed 'before your eyes' to 'before you' for a more direct and natural rendering of the Hebrew, while keeping the rest unchanged.
-
 - timestamp: '2026-05-17T09:21:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."'
-  to: 'When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."'
+  from: When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."
+  to: When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''before your eyes''].'
+- timestamp: '2026-11-09T17:46:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the money from the land of Egypt and from the land of Canaan was gone[a], all the Egyptians came to Joseph, saying, "Give us bread[c][b]. Why should we die before you? For the money is gone."
+  to: When the people of Egypt and Canaan had run out of money, all the Egyptians came to Joseph and said, “Give us food. Why should we die before your eyes? We have no money left.”
+  rationale: I follow the lexical record’s contextual 'money' and its explanation of 'before your eyes.' The automated preference for 'before you' does not outweigh the clearer English expression of the desperate appeal.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +124,33 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/047/015.job-65716.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:46:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After the people exhaust their money, the Egyptians plead with Joseph for food so that they will not die in his presence.
+  meaning_decisions:
+  - source_phrase: וַיִּתֹּם הַכֶּסֶף מֵאֶרֶץ מִצְרַיִם וּמֵאֶרֶץ כְּנַעַן
+    prior_rendering: When the money from the land of Egypt and from the land of Canaan was gone
+    new_rendering: When the people of Egypt and Canaan had run out of money
+    rationale: The people have exhausted their purchasing funds; money has not physically disappeared from Egypt, since Joseph has transferred it to Pharaoh.
+  - source_phrase: הָבָה לָּנוּ לֶחֶם
+    prior_rendering: Give us bread
+    new_rendering: Give us food
+    rationale: The appeal concerns famine provisions generally, not specifically baked bread.
+  - source_phrase: נֶגְדֶּךָ
+    prior_rendering: before you
+    new_rendering: before your eyes
+    rationale: This preserves the vivid appeal about dying in Joseph’s sight and avoids the possible English sense of dying earlier than he does.
+  - source_phrase: כִּי אָפֵס כָּסֶף
+    prior_rendering: For the money is gone
+    new_rendering: We have no money left
+    rationale: The direct statement naturally expresses the financial predicament that motivates their plea.
+  footnote_kinds: {}
+  history_weighed: I follow the lexical record’s contextual 'money' and its explanation of 'before your eyes.' The automated preference for 'before you' does not outweigh the clearer English expression of the desperate appeal.

@@ -30,12 +30,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.
-  philosophy: optimal-equivalence
+  text: He sent Jonathan a gold clasp, the customary gift to royal Kinsmen[a], and gave him Accaron and all its territory as an inheritance.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Accaron is the Greek form of the place-name more commonly known from Hebrew as Ekron.
-    reason: lexical_alternative
+    text: “Kinsman” was an honorary rank at Hellenistic royal courts and did not necessarily indicate a blood relationship.
+    reason: cultural_note
 lexical_decisions:
 - source_word: πόρπην χρυσῆν
   chosen: a gold clasp
@@ -110,14 +110,20 @@ revisions:
   from: And he sent him a gold clasp, as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its borders as an inheritance.
   to: And he sent him a gold clasp, as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its borders as an inheritance.
   rationale: Changed 'borders' to 'territory' for a more natural rendering of πάντα τὰ ὅρια αὐτῆς in this context, while preserving the sense of the whole district belonging to Accaron.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.'
-  to: 'And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.'
+  from: And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.
+  to: And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all its borders''].'
+- timestamp: '2026-11-09T19:53:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he sent him a gold clasp[a], as is the custom to give to the king’s kinsmen; and he gave him Accaron and all its territory as an inheritance.
+  to: He sent Jonathan a gold clasp, the customary gift to royal Kinsmen[a], and gave him Accaron and all its territory as an inheritance.
+  rationale: I retain the current 'territory,' which expresses the grant’s extent more accurately than the earlier literal 'borders,' and preserve 'inheritance.' The court setting calls for clarification of 'Kinsmen' as a rank; the earlier place-name note is not needed to understand the grant.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +143,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/089.job-48597.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:53:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Alexander rewards Jonathan with a gold clasp associated with royal court rank and grants him Accaron and its territory as an inheritance.
+  meaning_decisions:
+  - source_phrase: ὡς ἔθος ἐστὶν διδόσθαι τοῖς συγγενεῦσιν τῶν βασιλέων
+    prior_rendering: as is the custom to give to the king’s kinsmen
+    new_rendering: the customary gift to royal Kinsmen
+    rationale: The phrase describes a recognized royal distinction; capitalization and a brief note prevent readers from assuming Jonathan was related to Alexander by blood.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current 'territory,' which expresses the grant’s extent more accurately than the earlier literal 'borders,' and preserve 'inheritance.' The court setting calls for clarification of 'Kinsmen' as a rank; the earlier place-name note is not needed to understand the grant.

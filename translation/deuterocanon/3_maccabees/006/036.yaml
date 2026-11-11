@@ -20,12 +20,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
-  philosophy: optimal-equivalence
+  text: 'They established a common ordinance for their entire community for generations to come: the days just mentioned were to be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance God[a] had brought them.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''through the gods'' (διὰ θεῶν). In this context the sense is likely divine deliverance attributed to the one God; the plural form may reflect the transmitted wording or idiom.'
-    reason: textual_variant
+    text: Literally, “through gods.” The singular “God” follows the chapter’s consistent attribution of the rescue to the one God.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: κοινὸν
   chosen: common
@@ -149,14 +149,20 @@ revisions:
   from: And having established a common ordinance concerning these things for all their community throughout their generations, they set the previously mentioned days to be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
   to: And having established a common ordinance concerning these things for all their community throughout their generations, they set the previously mentioned days to be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
   rationale: Changed 'they set' to 'they decreed' to better reflect ἐστήσαν in this formal context and improve natural English while preserving the sense.
-
 - timestamp: '2026-05-18T03:00:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.'
-  to: 'And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.'
+  from: And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
+  to: And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to be observed''].'
+- timestamp: '2026-11-09T18:57:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And having established a common ordinance concerning these things for all their community throughout their generations[a], they decreed that the previously mentioned days should be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance that had come to them through God.
+  to: 'They established a common ordinance for their entire community for generations to come: the days just mentioned were to be observed as days of rejoicing, not for the sake of drinking and gluttony, but because of the deliverance God[a] had brought them.'
+  rationale: The history supports formal, continuing observance and the contextual singular “God,” while acknowledging the supplied Greek plural. I retain those decisions and place the textual wording note directly at the divine reference rather than at the generations clause.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -176,3 +182,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/006/036.job-49678.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: The Jews established these days as a lasting communal celebration of God’s deliverance, not an occasion whose purpose was indulgence.
+  meaning_decisions:
+  - source_phrase: κοινὸν ὁρισάμενοι ... θεσμὸν ... τὰς προειρημένας ἡμέρας ἄγειν ἐστήσαν εὐφροσύνους
+    prior_rendering: having established a common ordinance ... they decreed that the previously mentioned days should be observed as days of rejoicing
+    new_rendering: 'They established a common ordinance ...: the days just mentioned were to be observed as days of rejoicing'
+    rationale: The ordinance and decree constitute one communal institution; the colon states its content without an unnecessarily layered construction.
+  - source_phrase: εἰς γενεάς
+    prior_rendering: throughout their generations
+    new_rendering: for generations to come
+    rationale: This makes the intended continuing observance by future generations explicit.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history supports formal, continuing observance and the contextual singular “God,” while acknowledging the supplied Greek plural. I retain those decisions and place the textual wording note directly at the divine reference rather than at the generations clause.

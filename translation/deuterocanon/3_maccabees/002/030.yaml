@@ -15,12 +15,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: 'But so that he might not appear hateful to everyone[a], he added in writing: “But if some of them choose to live among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
-  philosophy: optimal-equivalence
+  text: 'But to avoid appearing detestable to everyone, he added this written provision: “If any of them choose to live among those initiated into the rites[a], he grants them the same citizenship rights as the Alexandrians.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “among those initiated in the mysteries.” The Greek uses cultic initiation language.
-    reason: lexical_alternative
+    text: The rites of religious initiation, associated here with the cult of Dionysus.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ἀπεχθόμενος
   chosen: hateful
@@ -120,7 +120,6 @@ revisions:
   from: 'But so that he might not appear hateful to everyone, he added in writing: “But if some of them choose to conduct themselves among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
   to: 'But so that he might not appear hateful to everyone, he added in writing: “But if some of them choose to conduct themselves among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
   rationale: Changed 'conduct themselves' to 'live' for a more natural rendering of ἀναστρέφεσθαι in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -128,6 +127,13 @@ revisions:
   from: 'But so that he might not appear hateful to everyone[a], he added in writing: “But if some of them choose to live among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
   to: 'But so that he might not appear hateful to everyone[a], he added in writing: “But if some of them choose to live among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to conduct themselves''].'
+- timestamp: '2026-11-09T18:56:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'But so that he might not appear hateful to everyone[a], he added in writing: “But if some of them choose to live among those initiated in the rites, he makes these equal citizens with the Alexandrians.”'
+  to: 'But to avoid appearing detestable to everyone, he added this written provision: “If any of them choose to live among those initiated into the rites[a], he grants them the same citizenship rights as the Alexandrians.”'
+  rationale: I retained the current 'live,' which conveys both association and manner of life better than the older 'conduct themselves' in this construction. The documented emphasis on cultic initiation and equal citizenship remains, with the religious setting clarified in a short note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -147,3 +153,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/002/030.job-49537.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:46Z'
+  change_level: refined
+  confidence: high
+  meaning: To soften how his decree would be perceived, the king offered equal Alexandrian citizenship to Jews willing to live among the religious initiates.
+  meaning_decisions:
+  - source_phrase: ἵνα δὲ μὴ τοῖς πᾶσιν ἀπεχθόμενος φαίνηται
+    prior_rendering: But so that he might not appear hateful to everyone
+    new_rendering: But to avoid appearing detestable to everyone
+    rationale: The concern is how others regard him; 'hateful' can instead suggest that he harbors hatred.
+  - source_phrase: ὑπέγραψεν
+    prior_rendering: he added in writing
+    new_rendering: he added this written provision
+    rationale: The verb introduces an appended clause in the decree, not merely another act of writing.
+  - source_phrase: τούτους ἰσοπολίτας Ἀλεξανδρεῦσι ποιεῖ
+    prior_rendering: he makes these equal citizens with the Alexandrians
+    new_rendering: he grants them the same citizenship rights as the Alexandrians
+    rationale: The promise concerns civic equality; the new wording expresses that legal effect naturally while retaining the decree's third-person present.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retained the current 'live,' which conveys both association and manner of life better than the older 'conduct themselves' in this construction. The documented emphasis on cultic initiation and equal citizenship remains, with the religious setting clarified in a short note.

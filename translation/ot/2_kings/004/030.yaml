@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תֹּ֨אמֶר֙ אֵ֣ם הַ/נַּ֔עַר חַי יְהוָ֥ה וְ/חֵֽי נַפְשְׁ/ךָ֖ אִם אֶעֶזְבֶ֑/ךָּ וַ/יָּ֖קָם וַ/יֵּ֥לֶךְ אַחֲרֶֽי/הָ־־־׃
 translation:
-  text: Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew oath formula: ''As the LORD lives, and as your life lives''; that is, ''As surely as the LORD lives and as you live.'''
-    reason: lexical_alternative
+  text: Then the boy’s mother said, “As surely as Yahweh lives and as you live, I will not leave you.” So he arose and followed her.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֵם הַנַּעַר
   chosen: the boy’s mother
@@ -82,14 +78,20 @@ revisions:
   from: Then the boy’s mother said, “As the LORD lives, and as you yourself live, I will not leave you.” So he arose and went after her.
   to: Then the boy’s mother said, “As the LORD lives, and as you yourself live, I will not leave you.” So he arose and went after her.
   rationale: Revised “as you yourself live” to the more formally accurate “as your soul lives,” reflecting the Hebrew wording more closely while preserving natural translation style. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:48Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.'
-  to: 'Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.'
+  from: Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.
+  to: Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''As the LORD lives, and as you yourself live''].'
+- timestamp: '2026-11-09T17:26:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the boy’s mother said[a], “As Yahweh lives, and as your soul lives, I will not leave you.” So he arose and went after her.
+  to: Then the boy’s mother said, “As surely as Yahweh lives and as you live, I will not leave you.” So he arose and followed her.
+  rationale: The first draft’s “as you yourself live” better conveys this personal-life oath than the later source-transparent “as your soul lives”; the automated revert adds no independent meaning-based judgment. I retain Yahweh under the standing ruling and express the oath’s force directly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +113,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/004/030.job-60361.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The boy’s mother swears that she will not leave Elisha, so he rises and follows her.
+  meaning_decisions:
+  - source_phrase: חַי יְהוָה וְחֵי נַפְשְׁךָ
+    prior_rendering: As Yahweh lives, and as your soul lives
+    new_rendering: As surely as Yahweh lives and as you live
+    rationale: This oath invokes Yahweh’s life and Elisha’s life; nephesh here denotes the living person, while “surely” makes the oath’s emphatic certainty clear.
+  - source_phrase: וַיֵּלֶךְ אַחֲרֶיהָ
+    prior_rendering: went after her
+    new_rendering: followed her
+    rationale: Elisha accompanies her by following her, rather than pursuing her in the sense that “went after” can suggest.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “as you yourself live” better conveys this personal-life oath than the later source-transparent “as your soul lives”; the automated revert adds no independent meaning-based judgment. I retain Yahweh under the standing ruling and express the oath’s force directly.

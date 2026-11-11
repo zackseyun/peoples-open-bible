@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: וַ/יַּֽעַבְרוּ֩ אֲנָשִׁ֨ים מִדְיָנִ֜ים סֹֽחֲרִ֗ים וַֽ/יִּמְשְׁכוּ֙ וַ/יַּֽעֲל֤וּ אֶת יוֹסֵף֙ מִן הַ/בּ֔וֹר וַ/יִּמְכְּר֧וּ אֶת יוֹסֵ֛ף לַ/יִּשְׁמְעֵאלִ֖ים בְּ/עֶשְׂרִ֣ים כָּ֑סֶף וַ/יָּבִ֥יאוּ אֶת יוֹסֵ֖ף מִצְרָֽיְמָ/ה־־־־׃
 translation:
-  text: Then Midianite men[a], traders, passed by; and they pulled Joseph up and lifted him out of the pit, and sold Joseph to the Ishmaelites for twenty pieces of silver[c][b]. Then they brought Joseph to Egypt.
-  philosophy: optimal-equivalence
+  text: Then Midianite traders passed by, and they[a] pulled Joseph up out of the pit and sold him to the Ishmaelites for twenty shekels of silver[b]. Then they took Joseph to Egypt.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''for twenty silver''; the unit is not explicitly stated, hence ''pieces of silver.'''
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew uses plural verbs ('they pulled,' 'they brought up,' 'they sold,' 'they brought') after mentioning both Midianite traders and Ishmaelites, leaving some ambiguity about which group is in view at each step.
+    text: 'The Hebrew does not explicitly name who pulled Joseph out and sold him: his brothers or the Midianite traders may be intended. The final “they” may refer to the Ishmaelites.'
     reason: alternative_reading
-  - marker: c
-    text: Or 'they pulled Joseph up and brought him up out of the pit'.
-    reason: previous_rendering
+  - marker: b
+    text: Literally, “twenty of silver”; the unit of weight is unstated but is probably the shekel.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּעַבְרוּ
   chosen: passed by
@@ -119,12 +116,18 @@ revisions:
   from: Then Midianite men, traders, passed by; and they pulled and lifted Joseph up out of the pit, and sold Joseph to the Ishmaelites for twenty pieces of silver. Then they brought Joseph to Egypt.
   to: Then Midianite men, traders, passed by; and they pulled Joseph up and lifted him out of the pit, and sold Joseph to the Ishmaelites for twenty pieces of silver. Then they brought Joseph to Egypt.
   rationale: Reordered 'pulled' and 'lifted' to more naturally reflect the Hebrew sequence while keeping all source elements. No other substantive changes.
+- timestamp: '2026-11-09T17:45:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Midianite men[a], traders, passed by; and they pulled Joseph up and lifted him out of the pit, and sold Joseph to the Ishmaelites for twenty pieces of silver[c][b]. Then they brought Joseph to Egypt.
+  to: Then Midianite traders passed by, and they[a] pulled Joseph up out of the pit and sold him to the Ishmaelites for twenty shekels of silver[b]. Then they took Joseph to Egypt.
+  rationale: The earlier revisions sought smoother English for the two lifting verbs, and I complete that improvement without treating them as separate events. I follow the documented decision to leave the plural agents unspecified, while clarifying the weighed-silver payment and noting the inferred unit.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:15Z'
   unchanged: false
   changes_summary: Reordered 'pulled' and 'lifted' to more naturally reflect the Hebrew sequence while keeping all source elements. No other substantive changes.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -147,3 +150,35 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/037/028.job-37727.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:22Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Joseph is pulled from the pit, sold to the Ishmaelites for twenty units of silver, and taken to Egypt, with the agents of the actions not fully specified.
+  meaning_decisions:
+  - source_phrase: אֲנָשִׁים מִדְיָנִים סֹחֲרִים
+    prior_rendering: Midianite men, traders
+    new_rendering: Midianite traders
+    rationale: The appositional Hebrew expression identifies the men as Midianite merchants; a single noun phrase conveys that identification naturally.
+  - source_phrase: וַיִּמְשְׁכוּ וַיַּעֲלוּ אֶת יוֹסֵף מִן הַבּוֹר
+    prior_rendering: they pulled Joseph up and lifted him out of the pit
+    new_rendering: they pulled Joseph up out of the pit
+    rationale: The two verbs describe the combined action of drawing Joseph upward and out, which English carries without repeating the lifting action.
+  - source_phrase: בְּעֶשְׂרִים כָּסֶף
+    prior_rendering: for twenty pieces of silver
+    new_rendering: for twenty shekels of silver
+    rationale: The payment is weighed silver, not coined pieces; the customary implied unit is supplied, with its absence from the wording disclosed in a note.
+  - source_phrase: וַיָּבִיאוּ אֶת יוֹסֵף מִצְרָיְמָה
+    prior_rendering: they brought Joseph to Egypt
+    new_rendering: they took Joseph to Egypt
+    rationale: “Took” naturally describes transport away from the scene toward Egypt without changing the action.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The earlier revisions sought smoother English for the two lifting verbs, and I complete that improvement without treating them as separate events. I follow the documented decision to leave the plural agents unspecified, while clarifying the weighed-silver payment and noting the inferred unit.

@@ -28,15 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 13:20
 translation:
-  text: When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'from one friend to another.' The Hebrew suggests that the poor man is passed along or driven off repeatedly rather than receiving real support.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek parallel differs substantially here ('Lowliness is an abomination to the proud, and a poor man is an abomination to a rich man'), but the Hebrew witness is the primary source for this verse where it survives.
-    reason: textual_variant
+  text: When a rich man stumbles, a friend supports him; but when a poor man stumbles, friend after friend pushes him away.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עָשִׁיר
   chosen: a rich man
@@ -133,14 +126,20 @@ revisions:
   from: When a rich man stumbles, he is supported by a friend; but when a poor man stumbles, he is pushed away from friend to friend.
   to: When a rich man stumbles, he is supported by a friend; but when a poor man stumbles, he is pushed away from friend to friend.
   rationale: Changed 'pushed away' to 'driven away' for a more natural and formally appropriate rendering of נִדְחָה while preserving the sense of rejection; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.'
-  to: 'When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.'
+  from: When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.
+  to: When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is pushed away''].'
+- timestamp: '2026-11-09T19:05:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When a rich man stumbles[a], he is supported by a friend; but when a poor man stumbles[b], he is driven away from friend to friend.
+  to: When a rich man stumbles, a friend supports him; but when a poor man stumbles, friend after friend pushes him away.
+  rationale: The history’s alternatives “pushed away” and “driven away” both recognize rejection, and the concrete “pushes” is retained. The earlier note’s explanation of repeated rejection is now carried by the main text, while the misaligned Greek comparison is dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -160,3 +159,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/013/020.job-51319.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:32Z'
+  change_level: refined
+  confidence: high
+  meaning: A rich man receives friendly support when he falters, but a poor man meets rejection from one friend after another.
+  meaning_decisions:
+  - source_phrase: נִדְחָה מֵרֵעַ אֶל רֵעַ
+    prior_rendering: he is driven away from friend to friend
+    new_rendering: friend after friend pushes him away
+    rationale: The phrase communicates repeated rejection, not helpful transfer from one friend to another; naming the rejecting friends makes the contrast with support clear.
+  footnote_kinds: {}
+  history_weighed: The history’s alternatives “pushed away” and “driven away” both recognize rejection, and the concrete “pushes” is retained. The earlier note’s explanation of repeated rejection is now carried by the main text, while the misaligned Greek comparison is dropped.

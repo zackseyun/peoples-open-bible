@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֣ה אֶל יְהוֹשֻׁעַ֮ אַל תִּירָ֣א מִ/פְּנֵי/הֶם֒ כִּֽי מָחָ֞ר כָּ/עֵ֣ת הַ/זֹּ֗את אָנֹכִ֞י נֹתֵ֧ן אֶת כֻּלָּ֛/ם חֲלָלִ֖ים לִ/פְנֵ֣י יִשְׂרָאֵ֑ל אֶת סוּסֵי/הֶ֣ם תְּעַקֵּ֔ר וְ/אֶת מַרְכְּבֹתֵי/הֶ֖ם תִּשְׂרֹ֥ף בָּ/אֵֽשׁ־־־־־־׃
 translation:
-  text: And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'tomorrow about this time.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'I am giving all of them before Israel as slain men,' that is, delivering them for Israel to strike down.
-    reason: lexical_alternative
+  text: Yahweh said to Joshua, “Do not fear them, for by this time tomorrow I will have handed them all over to Israel, slain in battle. You shall hamstring their horses and burn their chariots.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -112,14 +105,20 @@ revisions:
   from: And the LORD said to Joshua, “Do not fear because of them, for tomorrow at this time I am giving all of them over before Israel as slain men. You shall hamstring their horses and burn their chariots with fire.”
   to: And the LORD said to Joshua, “Do not fear because of them, for tomorrow at this time I am giving all of them over before Israel as slain men. You shall hamstring their horses and burn their chariots with fire.”
   rationale: Changed 'Do not fear because of them' to the more natural and direct 'Do not fear them,' which accurately reflects the Hebrew. No other changes needed.
-
 - timestamp: '2026-05-17T07:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”'
-  to: 'And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”'
+  from: And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”
+  to: And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of them''].'
+- timestamp: '2026-11-09T18:09:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh said to Joshua[a], “Do not fear them, for tomorrow at this time I am giving all of them over before Israel as slain men[b]. You shall hamstring their horses and burn their chariots with fire.”
+  to: Yahweh said to Joshua, “Do not fear them, for by this time tomorrow I will have handed them all over to Israel, slain in battle. You shall hamstring their horses and burn their chariots.”
+  rationale: I retain the current direct prohibition, the standing rendering “Yahweh,” and the precise command to hamstring the horses. The earlier preference for a present participle and the spatial phrase “before Israel” gives way to English that clearly expresses the promised outcome.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +138,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/joshua/011/006.job-15294.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh assures Joshua that the entire enemy force will be slain by the next day and commands him to disable its horses and destroy its chariots.
+  meaning_decisions:
+  - source_phrase: מָחָר כָּעֵת הַזֹּאת אָנֹכִי נֹתֵן
+    prior_rendering: tomorrow at this time I am giving
+    new_rendering: by this time tomorrow I will have handed
+    rationale: This is a certain promise about the outcome by the corresponding time the next day, not a report of an action already underway.
+  - source_phrase: אֶת כֻּלָּם חֲלָלִים לִפְנֵי יִשְׂרָאֵל
+    prior_rendering: all of them over before Israel as slain men
+    new_rendering: them all over to Israel, slain in battle
+    rationale: The phrase promises the enemy’s complete, lethal defeat; “to Israel” communicates the delivery idiom, and “slain in battle” retains the specific force of the Hebrew.
+  - source_phrase: תִּשְׂרֹף בָּאֵשׁ
+    prior_rendering: burn their chariots with fire
+    new_rendering: burn their chariots
+    rationale: The English verb already conveys destruction by fire, so the additional phrase is unnecessary.
+  footnote_kinds: {}
+  history_weighed: I retain the current direct prohibition, the standing rendering “Yahweh,” and the precise command to hamstring the horses. The earlier preference for a present participle and the spatial phrase “before Israel” gives way to English that clearly expresses the promised outcome.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὥστε ⸂τὸν ὄχλον⸃ θαυμάσαι βλέποντας κωφοὺς λαλοῦντας ⸂κυλλοὺς ὑγιεῖς⸃ ⸀καὶ χωλοὺς περιπατοῦντας καὶ τυφλοὺς βλέποντας· καὶ ἐδόξασαν τὸν θεὸν Ἰσραήλ.
 translation:
-  text: so that the crowd marveled as they saw the mute[a] speaking, the crippled[b] made well, the lame walking, and the blind seeing; and they glorified the God of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the deaf speaking.' The Greek word can refer to those who are deaf or mute; here 'mute' is preferred because the immediate emphasis is on speaking.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the maimed restored' / 'the maimed whole.' The Greek describes those with disabled or maimed limbs being healed.
-    reason: lexical_alternative
+  text: So the crowd marveled as they saw the mute speaking, those with impaired limbs made well, the lame walking, and the blind seeing. And they glorified the God of Israel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὥστε
   chosen: so that
@@ -137,14 +130,20 @@ revisions:
   from: so that the crowd marveled as they saw the mute speaking, the crippled made well, the lame walking, and the blind seeing; and they glorified the God of Israel.
   to: so that the crowd marveled as they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing; and they glorified the God of Israel.
   rationale: Revised 'the crippled made well' to 'the crippled healthy' to more directly reflect the Greek adjective ὑγιεῖς and avoid an unnecessary passive expansion.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'so that the crowd marveled as they saw the mute speaking[a], the crippled healthy, the lame walking, and the blind seeing[b]; and they glorified the God of Israel.'
-  to: 'so that the crowd marveled as they saw the mute speaking, the crippled made well, the lame walking, and the blind seeing; and they glorified the God of Israel.'
+  from: so that the crowd marveled as they saw the mute speaking[a], the crippled healthy, the lame walking, and the blind seeing[b]; and they glorified the God of Israel.
+  to: so that the crowd marveled as they saw the mute speaking, the crippled made well, the lame walking, and the blind seeing; and they glorified the God of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''made well''].'
+- timestamp: '2026-11-09T17:15:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: so that the crowd marveled as they saw the mute[a] speaking, the crippled[b] made well, the lame walking, and the blind seeing; and they glorified the God of Israel.
+  to: So the crowd marveled as they saw the mute speaking, those with impaired limbs made well, the lame walking, and the blind seeing. And they glorified the God of Israel.
+  rationale: The earlier review preferred the bare adjective “healthy,” but the current “made well” better communicates the result of healing and is retained. I also preserve “glorified the God of Israel,” including its weight and distinctive identification of God.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -166,3 +165,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/015/031.job-57087.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:03Z'
+  change_level: refined
+  confidence: high
+  meaning: The crowd marvels at the restored abilities of those Jesus healed and gives glory to the God of Israel.
+  meaning_decisions:
+  - source_phrase: ὥστε
+    prior_rendering: so that
+    new_rendering: So
+    rationale: The connective introduces the result of the healings, which “So” expresses clearly in a complete English sentence.
+  - source_phrase: κυλλοὺς ὑγιεῖς
+    prior_rendering: the crippled made well
+    new_rendering: those with impaired limbs made well
+    rationale: The wording identifies the healed condition more precisely and remains consistent with the corresponding category in verse 30.
+  footnote_kinds: {}
+  history_weighed: The earlier review preferred the bare adjective “healthy,” but the current “made well” better communicates the result of healing and is retained. I also preserve “glorified the God of Israel,” including its weight and distinctive identification of God.

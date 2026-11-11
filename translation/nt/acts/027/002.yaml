@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ἐπιβάντες δὲ πλοίῳ Ἀδραμυττηνῷ ⸀μέλλοντι πλεῖν ⸀εἰς τοὺς κατὰ τὴν Ἀσίαν τόπους ἀνήχθημεν ὄντος σὺν ἡμῖν Ἀριστάρχου Μακεδόνος Θεσσαλονικέως·
 translation:
-  text: So we boarded an Adramyttian ship that was about to sail to the places along Asia[b][a], and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
-  philosophy: optimal-equivalence
+  text: We boarded a ship from Adramyttium that was about to sail to ports along the coast of Asia[a] and put out to sea. Aristarchus, a Macedonian from Thessalonica, was with us.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, the Roman province of Asia in western Asia Minor, not the modern continent.
+    text: The Roman province of Asia in western Asia Minor, not the modern continent.
     reason: cultural_note
-  - marker: b
-    text: Or "to the ports along the coast of Asia."
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐπιβάντες
   chosen: boarded
@@ -106,13 +103,12 @@ revisions:
   from: So we boarded an Adramyttian ship that was about to sail to the places along Asia, and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
   to: So we boarded an Adramyttian ship that was about to sail to the places along the coast of Asia, and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
   rationale: Added 'the coast of' to clarify κατὰ τὴν Ἀσίαν τόπους as places along the coast of Asia; otherwise retained the draft's accurate and natural wording.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So we boarded an Adramyttian ship that was about to sail to the places along the coast of Asia[a], and put out to sea, with Aristarchus, a Macedonian from Thessalonica[b], being with us.'
-  to: 'So we boarded an Adramyttian ship that was about to sail to the places along Asia, and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.'
+  from: So we boarded an Adramyttian ship that was about to sail to the places along the coast of Asia[a], and put out to sea, with Aristarchus, a Macedonian from Thessalonica[b], being with us.
+  to: So we boarded an Adramyttian ship that was about to sail to the places along Asia, and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the places along Asia''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +118,13 @@ revisions:
   from: So we boarded an Adramyttian ship that was about to sail to the places along Asia, and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
   to: So we boarded an Adramyttian ship that was about to sail to the places along Asia[b][a], and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Asia') because the note names that rendering; [b] anchored to ('to the places along Asia') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:07:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So we boarded an Adramyttian ship that was about to sail to the places along Asia[b][a], and put out to sea, with Aristarchus, a Macedonian from Thessalonica, being with us.
+  to: We boarded a ship from Adramyttium that was about to sail to ports along the coast of Asia[a] and put out to sea. Aristarchus, a Macedonian from Thessalonica, was with us.
+  rationale: The earlier revision correctly recognized the coastal sense, despite its later automated reversal. I build on that clarification and the documented identification of Adramyttium as the ship’s origin.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -141,3 +144,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/002.job-46764.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The travelers set sail aboard a ship from Adramyttium bound for coastal destinations in Asia, accompanied by Aristarchus.
+  meaning_decisions:
+  - source_phrase: πλοίῳ Ἀδραμυττηνῷ
+    prior_rendering: an Adramyttian ship
+    new_rendering: a ship from Adramyttium
+    rationale: Makes the geographical identification intelligible without requiring readers to recognize an unfamiliar adjective.
+  - source_phrase: εἰς τοὺς κατὰ τὴν Ἀσίαν τόπους
+    prior_rendering: to the places along Asia
+    new_rendering: to ports along the coast of Asia
+    rationale: The sailing context identifies these destinations as coastal ports; the prior wording does not communicate the route clearly.
+  - source_phrase: ὄντος σὺν ἡμῖν Ἀριστάρχου
+    prior_rendering: with Aristarchus ... being with us
+    new_rendering: Aristarchus ... was with us
+    rationale: Expresses the accompanying circumstance directly rather than reproducing the Greek construction in awkward English.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier revision correctly recognized the coastal sense, despite its later automated reversal. I build on that clarification and the documented identification of Adramyttium as the ship’s origin.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וּ/בְנֵ֥י יוֹסֵ֛ף אֲשֶׁר יֻלַּד ל֥/וֹ בְ/מִצְרַ֖יִם נֶ֣פֶשׁ שְׁנָ֑יִם כָּל הַ/נֶּ֧פֶשׁ לְ/בֵֽית יַעֲקֹ֛ב הַ/בָּ֥אָה מִצְרַ֖יְמָ/ה שִׁבְעִֽים־־־־׃פ
 translation:
-  text: And the sons of Joseph who were born to him in Egypt were two persons[b][a]. All the persons of the house of Jacob who came to Egypt were seventy.
-  philosophy: optimal-equivalence
+  text: Joseph had two sons who were born to him in Egypt. The entire household of Jacob that came to Egypt numbered seventy persons[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'souls'; here נֶפֶשׁ is an idiom for individual persons in a census or family count.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'were two persons'.
-    reason: previous_rendering
+    text: The Greek Septuagint reads “seventy-five”; see also Acts 7:14.
+    reason: textual_variant
 lexical_decisions:
 - source_word: וּבְנֵי
   chosen: And the sons of
@@ -107,12 +104,18 @@ revisions:
   from: And the sons of Joseph who were born to him in Egypt were two. All the persons of the house of Jacob who came to Egypt were seventy.
   to: And the sons of Joseph who were born to him in Egypt were two persons. All the persons of the house of Jacob who came to Egypt were seventy.
   rationale: Added 'persons' after 'two' to reflect נֶפֶשׁ and maintain consistency with the second clause.
+- timestamp: '2026-11-09T17:45:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sons of Joseph who were born to him in Egypt were two persons[b][a]. All the persons of the house of Jacob who came to Egypt were seventy.
+  to: Joseph had two sons who were born to him in Egypt. The entire household of Jacob that came to Egypt numbered seventy persons[a].
+  rationale: The revisions alternated between 'two' and 'two persons'; the new first sentence expresses the count naturally without losing it. The Hebrew total of seventy remains in the main text, with the significant Greek textual difference noted separately.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:46:53Z'
   unchanged: false
   changes_summary: Added 'persons' after 'two' to reflect נֶפֶשׁ and maintain consistency with the second clause.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +139,26 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/046/027.job-37625.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:29Z'
+  change_level: refined
+  confidence: high
+  meaning: Joseph’s two sons were born in Egypt, and the total for Jacob’s household that came to Egypt was seventy persons.
+  meaning_decisions:
+  - source_phrase: וּבְנֵי יוֹסֵף אֲשֶׁר יֻלַּד לוֹ בְמִצְרַיִם נֶפֶשׁ שְׁנָיִם
+    prior_rendering: And the sons of Joseph who were born to him in Egypt were two persons
+    new_rendering: Joseph had two sons who were born to him in Egypt
+    rationale: The two-person count is fully conveyed by 'two sons,' without the awkward predicate 'were two persons.'
+  - source_phrase: כָּל הַנֶּפֶשׁ לְבֵית יַעֲקֹב הַבָּאָה מִצְרַיְמָה שִׁבְעִים
+    prior_rendering: All the persons of the house of Jacob who came to Egypt were seventy
+    new_rendering: The entire household of Jacob that came to Egypt numbered seventy persons
+    rationale: '''Household'' conveys family membership rather than a building, and the collective formulation preserves the scope of this household total.'
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The revisions alternated between 'two' and 'two persons'; the new first sentence expresses the count naturally without losing it. The Hebrew total of seventy remains in the main text, with the significant Greek textual difference noted separately.

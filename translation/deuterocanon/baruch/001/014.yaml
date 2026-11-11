@@ -10,12 +10,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: And you shall read this book that we have sent to you[a], to proclaim in the house of the Lord on a feast day and on days of appointed time,
-  philosophy: optimal-equivalence
+  text: Read aloud[a] this book we have sent you, in the house of the Lord on a feast day and on appointed days.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more smoothly, 'on festival days and at appointed times.' The Greek phrase 'on days of appointed time' is somewhat awkward as transmitted, so the main text stays close to the source while preserving a natural alternative here.
-    reason: lexical_alternative
+    text: Or, 'read this book ... to make confession in the house of the Lord.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀναγνώσεσθε
   chosen: you shall read
@@ -94,7 +94,6 @@ revision_pass:
   timestamp: '2026-04-23T15:39:37Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -114,3 +113,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/001/014.job-50327.json
+revisions:
+- timestamp: '2026-11-09T18:59:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you shall read this book that we have sent to you[a], to proclaim in the house of the Lord on a feast day and on days of appointed time,
+  to: Read aloud[a] this book we have sent you, in the house of the Lord on a feast day and on appointed days.
+  rationale: The documented decisions recognize both the public character of the reading and the sense of appointed observances. I bring those meanings into the main text rather than reserving natural English for a footnote.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The recipients are instructed to read the sent book publicly in the Lord's house on feast days and other appointed occasions.
+  meaning_decisions:
+  - source_phrase: ἀναγνώσεσθε ... ἐξαγορεῦσαι
+    prior_rendering: you shall read ... to proclaim
+    new_rendering: Read aloud
+    rationale: The context describes a public reading, and the direct imperative carries the instruction without leaving 'to proclaim' grammatically incomplete; the confessional understanding is noted.
+  - source_phrase: ἐν ἡμέραις καιροῦ
+    prior_rendering: on days of appointed time
+    new_rendering: on appointed days
+    rationale: This preserves the calendrical sense in natural English without reproducing the compressed Greek construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The documented decisions recognize both the public character of the reading and the sense of appointed observances. I bring those meanings into the main text rather than reserving natural English for a footnote.

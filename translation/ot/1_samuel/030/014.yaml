@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אֲנַ֡חְנוּ פָּשַׁ֜טְנוּ נֶ֧גֶב הַ/כְּרֵתִ֛י וְ/עַל אֲשֶׁ֥ר לִֽ/יהוּדָ֖ה וְ/עַל נֶ֣גֶב כָּלֵ֑ב וְ/אֶת צִקְלַ֖ג שָׂרַ֥פְנוּ בָ/אֵֽשׁ־־־׃
 translation:
-  text: We raided the Negev of the Kerethites[a], and the territory that belongs to Judah, and the Negev of Caleb; and we burned Ziklag with fire.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Cherethites.'
-    reason: lexical_alternative
+  text: We raided the Cherethites’ part of the Negev, the territory of Judah, and Caleb’s part of the Negev. We burned Ziklag down.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: פָּשַׁטְנוּ
   chosen: raided
@@ -80,14 +76,20 @@ revisions:
   from: We raided the Negev of the Kerethites, and the territory that belongs to Judah, and the Negev of Caleb; and we burned Ziklag with fire.
   to: We made a raid on the Negev of the Cherethites, and on that which belongs to Judah, and on the Negev of Caleb; and we burned Ziklag with fire.
   rationale: Revised 'raided' to 'made a raid on' for closer alignment with the verb, changed 'Kerethites' to the more standard 'Cherethites,' and kept the repeated 'on' to reflect the Hebrew structure more faithfully.
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We made a raid on the Negev of the Cherethites[a], and on that which belongs to Judah, and on the Negev of Caleb; and we burned Ziklag with fire.'
-  to: 'We raided the Negev of the Kerethites[a], and the territory that belongs to Judah, and the Negev of Caleb; and we burned Ziklag with fire.'
+  from: We made a raid on the Negev of the Cherethites[a], and on that which belongs to Judah, and on the Negev of Caleb; and we burned Ziklag with fire.
+  to: We raided the Negev of the Kerethites[a], and the territory that belongs to Judah, and the Negev of Caleb; and we burned Ziklag with fire.
   rationale: 'Azure substituted THREE documented rejected alternatives: ''made a raid on'' (rejected for פָּשַׁטְנוּ — drafter chose concise ''raided''), ''Cherethites'' (traditional form rejected for transliterated ''Kerethites''; tradition preserved in footnote), and ''on that which belongs to Judah'' (more wooden than drafter''s natural ''territory that belongs to Judah'').'
+- timestamp: '2026-11-09T17:24:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We raided the Negev of the Kerethites[a], and the territory that belongs to Judah, and the Negev of Caleb; and we burned Ziklag with fire.
+  to: We raided the Cherethites’ part of the Negev, the territory of Judah, and Caleb’s part of the Negev. We burned Ziklag down.
+  rationale: The automated reversal rightly favored concise raided and territory over wooden alternatives, which I retain. I use the recognizable English name Cherethites under the naming instruction and clarify the territorial relationships rather than preserve the compressed Negev of constructions.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -107,3 +109,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/030/014.job-59493.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Egyptian reported that his raiding party had plundered the southern territories associated with the Cherethites, Judah, and Caleb and had burned Ziklag.
+  meaning_decisions:
+  - source_phrase: הַכְּרֵתִי
+    prior_rendering: the Kerethites
+    new_rendering: the Cherethites
+    rationale: Cherethites is the recognizable traditional English name for this people, in accordance with the instruction to retain recognizable English proper names.
+  - source_phrase: נֶגֶב הַכְּרֵתִי ... נֶגֶב כָּלֵב
+    prior_rendering: the Negev of the Kerethites ... the Negev of Caleb
+    new_rendering: the Cherethites’ part of the Negev ... Caleb’s part of the Negev
+    rationale: These compressed expressions identify districts associated with the named people and clan, not separate regions each bearing the proper name Negev.
+  - source_phrase: וְאֶת צִקְלַג שָׂרַפְנוּ בָאֵשׁ
+    prior_rendering: and we burned Ziklag with fire
+    new_rendering: We burned Ziklag down
+    rationale: The speaker confesses the destructive burning already described in the narrative; natural English carries that force without the redundant instrument.
+  footnote_kinds: {}
+  history_weighed: The automated reversal rightly favored concise raided and territory over wooden alternatives, which I retain. I use the recognizable English name Cherethites under the naming instruction and clarify the territorial relationships rather than preserve the compressed Negev of constructions.

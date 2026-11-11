@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: χάρις ὑμῖν καὶ εἰρήνη ἀπὸ θεοῦ πατρὸς ἡμῶν καὶ κυρίου Ἰησοῦ Χριστοῦ.
 translation:
-  text: Grace to you and peace from God our Father and the Lord Jesus Christ[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or: ''the Lord Jesus the Messiah.'''
-    reason: lexical_alternative
+  text: Grace to you and peace from God our Father and the Lord Jesus Christ.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: χάρις
   chosen: Grace
@@ -94,11 +90,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "Grace to you and peace from God our Father and the Lord Jesus Messiah."
-  to: "Grace to you and peace from God our Father and the Lord Jesus the Messiah."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: Grace to you and peace from God our Father and the Lord Jesus Messiah.
+  to: Grace to you and peace from God our Father and the Lord Jesus the Messiah.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Grace to you and peace from God our Father and the Lord Jesus Christ[a].
+  to: Grace to you and peace from God our Father and the Lord Jesus Christ.
+  rationale: The current wording preserves the weight of 'grace' and 'peace' and their shared source in the Father and Jesus. The historical Christ/Messiah reversions do not override the standing ruling for the name construction 'Jesus Christ.'
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +122,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/001/003.job-52621.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul blesses the Corinthians with grace and peace from God their Father and the Lord Jesus Christ.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current wording preserves the weight of 'grace' and 'peace' and their shared source in the Father and Jesus. The historical Christ/Messiah reversions do not override the standing ruling for the name construction 'Jesus Christ.'

@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/כִֽי יָזִ֥ד אִ֛ישׁ עַל רֵעֵ֖/הוּ לְ/הָרְג֣/וֹ בְ/עָרְמָ֑ה מֵ/עִ֣ם מִזְבְּחִ֔/י תִּקָּחֶ֖/נּוּ לָ/מֽוּת־־׃ס
 translation:
-  text: But if a man schemes against his neighbor to kill him by treachery[c][b][a], you shall take him even from my altar to die.
-  philosophy: optimal-equivalence
+  text: But if a man deliberately kills his neighbor by treachery, you shall take him even from my altar[a] and put him to death.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'acts presumptuously against' or 'comes arrogantly against'; the Hebrew verb conveys willful, deliberate action.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'with cunning' or 'deceitfully.'
-    reason: lexical_alternative
-  - marker: c
-    text: That is, even if he seeks refuge at the altar, he is to be removed for execution.
+    text: An altar could be sought as a place of refuge.
     reason: cultural_note
 lexical_decisions:
 - source_word: וְ/כִי
@@ -110,14 +104,20 @@ revisions:
   from: But if a man schemes against his neighbor to kill him by treachery, you shall take him even from my altar to die.
   to: But if a man acts presumptuously against his neighbor to kill him by treachery, you shall take him from my altar to die.
   rationale: Replaced 'schemes' with 'acts presumptuously' to better reflect יזד; removed 'even' as unnecessary emphasis not explicit in the source; retained 'by treachery' for בערמה and kept the formal legal tone.
-
 - timestamp: '2026-05-16T03:24:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if a man acts presumptuously against his neighbor to kill him by treachery[c][b][a], you shall take him from my altar to die.'
-  to: 'But if a man schemes against his neighbor to kill him by treachery[c][b][a], you shall take him even from my altar to die.'
-  rationale: 'Azure substituted ''acts presumptuously against'' (drafter''s rejected alternative for יָזִד — drafter chose ''schemes against'' for premeditation force) and dropped emphatic ''even'' from chosen ''even from my altar''.'
+  from: But if a man acts presumptuously against his neighbor to kill him by treachery[c][b][a], you shall take him from my altar to die.
+  to: But if a man schemes against his neighbor to kill him by treachery[c][b][a], you shall take him even from my altar to die.
+  rationale: Azure substituted 'acts presumptuously against' (drafter's rejected alternative for יָזִד — drafter chose 'schemes against' for premeditation force) and dropped emphatic 'even' from chosen 'even from my altar'.
+- timestamp: '2026-11-09T17:35:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if a man schemes against his neighbor to kill him by treachery[c][b][a], you shall take him even from my altar to die.
+  to: But if a man deliberately kills his neighbor by treachery, you shall take him even from my altar[a] and put him to death.
+  rationale: The history usefully defends deliberate intent and the force of 'even from my altar' against a more wooden revision. I preserve those gains while making the completed killing and required execution explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/014.job-62789.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Someone who deliberately kills his neighbor by treachery must be executed even if he seeks refuge at God's altar.
+  meaning_decisions:
+  - source_phrase: יָזִד אִישׁ עַל רֵעֵהוּ לְהָרְגוֹ בְעָרְמָה
+    prior_rendering: a man schemes against his neighbor to kill him by treachery
+    new_rendering: a man deliberately kills his neighbor by treachery
+    rationale: Within the homicide laws, the condition is a completed, deliberate killing, not merely an unfulfilled plot; deliberate action and treachery remain distinct.
+  - source_phrase: תִּקָּחֶנּוּ לָמוּת
+    prior_rendering: you shall take him even from my altar to die
+    new_rendering: you shall take him even from my altar and put him to death
+    rationale: The purpose is judicial execution, not simply removing him to a place where he will die.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The history usefully defends deliberate intent and the force of 'even from my altar' against a more wooden revision. I preserve those gains while making the completed killing and required execution explicit.

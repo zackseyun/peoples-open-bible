@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יְהִי֩ בַ/יּ֨וֹם הַ/שְּׁלִישִׁ֜י בִּֽ/הְיֹ֣ת הַ/בֹּ֗קֶר וַ/יְהִי֩ קֹלֹ֨ת וּ/בְרָקִ֜ים וְ/עָנָ֤ן כָּבֵד֙ עַל הָ/הָ֔ר וְ/קֹ֥ל שֹׁפָ֖ר חָזָ֣ק מְאֹ֑ד וַ/יֶּחֱרַ֥ד כָּל הָ/עָ֖ם אֲשֶׁ֥ר בַּֽ/מַּחֲנֶֽה־־׃
 translation:
-  text: And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.
-  philosophy: optimal-equivalence
+  text: On the morning of the third day there were thunderclaps and flashes of lightning, a dense cloud on the mountain, and a very loud trumpet blast[a]. All the people in the camp trembled.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'voices'; the Hebrew word can mean 'sounds' or 'voices,' but here, alongside 'lightnings,' it most likely refers to thunder.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the sound of a ram's horn.' The Hebrew shofar is a horn trumpet, traditionally made from an animal horn.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'very strong'; in context this describes the intensity of the trumpet sound.
+    text: The Hebrew word shofar denotes a trumpet made from an animal horn.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיְהִי
@@ -119,14 +113,20 @@ revisions:
   from: And it happened on the third day, when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very strong; and all the people who were in the camp trembled.
   to: And it happened on the third day, when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very strong; and all the people who were in the camp trembled.
   rationale: Changed 'very strong' to 'very loud' for the trumpet sound, which more naturally and accurately reflects the Hebrew in context. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.'
-  to: 'And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.'
+  from: And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.
+  to: And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''very strong''].'
+- timestamp: '2026-11-09T17:34:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened on the third day[a], when morning came, that there were thunders and lightnings, and a heavy cloud on the mountain, and the sound of a trumpet, very loud[c][b]; and all the people who were in the camp trembled.
+  to: On the morning of the third day there were thunderclaps and flashes of lightning, a dense cloud on the mountain, and a very loud trumpet blast[a]. All the people in the camp trembled.
+  rationale: The review rationale favored 'very loud,' while the automated revert rationale defended 'very strong'; the current wording already preserves the contextually clearer choice. I retain it while expressing the storm phenomena and cloud density in natural English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -146,3 +146,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/019/016.job-62743.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:46Z'
+  change_level: refined
+  confidence: high
+  meaning: On the third morning, thunder, lightning, a dense cloud, and an intensely loud trumpet sound make everyone in the camp tremble.
+  meaning_decisions:
+  - source_phrase: קֹלֹת וּבְרָקִים
+    prior_rendering: thunders and lightnings
+    new_rendering: thunderclaps and flashes of lightning
+    rationale: These natural English expressions preserve the repeated storm phenomena conveyed by the Hebrew plurals.
+  - source_phrase: עָנָן כָּבֵד
+    prior_rendering: a heavy cloud
+    new_rendering: a dense cloud
+    rationale: The adjective describes the cloud's thickness and density, which 'dense' communicates directly.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The review rationale favored 'very loud,' while the automated revert rationale defended 'very strong'; the current wording already preserves the contextually clearer choice. I retain it while expressing the storm phenomena and cloud density in natural English.

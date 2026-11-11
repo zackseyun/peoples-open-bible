@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּקֻ֨מוּ֙ מִ/מִּדְיָ֔ן וַ/יָּבֹ֖אוּ פָּארָ֑ן וַ/יִּקְחוּ֩ אֲנָשִׁ֨ים עִמָּ֜/ם מִ/פָּארָ֗ן וַ/יָּבֹ֤אוּ מִצְרַ֨יִם֙ אֶל פַּרְעֹ֣ה מֶֽלֶךְ מִצְרַ֔יִם וַ/יִּתֶּן ל֣/וֹ בַ֗יִת וְ/לֶ֨חֶם֙ אָ֣מַר ל֔/וֹ וְ/אֶ֖רֶץ נָ֥תַן לֽ/וֹ־־־׃
 translation:
-  text: They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'and bread he said to him'; the sense is that Pharaoh ordered or assigned provisions for him.
-    reason: lexical_alternative
+  text: They set out from Midian and came to Paran, where they took some men with them. Then they came to Egypt, to Pharaoh king of Egypt. Pharaoh gave Hadad a house, ordered that he be supplied with food, and gave him land.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּקֻמוּ
   chosen: they arose
@@ -86,14 +82,20 @@ revisions:
   from: They arose from Midian and came to Paran, and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, who gave him a house and assigned him food, and gave him land.
   to: They arose from Midian and came to Paran, and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, who gave him a house and assigned him food, and gave him land.
   rationale: Replaced 'who gave him' with 'and he gave him' to reflect the Hebrew narrative sequence more directly and avoid making the relative clause sound overly interpretive. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.'
-  to: 'They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.'
+  from: They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.
+  to: They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who gave him a house''].'
+- timestamp: '2026-11-09T17:21:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They arose from Midian and came to Paran[a], and they took men with them from Paran, and they came to Egypt, to Pharaoh king of Egypt, and he gave him a house and assigned him food, and gave him land.
+  to: They set out from Midian and came to Paran, where they took some men with them. Then they came to Egypt, to Pharaoh king of Egypt. Pharaoh gave Hadad a house, ordered that he be supplied with food, and gave him land.
+  rationale: Earlier passes differed over a relative clause versus a coordinating clause, without changing the underlying event. I retain their understanding of Pharaoh’s provisions while making the travel idiom and the royal order explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +115,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/011/018.job-58373.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Hadad’s party traveled through Midian and Paran to Egypt, where Pharaoh provided Hadad with a residence, food, and land.
+  meaning_decisions:
+  - source_phrase: וַיָּקֻמוּ מִמִּדְיָן
+    prior_rendering: They arose from Midian
+    new_rendering: They set out from Midian
+    rationale: In a travel narrative, the construction means beginning a journey, not merely standing up.
+  - source_phrase: וַיִּתֶּן לוֹ בַיִת
+    prior_rendering: and he gave him a house
+    new_rendering: Pharaoh gave Hadad a house
+    rationale: Naming the giver and recipient prevents confusion when the narrative shifts from the traveling party to Pharaoh’s provision for Hadad.
+  - source_phrase: וְלֶחֶם אָמַר לוֹ
+    prior_rendering: and assigned him food
+    new_rendering: ordered that he be supplied with food
+    rationale: The compressed Hebrew describes Pharaoh authorizing food provisions for Hadad, rather than assigning him a particular item of food.
+  footnote_kinds: {}
+  history_weighed: Earlier passes differed over a relative clause versus a coordinating clause, without changing the underlying event. I retain their understanding of Pharaoh’s provisions while making the travel idiom and the royal order explicit.

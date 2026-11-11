@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'reason can provide that one not be enslaved to desire.'
-    reason: lexical_alternative
+  text: For example, none of you can cut out desire, but reason can enable you to avoid being enslaved to it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἷον
   chosen: For example
@@ -113,14 +109,20 @@ revisions:
   from: For example, reason cannot cut off any one of your desires, but reason can enable one not to be enslaved to desire.
   to: For example, reason cannot cut off any one of your desires, but reason can enable one not to be enslaved to desire.
   rationale: Replaced 'enable one' with 'make it possible' to reflect παρασχέσθαι more naturally and formally, while preserving the sense. Kept 'reason' and 'desire' consistent with the Greek.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.'
-  to: 'For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.'
+  from: For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.
+  to: For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''can enable''].'
+- timestamp: '2026-11-09T18:57:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For example[a], reason cannot cut off any one of your desires, but reason can make it possible not to be enslaved to desire.
+  to: For example, none of you can cut out desire, but reason can enable you to avoid being enslaved to it.
+  rationale: The history usefully distinguishes eliminating desire from escaping its mastery, and its documented “can enable” expresses that distinction well. I depart from the inherited first clause because its treatment of τις ὑμῶν misidentifies the grammatical subject.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -140,3 +142,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/003/002.job-49767.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: People cannot eradicate desire, but reason can enable them to avoid becoming enslaved to it.
+  meaning_decisions:
+  - source_phrase: ἐπιθυμίαν τις ὑμῶν οὐ δύναται ἐκκόψαι
+    prior_rendering: reason cannot cut off any one of your desires
+    new_rendering: none of you can cut out desire
+    rationale: The nominative τις with the partitive ὑμῶν means “one of you” and supplies the subject; it does not identify one among several desires, and reason is not the subject of this clause.
+  - source_phrase: μὴ δουλωθῆναι τῇ ἐπιθυμίᾳ δύναται ὁ λογισμὸς παρασχέσθαι
+    prior_rendering: reason can make it possible not to be enslaved to desire
+    new_rendering: reason can enable you to avoid being enslaved to it
+    rationale: The rendering makes the person receiving reason’s assistance explicit while preserving both the capacity expressed by παρασχέσθαι and the slavery metaphor.
+  footnote_kinds: {}
+  history_weighed: The history usefully distinguishes eliminating desire from escaping its mastery, and its documented “can enable” expresses that distinction well. I depart from the inherited first clause because its treatment of τις ὑμῶν misidentifies the grammatical subject.

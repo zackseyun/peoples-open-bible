@@ -24,12 +24,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.
-  philosophy: optimal-equivalence
+  text: The Gentiles in Judea who had fled from Judas[a] flocked to Nicanor in droves, expecting the Jews’ misfortunes and disasters to bring them prosperity.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'kept joining Nicanor with the nations'; the Greek uses ἔθνη ('nations,' often 'Gentiles') with a compressed construction that can be understood in more than one way.
-    reason: lexical_alternative
+    text: Or, 'who had driven Judas out.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἱ ... πεφυγαδευκότες
   chosen: those who had driven ... out
@@ -140,14 +140,20 @@ revisions:
   from: But those who had driven Judas out of Judea kept flocking in droves to Nicanor from among the nations, thinking that the misfortunes and disasters of the Jews would become their own prosperity.
   to: But those who had driven Judas out of Judea kept flocking in droves to Nicanor from among the nations, thinking that the misfortunes and disasters of the Jews would become their own prosperity.
   rationale: Revised 'those who had driven Judas out of Judea' to 'those in Judea who had driven Judas out' to reflect the Greek more accurately. Kept the rest substantially unchanged as natural and complete.
-
 - timestamp: '2026-05-18T02:58:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.'
-  to: 'But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.'
+  from: But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.
+  to: But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''out of Judea''].'
+- timestamp: '2026-11-09T18:57:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But those in Judea who had driven Judas out kept flocking in droves to Nicanor from among the nations[a], thinking that the misfortunes and disasters of the Jews would become their own prosperity.
+  to: The Gentiles in Judea who had fled from Judas[a] flocked to Nicanor in droves, expecting the Jews’ misfortunes and disasters to bring them prosperity.
+  rationale: The earlier deliberation treated the active participle as necessarily causative, but the verb’s flight sense and the narrative context support the opposite direction. The current placement 'in Judea' is retained, and the earlier causative reading remains available in a footnote.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -167,3 +173,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/014.job-49402.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:14Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Gentiles displaced by Judas joined Nicanor in large numbers because they expected Jewish disaster to benefit them.
+  meaning_decisions:
+  - source_phrase: οἱ ... πεφυγαδευκότες τὸν Ἰούδαν
+    prior_rendering: those ... who had driven Judas out
+    new_rendering: who had fled from Judas
+    rationale: The verb can describe flight or displacement as well as causing exile; the Gentiles’ displacement by Judas best fits the narrative of their opportunistic return with Nicanor.
+  - source_phrase: οἱ ... ἐπὶ τῆς Ἰουδαίας ... ἔθνη
+    prior_rendering: those in Judea ... from among the nations
+    new_rendering: The Gentiles in Judea
+    rationale: The expression identifies the non-Jewish people joining Nicanor, rather than describing an unexplained movement 'from among the nations.'
+  - source_phrase: τὰς τῶν Ἰουδαίων ἀτυχίας καὶ συμφορὰς ἰδίας εὐημερίας δοκοῦντες ἔσεσθαι
+    prior_rendering: thinking that the misfortunes and disasters of the Jews would become their own prosperity
+    new_rendering: expecting the Jews’ misfortunes and disasters to bring them prosperity
+    rationale: The contrast expresses hoped-for personal benefit from Jewish calamity, not a literal transformation of disasters into prosperity.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier deliberation treated the active participle as necessarily causative, but the verb’s flight sense and the narrative context support the opposite direction. The current placement 'in Judea' is retained, and the earlier causative reading remains available in a footnote.

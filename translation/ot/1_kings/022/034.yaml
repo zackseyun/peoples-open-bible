@@ -4,20 +4,14 @@ source:
   edition: WLC
   text: וְ/אִ֗ישׁ מָשַׁ֤ךְ בַּ/קֶּ֨שֶׁת֙ לְ/תֻמּ֔/וֹ וַ/יַּכֶּה֙ אֶת מֶ֣לֶךְ יִשְׂרָאֵ֔ל בֵּ֥ין הַ/דְּבָקִ֖ים וּ/בֵ֣ין הַ/שִּׁרְיָ֑ן וַ/יֹּ֣אמֶר לְ/רַכָּב֗/וֹ הֲפֹ֥ךְ יָדְ/ךָ֛ וְ/הוֹצִיאֵ֥/נִי מִן הַֽ/מַּחֲנֶ֖ה כִּ֥י הָחֳלֵֽיתִי־־׃
 translation:
-  text: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”
-  philosophy: optimal-equivalence
+  text: But a man drew his bow and shot at random[a], striking the king of Israel through a gap in his armor[b]. The king said to his charioteer, “Turn the chariot around and take me out of the fighting, for I am wounded.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “in his innocence,” “without aiming,” or “at random” for the Hebrew לְתֻמּוֹ; here it likely means the archer shot without a specific target in mind.
-    reason: lexical_alternative
+    text: Or “without knowing whom he was shooting at.”
+    reason: alternative_reading
   - marker: b
-    text: Hebrew “between the debaqim and the shiryan,” likely referring to a gap between pieces of armor; the exact technical terms are uncertain.
-    reason: cultural_note
-  - marker: c
-    text: Hebrew “Turn your hand,” an idiom for maneuvering the chariot.
-    reason: lexical_alternative
-  - marker: d
-    text: The Hebrew verb can mean “be sick” or “be wounded”; in this context it refers to being wounded.
+    text: Literally, “between the joined pieces and the body armor”; the exact armor parts are uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְאִישׁ
@@ -116,14 +110,20 @@ revisions:
   from: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate. So he said to his charioteer, “Turn your hand and take me out of the camp, for I am badly wounded.”
   to: But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate. So he said to his charioteer, “Turn your hand and take me out of the camp, for I am wounded.”
   rationale: Revised 'scale armor' to 'joints of the armor' for closer lexical accuracy to the Hebrew, and simplified 'badly wounded' to 'wounded' since the source does not explicitly add 'badly.'
-
 - timestamp: '2026-05-16T06:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”'
-  to: 'But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”'
-  rationale: 'Azure substituted ''joints of the armor'' (drafter''s explicit rejected_alternative for בֵּין הַדְּבָקִים — drafter chose concrete ''scale armor'') and ''wounded'' (drafter''s explicit rejected_alternative — drafter chose ''badly wounded'' for battle severity).'
+  from: But a man drew his bow at random and struck the king of Israel between the joints of the armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”
+  to: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”
+  rationale: Azure substituted 'joints of the armor' (drafter's explicit rejected_alternative for בֵּין הַדְּבָקִים — drafter chose concrete 'scale armor') and 'wounded' (drafter's explicit rejected_alternative — drafter chose 'badly wounded' for battle severity).
+- timestamp: '2026-11-09T17:22:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But a man drew his bow at random and struck the king of Israel between the scale armor and the breastplate[a]. So he said to his charioteer, “Turn your hand and take me out of the camp[d][c][b], for I am wounded.”
+  to: But a man drew his bow and shot at random[a], striking the king of Israel through a gap in his armor[b]. The king said to his charioteer, “Turn the chariot around and take me out of the fighting, for I am wounded.”
+  rationale: I retain the well-supported ‘wounded’ without adding ‘badly,’ but do not follow the automated revert’s overprecise identification of scale armor. The recorded technical uncertainty supports a general armor gap, while the driver’s command and military setting establish the meanings of ‘turn your hand’ and ‘camp.’
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -143,3 +143,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/034.job-58741.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:43Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: An archer unintentionally strikes Israel’s king through a vulnerable opening in his armor, and the wounded king asks to be driven out of the fighting.
+  meaning_decisions:
+  - source_phrase: מָשַׁךְ בַּקֶּשֶׁת לְתֻמּוֹ
+    prior_rendering: drew his bow at random
+    new_rendering: drew his bow and shot at random
+    rationale: The bow-drawing expression describes shooting, as the resulting arrow strike confirms; English makes the understood release explicit.
+  - source_phrase: בֵּין הַדְּבָקִים וּבֵין הַשִּׁרְיָן
+    prior_rendering: between the scale armor and the breastplate
+    new_rendering: through a gap in his armor
+    rationale: The secure contextual meaning is a vulnerable opening between armor components; the technical nouns do not justify confidently identifying scale armor and a breastplate.
+  - source_phrase: הֲפֹךְ יָדְךָ
+    prior_rendering: Turn your hand
+    new_rendering: Turn the chariot around
+    rationale: This is a command to the driver to maneuver the chariot, not an instruction concerning his hand by itself.
+  - source_phrase: וְהוֹצִיאֵנִי מִן הַמַּחֲנֶה
+    prior_rendering: take me out of the camp
+    new_rendering: take me out of the fighting
+    rationale: Here the military host is engaged in battle; Ahab asks to be withdrawn from that combat, not removed from a separate encampment.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: I retain the well-supported ‘wounded’ without adding ‘badly,’ but do not follow the automated revert’s overprecise identification of scale armor. The recorded technical uncertainty supports a general armor gap, while the driver’s command and military setting establish the meanings of ‘turn your hand’ and ‘camp.’

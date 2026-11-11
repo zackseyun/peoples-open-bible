@@ -17,14 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.
-  philosophy: optimal-equivalence
+  text: Terror and fear seized them, and no man stayed beside his comrade any longer. They all scattered[a] and fled along every road through the plain and the hill country.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'dispersing' or more literally 'being poured out'; the Greek pictures the troops breaking apart in panic.
-    reason: lexical_alternative
-  - marker: b
-    text: '''With one accord'' is a possible rendering of the adverb, but here it likely means they fled all together or all at once rather than in harmonious unity.'
+    text: Literally, “poured out together.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐπέπεσεν
@@ -135,14 +132,20 @@ revisions:
   from: And terror and fear fell upon them, and no man remained standing before his neighbor any longer; but, scattering together, they fled along every road of the plain and of the hill country.
   to: And terror and fear fell upon them, and no man remained standing before his neighbor any longer; but, scattering together, they fled along every road of the plain and of the hill country.
   rationale: Revised 'scattering together' to 'scattering in all directions' to reflect ἐκχυθέντες more naturally and accurately in context. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.'
-  to: 'And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.'
+  from: And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.
+  to: And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''together''].'
+- timestamp: '2026-11-09T19:03:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And terror and fear fell upon them[a], and no man remained standing before his neighbor any longer; but, scattering in all directions[b], they fled along every road of the plain and of the hill country.
+  to: Terror and fear seized them, and no man stayed beside his comrade any longer. They all scattered[a] and fled along every road through the plain and the hill country.
+  rationale: The history alternates between emphasizing collective flight and dispersal in every direction. Both belong to the meaning, so the new wording retains both rather than treating them as competing alternatives.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -162,3 +165,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/015/002.job-50800.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Panic breaks the enemy troops’ cohesion, and they scatter along every road through the plain and hill country.
+  meaning_decisions:
+  - source_phrase: ἐπέπεσεν ἐπʼ αὐτοὺς τρόμος καὶ φόβος
+    prior_rendering: terror and fear fell upon them
+    new_rendering: Terror and fear seized them
+    rationale: Preserves the sudden, overwhelming onset of fear in natural English.
+  - source_phrase: οὐκ ἦν ἄνθρωπος μένων κατὰ πρόσωπον τοῦ πλησίον ἔτι
+    prior_rendering: no man remained standing before his neighbor any longer
+    new_rendering: no man stayed beside his comrade any longer
+    rationale: In this military setting, the point is that the soldiers no longer remain together, not that they stop standing in front of neighbors.
+  - source_phrase: ἐκχυθέντες ὁμοθυμαδὸν ἔφευγον
+    prior_rendering: scattering in all directions, they fled
+    new_rendering: They all scattered and fled
+    rationale: Carries both the dispersal expressed by the participle and the collective action expressed by the adverb.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history alternates between emphasizing collective flight and dispersal in every direction. Both belong to the meaning, so the new wording retains both rather than treating them as competing alternatives.

@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר דָּוִ֜ד אֶל הַ/מַּלְאָ֗ךְ כֹּֽה תֹאמַ֤ר אֶל יוֹאָב֙ אַל יֵרַ֤ע בְּ/עֵינֶ֨י/ךָ֙ אֶת הַ/דָּבָ֣ר הַ/זֶּ֔ה כִּֽי כָ/זֹ֥ה וְ/כָ/זֶ֖ה תֹּאכַ֣ל הֶ/חָ֑רֶב הַחֲזֵ֨ק מִלְחַמְתְּ/ךָ֧ אֶל הָ/עִ֛יר וְ/הָרְסָ֖/הּ וְ/חַזְּקֵֽ/הוּ־־־־־־־׃
 translation:
-  text: Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”
-  philosophy: optimal-equivalence
+  text: Then David said to the messenger, “Tell Joab, ‘Do not be troubled by this[a], for the sword devours one as well as another. Press your attack against the city and tear it down.’ Encourage him.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “Do not let this matter displease you.” The Hebrew literally says, “Do not let this matter be evil in your eyes.”
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew idiom: “for thus and thus the sword devours,” meaning the sword kills one person as well as another.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or, “And strengthen him.”
+    text: Literally, “Do not let this matter be evil in your eyes.” The same expression recurs in verse 27.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הַמַּלְאָךְ
@@ -101,14 +95,20 @@ revisions:
   from: Then David said to the messenger, “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another. Strengthen your battle against the city and overthrow it.’ And encourage him.”
   to: Then David said to the messenger, “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another. Strengthen your battle against the city and overthrow it.’ And encourage him.”
   rationale: Changed 'battle' to 'attack' for more natural English with 'strengthen ... against the city' and to reflect the immediate military action more clearly. Kept the rest of the wording, which is accurate and complete.
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”'
-  to: 'Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”'
+  from: Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”
+  to: Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Strengthen your battle''].'
+- timestamp: '2026-11-09T17:28:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David said to the messenger[a], “Thus you shall say to Joab, ‘Do not let this matter be evil in your eyes, for the sword devours one as well as another[c][b]. Strengthen your attack against the city and overthrow it.’ And encourage him.”
+  to: Then David said to the messenger, “Tell Joab, ‘Do not be troubled by this[a], for the sword devours one as well as another. Press your attack against the city and tear it down.’ Encourage him.”
+  rationale: I retain the earlier gains of “attack,” the devouring sword, and “encourage him.” The rationale for keeping “evil in your eyes” rightly identifies the link with verse 27, so I preserve that link in a literal-wording note while translating the idiom naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +128,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/011/025.job-45872.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David tells Joab not to be troubled by the deaths, dismisses them as ordinary casualties of war, and urges him to intensify the assault and destroy the city.
+  meaning_decisions:
+  - source_phrase: אַל יֵרַע בְּעֵינֶיךָ אֶת הַדָּבָר הַזֶּה
+    prior_rendering: Do not let this matter be evil in your eyes
+    new_rendering: Do not be troubled by this
+    rationale: David tells Joab not to be distressed by the reported losses; this naturally translates the evaluative idiom without turning the reassurance into an explicit assertion of moral innocence, while the note preserves its important echo in verse 27.
+  - source_phrase: הַחֲזֵק מִלְחַמְתְּךָ
+    prior_rendering: Strengthen your attack
+    new_rendering: Press your attack
+    rationale: The command means to intensify the ongoing assault, which “press your attack” conveys directly in military English.
+  - source_phrase: וְהָרְסָהּ
+    prior_rendering: and overthrow it
+    new_rendering: and tear it down
+    rationale: The verb denotes pulling down or demolishing; this preserves the physical destruction of the city more clearly than “overthrow,” which can suggest only a change of rule.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the earlier gains of “attack,” the devouring sword, and “encourage him.” The rationale for keeping “evil in your eyes” rightly identifies the link with verse 27, so I preserve that link in a literal-wording note while translating the idiom naturally.

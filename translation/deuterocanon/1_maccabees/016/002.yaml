@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered[a] in our hands to deliver Israel many times.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more dynamically, “we have succeeded in delivering Israel many times.” The Greek says literally, “it has prospered in our hands to deliver Israel many times.”
-    reason: lexical_alternative
+  text: Simon called his two older sons, Judas and John, and said to them, “My brothers, my father’s family, and I have fought Israel’s wars from our youth to this day, and we have succeeded in delivering Israel many times.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τοὺς δύο υἱοὺς αὐτοῦ τοὺς πρεσβυτέρους
   chosen: his two older sons
@@ -109,13 +105,12 @@ revisions:
   from: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”
   to: And Simon called his two elder sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”
   rationale: Changed 'older' to 'elder' for a more formal register and closer fit to τοὺς πρεσβυτέρους. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Simon called his two elder sons[a], Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”'
-  to: 'And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”'
+  from: And Simon called his two elder sons[a], Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”
+  to: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his two older sons''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -125,6 +120,13 @@ revisions:
   from: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered in our hands to deliver Israel many times.”
   to: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered[a] in our hands to deliver Israel many times.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('it has prospered') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:54:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Simon called his two older sons, Judas and John, and said to them, “I and my brothers and my father’s house have fought the wars of Israel from youth until this day, and it has prospered[a] in our hands to deliver Israel many times.”
+  to: Simon called his two older sons, Judas and John, and said to them, “My brothers, my father’s family, and I have fought Israel’s wars from our youth to this day, and we have succeeded in delivering Israel many times.
+  rationale: The revisions only debated “older” versus “elder,” so I retain the current “older.” The existing footnote already identified the natural meaning of the success idiom; I bring that meaning into the text without adding an explicit divine agent.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +146,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/016/002.job-48869.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:54:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Simon reminds his two older sons that he and his family have spent their lives fighting Israel’s wars and repeatedly delivering the nation.
+  meaning_decisions:
+  - source_phrase: ὁ οἶκος τοῦ πατρός μου
+    prior_rendering: my father’s house
+    new_rendering: my father’s family
+    rationale: The expression denotes Simon’s family, not a dwelling; the family’s shared military service is the point.
+  - source_phrase: τοὺς πολέμους Ἰσραὴλ ἀπὸ νεότητος ἕως τῆς σήμερον ἡμέρας
+    prior_rendering: the wars of Israel from youth until this day
+    new_rendering: Israel’s wars from our youth to this day
+    rationale: The natural English possessive preserves the relationship, while “our” makes the shared lifelong service explicit.
+  - source_phrase: εὐώδωθη ἐν ταῖς χερσὶν ἡμῶν ῥύσασθαι τὸν Ἰσραὴλ πλεονάκις
+    prior_rendering: it has prospered in our hands to deliver Israel many times
+    new_rendering: we have succeeded in delivering Israel many times
+    rationale: The idiom describes successful deliverance through their agency, not an unidentified thing prospering in their possession.
+  footnote_kinds: {}
+  history_weighed: The revisions only debated “older” versus “elder,” so I retain the current “older.” The existing footnote already identified the natural meaning of the success idiom; I bring that meaning into the text without adding an explicit divine agent.

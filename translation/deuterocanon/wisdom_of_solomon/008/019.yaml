@@ -10,12 +10,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: I was a gifted child[a], and I received a good soul,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'naturally gifted' for 'well-formed'; the Greek adjective can describe favorable natural endowment more broadly than physical form alone.
-    reason: lexical_alternative
+  text: I was a gifted child, and I received a good soul.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παῖς
   chosen: child
@@ -24,7 +20,7 @@ lexical_decisions:
   - youth
   - servant
   lexicon: LSJ
-  rationale: "In this context the speaker is describing his early life and natural endowment, so 'child' best fits the age-related sense without over-specifying gender or maturity. 'Servant' is not contextually plausible here. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'In this context the speaker is describing his early life and natural endowment, so ''child'' best fits the age-related sense without over-specifying gender or maturity. ''Servant'' is not contextually plausible here. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: εὐφυής
   chosen: well-formed
   alternatives:
@@ -93,13 +89,12 @@ revisions:
   from: Now I was a well-formed child, and I received a good soul,
   to: Now I was a well-formed child, and I received a good soul,
   rationale: Changed 'well-formed' to 'gifted' to better reflect εὐφυής ('well-endowed,' 'naturally gifted') rather than physical form. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now I was a gifted child[a], and I received a good soul,'
-  to: 'Now I was a gifted child[a], and I received a good soul,'
+  from: Now I was a gifted child[a], and I received a good soul,
+  to: Now I was a gifted child[a], and I received a good soul,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''well-formed''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -108,6 +103,13 @@ revisions:
   from: Now I was a gifted child[a], and I received a good soul,
   to: I was a gifted child[a], and I received a good soul,
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T19:11:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I was a gifted child[a], and I received a good soul,
+  to: I was a gifted child, and I received a good soul.
+  rationale: The current 'gifted' usefully avoids limiting the natural endowment to physical formation. I retain it and the explicit soul language; the existing footnote adds nothing necessary to that wording.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +129,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/008/019.job-39314.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:56Z'
+  change_level: kept
+  confidence: high
+  meaning: The speaker describes himself as naturally gifted from childhood and endowed with a good soul.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The current 'gifted' usefully avoids limiting the natural endowment to physical formation. I retain it and the explicit soul language; the existing footnote adds nothing necessary to that wording.

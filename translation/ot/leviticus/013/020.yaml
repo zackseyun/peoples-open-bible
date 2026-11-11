@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/רָאָ֣ה הַ/כֹּהֵ֗ן וְ/הִנֵּ֤ה מַרְאֶ֨/הָ֙ שָׁפָ֣ל מִן הָ/ע֔וֹר וּ/שְׂעָרָ֖/הּ הָפַ֣ךְ לָבָ֑ן וְ/טִמְּא֧/וֹ הַ/כֹּהֵ֛ן נֶֽגַע צָרַ֥עַת הִ֖וא בַּ/שְּׁחִ֥ין פָּרָֽחָה־־׃
 translation:
-  text: And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.
-  philosophy: optimal-equivalence
+  text: The priest shall examine it. If it appears deeper than the surrounding skin and the hair in it has turned white, the priest shall pronounce him unclean. It is an outbreak of skin disease[a] at the site of the boil.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew צָרַעַת, traditionally 'leprosy'; in Leviticus this term likely refers more broadly to a range of serious skin conditions rather than specifically modern Hansen's disease.
+    text: Hebrew tsaraʿat, traditionally 'leprosy,' names a category of afflictions in Israel's purity laws, not a single disease identified by modern medicine.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְרָאָה
@@ -96,14 +96,20 @@ revisions:
   from: And the priest shall examine it, and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of a skin disease; it has broken out in the boil.
   to: And the priest shall examine it, and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of a skin disease; it has broken out in the boil.
   rationale: Replaced 'a skin disease' with 'leprosy' to reflect צָרַעַת more directly and consistently. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.'
-  to: 'And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.'
+  from: And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.
+  to: And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''an outbreak of a skin disease''].'
+- timestamp: '2026-11-09T18:18:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest shall examine it[a], and behold, its appearance is deeper than the skin, and its hair has turned white; then the priest shall pronounce him unclean. It is an outbreak of leprosy; it has broken out in the boil.
+  to: The priest shall examine it. If it appears deeper than the surrounding skin and the hair in it has turned white, the priest shall pronounce him unclean. It is an outbreak of skin disease[a] at the site of the boil.
+  rationale: The current 'leprosy' conflicts with the first draft and the documented preference for a broader skin-disease category; no maintainer decision requires it. I follow the lexical and contextual evidence, retaining the traditional term only in the explanatory note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +129,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/020.job-45108.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A spot at the boil site that appears deeper than the surrounding skin and has white hair is an outbreak of skin disease requiring an unclean verdict.
+  meaning_decisions:
+  - source_phrase: וְרָאָה הַכֹּהֵן וְהִנֵּה
+    prior_rendering: And the priest shall examine it, and behold
+    new_rendering: The priest shall examine it. If
+    rationale: The inspection formula introduces the findings that determine the verdict; an explicit conditional conveys its procedural function in English.
+  - source_phrase: מַרְאֶהָ שָׁפָל מִן הָעוֹר וּשְׂעָרָהּ הָפַךְ לָבָן
+    prior_rendering: its appearance is deeper than the skin, and its hair has turned white
+    new_rendering: it appears deeper than the surrounding skin and the hair in it has turned white
+    rationale: The criterion concerns visible appearance relative to adjacent skin, not a measured depth beneath all the skin; the hair belongs to the affected area.
+  - source_phrase: נֶגַע צָרַעַת הִוא בַּשְּׁחִין פָּרָחָה
+    prior_rendering: It is an outbreak of leprosy; it has broken out in the boil.
+    new_rendering: It is an outbreak of skin disease at the site of the boil.
+    rationale: Tsaraʿat does not establish modern leprosy, and the healed boil supplies the site of the outbreak; one natural sentence carries the identification and location without redundant outbreak wording.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The current 'leprosy' conflicts with the first draft and the documented preference for a broader skin-disease category; no maintainer decision requires it. I follow the lexical and contextual evidence, retaining the traditional term only in the explanatory note.

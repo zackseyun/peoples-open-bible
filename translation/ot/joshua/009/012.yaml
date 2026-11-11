@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: זֶ֣ה לַחְמֵ֗/נוּ חָ֞ם הִצְטַיַּ֤דְנוּ אֹת/וֹ֙ מִ/בָּ֣תֵּ֔י/נוּ בְּ/י֥וֹם צֵאתֵ֖/נוּ לָ/לֶ֣כֶת אֲלֵי/כֶ֑ם וְ/עַתָּה֙ הִנֵּ֣ה יָבֵ֔שׁ וְ/הָיָ֖ה נִקֻּדִֽים׀׃
 translation:
-  text: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.
-  philosophy: optimal-equivalence
+  text: This bread of ours was warm when we took it from our homes as provisions on the day we set out to come to you. But now, look—it is dry and has become moldy[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'has become moldy' or 'is spotted.' The Hebrew term refers to something marked with points or spots; in the context of old bread, the exact nuance may be crumbly, cracked, or mold-specked.
-    reason: lexical_alternative
+    text: Or, “crumbly”; the exact condition described by the Hebrew word is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: זֶה
   chosen: This
@@ -100,14 +100,20 @@ revisions:
   from: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you, but now, look, it is dry and has become crumbly.
   to: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you, but now, look, it is dry and has become crumbly.
   rationale: Changed 'crumbly' to 'moldy' to more accurately reflect the final Hebrew term; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-17T06:51:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.'
-  to: 'This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.'
+  from: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.
+  to: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has become crumbly''].'
+- timestamp: '2026-11-09T18:09:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: This bread of ours was warm when we took it as our provisions from our houses on the day we set out to come to you[a], but now, look, it is dry and has become moldy.
+  to: This bread of ours was warm when we took it from our homes as provisions on the day we set out to come to you. But now, look—it is dry and has become moldy[a].
+  rationale: The automated history alternates between 'crumbly' and 'moldy' without a decisive editorial ruling. I retain the current 'moldy,' supported by the word's association with speckling, make verse 5 consistent with it, and preserve 'crumbly' as an alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +135,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/009/012.job-68635.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:22Z'
+  change_level: refined
+  confidence: medium
+  meaning: They presented their deteriorated bread as proof that much time had passed since they left home with it warm.
+  meaning_decisions:
+  - source_phrase: הִצְטַיַּדְנוּ אֹתוֹ מִבָּתֵּינוּ
+    prior_rendering: we took it as our provisions from our houses
+    new_rendering: we took it from our homes as provisions
+    rationale: The reordered phrase naturally expresses the bread's origin and its use as travel food.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated history alternates between 'crumbly' and 'moldy' without a decisive editorial ruling. I retain the current 'moldy,' supported by the word's association with speckling, make verse 5 consistent with it, and preserve 'crumbly' as an alternative.

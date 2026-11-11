@@ -24,12 +24,15 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Menelaus informed[a] us that you wish, after coming down, to attend to your own affairs.
-  philosophy: optimal-equivalence
+  text: Menelaus informed us of his wish that you return[a] and attend to your own affairs[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Menelaus informed us that you wish, after coming down, to be with your own people.' The Greek phrase 'tois idiois' can refer either to one's own affairs or to one's own people/possessions; the source wording is somewhat difficult, so the alternative is preserved.
+    text: Literally, “come down.”
     reason: lexical_alternative
+  - marker: b
+    text: Or, “be with your own people.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐνεφάνισεν
   chosen: informed
@@ -98,13 +101,12 @@ revisions:
   from: Menelaus informed us that you wish, after coming down, to attend to your own affairs.
   to: Menelaus informed us that you wish, after coming down, to return to your own affairs.
   rationale: Changed 'attend to your own affairs' to 'return to your own affairs' to better reflect πρὸς τοῖς ἰδίοις as going back to one's own concerns, while keeping the rest of the wording intact.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Menelaus informed us that you wish[a], after coming down, to return to your own affairs.'
-  to: 'Menelaus informed us that you wish, after coming down, to attend to your own affairs.'
+  from: Menelaus informed us that you wish[a], after coming down, to return to your own affairs.
+  to: Menelaus informed us that you wish, after coming down, to attend to your own affairs.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to attend to your own affairs''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -114,6 +116,13 @@ revisions:
   from: Menelaus informed us that you wish, after coming down, to attend to your own affairs.
   to: Menelaus informed[a] us that you wish, after coming down, to attend to your own affairs.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('informed') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Menelaus informed[a] us that you wish, after coming down, to attend to your own affairs.
+  to: Menelaus informed us of his wish that you return[a] and attend to your own affairs[b].
+  rationale: The earlier review recognized a return to ordinary affairs but did not address the grammatical subject of βουλόμενος. Its nominative singular form in the supplied text points to Menelaus, so I do not retain the previous attribution of the wish to the Jews.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -133,3 +142,27 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/011/029.job-49308.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Menelaus has conveyed his wish that the Jews return and resume their own affairs.
+  meaning_decisions:
+  - source_phrase: ἐνεφάνισεν ἡμῖν Μενέλαος βουλόμενος
+    prior_rendering: Menelaus informed us that you wish
+    new_rendering: Menelaus informed us of his wish
+    rationale: In the supplied source, βουλόμενος is nominative singular and modifies Menelaus, rather than the plural recipients.
+  - source_phrase: κατελθόντας ὑμᾶς
+    prior_rendering: after coming down
+    new_rendering: that you return
+    rationale: The surrounding assurances concern a safe return to ordinary life; the literal downward movement is preserved in a note without specifying an uncertain point of departure.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The earlier review recognized a return to ordinary affairs but did not address the grammatical subject of βουλόμενος. Its nominative singular form in the supplied text points to Menelaus, so I do not retain the previous attribution of the wish to the Jews.

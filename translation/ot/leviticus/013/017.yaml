@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/רָאָ֨/הוּ֙ הַ/כֹּהֵ֔ן וְ/הִנֵּ֛ה נֶהְפַּ֥ךְ הַ/נֶּ֖גַע לְ/לָבָ֑ן וְ/טִהַ֧ר הַ/כֹּהֵ֛ן אֶת הַ/נֶּ֖גַע טָה֥וֹר הֽוּא־׃פ
 translation:
-  text: And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the infection,' 'the lesion,' or 'the affliction.' Hebrew negaʿ refers to the visible afflicted area under priestly inspection, without specifying a modern medical diagnosis.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'shall declare the spot clean.' The priest's role here is to render a ritual verdict after examination, not to heal the condition.
-    reason: lexical_alternative
-  - marker: c
-    text: 'Hebrew: ''clean is it/he.'' The pronoun is masculine singular; English renders the verdict with reference to the spot.'
-    reason: lexical_alternative
+  text: The priest shall examine him. If the diseased spot has turned white, the priest shall pronounce him clean; he is clean.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְרָאָהוּ
   chosen: examines it
@@ -97,14 +87,20 @@ revisions:
   from: and the priest examines it, and behold, the diseased spot has turned white, then the priest shall pronounce the spot clean; it is clean.
   to: and the priest examines it, and behold, the diseased spot has turned white, then the priest shall pronounce the spot clean; it is clean.
   rationale: Adjusted word order and capitalization for more natural formal English, changing 'and the priest examines it' to 'And the priest shall examine it.'
-
 - timestamp: '2026-05-18T02:57:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.'
-  to: 'And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.'
+  from: And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.
+  to: And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''examines it''].'
+- timestamp: '2026-11-09T18:18:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest shall examine it[a], and behold, the diseased spot has turned white; then the priest shall pronounce the spot clean[c][b]; it is clean.
+  to: The priest shall examine him. If the diseased spot has turned white, the priest shall pronounce him clean; he is clean.
+  rationale: The recorded review and revert chiefly concern procedural wording and do not settle the pronoun question. I preserve their distinction between pronouncing cleanness and healing, while following the surrounding procedure in making the person the recipient of the verdict.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -124,3 +120,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/017.job-45112.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If examination confirms that the affected spot has turned white, the priest must declare the person clean.
+  meaning_decisions:
+  - source_phrase: וְרָאָהוּ הַכֹּהֵן וְהִנֵּה
+    prior_rendering: And the priest shall examine it, and behold
+    new_rendering: The priest shall examine him. If
+    rationale: The person who returns in verse 16 is examined, and the following observation supplies the condition for the priest's verdict.
+  - source_phrase: וְטִהַר הַכֹּהֵן אֶת הַנֶּגַע טָהוֹר הוּא
+    prior_rendering: the priest shall pronounce the spot clean; it is clean
+    new_rendering: the priest shall pronounce him clean; he is clean
+    rationale: The afflicted spot stands metonymically for the afflicted person, as elsewhere in this chapter; the verdict concerns the person's purity status, not an independently clean patch of skin.
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert chiefly concern procedural wording and do not settle the pronoun question. I preserve their distinction between pronouncing cleanness and healing, while following the surrounding procedure in making the person the recipient of the verdict.

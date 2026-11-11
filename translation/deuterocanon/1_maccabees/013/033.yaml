@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek repeats 'towers' twice in the list of fortifications; the translation preserves the repetition rather than smoothing it away.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he stored food in the fortresses.' The noun can refer more specifically to food, but 'provisions' better fits the military setting.
-    reason: lexical_alternative
+  text: Simon built up the stronghold of Judea, enclosing it with high towers and massive walls and securing its gates with bars. He stored provisions in the strongholds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ᾠκοδόμησεν
   chosen: built up
@@ -102,14 +95,20 @@ revisions:
   from: And Simon built up the stronghold of Judea, and he surrounded it with high towers and great walls and towers and gates and bars, and he placed provisions in the strongholds.
   to: And Simon built up the stronghold of Judea, and he surrounded it with high towers and great walls and towers and gates and bars, and he placed provisions in the strongholds.
   rationale: Removed the second occurrence of 'and towers' as likely dittography in the draft relative to the Greek sequence, while retaining the rest of the wording. Kept 'built up,' 'stronghold,' 'bars,' and 'provisions' as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.'
-  to: 'And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.'
+  from: And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.
+  to: And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and towers and gates and bars''].'
+- timestamp: '2026-11-09T18:53:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Simon built up the stronghold of Judea[a], and he surrounded it with high towers and great walls and gates and bars[b], and he placed provisions in the strongholds.
+  to: Simon built up the stronghold of Judea, enclosing it with high towers and massive walls and securing its gates with bars. He stored provisions in the strongholds.
+  rationale: The supplied Greek does repeat 'towers,' despite the review's explanation, but the repetition adds no distinct architectural feature. I retain the opening singular and closing plural favored by the lexical decisions, without identifying an unnamed fortress or silently harmonizing the number.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +128,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/033.job-48757.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:48Z'
+  change_level: refined
+  confidence: high
+  meaning: Simon strengthens Judea's stronghold with substantial defenses and stocks the strongholds with provisions.
+  meaning_decisions:
+  - source_phrase: περιετείχισεν πύργοις ὑψηλοῖς καὶ τείχεσιν μεγάλοις καὶ πύργοις καὶ πύλαις καὶ μοχλοῖς
+    prior_rendering: he surrounded it with high towers and great walls and gates and bars
+    new_rendering: enclosing it with high towers and massive walls and securing its gates with bars
+    rationale: The construction describes defensive enclosure, and the bars are understood as securing the gates; 'massive' conveys the walls' substantial size.
+  - source_phrase: ἔθετο βρώματα ἐν τοῖς ὀχυρώμασιν
+    prior_rendering: he placed provisions in the strongholds
+    new_rendering: He stored provisions in the strongholds
+    rationale: In fortified sites, the food is being stockpiled for defense, not merely placed somewhere.
+  footnote_kinds: {}
+  history_weighed: The supplied Greek does repeat 'towers,' despite the review's explanation, but the repetition adds no distinct architectural feature. I retain the opening singular and closing plural favored by the lexical decisions, without identifying an unnamed fortress or silently harmonizing the number.

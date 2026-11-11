@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ἐπηρώτων δὲ αὐτὸν καὶ στρατευόμενοι λέγοντες· ⸂Τί ποιήσωμεν καὶ ἡμεῖς⸃; καὶ εἶπεν ⸀αὐτοῖς· Μηδένα διασείσητε μηδὲ συκοφαντήσητε, καὶ ἀρκεῖσθε τοῖς ὀψωνίοις ὑμῶν.
 translation:
-  text: And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, “What should we do too?” The Greek explicitly emphasizes “we also.”
-    reason: lexical_alternative
-  - marker: b
-    text: The verb translated “extort money” can literally suggest shaking or intimidating someone; here it refers to coercive abuse for gain.
-    reason: lexical_alternative
-  - marker: c
-    text: “Wages” may also be rendered “pay”; the Greek term was often used for soldiers’ pay or provisions.
-    reason: lexical_alternative
+  text: Soldiers also asked him, “And what should we do?” He told them, “Do not extort money from anyone or accuse anyone falsely, and be content with your wages.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: στρατευόμενοι
   chosen: soldiers
@@ -95,14 +85,20 @@ revisions:
   from: And soldiers also were asking him, saying, “What should we do, we also?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely, and be content with your wages.”
   to: And soldiers also were asking him, saying, “What should we do, we also?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely, and be content with your wages.”
   rationale: 'Adjusted the question to more natural English word order: ''What should we also do?'' instead of ''What should we do, we also?'' The rest of the draft is accurate and natural.'
-
 - timestamp: '2026-05-18T03:01:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”'
-  to: 'And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”'
+  from: And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”
+  to: And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''What should we do, we also?''].'
+- timestamp: '2026-11-09T17:11:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And soldiers also were asking him[a], saying, “What should we also do?” And he said to them, “Do not extort money from anyone, nor accuse anyone falsely[c][b], and be content with your wages.”
+  to: Soldiers also asked him, “And what should we do?” He told them, “Do not extort money from anyone or accuse anyone falsely, and be content with your wages.”
+  rationale: The review history recognized the need to improve the draft's awkward placement of 'we also'; I preserve that gain and make the intended contrast clearer still. The prohibitions and instruction about wages remain unchanged in meaning, without drawing conclusions about military service itself.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +120,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/003/014.job-38996.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:13Z'
+  change_level: refined
+  confidence: high
+  meaning: John tells the soldiers to avoid extortion and false accusations and to be content with their wages.
+  meaning_decisions:
+  - source_phrase: Τί ποιήσωμεν καὶ ἡμεῖς
+    prior_rendering: What should we also do?
+    new_rendering: And what should we do?
+    rationale: The soldiers ask what is required of them as another group, not what additional action they should perform; the initial 'And' carries that distinction naturally.
+  footnote_kinds: {}
+  history_weighed: The review history recognized the need to improve the draft's awkward placement of 'we also'; I preserve that gain and make the intended contrast clearer still. The prohibitions and instruction about wages remain unchanged in meaning, without drawing conclusions about military service itself.

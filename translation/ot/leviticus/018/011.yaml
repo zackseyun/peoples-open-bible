@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: עֶרְוַ֨ת בַּת אֵ֤שֶׁת אָבִ֨י/ךָ֙ מוֹלֶ֣דֶת אָבִ֔י/ךָ אֲחוֹתְ/ךָ֖ הִ֑וא לֹ֥א תְגַלֶּ֖ה עֶרְוָתָֽ/הּ־׃ס
 translation:
-  text: You shall not uncover the nakedness of your father's wife's daughter[a], born to your father; she is your sister.
-  philosophy: optimal-equivalence
+  text: A daughter born to your father by his wife is your sister; you shall not have sexual relations[a] with her.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'she is your half-sister.' The Hebrew says literally, 'she is your sister,' with the preceding description specifying the relationship.
+    text: Literally, “uncover her nakedness.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: עֶרְוַת / עֶרְוָתָהּ
@@ -74,17 +74,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'You shall not uncover the nakedness of your father''s wife''s daughter, begotten by your father; she is your sister.'
-  to: 'You shall not uncover the nakedness of your father''s wife''s daughter, begotten by your father; she is your sister.'
+  from: You shall not uncover the nakedness of your father's wife's daughter, begotten by your father; she is your sister.
+  to: You shall not uncover the nakedness of your father's wife's daughter, begotten by your father; she is your sister.
   rationale: Replaced 'begotten by your father' with 'born to your father' for more natural formal English while preserving the meaning of the source.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall not uncover the nakedness of your father''s wife''s daughter[a], born to your father; she is your sister.'
-  to: 'You shall not uncover the nakedness of your father''s wife''s daughter[a], born to your father; she is your sister.'
+  from: You shall not uncover the nakedness of your father's wife's daughter[a], born to your father; she is your sister.
+  to: You shall not uncover the nakedness of your father's wife's daughter[a], born to your father; she is your sister.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''begotten by your father''].'
+- timestamp: '2026-11-09T20:34:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall not uncover the nakedness of your father's wife's daughter[a], born to your father; she is your sister.
+  to: A daughter born to your father by his wife is your sister; you shall not have sexual relations[a] with her.
+  rationale: The recorded preference for “born to your father” over “begotten by your father” supports the natural phrasing; no MAINTAINER revision is recorded. I retain “sister” without narrowing it to “half-sister,” but render the sexual idiom by its contextual meaning rather than following the earlier source-transparent rationale.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -104,3 +110,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/018/011.job-45370.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:34:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A daughter born to a man's father by his wife is the man's sister, and he must not have sexual relations with her.
+  meaning_decisions:
+  - source_phrase: לֹא תְגַלֶּה עֶרְוָתָהּ
+    prior_rendering: You shall not uncover the nakedness
+    new_rendering: you shall not have sexual relations with her
+    rationale: In this legal context, uncovering nakedness means sexual relations, not merely seeing someone unclothed; the literal image is preserved in a footnote.
+  - source_phrase: בַּת אֵשֶׁת אָבִיךָ מוֹלֶדֶת אָבִיךָ אֲחוֹתְךָ הִוא
+    prior_rendering: your father's wife's daughter, born to your father; she is your sister
+    new_rendering: A daughter born to your father by his wife is your sister
+    rationale: The reordered clause expresses the family relationship naturally and makes clear that the daughter is biologically descended from the father, not merely his wife's daughter from another relationship.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded preference for “born to your father” over “begotten by your father” supports the natural phrasing; no MAINTAINER revision is recorded. I retain “sister” without narrowing it to “half-sister,” but render the sexual idiom by its contextual meaning rather than following the earlier source-transparent rationale.

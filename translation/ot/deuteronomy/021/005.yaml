@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/נִגְּשׁ֣וּ הַ/כֹּהֲנִים֮ בְּנֵ֣י לֵוִי֒ כִּ֣י בָ֗/ם בָּחַ֞ר יְהוָ֤ה אֱלֹהֶ֨י/ךָ֙ לְ/שָׁ֣רְת֔/וֹ וּ/לְ/בָרֵ֖ךְ בְּ/שֵׁ֣ם יְהוָ֑ה וְ/עַל פִּי/הֶ֥ם יִהְיֶ֖ה כָּל רִ֥יב וְ/כָל נָֽגַע־־־׃
 translation:
-  text: And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.
-  philosophy: optimal-equivalence
+  text: The priests from the tribe of Levi shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh. Every dispute and every case of injury[a] shall be settled by their decision.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'every injury,' 'every stroke,' or 'every affliction.' The Hebrew term is broader than 'assault' but in this legal setting likely refers to cases involving bodily harm.
-    reason: lexical_alternative
+    text: Or, 'every case of affliction'; the Hebrew term is also used for skin disease.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְנִגְּשׁוּ
   chosen: shall come forward
@@ -112,14 +112,20 @@ revisions:
   from: And the priests, the sons of Levi, shall come forward, for the LORD your God has chosen them to minister to him and to bless in the name of the LORD, and by their word every dispute and every assault shall be settled.
   to: And the priests, the sons of Levi, shall come forward, for the LORD your God has chosen them to minister to him and to bless in the name of the LORD, and by their word every dispute and every assault shall be settled.
   rationale: Replaced 'assault' with 'injury' to better reflect נגע in this legal context and avoid an overly narrow or interpretive sense.
-
 - timestamp: '2026-05-18T02:56:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.'
-  to: 'And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.'
+  from: And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.
+  to: And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every assault''].'
+- timestamp: '2026-11-09T17:31:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priests[a], the sons of Levi, shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh, and by their word every dispute and every injury shall be settled.
+  to: The priests from the tribe of Levi shall come forward, for Yahweh your God has chosen them to minister to him and to bless in the name of Yahweh. Every dispute and every case of injury[a] shall be settled by their decision.
+  rationale: The current 'injury' and the review’s rationale preserve more of the Hebrew range than the draft’s narrower 'assault.' I retain that gain while clarifying the priests’ ancestry and judicial role.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +148,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/021/005.job-61714.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:44Z'
+  change_level: refined
+  confidence: medium
+  meaning: The priests from Levi’s tribe must participate because Yahweh has chosen them for sacred service and blessing, and their decisions govern disputes and injury cases.
+  meaning_decisions:
+  - source_phrase: הַכֹּהֲנִים בְּנֵי לֵוִי
+    prior_rendering: the priests, the sons of Levi
+    new_rendering: The priests from the tribe of Levi
+    rationale: The phrase identifies the priests’ tribal descent, not immediate father-son relationships with Levi.
+  - source_phrase: וְעַל פִּיהֶם יִהְיֶה כָּל רִיב וְכָל נָגַע
+    prior_rendering: and by their word every dispute and every injury shall be settled
+    new_rendering: Every dispute and every case of injury shall be settled by their decision
+    rationale: The idiom denotes authoritative rulings; adding 'case of' makes clear that injuries are adjudicated rather than physically remedied by speech.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current 'injury' and the review’s rationale preserve more of the Hebrew range than the draft’s narrower 'assault.' I retain that gain while clarifying the priests’ ancestry and judicial role.

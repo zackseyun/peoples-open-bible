@@ -28,18 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:4
 translation:
-  text: Where[a] there is listening[b], do not pour out speech, and do not show off wisdom[c] at the wrong time.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The supplied Hebrew witness in Zone 1 appears mismatched to Sirach 35:4; the translation therefore follows the Greek parallel, which reads a warning about speaking and displaying wisdom at an inappropriate time.
-    reason: textual_variant
-  - marker: b
-    text: Or 'Where there is an audience, do not pour out talk.' The Greek ἀκρόαμα can refer either to listening/hearing or to an audience.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'do not play the wise man at the wrong time.'
-    reason: lexical_alternative
+  text: Let them know, as we know, that there is no God besides you.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅπου
   chosen: Where
@@ -125,14 +115,20 @@ revisions:
   from: Where there is listening, do not pour out speech, and do not show off wisdom at the wrong time.
   to: And they will know, as we have known, that there is no God besides you.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: restored the subject (''they will know''), the comparison (''as we have known''), and the confession (''there is no God besides you'').'
-
 - timestamp: '2026-05-15T13:54:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they will know[a], as we have known[c][b], that there is no God besides you.'
-  to: 'Where[a] there is listening[b], do not pour out speech, and do not show off wisdom[c] at the wrong time.'
-  rationale: 'Zone 1 Hebrew belongs to different context; drafter chose Greek per documented theological_decision.'
+  from: And they will know[a], as we have known[c][b], that there is no God besides you.
+  to: Where[a] there is listening[b], do not pour out speech, and do not show off wisdom[c] at the wrong time.
+  rationale: Zone 1 Hebrew belongs to different context; drafter chose Greek per documented theological_decision.
+- timestamp: '2026-11-09T20:13:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Where[a] there is listening[b], do not pour out speech, and do not show off wisdom[c] at the wrong time.
+  to: Let them know, as we know, that there is no God besides you.
+  rationale: The April revision restored the supplied Hebrew’s meaning, whereas the later automated revert favored an unrelated Greek banquet instruction despite the surrounding prayer context. No MAINTAINER revision requires retaining that instruction, so the source-based gain of the April revision is restored.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -152,3 +148,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/004.job-51949.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:13:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The speaker asks that the nations come to know, as his own people already know, that there is no God besides the one he addresses.
+  meaning_decisions:
+  - source_phrase: וידעו כאשר ידענו, כי אין אלוהים זולתך.
+    prior_rendering: Where[a] there is listening[b], do not pour out speech, and do not show off wisdom[c] at the wrong time.
+    new_rendering: Let them know, as we know, that there is no God besides you.
+    rationale: The supplied Hebrew expresses a prayer for others to recognize God’s unique sovereignty, coherently continuing the prayer in verses 2 and 5–7. The prior wording translates a different passage about banquet etiquette; the prayer context supports 'Let them know,' while 'as we know' conveys the people’s established knowledge.
+  footnote_kinds: {}
+  history_weighed: The April revision restored the supplied Hebrew’s meaning, whereas the later automated revert favored an unrelated Greek banquet instruction despite the surrounding prayer context. No MAINTAINER revision requires retaining that instruction, so the source-based gain of the April revision is restored.

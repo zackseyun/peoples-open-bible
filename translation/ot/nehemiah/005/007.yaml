@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּמָּלֵ֨ךְ לִבִּ֜/י עָלַ֗/י וָ/אָרִ֨יבָ/ה֙ אֶת הַ/חֹרִ֣ים וְ/אֶת הַ/סְּגָנִ֔ים וָ/אֹמְרָ֣/ה לָ/הֶ֔ם מַשָּׁ֥א אִישׁ בְּ/אָחִ֖י/ו אַתֶּ֣ם נשאים וָ/אֶתֵּ֥ן עֲלֵי/הֶ֖ם קְהִלָּ֥ה גְדוֹלָֽה־־־׃
 translation:
-  text: Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.
-  philosophy: optimal-equivalence
+  text: After considering the matter, I brought charges against the nobles and officials and said to them, “Each of you is charging his own brother interest[a]!” Then I called a large assembly to confront them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “I contended with the nobles and the officials.” The Hebrew verb can carry either a legal-accusatory nuance (“brought charges”) or a more general sense of contention.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “You are charging interest, each from his fellow.” Literally, “a man against his brother you are exacting [it],” preserving the kinship language of fellow Israelites.
-    reason: lexical_alternative
-  - marker: c
-    text: Or “I called a great assembly against them.” The Hebrew literally says, “I set/gave against them a great assembly,” an idiom for convening public opposition.
-    reason: lexical_alternative
+    text: Or, “Each of you is imposing a debt burden on his brother.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיִּמָּלֵךְ לִבִּי עָלַי
   chosen: I took counsel with myself
@@ -101,14 +95,20 @@ revisions:
   from: Then I took counsel with myself, and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest, each from his brother.” And I assembled a great gathering against them.
   to: Then I took counsel with myself, and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest, each from his brother.” And I assembled a great gathering against them.
   rationale: Changed 'gathering' to 'assembly' for a more formal and consistent rendering of קְהִלָּה, while preserving the rest of the accurate draft.
-
 - timestamp: '2026-05-18T02:55:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.'
-  to: 'Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.'
+  from: Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.
+  to: Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I assembled a great gathering against them''].'
+- timestamp: '2026-11-09T18:25:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then I took counsel with myself[a], and I brought charges against the nobles and the officials, and I said to them, “You are exacting interest[c][b], each from his brother.” And I assembled a great assembly against them.
+  to: After considering the matter, I brought charges against the nobles and officials and said to them, “Each of you is charging his own brother interest[a]!” Then I called a large assembly to confront them.
+  rationale: I retain the documented distinction between Nehemiah's anger and his subsequent deliberation, along with the accusatory force of 'brought charges.' The assembly/gathering discussion concerns wording rather than meaning; 'a large assembly to confront them' preserves both scale and opposition.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +128,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/005/007.job-42770.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After reflection, Nehemiah accuses the leaders of charging their own brothers interest and convenes a public assembly to confront them.
+  meaning_decisions:
+  - source_phrase: וַיִּמָּלֵךְ לִבִּי עָלַי
+    prior_rendering: Then I took counsel with myself
+    new_rendering: After considering the matter
+    rationale: The idiom describes inward deliberation before action, not consultation with another person.
+  - source_phrase: מַשָּׁא אִישׁ בְּאָחִיו אַתֶּם נשאים
+    prior_rendering: You are exacting interest, each from his brother.
+    new_rendering: Each of you is charging his own brother interest!
+    rationale: The natural English construction places the distributive accusation and the violated kinship bond directly before the reader; the broader debt-burden interpretation is noted.
+  - source_phrase: וָאֶתֵּן עֲלֵיהֶם קְהִלָּה גְדוֹלָה
+    prior_rendering: And I assembled a great assembly against them.
+    new_rendering: Then I called a large assembly to confront them.
+    rationale: The assembly is large and is convened in opposition to the leaders; the revised wording communicates that public confrontation without the repetitive English construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the documented distinction between Nehemiah's anger and his subsequent deliberation, along with the accusatory force of 'brought charges.' The assembly/gathering discussion concerns wording rather than meaning; 'a large assembly to confront them' preserves both scale and opposition.

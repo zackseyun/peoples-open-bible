@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְרָ֛א צְפַנְיָ֥ה הַ/כֹּהֵ֖ן אֶת הַ/סֵּ֣פֶר הַ/זֶּ֑ה בְּ/אָזְנֵ֖י יִרְמְיָ֥הוּ הַ/נָּבִֽיא־׃פ
 translation:
-  text: Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'this book/scroll' (סֵפֶר); here rendered 'letter' because the context identifies the written document as Shemaiah's letter.
-    reason: lexical_alternative
+  text: Then Zephaniah the priest read this letter aloud to Jeremiah the prophet.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקְרָא
   chosen: Then ... read
@@ -70,14 +66,20 @@ revisions:
   from: Then Zephaniah the priest read this letter in the hearing of Jeremiah the prophet.
   to: Then Zephaniah the priest read this letter in the hearing of Jeremiah the prophet.
   rationale: Changed 'letter' to 'scroll' to more directly reflect the Hebrew word for a written document/book here. The rest is accurate and natural.
-
 - timestamp: '2026-05-18T02:56:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].'
-  to: 'Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].'
+  from: Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].
+  to: Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this letter''].'
+- timestamp: '2026-11-09T18:59:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Zephaniah the priest read this scroll in the hearing of Jeremiah the prophet[a].
+  to: Then Zephaniah the priest read this letter aloud to Jeremiah the prophet.
+  rationale: The first draft and contextual lexical decision correctly chose 'letter'; the automated preference for 'scroll' offered source transparency rather than a gain in meaning. I restore the contextual identification and express the hearing idiom naturally.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -97,3 +99,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/029/029.job-67749.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Zephaniah reads Shemaiah’s letter aloud so that Jeremiah hears its contents.
+  meaning_decisions:
+  - source_phrase: הספר הזה
+    prior_rendering: this scroll
+    new_rendering: this letter
+    rationale: The context identifies the document as Shemaiah’s correspondence; its physical format is not the point.
+  - source_phrase: באזני ירמיהו הנביא
+    prior_rendering: in the hearing of Jeremiah the prophet
+    new_rendering: aloud to Jeremiah the prophet
+    rationale: The idiom describes an audible reading directed to Jeremiah.
+  footnote_kinds: {}
+  history_weighed: The first draft and contextual lexical decision correctly chose 'letter'; the automated preference for 'scroll' offered source transparency rather than a gain in meaning. I restore the contextual identification and express the hearing idiom naturally.

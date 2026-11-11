@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּשְׁבּוּ֩ בְנֵֽי יִשְׂרָאֵ֨ל מֵֽ/אֲחֵי/הֶ֜ם מָאתַ֣יִם אֶ֗לֶף נָשִׁים֙ בָּנִ֣ים וּ/בָנ֔וֹת וְ/גַם שָׁלָ֥ל רָ֖ב בָּזְז֣וּ מֵ/הֶ֑ם וַ/יָּבִ֥יאוּ אֶת הַ/שָּׁלָ֖ל לְ/שֹׁמְרֽוֹן־־־׃ס
 translation:
-  text: And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.
-  philosophy: optimal-equivalence
+  text: The Israelites took two hundred thousand captives—women, sons, and daughters—from their own brothers[a]. They also took a great deal of plunder from them and brought it to Samaria.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from their kinsmen' or 'from their fellow Israelites.' The Hebrew says 'from their brothers,' emphasizing shared kinship.
-    reason: lexical_alternative
+    text: The people of Judah were their fellow Israelites, despite the division into two kingdoms.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וַיִּשְׁבּוּ
   chosen: took captive
@@ -100,14 +100,20 @@ revisions:
   from: And the sons of Israel took captive from their brothers two hundred thousand women, sons, and daughters. They also plundered much spoil from them and brought the spoil to Samaria.
   to: And the sons of Israel took captive from their brothers two hundred thousand women, sons, and daughters. They also plundered much spoil from them and brought the spoil to Samaria.
   rationale: Replaced 'plundered much spoil' with 'took much spoil' for more natural formal English while preserving the sense of בָּזְזוּ; otherwise retained the draft.
-
 - timestamp: '2026-05-17T02:36:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.'
-  to: 'And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.'
+  from: And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.
+  to: And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''plundered''].'
+- timestamp: '2026-11-09T17:26:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the sons of Israel took captive from their brothers two hundred thousand women[a], sons, and daughters. They also took much spoil from them and brought the spoil to Samaria.
+  to: The Israelites took two hundred thousand captives—women, sons, and daughters—from their own brothers[a]. They also took a great deal of plunder from them and brought it to Samaria.
+  rationale: I retain the earlier improvement from 'plundered much spoil' to a natural taking construction and preserve the documented emphasis on kinship. The automated revert carries no independent editorial weight, and no maintainer revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +133,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/028/008.job-60057.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:06Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel took two hundred thousand women and children captive from its own Judean kin and carried their plunder to Samaria.
+  meaning_decisions:
+  - source_phrase: בְנֵי יִשְׂרָאֵל
+    prior_rendering: the sons of Israel
+    new_rendering: The Israelites
+    rationale: This is the collective name of the people, not a statement about male descendants.
+  - source_phrase: מֵאֲחֵיהֶם
+    prior_rendering: from their brothers
+    new_rendering: from their own brothers
+    rationale: The emphasis makes the accusation of taking fellow kin captive clear while retaining the passage’s important familial image.
+  - source_phrase: שָׁלָל רָב ... אֶת־הַשָּׁלָל
+    prior_rendering: much spoil ... the spoil
+    new_rendering: a great deal of plunder ... it
+    rationale: '''Plunder'' unambiguously identifies property seized in war, while the pronoun preserves the same referent without unnecessary repetition.'
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the earlier improvement from 'plundered much spoil' to a natural taking construction and preserve the documented emphasis on kinship. The automated revert carries no independent editorial weight, and no maintainer revision is recorded.

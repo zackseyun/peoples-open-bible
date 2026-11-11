@@ -23,12 +23,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Do not multiply words with a fool[a], and do not go to an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his shaking-off. Turn aside from him, and you will find rest, and you will not grow weary because of his madness.
-  philosophy: optimal-equivalence
+  text: Do not prolong conversation with a fool, and do not seek out a man without understanding. Keep away from him, so that you avoid trouble and are not defiled by the filth he shakes off[a]. Turn away from him, and you will find rest; his reckless folly will not wear you down.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek term rendered 'his shaking-off' is rare and difficult; it may refer more broadly to the fool's disruptive outbursts or the contaminating effect of his behavior.
-    reason: lexical_alternative
+    text: The rare Greek expression refers to his 'shaking-off,' possibly picturing filth splashed onto others; it may instead mean a disruptive outburst.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: μετὰ ἄφρονος
   chosen: with a fool
@@ -140,14 +140,20 @@ revisions:
   from: Do not multiply words with a fool, and do not go to an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his shaking-off. Turn aside from him, and you will find rest, and you will not grow weary because of his madness.
   to: Do not multiply words with a fool, and do not go near an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his outburst. Turn aside from him, and you will find rest, and you will not be wearied by his madness.
   rationale: Changed 'go to' to 'go near' for πρὸς ... μὴ πορεύου; replaced the awkward 'his shaking-off' with 'his outburst' for ἐντιναγμός; and revised 'will not grow weary because of' to the more natural and formal 'will not be wearied by.'
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not multiply words with a fool[a], and do not go near an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his outburst. Turn aside from him, and you will find rest, and you will not be wearied by his madness.'
-  to: 'Do not multiply words with a fool[a], and do not go to an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his shaking-off. Turn aside from him, and you will find rest, and you will not grow weary because of his madness.'
-  rationale: 'Restored 3 chosen renderings preserving πορεύου motion, rare-word conservatism, and active wearying.'
+  from: Do not multiply words with a fool[a], and do not go near an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his outburst. Turn aside from him, and you will find rest, and you will not be wearied by his madness.
+  to: Do not multiply words with a fool[a], and do not go to an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his shaking-off. Turn aside from him, and you will find rest, and you will not grow weary because of his madness.
+  rationale: Restored 3 chosen renderings preserving πορεύου motion, rare-word conservatism, and active wearying.
+- timestamp: '2026-11-09T19:06:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not multiply words with a fool[a], and do not go to an unintelligent man. Keep away from him, so that you may not have trouble and may not be defiled by his shaking-off. Turn aside from him, and you will find rest, and you will not grow weary because of his madness.
+  to: Do not prolong conversation with a fool, and do not seek out a man without understanding. Keep away from him, so that you avoid trouble and are not defiled by the filth he shakes off[a]. Turn away from him, and you will find rest; his reckless folly will not wear you down.
+  rationale: The earlier review sought intelligible English, while the automated revert emphasized caution about the rare shaking-off expression. I retain and clarify the contaminating image rather than replace it outright, and record the possible outburst interpretation.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +173,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/022/013.job-51569.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Avoid extended contact with a fool, whose behavior can burden, defile, and exhaust you.
+  meaning_decisions:
+  - source_phrase: μὴ πληθύνῃς λόγον
+    prior_rendering: Do not multiply words
+    new_rendering: Do not prolong conversation
+    rationale: The idiom warns against extended conversation, not multiplication of individual words.
+  - source_phrase: πρὸς ἀσύνετον μὴ πορεύου
+    prior_rendering: do not go to an unintelligent man
+    new_rendering: do not seek out a man without understanding
+    rationale: The warning concerns approaching someone lacking practical and moral discernment, not avoiding people on the basis of intellectual ability.
+  - source_phrase: μολυνθῇς ἐν τῷ ἐντιναγμῷ αὐτοῦ
+    prior_rendering: be defiled by his shaking-off
+    new_rendering: are not defiled by the filth he shakes off
+    rationale: The supplied filth makes the contaminating image understandable; the note acknowledges uncertainty about the rare expression.
+  - source_phrase: οὐ μὴ ἀκηδιάσῃς ἐν τῇ ἀπονοίᾳ αὐτοῦ
+    prior_rendering: you will not grow weary because of his madness
+    new_rendering: his reckless folly will not wear you down
+    rationale: The context concerns exhausting, senseless conduct rather than a clinical condition; the new wording preserves its force and draining effect.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review sought intelligible English, while the automated revert emphasized caution about the rare shaking-off expression. I retain and clarify the contaminating image rather than replace it outright, and record the possible outburst interpretation.

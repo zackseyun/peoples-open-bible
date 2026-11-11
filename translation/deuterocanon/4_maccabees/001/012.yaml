@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'it will now be permitted to speak at once about this'; the Greek ἐξέσται can carry a nuance of permission as well as possibility.
-    reason: lexical_alternative
-  - marker: b
-    text: The pronoun 'them' may refer to the persons to be discussed in the following argument, though 'these matters' is also possible from the immediate wording.
-    reason: alternative_reading
+  text: But I will be able to speak about this shortly, after first addressing the main question, as is my custom. Then I will turn to their story, giving glory to the all-wise God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀλλὰ καὶ
   chosen: But even
@@ -134,14 +127,20 @@ revisions:
   from: But even about this it will now be possible to speak at once, once I have begun with the subject, as I am accustomed to do, and so I will turn to the discourse about them, giving glory to the all-wise God.
   to: But even about this it will now be possible to speak at once, once I have begun with the subject, as I am accustomed to do, and so I will turn to the discourse about them, giving glory to the all-wise God.
   rationale: Replaced 'once I have begun with the subject' with 'beginning with the subject' to reflect the participial construction more directly and naturally; changed 'so' to 'thus' for slightly more formal register.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.'
-  to: 'But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.'
+  from: But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.
+  to: But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''once I have begun with the subject''].'
+- timestamp: '2026-11-09T18:57:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But even about this it will now be possible to speak at once[a], beginning with the subject, as I am accustomed to do, and thus I will turn to the discourse about them[b], giving glory to the all-wise God.
+  to: But I will be able to speak about this shortly, after first addressing the main question, as is my custom. Then I will turn to their story, giving glory to the all-wise God.
+  rationale: The first draft's temporal wording better preserved the sequence than the later participial revision, although both remained awkward. The chapter's movement into definitions confirms that the philosophical question comes first; the prior ambiguity note about 'them' is unnecessary in this context.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -161,3 +160,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/001/012.job-49718.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The author will first address the philosophical question and then recount the martyrs' story while giving glory to God.
+  meaning_decisions:
+  - source_phrase: νῦν αὐτίκα δὴ λέγειν ἐξέσται
+    prior_rendering: it will now be possible to speak at once
+    new_rendering: I will be able to speak about this shortly
+    rationale: This announces an approaching discussion within the discourse, not an immediate interruption of the philosophical inquiry that follows.
+  - source_phrase: ἀρξαμένων τῆς ὑποθέσεως, ὅπερ εἴωθα ποιεῖν
+    prior_rendering: beginning with the subject, as I am accustomed to do
+    new_rendering: after first addressing the main question, as is my custom
+    rationale: The author's customary sequence is to begin with the philosophical issue before turning to the narrative; the new wording makes that sequence explicit.
+  - source_phrase: εἰς τὸν περὶ αὐτῶν τρέψομαι λόγον
+    prior_rendering: I will turn to the discourse about them
+    new_rendering: I will turn to their story
+    rationale: The surrounding references identify the people whose courage will be narrated, so natural narrative language conveys the intended transition.
+  footnote_kinds: {}
+  history_weighed: The first draft's temporal wording better preserved the sequence than the later participial revision, although both remained awkward. The chapter's movement into definitions confirms that the philosophical question comes first; the prior ambiguity note about 'them' is unnecessary in this context.

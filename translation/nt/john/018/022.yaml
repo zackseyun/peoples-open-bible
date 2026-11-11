@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ταῦτα δὲ αὐτοῦ εἰπόντος εἷς ⸂παρεστηκὼς τῶν ὑπηρετῶν⸃ ἔδωκεν ῥάπισμα τῷ Ἰησοῦ εἰπών· Οὕτως ἀποκρίνῃ τῷ ἀρχιερεῖ;
 translation:
-  text: And when he had said these things[a], one of the officers standing by struck Jesus, saying[b], “Is this how you answer the high priest?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “gave Jesus a slap”; the Greek expression denotes a blow with the hand and may refer to a slap or similar strike.
-    reason: lexical_alternative
-  - marker: b
-    text: “Officers” translates a term that can also mean attendants or servants; in this context it likely refers to official temple personnel.
-    reason: lexical_alternative
+  text: When Jesus said this, one of the guards standing nearby slapped him and said, “Is this how you answer the high priest?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ταῦτα
   chosen: these things
@@ -109,7 +102,13 @@ revisions:
   from: And when he had said these things, one of the officers standing by struck Jesus with his hand, saying, “Is this how you answer the high priest?”
   to: And when he had said these things, one of the officers standing by struck Jesus, saying, “Is this how you answer the high priest?”
   rationale: Removed 'with his hand' because the Greek ῥάπισμα already conveys a blow/slap and the added phrase is not explicit in the source. Kept the rest unchanged for accuracy and natural English.
-
+- timestamp: '2026-11-09T17:10:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he had said these things[a], one of the officers standing by struck Jesus, saying[b], “Is this how you answer the high priest?”
+  to: When Jesus said this, one of the guards standing nearby slapped him and said, “Is this how you answer the high priest?”
+  rationale: The review removed “with his hand” as redundant, but the resulting “struck” lost specificity carried by the Greek noun. “Slapped” restores that meaning in a single natural verb without specifying which part of the hand was used.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +128,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/018/022.job-7524.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:50Z'
+  change_level: refined
+  confidence: high
+  meaning: One of the guards slapped Jesus and rebuked him for what the guard considered an improper answer to the high priest.
+  meaning_decisions:
+  - source_phrase: εἷς παρεστηκὼς τῶν ὑπηρετῶν
+    prior_rendering: one of the officers standing by
+    new_rendering: one of the guards standing nearby
+    rationale: “Guards” identifies the enforcement role of these official attendants in the hearing and remains consistent with verse 18.
+  - source_phrase: ἔδωκεν ῥάπισμα
+    prior_rendering: struck
+    new_rendering: slapped
+    rationale: The Greek expression denotes a slap or hand-blow; “slapped” conveys its characteristic force more fully than the general verb “struck.”
+  footnote_kinds: {}
+  history_weighed: The review removed “with his hand” as redundant, but the resulting “struck” lost specificity carried by the Greek noun. “Slapped” restores that meaning in a single natural verb without specifying which part of the hand was used.

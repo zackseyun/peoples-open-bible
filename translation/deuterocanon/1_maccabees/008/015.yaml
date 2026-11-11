@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they established a council for themselves[a], and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'about the people ... to keep themselves in good order.' The Greek can be rendered more literally, but the main text brings out the civic sense in context.
-    reason: lexical_alternative
+  text: They established a senate, where three hundred and twenty members deliberated every day, continually considering the people’s affairs so that they could govern themselves well.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: βουλευτήριον
   chosen: council
@@ -116,13 +112,12 @@ revisions:
   from: And they established a council for themselves, and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
   to: And they established a council for themselves, and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to order themselves well.
   rationale: Changed 'to govern themselves well' to 'to order themselves well' to reflect εὐκοσμεῖν more closely as putting in good order rather than governing.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they established a council for themselves[a], and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to order themselves well.'
-  to: 'And they established a council for themselves, and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.'
+  from: And they established a council for themselves[a], and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to order themselves well.
+  to: And they established a council for themselves, and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to govern themselves well''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -132,6 +127,13 @@ revisions:
   from: And they established a council for themselves, and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
   to: And they established a council for themselves[a], and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:52:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they established a council for themselves[a], and every day three hundred and twenty would deliberate, continually taking counsel concerning the multitude, to govern themselves well.
+  to: They established a senate, where three hundred and twenty members deliberated every day, continually considering the people’s affairs so that they could govern themselves well.
+  rationale: The review proposed the source-shaped 'order themselves well,' but the restored wording 'govern themselves well' better communicates the civic purpose and is retained. I depart from the earlier generic 'council' because the Roman institution is identifiable in context, while preserving the account’s own number and daily frequency.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +153,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/008/015.job-48402.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:52:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Romans established a deliberative governing body whose members continually considered public affairs to govern their community well.
+  meaning_decisions:
+  - source_phrase: βουλευτήριον ἐποίησαν ἑαυτοῖς
+    prior_rendering: they established a council for themselves
+    new_rendering: They established a senate
+    rationale: The Roman setting identifies the deliberative institution being described; 'senate' conveys that governing body more precisely than a generic council.
+  - source_phrase: καθ' ἡμέραν ἐβουλεύοντο τριακόσιοι καὶ εἴκοσι
+    prior_rendering: every day three hundred and twenty would deliberate
+    new_rendering: three hundred and twenty members deliberated every day
+    rationale: Supplying 'members' identifies the counted people as participants in the governing body without altering the reported number or frequency.
+  - source_phrase: βουλευόμενοι διὰ παντὸς περὶ τοῦ πλήθους
+    prior_rendering: continually taking counsel concerning the multitude
+    new_rendering: continually considering the people’s affairs
+    rationale: The subject of deliberation is the community’s public affairs, not an undifferentiated crowd.
+  footnote_kinds: {}
+  history_weighed: The review proposed the source-shaped 'order themselves well,' but the restored wording 'govern themselves well' better communicates the civic purpose and is retained. I depart from the earlier generic 'council' because the Roman institution is identifiable in context, while preserving the account’s own number and daily frequency.

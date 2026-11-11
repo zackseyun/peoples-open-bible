@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: The other wrote, “The king[a] is stronger.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “The king prevails.”
-    reason: lexical_alternative
+  text: The second wrote, “The king is strongest.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ ἕτερος
   chosen: The other
@@ -84,13 +80,12 @@ revisions:
   from: The other wrote, “The king is stronger.”
   to: The other wrote, “The king is strongest.”
   rationale: Revised “is stronger” to “is strongest” to better reflect Ὑπερισχύει in this context as a superlative claim in the sequence of contest statements.
-
 - timestamp: '2026-05-18T03:09:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The other wrote[a], “The king is strongest.”'
-  to: 'The other wrote, “The king is stronger.”'
+  from: The other wrote[a], “The king is strongest.”
+  to: The other wrote, “The king is stronger.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is stronger''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -100,6 +95,13 @@ revisions:
   from: The other wrote, “The king is stronger.”
   to: The other wrote, “The king[a] is stronger.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the king') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:50:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The other wrote, “The king[a] is stronger.”
+  to: The second wrote, “The king is strongest.”
+  rationale: The recorded review correctly recognized the contest’s claim to supreme strength. The subsequent policy revert supplies no contrary contextual rationale, so strongest is restored consistently with verse 10.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -119,3 +121,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/003/011.job-47547.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:07Z'
+  change_level: refined
+  confidence: high
+  meaning: The second contestant claims that the king is the strongest power.
+  meaning_decisions:
+  - source_phrase: ὁ ἕτερος
+    prior_rendering: The other
+    new_rendering: The second
+    rationale: The phrase identifies the next of three contestants, not the sole other member of a pair.
+  - source_phrase: Ὑπερισχύει
+    prior_rendering: is stronger
+    new_rendering: is strongest
+    rationale: Like the identical verb in the preceding claim, it asserts supremacy within the contest rather than an unspecified comparison.
+  footnote_kinds: {}
+  history_weighed: The recorded review correctly recognized the contest’s claim to supreme strength. The subsequent policy revert supplies no contrary contextual rationale, so strongest is restored consistently with verse 10.

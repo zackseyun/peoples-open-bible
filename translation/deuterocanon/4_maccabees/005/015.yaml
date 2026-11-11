@@ -18,9 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And having taken the right to speak, he began to address the assembly
-    as follows:'
-  philosophy: optimal-equivalence
+  text: 'After receiving permission to speak, he began to address the assembly as follows:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λαβὼν
   chosen: having taken
@@ -28,33 +27,26 @@ lexical_decisions:
   - having received
   - having obtained
   lexicon: BDAG
-  rationale: Aorist participle of λαμβάνω, here introducing the circumstance preceding
-    the main verb. 'Having taken' is formally close and idiomatic enough in English
-    when paired with 'the right to speak.'
+  rationale: Aorist participle of λαμβάνω, here introducing the circumstance preceding the main verb. 'Having taken' is formally close and idiomatic enough in English when paired with 'the right to speak.'
 - source_word: τοῦ λέγειν
   chosen: to speak
   alternatives:
   - of speaking
   lexicon: BDAG
-  rationale: Articular infinitive after ἐξουσίαν expresses the sphere/content of the
-    authority. English idiom prefers 'the right to speak' rather than the more wooden
-    'authority of speaking.'
+  rationale: Articular infinitive after ἐξουσίαν expresses the sphere/content of the authority. English idiom prefers 'the right to speak' rather than the more wooden 'authority of speaking.'
 - source_word: ἐξουσίαν
   chosen: the right
   alternatives:
   - authority
   - permission
   lexicon: BDAG
-  rationale: ἐξουσία can mean authority, right, or freedom. In this courtroom/public-speech
-    context, 'the right' best conveys granted leave to speak without overstating official
-    power.
+  rationale: ἐξουσία can mean authority, right, or freedom. In this courtroom/public-speech context, 'the right' best conveys granted leave to speak without overstating official power.
 - source_word: ἤρξατο
   chosen: he began
   alternatives:
   - he started
   lexicon: BDAG
-  rationale: Standard inceptive sense of ἄρχομαι with infinitive; 'began' is the natural
-    elevated but readable rendering.
+  rationale: Standard inceptive sense of ἄρχομαι with infinitive; 'began' is the natural elevated but readable rendering.
 - source_word: δημηγορεῖν
   chosen: to address the assembly
   alternatives:
@@ -62,17 +54,14 @@ lexical_decisions:
   - to harangue
   - to speak before the people
   lexicon: LSJ
-  rationale: The verb denotes speaking publicly before an assembled people. 'Address
-    the assembly' preserves the public/civic nuance better than the generic 'speak,'
-    while avoiding the negative coloring of 'harangue.'
+  rationale: The verb denotes speaking publicly before an assembled people. 'Address the assembly' preserves the public/civic nuance better than the generic 'speak,' while avoiding the negative coloring of 'harangue.'
 - source_word: οὕτως
   chosen: as follows
   alternatives:
   - thus
   - in this way
   lexicon: BDAG
-  rationale: Introduces the content of the ensuing speech. 'As follows' is idiomatic
-    in English for direct discourse introduction.
+  rationale: Introduces the content of the ensuing speech. 'As follows' is idiomatic in English for direct discourse introduction.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -100,25 +89,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And having taken the right to speak, he began to address the assembly as
-    follows:'
-  to: 'And having received permission to speak, he began to address the assembly as
-    follows:'
-  rationale: Changed 'taken the right to speak' to 'received permission to speak'
-    for more natural and accurate rendering of λαβὼν ... ἐξουσίαν; retained 'address
-    the assembly' for δημηγορεῖν and preserved the formal register.
-
+  from: 'And having taken the right to speak, he began to address the assembly as follows:'
+  to: 'And having received permission to speak, he began to address the assembly as follows:'
+  rationale: Changed 'taken the right to speak' to 'received permission to speak' for more natural and accurate rendering of λαβὼν ... ἐξουσίαν; retained 'address the assembly' for δημηγορεῖν and preserved the formal register.
 - timestamp: '2026-05-16T19:22:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: |
-    And having received permission to speak, he began to address the assembly
-        as follows:
-  to: |
-    And having taken the right to speak, he began to address the assembly
-        as follows:
-  rationale: 'Restored drafter ''having taken the right to speak'' (preserving the chosen rendering of λαβὼν as ''taken'' and ἐξουσίαν as ''right'') per chosen renderings.'
+  from: "And having received permission to speak, he began to address the assembly\n    as follows:\n"
+  to: "And having taken the right to speak, he began to address the assembly\n    as follows:\n"
+  rationale: Restored drafter 'having taken the right to speak' (preserving the chosen rendering of λαβὼν as 'taken' and ἐξουσίαν as 'right') per chosen renderings.
+- timestamp: '2026-11-09T18:58:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And having taken the right to speak, he began to address the assembly as follows:'
+  to: 'After receiving permission to speak, he began to address the assembly as follows:'
+  rationale: The earlier review's 'received permission' correctly understood the request-and-response sequence. The later automated revert supplies no stronger meaning-based reason to retain 'taken the right,' so the review's gain is restored.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -138,3 +125,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/005/015.job-49827.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:26Z'
+  change_level: refined
+  confidence: high
+  meaning: After receiving leave to speak, Eleazar begins a public address to the gathered assembly.
+  meaning_decisions:
+  - source_phrase: λαβὼν τοῦ λέγειν ἐξουσίαν
+    prior_rendering: having taken the right to speak
+    new_rendering: After receiving permission to speak
+    rationale: Following his request, Eleazar receives leave to speak; he does not seize or independently assert a speaking right.
+  footnote_kinds: {}
+  history_weighed: The earlier review's 'received permission' correctly understood the request-and-response sequence. The later automated revert supplies no stronger meaning-based reason to retain 'taken the right,' so the review's gain is restored.

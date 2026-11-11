@@ -16,15 +16,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'receive you' or 'greet you' for 'welcome you.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'nor make false those who died before us,' i.e., do not betray the witness of the brothers who have already died.
-    reason: lexical_alternative
+  text: and Jacob will welcome us, and all our forefathers will praise us. As each of their brothers was pulled away, those who remained said, “Do not disgrace us, brother, or betray those who died before us.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὑποδέξονται
   chosen: will welcome
@@ -115,14 +108,20 @@ revisions:
   from: And Jacob will welcome you, and all the fathers will praise you. And as each one of their brothers was being dragged away, those who remained were saying, “Do not disgrace us, brother, nor prove false to those who have died before us.”
   to: And Jacob will welcome you, and all the fathers will praise you. And as each one of their brothers was being dragged away, those who remained were saying, “Do not disgrace us, brother, nor prove false to those who have died before us.”
   rationale: Changed “dragged away” to “taken away” for a more neutral rendering of ἀποσπωμένων, and simplified “those who have died before us” to “those who died before us” for more natural formal English.
-
 - timestamp: '2026-05-16T18:37:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”'
-  to: 'And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”'
-  rationale: 'Restored drafter ''was being dragged away'' (preserving the chosen vivid rendering of ἀποσπωμένων) and ''those who have died before us'' (preserving the chosen perfect tense) per chosen renderings.'
+  from: And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”
+  to: And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”
+  rationale: Restored drafter 'was being dragged away' (preserving the chosen vivid rendering of ἀποσπωμένων) and 'those who have died before us' (preserving the chosen perfect tense) per chosen renderings.
+- timestamp: '2026-11-09T18:59:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jacob will welcome you[a], and all the fathers will praise you. And as each one of their brothers was being taken away, those who remained were saying, “Do not disgrace us, brother[b], nor prove false to those who died before us.”
+  to: and Jacob will welcome us, and all our forefathers will praise us. As each of their brothers was pulled away, those who remained said, “Do not disgrace us, brother, or betray those who died before us.”
+  rationale: The history alternates between 'dragged away' and 'taken away'; 'pulled away' preserves the verb's force without overdefining the action. The recorded rationale for 'prove false to' supports 'betray,' while the preceding verse requires correcting 'you' to 'us.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +141,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/013/018.job-50063.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The brothers expect their forefathers to welcome and praise them, and they urge each brother taken away to remain faithful to those who have already died.
+  meaning_decisions:
+  - source_phrase: καὶ Ἰακὼβ ὑποδέξονται, καὶ πάντες οἱ πατέρες ἐπαινέσουσιν
+    prior_rendering: And Jacob will welcome you, and all the fathers will praise you
+    new_rendering: and Jacob will welcome us, and all our forefathers will praise us
+    rationale: Abraham, Isaac, and Jacob together form the subject of the plural verb, and 'us' is supplied explicitly by ἡμᾶς in verse 17. 'Forefathers' identifies the ancestral meaning of 'fathers' naturally.
+  - source_phrase: τῶν ἀποσπωμένων αὐτῶν ἀδελφῶν
+    prior_rendering: their brothers was being taken away
+    new_rendering: their brothers was pulled away
+    rationale: The verb conveys forcible separation. 'Pulled away' retains that force without specifying that the brother was dragged along the ground.
+  - source_phrase: μηδὲ ψεύσῃ τοὺς προαποθανόντας
+    prior_rendering: nor prove false to those who died before us
+    new_rendering: or betray those who died before us
+    rationale: The warning concerns betraying the fidelity and example of the earlier martyrs, not merely making a false statement.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'dragged away' and 'taken away'; 'pulled away' preserves the verb's force without overdefining the action. The recorded rationale for 'prove false to' supports 'betray,' while the preceding verse requires correcting 'you' to 'us.'

@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יִּפְנ֣וּ אַנְשֵׁי֩ הָ/עַ֨י אַחֲרֵי/הֶ֜ם וַ/יִּרְא֗וּ וְ/הִנֵּ֨ה עָלָ֜ה עֲשַׁ֤ן הָ/עִיר֙ הַ/שָּׁמַ֔יְמָ/ה וְ/לֹא הָיָ֨ה בָ/הֶ֥ם יָדַ֛יִם לָ/נ֖וּס הֵ֣נָּה וָ/הֵ֑נָּה וְ/הָ/עָם֙ הַ/נָּ֣ס הַ/מִּדְבָּ֔ר נֶהְפַּ֖ךְ אֶל הָ/רוֹדֵֽף־־׃
 translation:
-  text: Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.
-  philosophy: optimal-equivalence
+  text: 'The men of Ai turned and looked back: smoke from the city was rising to the sky. They were powerless[a] to flee this way or that, and the troops who had been fleeing toward the wilderness turned back against their pursuers.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'rose to heaven.' The Hebrew expression is literally 'heavenward/skyward.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'Hebrew idiom: ''there was no hands in them,'' meaning they had no power or ability to escape.'
-    reason: cultural_note
-  - marker: c
-    text: The Hebrew has singular 'the pursuer,' likely used collectively for the pursuing force.
+    text: Literally, 'there were no hands in them,' an idiom expressing their inability to escape.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּפְנוּ
@@ -116,14 +110,20 @@ revisions:
   from: Then the men of Ai turned behind them and looked, and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that way. And the people who had fled to the wilderness turned back against the pursuer.
   to: Then the men of Ai turned behind them and looked, and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that way. And the people who had fled to the wilderness turned back against the pursuer.
   rationale: Made a minor stylistic improvement by changing 'that way' to 'that' for a more natural and concise rendering of the idiom 'this way or that.'
-
 - timestamp: '2026-05-17T06:51:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.'
-  to: 'Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.'
+  from: Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.
+  to: Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to flee this way or that way''].'
+- timestamp: '2026-11-09T18:08:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the men of Ai turned behind them and looked[a], and behold, the smoke of the city was going up to the sky, and there was no power in them to flee this way or that[c][b]. And the people who had fled to the wilderness turned back against the pursuer.
+  to: 'The men of Ai turned and looked back: smoke from the city was rising to the sky. They were powerless[a] to flee this way or that, and the troops who had been fleeing toward the wilderness turned back against their pursuers.'
+  rationale: The history's dispute over 'that way' versus 'that' has little bearing on meaning, so I keep the concise current expression. The lexical record correctly explains both the hands idiom and the collective pursuer, but their meanings are clearer when stated directly in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +143,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/008/020.job-68617.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:08:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ai's fighters discover their city burning and cannot escape as the Israelites they were pursuing turn against them.
+  meaning_decisions:
+  - source_phrase: וַיִּפְנוּ אַנְשֵׁי הָעַי אַחֲרֵיהֶם וַיִּרְאוּ וְהִנֵּה
+    prior_rendering: the men of Ai turned behind them and looked, and behold
+    new_rendering: 'The men of Ai turned and looked back:'
+    rationale: The natural English sequence retains both their turning and their sudden discovery, with the colon introducing what confronts them.
+  - source_phrase: עָלָה עֲשַׁן הָעִיר הַשָּׁמַיְמָה
+    prior_rendering: the smoke of the city was going up to the sky
+    new_rendering: smoke from the city was rising to the sky
+    rationale: The wording preserves the visible upward movement while expressing the smoke's source naturally.
+  - source_phrase: וְלֹא הָיָה בָהֶם יָדַיִם
+    prior_rendering: there was no power in them
+    new_rendering: They were powerless
+    rationale: This directly conveys the Hebrew idiom's meaning without suggesting that the text is describing a substance or power located inside them.
+  - source_phrase: וְהָעָם הַנָּס הַמִּדְבָּר נֶהְפַּךְ אֶל הָרוֹדֵף
+    prior_rendering: the people who had fled to the wilderness turned back against the pursuer
+    new_rendering: the troops who had been fleeing toward the wilderness turned back against their pursuers
+    rationale: The people are Israel's retreating troops, and the singular participle denotes the opposing force collectively; plural 'pursuers' prevents the impression of one individual.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history's dispute over 'that way' versus 'that' has little bearing on meaning, so I keep the concise current expression. The lexical record correctly explains both the hands idiom and the collective pursuer, but their meanings are clearer when stated directly in English.

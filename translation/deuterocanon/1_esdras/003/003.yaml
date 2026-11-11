@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they ate and drank[a], and when they were filled, they departed. But Darius the king went into his bedchamber and slept[b], and then awoke.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'having had their fill.' The Greek participle ἐμπλησθέντες refers concretely to being full after eating and drinking.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'withdrew.' The verb ἀνέλυσαν here likely means the company broke up and went away after the meal.
-    reason: lexical_alternative
+  text: They ate and drank their fill and then departed. King Darius withdrew to his bedchamber, slept, and then awoke.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐφάγοσαν
   chosen: they ate
@@ -105,7 +98,6 @@ revision_pass:
   timestamp: '2026-04-23T15:28:39Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +117,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/003/003.job-47539.json
+revisions:
+- timestamp: '2026-11-09T18:50:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they ate and drank[a], and when they were filled, they departed. But Darius the king went into his bedchamber and slept[b], and then awoke.
+  to: They ate and drank their fill and then departed. King Darius withdrew to his bedchamber, slept, and then awoke.
+  rationale: The earlier decisions correctly identify departure after a meal and retain the royal bedchamber setting. Their interpretation of the final phrase as awakening is preserved rather than altered to harmonize the sleep sequence with later verses.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:07Z'
+  change_level: refined
+  confidence: high
+  meaning: After the guests eat and drink their fill and depart, Darius retires to his bedchamber, sleeps, and awakens.
+  meaning_decisions:
+  - source_phrase: ἐφάγοσαν καὶ ἐπίοσαν, καὶ ἐμπλησθέντες
+    prior_rendering: they ate and drank, and when they were filled
+    new_rendering: They ate and drank their fill
+    rationale: The natural English expression conveys that the guests were fully satisfied with food and drink.
+  - source_phrase: ὁ δὲ Δαρεῖος ὁ βασιλεὺς ἀνέλυσεν
+    prior_rendering: But Darius the king went
+    new_rendering: King Darius withdrew
+    rationale: The passage shifts from the departing guests to the king rather than expressing a strong contrast; withdrew also carries his retirement from the gathering.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly identify departure after a meal and retain the royal bedchamber setting. Their interpretation of the final phrase as awakening is preserved rather than altered to harmonize the sleep sequence with later verses.

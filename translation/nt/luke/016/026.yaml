@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ⸀ἐν πᾶσι τούτοις μεταξὺ ἡμῶν καὶ ὑμῶν χάσμα μέγα ἐστήρικται, ὅπως οἱ θέλοντες διαβῆναι ἔνθεν πρὸς ὑμᾶς μὴ δύνωνται, ⸀μηδὲ ἐκεῖθεν πρὸς ἡμᾶς διαπερῶσιν.
 translation:
-  text: And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'besides all this.' The Greek phrase can introduce an additional consideration in a more idiomatic way.
-    reason: lexical_alternative
+  text: And besides all this, a great chasm has been fixed between us and you, so that those who want to cross from here to you cannot, nor can anyone cross from there to us.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν πᾶσι τούτοις
   chosen: in all these things
@@ -120,14 +116,20 @@ revisions:
   from: And in all these things, between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can any cross over from there to us.
   to: And in all these things, between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can any cross over from there to us.
   rationale: Changed 'in all these things' to 'besides all these things' for more natural rendering of ἐν πᾶσι τούτοις in context; replaced 'nor can any' with 'nor can they' to reflect the implied subject more directly and naturally.
-
 - timestamp: '2026-05-18T03:00:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.'
-  to: 'And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.'
+  from: And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.
+  to: And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in all these things''].'
+- timestamp: '2026-11-09T17:12:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And besides all these things[a], between us and you a great chasm has been fixed, so that those wanting to cross over from here to you cannot, nor can they cross over from there to us.
+  to: And besides all this, a great chasm has been fixed between us and you, so that those who want to cross from here to you cannot, nor can anyone cross from there to us.”
+  rationale: I retain the current contextual gain “besides all this,” rather than the automated revert's opaque “in all these things.” The first draft's “any” better expressed the impossibility of crossing from the opposite side, so I restore that clarity while preserving the fixed chasm image.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -149,3 +151,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/016/026.job-27759.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:24Z'
+  change_level: refined
+  confidence: high
+  meaning: A firmly established chasm prevents anyone from crossing between Abraham's side and the rich man's side.
+  meaning_decisions:
+  - source_phrase: μηδὲ ἐκεῖθεν πρὸς ἡμᾶς διαπερῶσιν
+    prior_rendering: nor can they cross over from there to us
+    new_rendering: nor can anyone cross from there to us
+    rationale: “Anyone” makes the prohibition of passage in the opposite direction clear; “they” could misleadingly refer to the people already described as being on Abraham's side.
+  footnote_kinds: {}
+  history_weighed: I retain the current contextual gain “besides all this,” rather than the automated revert's opaque “in all these things.” The first draft's “any” better expressed the impossibility of crossing from the opposite side, so I restore that clarity while preserving the fixed chasm image.

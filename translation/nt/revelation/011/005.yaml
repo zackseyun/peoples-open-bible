@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ εἴ τις αὐτοὺς θέλει ἀδικῆσαι, πῦρ ἐκπορεύεται ἐκ τοῦ στόματος αὐτῶν καὶ κατεσθίει τοὺς ἐχθροὺς αὐτῶν· καὶ εἴ τις ⸂θελήσῃ αὐτοὺς⸃ ἀδικῆσαι, οὕτως δεῖ αὐτὸν ἀποκτανθῆναι.
 translation:
-  text: And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'comes out of their mouths.' The Greek reads literally 'from their mouth,' with a singular noun and plural possessor.
-    reason: lexical_alternative
+  text: If anyone wants to harm them, fire comes out of their mouths and devours their enemies; anyone who wants to harm them must be killed in this way.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀδικῆσαι
   chosen: to harm
@@ -99,14 +95,20 @@ revisions:
   from: And if anyone wants to harm them, fire comes out from their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
   to: And if anyone wants to harm them, fire comes out from their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
   rationale: Changed 'comes out from' to the more natural 'comes out of' while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.'
-  to: 'And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.'
+  from: And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
+  to: And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''comes out from their mouth''].'
+- timestamp: '2026-11-09T18:16:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if anyone wants to harm them[a], fire comes out of their mouth and devours their enemies; and if anyone should want to harm them, in this way he must be killed.
+  to: If anyone wants to harm them, fire comes out of their mouths and devours their enemies; anyone who wants to harm them must be killed in this way.
+  rationale: The review's preference for “comes out of” improves English without weakening the image. I carry that improvement further by using idiomatic plural possession and a clearer repeated warning, while preserving the earlier decision not to interpret the fire away.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +128,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/011/005.job-47323.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:40Z'
+  change_level: refined
+  confidence: high
+  meaning: Anyone who seeks to harm the witnesses must be killed by the fire that comes from their mouths and devours their enemies.
+  meaning_decisions:
+  - source_phrase: ἐκ τοῦ στόματος αὐτῶν
+    prior_rendering: out of their mouth
+    new_rendering: out of their mouths
+    rationale: The plural is natural English for the mouths of two witnesses and avoids suggesting that they share a single physical mouth; the fire imagery remains intact.
+  - source_phrase: καὶ εἴ τις θελήσῃ αὐτοὺς ἀδικῆσαι, οὕτως δεῖ αὐτὸν ἀποκτανθῆναι
+    prior_rendering: and if anyone should want to harm them, in this way he must be killed
+    new_rendering: anyone who wants to harm them must be killed in this way
+    rationale: The repeated warning retains its force and necessity without an awkward conditional construction or an overstated distinction between the two forms of “want.”
+  footnote_kinds: {}
+  history_weighed: The review's preference for “comes out of” improves English without weakening the image. I carry that improvement further by using idiomatic plural possession and a clearer repeated warning, while preserving the earlier decision not to interpret the fire away.

@@ -22,15 +22,12 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.
-  philosophy: optimal-equivalence
+  text: The King and God of their fathers sent his messenger[a] to care for the people and call them back, because he had compassion on them and on his dwelling place.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'through his messenger'; Greek ἄγγελος can mean either 'angel' or 'messenger.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The opening Greek wording is unusual: literally, ''the King of their fathers, the God of their fathers.'' The translation preserves both titles rather than silently smoothing the text.'
-    reason: textual_variant
+    text: Or, “angel”; the following verse points to God's prophetic messengers.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀπέστειλεν
   chosen: sent
@@ -138,14 +135,20 @@ revisions:
   from: And the King of their fathers, the God of their fathers, sent to visit their people by his angel, to call them back, because he had compassion on them and on his dwelling place.
   to: And the King of their fathers, the God of their fathers, sent to visit their people by his angel, to call them back, because he had compassion on them and on his dwelling place.
   rationale: Removed the awkward and likely erroneous repetition of 'the King of their fathers' to match the Greek sense more naturally; smoothed the infinitive sequence with 'and to call them back' while preserving all source elements.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.'
-  to: 'And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.'
+  from: And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.
+  to: And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the King of their fathers''].'
+- timestamp: '2026-11-09T18:49:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the God of their fathers sent by his angel to visit their people and to call them back[b][a], because he had compassion on them and on his dwelling place.
+  to: The King and God of their fathers sent his messenger[a] to care for the people and call them back, because he had compassion on them and on his dwelling place.
+  rationale: The first draft and lexical record preserve both divine titles, whereas the current text omits 'King' despite its footnote claiming otherwise. I restore that content and let the following verse's prophetic context outweigh the earlier default preference for 'angel'.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -165,3 +168,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/001/048.job-47503.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:36Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The King and God of their fathers compassionately sent his messenger to care for the people and call them back.
+  meaning_decisions:
+  - source_phrase: ὁ βασιλεὺς τῶν πατέρων αὐτῶν ὁ θεὸς τῶν πατέρων αὐτῶν
+    prior_rendering: the God of their fathers
+    new_rendering: The King and God of their fathers
+    rationale: Restores the transmitted royal title and combines the two designations without implying two different subjects.
+  - source_phrase: διὰ τοῦ ἀγγέλου αὐτοῦ
+    prior_rendering: by his angel
+    new_rendering: his messenger
+    rationale: The immediate continuation about rejected messengers and prophets favors a prophetic emissary rather than requiring a heavenly angel.
+  - source_phrase: ἀπέστειλεν ... ἐπισκέψασθαι τὸν λαὸν αὐτῶν ... μετακαλέσαι αὐτούς
+    prior_rendering: sent ... to visit their people and to call them back
+    new_rendering: sent ... to care for the people and call them back
+    rationale: Expresses the gracious intervention meant by visiting here, resolves the unclear possessive, and makes the sending construction complete in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical record preserve both divine titles, whereas the current text omits 'King' despite its footnote claiming otherwise. I restore that content and let the following verse's prophetic context outweigh the earlier default preference for 'angel'.

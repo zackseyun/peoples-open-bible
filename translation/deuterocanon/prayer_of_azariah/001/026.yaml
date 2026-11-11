@@ -42,12 +42,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone PAZ extraction from the curated ADA stream, using Daniel 3:24-90 as the source span and renumbering it to PAZ 1:1-67.
 translation:
-  text: But the angel of the Lord went down into the furnace together with those around Azariah[a], and drove the flame of the fire out of the furnace,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Azariah's companions' for 'those around Azariah.' The Greek reads more literally, 'those around Azariah.'
-    reason: lexical_alternative
+  text: But the angel of the Lord went down into the furnace together with Azariah and his companions, and drove the flame out of the furnace.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ δὲ
   chosen: But
@@ -148,7 +144,6 @@ revision_pass:
   timestamp: '2026-04-23T15:40:23Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -168,3 +163,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/prayer_of_azariah/001/026.job-50937.json
+revisions:
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the angel of the Lord went down into the furnace together with those around Azariah[a], and drove the flame of the fire out of the furnace,
+  to: But the angel of the Lord went down into the furnace together with Azariah and his companions, and drove the flame out of the furnace.
+  rationale: The documented alternative 'Azariah's companions' recognized the group idiom but could leave the named member outside the group; I make his inclusion explicit. I retain 'the angel of the Lord' without assigning the figure an identity beyond what the passage says.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: In contrast to the destruction outside, the angel of the Lord accompanied Azariah and his companions into the furnace and expelled its flame.
+  meaning_decisions:
+  - source_phrase: τοῖς περὶ τὸν Ἀζαρίαν
+    prior_rendering: those around Azariah
+    new_rendering: Azariah and his companions
+    rationale: This Greek group expression identifies Azariah's company, including Azariah himself, rather than merely people standing around him.
+  - source_phrase: τὴν φλόγα τοῦ πυρός
+    prior_rendering: the flame of the fire
+    new_rendering: the flame
+    rationale: The genitive identifies the fiery flame without adding a separate meaning that English needs to repeat.
+  footnote_kinds: {}
+  history_weighed: The documented alternative 'Azariah's companions' recognized the group idiom but could leave the named member outside the group; I make his inclusion explicit. I retain 'the angel of the Lord' without assigning the figure an identity beyond what the passage says.

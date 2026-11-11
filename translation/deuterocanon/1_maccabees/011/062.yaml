@@ -29,15 +29,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.
-  philosophy: optimal-equivalence
+  text: The people of Gaza asked Jonathan for peace, and he pledged peace to them[a]. He took the sons of their rulers as hostages and sent them to Jerusalem[b]. Then he traveled through the country as far as Damascus.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek witness here includes the isolated word 'Asalim' (Ἀσαλήμ) after 'Jerusalem.' Because it does not fit the sentence smoothly, it may reflect a textual corruption or stray place-name in this line of transmission.
-    reason: textual_variant
-  - marker: b
-    text: Literally, 'he gave them right hands,' an idiom for giving pledges of peace or good faith.
+    text: Literally, 'gave them right hands,' a gesture pledging peace or good faith.
     reason: lexical_alternative
+  - marker: b
+    text: The supplied Greek text contains an isolated 'Asalim' after 'Jerusalem'; it does not fit the sentence and is omitted here.
+    reason: textual_variant
 lexical_decisions:
 - source_word: ἠξίωσαν
   chosen: asked terms
@@ -125,14 +125,20 @@ revisions:
   from: And the men from Gaza asked terms of Jonathan, and he gave them pledges of peace; and he took the sons of their rulers as hostages and sent them to Jerusalem. And he passed through the country as far as Damascus.
   to: And the men from Gaza asked terms of Jonathan, and he gave them pledges of peace; and he took the sons of their rulers as hostages and sent them to Jerusalem. And he passed through the country as far as Damascus.
   rationale: Removed 'of peace' after 'pledges' because δεξιάς here is more literally 'pledges/right hands' and the added qualifier is not explicit in the Greek. Otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.'
-  to: 'And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.'
+  from: And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.
+  to: And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he gave them pledges of peace''].'
+- timestamp: '2026-11-09T18:53:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the men from Gaza asked terms of Jonathan[a], and he gave them pledges; and he took the sons of their rulers as hostages and sent them to Jerusalem[b]. And he passed through the country as far as Damascus.
+  to: The people of Gaza asked Jonathan for peace, and he pledged peace to them[a]. He took the sons of their rulers as hostages and sent them to Jerusalem[b]. Then he traveled through the country as far as Damascus.
+  rationale: The first draft and lexical rationale correctly identified pledges of peace; the later removal of 'of peace' rested on literal explicitness rather than the siege context. I restore that meaning and retain the transparent handling of the isolated word after Jerusalem.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -152,3 +158,23 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/062.job-48659.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jonathan grants Gaza peace, takes its rulers’ sons as hostages, sends them to Jerusalem, and continues through the country to Damascus.
+  meaning_decisions:
+  - source_phrase: ἠξίωσαν οἱ ἀπὸ Γάζης Ἰωνάθαν, καὶ ἔδωκεν αὐτοῖς δεξιάς
+    prior_rendering: the men from Gaza asked terms of Jonathan, and he gave them pledges
+    new_rendering: The people of Gaza asked Jonathan for peace, and he pledged peace to them
+    rationale: Following the siege, the request and right-hand pledge concern a peaceful settlement; unspecified 'pledges' leaves their understood purpose unclear.
+  footnote_kinds:
+    a: literal_wording
+    b: textual_variant
+  history_weighed: The first draft and lexical rationale correctly identified pledges of peace; the later removal of 'of peace' rested on literal explicitness rather than the siege context. I restore that meaning and retain the transparent handling of the isolated word after Jerusalem.

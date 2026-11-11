@@ -23,15 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when many acts of temple robbery had been committed in the city by Lysimachus[a], with the consent of Menelaus, and the report had spread outside, the crowd gathered against Lysimachus[b], since much gold had already been plundered.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'many sacrileges'; the Greek term more specifically denotes robbery of sacred or temple property.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the rumor had spread outside.' The Greek φήμη can mean 'report,' 'news,' or 'rumor.'
-    reason: lexical_alternative
+  text: Lysimachus had committed many acts of temple robbery in the city with Menelaus's consent. When news of this spread, the crowd gathered against Lysimachus, for many gold objects had already been plundered.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἱεροσυλημάτων
   chosen: acts of temple robbery
@@ -113,7 +106,6 @@ revision_pass:
   timestamp: '2026-04-23T15:33:26Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -133,3 +125,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/039.job-49065.json
+revisions:
+- timestamp: '2026-11-09T18:55:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when many acts of temple robbery had been committed in the city by Lysimachus[a], with the consent of Menelaus, and the report had spread outside, the crowd gathered against Lysimachus[b], since much gold had already been plundered.
+  to: Lysimachus had committed many acts of temple robbery in the city with Menelaus's consent. When news of this spread, the crowd gathered against Lysimachus, for many gold objects had already been plundered.
+  rationale: The earlier decisions correctly distinguish temple robbery from general sacrilege and consent from mere awareness. Their lexical account of χρυσώματα supports making the stolen objects explicit rather than retaining the less precise 'gold.'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:21Z'
+  change_level: refined
+  confidence: high
+  meaning: Repeated temple thefts committed by Lysimachus with Menelaus's approval provoke a public gathering against him as news spreads.
+  meaning_decisions:
+  - source_phrase: διαδοθείσης ἔξω τῆς φήμης
+    prior_rendering: the report had spread outside
+    new_rendering: When news of this spread
+    rationale: The phrase describes information circulating outward and becoming known; the Greek does not identify a precise boundary that English should supply.
+  - source_phrase: χρυσωμάτων ἤδη πολλῶν διηρπαγμένων
+    prior_rendering: since much gold had already been plundered
+    new_rendering: for many gold objects had already been plundered
+    rationale: The plural noun refers to gold valuables or objects, rather than merely an amount of gold as raw material.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly distinguish temple robbery from general sacrilege and consent from mere awareness. Their lexical account of χρυσώματα supports making the stolen objects explicit rather than retaining the less precise 'gold.'

@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/אֵ֣ת כָּל מַלְכֵ֣י הַ/צָּפ֗וֹן הַ/קְּרֹבִ֤ים וְ/הָֽ/רְחֹקִים֙ אִ֣ישׁ אֶל אָחִ֔י/ו וְ/אֵת֙ כָּל הַ/מַּמְלְכ֣וֹת הָ/אָ֔רֶץ אֲשֶׁ֖ר עַל פְּנֵ֣י הָ/אֲדָמָ֑ה וּ/מֶ֥לֶךְ שֵׁשַׁ֖ךְ יִשְׁתֶּ֥ה אַחֲרֵי/הֶֽם׀־־־־׃
 translation:
-  text: and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
-  philosophy: optimal-equivalence
+  text: and all the kings of the north, both near and far, one after another, and all the kingdoms on the face of the earth. And the king of Sheshach[a] will drink after them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Sheshach is widely understood as a cryptic name for Babylon, likely using an atbash-style cipher.
-    reason: alternative_reading
+    text: Sheshach is understood as a coded name for Babylon, using letters paired from opposite ends of the Hebrew alphabet.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: מַלְכֵי הַצָּפוֹן
   chosen: the kings of the north
@@ -86,14 +86,20 @@ revisions:
   from: and all the kings of the north, near and far, one after another, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
   to: and all the kings of the north, near and far, one after another, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
   rationale: Revised 'near and far' to 'both near and far' for closer correspondence; replaced 'one after another' with 'each one with his brother' to reflect אִישׁ אֶל אָחִיו more accurately; retained the rest with only minor smoothing.
-
 - timestamp: '2026-05-18T02:56:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.'
-  to: 'and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.'
+  from: and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
+  to: and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one after another''].'
+- timestamp: '2026-11-09T17:56:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and all the kings of the north[a], both near and far, each one with his brother, and all the kingdoms of the earth that are on the face of the ground. And the king of Sheshach will drink after them.
+  to: and all the kings of the north, both near and far, one after another, and all the kingdoms on the face of the earth. And the king of Sheshach[a] will drink after them.
+  rationale: The first draft and lexical rationale support “one after another”; the later recorded rationale preferred a literal kinship expression that obscures the idiom here. I retain Sheshach in the text and explain its coded reference to Babylon in the note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +119,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/025/026.job-67654.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The judgment encompasses northern rulers near and far and every earthly kingdom, with Babylon’s king drinking after the others.
+  meaning_decisions:
+  - source_phrase: אִישׁ אֶל אָחִיו
+    prior_rendering: each one with his brother
+    new_rendering: one after another
+    rationale: In this sequence of rulers drinking the cup, the idiom concerns their relationship to one another in succession, not literal brotherhood.
+  - source_phrase: כָּל הַמַּמְלְכוֹת הָאָרֶץ אֲשֶׁר עַל פְּנֵי הָאֲדָמָה
+    prior_rendering: all the kingdoms of the earth that are on the face of the ground
+    new_rendering: all the kingdoms on the face of the earth
+    rationale: The Hebrew expression emphasizes worldwide scope; reproducing its two overlapping earth terms makes English cumbersome without carrying additional meaning.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft and lexical rationale support “one after another”; the later recorded rationale preferred a literal kinship expression that obscures the idiom here. I retain Sheshach in the text and explain its coded reference to Babylon in the note.

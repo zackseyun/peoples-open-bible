@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἔχουσα τεῖχος μέγα καὶ ὑψηλόν, ἔχουσα πυλῶνας δώδεκα, καὶ ἐπὶ ⸂τοῖς πυλῶσιν⸃ ἀγγέλους δώδεκα, καὶ ὀνόματα ἐπιγεγραμμένα ἅ ⸀ἐστιν τῶν δώδεκα ⸀φυλῶν υἱῶν Ἰσραήλ·
 translation:
-  text: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes[a] of the sons of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more traditionally, 'the twelve tribes of the children of Israel.'
-    reason: lexical_alternative
+  text: It had a great, high wall with twelve gates, and twelve angels were at the gates. On the gates were inscribed the names of the twelve tribes of Israel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔχουσα
   chosen: having
@@ -100,13 +96,12 @@ revisions:
   from: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes of the sons of Israel.
   to: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are the names of the twelve tribes of the sons of Israel.
   rationale: Added 'the names of' to reflect the implied predicate more clearly and naturally in English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'having a great and high wall[a], having twelve gates, and at the gates twelve angels, and names inscribed, which are the names of the twelve tribes of the sons of Israel.'
-  to: 'having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes of the sons of Israel.'
+  from: having a great and high wall[a], having twelve gates, and at the gates twelve angels, and names inscribed, which are the names of the twelve tribes of the sons of Israel.
+  to: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes of the sons of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''which are those of''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +111,13 @@ revisions:
   from: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes of the sons of Israel.
   to: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes[a] of the sons of Israel.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('tribes') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:17:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: having a great and high wall, having twelve gates, and at the gates twelve angels, and names inscribed, which are those of the twelve tribes[a] of the sons of Israel.
+  to: It had a great, high wall with twelve gates, and twelve angels were at the gates. On the gates were inscribed the names of the twelve tribes of Israel.
+  rationale: The earlier review correctly sought to make the identification of the names clearer, despite the later automated revert. I carry that gain further by naming their location and rendering the corporate designation naturally, rather than preserving the earlier preference for the literal 'sons of Israel.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +137,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/021/012.job-47394.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The city has a great, high wall with twelve gates, twelve angels at the gates, and inscriptions naming Israel's twelve tribes.
+  meaning_decisions:
+  - source_phrase: ἔχουσα τεῖχος μέγα καὶ ὑψηλόν, ἔχουσα πυλῶνας δώδεκα
+    prior_rendering: having a great and high wall, having twelve gates
+    new_rendering: It had a great, high wall with twelve gates
+    rationale: A finite clause naturally expresses the city's architectural features while retaining both the wall's magnitude and its height.
+  - source_phrase: καὶ ὀνόματα ἐπιγεγραμμένα ἅ ἐστιν τῶν δώδεκα φυλῶν
+    prior_rendering: and names inscribed, which are those of the twelve tribes
+    new_rendering: On the gates were inscribed the names of the twelve tribes
+    rationale: The gates are the understood location of the inscriptions; making that connection explicit prevents the names from seeming detached from the architecture.
+  - source_phrase: τῶν δώδεκα φυλῶν υἱῶν Ἰσραήλ
+    prior_rendering: the twelve tribes of the sons of Israel
+    new_rendering: the twelve tribes of Israel
+    rationale: '''Sons of Israel'' functions here as the conventional designation of Israel''s descendants; ''tribes of Israel'' conveys that corporate identity without suggesting a restriction to male members.'
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly sought to make the identification of the names clearer, despite the later automated revert. I carry that gain further by naming their location and rendering the corporate designation naturally, rather than preserving the earlier preference for the literal 'sons of Israel.'

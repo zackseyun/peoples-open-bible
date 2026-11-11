@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'bound in chains' or 'with the chains fastened around him.' The Greek literally describes him as having the chains around him.
-    reason: lexical_alternative
+  text: When the tyrant saw him already in chains, he took pity on him, even though the boy’s brothers had bitterly insulted him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κατοικτειρήσας
   chosen: pitied
@@ -133,14 +129,20 @@ revisions:
   from: Whom the tyrant pitied, even though he had been cruelly abused by his brothers, seeing that he was already wearing the chains,
   to: Whom the tyrant pitied, even though he had been cruelly abused by his brothers, seeing that he was already wearing the chains,
   rationale: Changed 'abused' to 'mistreated' for a more formal register while preserving the sense of κακισθείς. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,'
-  to: 'Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,'
+  from: Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,
+  to: Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had been cruelly abused''].'
+- timestamp: '2026-11-09T18:59:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Whom the tyrant pitied[a], even though he had been cruelly mistreated by his brothers, seeing that he was already wearing the chains,
+  to: When the tyrant saw him already in chains, he took pity on him, even though the boy’s brothers had bitterly insulted him.
+  rationale: The recorded revisions concern “abused” versus “mistreated” and do not address the mistaken participant relationships. The Greek grammar and narrative context require identifying the tyrant as the recipient of the brothers’ insults.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -160,3 +162,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/012/002.job-50027.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The tyrant feels pity for the youngest brother in chains despite the bitter insults he has received from the boy’s brothers.
+  meaning_decisions:
+  - source_phrase: καίπερ δεινῶς ὑπὸ τῶν ἀδελφῶν αὐτοῦ κακισθείς
+    prior_rendering: even though he had been cruelly mistreated by his brothers
+    new_rendering: even though the boy’s brothers had bitterly insulted him
+    rationale: The nominative participle κακισθείς refers to the tyrant, not the boy; in context it describes the brothers’ verbal denunciations, not physical mistreatment.
+  - source_phrase: ὁρῶν ἤδη τὰ δεσμὰ περικείμενον
+    prior_rendering: seeing that he was already wearing the chains
+    new_rendering: When the tyrant saw him already in chains
+    rationale: The reordered clause makes clear what prompted the tyrant’s pity and avoids the unnatural description of chains as clothing.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions concern “abused” versus “mistreated” and do not address the mistaken participant relationships. The Greek grammar and narrative context require identifying the tyrant as the recipient of the brothers’ insults.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐπηρώτησεν εἷς ἐξ αὐτῶν νομικὸς πειράζων ⸀αὐτόν·
 translation:
-  text: And one of them, a lawyer[a], asked him a question, testing him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'an expert in the law.' The Greek term refers to a specialist in the Jewish law.
-    reason: lexical_alternative
+  text: And one of them, an expert in the Law, asked him a question to test him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καὶ
   chosen: And
@@ -77,14 +73,20 @@ revisions:
   from: And one of them, a lawyer, asked him a question, testing him.
   to: And one of them, a lawyer, asked him, testing him.
   rationale: Removed 'a question' because it is not explicitly present in the Greek; retained the participle 'testing him' and kept the formal register.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And one of them[a], a lawyer, asked him, testing him.'
-  to: 'And one of them, a lawyer, asked him a question, testing him.'
+  from: And one of them[a], a lawyer, asked him, testing him.
+  to: And one of them, a lawyer, asked him a question, testing him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''asked him a question''].'
+- timestamp: '2026-11-09T20:34:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And one of them, a lawyer[a], asked him a question, testing him.
+  to: And one of them, an expert in the Law, asked him a question to test him.
+  rationale: There is no maintainer revision. The earlier removal of “a question” rested on word-for-word explicitness and was later reverted; I retain that natural English expression while bringing the existing explanation of “lawyer” into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/022/035.job-57297.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:34:06Z'
+  change_level: refined
+  confidence: high
+  meaning: One of the Pharisees, an expert in the Law, asks Jesus a question in order to test him.
+  meaning_decisions:
+  - source_phrase: νομικὸς
+    prior_rendering: a lawyer[a]
+    new_rendering: an expert in the Law
+    rationale: The term identifies a specialist in the Jewish Law, not a modern courtroom lawyer; the main text now carries the clarification previously supplied in the footnote.
+  - source_phrase: πειράζων αὐτόν
+    prior_rendering: testing him
+    new_rendering: to test him
+    rationale: The participle expresses the purpose of the question in this adversarial context, which the English infinitive makes clear without implying enticement to sin.
+  footnote_kinds: {}
+  history_weighed: There is no maintainer revision. The earlier removal of “a question” rested on word-for-word explicitness and was later reverted; I retain that natural English expression while bringing the existing explanation of “lawyer” into the text.

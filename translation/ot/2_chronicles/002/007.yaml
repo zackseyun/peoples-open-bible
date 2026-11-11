@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וּֽ/שְׁלַֽח לִ/י֩ עֲצֵ֨י אֲרָזִ֜ים בְּרוֹשִׁ֣ים וְ/אַלְגּוּמִּים֮ מֵֽ/הַ/לְּבָנוֹן֒ כִּ֚י אֲנִ֣י יָדַ֔עְתִּי אֲשֶׁ֤ר עֲבָדֶ֨י/ךָ֙ יֽוֹדְעִ֔ים לִ/כְר֖וֹת עֲצֵ֣י לְבָנ֑וֹן וְ/הִנֵּ֥ה עֲבָדַ֖/י עִם עֲבָדֶֽי/ךָ־־׃
 translation:
-  text: Send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
-  philosophy: optimal-equivalence
+  text: Also send me cedar, cypress[a], and algum[b] timber from Lebanon, for I know that your servants are skilled in cutting Lebanon’s timber. My servants will work alongside yours.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'juniper' or 'fir' for 'cypress' (Hebrew beroshim); the exact species is uncertain.
-    reason: lexical_alternative
+    text: Possibly juniper or fir; the exact species is uncertain.
+    reason: alternative_reading
   - marker: b
-    text: '''Algum'' may also be rendered ''almug''; some identify it with sandalwood, but the species is uncertain.'
-    reason: lexical_alternative
+    text: Possibly sandalwood; the kind of timber meant by “algum” is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וּשְׁלַח
   chosen: Send me
@@ -21,7 +21,7 @@ lexical_decisions:
   - And send me
   - Now send me
   lexicon: HALOT
-  rationale: "Imperative of שׁלח with prefixed conjunction. English 'Now' captures the discourse progression naturally without over-literal repetition of 'and'. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Imperative of שׁלח with prefixed conjunction. English ''Now'' captures the discourse progression naturally without over-literal repetition of ''and''. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: עֲצֵי אֲרָזִים
   chosen: cedar ... timber
   alternatives:
@@ -113,13 +113,12 @@ revisions:
   from: Now send me cedar, cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And look, my servants will be with your servants.
   to: Now send me cedar, cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And look, my servants will be with your servants.
   rationale: Replaced 'look' with 'behold' for a more formal translation register while preserving the Hebrew הנה. No other changes needed.
-
 - timestamp: '2026-05-17T03:21:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.'
-  to: 'Now send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.'
+  from: Now send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
+  to: Now send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''And look''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -128,6 +127,13 @@ revisions:
   from: Now send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
   to: Send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:24:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Send me cedar[a], cypress, and algum timber from Lebanon, for I know that your servants know how to cut timber in Lebanon. And behold[b], my servants will be with your servants.
+  to: Also send me cedar, cypress[a], and algum[b] timber from Lebanon, for I know that your servants are skilled in cutting Lebanon’s timber. My servants will work alongside yours.
+  rationale: The recorded changes chiefly debate the register of “look/behold” and remove an unsupported leading “Now”; they do not change the proposed cooperation. I retain the uncertain timber identifications with correctly placed notes and make working together explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -147,3 +153,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/002/007.job-59545.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Solomon requests cedar, cypress, and algum timber from Lebanon and offers his servants to work alongside Huram’s skilled woodcutters.
+  meaning_decisions:
+  - source_phrase: עֲבָדֶיךָ יֹדְעִים לִכְרוֹת עֲצֵי לְבָנוֹן
+    prior_rendering: your servants know how to cut timber in Lebanon
+    new_rendering: your servants are skilled in cutting Lebanon’s timber
+    rationale: Expresses the expertise for which Solomon seeks Huram’s help, rather than merely basic knowledge of cutting.
+  - source_phrase: וְהִנֵּה עֲבָדַי עִם עֲבָדֶיךָ
+    prior_rendering: And behold, my servants will be with your servants
+    new_rendering: My servants will work alongside yours
+    rationale: The proposed presence is cooperative labor, as the following purpose clause confirms.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The recorded changes chiefly debate the register of “look/behold” and remove an unsupported leading “Now”; they do not change the proposed cooperation. I retain the uncertain timber identifications with correctly placed notes and make working together explicit.

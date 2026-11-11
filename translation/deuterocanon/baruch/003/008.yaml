@@ -8,12 +8,8 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for penalty' or 'for indebtedness.' The Greek term carries the sense of liability or obligation incurred, here in a context of divine judgment.
-    reason: lexical_alternative
+  text: Behold, today we are in exile, where you scattered us to bear reproach, to be a curse, and to pay the penalty in keeping with all the wrongdoings of our fathers, who turned away from the Lord our God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἰδοὺ
   chosen: Look
@@ -124,14 +120,20 @@ revisions:
   from: Look, today we are in our exile, where you scattered us, there for reproach and for a curse and for liability to payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
   to: Look, today we are in our exile, where you scattered us, there for reproach and for a curse and for liability to payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
   rationale: Replaced 'Look' with the more formal 'Behold'; removed the awkward 'there'; simplified 'liability to payment' to 'payment' for more natural rendering of ὄφλησιν while retaining the sense; otherwise preserved the structure and content.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.'
-  to: 'Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.'
+  from: Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
+  to: Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''liability to payment''].'
+- timestamp: '2026-11-09T19:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Behold[a], today we are in our exile, where you scattered us, for reproach and for a curse and for payment, according to all the wrongdoings of our fathers, who turned away from the Lord our God.
+  to: Behold, today we are in exile, where you scattered us to bear reproach, to be a curse, and to pay the penalty in keeping with all the wrongdoings of our fathers, who turned away from the Lord our God.
+  rationale: Earlier deliberation identified both the punitive context and the incurred-obligation sense of the difficult term rendered 'payment.' 'Pay the penalty' carries both more clearly than either 'payment' or 'liability to payment.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +153,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/008.job-50378.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel acknowledges that its present exile, shame, curse, and penalty correspond to its fathers' abandonment of God.
+  meaning_decisions:
+  - source_phrase: εἰς ὀνειδισμὸν καὶ εἰς ἀρὰν καὶ εἰς ὄφλησιν
+    prior_rendering: for reproach and for a curse and for payment
+    new_rendering: to bear reproach, to be a curse, and to pay the penalty
+    rationale: The repeated phrases describe the consequences of exile; 'pay the penalty' conveys incurred liability in its punitive context rather than an unspecified payment.
+  - source_phrase: κατὰ πάσας τὰς ἀδικίας
+    prior_rendering: according to all the wrongdoings
+    new_rendering: in keeping with all the wrongdoings
+    rationale: The wording makes clear that the community's condition corresponds to its fathers' wrongdoing.
+  footnote_kinds: {}
+  history_weighed: Earlier deliberation identified both the punitive context and the incurred-obligation sense of the difficult term rendered 'payment.' 'Pay the penalty' carries both more clearly than either 'payment' or 'liability to payment.'

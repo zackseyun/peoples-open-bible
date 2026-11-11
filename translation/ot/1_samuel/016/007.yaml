@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֜ה אֶל שְׁמוּאֵ֗ל אַל תַּבֵּ֧ט אֶל מַרְאֵ֛/הוּ וְ/אֶל גְּבֹ֥הַּ קוֹמָת֖/וֹ כִּ֣י מְאַסְתִּ֑י/הוּ כִּ֣י לֹ֗א אֲשֶׁ֤ר יִרְאֶה֙ הָ/אָדָ֔ם כִּ֤י הָֽ/אָדָם֙ יִרְאֶ֣ה לַ/עֵינַ֔יִם וַ/יהוָ֖ה יִרְאֶ֥ה לַ/לֵּבָֽב־־־־׀׃
 translation:
-  text: But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”
-  philosophy: optimal-equivalence
+  text: 'But Yahweh said to Samuel, “Do not judge by his appearance or his height, because I have rejected him. Yahweh does not see as people see: people look at outward appearance[a], but Yahweh sees the heart.”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'For not what man sees'; the Hebrew is elliptical, and the sense is that the LORD's way of seeing differs from man's.
+    text: Literally, “to the eyes,” contrasted with “to the heart.”
     reason: lexical_alternative
-  - marker: b
-    text: '''Man'' here is generic, referring to human beings in general.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'For the LORD does not see as man sees, for man sees'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -117,9 +111,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”'
-  to: 'But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”'
+  from: But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”
+  to: But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the LORD does not see as man sees''].'
+- timestamp: '2026-11-09T17:22:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Yahweh said to Samuel[a], “Do not look at his appearance or at the height of his stature, because I have rejected him. For not as man sees does God see, for man sees what is before the eyes[c][b], but Yahweh sees the heart.”
+  to: 'But Yahweh said to Samuel, “Do not judge by his appearance or his height, because I have rejected him. Yahweh does not see as people see: people look at outward appearance[a], but Yahweh sees the heart.”'
+  rationale: The earlier colon revision improved the explanatory flow, while the later source-shaped inversion obscured an otherwise clear contrast. I restore natural syntax, follow the lexical record's contextual expansion of the elliptical clause, and retain the weighty image of the heart.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:56:12Z'
@@ -147,3 +148,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/1_samuel/016/007.job-38276.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh has rejected Eliab and tells Samuel not to judge by outward appearance, since Yahweh sees the heart.
+  meaning_decisions:
+  - source_phrase: אַל תַּבֵּט אֶל מַרְאֵהוּ וְאֶל גְּבֹהַּ קוֹמָתוֹ
+    prior_rendering: Do not look at his appearance or at the height of his stature
+    new_rendering: Do not judge by his appearance or his height
+    rationale: The prohibition concerns evaluating Eliab as a prospective king by visible qualities, not merely looking at him; “height” fully conveys the redundant stature phrase.
+  - source_phrase: כִּי לֹא אֲשֶׁר יִרְאֶה הָאָדָם
+    prior_rendering: For not as man sees does God see
+    new_rendering: Yahweh does not see as people see
+    rationale: The Hebrew is elliptical, but its contrast supplies Yahweh as the understood subject; natural English makes that comparison explicit.
+  - source_phrase: כִּי הָאָדָם יִרְאֶה לַעֵינַיִם
+    prior_rendering: for man sees what is before the eyes
+    new_rendering: people look at outward appearance
+    rationale: The generic human subject includes everyone, and the eyes expression refers to visible appearance in contrast with the inner person; the footnote preserves the source's paired imagery.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier colon revision improved the explanatory flow, while the later source-shaped inversion obscured an otherwise clear contrast. I restore natural syntax, follow the lexical record's contextual expansion of the elliptical clause, and retain the weighty image of the heart.

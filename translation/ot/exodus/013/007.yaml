@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: מַצּוֹת֙ יֵֽאָכֵ֔ל אֵ֖ת שִׁבְעַ֣ת הַ/יָּמִ֑ים וְ/לֹֽא יֵרָאֶ֨ה לְ/ךָ֜ חָמֵ֗ץ וְ/לֹֽא יֵרָאֶ֥ה לְ/ךָ֛ שְׂאֹ֖ר בְּ/כָל גְּבֻלֶֽ/ךָ־־־׃
 translation:
-  text: Unleavened bread shall be eaten throughout the seven days[a], and no leaven shall be seen with you[b], and no yeast shall be seen with you within all your territory.
-  philosophy: optimal-equivalence
+  text: Unleavened bread shall be eaten throughout the seven days. No leavened food or leaven[a] is to be found in your possession anywhere in your territory.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'anything leavened' for 'leavened bread.' The Hebrew חָמֵץ denotes what is leavened, while שְׂאֹר in the next clause refers more specifically to the leavening agent itself.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'shall not be seen with you.' The wording implies that no leavened product or yeast is to remain anywhere in your possession or domain during the seven days.
-    reason: lexical_alternative
+    text: Leaven was a piece of fermented dough used to make a new batch of dough rise.
+    reason: cultural_note
 lexical_decisions:
 - source_word: מַצּוֹת
   chosen: unleavened bread
@@ -87,7 +84,13 @@ revisions:
   from: Unleavened bread shall be eaten throughout the seven days, and no leavened bread shall be seen with you, and no yeast shall be seen with you within all your territory.
   to: Unleavened bread shall be eaten throughout the seven days, and no leaven shall be seen with you, and no yeast shall be seen with you within all your territory.
   rationale: Changed the first occurrence of 'leavened bread' to 'leaven' for lexical accuracy, since חָמֵץ refers broadly to leaven/leavened matter here and avoids redundancy with 'yeast' for שְׂאֹר.
-
+- timestamp: '2026-11-09T17:34:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Unleavened bread shall be eaten throughout the seven days[a], and no leaven shall be seen with you[b], and no yeast shall be seen with you within all your territory.
+  to: Unleavened bread shall be eaten throughout the seven days. No leavened food or leaven[a] is to be found in your possession anywhere in your territory.
+  rationale: The revision sought to avoid restricting חָמֵץ to bread, but its choice of 'leaven' obscured the distinction from שְׂאֹר. I preserve that revision’s broader scope while restoring the product-and-starter distinction documented in the lexical decisions and expressing the possession idiom directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -107,3 +110,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/013/007.job-62590.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Throughout the seven days, Israel must eat unleavened bread and keep both leavened food and leaven out of their possession across their territory.
+  meaning_decisions:
+  - source_phrase: חָמֵץ
+    prior_rendering: leaven
+    new_rendering: leavened food
+    rationale: This term denotes the leavened product, in contrast with the leavening agent named in the next clause.
+  - source_phrase: שְׂאֹר
+    prior_rendering: yeast
+    new_rendering: leaven
+    rationale: The term refers to the fermented starter used in breadmaking, not specifically to yeast as a separately prepared ingredient.
+  - source_phrase: וְלֹא יֵרָאֶה לְךָ ... וְלֹא יֵרָאֶה לְךָ ... בְּכָל גְּבֻלֶךָ
+    prior_rendering: no leaven shall be seen with you, and no yeast shall be seen with you within all your territory
+    new_rendering: No leavened food or leaven is to be found in your possession anywhere in your territory
+    rationale: The prohibition concerns the presence of these things in Israel’s possession, not merely whether they are visible; combining the parallel clauses preserves both prohibited categories and their comprehensive scope.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The revision sought to avoid restricting חָמֵץ to bread, but its choice of 'leaven' obscured the distinction from שְׂאֹר. I preserve that revision’s broader scope while restoring the product-and-starter distinction documented in the lexical decisions and expressing the possession idiom directly.

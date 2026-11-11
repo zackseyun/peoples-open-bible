@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כִּ֣י כֹ֤ה אָמַר֙ אֲדֹנָ֣/י יְהוִ֔ה הָ/עִ֛יר הַ/יֹּצֵ֥את אֶ֖לֶף תַּשְׁאִ֣יר מֵאָ֑ה וְ/הַ/יּוֹצֵ֥את מֵאָ֛ה תַּשְׁאִ֥יר עֲשָׂרָ֖ה לְ/בֵ֥ית יִשְׂרָאֵֽל׃ס
 translation:
-  text: 'For thus says the Lord GOD: The city that marches out a thousand will have a hundred left[a], and the one that marches out a hundred will have ten left, for the house of Israel.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'that goes out a thousand ... that goes out a hundred.' The Hebrew verb is literally 'goes out,' likely referring to going out for battle; 'marches out' makes that military sense explicit.
-    reason: lexical_alternative
+  text: 'For thus says the Lord Yahweh: In the house of Israel, a city that sends out a thousand soldiers will have only a hundred left, and one that sends out a hundred will have only ten left.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֲדֹנָי יְהוִה
   chosen: the Lord GOD
@@ -101,14 +97,20 @@ revisions:
   from: 'For thus says the Lord GOD: The city that marches out a thousand will have a hundred left, and the one that marches out a hundred will have ten left, for the house of Israel.'
   to: 'For thus says the Lord GOD: The city that goes out a thousand strong will have a hundred left, and the one that goes out a hundred strong will have ten left, for the house of Israel.'
   rationale: Replaced 'marches out' with 'goes out ... strong' to more naturally reflect the Hebrew participle with the numbered force, while preserving the sense of military departure and the remaining survivors.
-
 - timestamp: '2026-05-16T06:39:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'For thus says the Lord GOD: The city that goes out a thousand strong will have a hundred left[a], and the one that goes out a hundred strong will have ten left, for the house of Israel.'
   to: 'For thus says the Lord GOD: The city that marches out a thousand will have a hundred left[a], and the one that marches out a hundred will have ten left, for the house of Israel.'
-  rationale: 'Azure substituted ''goes out ... strong'' — drafter''s explicit rejected_alternative ''that goes out''. Drafter chose ''marches out'' to make military sense of going to battle explicit; ''strong'' is azure addition with no lexical basis.'
+  rationale: Azure substituted 'goes out ... strong' — drafter's explicit rejected_alternative 'that goes out'. Drafter chose 'marches out' to make military sense of going to battle explicit; 'strong' is azure addition with no lexical basis.
+- timestamp: '2026-11-09T17:30:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For thus says the Lord GOD: The city that marches out a thousand will have a hundred left[a], and the one that marches out a hundred will have ten left, for the house of Israel.'
+  to: 'For thus says the Lord Yahweh: In the house of Israel, a city that sends out a thousand soldiers will have only a hundred left, and one that sends out a hundred will have only ten left.'
+  rationale: Both the earlier review and its automated revert recognized a military muster; I express that shared meaning directly with 'sends out ... soldiers.' The standing Yahweh ruling controls the divine title despite the inconsistent older rationale.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +133,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/amos/005/003.job-61138.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Lord Yahweh announces that Israel's cities will lose nine-tenths of the forces they send out.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: The compound contains both the title Lord and the divine name, which the standing ruling requires to be rendered Yahweh.
+  - source_phrase: הָעִיר הַיֹּצֵאת אֶלֶף תַּשְׁאִיר מֵאָה וְהַיּוֹצֵאת מֵאָה תַּשְׁאִיר עֲשָׂרָה
+    prior_rendering: The city that marches out a thousand will have a hundred left, and the one that marches out a hundred will have ten left
+    new_rendering: a city that sends out a thousand soldiers will have only a hundred left, and one that sends out a hundred will have only ten left
+    rationale: The city is represented by its military force; making soldiers explicit removes the unnatural suggestion that the city itself marches and conveys the devastating reduction.
+  - source_phrase: לְבֵית יִשְׂרָאֵל
+    prior_rendering: for the house of Israel
+    new_rendering: In the house of Israel
+    rationale: Placing the phrase before the cities makes clear that this devastation concerns Israel's cities rather than leaving its relationship to the sentence obscure.
+  footnote_kinds: {}
+  history_weighed: Both the earlier review and its automated revert recognized a military muster; I express that shared meaning directly with 'sends out ... soldiers.' The standing Yahweh ruling controls the divine title despite the inconsistent older rationale.

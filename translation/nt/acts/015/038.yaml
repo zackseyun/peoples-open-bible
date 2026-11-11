@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Παῦλος δὲ ἠξίου, τὸν ἀποστάντα ἀπ’ αὐτῶν ἀπὸ Παμφυλίας καὶ μὴ συνελθόντα αὐτοῖς εἰς τὸ ἔργον, μὴ ⸀συμπαραλαμβάνειν τοῦτον.
 translation:
-  text: But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had deserted them in Pamphylia.' The Greek participle can be rendered more strongly, but the main text keeps the less interpretive 'had withdrawn from.'
-    reason: lexical_alternative
+  text: But Paul insisted that they should not take this man along, because he had left them in Pamphylia and had not continued with them in the work.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἠξίου
   chosen: insisted
@@ -78,14 +74,20 @@ revisions:
   from: But Paul insisted that they should not take along this man, who had withdrawn from them in Pamphylia and had not gone with them to the work.
   to: But Paul insisted that they should not take along this man, who had withdrawn from them in Pamphylia and had not gone with them to the work.
   rationale: Changed 'in Pamphylia' to 'from Pamphylia' to reflect ἀπὸ Παμφυλίας more accurately. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.'
-  to: 'But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.'
+  from: But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.
+  to: But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from them in Pamphylia''].'
+- timestamp: '2026-11-09T17:07:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Paul insisted that they should not take along this man[a], who had withdrawn from them from Pamphylia and had not gone with them to the work.
+  to: But Paul insisted that they should not take this man along, because he had left them in Pamphylia and had not continued with them in the work.
+  rationale: The history alternates between “in” and “from Pamphylia,” but the lexical analysis and the earlier narrative identify Pamphylia as the place where Mark left the party. I retain Paul’s firm “insisted” and make the reason for his refusal explicit without intensifying the departure into a judgment about Mark’s motives.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/015/038.job-53922.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul firmly opposes taking Mark because Mark previously left them in Pamphylia instead of continuing in the work with them.
+  meaning_decisions:
+  - source_phrase: τὸν ἀποστάντα ἀπ’ αὐτῶν ἀπὸ Παμφυλίας
+    prior_rendering: who had withdrawn from them from Pamphylia
+    new_rendering: because he had left them in Pamphylia
+    rationale: Pamphylia identifies where Mark left the party, and this departure supplies Paul’s reason for refusing him; the wording does not assume Mark’s motives.
+  - source_phrase: καὶ μὴ συνελθόντα αὐτοῖς εἰς τὸ ἔργον
+    prior_rendering: and had not gone with them to the work
+    new_rendering: and had not continued with them in the work
+    rationale: The issue is Mark’s failure to accompany them onward in their missionary task, not failure to reach a place called “the work.”
+  footnote_kinds: {}
+  history_weighed: The history alternates between “in” and “from Pamphylia,” but the lexical analysis and the earlier narrative identify Pamphylia as the place where Mark left the party. I retain Paul’s firm “insisted” and make the reason for his refusal explicit without intensifying the departure into a judgment about Mark’s motives.

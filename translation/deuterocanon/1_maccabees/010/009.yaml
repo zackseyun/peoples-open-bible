@@ -30,12 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And those from the citadel handed over the hostages to Jonathan[a], and he returned them to their parents.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek ἄκρα refers to the fortified citadel, traditionally called the Acra.
-    reason: cultural_note
+  text: Those from the citadel handed over the hostages to Jonathan, and they were returned to their parents.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρέδωκαν
   chosen: handed
@@ -105,7 +101,13 @@ revisions:
   from: And those from the citadel handed Jonathan the hostages, and he returned them to their parents.
   to: And those from the citadel handed over the hostages to Jonathan, and he returned them to their parents.
   rationale: Added 'over' for the natural sense of παρέδωκαν and moved 'Jonathan' after 'the hostages' to reflect the Greek construction more clearly.
-
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those from the citadel handed over the hostages to Jonathan[a], and he returned them to their parents.
+  to: Those from the citadel handed over the hostages to Jonathan, and they were returned to their parents.
+  rationale: I retain the recorded review’s clearer “handed over the hostages to Jonathan.” Its singular “he returned” is not supported by the supplied plural verb, so I state the return without specifying its agents.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -125,3 +127,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/009.job-48517.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: refined
+  confidence: high
+  meaning: The citadel group surrendered the hostages to Jonathan, after which the hostages were restored to their parents.
+  meaning_decisions:
+  - source_phrase: καὶ ἀπέδωκαν αὐτοὺς τοῖς γονεῦσιν αὐτῶν
+    prior_rendering: and he returned them to their parents
+    new_rendering: and they were returned to their parents
+    rationale: The supplied Greek has a plural verb, not a singular verb identifying Jonathan as the sole agent; the passive preserves the restoration without assigning an unsupported individual subject.
+  footnote_kinds: {}
+  history_weighed: I retain the recorded review’s clearer “handed over the hostages to Jonathan.” Its singular “he returned” is not supported by the supplied plural verb, so I state the return without specifying its agents.

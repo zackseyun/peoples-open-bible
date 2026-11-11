@@ -28,15 +28,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things[a], who knows all things before they come to be[b],”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'knower of secrets' for 'knower of the hidden things.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'before their existence' or 'before they happen.' The Greek can refer broadly to things before they come into being.
-    reason: alternative_reading
+  text: Then Susanna cried out in a loud voice, “O eternal God, you know what is hidden and know all things before they come to be.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀνεβόησεν
   chosen: cried out
@@ -118,13 +111,12 @@ revisions:
   from: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things, who knows all things before they come to be,”
   to: And Susanna cried out with a loud voice and said, “O eternal God, knower of hidden things, who knows all things before they come to be,”
   rationale: Removed the article in 'the hidden things' to sound more natural in English while preserving the sense of τῶν κρυπτῶν. No other changes needed.
-
 - timestamp: '2026-05-18T03:09:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Susanna cried out with a loud voice and said[a], “O eternal God, knower of hidden things[b], who knows all things before they come to be,”'
-  to: 'And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things, who knows all things before they come to be,”'
+  from: And Susanna cried out with a loud voice and said[a], “O eternal God, knower of hidden things[b], who knows all things before they come to be,”
+  to: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things, who knows all things before they come to be,”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''knower of the hidden things''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -134,6 +126,13 @@ revisions:
   from: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things, who knows all things before they come to be,”
   to: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things[a], who knows all things before they come to be[b],”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('knower of the hidden things') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('before they come to be') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:09:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Susanna cried out with a loud voice and said, “O eternal God, knower of the hidden things[a], who knows all things before they come to be[b],”
+  to: Then Susanna cried out in a loud voice, “O eternal God, you know what is hidden and know all things before they come to be.
+  rationale: The earlier review recognized awkward English in the invocation, and its automated reversal supplies no meaning-based reason to retain that awkwardness. I preserve the recorded breadth of divine knowledge and “before they come to be,” which needs no alternative-wording note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -153,3 +152,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/042.job-52459.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Susanna loudly appealed to the eternal God whose knowledge embraces hidden matters and everything before it comes to be.
+  meaning_decisions:
+  - source_phrase: ὁ τῶν κρυπτῶν γνώστης, ὁ εἰδὼς τὰ πάντα
+    prior_rendering: knower of the hidden things, who knows all things
+    new_rendering: you know what is hidden and know all things
+    rationale: Direct address carries the invocation’s meaning naturally, retaining both hidden knowledge and its universal scope without the strained noun phrase “knower of the hidden things.”
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized awkward English in the invocation, and its automated reversal supplies no meaning-based reason to retain that awkwardness. I preserve the recorded breadth of divine knowledge and “before they come to be,” which needs no alternative-wording note.

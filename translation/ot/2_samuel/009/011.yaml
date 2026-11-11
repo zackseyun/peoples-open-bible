@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר צִיבָא֙ אֶל הַ/מֶּ֔לֶךְ כְּ/כֹל֩ אֲשֶׁ֨ר יְצַוֶּ֜ה אֲדֹנִ֤/י הַ/מֶּ֨לֶךְ֙ אֶת עַבְדּ֔/וֹ כֵּ֖ן יַעֲשֶׂ֣ה עַבְדֶּ֑/ךָ וּ/מְפִיבֹ֗שֶׁת אֹכֵל֙ עַל שֻׁלְחָנִ֔/י כְּ/אַחַ֖ד מִ/בְּנֵ֥י הַ/מֶּֽלֶךְ־־־׃
 translation:
-  text: Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.
-  philosophy: optimal-equivalence
+  text: Ziba said to the king, “Your servant will do everything my lord the king commands.” Mephibosheth ate at the king’s table[a] like one of the king’s sons.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''my table.'' Some translations render ''the king’s table'' to smooth the shift in person, but the Masoretic Text preserves the first person, likely reflecting David’s perspective.'
+    text: The Hebrew reads “my table”; the ancient Greek translation reads “David’s table.”
     reason: textual_variant
-  - marker: b
-    text: Or 'at my table'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: said
@@ -118,9 +115,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.'
-  to: 'Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.'
+  from: Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.
+  to: Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was eating''].'
+- timestamp: '2026-11-09T17:28:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Ziba said to the king[a], “According to all that my lord the king commands his servant[b], so your servant will do.” And Mephibosheth ate at my table like one of the king’s sons.
+  to: Ziba said to the king, “Your servant will do everything my lord the king commands.” Mephibosheth ate at the king’s table[a] like one of the king’s sons.
+  rationale: I give greater weight to the earlier review’s identification of the speaker problem than to later reversions based on preserving the first-person suffix. The main text identifies David’s table from the narrative, while the note preserves the Hebrew reading and the ancient Greek alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T04:51:10Z'
@@ -149,3 +153,26 @@ cross_check:
     major-issues: 1
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/2_samuel/009/011.job-28780.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Ziba promises complete obedience, and Mephibosheth receives the privilege of dining with David like a royal son.
+  meaning_decisions:
+  - source_phrase: כְּכֹל אֲשֶׁר יְצַוֶּה אֲדֹנִי הַמֶּלֶךְ אֶת עַבְדּוֹ כֵּן יַעֲשֶׂה עַבְדֶּךָ
+    prior_rendering: According to all that my lord the king commands his servant, so your servant will do
+    new_rendering: Your servant will do everything my lord the king commands
+    rationale: The correlative construction pledges comprehensive obedience; natural English carries its full force without repeating the servant’s designation.
+  - source_phrase: וּמְפִיבֹשֶׁת אֹכֵל עַל שֻׁלְחָנִי
+    prior_rendering: And Mephibosheth ate at my table
+    new_rendering: Mephibosheth ate at the king’s table
+    rationale: The surrounding narrative identifies David’s table, and the ancient Greek reading supports that reference; an unexplained narrator’s “my” obscures it in English.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I give greater weight to the earlier review’s identification of the speaker problem than to later reversions based on preserving the first-person suffix. The main text identifies David’s table from the narrative, while the note preserves the Hebrew reading and the ancient Greek alternative.

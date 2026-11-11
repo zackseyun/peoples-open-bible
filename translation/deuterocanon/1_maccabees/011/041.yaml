@@ -29,12 +29,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were making war against Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more specifically, 'those from the Acra,' the Seleucid citadel in Jerusalem.
-    reason: lexical_alternative
+  text: Jonathan sent word to King Demetrius, asking him to drive the citadel’s garrison out of Jerusalem and expel the garrisons from the strongholds, because they were waging war against Israel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέστειλεν
   chosen: sent
@@ -117,14 +113,20 @@ revisions:
   from: And Jonathan sent to Demetrius the king, asking that he remove those from the citadel out of Jerusalem, and those in the strongholds; for they were making war against Israel.
   to: And Jonathan sent to Demetrius the king, asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were fighting against Israel.
   rationale: Revised 'remove those from the citadel out of Jerusalem' to 'drive out those in the citadel from Jerusalem' for closer alignment with ἐκβάλῃ and clearer English. Changed 'making war against Israel' to 'fighting against Israel' for a more natural rendering of πολεμοῦντες.
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were fighting against Israel.'
-  to: 'And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were making war against Israel.'
-  rationale: 'Restored ''making war'' (organized πολεμέω); kept azure''s ''drive out'' for ἐκβάλῃ (more faithful to forceful expulsion).'
+  from: And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were fighting against Israel.
+  to: And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were making war against Israel.
+  rationale: Restored 'making war' (organized πολεμέω); kept azure's 'drive out' for ἐκβάλῃ (more faithful to forceful expulsion).
+- timestamp: '2026-11-09T18:53:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jonathan sent to Demetrius the king[a], asking that he drive out those in the citadel from Jerusalem, and those in the strongholds; for they were making war against Israel.
+  to: Jonathan sent word to King Demetrius, asking him to drive the citadel’s garrison out of Jerusalem and expel the garrisons from the strongholds, because they were waging war against Israel.
+  rationale: I retain the revision’s forceful 'drive out' and the later concern to preserve organized warfare rather than generic fighting. 'Waging war' carries that distinction naturally, and the technical name Acra adds nothing necessary here.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +146,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/041.job-48638.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jonathan asks Demetrius to expel the hostile garrisons from Jerusalem’s citadel and the other strongholds because they are waging war against Israel.
+  meaning_decisions:
+  - source_phrase: ἀπέστειλεν Ἰωνάθης πρὸς Δημήτριον τὸν βασιλέα
+    prior_rendering: Jonathan sent to Demetrius the king
+    new_rendering: Jonathan sent word to King Demetrius
+    rationale: The context makes this a communicated request; supplying 'word' completes the English expression without specifying an unmentioned messenger.
+  - source_phrase: ἐκβάλῃ τοὺς ἐκ τῆς ἄκρας ἐξ Ἱερουσαλὴμ καὶ τοὺς ἐν τοῖς ὀχυρώμασιν
+    prior_rendering: drive out those in the citadel from Jerusalem, and those in the strongholds
+    new_rendering: drive the citadel’s garrison out of Jerusalem and expel the garrisons from the strongholds
+    rationale: The military context identifies these occupants as hostile garrisons, and the revised construction makes clear that both groups are to be expelled.
+  footnote_kinds: {}
+  history_weighed: I retain the revision’s forceful 'drive out' and the later concern to preserve organized warfare rather than generic fighting. 'Waging war' carries that distinction naturally, and the technical name Acra adds nothing necessary here.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר יִשְׂרָאֵל֙ אֶל יוֹסֵ֔ף הִנֵּ֥ה אָנֹכִ֖י מֵ֑ת וְ/הָיָ֤ה אֱלֹהִים֙ עִמָּ/כֶ֔ם וְ/הֵשִׁ֣יב אֶתְ/כֶ֔ם אֶל אֶ֖רֶץ אֲבֹתֵי/כֶֽם־־׃
 translation:
-  text: Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or ''and God will be with you.'' The Hebrew conjunction is simply ''and,'' but here it likely carries a contrast: Jacob will die, yet God will remain with them.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew pronouns in 'with you' and 'bring you back' are plural, extending the promise beyond Joseph individually to his family or descendants.
-    reason: lexical_alternative
+  text: Then Israel said to Joseph, “Now I am about to die, but God will be with all of you and will bring you back to the land of your fathers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -105,14 +98,20 @@ revisions:
   from: Then Israel said to Joseph, “Look, I am dying, but God will be with you and will bring you back to the land of your fathers.”
   to: Then Israel said to Joseph, “Look, I am dying, but God will be with you and will bring you back to the land of your fathers.”
   rationale: Changed 'Look' to the more formal 'Behold' for register, and 'I am dying' to 'I am about to die' to more closely reflect the Hebrew expression while preserving natural English.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”'
-  to: 'Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”'
+  from: Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”
+  to: Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I am dying''].'
+- timestamp: '2026-11-09T17:45:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Israel said to Joseph[a], “Behold, I am about to die[b], but God will be with you and will bring you back to the land of your fathers.”
+  to: Then Israel said to Joseph, “Now I am about to die, but God will be with all of you and will bring you back to the land of your fathers.
+  rationale: The history supports both 'I am dying' and 'I am about to die'; the latter clearly expresses impending death here. I retain the documented contrast with God’s continuing presence and bring the plural address out of the footnote into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +134,25 @@ cross_check:
   verdict_counts:
     agree: 3
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/048/021.job-65746.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel tells Joseph that although his own death is near, God will remain with the family and bring them back to their ancestral land.
+  meaning_decisions:
+  - source_phrase: הִנֵּה אָנֹכִי מֵת
+    prior_rendering: Behold, I am about to die
+    new_rendering: Now I am about to die
+    rationale: The solemn announcement draws attention to Jacob’s impending death without requiring the archaic English discourse marker 'Behold.'
+  - source_phrase: וְהָיָה אֱלֹהִים עִמָּכֶם
+    prior_rendering: but God will be with you
+    new_rendering: but God will be with all of you
+    rationale: The Hebrew address is plural, extending the assurance beyond Joseph individually; making that explicit also clarifies the following promise of return.
+  footnote_kinds: {}
+  history_weighed: The history supports both 'I am dying' and 'I am about to die'; the latter clearly expresses impending death here. I retain the documented contrast with God’s continuing presence and bring the plural address out of the footnote into the text.

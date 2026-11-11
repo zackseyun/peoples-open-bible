@@ -8,15 +8,8 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the life-giving commandments' or 'the commandments for life.' The Greek literally reads 'the commandments of life.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'prudence' or 'insight.'
-    reason: lexical_alternative
+  text: Hear, O Israel, the commandments that lead to life; listen closely and learn prudence.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἄκουε
   chosen: Hear
@@ -101,14 +94,20 @@ revisions:
   from: Hear, Israel, the commandments of life; give ear to know understanding.
   to: Hear, Israel, the commandments of life; give ear to know understanding.
   rationale: Added 'O' for formal vocative address, and revised 'understanding' to 'prudence' to better reflect φρόνησιν and avoid awkward repetition with 'know understanding.'
-
 - timestamp: '2026-05-18T03:00:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.'
-  to: 'Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.'
+  from: Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.
+  to: Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''understanding''].'
+- timestamp: '2026-11-09T19:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Hear[a], O Israel, the commandments of life[b]; give ear to know prudence.
+  to: Hear, O Israel, the commandments that lead to life; listen closely and learn prudence.
+  rationale: The record alternates between 'understanding' and 'prudence'; I retain the current 'prudence,' also used in verse 14. The earlier caution about 'of life' gives way to the life-directed meaning established by the passage's argument.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/009.job-50379.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel is summoned to attend to the commandments that lead to life and to learn practical wisdom.
+  meaning_decisions:
+  - source_phrase: ἐντολὰς ζωῆς
+    prior_rendering: the commandments of life
+    new_rendering: the commandments that lead to life
+    rationale: The surrounding contrast between abandonment, death, and life identifies the commandments as the way to life.
+  - source_phrase: ἐνωτίσασθε γνῶναι φρόνησιν
+    prior_rendering: give ear to know prudence
+    new_rendering: listen closely and learn prudence
+    rationale: The idiom calls for attentive listening in order to gain practical wisdom; the new wording states that naturally.
+  footnote_kinds: {}
+  history_weighed: The record alternates between 'understanding' and 'prudence'; I retain the current 'prudence,' also used in verse 14. The earlier caution about 'of life' gives way to the life-directed meaning established by the passage's argument.

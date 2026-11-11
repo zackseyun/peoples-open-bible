@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: אֽוֹ יֹמַ֜יִם אוֹ חֹ֣דֶשׁ אוֹ יָמִ֗ים בְּ/הַאֲרִ֨יךְ הֶ/עָנָ֤ן עַל הַ/מִּשְׁכָּן֙ לִ/שְׁכֹּ֣ן עָלָ֔י/ו יַחֲנ֥וּ בְנֵֽי יִשְׂרָאֵ֖ל וְ/לֹ֣א יִסָּ֑עוּ וּ/בְ/הֵעָלֹת֖/וֹ יִסָּֽעוּ־־־־־׃
 translation:
-  text: Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
-  philosophy: optimal-equivalence
+  text: As long as the cloud remained settled over the tabernacle—whether for two days, a month, or longer[a]—the Israelites stayed in camp and did not set out. When it lifted, they set out.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'many days' for 'a longer time'; the Hebrew literally reads 'days,' likely meaning an extended period in this context.
-    reason: lexical_alternative
+    text: Or, “a year.” The Hebrew literally says “days,” which can denote an extended period or a year.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אֽוֹ ... אוֹ ... אוֹ
   chosen: Whether it was ... or ... or ...
@@ -118,14 +118,20 @@ revisions:
   from: Whether it was two days, or a month, or a longer time, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
   to: Whether it was two days, or a month, or a longer time, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
   rationale: Simplified 'a longer time' to 'longer' for a more direct and natural rendering of the Hebrew while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:57:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.'
-  to: 'Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.'
+  from: Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
+  to: Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a longer time''].'
+- timestamp: '2026-11-09T18:28:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Whether it was two days[a], or a month, or longer, when the cloud remained over the tabernacle, dwelling over it, the sons of Israel would camp and would not set out; but when it was lifted up, they would set out.
+  to: As long as the cloud remained settled over the tabernacle—whether for two days, a month, or longer[a]—the Israelites stayed in camp and did not set out. When it lifted, they set out.
+  rationale: I retained longer, which preserves the earlier judgment that days here denotes an extended period, while adding the established alternative a year. The recorded automated passes supply little additional evidence because they recorded no substantive text change.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +151,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/009/022.job-41240.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:28:24Z'
+  change_level: refined
+  confidence: medium
+  meaning: Regardless of how long the cloud remained over the tabernacle, the Israelites stayed in camp until it lifted.
+  meaning_decisions:
+  - source_phrase: בְּהַאֲרִיךְ הֶעָנָן עַל הַמִּשְׁכָּן לִשְׁכֹּן עָלָיו
+    prior_rendering: when the cloud remained over the tabernacle, dwelling over it
+    new_rendering: As long as the cloud remained settled over the tabernacle
+    rationale: The integrated expression preserves both prolonged duration and settled presence without an awkwardly repeated location.
+  - source_phrase: יַחֲנוּ בְנֵי יִשְׂרָאֵל
+    prior_rendering: the sons of Israel would camp
+    new_rendering: the Israelites stayed in camp
+    rationale: The collective refers to the whole people, and the context describes remaining at an existing campsite.
+  - source_phrase: וּבְהֵעָלֹתוֹ יִסָּעוּ
+    prior_rendering: but when it was lifted up, they would set out
+    new_rendering: When it lifted, they set out
+    rationale: The separate sentence retains the contrast between waiting and departure and uses the same natural lifting expression as the preceding verses.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained longer, which preserves the earlier judgment that days here denotes an extended period, while adding the established alternative a year. The recorded automated passes supply little additional evidence because they recorded no substantive text change.

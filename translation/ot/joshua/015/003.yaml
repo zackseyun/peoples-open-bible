@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ֠/יָצָא אֶל מִ/נֶּ֜גֶב לְ/מַעֲלֵ֤ה עַקְרַבִּים֙ וְ/עָ֣בַר צִ֔נָ/ה וְ/עָלָ֥ה מִ/נֶּ֖גֶב לְ/קָדֵ֣שׁ בַּרְנֵ֑עַ וְ/עָבַ֤ר חֶצְרוֹן֙ וְ/עָלָ֣ה אַדָּ֔רָ/ה וְ/נָסַ֖ב הַ/קַּרְקָֽעָ/ה־׃
 translation:
-  text: Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Akrabbim likely means 'scorpions'; the Hebrew name is transliterated because it functions here as a place name.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'toward Karkaa'; the place name's English spelling is uncertain.
-    reason: alternative_reading
+  text: The border ran south of the ascent of Akrabbim, passed on to Zin, went up south of Kadesh-barnea, passed Hezron, went up to Addar, and turned toward Karka.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְיָצָא
   chosen: Then it went out
@@ -108,14 +101,20 @@ revisions:
   from: Then it went out southward to the ascent of Akrabbim, crossed over to Zin, went up south of Kadesh-barnea, crossed over Hezron, went up to Addar, and turned toward Karka.
   to: Then it went out southward to the ascent of Akrabbim, crossed over to Zin, went up south of Kadesh-barnea, crossed over Hezron, went up to Addar, and turned toward Karka.
   rationale: Revised “went up south of Kadesh-barnea” to “went up from the south to Kadesh-barnea” to reflect מִנֶּגֶב more accurately and avoid implying a location south of Kadesh-barnea rather than movement from the south.
-
 - timestamp: '2026-05-17T06:21:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.'
-  to: 'Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.'
+  from: Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.
+  to: Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''south of Kadesh-barnea''].'
+- timestamp: '2026-11-09T19:10:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then it went out southward to the ascent of Akrabbim[a], crossed over to Zin, went up from the south to Kadesh-barnea, crossed over Hezron, went up to Addar[b], and turned toward Karka.
+  to: The border ran south of the ascent of Akrabbim, passed on to Zin, went up south of Kadesh-barnea, passed Hezron, went up to Addar, and turned toward Karka.
+  rationale: The first draft and lexical rationale correctly located the border south of Kadesh-barnea. I depart from the later automated rationale because its “from the south to” reading changes the geographical relationship expressed by the boundary formula.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -135,3 +134,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/015/003.job-68745.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The southern border followed a route south of the ascent of Akrabbim and Kadesh-barnea, then continued through the named landmarks toward Karka.
+  meaning_decisions:
+  - source_phrase: וְיָצָא אֶל מִנֶּגֶב לְמַעֲלֵה עַקְרַבִּים
+    prior_rendering: Then it went out southward to the ascent of Akrabbim
+    new_rendering: The border ran south of the ascent of Akrabbim
+    rationale: The construction locates the boundary south of the ascent rather than simply describing southward movement toward it.
+  - source_phrase: וְעָלָה מִנֶּגֶב לְקָדֵשׁ בַּרְנֵעַ
+    prior_rendering: went up from the south to Kadesh-barnea
+    new_rendering: went up south of Kadesh-barnea
+    rationale: In this boundary formula, the phrase identifies the line’s position south of Kadesh-barnea, not an approach to the town from the south.
+  - source_phrase: וְעָבַר צִנָה ... וְעָבַר חֶצְרוֹן
+    prior_rendering: crossed over to Zin ... crossed over Hezron
+    new_rendering: passed on to Zin ... passed Hezron
+    rationale: These verbs trace the boundary’s continuation without requiring a physical crossing of either landmark.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly located the border south of Kadesh-barnea. I depart from the later automated rationale because its “from the south to” reading changes the geographical relationship expressed by the boundary formula.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְח֤וּ בְ/יָדָ/ם֙ מִ/פְּרִ֣י הָ/אָ֔רֶץ וַ/יּוֹרִ֖דוּ אֵלֵ֑י/נוּ וַ/יָּשִׁ֨בוּ אֹתָ֤/נוּ דָבָר֙ וַ/יֹּ֣אמְר֔וּ טוֹבָ֣ה הָ/אָ֔רֶץ אֲשֶׁר יְהוָ֥ה אֱלֹהֵ֖י/נוּ נֹתֵ֥ן לָֽ/נוּ־׃
 translation:
-  text: And they took in their hands some of the fruit of the land and brought it down to us[a], and they brought us back word and said, “The land that Yahweh our God is giving to us is good.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they reported to us'; literally, 'they brought us back word.'
-    reason: lexical_alternative
+  text: They took some of the fruit of the land and carried it down to us. They reported back to us, saying, “The land that Yahweh our God is giving us is good.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּקְחוּ
   chosen: they took
@@ -107,14 +103,20 @@ revisions:
   from: And they took in their hands some of the fruit of the land and brought it down to us, and they brought us back word and said, “The land that the LORD our God is giving to us is good.”
   to: And they took in their hands some of the fruit of the land and brought it down to us, and brought us word and said, “The land that the LORD our God is giving us is good.”
   rationale: Removed the redundant 'back' in 'brought us back word' for more natural English, and changed 'giving to us' to 'giving us' for smoother formal style while preserving the sense.
-
 - timestamp: '2026-05-16T05:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they took in their hands some of the fruit of the land and brought it down to us[a], and brought us word and said, “The land that Yahweh our God is giving us is good.”'
-  to: 'And they took in their hands some of the fruit of the land and brought it down to us[a], and they brought us back word and said, “The land that Yahweh our God is giving to us is good.”'
-  rationale: 'Azure dropped ''back'' from ''brought us back word'' (erases שוב Hiphil contribution — drafter preserved Hebrew imagery) and substituted ''giving us'' for ''giving to us'' (drafter''s explicit rejected_alternative — drafter preserved explicit indirect object highlighting God''s present grant).'
+  from: And they took in their hands some of the fruit of the land and brought it down to us[a], and brought us word and said, “The land that Yahweh our God is giving us is good.”
+  to: And they took in their hands some of the fruit of the land and brought it down to us[a], and they brought us back word and said, “The land that Yahweh our God is giving to us is good.”
+  rationale: Azure dropped 'back' from 'brought us back word' (erases שוב Hiphil contribution — drafter preserved Hebrew imagery) and substituted 'giving us' for 'giving to us' (drafter's explicit rejected_alternative — drafter preserved explicit indirect object highlighting God's present grant).
+- timestamp: '2026-11-09T17:31:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they took in their hands some of the fruit of the land and brought it down to us[a], and they brought us back word and said, “The land that Yahweh our God is giving to us is good.”
+  to: They took some of the fruit of the land and carried it down to us. They reported back to us, saying, “The land that Yahweh our God is giving us is good.”
+  rationale: The automated revert called attention to the returning report and God’s present grant; 'reported back' and 'is giving us' preserve both. Its preference for explicit source-shaped phrasing does not require retaining 'in their hands' alongside a verb that already conveys carrying.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/deuteronomy/001/025.job-38306.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The scouts return with samples of the land’s fruit and report that the land Yahweh is giving Israel is good.
+  meaning_decisions:
+  - source_phrase: וַיִּקְחוּ בְיָדָם מִפְּרִי הָאָרֶץ וַיּוֹרִדוּ אֵלֵינוּ
+    prior_rendering: they took in their hands some of the fruit of the land and brought it down to us
+    new_rendering: They took some of the fruit of the land and carried it down to us
+    rationale: '''Carried'' conveys the physical transport emphasized by ''in their hands,'' while retaining the fruit sample and downward journey.'
+  - source_phrase: וַיָּשִׁבוּ אֹתָנוּ דָבָר וַיֹּאמְרוּ
+    prior_rendering: they brought us back word and said
+    new_rendering: They reported back to us, saying
+    rationale: The natural English idiom preserves the returning report and introduces its content without repetitive speech formulas.
+  footnote_kinds: {}
+  history_weighed: The automated revert called attention to the returning report and God’s present grant; 'reported back' and 'is giving us' preserve both. Its preference for explicit source-shaped phrasing does not require retaining 'in their hands' alongside a verb that already conveys carrying.

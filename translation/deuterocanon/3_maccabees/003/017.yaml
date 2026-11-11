@@ -17,14 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But although they accepted our presence in word[a], in deed they were false, when we eagerly desired to enter into their temple and honor it with the most splendid and finest offerings[b],
-  philosophy: optimal-equivalence
+  text: But although they welcomed our visit in words, their conduct was deceitful. When we were eager to enter their sanctuary and honor it with splendid and most beautiful offerings[a],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'verbally they welcomed our presence, but in practice acted insincerely.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek term for 'offerings' can also mean dedicated gifts or votive offerings placed in a temple.
+    text: These were gifts dedicated to the temple.
     reason: cultural_note
 lexical_decisions:
 - source_word: λόγῳ μὲν ... τῷ δὲ πράγματι
@@ -120,14 +117,20 @@ revisions:
   from: But although they accepted our presence in word, in deed they were false, when we eagerly desired to enter into their temple and honor it with the most splendid and finest offerings,
   to: But though they accepted our presence in word, in deed they were insincere, when we were eager to enter their temple and honor it with the most splendid and finest offerings,
   rationale: Changed 'although' to 'though' for smoother flow, 'false' to 'insincere' to better reflect νόθως, and 'eagerly desired' to 'were eager' for more natural English while preserving the sense.
-
 - timestamp: '2026-05-15T16:09:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But though they accepted our presence in word[a], in deed they were insincere, when we were eager to enter their temple and honor it with the most splendid and finest offerings[b],'
-  to: 'But although they accepted our presence in word[a], in deed they were false, when we eagerly desired to enter into their temple and honor it with the most splendid and finest offerings[b],'
-  rationale: 'Restored 4 chosen renderings; azure''s ''insincere'' softens νόθως, and dropped εἰς prepositional force.'
+  from: But though they accepted our presence in word[a], in deed they were insincere, when we were eager to enter their temple and honor it with the most splendid and finest offerings[b],
+  to: But although they accepted our presence in word[a], in deed they were false, when we eagerly desired to enter into their temple and honor it with the most splendid and finest offerings[b],
+  rationale: Restored 4 chosen renderings; azure's 'insincere' softens νόθως, and dropped εἰς prepositional force.
+- timestamp: '2026-11-09T18:56:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But although they accepted our presence in word[a], in deed they were false, when we eagerly desired to enter into their temple and honor it with the most splendid and finest offerings[b],
+  to: But although they welcomed our visit in words, their conduct was deceitful. When we were eager to enter their sanctuary and honor it with splendid and most beautiful offerings[a],
+  rationale: The earlier review correctly sought more natural English, but the revert cautioned against weakening the accusation of falseness. 'Deceitful' preserves that force, and the note retains the earlier clarification that these offerings were dedicated gifts.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -147,3 +150,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/003/017.job-49557.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king alleges that the Jews’ verbal welcome was deceitful when he sought to enter their sanctuary and honor it with magnificent gifts.
+  meaning_decisions:
+  - source_phrase: λόγῳ μὲν τὴν ἡμετέραν ἀποδεξάμενοι παρουσίαν, τῷ δὲ πράγματι νόθως
+    prior_rendering: although they accepted our presence in word, in deed they were false
+    new_rendering: although they welcomed our visit in words, their conduct was deceitful
+    rationale: The contrast concerns a verbal welcome contradicted by conduct; the new wording makes the accusation clear without softening its hostile force.
+  - source_phrase: προθυμηθέντων ἡμῶν εἰσελθεῖν εἰς τὸν ναὸν αὐτῶν
+    prior_rendering: when we eagerly desired to enter into their temple
+    new_rendering: When we were eager to enter their sanctuary
+    rationale: '''Were eager'' naturally carries the volitional force, while ''sanctuary'' distinguishes the intended place of entry from the broader temple mentioned in verse 16.'
+  - source_phrase: τοῖς ἐκπρεπέσιν καὶ καλλίστοις ἀναθήμασιν
+    prior_rendering: with the most splendid and finest offerings
+    new_rendering: with splendid and most beautiful offerings
+    rationale: The first adjective denotes splendor without a grammatical superlative, while the second emphasizes exceptional beauty.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier review correctly sought more natural English, but the revert cautioned against weakening the accusation of falseness. 'Deceitful' preserves that force, and the note retains the earlier clarification that these offerings were dedicated gifts.

@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּשְׁלַ֤ח פַּרְעֹה֙ וַ/יִּקְרָ֣א אֶת יוֹסֵ֔ף וַ/יְרִיצֻ֖/הוּ מִן הַ/בּ֑וֹר וַ/יְגַלַּח֙ וַ/יְחַלֵּ֣ף שִׂמְלֹתָ֔י/ו וַ/יָּבֹ֖א אֶל פַּרְעֹֽה־־־׃
 translation:
-  text: Then Pharaoh sent and called for Joseph[a], and they quickly brought him out of the pit. He shaved, changed his clothes[c][b], and came to Pharaoh.
-  philosophy: optimal-equivalence
+  text: Then Pharaoh sent for Joseph, and they hurried him out of the dungeon[a]. He shaved, changed his clothes, and came before Pharaoh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'they hurried him out of the pit.' The Hebrew verb conveys urgency in bringing Joseph from confinement.
+    text: Literally, 'pit,' the word also used in Genesis 37:24.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'out of the dungeon.' The Hebrew word literally means 'pit' and can refer to a prison pit or cistern-like confinement.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'sent and called for Joseph'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: וַיִּשְׁלַח
   chosen: sent
@@ -92,12 +86,18 @@ revisions:
   from: Then Pharaoh sent for Joseph, and they quickly brought him out of the pit. He shaved, changed his clothes, and came to Pharaoh.
   to: Then Pharaoh sent and called for Joseph, and they quickly brought him out of the pit. He shaved, changed his clothes, and came to Pharaoh.
   rationale: Added 'and called for' to reflect both verbs in the source; retained the rest with minor consistency to preserve natural formal English.
+- timestamp: '2026-11-09T17:45:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Pharaoh sent and called for Joseph[a], and they quickly brought him out of the pit. He shaved, changed his clothes[c][b], and came to Pharaoh.
+  to: Then Pharaoh sent for Joseph, and they hurried him out of the dungeon[a]. He shaved, changed his clothes, and came before Pharaoh.
+  rationale: The April 21 review correctly treated 'sent and called' as a summons, so I recover its natural 'sent for' despite the later literalizing reversal. The lexical discussion valued the connection with Joseph’s earlier pit, which remains available in the note.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:32Z'
   unchanged: false
   changes_summary: Added 'and called for' to reflect both verbs in the source; retained the rest with minor consistency to preserve natural formal English.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +120,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/041/014.job-37637.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:40Z'
+  change_level: refined
+  confidence: high
+  meaning: Pharaoh urgently summoned Joseph from confinement, and Joseph groomed and dressed himself before appearing before him.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁלַח פַּרְעֹה וַיִּקְרָא אֶת יוֹסֵף
+    prior_rendering: Pharaoh sent and called for Joseph
+    new_rendering: Pharaoh sent for Joseph
+    rationale: The construction describes summoning Joseph through messengers, not two separate actions that English must enumerate.
+  - source_phrase: וַיְרִיצֻהוּ מִן הַבּוֹר
+    prior_rendering: they quickly brought him out of the pit
+    new_rendering: they hurried him out of the dungeon
+    rationale: '''Hurried'' retains the urgency, while ''dungeon'' identifies the place as confinement; the note preserves the meaningful repeated word ''pit.'''
+  - source_phrase: וַיָּבֹא אֶל פַּרְעֹה
+    prior_rendering: came to Pharaoh
+    new_rendering: came before Pharaoh
+    rationale: The context is Joseph’s appearance in the king’s presence, not merely movement toward him.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The April 21 review correctly treated 'sent and called' as a summons, so I recover its natural 'sent for' despite the later literalizing reversal. The lexical discussion valued the connection with Joseph’s earlier pit, which remains available in the note.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: קַדְּשׁ֤וּ עָלֶ֨י/הָ֙ מִלְחָמָ֔ה ק֖וּמוּ וְ/נַעֲלֶ֣ה בַֽ/צָּהֳרָ֑יִם א֥וֹי לָ֨/נוּ֙ כִּי פָנָ֣ה הַ/יּ֔וֹם כִּ֥י יִנָּט֖וּ צִלְלֵי עָֽרֶב־־׃
 translation:
-  text: Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is turning away, for the shadows of evening are stretching out.
-  philosophy: optimal-equivalence
+  text: “Prepare for war against her[a]! Rise up, let us attack at noon! Woe to us! The day is fading; the evening shadows are stretching out.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Prepare for war against her.' The Hebrew literally uses consecration language for battle.
+    text: Literally, 'Consecrate war against her,' referring to preparations for battle that included sacred rites.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: קַדְּשׁוּ
@@ -107,14 +107,20 @@ revisions:
   from: Consecrate war against her; rise up, and let us go up at noon. Woe to us, for the day is turning away, for the shadows of evening are stretching out.
   to: Consecrate war against her; rise up, and let us go up at noon. Woe to us, for the day is declining, for the shadows of evening are lengthening.
   rationale: Replaced 'is turning away' with 'is declining' for a more natural rendering of the day waning, and 'are stretching out' with 'are lengthening' for more idiomatic formal English.
-
 - timestamp: '2026-05-16T07:55:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is declining, for the shadows of evening are lengthening.'
-  to: 'Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is turning away, for the shadows of evening are stretching out.'
-  rationale: 'Azure substituted ''is declining'' (rejected_alternative for פָנָה — drafter chose ''is turning away'' to preserve פנה literal turn-metaphor) and ''are lengthening'' (rejected_alternative for יִנָּטוּ — drafter chose ''are stretching out'' for vividness).'
+  from: Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is declining, for the shadows of evening are lengthening.
+  to: Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is turning away, for the shadows of evening are stretching out.
+  rationale: Azure substituted 'is declining' (rejected_alternative for פָנָה — drafter chose 'is turning away' to preserve פנה literal turn-metaphor) and 'are lengthening' (rejected_alternative for יִנָּטוּ — drafter chose 'are stretching out' for vividness).
+- timestamp: '2026-11-09T17:55:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Consecrate war against her; rise up[a], and let us go up at noon. Woe to us, for the day is turning away, for the shadows of evening are stretching out.
+  to: “Prepare for war against her[a]! Rise up, let us attack at noon! Woe to us! The day is fading; the evening shadows are stretching out.”
+  rationale: The earlier review correctly recognized the waning-day idiom, though the revert prioritized its literal turn-language. I convey the military urgency directly, retain the stretching shadows, and preserve the consecration language in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +140,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/006/004.job-67231.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The attackers urge preparations for war and a noon assault, then lament that daylight is running out.
+  meaning_decisions:
+  - source_phrase: קַדְּשׁוּ עָלֶיהָ מִלְחָמָה
+    prior_rendering: Consecrate war against her
+    new_rendering: Prepare for war against her
+    rationale: This military summons calls for battle preparations; a footnote preserves the sacred character of those preparations, which the English idiom cannot fully carry.
+  - source_phrase: וְנַעֲלֶה בַצָּהֳרָיִם
+    prior_rendering: and let us go up at noon
+    new_rendering: let us attack at noon
+    rationale: In the siege context, going up means advancing to attack, not merely ascending.
+  - source_phrase: כִּי פָנָה הַיּוֹם
+    prior_rendering: for the day is turning away
+    new_rendering: The day is fading
+    rationale: The idiom expresses dwindling daylight and the attackers' frustration at losing time.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review correctly recognized the waning-day idiom, though the revert prioritized its literal turn-language. I convey the military urgency directly, retain the stretching shadows, and preserve the consecration language in a note.

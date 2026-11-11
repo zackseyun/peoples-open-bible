@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: לָ֤/מָּה תֹאמַר֙ יַֽעֲקֹ֔ב וּ/תְדַבֵּ֖ר יִשְׂרָאֵ֑ל נִסְתְּרָ֤ה דַרְכִּ/י֙ מֵֽ/יְהוָ֔ה וּ/מֵ/אֱלֹהַ֖/י מִשְׁפָּטִ֥/י יַעֲבֽוֹר׃
 translation:
-  text: Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?
-  philosophy: optimal-equivalence
+  text: Why do you say, Jacob, and speak, Israel, “My plight[a] is hidden from Yahweh, and my God disregards my claim to justice”?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'my right' or 'my cause.' The Hebrew mishpati can refer to one's justice, legal right, or case for vindication.
+    text: Literally, “my way.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: לָמָּה
@@ -113,14 +113,20 @@ revisions:
   from: Why do you say, O Jacob, and speak, O Israel, “My way is hidden from the LORD, and my justice passes by my God”?”
   to: Why do you say, O Jacob, and speak, O Israel, “My way is hidden from the LORD, and my justice passes by my God”?”
   rationale: Replaced “passes by my God” with “is disregarded by my God” to more naturally and accurately convey the sense of משפטי יעבור. Also corrected the closing punctuation by removing the extra quotation mark.
-
 - timestamp: '2026-05-17T17:21:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?'
-  to: 'Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?'
+  from: Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?
+  to: Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''passes by''].'
+- timestamp: '2026-11-09T17:51:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Why do you say[a], O Jacob, and speak, O Israel, “My way is hidden from Yahweh, and my justice is disregarded by my God”?
+  to: Why do you say, Jacob, and speak, Israel, “My plight[a] is hidden from Yahweh, and my God disregards my claim to justice”?
+  rationale: The later “is disregarded” rightly clarifies the draft’s “passes by,” and I preserve that gain. I make the lexical record’s circumstances and rightful-cause senses explicit rather than leaving “my way” and “my justice” open to misleading English readings.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -143,3 +149,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/040/027.job-66664.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:51:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The prophet challenges Israel’s complaint that Yahweh does not see its suffering or attend to its claim to justice.
+  meaning_decisions:
+  - source_phrase: נִסְתְּרָה דַרְכִּי מֵיְהוָה
+    prior_rendering: My way is hidden from Yahweh
+    new_rendering: My plight is hidden from Yahweh
+    rationale: “Way” here concerns Israel’s circumstances and suffering, not concealed conduct or an unknown route; “plight” makes that contextual meaning clear while retaining the image of hiddenness.
+  - source_phrase: וּמֵאֱלֹהַי מִשְׁפָּטִי יַעֲבוֹר
+    prior_rendering: my justice is disregarded by my God
+    new_rendering: my God disregards my claim to justice
+    rationale: The complaint concerns justice due to the speaker, not the speaker’s own just behavior; the active clause makes that neglected claim unmistakable.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The later “is disregarded” rightly clarifies the draft’s “passes by,” and I preserve that gain. I make the lexical record’s circumstances and rightful-cause senses explicit rather than leaving “my way” and “my justice” open to misleading English readings.

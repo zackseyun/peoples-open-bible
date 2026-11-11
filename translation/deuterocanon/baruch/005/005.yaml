@@ -18,14 +18,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.
-  philosophy: optimal-equivalence
+  text: Rise up, Jerusalem, and stand on the height. Look toward the east and see your children gathered from where the sun sets to where it rises, at the command of the Holy One, rejoicing that God has remembered them[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'by the word of the Holy One.' The dative τῷ ῥήματι may be understood instrumentally.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'because God remembered them' or 'in remembrance of God.' The Greek phrase is compact and may point either to God's remembering his people or to their remembering God.
+    text: Or, “rejoicing as they remember God.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἀνάστηθι
@@ -136,14 +133,20 @@ revisions:
   from: Rise up, Jerusalem, and stand on the height, and look around toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One, rejoicing in the remembrance of God.
   to: Rise up, Jerusalem, and stand on the height, and look around toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One, rejoicing in the remembrance of God.
   rationale: Changed 'look around toward the east' to 'look toward the east' for closer alignment with the Greek and more natural English; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.'
-  to: 'Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.'
+  from: Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.
+  to: Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''look around''].'
+- timestamp: '2026-11-09T18:59:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Rise up[a], Jerusalem, and stand on the height, and look toward the east, and see your children gathered from the setting of the sun to its rising, at the word of the Holy One[b], rejoicing in the remembrance of God.
+  to: Rise up, Jerusalem, and stand on the height. Look toward the east and see your children gathered from where the sun sets to where it rises, at the command of the Holy One, rejoicing that God has remembered them[a].
+  rationale: The conflicting automated records concerning look around carry little editorial weight, and the current look toward the east fits the scene. Earlier deliberation recognized both readings of remembrance; the restoration context supports God’s remembrance in the main text, with the other reading retained in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -163,3 +166,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/005/005.job-50450.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:45Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem is summoned to look east from a height and see her children gathered from every direction by the Holy One’s command, rejoicing that God has remembered them.
+  meaning_decisions:
+  - source_phrase: ἀπὸ ἡλίου δυσμῶν ἕως ἀνατολῶν
+    prior_rendering: from the setting of the sun to its rising
+    new_rendering: from where the sun sets to where it rises
+    rationale: The phrase describes the geographic sweep of the gathering, not a period from sunset to sunrise; where makes that clear while retaining the solar image.
+  - source_phrase: τῷ ῥήματι τοῦ ἁγίου
+    prior_rendering: at the word of the Holy One
+    new_rendering: at the command of the Holy One
+    rationale: The Holy One’s utterance brings about the gathering, so command conveys its authoritative force.
+  - source_phrase: χαίροντες τῇ τοῦ θεοῦ μνείᾳ
+    prior_rendering: rejoicing in the remembrance of God
+    new_rendering: rejoicing that God has remembered them
+    rationale: The surrounding promises of divine rescue favor God’s remembering his people as the reason for their joy; their remembrance of God remains a serious alternative and is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The conflicting automated records concerning look around carry little editorial weight, and the current look toward the east fits the scene. Earlier deliberation recognized both readings of remembrance; the restoration context supports God’s remembrance in the main text, with the other reading retained in a footnote.

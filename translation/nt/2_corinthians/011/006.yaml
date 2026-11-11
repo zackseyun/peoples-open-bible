@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: εἰ δὲ καὶ ἰδιώτης τῷ λόγῳ, ἀλλ’ οὐ τῇ γνώσει, ἀλλ’ ἐν παντὶ ⸀φανερώσαντες ἐν πᾶσιν εἰς ὑμᾶς.
 translation:
-  text: But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.
-  philosophy: optimal-equivalence
+  text: But even if I am untrained as a speaker, I am not lacking in knowledge. Indeed, we have made this clear to you in every way and in all matters[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'untrained in speaking,' that is, lacking polished rhetorical skill.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'we have made it manifest in every way to you among all people / in all matters.' The Greek expression is compressed and may be understood in more than one closely related way.
+    text: Or, 'we have made this clear to you in every way, before everyone'; the final Greek phrase may refer to people rather than matters.
     reason: alternative_reading
-  - marker: c
-    text: Or 'in every way we have made this plain to you in all things'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ἰδιώτης
   chosen: unskilled
@@ -106,9 +100,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.'
-  to: 'But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.'
+  from: But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.
+  to: But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in all things''].'
+- timestamp: '2026-11-09T17:05:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But even if I am unskilled in speech[a], I am not in knowledge; indeed[c][b], in every way we have made this plain among all to you.
+  to: But even if I am untrained as a speaker, I am not lacking in knowledge. Indeed, we have made this clear to you in every way and in all matters[a].
+  rationale: The earlier 'in every way and in all things' revision made a real gain in clarity, whereas 'among all to you' restored awkwardness without resolving the ambiguity. I build on the clearer construction and preserve the possible reference to people in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:00:14Z'
@@ -136,3 +137,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/2_corinthians/011/006.job-38721.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:25Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Even if Paul lacks rhetorical training, he does not lack knowledge, which he and his coworkers have fully demonstrated to the Corinthians.
+  meaning_decisions:
+  - source_phrase: ἰδιώτης τῷ λόγῳ
+    prior_rendering: unskilled in speech
+    new_rendering: untrained as a speaker
+    rationale: The contrast concerns professional rhetorical training or polish, not an inability to speak effectively.
+  - source_phrase: ἀλλ’ οὐ τῇ γνώσει
+    prior_rendering: I am not in knowledge
+    new_rendering: I am not lacking in knowledge
+    rationale: Supplying the understood deficiency makes the contrast intelligible in English without implying that knowledge itself is a skill in which Paul is untrained.
+  - source_phrase: ἀλλ’ ἐν παντὶ φανερώσαντες ἐν πᾶσιν εἰς ὑμᾶς
+    prior_rendering: indeed, in every way we have made this plain among all to you
+    new_rendering: Indeed, we have made this clear to you in every way and in all matters
+    rationale: The compressed construction asserts a comprehensive demonstration to the Corinthians; the new clause preserves that emphasis in grammatical English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier 'in every way and in all things' revision made a real gain in clarity, whereas 'among all to you' restored awkwardness without resolving the ambiguity. I build on the clearer construction and preserve the possible reference to people in a note.

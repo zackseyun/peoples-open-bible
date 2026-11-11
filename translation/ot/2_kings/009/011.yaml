@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/יֵה֗וּא יָצָא֙ אֶל עַבְדֵ֣י אֲדֹנָ֔י/ו וַ/יֹּ֤אמֶר ל/וֹ֙ הֲ/שָׁל֔וֹם מַדּ֛וּעַ בָּֽא הַ/מְשֻׁגָּ֥ע הַ/זֶּ֖ה אֵלֶ֑י/ךָ וַ/יֹּ֣אמֶר אֲלֵי/הֶ֔ם אַתֶּ֛ם יְדַעְתֶּ֥ם אֶת הָ/אִ֖ישׁ וְ/אֶת שִׂיחֽ/וֹ־־־־׃
 translation:
-  text: Then Jehu went out to the servants of his master[a], and one said to him, “Is everything well? Why did this madman[b] come to you?” And he said to them, “You know the man and his talk[c].”
-  philosophy: optimal-equivalence
+  text: Then Jehu went out to his master’s officers. One of them asked him, “Is everything well[a]? Why did this madman come to you?” He replied, “You know the man and his talk.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “Is all well?” Hebrew literally asks, “Is it peace?”
-    reason: lexical_alternative
-  - marker: b
-    text: Or, “this insane man” or “this crazy fellow.” The Hebrew is a contemptuous label.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, “his babble” / “his manner of speaking.” The Hebrew can refer broadly to a person's speech or discourse.
+    text: Literally, “Is it peace?” This question recurs in verses 17–19 and 22.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: עַבְדֵי אֲדֹנָיו
@@ -86,13 +80,12 @@ revisions:
   from: Then Jehu went out to the servants of his master, and one said to him, “Is everything well? Why did this madman come to you?” And he said to them, “You know the man and his talk.”
   to: Then Jehu went out to the servants of his master, and one said to him, “Is all well? Why did this madman come to you?” And he said to them, “You know the man and his talk.”
   rationale: Changed 'Is everything well?' to 'Is all well?' for a more formal and idiomatic rendering of הֲשָׁלוֹם, while preserving the rest of the draft.
-
 - timestamp: '2026-05-18T03:09:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jehu went out to the servants of his master[a], and one said to him, “Is all well? Why did this madman come to you?” And he said to them[c][b], “You know the man and his talk.”'
-  to: 'Then Jehu went out to the servants of his master, and one said to him, “Is everything well? Why did this madman come to you?” And he said to them, “You know the man and his talk.”'
+  from: Then Jehu went out to the servants of his master[a], and one said to him, “Is all well? Why did this madman come to you?” And he said to them[c][b], “You know the man and his talk.”
+  to: Then Jehu went out to the servants of his master, and one said to him, “Is everything well? Why did this madman come to you?” And he said to them, “You know the man and his talk.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Is everything well?''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -102,6 +95,13 @@ revisions:
   from: Then Jehu went out to the servants of his master, and one said to him, “Is everything well? Why did this madman come to you?” And he said to them, “You know the man and his talk.”
   to: Then Jehu went out to the servants of his master[a], and one said to him, “Is everything well? Why did this madman[b] come to you?” And he said to them, “You know the man and his talk[c].”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('this madman') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('his talk') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jehu went out to the servants of his master[a], and one said to him, “Is everything well? Why did this madman[b] come to you?” And he said to them, “You know the man and his talk[c].”
+  to: Then Jehu went out to his master’s officers. One of them asked him, “Is everything well[a]? Why did this madman come to you?” He replied, “You know the man and his talk.”
+  rationale: The history’s preference for “Is everything well?” is retained, as is the deliberately evasive “the man and his talk.” The lexical notes identify the king’s servants here as military officers, while the note on peace preserves the recurring narrative keyword.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +123,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/009/011.job-60484.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Jehu’s fellow officers ask about the prophet’s visit, and Jehu initially answers evasively.
+  meaning_decisions:
+  - source_phrase: עַבְדֵי אֲדֹנָיו
+    prior_rendering: the servants of his master
+    new_rendering: his master’s officers
+    rationale: These are the army commanders introduced in verse 5, serving under the king; “officers” identifies their role without suggesting domestic attendants.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history’s preference for “Is everything well?” is retained, as is the deliberately evasive “the man and his talk.” The lexical notes identify the king’s servants here as military officers, while the note on peace preserves the recurring narrative keyword.

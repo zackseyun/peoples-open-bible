@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὃς ἰδὼν Πέτρον καὶ Ἰωάννην μέλλοντας εἰσιέναι εἰς τὸ ἱερὸν ἠρώτα ἐλεημοσύνην ⸀λαβεῖν.
 translation:
-  text: When he saw Peter and John about to go into the temple[a], he began asking to receive alms.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek ἱερόν refers to the temple precincts or complex, not specifically the inner sanctuary.
-    reason: lexical_alternative
+  text: When he saw Peter and John about to enter the temple, he asked them for alms.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὃς
   chosen: he
@@ -84,13 +80,12 @@ revisions:
   from: When he saw Peter and John about to go into the temple, he began asking to receive alms.
   to: When he saw Peter and John about to go into the temple, he asked to receive alms.
   rationale: Changed 'began asking' to 'asked' because the Greek simply states that he asked, without emphasizing the beginning of the action.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When he saw Peter and John about to go into the temple[a], he asked to receive alms.'
-  to: 'When he saw Peter and John about to go into the temple, he began asking to receive alms.'
+  from: When he saw Peter and John about to go into the temple[a], he asked to receive alms.
+  to: When he saw Peter and John about to go into the temple, he began asking to receive alms.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he began asking''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -100,6 +95,13 @@ revisions:
   from: When he saw Peter and John about to go into the temple, he began asking to receive alms.
   to: When he saw Peter and John about to go into the temple[a], he began asking to receive alms.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When he saw Peter and John about to go into the temple[a], he began asking to receive alms.
+  to: When he saw Peter and John about to enter the temple, he asked them for alms.
+  rationale: The earlier review correctly observed that the imperfect need not emphasize the beginning of the request. The later automatic revert supplies no meaning-based reason to restore that emphasis, so I adopt the simpler request wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/003/003.job-47032.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:16Z'
+  change_level: refined
+  confidence: high
+  meaning: When the man saw Peter and John about to enter the temple, he asked them for alms.
+  meaning_decisions:
+  - source_phrase: ἠρώτα ἐλεημοσύνην λαβεῖν
+    prior_rendering: he began asking to receive alms
+    new_rendering: he asked them for alms
+    rationale: The verse reports his request without requiring emphasis on its beginning; the recipients are understood from the scene, and English does not need the redundant “to receive.”
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly observed that the imperfect need not emphasize the beginning of the request. The later automatic revert supplies no meaning-based reason to restore that emphasis, so I adopt the simpler request wording.

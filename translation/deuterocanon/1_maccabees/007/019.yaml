@@ -23,18 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'had defected to him' or 'had gone over to him.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek verb here is literally 'sacrificed'; in context it refers to violent killing, not a legitimate cultic offering.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'into the great pit' / 'the great well' / 'the great cistern'; the Greek noun can refer to a pit, well, or cistern.
-    reason: lexical_alternative
+  text: Bacchides left Jerusalem and encamped at Bethzaith. He sent men to seize many of those who had defected to him, along with some of the people, and had them slaughtered in the great pit.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπῆρεν
   chosen: departed
@@ -130,14 +120,20 @@ revisions:
   from: And Bacchides departed from Jerusalem and encamped at Bethzaith, and he sent and seized many of the men who had deserted to him, and some of the people, and slaughtered them at the great pit.
   to: And Bacchides departed from Jerusalem and encamped at Bethzaith, and he sent and seized many of the men who had deserted to him, and some of the people, and slaughtered them at the great pit.
   rationale: Changed 'at the great pit' to 'in the great pit' for more natural and precise rendering of εἰς τὸ φρέαρ τὸ μέγα.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.'
-  to: 'And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.'
+  from: And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.
+  to: And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the great pit''].'
+- timestamp: '2026-11-09T18:52:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Bacchides departed from Jerusalem and encamped at Bethzaith[a], and he sent and seized many of the men who had deserted to him, and some of the people[c][b], and slaughtered them in the great pit.
+  to: Bacchides left Jerusalem and encamped at Bethzaith. He sent men to seize many of those who had defected to him, along with some of the people, and had them slaughtered in the great pit.
+  rationale: The history and lexical notes identify the victims as defectors to Bacchides and favor “slaughtered” over a misleading sacrificial rendering. The inconsistent “at” and “in” records establish no decisive revision, so I retain the current location wording.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +153,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/007/019.job-48356.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:53Z'
+  change_level: refined
+  confidence: medium
+  meaning: Bacchides left Jerusalem, encamped at Bethzaith, and had defectors to his side and other members of the people seized and slaughtered.
+  meaning_decisions:
+  - source_phrase: ἀπέστειλεν καὶ συνέλαβεν
+    prior_rendering: he sent and seized
+    new_rendering: He sent men to seize
+    rationale: Supplies the understood agents of the seizure and expresses the action naturally rather than leaving “sent” without an object.
+  - source_phrase: τῶν μετ’ αὐτοῦ αὐτομολησάντων ἀνδρῶν
+    prior_rendering: the men who had deserted to him
+    new_rendering: those who had defected to him
+    rationale: Defected clearly expresses a change of allegiance to Bacchides’s side.
+  - source_phrase: ἔθυσεν αὐτούς
+    prior_rendering: slaughtered them
+    new_rendering: had them slaughtered
+    rationale: Expresses the commander’s responsibility for the killing without implying that he personally killed every captive.
+  footnote_kinds: {}
+  history_weighed: The history and lexical notes identify the victims as defectors to Bacchides and favor “slaughtered” over a misleading sacrificial rendering. The inconsistent “at” and “in” records establish no decisive revision, so I retain the current location wording.

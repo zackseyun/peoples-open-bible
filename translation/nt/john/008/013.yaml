@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: εἶπον οὖν αὐτῷ οἱ Φαρισαῖοι· Σὺ περὶ σεαυτοῦ μαρτυρεῖς· ἡ μαρτυρία σου οὐκ ἔστιν ἀληθής.
 translation:
-  text: So the Pharisees said to him, “You are testifying about yourself; your testimony[a] is not true.”
-  philosophy: optimal-equivalence
+  text: So the Pharisees said to him, “You are testifying about yourself, so your testimony is not valid[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your testimony is not valid.' The Greek says 'not true,' which may also carry the sense of legal validity in this context.
-    reason: lexical_alternative
+    text: Or, “your testimony is not true.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οὖν
   chosen: So
@@ -94,13 +94,12 @@ revisions:
   from: So the Pharisees said to him, “You are testifying about yourself; your testimony is not true.”
   to: So the Pharisees said to him, “You testify about yourself; your testimony is not true.”
   rationale: Changed 'are testifying' to the more direct present 'testify' for a closer and more natural rendering of μαρτυρεῖς; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So the Pharisees said to him[a], “You testify about yourself; your testimony is not true.”'
-  to: 'So the Pharisees said to him, “You are testifying about yourself; your testimony is not true.”'
+  from: So the Pharisees said to him[a], “You testify about yourself; your testimony is not true.”
+  to: So the Pharisees said to him, “You are testifying about yourself; your testimony is not true.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are testifying''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -110,6 +109,13 @@ revisions:
   from: So the Pharisees said to him, “You are testifying about yourself; your testimony is not true.”
   to: So the Pharisees said to him, “You are testifying about yourself; your testimony[a] is not true.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('your testimony') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So the Pharisees said to him, “You are testifying about yourself; your testimony[a] is not true.”
+  to: So the Pharisees said to him, “You are testifying about yourself, so your testimony is not valid[a].”
+  rationale: The progressive-versus-simple-present revision and automated revert carry little meaning weight, so I retained “are testifying.” Although the earlier rationale preferred the broader “true,” its own legal-validity alternative better communicates the immediate objection; the broader reading remains in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +137,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/008/013.job-54923.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Pharisees rejected Jesus' testimony on the ground that he was testifying about himself.
+  meaning_decisions:
+  - source_phrase: Σὺ περὶ σεαυτοῦ μαρτυρεῖς· ἡ μαρτυρία σου οὐκ ἔστιν ἀληθής
+    prior_rendering: You are testifying about yourself; your testimony is not true
+    new_rendering: You are testifying about yourself, so your testimony is not valid
+    rationale: Their objection concerns the sufficiency of self-testimony, as the appeal to two witnesses in verses 17–18 confirms; it does not establish that they have independently disproved his claim.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The progressive-versus-simple-present revision and automated revert carry little meaning weight, so I retained “are testifying.” Although the earlier rationale preferred the broader “true,” its own legal-validity alternative better communicates the immediate objection; the broader reading remains in a note.

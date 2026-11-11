@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 31:26
 translation:
-  text: Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.
-  philosophy: optimal-equivalence
+  text: A discerning man enjoys long life; he sleeps until morning with his vitality intact[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew reads 'and his life is with him'; alternatively, 'and his soul is with him.' The Hebrew נפש can mean life, self, or soul depending on context.
+    text: Literally, “and his life is with him.”
     reason: lexical_alternative
-  - marker: b
-    text: The Greek parallel cited here differs sharply from the Hebrew, reading approximately, 'He who takes away a neighbor's livelihood is killing him.' This appears to reflect a different textual form, so the main translation follows the extant Hebrew witness.
-    reason: textual_variant
 lexical_decisions:
 - source_word: שנות חיים
   chosen: Years of life
@@ -122,14 +119,20 @@ revisions:
   from: Years of life are with an understanding man; he will lodge until morning, and his life is with him.
   to: Years of life are with an understanding man; he will lodge until morning, and his life is with him.
   rationale: Changed 'understanding man' to 'discerning man' for more natural formal English, and 'will lodge' to 'will lie down' to better reflect the sense of spending the night.
-
 - timestamp: '2026-05-16T12:22:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.'
-  to: 'Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.'
-  rationale: 'Restored drafter ''an understanding man'' (preserving Hebrew נבון insight nuance) and ''he will lodge until morning'' (hospitality/temporary-stay sense) per chosen renderings.'
+  from: Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.
+  to: Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.
+  rationale: Restored drafter 'an understanding man' (preserving Hebrew נבון insight nuance) and 'he will lodge until morning' (hospitality/temporary-stay sense) per chosen renderings.
+- timestamp: '2026-11-09T19:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Years of life are with a discerning man[a]; he will lie down until morning[b], and his life is with him.
+  to: A discerning man enjoys long life; he sleeps until morning with his vitality intact[a].
+  rationale: I retain the history's strong “discerning man” but follow the immediate sleeping context rather than the proposed hospitality sense of “lodge.” The unrelated Greek statement about taking a neighbor's livelihood is an alignment error and is omitted.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -149,3 +152,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/031/026.job-51844.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A discerning man enjoys long life and sleeps until morning with his vitality preserved.
+  meaning_decisions:
+  - source_phrase: שנות חיים עם איש נבון
+    prior_rendering: Years of life are with a discerning man
+    new_rendering: A discerning man enjoys long life
+    rationale: The Hebrew associates discernment with sustained life; natural English requires more than the opaque expression that years are “with” someone.
+  - source_phrase: ילין עד בקר
+    prior_rendering: he will lie down until morning
+    new_rendering: he sleeps until morning
+    rationale: The surrounding discussion concerns nighttime rest after eating, not merely lying down or lodging away from home.
+  - source_phrase: ונפשו עמו
+    prior_rendering: and his life is with him
+    new_rendering: with his vitality intact
+    rationale: The phrase expresses preserved life and well-being in the context of sound rest, without implying a statement about an immaterial soul.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the history's strong “discerning man” but follow the immediate sleeping context rather than the proposed hospitality sense of “lodge.” The unrelated Greek statement about taking a neighbor's livelihood is an alignment error and is omitted.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אִ֗ישׁ כִּֽי יִמְכֹּ֤ר בֵּית מוֹשַׁב֙ עִ֣יר חוֹמָ֔ה וְ/הָיְתָה֙ גְּאֻלָּת֔/וֹ עַד תֹּ֖ם שְׁנַ֣ת מִמְכָּר֑/וֹ יָמִ֖ים תִּהְיֶ֥ה גְאֻלָּתֽ/וֹ־־־׃
 translation:
-  text: If a man sells a house for dwelling in a walled city[a], its redemption may be made until the completion of a full year from its sale; its right of redemption shall last for days, that is, a full year.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'for days'; in this legal idiom, the phrase denotes a full year's duration.
-    reason: lexical_alternative
+  text: If a man sells a dwelling in a walled city, he shall have the right to redeem it until a year has passed since its sale. The right of redemption lasts a full year.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאִישׁ
   chosen: If a man
@@ -96,14 +92,20 @@ revisions:
   from: If a man sells a house for dwelling in a walled city, its redemption may be made until the completion of a full year from its sale; its right of redemption shall last for days, that is, a full year.
   to: If a man sells a house in a walled city, its redemption may take place until the completion of a full year from its sale; its right of redemption shall last a full year.
   rationale: Simplified 'a house for dwelling in a walled city' to 'a house in a walled city' for more natural English, rendered וְהָיְתָה גְאֻלָּתוֹ more naturally as 'its redemption may take place,' and clarified the idiom 'days' as 'a full year' without the explanatory expansion 'that is.'
-
 - timestamp: '2026-05-15T12:24:07Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man sells a house in a walled city[a], its redemption may take place until the completion of a full year from its sale; its right of redemption shall last a full year.'
-  to: 'If a man sells a house for dwelling in a walled city[a], its redemption may be made until the completion of a full year from its sale; its right of redemption shall last for days, that is, a full year.'
-  rationale: 'Restored 3 chosen renderings preserving construct-distinction, drafter''s phrasing, and apposition idiom.'
+  from: If a man sells a house in a walled city[a], its redemption may take place until the completion of a full year from its sale; its right of redemption shall last a full year.
+  to: If a man sells a house for dwelling in a walled city[a], its redemption may be made until the completion of a full year from its sale; its right of redemption shall last for days, that is, a full year.
+  rationale: Restored 3 chosen renderings preserving construct-distinction, drafter's phrasing, and apposition idiom.
+- timestamp: '2026-11-09T18:22:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man sells a house for dwelling in a walled city[a], its redemption may be made until the completion of a full year from its sale; its right of redemption shall last for days, that is, a full year.
+  to: If a man sells a dwelling in a walled city, he shall have the right to redeem it until a year has passed since its sale. The right of redemption lasts a full year.
+  rationale: The April revision correctly clarified the full-year idiom, while the automated revert chiefly restored source-shaped wording. I retain the residential distinction emphasized in the lexical record and express the redemption period directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -123,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/029.job-45242.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A dwelling sold in a walled city remains redeemable for one full year from its sale.
+  meaning_decisions:
+  - source_phrase: בֵּית מוֹשַׁב
+    prior_rendering: a house for dwelling
+    new_rendering: a dwelling
+    rationale: This naturally identifies a residential building without losing the distinction preserved by the earlier wording.
+  - source_phrase: וְהָיְתָה גְּאֻלָּתוֹ עַד תֹּם שְׁנַת מִמְכָּרוֹ
+    prior_rendering: its redemption may be made until the completion of a full year from its sale
+    new_rendering: he shall have the right to redeem it until a year has passed since its sale
+    rationale: The provision establishes the seller’s legal right and its deadline, not merely the possibility of an unspecified redemption.
+  - source_phrase: יָמִים תִּהְיֶה גְאֻלָּתוֹ
+    prior_rendering: its right of redemption shall last for days, that is, a full year
+    new_rendering: The right of redemption lasts a full year.
+    rationale: The temporal idiom means a full year; reproducing 'for days' obscures rather than strengthens that meaning.
+  footnote_kinds: {}
+  history_weighed: The April revision correctly clarified the full-year idiom, while the automated revert chiefly restored source-shaped wording. I retain the residential distinction emphasized in the lexical record and express the redemption period directly.

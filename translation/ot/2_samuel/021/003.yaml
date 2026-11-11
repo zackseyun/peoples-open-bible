@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר דָּוִד֙ אֶל הַ/גִּבְעֹנִ֔ים מָ֥ה אֶעֱשֶׂ֖ה לָ/כֶ֑ם וּ/בַ/מָּ֣ה אֲכַפֵּ֔ר וּ/בָרְכ֖וּ אֶת נַחֲלַ֥ת יְהוָֽה־־׃
 translation:
-  text: David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”
-  philosophy: optimal-equivalence
+  text: David asked the Gibeonites, “What shall I do for you? How shall I make atonement, so that you may bless Yahweh’s inheritance[a]?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'and bless the LORD’s inheritance.' The Hebrew form can be read more literally as a coordinated clause; the main text brings out the likely purpose/result sense in context.
+    text: Yahweh’s inheritance refers here to Israel, his people and their land.
     reason: lexical_alternative
-  - marker: b
-    text: '''The inheritance of the LORD'' refers to Israel, the people belonging to the LORD.'
-    reason: cultural_note
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: said
@@ -101,14 +98,20 @@ revisions:
   from: David said to the Gibeonites, “What shall I do for you, and with what shall I make atonement, so that you may bless the inheritance of the LORD?”
   to: David said to the Gibeonites, “What shall I do for you, and with what shall I make atonement, so that you may bless the inheritance of the LORD?”
   rationale: Changed 'so that' to 'that' for a slightly more formal, direct rendering while preserving the sense; otherwise retained the draft.
-
 - timestamp: '2026-05-17T05:36:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”'
-  to: 'David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”'
+  from: David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”
+  to: David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that you may bless''].'
+- timestamp: '2026-11-09T17:28:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David said to the Gibeonites[a], “What shall I do for you, and with what shall I make atonement[b], that you may bless the inheritance of Yahweh?”
+  to: David asked the Gibeonites, “What shall I do for you? How shall I make atonement, so that you may bless Yahweh’s inheritance[a]?”
+  rationale: The history’s changes between “that” and “so that” did not establish a different meaning; the original rationale supports the explicit purpose construction. I retain “make atonement” and “inheritance,” preserving their weight rather than reducing the request to compensation alone.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +133,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/021/003.job-61047.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:47Z'
+  change_level: refined
+  confidence: high
+  meaning: David asks what he can do to make atonement so that the Gibeonites will bless Israel, Yahweh’s inheritance.
+  meaning_decisions:
+  - source_phrase: וּבַמָּה אֲכַפֵּר
+    prior_rendering: and with what shall I make atonement
+    new_rendering: How shall I make atonement
+    rationale: David asks by what means atonement can be made, without presupposing a particular payment or offering.
+  - source_phrase: וּבָרְכוּ
+    prior_rendering: that you may bless
+    new_rendering: so that you may bless
+    rationale: The final clause expresses the desired outcome of the atonement.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history’s changes between “that” and “so that” did not establish a different meaning; the original rationale supports the explicit purpose construction. I retain “make atonement” and “inheritance,” preserving their weight rather than reducing the request to compensation alone.

@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:14
 translation:
-  text: Do not bargain with a merchant[a], nor over buying and selling.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek parallel reads, 'And establish the counsel of your heart, for there is none more faithful to you than it.' The surviving Hebrew here differs substantially from the Greek tradition.
-    reason: alternative_reading
+  text: Do not bargain with a merchant, or consult a buyer about a sale.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עם
   chosen: with
@@ -126,14 +122,20 @@ revisions:
   from: Do not bargain with a merchant, nor about a purchase over a sale.
   to: Do not bargain with a merchant, nor about a purchase over a sale.
   rationale: 'Revised the second clause for clearer, more natural English and closer correspondence to the Hebrew contrast of purchase/sale: ''nor over buying and selling'' instead of ''nor about a purchase over a sale.'''
-
 - timestamp: '2026-05-18T02:59:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not bargain with a merchant[a], nor over buying and selling.'
-  to: 'Do not bargain with a merchant[a], nor over buying and selling.'
+  from: Do not bargain with a merchant[a], nor over buying and selling.
+  to: Do not bargain with a merchant[a], nor over buying and selling.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''about a purchase''].'
+- timestamp: '2026-11-09T19:08:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not bargain with a merchant[a], nor over buying and selling.
+  to: Do not bargain with a merchant, or consult a buyer about a sale.
+  rationale: The prior revisions sought smoother transaction language but left the second clause without a clear relationship to the counsel warnings. I preserve “bargain” in the first clause and make the continuing advisory prohibition explicit in the second.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -153,3 +155,21 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/037/014.job-52026.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:10Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The reader is warned against bargaining with a merchant and seeking a buyer's counsel about a sale.
+  meaning_decisions:
+  - source_phrase: וממקנה על ממכר
+    prior_rendering: nor over buying and selling
+    new_rendering: or consult a buyer about a sale
+    rationale: The surrounding list concerns unsuitable parties from whom to seek counsel; the compressed acquisition-and-sale phrase is best understood as identifying the buying party and the subject of advice.
+  footnote_kinds: {}
+  history_weighed: The prior revisions sought smoother transaction language but left the second clause without a clear relationship to the counsel warnings. I preserve “bargain” in the first clause and make the continuing advisory prohibition explicit in the second.

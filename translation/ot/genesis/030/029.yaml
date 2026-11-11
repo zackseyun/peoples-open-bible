@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר אֵלָ֔י/ו אַתָּ֣ה יָדַ֔עְתָּ אֵ֖ת אֲשֶׁ֣ר עֲבַדְתִּ֑י/ךָ וְ/אֵ֛ת אֲשֶׁר הָיָ֥ה מִקְנְ/ךָ֖ אִתִּֽ/י־׃
 translation:
-  text: He said to him[a], “You know how I have served you, and how your livestock has been with me.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “and what your livestock was with me.” The Hebrew idiom likely refers to how Laban’s livestock prospered under Jacob’s care, not merely to their location.
-    reason: lexical_alternative
+  text: Jacob replied, “You yourself know how I have served you and how your livestock has fared under my care.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר אֵלָיו
   chosen: He said to him
@@ -87,14 +83,20 @@ revisions:
   from: He said to him, “You yourself know how I have served you, and how your livestock has fared with me.”
   to: He said to him, “You yourself know how I have served you, and how your livestock has fared with me.”
   rationale: Removed the emphatic 'yourself,' which is not required here, and revised 'has fared with me' to the more literal 'has been with me' to reflect the source without interpretive expansion.
-
 - timestamp: '2026-05-17T10:16:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He said to him[a], “You know how I have served you, and how your livestock has been with me.”'
-  to: 'He said to him[a], “You know how I have served you, and how your livestock has been with me.”'
+  from: He said to him[a], “You know how I have served you, and how your livestock has been with me.”
+  to: He said to him[a], “You know how I have served you, and how your livestock has been with me.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your livestock has fared with me''].'
+- timestamp: '2026-11-09T17:44:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said to him[a], “You know how I have served you, and how your livestock has been with me.”
+  to: Jacob replied, “You yourself know how I have served you and how your livestock has fared under my care.
+  rationale: The draft and lexical notes recognized that the livestock’s condition is meant, whereas the review’s “has been with me” produced an unclear locative phrase. I restore that sense as “has fared under my care” and recover the explicit pronoun’s appeal to Laban’s own knowledge.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 3
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/030/029.job-65256.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob appeals to Laban’s firsthand knowledge of his service and of how the livestock has fared in his care.
+  meaning_decisions:
+  - source_phrase: אַתָּה יָדַעְתָּ
+    prior_rendering: You know
+    new_rendering: You yourself know
+    rationale: The explicit pronoun reinforces Jacob’s appeal to Laban’s own knowledge of his service.
+  - source_phrase: וְאֵת אֲשֶׁר הָיָה מִקְנְךָ אִתִּי
+    prior_rendering: and how your livestock has been with me
+    new_rendering: and how your livestock has fared under my care
+    rationale: The clause concerns the animals’ condition while entrusted to Jacob, not merely their location; the following verse supplies the particulars of their increase.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical notes recognized that the livestock’s condition is meant, whereas the review’s “has been with me” produced an unclear locative phrase. I restore that sense as “has fared under my care” and recover the explicit pronoun’s appeal to Laban’s own knowledge.

@@ -9,15 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more specifically in historical context, 'the land of the Philistines.' The Greek reads more literally 'the land of foreigners.'
-    reason: alternative_reading
-  - marker: b
-    text: The Greek verb here is plural ('they burned'), though the surrounding verbs are singular. This likely refers to Judas's forces rather than Judas alone.
-    reason: textual_variant
+  text: Judas turned aside to Azotus, in the land of the Philistines. He tore down their altars, and his men burned the carved images of their gods. He plundered the cities and returned to Judea.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξέκλινεν
   chosen: turned aside
@@ -138,14 +131,20 @@ revisions:
   from: And Judas turned aside into Azotus, the land of foreigners, and he tore down their altars, and they burned the carved images of their gods with fire, and he plundered the spoil of the cities, and returned to Judea.
   to: And Judas turned aside into Azotus, the land of foreigners, and he tore down their altars, and they burned the carved images of their gods with fire, and he plundered the spoil of the cities, and returned to Judea.
   rationale: Removed the unnecessary shift to 'they burned' and kept Judas as the consistent subject throughout the verse. Also smoothed the coordination while preserving the source wording.
-
 - timestamp: '2026-05-18T02:59:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.'
-  to: 'And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.'
+  from: And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.
+  to: And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they burned''].'
+- timestamp: '2026-11-09T18:52:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas turned aside into Azotus[a], the land of foreigners, and he tore down their altars, and burned the carved images of their gods with fire, and plundered the spoil of the cities[b], and returned to Judea.
+  to: Judas turned aside to Azotus, in the land of the Philistines. He tore down their altars, and his men burned the carved images of their gods. He plundered the cities and returned to Judea.
+  rationale: The history correctly noticed the plural burning verb, although the review smoothed it to singular; I retain its meaning by naming Judas’s men. As in verse 66, the geographical context justifies moving the previously noted Philistine identification into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -165,3 +164,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/068.job-48274.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas attacked Azotus in Philistine territory, destroyed its altars and divine images, plundered the cities, and returned to Judea.
+  meaning_decisions:
+  - source_phrase: εἰς Ἄζωτον γῆν ἀλλοφύλων
+    prior_rendering: into Azotus, the land of foreigners
+    new_rendering: to Azotus, in the land of the Philistines
+    rationale: Azotus is a city within the territory being identified, not itself a land; its location also confirms the conventional Philistine sense of the ethnic designation.
+  - source_phrase: τὰ γλυπτὰ τῶν θεῶν αὐτῶν κατέκαυσαν
+    prior_rendering: burned the carved images of their gods with fire
+    new_rendering: his men burned the carved images of their gods
+    rationale: The supplied verb is plural, naturally referring to Judas’s forces; identifying them preserves the distinction without an abrupt unexplained pronoun.
+  - source_phrase: ἐσκύλευσεν τὰ σκῦλα τῶν πόλεων
+    prior_rendering: plundered the spoil of the cities
+    new_rendering: plundered the cities
+    rationale: The cognate construction describes taking the cities’ goods as spoil, which the English verb already communicates.
+  footnote_kinds: {}
+  history_weighed: The history correctly noticed the plural burning verb, although the review smoothed it to singular; I retain its meaning by naming Judas’s men. As in verse 66, the geographical context justifies moving the previously noted Philistine identification into the main text.

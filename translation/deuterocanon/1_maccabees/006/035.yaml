@@ -26,18 +26,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And they divided the beasts[b] among the units[a], and beside each elephant[c] they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
-  philosophy: optimal-equivalence
+  text: They distributed the elephants among the units[a]. Beside each elephant they stationed a thousand men in coats of mail and bronze helmets, and assigned five hundred picked horsemen to each animal.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'into the divisions/companies.' The Greek phrase εἰς τὰς φάραγγας is contextually difficult; a military sense is likely here.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'the beasts'; the context makes clear these are elephants.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for each elephant' or 'at each elephant.' The Greek preposition can be understood in more than one way here.
-    reason: lexical_alternative
+    text: Or, “among the ravines”; the Greek word normally means ravines, but here is commonly understood as military divisions.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: διεῖλον
   chosen: they divided
@@ -140,13 +134,12 @@ revisions:
   from: And they divided the beasts among the units, and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
   to: And they divided the beasts among the phalanxes, and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
   rationale: Changed 'units' to 'phalanxes' for closer lexical accuracy to the Greek φάραγγας; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they divided the beasts among the phalanxes[a], and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads[c][b], and five hundred picked horsemen assigned to each beast.'
-  to: 'And they divided the beasts among the units, and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.'
+  from: And they divided the beasts among the phalanxes[a], and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads[c][b], and five hundred picked horsemen assigned to each beast.
+  to: And they divided the beasts among the units, and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''among the units''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -156,6 +149,13 @@ revisions:
   from: And they divided the beasts among the units, and beside each elephant they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
   to: And they divided the beasts[b] among the units[a], and beside each elephant[c] they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('the beasts') because the note quotes that phrase from the rendering; [c] anchored to ('beside each elephant') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they divided the beasts[b] among the units[a], and beside each elephant[c] they stationed a thousand men in coats of mail, with bronze helmets on their heads, and five hundred picked horsemen assigned to each beast.
+  to: They distributed the elephants among the units[a]. Beside each elephant they stationed a thousand men in coats of mail and bronze helmets, and assigned five hundred picked horsemen to each animal.
+  rationale: The history’s return from “phalanxes” to “units” avoids imposing a technical formation on a difficult source word. I retain that cautious military interpretation, acknowledge the topographical alternative, and preserve the reported numbers and equipment.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -175,3 +175,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/035.job-48309.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: The elephants are distributed among the military units, each accompanied by a thousand armored infantry and five hundred selected horsemen.
+  meaning_decisions:
+  - source_phrase: διεῖλον τὰ θηρία
+    prior_rendering: they divided the beasts
+    new_rendering: They distributed the elephants
+    rationale: The action is the allocation of the war elephants, not a physical division of the animals.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history’s return from “phalanxes” to “units” avoids imposing a technical formation on a difficult source word. I retain that cautious military interpretation, acknowledge the topographical alternative, and preserve the reported numbers and equipment.

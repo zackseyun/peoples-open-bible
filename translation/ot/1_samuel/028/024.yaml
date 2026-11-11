@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/לָ/אִשָּׁ֤ה עֵֽגֶל מַרְבֵּק֙ בַּ/בַּ֔יִת וַ/תְּמַהֵ֖ר וַ/תִּזְבָּחֵ֑/הוּ וַ/תִּקַּח קֶ֣מַח וַ/תָּ֔לָשׁ וַ/תֹּפֵ֖/הוּ מַצּֽוֹת־־׃
 translation:
-  text: The woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'stall-fed calf' or traditionally 'fatted calf.'
-    reason: lexical_alternative
-  - marker: b
-    text: The verb can be used for sacrificial slaughter in some contexts, but here it refers to butchering the animal for a meal.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'unleavened cakes.'
-    reason: lexical_alternative
+  text: The woman had a fattened calf in the house, and she quickly slaughtered it. Then she took flour, kneaded it into dough, and baked unleavened bread.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עֵגֶל
   chosen: calf
@@ -23,7 +13,7 @@ lexical_decisions:
   - young bull
   - young cow
   lexicon: HALOT
-  rationale: "The noun denotes a young bovine animal. 'Calf' is the most natural and established English equivalent in this narrative context. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The noun denotes a young bovine animal. ''Calf'' is the most natural and established English equivalent in this narrative context. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: מַרְבֵּק
   chosen: fattened
   alternatives:
@@ -100,13 +90,12 @@ revisions:
   from: Now the woman had a fattened calf in the house, and she hurried and slaughtered it. Then she took flour, kneaded it, and baked unleavened bread from it.
   to: Now the woman had a fattened calf in the house, and she hurried and slaughtered it. Then she took flour, kneaded it, and baked unleavened bread from it.
   rationale: Removed 'from it,' which is not in the source and is awkward in English here. Kept the rest unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.'
-  to: 'Now the woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.'
+  from: Now the woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
+  to: Now the woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''baked unleavened bread from it''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -115,6 +104,13 @@ revisions:
   from: Now the woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
   to: The woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:23:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The woman had a fattened calf in the house[a], and she hurried and slaughtered it. Then she took flour, kneaded it[c][b], and baked unleavened bread.
+  to: The woman had a fattened calf in the house, and she quickly slaughtered it. Then she took flour, kneaded it into dough, and baked unleavened bread.
+  rationale: I retain the history’s distinction between slaughter for a meal and sacrifice, along with ‘fattened calf’ and ‘unleavened bread.’ The current omission of a leading ‘Now’ and a redundant ‘from it’ produces clear English and remains unchanged.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/028/024.job-59467.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:53Z'
+  change_level: refined
+  confidence: high
+  meaning: The woman quickly prepares a meal by slaughtering her fattened calf and baking unleavened bread.
+  meaning_decisions:
+  - source_phrase: וַתְּמַהֵר וַתִּזְבָּחֵהוּ
+    prior_rendering: she hurried and slaughtered it
+    new_rendering: she quickly slaughtered it
+    rationale: The first verb expresses the haste with which she performed the slaughter, naturally conveyed by an English adverb.
+  - source_phrase: וַתִּקַּח קֶמַח וַתָּלָשׁ
+    prior_rendering: she took flour, kneaded it
+    new_rendering: she took flour, kneaded it into dough
+    rationale: The source compresses the preparation of dough from flour; making the dough explicit avoids suggesting that dry flour itself can be kneaded.
+  footnote_kinds: {}
+  history_weighed: I retain the history’s distinction between slaughter for a meal and sacrifice, along with ‘fattened calf’ and ‘unleavened bread.’ The current omission of a leading ‘Now’ and a redundant ‘from it’ produces clear English and remains unchanged.

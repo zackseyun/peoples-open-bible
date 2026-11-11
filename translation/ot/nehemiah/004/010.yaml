@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֣י מִן הַ/יּ֣וֹם הַ/ה֗וּא חֲצִ֣י נְעָרַ/י֮ עֹשִׂ֣ים בַּ/מְּלָאכָה֒ וְ/חֶצְיָ֗/ם מַחֲזִיקִים֙ וְ/הָ/רְמָחִ֣ים הַ/מָּגִנִּ֔ים וְ/הַ/קְּשָׁת֖וֹת וְ/הַ/שִּׁרְיֹנִ֑ים וְ/הַ֨/שָּׂרִ֔ים אַחֲרֵ֖י כָּל בֵּ֥ית יְהוּדָֽה׀־־׃
 translation:
-  text: And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'my servants' or 'my attendants' for 'my young men' (נְעָרַי), since the Hebrew term can refer to youths, servants, or retainers depending on context.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the coats of mail' or 'the breastplates' for 'the armor'; the Hebrew term refers to body armor.
-    reason: lexical_alternative
-  - marker: c
-    text: '''The officers stood behind all the house of Judah'' may imply military support or supervisory positioning behind the Judean workers.'
-    reason: cultural_note
+  text: From that day on, half my attendants did the work, while the other half stood armed with spears, shields, bows, and armor. The officers were stationed behind all the people of Judah.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נְעָרַי
   chosen: my young men
@@ -102,14 +92,20 @@ revisions:
   from: And from that day on, half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor; and the officers stood behind all the house of Judah.
   to: And from that day on, half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor; and the officers stood behind all the house of Judah.
   rationale: Changed 'stood behind' to 'were behind' for closer lexical correspondence, since the Hebrew does not explicitly supply 'stood.'
-
 - timestamp: '2026-05-18T02:54:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.'
-  to: 'And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.'
+  from: And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.
+  to: And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the officers stood''].'
+- timestamp: '2026-11-09T18:25:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And from that day on[a], half of my young men were doing the work, and half of them were holding the spears, the shields, the bows, and the armor[c][b]; and the officers were behind all the house of Judah.
+  to: From that day on, half my attendants did the work, while the other half stood armed with spears, shields, bows, and armor. The officers were stationed behind all the people of Judah.
+  rationale: The review history debated “stood” versus “were” on formal grounds, without a maintainer decision. The documented meanings of the retinue and military equipment carry more weight here than literal correspondence to those surface forms.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +125,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/004/010.job-42753.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: From then on, Nehemiah divided his attendants between construction and armed readiness, with officers positioned behind the people of Judah.
+  meaning_decisions:
+  - source_phrase: נְעָרַי
+    prior_rendering: my young men
+    new_rendering: my attendants
+    rationale: The term identifies Nehemiah’s personal retinue in this context; their subordinate role, rather than their age, explains the distinction from the wider workforce.
+  - source_phrase: וְחֶצְיָם מַחֲזִיקִים ... הַשִּׁרְיֹנִים
+    prior_rendering: half of them were holding the spears, the shields, the bows, and the armor
+    new_rendering: the other half stood armed with spears, shields, bows, and armor
+    rationale: The list describes the group equipped for defense, not men literally holding every item, including body armor, in their hands.
+  - source_phrase: וְהַשָּׂרִים אַחֲרֵי כָּל בֵּית יְהוּדָה
+    prior_rendering: the officers were behind all the house of Judah
+    new_rendering: The officers were stationed behind all the people of Judah
+    rationale: The corporate expression denotes Judah’s people, and the military setting supplies positional deployment without deciding whether their role was support or supervision.
+  footnote_kinds: {}
+  history_weighed: The review history debated “stood” versus “were” on formal grounds, without a maintainer decision. The documented meanings of the retinue and military equipment carry more weight here than literal correspondence to those surface forms.

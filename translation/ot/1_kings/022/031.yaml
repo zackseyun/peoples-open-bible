@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וּ/מֶ֣לֶךְ אֲרָ֡ם צִוָּ֣ה אֶת שָׂרֵי֩ הָ/רֶ֨כֶב אֲשֶׁר ל֜/וֹ שְׁלֹשִׁ֤ים וּ/שְׁנַ֨יִם֙ לֵ/אמֹ֔ר לֹ֚א תִּלָּ֣חֲמ֔וּ אֶת קָטֹ֖ן וְ/אֶת גָּד֑וֹל כִּ֛י אִֽם אֶת מֶ֥לֶךְ יִשְׂרָאֵ֖ל לְ/בַדּֽ/וֹ־־־־־־׃
 translation:
-  text: The king of Aram had commanded the thirty-two chariot commanders who belonged to him[a], saying, “Do not fight with either small or great[c][b], but only with the king of Israel alone.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “Do not fight with anyone, small or great, except only the king of Israel.” The Hebrew idiom “small or great” means people of any rank or status.
-    reason: lexical_alternative
-  - marker: b
-    text: “Aram” is the Hebrew place-name; traditionally rendered “Syria.”
-    reason: alternative_reading
-  - marker: c
-    text: Or 'with small or great, but only with'.
-    reason: previous_rendering
+  text: The king of Aram had ordered his thirty-two chariot commanders, “Do not fight against anyone, whatever his rank, but only against the king of Israel.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּ/מֶלֶךְ אֲרָם
   chosen: The king of Aram
@@ -24,7 +14,7 @@ lexical_decisions:
   - the king of Syria
   - Now the king of Aram
   lexicon: HALOT
-  rationale: "ו conjunction can be rendered simply as 'and,' but in narrative English 'now' smoothly marks a scene-setting transition without adding content. אֲרָם is transliterated as the place-name 'Aram' rather than traditional 'Syria,' following original-language primacy and the policy to transliterate names. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'ו conjunction can be rendered simply as ''and,'' but in narrative English ''now'' smoothly marks a scene-setting transition without adding content. אֲרָם is transliterated as the place-name ''Aram'' rather than traditional ''Syria,'' following original-language primacy and the policy to transliterate names. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: צִוָּה
   chosen: had commanded
   alternatives:
@@ -125,12 +115,18 @@ revisions:
   from: Now the king of Aram had commanded the thirty-two chariot commanders who belonged to him[a], saying, “Do not fight with either small or great[c][b], but only with the king of Israel alone.”
   to: The king of Aram had commanded the thirty-two chariot commanders who belonged to him[a], saying, “Do not fight with either small or great[c][b], but only with the king of Israel alone.”
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:22:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The king of Aram had commanded the thirty-two chariot commanders who belonged to him[a], saying, “Do not fight with either small or great[c][b], but only with the king of Israel alone.”
+  to: The king of Aram had ordered his thirty-two chariot commanders, “Do not fight against anyone, whatever his rank, but only against the king of Israel.”
+  rationale: The earlier automated review identified the real ambiguity in ‘fight with,’ whereas the later return to ‘with’ gained only formal resemblance. The lexical notes already explain ‘small or great’ as any rank, so I put that meaning directly into the command and drop the displaced or redundant notes.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:09:34Z'
   unchanged: false
   changes_summary: Changed 'against' to 'with' for the verb 'fight' to better match natural English with the Hebrew construction, while preserving the meaning. No other changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +146,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/022/031.job-58739.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:43Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king of Aram has ordered his thirty-two chariot commanders to make Israel’s king their sole target.
+  meaning_decisions:
+  - source_phrase: לֹא תִּלָּחֲמוּ אֶת קָטֹן וְאֶת גָּדוֹל
+    prior_rendering: Do not fight with either small or great
+    new_rendering: Do not fight against anyone, whatever his rank
+    rationale: ‘Small or great’ means people of every status, not physical size; ‘against’ also removes the possible sense of fighting alongside someone.
+  - source_phrase: כִּי אִם אֶת מֶלֶךְ יִשְׂרָאֵל לְבַדּוֹ
+    prior_rendering: but only with the king of Israel alone
+    new_rendering: but only against the king of Israel
+    rationale: The king is the sole enemy target; English ‘only’ carries the combined restrictive emphasis without redundant wording.
+  footnote_kinds: {}
+  history_weighed: The earlier automated review identified the real ambiguity in ‘fight with,’ whereas the later return to ‘with’ gained only formal resemblance. The lexical notes already explain ‘small or great’ as any rank, so I put that meaning directly into the command and drop the displaced or redundant notes.

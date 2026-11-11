@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וְ/כִֽי יְפַתֶּ֣ה אִ֗ישׁ בְּתוּלָ֛ה אֲשֶׁ֥ר לֹא אֹרָ֖שָׂה וְ/שָׁכַ֣ב עִמָּ֑/הּ מָהֹ֛ר יִמְהָרֶ֥/נָּה לּ֖/וֹ לְ/אִשָּֽׁה־־׃
 translation:
-  text: If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.
-  philosophy: optimal-equivalence
+  text: If a man seduces a virgin who is not betrothed[a] and lies with her, he must pay the bride-price[b] and take her as his wife.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'who is not betrothed.' The Hebrew refers to a woman not formally pledged in marriage.
-    reason: lexical_alternative
+    text: Betrothal was a legally binding pledge of marriage.
+    reason: cultural_note
   - marker: b
-    text: Or 'he shall surely pay the marriage-price for her.' The Hebrew refers to the mohar, the payment associated with marriage, better rendered 'bride-price' than 'dowry' in this context.
-    reason: lexical_alternative
+    text: A marriage payment made by the groom or his family to the bride’s family.
+    reason: cultural_note
 lexical_decisions:
 - source_word: יְפַתֶּה
   chosen: seduces
@@ -90,14 +90,20 @@ revisions:
   from: If a man seduces a virgin who is not engaged, and lies with her, he must surely pay the bride-price for her to be his wife.
   to: If a man seduces a virgin who is not engaged, and lies with her, he must surely pay the bride-price for her to be his wife.
   rationale: Changed 'engaged' to 'betrothed' for closer lexical/formal correspondence to the source; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:54:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.'
-  to: 'If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.'
+  from: If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.
+  to: If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who is not engaged''].'
+- timestamp: '2026-11-09T17:36:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man seduces a virgin who is not betrothed[a], and lies with her[b], he must surely pay the bride-price for her to be his wife.
+  to: If a man seduces a virgin who is not betrothed[a] and lies with her, he must pay the bride-price[b] and take her as his wife.
+  rationale: The record alternates between 'engaged' and 'betrothed'; I retain the current 'betrothed' because it denotes the binding marriage pledge. The established distinction between seduction and forcible assault remains, while the payment and marriage obligations are made explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +123,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/022/015.job-62824.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:09Z'
+  change_level: refined
+  confidence: high
+  meaning: A man who seduces and has intercourse with an unbetrothed virgin must pay the bride-price and marry her.
+  meaning_decisions:
+  - source_phrase: מָהֹר יִמְהָרֶנָּה
+    prior_rendering: he must surely pay the bride-price
+    new_rendering: he must pay the bride-price
+    rationale: The emphatic construction imposes a firm obligation, conveyed directly by 'must.'
+  - source_phrase: לּוֹ לְאִשָּׁה
+    prior_rendering: for her to be his wife
+    new_rendering: and take her as his wife
+    rationale: Marriage is part of the obligation stated here, not merely a possible purpose for paying the bride-price; the following verse supplies the father's right to refuse.
+  footnote_kinds:
+    a: cultural_background
+    b: cultural_background
+  history_weighed: The record alternates between 'engaged' and 'betrothed'; I retain the current 'betrothed' because it denotes the binding marriage pledge. The established distinction between seduction and forcible assault remains, while the payment and marriage obligations are made explicit.

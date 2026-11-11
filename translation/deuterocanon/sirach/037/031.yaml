@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 37:31
 translation:
-  text: A wise man among his people will inherit honor[b], and his name[a] will endure for everlasting life.
-  philosophy: optimal-equivalence
+  text: A wise man among his people will inherit honor, and his name will live on forever[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'his name will stand forever.' The Hebrew literally says 'his name stands in the life of eternity,' an expression that may denote enduring remembrance and may also carry overtones of everlasting life.
+    text: Literally, 'his name stands in everlasting life.'
     reason: lexical_alternative
-  - marker: b
-    text: 'The Greek parallel differs substantially here: ''Through greed many have died, but the one who is attentive will add life.'' The main translation follows the extant Hebrew witness, with the Greek kept in view as a parallel source.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: חכם
   chosen: wise man
@@ -127,13 +124,12 @@ revisions:
   from: A wise man among his people will inherit honor, and his name will endure for everlasting life.
   to: A wise man among his people will inherit honor, and his name will endure for all time.
   rationale: Revised the final phrase from 'for everlasting life' to 'for all time' to reflect the Hebrew 'in eternal life/for the life of eternity' more naturally and idiomatically here as enduring renown, without importing a theological sense of personal everlasting life.
-
 - timestamp: '2026-05-18T03:09:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A wise man among his people will inherit honor[b][a], and his name will endure for all time.'
-  to: 'A wise man among his people will inherit honor, and his name will endure for everlasting life.'
+  from: A wise man among his people will inherit honor[b][a], and his name will endure for all time.
+  to: A wise man among his people will inherit honor, and his name will endure for everlasting life.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for everlasting life''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -143,6 +139,13 @@ revisions:
   from: A wise man among his people will inherit honor, and his name will endure for everlasting life.
   to: A wise man among his people will inherit honor[b], and his name[a] will endure for everlasting life.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('his name') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:08:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A wise man among his people will inherit honor[b], and his name[a] will endure for everlasting life.
+  to: A wise man among his people will inherit honor, and his name will live on forever[a].
+  rationale: The review correctly recognized that the promise concerns the endurance of the man's name; its automated reversal does not outweigh that contextual evidence. 'Live on forever' preserves the source's life-language, with the fuller literal expression retained in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -162,3 +165,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/037/031.job-52043.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:07Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A wise man receives honor among his people, and his name lives on forever.
+  meaning_decisions:
+  - source_phrase: ושמו עומד בחיי עולם
+    prior_rendering: and his name will endure for everlasting life
+    new_rendering: and his name will live on forever
+    rationale: The subject is his name, and the context concerns lasting honor beyond an individual's brief lifespan; 'live on forever' conveys enduring remembrance while retaining the life image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review correctly recognized that the promise concerns the endurance of the man's name; its automated reversal does not outweigh that contextual evidence. 'Live on forever' preserves the source's life-language, with the fuller literal expression retained in a note.

@@ -16,12 +16,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Edna said to his wife, “Send[a] one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
-  philosophy: optimal-equivalence
+  text: He said to his wife Edna, “Send one of the servant girls to find out whether he is alive[a]. If he is not, we can bury him without anyone finding out.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek reads 'let them see,' with a plural verb, even though Edna has just said 'Send one of the servant girls.' The translation preserves this wording rather than smoothing it to singular.
-    reason: textual_variant
+    text: The Greek says, “let them see,” using a plural verb after “one of the servant girls.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἀπόστειλον
   chosen: Send
@@ -100,13 +100,12 @@ revisions:
   from: And Edna said to his wife, “Send one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
   to: And Edna said to his wife, “Send one of the servant girls, and let her see whether he is alive; but if not, so that we may bury him and no one may know.”
   rationale: Changed 'let them see' to 'let her see' to match the singular 'one of the servant girls' and improve consistency with the Greek.
-
 - timestamp: '2026-05-18T03:09:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Edna said to his wife[a], “Send one of the servant girls, and let her see whether he is alive; but if not, so that we may bury him and no one may know.”'
-  to: 'And Edna said to his wife, “Send one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”'
+  from: And Edna said to his wife[a], “Send one of the servant girls, and let her see whether he is alive; but if not, so that we may bury him and no one may know.”
+  to: And Edna said to his wife, “Send one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let them see''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +115,13 @@ revisions:
   from: And Edna said to his wife, “Send one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
   to: And Edna said to his wife, “Send[a] one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Send') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Edna said to his wife, “Send[a] one of the servant girls, and let them see whether he is alive; but if not, so that we may bury him and no one may know.”
+  to: He said to his wife Edna, “Send one of the servant girls to find out whether he is alive[a]. If he is not, we can bury him without anyone finding out.”
+  rationale: Neither the draft nor the recorded reviews corrected the mistaken identification of Edna as speaker, which the syntax and continuing subject require correcting. The history rightly calls attention to the plural verb, so that feature is acknowledged rather than described as singular Greek.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -135,3 +141,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/008/012.job-52511.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Raguel asks his wife Edna to send a servant to check whether Tobiah is alive so that, if he has died, they can bury him secretly.
+  meaning_decisions:
+  - source_phrase: καὶ εἶπεν Ἔδνα τῇ γυναικὶ αὐτοῦ
+    prior_rendering: And Edna said to his wife
+    new_rendering: He said to his wife Edna
+    rationale: Raguel remains the subject from the preceding verse; the indeclinable name Edna identifies the wife addressed by the dative phrase, not the speaker.
+  - source_phrase: Ἀπόστειλον μίαν τῶν παιδισκῶν, καὶ ἰδέτωσαν εἰ ζῇ
+    prior_rendering: Send one of the servant girls, and let them see whether he is alive
+    new_rendering: Send one of the servant girls to find out whether he is alive
+    rationale: The infinitive naturally expresses the purpose of sending the servant without reproducing the abrupt shift in grammatical number; the transmitted plural is documented in a note.
+  - source_phrase: εἰ δὲ μή, ἵνα θάψωμεν αὐτὸν καὶ μηδεὶς γνῷ
+    prior_rendering: but if not, so that we may bury him and no one may know
+    new_rendering: If he is not, we can bury him without anyone finding out
+    rationale: The compressed purpose clause means that a finding of death would allow a secret burial; the English supplies the understood connection.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Neither the draft nor the recorded reviews corrected the mistaken identification of Edna as speaker, which the syntax and continuing subject require correcting. The history rightly calls attention to the plural verb, so that feature is acknowledged rather than described as singular Greek.

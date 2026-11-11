@@ -20,11 +20,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: and you intended to destroy, by the hands of our fathers, even parents who killed helpless lives,[a]
-  philosophy: optimal-equivalence
+  text: and parents who murdered their helpless children[a]—you intended to destroy them through our ancestors,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'parents, murderers of helpless souls/persons.' The Greek ψυχῶν can be rendered 'souls' or 'persons,' but here likely refers concretely to the lives of vulnerable victims.
+    text: Literally, “parents, murderers of helpless lives.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: αὐθέντας
@@ -115,14 +115,20 @@ revisions:
   from: and you intended to destroy, by the hands of our fathers, even parents who killed helpless lives,
   to: and you intended to destroy by the hands of our fathers parents who murdered helpless lives,
   rationale: Removed 'even' as unnecessary, moved punctuation for more natural English flow, and changed 'killed' to 'murdered' to better reflect the force of αὐθέντας while retaining 'helpless lives' for ψυχῶν ἀβοηθήτων.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and you intended to destroy by the hands of our fathers parents who murdered helpless lives,[a]'
-  to: 'and you intended to destroy, by the hands of our fathers, even parents who killed helpless lives,[a]'
+  from: and you intended to destroy by the hands of our fathers parents who murdered helpless lives,[a]
+  to: and you intended to destroy, by the hands of our fathers, even parents who killed helpless lives,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''who killed''].'
+- timestamp: '2026-11-09T20:31:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and you intended to destroy, by the hands of our fathers, even parents who killed helpless lives,[a]
+  to: and parents who murdered their helpless children[a]—you intended to destroy them through our ancestors,
+  rationale: No maintainer revision is recorded; the earlier review’s change to “murdered” better conveys the accusation, while the subsequent automated revert supplies no fresh meaning-based reason against it. I retain the established sense of divine intention and clarify the helpless victims and ancestral agency from the passage’s context.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -142,3 +148,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/012/006.job-39177.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God intended to destroy these wicked inhabitants, including parents who murdered their helpless children, through Israel’s ancestors.
+  meaning_decisions:
+  - source_phrase: καὶ αὐθέντας γονεῖς ψυχῶν ἀβοηθήτων
+    prior_rendering: even parents who killed helpless lives
+    new_rendering: and parents who murdered their helpless children
+    rationale: “Murdered” conveys the culpable bloodshed expressed by αὐθέντας. The context of child sacrifice identifies the helpless victims as the parents’ children, while “and” preserves the cumulative accusation.
+  - source_phrase: ἐβουλήθης ἀπολέσαι
+    prior_rendering: you intended to destroy ... even parents
+    new_rendering: you intended to destroy them
+    rationale: Placing the final accusation before the main clause and supplying “them” makes clear that the intended destruction concerns the inhabitants described throughout the preceding list, not only the parents.
+  - source_phrase: διὰ χειρῶν πατέρων ἡμῶν
+    prior_rendering: by the hands of our fathers
+    new_rendering: through our ancestors
+    rationale: The phrase identifies Israel’s forebears as the agents of judgment; this wording conveys that historical and instrumental meaning naturally.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: No maintainer revision is recorded; the earlier review’s change to “murdered” better conveys the accusation, while the subsequent automated revert supplies no fresh meaning-based reason against it. I retain the established sense of divine intention and clarify the helpless victims and ancestral agency from the passage’s context.

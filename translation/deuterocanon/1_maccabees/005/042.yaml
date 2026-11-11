@@ -9,14 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”
-  philosophy: optimal-equivalence
+  text: When Judas approached the stream, he stationed the army’s administrative officers[a] there and ordered them, “Do not let anyone stop to make camp; everyone must go into battle.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'torrent,' 'brook,' or 'streambed.' The Greek refers to a seasonal watercourse; 'wadi' is chosen to preserve the terrain sense.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Scribes of the people'' may denote administrative officers or record-keepers serving the army, but the translation preserves the literal term ''scribes.'''
+    text: Literally, 'the scribes of the people.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἤγγισεν
@@ -98,14 +95,20 @@ revisions:
   from: And when Judas came near to the wadi of water, he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let any man encamp, but let them all come into the battle.”
   to: And when Judas came near to the wadi of water, he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let any man encamp, but let them all come into the battle.”
   rationale: Removed the awkward literal phrase 'of water' after 'wadi,' since the Greek expression means a watercourse/streambed; replaced 'any man' with 'anyone' for natural formal English; changed 'encamp' to 'camp' for smoother English while preserving the sense.
-
 - timestamp: '2026-05-16T15:07:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”'
-  to: 'And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”'
-  rationale: 'Restored drafter ''wadi of water'' (preserving the chosen explicit water modifier) and ''Do not let any man encamp'' (preserving gender-accurate substantive) per chosen renderings.'
+  from: And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”
+  to: And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”
+  rationale: Restored drafter 'wadi of water' (preserving the chosen explicit water modifier) and 'Do not let any man encamp' (preserving gender-accurate substantive) per chosen renderings.
+- timestamp: '2026-11-09T18:52:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when Judas came near to the wadi[a], he stationed the scribes of the people at the wadi and commanded them, saying, “Do not let anyone camp[b], but let them all come into the battle.”
+  to: When Judas approached the stream, he stationed the army’s administrative officers[a] there and ordered them, “Do not let anyone stop to make camp; everyone must go into battle.”
+  rationale: The earlier note already recognized the scribes as possible administrative officers, while the review improved the awkward watercourse phrase. I preserve that improvement and make the officials' contextual role explicit, without allowing the automated revert's source-transparent preferences to obscure it.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +128,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/042.job-48248.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas posted administrative officers at the stream to ensure that every soldier advanced into battle instead of stopping to camp.
+  meaning_decisions:
+  - source_phrase: τοὺς γραμματεῖς τοῦ λαοῦ
+    prior_rendering: the scribes of the people
+    new_rendering: the army’s administrative officers
+    rationale: Their assigned military task identifies them as administrative officials serving the force, not religious teachers; the literal designation remains in a note.
+  - source_phrase: Μὴ ἀφῆτε ἄνθρωπον παρεμβαλεῖν
+    prior_rendering: Do not let anyone camp
+    new_rendering: Do not let anyone stop to make camp
+    rationale: In contrast to the command to enter battle, the prohibition prevents soldiers from stopping rather than advancing.
+  - source_phrase: ἐρχέσθωσαν πάντες εἰς τὸν πόλεμον
+    prior_rendering: let them all come into the battle
+    new_rendering: everyone must go into battle
+    rationale: This expresses the imperative's universal obligation without making 'let' sound merely permissive.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier note already recognized the scribes as possible administrative officers, while the review improved the awkward watercourse phrase. I preserve that improvement and make the officials' contextual role explicit, without allowing the automated revert's source-transparent preferences to obscure it.

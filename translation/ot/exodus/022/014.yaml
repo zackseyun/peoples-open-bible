@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: אִם בְּעָלָ֥י/ו עִמּ֖/וֹ לֹ֣א יְשַׁלֵּ֑ם אִם שָׂכִ֣יר ה֔וּא בָּ֖א בִּ/שְׂכָרֽ/וֹ־־׃ס
 translation:
-  text: If its owner is with it[a], he shall not make restitution; if it is a hired thing, it came for its hire.
-  philosophy: optimal-equivalence
+  text: If its owner is present, the borrower shall not make restitution. If the animal is hired[a], the hire payment covers the loss[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'if he is a hired worker, he came for his wages.' The Hebrew is terse and has been understood either of the hired animal/item or of a hired laborer; in this context of liability for borrowed property, the main text takes it as referring to the hired item.
+    text: Or, “If he is a hired worker, he came for his wages.” The final clause may refer to a hired worker rather than a hired animal.
     reason: alternative_reading
+  - marker: b
+    text: Literally, “it came for its hire.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: בְּעָלָיו
   chosen: its owner
@@ -70,14 +73,20 @@ revisions:
   from: If its owner is with it, he shall not make restitution; if it is a hired thing, it came for its hire.
   to: If its owner is with it, he shall not make restitution; if he is a hired worker, it came for his hire.
   rationale: Revised the second clause from 'if it is a hired thing' to 'if he is a hired worker' to reflect the personal subject more accurately and improve natural English; retained 'it came for his hire' as a formal rendering of the final phrase.
-
 - timestamp: '2026-05-16T03:09:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If its owner is with it[a], he shall not make restitution; if he is a hired worker, it came for his hire.'
-  to: 'If its owner is with it[a], he shall not make restitution; if it is a hired thing, it came for its hire.'
-  rationale: 'Azure substituted personal-subject reading ''if he is a hired worker, it came for his hire'' for drafter''s chosen object reading ''if it is a hired thing, it came for its hire'' (drafter''s documented property-law context rationale for שָׂכִיר ellipsis).'
+  from: If its owner is with it[a], he shall not make restitution; if he is a hired worker, it came for his hire.
+  to: If its owner is with it[a], he shall not make restitution; if it is a hired thing, it came for its hire.
+  rationale: Azure substituted personal-subject reading 'if he is a hired worker, it came for his hire' for drafter's chosen object reading 'if it is a hired thing, it came for its hire' (drafter's documented property-law context rationale for שָׂכִיר ellipsis).
+- timestamp: '2026-11-09T17:36:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If its owner is with it[a], he shall not make restitution; if it is a hired thing, it came for its hire.
+  to: If its owner is present, the borrower shall not make restitution. If the animal is hired[a], the hire payment covers the loss[b].
+  rationale: I retain the current property-law reading rather than the automated hired-worker revision because it fits the surrounding animal-liability cases. The final clause now communicates the loss allocation described in the lexical rationale, with both the compressed wording and the serious worker reading noted.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -97,3 +106,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/022/014.job-62823.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:09Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The borrower is exempt when the owner is present, and, on the hired-animal reading, the hire payment covers the loss.
+  meaning_decisions:
+  - source_phrase: אִם בְּעָלָיו עִמּוֹ לֹא יְשַׁלֵּם
+    prior_rendering: If its owner is with it, he shall not make restitution
+    new_rendering: If its owner is present, the borrower shall not make restitution
+    rationale: The owner's presence is the condition, and the borrower is the party exempt from compensation.
+  - source_phrase: אִם שָׂכִיר הוּא בָּא בִּשְׂכָרוֹ
+    prior_rendering: if it is a hired thing, it came for its hire
+    new_rendering: If the animal is hired, the hire payment covers the loss
+    rationale: In the property-law reading retained by the current text, the terse final phrase places the risk within the paid hire arrangement rather than leaving its legal significance unstated.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: I retain the current property-law reading rather than the automated hired-worker revision because it fits the surrounding animal-liability cases. The final clause now communicates the loss allocation described in the lexical rationale, with both the compressed wording and the serious worker reading noted.

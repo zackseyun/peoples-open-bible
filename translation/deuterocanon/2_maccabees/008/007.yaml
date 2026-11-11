@@ -24,15 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'he took the nights as συνεργούς for such attacks,' preserving a metaphor in which nighttime itself serves as his ally in guerrilla-style operations.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase rendered 'the fame of his valor' is based on an unusual Greek expression ('ἡ ἁλὴ τῆς εὐανδρείας αὐτοῦ'). It appears to mean the report or renown of his courage spreading widely.
-    reason: textual_variant
+  text: For such attacks he relied especially on the night as his ally, and word of his valor spread everywhere.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μάλιστα
   chosen: especially
@@ -114,14 +107,20 @@ revisions:
   from: He especially took the nights as allies for such attacks, and the fame of his valor spread everywhere.
   to: He especially took the nights as allies for such attacks, and the fame of his valor spread everywhere.
   rationale: Changed 'fame' to 'report' to more closely reflect the sense of the Greek while preserving natural English; left the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.'
-  to: 'He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.'
+  from: He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.
+  to: He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the fame of his valor''].'
+- timestamp: '2026-11-09T18:54:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He especially took the nights as allies for such attacks[b][a], and the report of his valor spread everywhere.
+  to: For such attacks he relied especially on the night as his ally, and word of his valor spread everywhere.
+  rationale: The history's defense of the ally metaphor is persuasive, and the wording retains it. The alternatives 'fame' and 'report' both concern spreading renown, which 'word of his valor' conveys without requiring an explanatory note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -141,3 +140,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/007.job-49183.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:55Z'
+  change_level: refined
+  confidence: medium
+  meaning: Judas especially uses the night to assist his attacks, and reports of his courage spread widely.
+  meaning_decisions:
+  - source_phrase: μάλιστα τὰς νύκτας πρὸς τὰς τοιαύτας ἐπιβολὰς συνεργοὺς ἐλάμβανεν
+    prior_rendering: He especially took the nights as allies for such attacks
+    new_rendering: For such attacks he relied especially on the night as his ally
+    rationale: The night-as-ally image remains vivid, while 'relied on' makes its practical military sense natural in English.
+  footnote_kinds: {}
+  history_weighed: The history's defense of the ally metaphor is persuasive, and the wording retains it. The alternatives 'fame' and 'report' both concern spreading renown, which 'word of his valor' conveys without requiring an explanatory note.

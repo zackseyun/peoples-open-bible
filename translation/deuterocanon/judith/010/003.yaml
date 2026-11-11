@@ -17,18 +17,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];
-  philosophy: optimal-equivalence
+  text: She took off the sackcloth she had been wearing and removed her widow’s garments. She washed her body with water and anointed herself with rich perfumed ointment. She arranged her hair, put on a headband[a], and dressed in the festive garments she used to wear when her husband Manasseh was alive.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'anointed herself with rich ointment.' The Greek phrase can denote perfumed ointment, with the adjective suggesting richness or thickness.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'put on a turban/headdress.' The Greek term refers to a head covering or ornamental band.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'during the days of the life of her husband Manasseh.'
-    reason: lexical_alternative
+    text: Or “headdress” or “turban.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: περιείλατο
   chosen: took off
@@ -150,14 +144,20 @@ revisions:
   from: And she took off the sackcloth that she had been wearing, and removed the garments of her widowhood. She washed her body with water and anointed herself with thick perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life;
   to: And she took off the sackcloth that she had been wearing, and removed the garments of her widowhood. She washed her body with water and anointed herself with thick perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life;
   rationale: Changed 'thick perfume' to 'rich perfume' for more natural English while preserving the sense of μύρῳ παχεῖ. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];'
-  to: 'And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];'
+  from: And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];
+  to: And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''anointed herself with thick perfume''].'
+- timestamp: '2026-11-09T19:01:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she took off the sackcloth that she had been wearing[a], and removed the garments of her widowhood. She washed her body with water and anointed herself with rich perfume, arranged the hair of her head, put a headband on it, and put on her festive garments, with which she used to adorn herself during the days of her husband Manasseh’s life[c][b];
+  to: She took off the sackcloth she had been wearing and removed her widow’s garments. She washed her body with water and anointed herself with rich perfumed ointment. She arranged her hair, put on a headband[a], and dressed in the festive garments she used to wear when her husband Manasseh was alive.
+  rationale: The automated review and revert disagreed over “rich” and “thick,” but neither records a maintainer judgment. I retained the current wording’s useful “rich” and made the ointment explicit, while preserving the distinction between sackcloth, widow’s garments, and festive dress.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -177,3 +177,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/010/003.job-50696.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Judith removes the clothing of mourning and widowhood, washes and adorns herself, and puts on the festive garments she wore during her husband’s lifetime.
+  meaning_decisions:
+  - source_phrase: ἔχρισατο μύρῳ παχεῖ
+    prior_rendering: anointed herself with rich perfume
+    new_rendering: anointed herself with rich perfumed ointment
+    rationale: The source describes a substantial perfumed preparation applied to the body, rather than merely a fragrance; “rich” preserves the sense of thickness or richness without implying only expense.
+  - source_phrase: διέταξε τὰς τρίχας τῆς κεφαλῆς αὐτῆς
+    prior_rendering: arranged the hair of her head
+    new_rendering: arranged her hair
+    rationale: The expanded source expression simply means arranging her hair and does not specify a particular grooming method.
+  - source_phrase: ἐν ταῖς ἡμέραις τῆς ζωῆς τοῦ ἀνδρὸς αὐτῆς Μανασσή
+    prior_rendering: during the days of her husband Manasseh’s life
+    new_rendering: when her husband Manasseh was alive
+    rationale: This is the natural English expression for the period being recalled, preserving the contrast between her former married life and her widowhood.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated review and revert disagreed over “rich” and “thick,” but neither records a maintainer judgment. I retained the current wording’s useful “rich” and made the ointment explicit, while preserving the distinction between sackcloth, widow’s garments, and festive dress.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יִּקַּ֤ח דָּוִד֙ מִ/יָּדָ֔/הּ אֵ֥ת אֲשֶׁר הֵבִ֖יאָה ל֑/וֹ וְ/לָ֣/הּ אָמַ֗ר עֲלִ֤י לְ/שָׁלוֹם֙ לְ/בֵיתֵ֔/ךְ רְאִי֙ שָׁמַ֣עְתִּי בְ/קוֹלֵ֔/ךְ וָ/אֶשָּׂ֖א פָּנָֽיִ/ךְ־׃
 translation:
-  text: So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”
-  philosophy: optimal-equivalence
+  text: So David received from her what she had brought him and said to her, “Go home in peace. Be assured, I have listened to you and granted your request[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “shown favor to you” or “accepted you”; Hebrew literally, “lifted up your face.”
+    text: Literally, “lifted up your face,” an idiom for favorable acceptance.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיִּקַּח
@@ -103,14 +103,20 @@ revisions:
   from: So David took from her hand what she had brought him, and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted your person.”
   to: So David took from her hand what she had brought him, and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted your person.”
   rationale: Replaced 'accepted your person' with the more natural and accurate 'accepted you.' Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:55:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”'
-  to: 'So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”'
+  from: So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”
+  to: So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''accepted your person''].'
+- timestamp: '2026-11-09T17:29:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So David took from her hand what she had brought him[a], and he said to her, “Go up in peace to your house. See, I have listened to your voice and accepted you.”
+  to: So David received from her what she had brought him and said to her, “Go home in peace. Be assured, I have listened to you and granted your request[a].”
+  rationale: The review’s move away from “accepted your person” improved the English, but “accepted you” still leaves the practical meaning unclear. I carry that improvement further by stating the favorable response to Abigail’s appeal and preserving the face image in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -130,3 +136,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/035.job-59406.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David receives Abigail’s provisions and assures her that he has granted her appeal and that she may return home in peace.
+  meaning_decisions:
+  - source_phrase: וַיִּקַּח דָּוִד מִיָּדָהּ
+    prior_rendering: David took from her hand
+    new_rendering: David received from her
+    rationale: The phrase describes receipt of Abigail’s provisions, not necessarily the transfer of everything from her physical hand.
+  - source_phrase: עֲלִי לְשָׁלוֹם לְבֵיתֵךְ רְאִי
+    prior_rendering: Go up in peace to your house. See
+    new_rendering: Go home in peace. Be assured
+    rationale: David dismisses her safely and draws attention to his reassuring decision; English does not need the directional construction to convey that.
+  - source_phrase: שָׁמַעְתִּי בְקוֹלֵךְ וָאֶשָּׂא פָּנָיִךְ
+    prior_rendering: I have listened to your voice and accepted you
+    new_rendering: I have listened to you and granted your request
+    rationale: The paired idioms mean that David has heeded Abigail’s intervention and favorably accepted her appeal.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review’s move away from “accepted your person” improved the English, but “accepted you” still leaves the practical meaning unclear. I carry that improvement further by stating the favorable response to Abigail’s appeal and preserving the face image in a note.

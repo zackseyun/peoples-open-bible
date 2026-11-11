@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'to Dora, fleeing to the place by the sea' or 'to the seacoast.' The Greek phrase emphasizes Dora's location on the sea.
-    reason: lexical_alternative
+  text: King Antiochus pursued Tryphon, who fled to Dora on the coast.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐδίωξεν
   chosen: pursued
@@ -80,14 +76,20 @@ revisions:
   from: And King Antiochus pursued him, and he came to Dora, fleeing to the coast.
   to: And King Antiochus pursued him, and he came to Dora, fleeing to the coast.
   rationale: Revised 'to the coast' to 'to the seacoast' for a more formal and slightly more precise rendering of τὴν ἐπὶ τὴν θάλασσαν, while keeping the rest unchanged.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.'
-  to: 'And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.'
+  from: And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.
+  to: And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the coast''].'
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And King Antiochus pursued him[a], and he came to Dora, fleeing to the seacoast.
+  to: King Antiochus pursued Tryphon, who fled to Dora on the coast.
+  rationale: The recorded revisions focused on 'coast' versus 'seacoast' and left the more important subject ambiguity unresolved. The existing note correctly recognizes Dora’s coastal location; I put that information directly into the sentence.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -107,3 +109,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/011.job-48837.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus pursues Tryphon, who takes refuge in the coastal city of Dora.
+  meaning_decisions:
+  - source_phrase: ἐδίωξεν αὐτὸν Ἀντίοχος ὁ βασιλεύς, καὶ ἦλθεν ... φεύγων
+    prior_rendering: King Antiochus pursued him, and he came ... fleeing
+    new_rendering: King Antiochus pursued Tryphon, who fled
+    rationale: The second action belongs to the pursued Tryphon, not Antiochus; naming him prevents the English pronouns from suggesting that Antiochus was fleeing.
+  - source_phrase: εἰς Δῶρα ... τὴν ἐπὶ τὴν θάλασσαν
+    prior_rendering: to Dora, fleeing to the seacoast
+    new_rendering: to Dora on the coast
+    rationale: The geographical phrase identifies Dora as the city by the sea rather than introducing a second destination.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions focused on 'coast' versus 'seacoast' and left the more important subject ambiguity unresolved. The existing note correctly recognizes Dora’s coastal location; I put that information directly into the sentence.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἔχω γὰρ πέντε ἀδελφούς, ὅπως διαμαρτύρηται αὐτοῖς, ἵνα μὴ καὶ αὐτοὶ ἔλθωσιν εἰς τὸν τόπον τοῦτον τῆς βασάνου.
 translation:
-  text: for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'he may testify to them' or 'he may strongly warn them.' The Greek verb carries the sense of giving solemn testimony or warning.
-    reason: lexical_alternative
+  text: for I have five brothers. Let him solemnly warn them so that they too will not come to this place of torment.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔχω γὰρ
   chosen: for I have
@@ -98,14 +94,20 @@ revisions:
   from: for I have five brothers, so that he may solemnly warn them, so that they too may not come to this place of torment.
   to: for I have five brothers, so that he may solemnly warn them, so that they too may not come to this place of torment.
   rationale: Replaced the second 'so that' with 'lest' to reflect ἵνα μὴ more naturally and formally in English, while preserving the sense.
-
 - timestamp: '2026-05-18T03:02:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.'
-  to: 'for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.'
+  from: for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.
+  to: for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that they too may not come''].'
+- timestamp: '2026-11-09T17:12:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: for I have five brothers[a], so that he may solemnly warn them, lest they too come to this place of torment.
+  to: for I have five brothers. Let him solemnly warn them so that they too will not come to this place of torment.”
+  rationale: The automated passes alternated between “lest” and a repeated “so that,” but neither resolves the awkward connection to the preceding request. I preserve the documented force of “solemnly warn” and “torment” while separating the explanation from the petition.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +129,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/016/028.job-38978.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The rich man wants Lazarus to warn his five brothers so that they do not also reach the place of torment.
+  meaning_decisions:
+  - source_phrase: ὅπως διαμαρτύρηται αὐτοῖς
+    prior_rendering: so that he may solemnly warn them
+    new_rendering: Let him solemnly warn them
+    rationale: A separate petition makes clear that warning the brothers is the purpose of the requested sending, avoiding a dangling purpose clause immediately after “I have five brothers.”
+  - source_phrase: ἵνα μὴ καὶ αὐτοὶ ἔλθωσιν
+    prior_rendering: lest they too come
+    new_rendering: so that they too will not come
+    rationale: The negative purpose is stated directly in contemporary English without changing the hoped-for outcome.
+  footnote_kinds: {}
+  history_weighed: The automated passes alternated between “lest” and a repeated “so that,” but neither resolves the awkward connection to the preceding request. I preserve the documented force of “solemnly warn” and “torment” while separating the explanation from the petition.

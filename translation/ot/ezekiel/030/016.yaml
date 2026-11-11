@@ -4,21 +4,15 @@ source:
   edition: WLC
   text: וְ/נָתַ֤תִּי אֵשׁ֙ בְּ/מִצְרַ֔יִם ח֤וּל תחיל סִ֔ין וְ/נֹ֖א תִּהְיֶ֣ה לְ/הִבָּקֵ֑עַ וְ/נֹ֖ף צָרֵ֥י יוֹמָֽם׃
 translation:
-  text: And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be broken open[d][c][b], and Noph will have enemies by day.
-  philosophy: optimal-equivalence
+  text: I will set fire to Egypt; Sin will writhe in anguish, No will be breached, and Noph[a] will face enemies by day[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Sin is the Egyptian city commonly identified with Pelusium.
-    reason: cross_reference
-  - marker: b
-    text: No is commonly identified with Thebes.
-    reason: cross_reference
-  - marker: c
-    text: Noph is commonly identified with Memphis.
-    reason: cross_reference
-  - marker: d
-    text: Or 'Noph will have adversaries in the daytime.' The Hebrew clause is terse and may emphasize open, continual attack.
+    text: Noph is the Egyptian city also known as Memphis.
     reason: lexical_alternative
+  - marker: b
+    text: Or, 'Noph will suffer distress daily'; the terse Hebrew clause is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְנָתַתִּי
   chosen: And I will set
@@ -101,14 +95,20 @@ revisions:
   from: And I will set fire in Egypt; Sin will writhe in anguish, and No will be broken open, and Noph will have enemies by day.
   to: And I will set fire in Egypt; Sin will writhe in anguish, and No will be breached, and Noph will have adversaries by day.
   rationale: Changed 'broken open' to 'breached' for a more natural and formal rendering of the passive infinitive sense; changed 'enemies' to 'adversaries' for slightly more formal register. Retained the rest as accurate and complete.
-
 - timestamp: '2026-05-16T02:13:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be breached[d][c][b], and Noph will have adversaries by day.'
-  to: 'And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be broken open[d][c][b], and Noph will have enemies by day.'
-  rationale: 'Azure substituted ''breached'' (drafter''s rejected alternative — drafter chose ''broken open'' for concrete physical image) and ''adversaries'' (rejected for chosen ''enemies''). Register preference, no lexical correction.'
+  from: And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be breached[d][c][b], and Noph will have adversaries by day.
+  to: And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be broken open[d][c][b], and Noph will have enemies by day.
+  rationale: Azure substituted 'breached' (drafter's rejected alternative — drafter chose 'broken open' for concrete physical image) and 'adversaries' (rejected for chosen 'enemies'). Register preference, no lexical correction.
+- timestamp: '2026-11-09T17:38:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I will set fire in Egypt[a]; Sin will writhe in anguish, and No will be broken open[d][c][b], and Noph will have enemies by day.
+  to: I will set fire to Egypt; Sin will writhe in anguish, No will be breached, and Noph[a] will face enemies by day[b].
+  rationale: The earlier review’s 'breached' clarifies the military meaning of a city being broken open, despite its automated reversion. The recorded preference for 'enemies' is retained, but the serious alternative involving daily distress is acknowledged.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +128,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/030/016.job-64064.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:38:20Z'
+  change_level: refined
+  confidence: medium
+  meaning: Egypt will burn, Sin will suffer anguish, No will be breached, and Noph will face enemies by day.
+  meaning_decisions:
+  - source_phrase: וְנָתַתִּי אֵשׁ בְּמִצְרַיִם
+    prior_rendering: I will set fire in Egypt
+    new_rendering: I will set fire to Egypt
+    rationale: The fire is an act of destruction against Egypt, not merely a fire located somewhere within it.
+  - source_phrase: וְנֹא תִּהְיֶה לְהִבָּקֵעַ
+    prior_rendering: No will be broken open
+    new_rendering: No will be breached
+    rationale: In the context of warfare against a city, being broken open means that its defenses are breached.
+  - source_phrase: וְנֹף צָרֵי יוֹמָם
+    prior_rendering: Noph will have enemies by day
+    new_rendering: Noph will face enemies by day
+    rationale: '''Face enemies'' communicates the threatened confrontation more clearly than ''have enemies,'' while preserving the uncertain clause’s daytime reference.'
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+  history_weighed: The earlier review’s 'breached' clarifies the military meaning of a city being broken open, despite its automated reversion. The recorded preference for 'enemies' is retained, but the serious alternative involving daily distress is acknowledged.

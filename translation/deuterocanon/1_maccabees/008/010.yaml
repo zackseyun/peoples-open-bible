@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And when the report became known to them[a], they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek repeats 'and plundered them' at the end of the verse. The repetition is retained in the main text because it is present in the source, though it may reflect either deliberate emphasis or a transmissional duplication.
-    reason: textual_variant
+  text: When the Romans learned of this plan, they sent a single general against the Greeks. They fought them, and many Greeks fell wounded. The Romans took their wives and children captive and plundered them. They gained control of their land, tore down their strongholds, and plundered them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγνώσθη ὁ λόγος
   chosen: the report became known
@@ -117,13 +113,12 @@ revisions:
   from: And when the report became known to them, they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
   to: And when the matter became known to them, they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
   rationale: Changed 'report' to 'matter' for a more neutral rendering of λόγος. Otherwise retained the draft, including the repeated 'and plundered them,' which reflects the Greek text.
-
 - timestamp: '2026-05-18T03:09:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the matter became known to them[a], they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.'
-  to: 'And when the report became known to them, they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.'
+  from: And when the matter became known to them[a], they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
+  to: And when the report became known to them, they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the report became known''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -133,6 +128,13 @@ revisions:
   from: And when the report became known to them, they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
   to: And when the report became known to them[a], they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:52:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the report became known to them[a], they sent one general against them, and they fought against them, and many of them fell wounded, and they took their wives and their children captive, and plundered them, and gained control of their land, and pulled down their strongholds, and plundered them.
+  to: When the Romans learned of this plan, they sent a single general against the Greeks. They fought them, and many Greeks fell wounded. The Romans took their wives and children captive and plundered them. They gained control of their land, tore down their strongholds, and plundered them.
+  rationale: The review and revert alternated between 'matter' and 'report'; the actual Greek plan supplies a more precise contextual rendering than either. I retain both occurrences of plundering, as all recorded passes did, without speculating about their textual origin or adding a second chronological event.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -152,3 +154,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/008/010.job-48397.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:52:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On learning of the Greek plan, the Romans sent one general and inflicted casualties, captivity, plunder, territorial conquest, and destruction of defenses.
+  meaning_decisions:
+  - source_phrase: ἐγνώσθη ὁ λόγος αὐτοῖς
+    prior_rendering: the report became known to them
+    new_rendering: the Romans learned of this plan
+    rationale: The preceding verse supplies the content of the report, and naming the Romans removes ambiguity about who learned it.
+  - source_phrase: ἀπέστειλαν ἐπʼ αὐτοὺς στρατηγὸν ἕνα
+    prior_rendering: they sent one general against them
+    new_rendering: they sent a single general against the Greeks
+    rationale: The explicit opponent distinguishes the Greeks from the Romans, while 'single' preserves the emphasis on one commander.
+  - source_phrase: ἔπεσαν ἐξ αὐτῶν τραυματίαι πολλοί
+    prior_rendering: many of them fell wounded
+    new_rendering: many Greeks fell wounded
+    rationale: The casualties belong to the attacked Greeks; making the referent explicit prevents the alternating pronouns from misleading the reader.
+  footnote_kinds: {}
+  history_weighed: The review and revert alternated between 'matter' and 'report'; the actual Greek plan supplies a more precise contextual rendering than either. I retain both occurrences of plundering, as all recorded passes did, without speculating about their textual origin or adding a second chronological event.

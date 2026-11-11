@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר פַּרְעֹה֙ אֶל יוֹסֵ֔ף אֱמֹ֥ר אֶל אַחֶ֖י/ךָ זֹ֣את עֲשׂ֑וּ טַֽעֲנוּ֙ אֶת בְּעִ֣ירְ/כֶ֔ם וּ/לְכוּ בֹ֖אוּ אַ֥רְצָ/ה כְּנָֽעַן־־־־׃
 translation:
-  text: 'Then Pharaoh said to Joseph[a], “Tell your brothers, ‘Do this: load your beasts and go[b]; return to the land of Canaan.’”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or, more formally, “Say to your brothers, ‘Do this: load your beasts and go, come to the land of Canaan.’”'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'and go; come'.
-    reason: previous_rendering
+  text: 'Then Pharaoh said to Joseph, “Tell your brothers, ‘Do this: load your pack animals and return to the land of Canaan.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -97,6 +90,13 @@ revisions:
   from: 'Then Pharaoh said to Joseph[a], “Tell your brothers, ‘Do this: load your beasts and go[b]; return to the land of Canaan.’”'
   to: 'Then Pharaoh said to Joseph[a], “Tell your brothers, ‘Do this: load your beasts and go[b]; return to the land of Canaan.’”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your animals''].'
+- timestamp: '2026-11-09T17:45:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Then Pharaoh said to Joseph[a], “Tell your brothers, ‘Do this: load your beasts and go[b]; return to the land of Canaan.’”'
+  to: 'Then Pharaoh said to Joseph, “Tell your brothers, ‘Do this: load your pack animals and return to the land of Canaan.'
+  rationale: The earlier awkward-English review recognized that the two motion commands describe a single return journey. That meaning-based gain outweighs the later preference for reproducing both verbs separately.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T10:42:18Z'
@@ -126,3 +126,25 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/045/017.job-37760.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Pharaoh instructed Joseph to send his brothers back to Canaan with their animals loaded.
+  meaning_decisions:
+  - source_phrase: בְּעִירְכֶם
+    prior_rendering: your beasts
+    new_rendering: your pack animals
+    rationale: The animals are being loaded for travel, so their role as burden-bearing animals is clear from the context.
+  - source_phrase: וּלְכוּ בֹאוּ אַרְצָה כְּנָעַן
+    prior_rendering: and go; return to the land of Canaan
+    new_rendering: and return to the land of Canaan
+    rationale: The consecutive motion commands describe one journey from Egypt back to Canaan; “return” conveys departure and arrival together.
+  footnote_kinds: {}
+  history_weighed: The earlier awkward-English review recognized that the two motion commands describe a single return journey. That meaning-based gain outweighs the later preference for reproducing both verbs separately.

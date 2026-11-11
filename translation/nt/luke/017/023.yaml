@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐροῦσιν ὑμῖν· Ἰδοὺ ⸂ἐκεῖ· Ἰδοὺ ὧδε⸃· μὴ ἀπέλθητε μηδὲ διώξητε.
 translation:
-  text: And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or: “Do not go away, nor pursue.” The Greek leaves the object of “pursue” unstated.'
-    reason: lexical_alternative
+  text: People will tell you, ‘Look, he is there!’ or ‘Look, he is here!’ Do not go there or run after them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐροῦσιν
   chosen: they will say
@@ -87,14 +83,20 @@ revisions:
   from: And they will say to you, ‘Look, there!’ or ‘Look, here!’ Do not go out or run after them.
   to: And they will say to you, ‘Look, there!’ or ‘Look, here!’ Do not go out or run after them.
   rationale: Changed ‘go out’ to ‘go away’ to reflect ἀπέλθητε more naturally and accurately in this context; retained ‘run after them’ for διώξητε.
-
 - timestamp: '2026-05-18T03:01:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.'
-  to: 'And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.'
+  from: And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.
+  to: And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Do not go out''].'
+- timestamp: '2026-11-09T17:12:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they will say to you[a], ‘Look, there!’ or ‘Look, here!’ Do not go away or run after them.
+  to: People will tell you, ‘Look, he is there!’ or ‘Look, he is here!’ Do not go there or run after them.
+  rationale: The recorded passes alternate between “go out” and “go away,” but agree that Jesus forbids responding to supposed sightings. I make that destination clear and retain “run after them”; the earlier note about an unstated object is no longer needed.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/017/023.job-55792.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus warns the disciples not to pursue people who claim that the Son of Man is here or there.
+  meaning_decisions:
+  - source_phrase: καὶ ἐροῦσιν ὑμῖν· Ἰδοὺ ἐκεῖ· Ἰδοὺ ὧδε
+    prior_rendering: And they will say to you, ‘Look, there!’ or ‘Look, here!’
+    new_rendering: People will tell you, ‘Look, he is there!’ or ‘Look, he is here!’
+    rationale: Makes explicit that the indefinite speakers are reporting supposed locations of the Son of Man, the subject of the surrounding verses.
+  - source_phrase: μὴ ἀπέλθητε
+    prior_rendering: Do not go away
+    new_rendering: Do not go there
+    rationale: Clarifies that the prohibition concerns going to the reported location, not departure in general.
+  footnote_kinds: {}
+  history_weighed: The recorded passes alternate between “go out” and “go away,” but agree that Jesus forbids responding to supposed sightings. I make that destination clear and retain “run after them”; the earlier note about an unstated object is no longer needed.

@@ -22,15 +22,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the words/decrees of the kingdom'; the Greek uses 'kingdom' or 'royal rule' rather than directly saying 'the king.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'Literally ''to the people''; context indicates hostile intent: the orders were aimed at the people''s destruction.'
-    reason: lexical_alternative
+  text: Judas and his brothers saw that their troubles had multiplied and that enemy forces were encamped within their borders. They understood that the royal government had ordered the people’s destruction and annihilation.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τὰ κακά
   chosen: the troubles
@@ -148,14 +141,20 @@ revisions:
   from: And Judas and his brothers saw that the troubles had multiplied, and that the forces were encamped within their borders; and they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
   to: And Judas and his brothers saw that the troubles had multiplied, and that the forces were encamped within their borders; and they learned of the decrees of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
   rationale: Changed “recognized the orders” to “learned of the decrees” for more natural English and a better fit for τοὺς λόγους τῆς βασιλείας in context; otherwise retained the draft’s sense and completeness.
-
 - timestamp: '2026-05-16T14:52:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they learned of the decrees of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.'
-  to: 'And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.'
-  rationale: 'Restored drafter ''they recognized the orders of the kingdom'' (preserving the chosen verb of perception and ''orders'' for the royal directives) per chosen renderings.'
+  from: And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they learned of the decrees of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
+  to: And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
+  rationale: Restored drafter 'they recognized the orders of the kingdom' (preserving the chosen verb of perception and 'orders' for the royal directives) per chosen renderings.
+- timestamp: '2026-11-09T18:52:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas and his brothers saw that the troubles had multiplied[a], and that the forces were encamped within their borders[b]; and they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation.
+  to: Judas and his brothers saw that their troubles had multiplied and that enemy forces were encamped within their borders. They understood that the royal government had ordered the people’s destruction and annihilation.
+  rationale: The history favors recognition or fuller understanding, which I preserve with “understood” rather than reducing the verse to receiving information. The lexical record identifies βασιλεία as royal rule, supporting “royal government” without substituting a different personal agent.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -175,3 +174,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/042.job-48127.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judas and his brothers recognize the worsening military danger and understand that the royal government intends the complete destruction of their people.
+  meaning_decisions:
+  - source_phrase: αἱ δυνάμεις παρεμβάλλουσιν ἐν τοῖς ὁρίοις αὐτῶν
+    prior_rendering: the forces were encamped within their borders
+    new_rendering: enemy forces were encamped within their borders
+    rationale: The forces are the invading army already identified in the narrative; making that relationship explicit clarifies the threat.
+  - source_phrase: ἐπέγνωσαν τοὺς λόγους τῆς βασιλείας οὓς ἐνετείλατο ποιῆσαι τῷ λαῷ εἰς ἀπώλειαν καὶ συντέλειαν
+    prior_rendering: they recognized the orders of the kingdom that it had commanded to be carried out against the people for destruction and annihilation
+    new_rendering: They understood that the royal government had ordered the people’s destruction and annihilation
+    rationale: The abstract “kingdom” denotes the ruling authority, and the cumbersome construction communicates their realization of its exterminatory orders.
+  footnote_kinds: {}
+  history_weighed: The history favors recognition or fuller understanding, which I preserve with “understood” rather than reducing the verse to receiving information. The lexical record identifies βασιλεία as royal rule, supporting “royal government” without substituting a different personal agent.

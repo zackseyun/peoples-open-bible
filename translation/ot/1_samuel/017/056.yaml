@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֖אמֶר הַ/מֶּ֑לֶךְ שְׁאַ֣ל אַתָּ֔ה בֶּן מִי זֶ֖ה הָ/עָֽלֶם־־׃ס
 translation:
-  text: And the king said[a], “You, inquire whose son this young man is.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “ask whose son this young man is.”
-    reason: lexical_alternative
+  text: Then the king said, “You are to find out whose son this young man is.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And ... said
@@ -77,14 +73,20 @@ revisions:
   from: And the king said, “You, find out whose son this young man is.”
   to: And the king said, “You, find out whose son this young man is.”
   rationale: Changed “find out” to “inquire” for a more formal register and closer match to the imperative שְׁאַל, while keeping the direct address and meaning intact.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king said[a], “You, inquire whose son this young man is.”'
-  to: 'And the king said[a], “You, inquire whose son this young man is.”'
+  from: And the king said[a], “You, inquire whose son this young man is.”
+  to: And the king said[a], “You, inquire whose son this young man is.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''find out''].'
+- timestamp: '2026-11-09T17:23:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king said[a], “You, inquire whose son this young man is.”
+  to: Then the king said, “You are to find out whose son this young man is.”
+  rationale: The first draft and lexical rationale favored “find out”; the automated shift to “inquire” was a register choice rather than a gain in meaning. I restore the clearer wording and carry the emphatic pronoun into a natural royal command.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -104,3 +106,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/056.job-59198.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul directs Abner personally to find out who the young man’s father is.
+  meaning_decisions:
+  - source_phrase: שְׁאַל אַתָּה
+    prior_rendering: You, inquire
+    new_rendering: You are to find out
+    rationale: This naturally expresses the king’s command while preserving the explicit pronoun’s emphasis on Abner’s responsibility.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale favored “find out”; the automated shift to “inquire” was a register choice rather than a gain in meaning. I restore the clearer wording and carry the emphatic pronoun into a natural royal command.

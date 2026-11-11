@@ -29,15 +29,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 12:7
 translation:
-  text: Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]
-  philosophy: optimal-equivalence
+  text: Give to the good, but withhold your help from the wicked; honor the poor, but do not give to an outsider[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'withhold from evil' or possibly 'from an evil person'; the Greek parallel reads 'do not support the sinner,' which guides the main text here.
+    text: Or, “a stranger” or “a foreigner”; the Hebrew term does not specify the precise kind of outsider.
     reason: alternative_reading
-  - marker: b
-    text: Or 'to an outsider' or 'to a foreigner.' The Hebrew term can refer broadly to one outside the community or proper circle.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: תֵּן
   chosen: Give
@@ -146,14 +143,20 @@ revisions:
   from: Give to the good, and do not support the sinner.[a] Honor the poor, and do not give to a stranger.[b]
   to: Give to the good, and do not support the sinner.[a] Honor the poor, and do not give to a stranger.[b]
   rationale: Replaced 'do not support the sinner' with 'withhold from the evil' to reflect מְנַע מֵרָע more directly and avoid interpretive expansion. Lowercased the second clause after the semicolon for normal English punctuation. Retained 'stranger' with footnote marker.
-
 - timestamp: '2026-05-16T11:37:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]'
-  to: 'Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]'
-  rationale: 'Restored drafter ''do not support the sinner'' preserving the moral-evaluation force per chosen renderings; also restored sentence-break punctuation.'
+  from: Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]
+  to: Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]
+  rationale: Restored drafter 'do not support the sinner' preserving the moral-evaluation force per chosen renderings; also restored sentence-break punctuation.
+- timestamp: '2026-11-09T19:06:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Give to the good[a], and withhold from the evil; honor the poor, and do not give to a stranger.[b]
+  to: Give to the good, but withhold your help from the wicked; honor the poor, but do not give to an outsider[a].
+  rationale: The competing revisions agree that the negative command concerns assisting an evil person, even though they alternated between Hebrew-shaped and Greek-shaped wording. I make that personal contrast explicit and preserve the documented breadth of the term for an outsider.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -173,3 +176,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/012/007.job-51288.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:11Z'
+  change_level: refined
+  confidence: high
+  meaning: The reader is told to give to good people and honor the poor while withholding help from the wicked and from outsiders.
+  meaning_decisions:
+  - source_phrase: וּמְנַע מֵרָע
+    prior_rendering: and withhold from the evil
+    new_rendering: but withhold your help from the wicked
+    rationale: The contrast concerns recipients of help, not withholding from evil as an abstraction; the supplied object makes the command clear.
+  - source_phrase: לְזֵר
+    prior_rendering: to a stranger
+    new_rendering: to an outsider
+    rationale: Modern 'stranger' chiefly suggests someone personally unknown, whereas the Hebrew can indicate someone outside the relevant social circle without specifying ethnicity.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The competing revisions agree that the negative command concerns assisting an evil person, even though they alternated between Hebrew-shaped and Greek-shaped wording. I make that personal contrast explicit and preserve the documented breadth of the term for an outsider.

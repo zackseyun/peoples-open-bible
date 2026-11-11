@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וּ/מוֹצָ֧א הַ/סּוּסִ֛ים אֲשֶׁ֥ר לִ/שְׁלֹמֹ֖ה מִ/מִּצְרָ֑יִם וּ/מִ/קְוֵ֕א סֹחֲרֵ֣י הַ/מֶּ֔לֶךְ מִ/קְוֵ֥א יִקְח֖וּ בִּ/מְחִֽיר׃
 translation:
-  text: And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.
-  philosophy: optimal-equivalence
+  text: Solomon’s horses were imported from Egypt and Kue[a]; the king’s merchants bought them from Kue.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'and from a collection/depot'; the Hebrew term מִקְוֵא is difficult and has also been understood as a common noun rather than the place name Kue.
+    text: The Hebrew term is uncertain and may mean “a collection” or “a trading depot” rather than the place name Kue.
     reason: alternative_reading
-  - marker: b
-    text: Or, 'the king’s merchants would buy them from a depot at a price.' This reflects the alternative understanding of מִקְוֵא as a place of collection rather than a geographic name.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: וּמוֹצָא
   chosen: the source
@@ -95,14 +92,20 @@ revisions:
   from: And the source of the horses that belonged to Solomon was Egypt and Kue; the king’s merchants would obtain them from Kue for a price.
   to: And the source of the horses that belonged to Solomon was Egypt and Kue; the king’s merchants would obtain them from Kue for a price.
   rationale: 'Adjusted wording for smoother formal English: changed ''the horses that belonged to Solomon'' to ''Solomon’s horses'' and removed the semicolon in favor of ''and'' to reflect the Hebrew flow more naturally. Retained ''source'' and ''Kue'' as accurate renderings.'
-
 - timestamp: '2026-05-17T01:51:24Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.'
-  to: 'And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.'
+  from: And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.
+  to: And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that belonged to Solomon''].'
+- timestamp: '2026-11-09T17:26:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the source of Solomon’s horses was Egypt and Kue[b][a], and the king’s merchants would obtain them from Kue for a price.
+  to: Solomon’s horses were imported from Egypt and Kue[a]; the king’s merchants bought them from Kue.
+  rationale: The history favors Kue as a place name and recognizes purchase as the commercial sense of acquisition for a price. I retain that interpretation, simplify the trade language, and consolidate the two overlapping uncertainty notes.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +125,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/001/016.job-59537.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:02Z'
+  change_level: refined
+  confidence: medium
+  meaning: Solomon’s horses come from Egypt and Kue, with the king’s merchants purchasing horses from Kue.
+  meaning_decisions:
+  - source_phrase: וּמוֹצָא הַסּוּסִים אֲשֶׁר לִשְׁלֹמֹה מִמִּצְרָיִם וּמִקְוֵא
+    prior_rendering: And the source of Solomon’s horses was Egypt and Kue
+    new_rendering: Solomon’s horses were imported from Egypt and Kue
+    rationale: In the surrounding trade account, the source statement identifies where the horses were brought from; a verbal sentence conveys that relationship more naturally.
+  - source_phrase: יִקְחוּ בִּמְחִיר
+    prior_rendering: would obtain them ... for a price
+    new_rendering: bought them
+    rationale: Taking the horses for payment means purchasing them; “bought” carries both acquisition and payment without redundant wording.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history favors Kue as a place name and recognizes purchase as the commercial sense of acquisition for a price. I retain that interpretation, simplify the trade language, and consolidate the two overlapping uncertainty notes.

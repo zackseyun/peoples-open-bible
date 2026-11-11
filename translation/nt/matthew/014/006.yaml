@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ⸂γενεσίοις δὲ γενομένοις⸃ τοῦ Ἡρῴδου ὠρχήσατο ἡ θυγάτηρ τῆς Ἡρῳδιάδος ἐν τῷ μέσῳ καὶ ἤρεσεν τῷ Ἡρῴδῃ,
 translation:
-  text: But when Herod’s birthday came[a], the daughter of Herodias danced before them and pleased Herod[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'when Herod’s birthday arrived' or 'at Herod’s birthday feast.' The Greek refers to the occasion of Herod’s birthday observance.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'in the middle.' The phrase likely means she danced in the midst of the gathering.
-    reason: lexical_alternative
+  text: But at Herod’s birthday celebration, Herodias’s daughter danced before the guests and pleased Herod.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: γενεσίοις ... γενομένοις
   chosen: when Herod’s birthday celebration came
@@ -81,13 +74,12 @@ revisions:
   from: But when Herod’s birthday celebration came, the daughter of Herodias danced in the midst and pleased Herod,
   to: But when Herod’s birthday celebration came, the daughter of Herodias danced in the midst and pleased Herod,
   rationale: Simplified 'birthday celebration came' to 'birthday came' for closer lexical accuracy to γενεσίοις γενομένοις while preserving natural English. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when Herod’s birthday came[a], the daughter of Herodias danced in the midst and pleased Herod[b],'
-  to: 'But when Herod’s birthday came[a], the daughter of Herodias danced in the midst and pleased Herod[b],'
+  from: But when Herod’s birthday came[a], the daughter of Herodias danced in the midst and pleased Herod[b],
+  to: But when Herod’s birthday came[a], the daughter of Herodias danced in the midst and pleased Herod[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when Herod’s birthday celebration came''].'
 - timestamp: '2026-08-27T21:09:17Z'
   adjudicator: source-audit
@@ -98,6 +90,13 @@ revisions:
   from: But when Herod’s birthday came[a], the daughter of Herodias danced in the midst and pleased Herod[b],
   to: But when Herod’s birthday came[a], the daughter of Herodias danced before them and pleased Herod[b],
   rationale: In modern English, 'in the midst' typically requires a complement (e.g., 'in the midst of the guests') and sounds slightly archaic or incomplete on its own. Rendering 'ἐν τῷ μέσῳ' as 'before them' or 'in their midst' provides a more natural phrasing while accurately conveying that she danced in the middle of the gathered assembly.
+- timestamp: '2026-11-09T17:14:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when Herod’s birthday came[a], the daughter of Herodias danced before them and pleased Herod[b],
+  to: But at Herod’s birthday celebration, Herodias’s daughter danced before the guests and pleased Herod.
+  rationale: The later audit’s 'before them' correctly replaced the incomplete 'in the midst'; 'before the guests' preserves that gain. The draft and lexical discussion also support the event sense conveyed by 'birthday celebration.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -120,3 +119,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/014/006.job-57028.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:31Z'
+  change_level: refined
+  confidence: high
+  meaning: At Herod’s birthday celebration, Herodias’s daughter danced before the guests and pleased him.
+  meaning_decisions:
+  - source_phrase: γενεσίοις δὲ γενομένοις τοῦ Ἡρῴδου
+    prior_rendering: But when Herod’s birthday came
+    new_rendering: But at Herod’s birthday celebration
+    rationale: The expression names the birthday observance, not merely the arrival of a calendar date.
+  - source_phrase: ἐν τῷ μέσῳ
+    prior_rendering: before them
+    new_rendering: before the guests
+    rationale: The gathered audience is implicit in the Greek, but 'them' has no explicit antecedent in the preceding English verses.
+  footnote_kinds: {}
+  history_weighed: The later audit’s 'before them' correctly replaced the incomplete 'in the midst'; 'before the guests' preserves that gain. The draft and lexical discussion also support the event sense conveyed by 'birthday celebration.'

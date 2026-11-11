@@ -12,15 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],
-  philosophy: optimal-equivalence
+  text: For the future, we will take care[a] to keep the kingdom peaceful and free from turmoil for everyone,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to give attention to what follows.' The Greek προσέχειν can mean to attend to or consider; the translation 'look ahead to' brings out the future-oriented sense of the phrase 'the things after these.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the realm' or 'the royal rule.' Greek βασιλεία can refer to a kingdom as a domain or to kingship/reign more abstractly.
-    reason: lexical_alternative
+    text: Or, “You should also give thought to the future,” continuing the address to the officials.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: προσέχειν
   chosen: to look ahead to
@@ -103,14 +100,20 @@ revisions:
   from: and to look ahead to what comes after these things, so as to grant the kingdom, undisturbed, to all people with peace,
   to: and to look ahead to what comes after these things, so as to grant the kingdom, undisturbed, to all people with peace,
   rationale: Changed 'with peace' to 'in peace' for more natural and accurate rendering of μετʼ εἰρήνης here; retained the rest as faithful to the Greek.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],'
-  to: 'and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],'
+  from: and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],
+  to: and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''with peace''].'
+- timestamp: '2026-11-09T19:00:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and to look ahead to what comes after these things[a], so as to grant the kingdom, undisturbed, to all people in peace[b],
+  to: For the future, we will take care[a] to keep the kingdom peaceful and free from turmoil for everyone,
+  rationale: The recorded changes chiefly concerned “with peace” versus “in peace” and carry little weight for the larger meaning. I preserve the future orientation and universal scope while clarifying the political promise.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +133,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/008.job-50286.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king undertakes to govern with attention to the future so that everyone may enjoy a peaceful kingdom free from turmoil.
+  meaning_decisions:
+  - source_phrase: καὶ προσέχειν εἰς τὰ μετὰ ταῦτα
+    prior_rendering: and to look ahead to what comes after these things
+    new_rendering: For the future, we will take care
+    rationale: The royal policy statement and the following plural participles support an undertaking by the king; the serious alternative of continued instruction to the officials is noted.
+  - source_phrase: τὴν Βασιλείαν ἀτάραχον τοῖς πᾶσιν ἀνθρώποις μετʼ εἰρήνης παρέξεσθαι
+    prior_rendering: to grant the kingdom, undisturbed, to all people in peace
+    new_rendering: to keep the kingdom peaceful and free from turmoil for everyone
+    rationale: The king promises conditions of peaceful government for everyone, not a transfer of possession of the kingdom to all people.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded changes chiefly concerned “with peace” versus “in peace” and carry little weight for the larger meaning. I preserve the future orientation and universal scope while clarifying the political promise.

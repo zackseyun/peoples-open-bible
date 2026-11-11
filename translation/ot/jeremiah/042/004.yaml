@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר אֲלֵי/הֶ֜ם יִרְמְיָ֤הוּ הַ/נָּבִיא֙ שָׁמַ֔עְתִּי הִנְ/נִ֧י מִתְפַּלֵּ֛ל אֶל יְהוָ֥ה אֱלֹהֵי/כֶ֖ם כְּ/דִבְרֵי/כֶ֑ם וְֽ/הָיָ֡ה כָּֽל הַ/דָּבָר֩ אֲשֶׁר יַעֲנֶ֨ה יְהוָ֤ה אֶתְ/כֶם֙ אַגִּ֣יד לָ/כֶ֔ם לֹֽא אֶמְנַ֥ע מִ/כֶּ֖ם דָּבָֽר־־־־׃
 translation:
-  text: Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew: ''according to your words''; that is, in keeping with what you have asked.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'Or ''I will withhold nothing from you.'' Hebrew: ''I will not withhold a word from you.'''
-    reason: lexical_alternative
+  text: Then Jeremiah the prophet said to them, “I have heard you. I will pray to Yahweh your God as you have asked, and I will tell you everything Yahweh says in answer to you. I will not withhold a word from you.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -116,14 +109,20 @@ revisions:
   from: Then Jeremiah the prophet said to them, “I have heard. Look, I am praying to the LORD your God according to your words, and whatever word the LORD answers you, I will tell you. I will not withhold a word from you.”
   to: Then Jeremiah the prophet said to them, “I have heard. Look, I am praying to the LORD your God according to your words, and whatever word the LORD answers you, I will tell you. I will not withhold a word from you.”
   rationale: Replaced 'Look' with the more formal 'Behold' for register, and removed 'word' from 'whatever word the LORD answers you' since the Hebrew more naturally reads 'whatever the LORD answers you' while retaining the following 'a word' in the final clause.
-
 - timestamp: '2026-05-18T02:56:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”'
-  to: 'Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”'
+  from: Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”
+  to: Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and whatever word the LORD answers you''].'
+- timestamp: '2026-11-09T19:00:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jeremiah the prophet said to them[a], “I have heard. Behold, I am praying to Yahweh your God according to your words, and whatever Yahweh answers you, I will tell you[b]. I will not withhold a word from you.”
+  to: Then Jeremiah the prophet said to them, “I have heard you. I will pray to Yahweh your God as you have asked, and I will tell you everything Yahweh says in answer to you. I will not withhold a word from you.”
+  rationale: The recorded reviews debated 'Look/Behold' and whether to retain 'word' in the answer clause, without establishing a substantive difference in the promise. I preserve complete disclosure, including the emphatic final promise not to withhold a word.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +144,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/jeremiah/042/004.job-38391.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeremiah accepts their request and promises to pray and report Yahweh’s entire answer without withholding anything.
+  meaning_decisions:
+  - source_phrase: שָׁמַעְתִּי הִנְנִי מִתְפַּלֵּל
+    prior_rendering: I have heard. Behold, I am praying
+    new_rendering: I have heard you. I will pray
+    rationale: Makes the acknowledgment’s object explicit and renders the participial construction as Jeremiah’s immediate commitment, rather than suggesting that his prayer is already underway.
+  - source_phrase: כְּדִבְרֵיכֶם
+    prior_rendering: according to your words
+    new_rendering: as you have asked
+    rationale: The phrase refers to their request, not to a requirement that Jeremiah repeat their wording.
+  - source_phrase: כָּל הַדָּבָר אֲשֶׁר יַעֲנֶה יְהוָה אֶתְכֶם אַגִּיד לָכֶם
+    prior_rendering: whatever Yahweh answers you, I will tell you
+    new_rendering: I will tell you everything Yahweh says in answer to you
+    rationale: Clarifies that Jeremiah will convey the complete divine response to the petitioners.
+  footnote_kinds: {}
+  history_weighed: The recorded reviews debated 'Look/Behold' and whether to retain 'word' in the answer clause, without establishing a substantive difference in the promise. I preserve complete disclosure, including the emphatic final promise not to withhold a word.

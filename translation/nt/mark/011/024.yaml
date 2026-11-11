@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: διὰ τοῦτο λέγω ὑμῖν, πάντα ὅσα ⸂προσεύχεσθε καὶ αἰτεῖσθε⸃, πιστεύετε ὅτι ⸀ἐλάβετε, καὶ ἔσται ὑμῖν.
 translation:
-  text: For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.
-  philosophy: optimal-equivalence
+  text: For this reason I tell you, whatever you ask for in prayer, believe that you have received it[a], and it will be yours.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts/readings are understood or rendered as 'believe that you receive them' rather than 'believe that you have received them.' The Greek text used here reads 'have received,' preserving the completed-action sense.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'whatever things you pray and ask for'.
-    reason: previous_rendering
+    text: Some manuscripts read “you receive it” instead of “you have received it.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: διὰ τοῦτο
   chosen: For this reason
@@ -112,9 +109,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.'
-  to: 'For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.'
+  from: For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.
+  to: For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they will be yours''].'
+- timestamp: '2026-11-09T20:35:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For this reason I tell you[a], whatever you pray and ask for, believe that you have received it[b], and it will be yours.
+  to: For this reason I tell you, whatever you ask for in prayer, believe that you have received it[a], and it will be yours.
+  rationale: I follow the April 21 revision’s idiomatic “ask for in prayer” rather than the later preference for reproducing the two Greek verbs separately. No MAINTAINER revision is recorded, and I preserve the documented decision to retain “have received” followed by the future promise.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:00:30Z'
@@ -142,3 +146,22 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/011/024.job-38797.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:35:44Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus tells his disciples to believe that they have already received whatever they ask for in prayer, assuring them that it will be theirs.
+  meaning_decisions:
+  - source_phrase: πάντα ὅσα προσεύχεσθε καὶ αἰτεῖσθε
+    prior_rendering: whatever you pray and ask for
+    new_rendering: whatever you ask for in prayer
+    rationale: The two Greek verbs describe petition within prayer, not two separate activities; this wording conveys both naturally while preserving the unrestricted scope of “whatever.”
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I follow the April 21 revision’s idiomatic “ask for in prayer” rather than the later preference for reproducing the two Greek verbs separately. No MAINTAINER revision is recorded, and I preserve the documented decision to retain “have received” followed by the future promise.

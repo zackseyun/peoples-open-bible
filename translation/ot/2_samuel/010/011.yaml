@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֗אמֶר אִם תֶּחֱזַ֤ק אֲרָם֙ מִמֶּ֔/נִּי וְ/הָיִ֥תָה לִּ֖/י לִֽ/ישׁוּעָ֑ה וְ/אִם בְּנֵ֤י עַמּוֹן֙ יֶחֱזְק֣וּ מִמְּ/ךָ֔ וְ/הָלַכְתִּ֖י לְ/הוֹשִׁ֥יעַֽ לָֽ/ךְ־־׃
 translation:
-  text: He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “If Aram prevails against me … if the Ammonites prevail against you.”
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “you shall be to me for deliverance” … “I will go to deliver you.”
-    reason: lexical_alternative
+  text: Joab said, “If the Arameans are too strong for me, come to my rescue; but if the Ammonites are too strong for you, I will come to your rescue.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: תֶּחֱזַק / יֶחֱזְקוּ
   chosen: is too strong / are too strong
@@ -87,14 +80,20 @@ revisions:
   from: He said, “If Aram is too strong for me, then you shall be my help; but if the Ammonites are too strong for you, then I will go to help you.”
   to: He said, “If Aram is too strong for me, then you shall be my help; but if the Ammonites are too strong for you, then I will go to help you.”
   rationale: Replaced 'you shall be my help' with 'you shall help me' for more natural English while preserving the sense of לִישׁוּעָה. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T05:21:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”'
-  to: 'He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”'
+  from: He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”
+  to: He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you shall be my help''].'
+- timestamp: '2026-11-09T17:28:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said[a], “If Aram is too strong for me, then you shall help me; but if the Ammonites are too strong for you[b], then I will go to help you.”
+  to: Joab said, “If the Arameans are too strong for me, come to my rescue; but if the Ammonites are too strong for you, I will come to your rescue.
+  rationale: The automated records disagree about the exact help wording, but the lexical discussion and existing literal note identify rescue or deliverance as the underlying sense. That meaning now appears in the text without introducing a theological use of “salvation.”
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -117,3 +116,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/010/011.job-60989.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joab instructed Abishai that whichever force was being overpowered should receive rescue from the other.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר
+    prior_rendering: He said
+    new_rendering: Joab said
+    rationale: Naming Joab makes the speaker clear after the preceding clause about Abishai’s deployment.
+  - source_phrase: אֲרָם
+    prior_rendering: Aram
+    new_rendering: the Arameans
+    rationale: The referent is the opposing Aramean force.
+  - source_phrase: וְהָיִתָה לִּי לִישׁוּעָה ... וְהָלַכְתִּי לְהוֹשִׁיעַ לָךְ
+    prior_rendering: then you shall help me ... then I will go to help you
+    new_rendering: come to my rescue ... I will come to your rescue
+    rationale: The words concern deliverance from an overpowering enemy, a stronger and more specific action than unspecified help.
+  footnote_kinds: {}
+  history_weighed: The automated records disagree about the exact help wording, but the lexical discussion and existing literal note identify rescue or deliverance as the underlying sense. That meaning now appears in the text without introducing a theological use of “salvation.”

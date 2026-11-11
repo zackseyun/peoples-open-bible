@@ -4,14 +4,14 @@ source:
   edition: SBLGNT
   text: καταστείλας δὲ ⸂ὁ γραμματεὺς τὸν ὄχλον⸃ φησίν· Ἄνδρες Ἐφέσιοι, τίς γάρ ἐστιν ⸀ἀνθρώπων ὃς οὐ γινώσκει τὴν Ἐφεσίων πόλιν νεωκόρον οὖσαν τῆς ⸀μεγάλης Ἀρτέμιδος καὶ τοῦ διοπετοῦς;
 translation:
-  text: But after the city clerk had quieted the crowd, he said, “Men of Ephesus[b], for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis[a] and of the image fallen from heaven?”
-  philosophy: optimal-equivalence
+  text: After the city clerk[a] had quieted the crowd, he said, “Men of Ephesus, who does not know that Ephesus is guardian of the temple of the great Artemis and of the image that fell from heaven[b]?
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'guardian of the temple of the great Artemis.' The Greek term denotes a city recognized as custodian of a temple or cult.
-    reason: lexical_alternative
+    text: The city clerk was a leading civic official in Ephesus.
+    reason: cultural_note
   - marker: b
-    text: Or 'of the heaven-fallen thing.' The Greek word refers to something believed to have fallen from the sky; here it likely means the cult image associated with Artemis.
+    text: Literally, “the heaven-fallen object”; probably the sacred image of Artemis.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: καταστείλας
@@ -105,13 +105,12 @@ revisions:
   from: But after the city clerk had quieted the crowd, he said, “Men of Ephesus, for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis and of the image fallen from heaven?”
   to: But after the city clerk had quieted the crowd, he said, “Men of Ephesus, for what man is there who does not know that the city of the Ephesians is keeper of the temple of the great Artemis and of the image fallen from heaven?”
   rationale: Revised 'temple-keeper' to 'keeper of the temple' for more natural formal English while preserving the sense of νεωκόρον. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after the city clerk had quieted the crowd[a], he said, “Men of Ephesus[b], for what man is there who does not know that the city of the Ephesians is keeper of the temple of the great Artemis and of the image fallen from heaven?”'
-  to: 'But after the city clerk had quieted the crowd, he said, “Men of Ephesus, for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis and of the image fallen from heaven?”'
+  from: But after the city clerk had quieted the crowd[a], he said, “Men of Ephesus[b], for what man is there who does not know that the city of the Ephesians is keeper of the temple of the great Artemis and of the image fallen from heaven?”
+  to: But after the city clerk had quieted the crowd, he said, “Men of Ephesus, for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis and of the image fallen from heaven?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''temple-keeper''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -121,6 +120,13 @@ revisions:
   from: But after the city clerk had quieted the crowd, he said, “Men of Ephesus, for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis and of the image fallen from heaven?”
   to: But after the city clerk had quieted the crowd, he said, “Men of Ephesus[b], for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis[a] and of the image fallen from heaven?”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('of the great Artemis') because the note names that rendering; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:07:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after the city clerk had quieted the crowd, he said, “Men of Ephesus[b], for what man is there who does not know that the city of the Ephesians is temple-keeper of the great Artemis[a] and of the image fallen from heaven?”
+  to: After the city clerk[a] had quieted the crowd, he said, “Men of Ephesus, who does not know that Ephesus is guardian of the temple of the great Artemis and of the image that fell from heaven[b]?
+  rationale: The review's preference for 'keeper of the temple' identified a genuine clarity issue despite the later automated revert. I develop that gain as 'guardian of the temple,' retain the speaker's claim about the heavenly image without endorsing it, and correct the misplaced notes; no MAINTAINER decision requires the reverted compound.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -140,3 +146,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/019/035.job-46973.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The city clerk quiets the crowd and appeals to the universally acknowledged standing of Ephesus as guardian of Artemis's temple and sacred image.
+  meaning_decisions:
+  - source_phrase: τίς γάρ ἐστιν ἀνθρώπων ὃς οὐ γινώσκει
+    prior_rendering: for what man is there who does not know
+    new_rendering: who does not know
+    rationale: The shorter rhetorical question carries the same assertion of universal knowledge without reproducing the Greek's cumbersome construction.
+  - source_phrase: τὴν Ἐφεσίων πόλιν
+    prior_rendering: the city of the Ephesians
+    new_rendering: Ephesus
+    rationale: The recognized city name conveys the referent directly without an unnecessary genitive expression.
+  - source_phrase: νεωκόρον οὖσαν τῆς μεγάλης Ἀρτέμιδος
+    prior_rendering: is temple-keeper of the great Artemis
+    new_rendering: is guardian of the temple of the great Artemis
+    rationale: The term describes the city's honored custodianship of the sanctuary, not simply an individual's temple maintenance; 'guardian of the temple' communicates that civic role more clearly.
+  footnote_kinds:
+    a: cultural_background
+    b: literal_wording
+  history_weighed: The review's preference for 'keeper of the temple' identified a genuine clarity issue despite the later automated revert. I develop that gain as 'guardian of the temple,' retain the speaker's claim about the heavenly image without endorsing it, and correct the misplaced notes; no MAINTAINER decision requires the reverted compound.

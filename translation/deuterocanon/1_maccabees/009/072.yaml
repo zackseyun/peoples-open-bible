@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally 'the captivity,' used here for the body of people taken captive; hence 'the captives.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek idiom 'did not add still to come' means that he did not come again or no longer kept coming into their territory.
-    reason: lexical_alternative
+  text: Bacchides returned to Jonathan the captives he had earlier taken from the land of Judah. Then he went back to his own land and never again entered their territory.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπέδωκεν
   chosen: returned
@@ -131,14 +124,20 @@ revisions:
   from: And he returned to him the captives whom he had formerly taken captive from the land of Judah, and he turned back and went away to his own land, and he no longer continued to come into their borders.
   to: And he returned to him the captives whom he had formerly taken captive from the land of Judah, and he turned back and went away to his own land, and he no longer continued to come into their borders.
   rationale: Revised the final clause from 'he no longer continued to come' to 'he no longer came again' to reflect οὐ προσέθετο ἔτι ἐλθεῖν more naturally and accurately in formal English. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.'
-  to: 'And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.'
+  from: And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.
+  to: And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he no longer continued to come''].'
+- timestamp: '2026-11-09T18:52:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he returned to him the captives whom he had formerly taken captive from the land of Judah[a], and he turned back and went away to his own land[b], and he no longer came again into their borders.
+  to: Bacchides returned to Jonathan the captives he had earlier taken from the land of Judah. Then he went back to his own land and never again entered their territory.
+  rationale: The revision history rightly moved toward expressing the final clause as nonrecurrence rather than a wooden continuation formula. The new wording completes that clarification and incorporates the earlier notes' explanations directly into the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -158,3 +157,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/072.job-48491.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Bacchides returned the captives to Jonathan, withdrew to his own land, and did not enter their territory again.
+  meaning_decisions:
+  - source_phrase: ἀπέδωκεν αὐτῷ τὴν αἰχμαλωσίαν ἣν ᾐχμαλώτευσεν τὸ πρότερον
+    prior_rendering: he returned to him the captives whom he had formerly taken captive
+    new_rendering: Bacchides returned to Jonathan the captives he had earlier taken
+    rationale: Naming both parties clarifies the fulfillment of their agreement, and 'captives' already carries the meaning repeated in 'taken captive.'
+  - source_phrase: ἀποστρέψας ἀπῆλθεν εἰς τὴν γῆν αὐτοῦ
+    prior_rendering: he turned back and went away to his own land
+    new_rendering: he went back to his own land
+    rationale: The two movement expressions describe one return and can be conveyed naturally without losing an additional event.
+  - source_phrase: οὐ προσέθετο ἔτι ἐλθεῖν εἰς τὰ ὅρια αὐτῶν
+    prior_rendering: he no longer came again into their borders
+    new_rendering: never again entered their territory
+    rationale: The idiom denies a further return, and 'territory' conveys the geographical area rather than only its boundary.
+  footnote_kinds: {}
+  history_weighed: The revision history rightly moved toward expressing the final clause as nonrecurrence rather than a wooden continuation formula. The new wording completes that clarification and incorporates the earlier notes' explanations directly into the text.

@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: Ὁ ἀσπασμὸς τῇ ἐμῇ χειρὶ Παύλου, ὅ ἐστιν σημεῖον ἐν πάσῃ ἐπιστολῇ· οὕτως γράφω.
 translation:
-  text: The greeting is by my own hand—Paul's—which is a sign in every letter[a]; this is how I write.
-  philosophy: optimal-equivalence
+  text: I, Paul, write this greeting with my own hand. This is my mark of authenticity in every letter; this is my handwriting[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'The greeting by my hand—Paul's—which is a sign in every letter; so I write.' The final clause may also be rendered more literally, 'thus I write.'
-    reason: lexical_alternative
+    text: Or, 'This is how I write,' referring to Paul's customary practice of adding a greeting in his own hand.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀσπασμὸς
   chosen: greeting
@@ -86,17 +86,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'The greeting is in my own hand—Paul''s—which is a sign in every letter; this is how I write.'
-  to: 'The greeting is in my own hand—Paul''s—which is a sign in every letter; this is how I write.'
+  from: The greeting is in my own hand—Paul's—which is a sign in every letter; this is how I write.
+  to: The greeting is in my own hand—Paul's—which is a sign in every letter; this is how I write.
   rationale: Changed 'in my own hand' to 'by my own hand' to more naturally and accurately reflect the Greek dative expression indicating authorship by Paul's hand. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The greeting is by my own hand—Paul''s—which is a sign in every letter[a]; this is how I write.'
-  to: 'The greeting is by my own hand—Paul''s—which is a sign in every letter[a]; this is how I write.'
+  from: The greeting is by my own hand—Paul's—which is a sign in every letter[a]; this is how I write.
+  to: The greeting is by my own hand—Paul's—which is a sign in every letter[a]; this is how I write.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in my own hand''].'
+- timestamp: '2026-11-09T17:04:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The greeting is by my own hand—Paul's—which is a sign in every letter[a]; this is how I write.
+  to: I, Paul, write this greeting with my own hand. This is my mark of authenticity in every letter; this is my handwriting[a].
+  rationale: The earlier discussion of 'in/by my own hand' rightly recognized a personal autograph, but the current 'a sign' leaves its authenticating purpose unclear. I make that purpose and the likely reference to handwriting explicit while noting the alternative understanding of the final clause.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -116,3 +122,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_thessalonians/003/017.job-53720.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:04:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul personally writes the greeting as the identifying mark that authenticates his letters.
+  meaning_decisions:
+  - source_phrase: Ὁ ἀσπασμὸς τῇ ἐμῇ χειρὶ Παύλου
+    prior_rendering: The greeting is by my own hand—Paul's
+    new_rendering: I, Paul, write this greeting with my own hand
+    rationale: The active sentence clearly identifies Paul and states that he personally writes the greeting.
+  - source_phrase: ὅ ἐστιν σημεῖον ἐν πάσῃ ἐπιστολῇ
+    prior_rendering: which is a sign in every letter
+    new_rendering: This is my mark of authenticity in every letter
+    rationale: The sign identifies the letter as Paul's, a function especially relevant to the warning about a letter supposedly from him in 2:2.
+  - source_phrase: οὕτως γράφω
+    prior_rendering: this is how I write
+    new_rendering: this is my handwriting
+    rationale: The likely reference is to the visible handwriting that authenticates the letter, not to Paul's literary style; the alternative reference to his customary autograph practice is noted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier discussion of 'in/by my own hand' rightly recognized a personal autograph, but the current 'a sign' leaves its authenticating purpose unclear. I make that purpose and the likely reference to handwriting explicit while noting the alternative understanding of the final clause.

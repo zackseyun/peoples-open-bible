@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: μὴ ἕνεκεν βρώματος κατάλυε τὸ ἔργον τοῦ θεοῦ. πάντα μὲν καθαρά, ἀλλὰ κακὸν τῷ ἀνθρώπῳ τῷ διὰ προσκόμματος ἐσθίοντι.
 translation:
-  text: Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.
-  philosophy: optimal-equivalence
+  text: Do not, for the sake of food, tear down the work of God. All food is indeed clean, but it is evil to eat in a way that causes someone else to stumble into sin[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Everything is indeed clean.' The context concerns food, so some translations make that explicit with 'All foods are clean.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'for the person who eats so as to cause stumbling.' The Greek 'man' is representative here.
-    reason: lexical_alternative
+    text: Alternatively, “but it is evil for a person to eat in violation of their conscience.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἕνεκεν βρώματος
   chosen: for the sake of food
@@ -106,14 +103,20 @@ revisions:
   from: Do not, for the sake of food, tear down the work of God. All things are indeed clean, but it is evil for the man who eats in a way that causes stumbling.
   to: Do not, for the sake of food, tear down the work of God. All things are indeed clean, but it is evil for the man who eats in a way that causes stumbling.
   rationale: Changed 'man' to 'person' for natural, inclusive English while preserving the generic singular sense of τῷ ἀνθρώπῳ. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.'
-  to: 'Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.'
+  from: Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.
+  to: Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for the man''].'
+- timestamp: '2026-11-09T20:35:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not[a], for the sake of food, tear down the work of God. All things are indeed clean[b], but it is evil for the person who eats in a way that causes stumbling.
+  to: Do not, for the sake of food, tear down the work of God. All food is indeed clean, but it is evil to eat in a way that causes someone else to stumble into sin[a].
+  rationale: I retained the earlier rendering's building metaphor, purity language, and moral force in “tear down,” “clean,” and “evil”; no maintainer revision is recorded. I departed from the earlier preference for source-transparent breadth and ambiguity where the context supports greater clarity, and replaced the misplaced, redundant footnotes with a genuine interpretive alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -133,3 +136,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/014/020.job-8010.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:35:52Z'
+  change_level: refined
+  confidence: high
+  meaning: Although all food is clean, believers must not tear down God's work by eating in a way that leads others into sin.
+  meaning_decisions:
+  - source_phrase: πάντα μὲν καθαρά
+    prior_rendering: All things are indeed clean
+    new_rendering: All food is indeed clean
+    rationale: The discussion concerns food, not the moral cleanness of everything without qualification; making that scope explicit conveys what the first hearers would have understood while retaining the purity language.
+  - source_phrase: ἀλλὰ κακὸν τῷ ἀνθρώπῳ τῷ διὰ προσκόμματος ἐσθίοντι
+    prior_rendering: but it is evil for the person who eats in a way that causes stumbling
+    new_rendering: but it is evil to eat in a way that causes someone else to stumble into sin
+    rationale: The warning against tearing down God's work and the reference to a brother stumbling in verse 21 favor eating that causes another believer to sin. The rendering preserves the stumbling image while clarifying its moral meaning; the serious alternative concerning the eater's own conscience is footnoted.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained the earlier rendering's building metaphor, purity language, and moral force in “tear down,” “clean,” and “evil”; no maintainer revision is recorded. I departed from the earlier preference for source-transparent breadth and ambiguity where the context supports greater clarity, and replaced the misplaced, redundant footnotes with a genuine interpretive alternative.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/עָשָׂ֣ה הַ/כֹּהֵ֗ן אֶחָ֤ד לְ/חַטָּאת֙ וְ/אֶחָ֣ד לְ/עֹלָ֔ה וְ/כִפֶּ֣ר עָלָ֔י/ו מֵ/אֲשֶׁ֥ר חָטָ֖א עַל הַ/נָּ֑פֶשׁ וְ/קִדַּ֥שׁ אֶת רֹאשׁ֖/וֹ בַּ/יּ֥וֹם הַ/הֽוּא־־׃
 translation:
-  text: And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned in regard to the dead person[b], and he shall consecrate his head that same day.
-  philosophy: optimal-equivalence
+  text: The priest must offer one bird as a sin offering[a] and the other as a burnt offering, and make atonement for the Nazirite because of the sin incurred through defilement by the dead person. That same day, the Nazirite's head must be consecrated again.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'one for a purification offering.' The Hebrew term חַטָּאת can denote the sin/purification offering, especially in ritual-impurity contexts.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'upon the נפשׁ'; here, in context, it refers to a dead person, that is, a corpse that caused defilement.
-    reason: cultural_note
+    text: Or 'purification offering.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְעָשָׂה
   chosen: shall offer
@@ -106,14 +103,20 @@ revisions:
   from: And the priest shall offer one as a sin offering and one as a burnt offering, and he shall make atonement for him because he sinned in regard to the dead person, and he shall consecrate his head that same day.
   to: And the priest shall offer one as a sin offering and one as a burnt offering, and he shall make atonement for him because he sinned by reason of the dead person, and he shall consecrate his head on that day.
   rationale: Adjusted 'in regard to the dead person' to 'by reason of the dead person' for a more literal and natural rendering of עַל הַנפשׁ in this context, and changed 'that same day' to 'on that day' for closer formal correspondence to בַּיּוֹם הַהוּא.
-
 - timestamp: '2026-05-16T09:37:22Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned by reason of the dead person[b], and he shall consecrate his head on that day.'
-  to: 'And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned in regard to the dead person[b], and he shall consecrate his head that same day.'
-  rationale: 'Restored drafter ''in regard to the dead person'' (עַל הַנֶּפֶשׁ Nazirite corpse-impurity idiom) and ''that same day'' (immediacy of ritual) per chosen renderings.'
+  from: And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned by reason of the dead person[b], and he shall consecrate his head on that day.
+  to: And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned in regard to the dead person[b], and he shall consecrate his head that same day.
+  rationale: Restored drafter 'in regard to the dead person' (עַל הַנֶּפֶשׁ Nazirite corpse-impurity idiom) and 'that same day' (immediacy of ritual) per chosen renderings.
+- timestamp: '2026-11-09T18:27:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest shall offer one as a sin offering and one as a burnt offering[a], and he shall make atonement for him because he sinned in regard to the dead person[b], and he shall consecrate his head that same day.
+  to: The priest must offer one bird as a sin offering[a] and the other as a burnt offering, and make atonement for the Nazirite because of the sin incurred through defilement by the dead person. That same day, the Nazirite's head must be consecrated again.
+  rationale: The review and revert debated two opaque expressions for the corpse-related sin; neither conveyed the contextual connection as clearly as the present wording. The restored 'that same day' is retained, as are 'sin offering' and its serious purification-offering alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +137,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/006/011.job-41409.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:27:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The priest must offer the birds and make atonement for the Nazirite's sin connected with corpse defilement, and the Nazirite's head must be consecrated again that day.
+  meaning_decisions:
+  - source_phrase: אֶחָד לְחַטָּאת וְאֶחָד לְעֹלָה
+    prior_rendering: one as a sin offering and one as a burnt offering
+    new_rendering: one bird as a sin offering and the other as a burnt offering
+    rationale: The understood objects are made explicit, and 'the other' clearly assigns the two birds their distinct uses.
+  - source_phrase: וְכִפֶּר עָלָיו מֵאֲשֶׁר חָטָא עַל הַנָּפֶשׁ
+    prior_rendering: he shall make atonement for him because he sinned in regard to the dead person
+    new_rendering: make atonement for the Nazirite because of the sin incurred through defilement by the dead person
+    rationale: The context identifies corpse impurity as the occasion of the sin; the wording preserves both sin and atonement without suggesting a deliberate offense against the deceased.
+  - source_phrase: וְקִדַּשׁ אֶת רֹאשׁוֹ בַּיּוֹם הַהוּא
+    prior_rendering: he shall consecrate his head that same day
+    new_rendering: That same day, the Nazirite's head must be consecrated again
+    rationale: Renewed consecration is required after defilement, and the passive avoids resolving the uncertain subject as either priest or Nazirite.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review and revert debated two opaque expressions for the corpse-related sin; neither conveyed the contextual connection as clearly as the present wording. The restored 'that same day' is retained, as are 'sin offering' and its serious purification-offering alternative.

@@ -24,14 +24,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance[a], they turned back[b] from the region, being hemmed in,
-  philosophy: optimal-equivalence
+  text: They took the money of the merchants who had come to buy them as slaves. After pursuing the enemy for a considerable distance, they turned back from the region, pressed for time[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for a long while'; the Greek phrase can express extended duration as well as extended distance.
-    reason: lexical_alternative
-  - marker: b
-    text: The final participle may indicate that they turned back because they were being pressed in or constrained, likely by circumstances such as time or terrain.
+    text: Literally, “being hemmed in” or “being constrained”; the following verse points to a limit on the time available.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: χρήματα
@@ -116,13 +113,12 @@ revisions:
   from: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance, they turned back from the region, being hemmed in,
   to: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance, they withdrew from the region, being hemmed in,
   rationale: Changed 'turned back' to 'withdrew' for a more natural and formally appropriate rendering of ἀνέλυον in context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But they took the money of those who had come to buy them[a]. And after pursuing them for a considerable distance, they withdrew from the region, being hemmed in[b],'
-  to: 'But they took the money of those who had come to buy them. And after pursuing them for a considerable distance, they turned back from the region, being hemmed in,'
+  from: But they took the money of those who had come to buy them[a]. And after pursuing them for a considerable distance, they withdrew from the region, being hemmed in[b],
+  to: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance, they turned back from the region, being hemmed in,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they turned back''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -132,6 +128,13 @@ revisions:
   from: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance, they turned back from the region, being hemmed in,
   to: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance[a], they turned back[b] from the region, being hemmed in,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('for a considerable distance') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('they turned back') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:55:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But they took the money of those who had come to buy them. And after pursuing them for a considerable distance[a], they turned back[b] from the region, being hemmed in,
+  to: They took the money of the merchants who had come to buy them as slaves. After pursuing the enemy for a considerable distance, they turned back from the region, pressed for time[a].
+  rationale: The review proposed “withdrew,” but the documented sense of breaking off the pursuit supports retaining “turned back.” The following verse supplies a stronger contextual explanation of the constraint than the history’s possible references to terrain.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -151,3 +154,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/025.job-49201.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:44Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Jewish fighters seized the prospective slave buyers’ money and pursued the enemy before turning back as time grew short.
+  meaning_decisions:
+  - source_phrase: τὰ δὲ χρήματα τῶν παραγενομένων ἐπὶ τὸν ἀγορασμὸν αὐτῶν ἔλαβον
+    prior_rendering: But they took the money of those who had come to buy them.
+    new_rendering: They took the money of the merchants who had come to buy them as slaves.
+    rationale: The context identifies these people as merchants intending to purchase Jewish captives; making that explicit preserves the reversal of their plan.
+  - source_phrase: συγκλειόμενοι
+    prior_rendering: being hemmed in
+    new_rendering: pressed for time
+    rationale: Verse 26 explains the constraint as the approaching Sabbath, not an enemy encirclement; the literal expression remains in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review proposed “withdrew,” but the documented sense of breaking off the pursuit supports retaining “turned back.” The following verse supplies a stronger contextual explanation of the constraint than the history’s possible references to terrain.

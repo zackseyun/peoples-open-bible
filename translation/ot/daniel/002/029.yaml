@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אַ֣נְתְּה מַלְכָּ֗/א רַעְיוֹנָ/ךְ֙ עַל מִשְׁכְּבָ֣/ךְ סְלִ֔קוּ מָ֛ה דִּ֥י לֶהֱוֵ֖א אַחֲרֵ֣י דְנָ֑ה וְ/גָלֵ֧א רָזַיָּ֛/א הוֹדְעָ֖/ךְ מָה דִ֥י לֶהֱוֵֽא־־׃
 translation:
-  text: As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'and he who reveals mysteries has made known to you.' The Aramaic participle can be rendered more descriptively rather than as the title 'the Revealer of mysteries.'
-    reason: lexical_alternative
+  text: As for you, O king, while you lay on your bed, your thoughts turned to what would happen in the future. He who reveals mysteries has made known to you what will happen.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַ֣נְתְּה
   chosen: As for you
@@ -102,14 +98,20 @@ revisions:
   from: As for you, O king, your thoughts came up on your bed about what would happen after this, and the Revealer of mysteries has made known to you what would happen.
   to: As for you, O king, your thoughts came up on your bed about what would happen after this, and the Revealer of mysteries has made known to you what would happen.
   rationale: Lowercased and rephrased 'the Revealer of mysteries' to 'he who reveals mysteries' for a more natural rendering of the participial expression without making it a title not explicit in the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.'
-  to: 'As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.'
+  from: As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.
+  to: As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and the Revealer of mysteries''].'
+- timestamp: '2026-11-09T17:29:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: As for you[a], O king, your thoughts came up on your bed about what would happen after this, and he who reveals mysteries has made known to you what would happen.
+  to: As for you, O king, while you lay on your bed, your thoughts turned to what would happen in the future. He who reveals mysteries has made known to you what will happen.
+  rationale: The current descriptive he who reveals mysteries is retained rather than restoring the earlier capitalized title. The history’s identification of the king’s thoughts as reflections about future events supports clarifying the otherwise awkward thoughts came up on your bed.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +131,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/002/029.job-44319.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king had been considering the future while lying in bed, and God has disclosed what will happen.
+  meaning_decisions:
+  - source_phrase: רַעְיוֹנָךְ עַל מִשְׁכְּבָךְ סְלִקוּ
+    prior_rendering: your thoughts came up on your bed
+    new_rendering: while you lay on your bed, your thoughts turned to
+    rationale: The idiom describes thoughts arising in the king’s mind while he lay in bed; the prior wording can sound as though the thoughts appeared on the bed itself.
+  - source_phrase: מָה דִּי לֶהֱוֵא אַחֲרֵי דְנָה
+    prior_rendering: what would happen after this
+    new_rendering: what would happen in the future
+    rationale: The reference is to events beyond the king’s present circumstances, not specifically to events after the dream.
+  - source_phrase: הוֹדְעָךְ מָה דִי לֶהֱוֵא
+    prior_rendering: has made known to you what would happen
+    new_rendering: has made known to you what will happen
+    rationale: The completed disclosure concerns events still future at the time Daniel speaks, matching the prediction in verse 28.
+  footnote_kinds: {}
+  history_weighed: The current descriptive he who reveals mysteries is retained rather than restoring the earlier capitalized title. The history’s identification of the king’s thoughts as reflections about future events supports clarifying the otherwise awkward thoughts came up on your bed.

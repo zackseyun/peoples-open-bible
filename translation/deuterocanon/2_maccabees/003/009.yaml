@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the information that had come to light'; the Greek term can denote a making-known or disclosure.
-    reason: lexical_alternative
+  text: When Heliodorus arrived in Jerusalem, the city’s high priest received him courteously. Heliodorus told him what had been reported, explained why he had come, and asked whether it was true.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παραγενηθεὶς
   chosen: when he arrived
@@ -120,14 +116,20 @@ revisions:
   from: And when he arrived in Jerusalem and was courteously received by the high priest of the city, he reported the disclosure that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
   to: And when he arrived in Jerusalem and was courteously received by the high priest of the city, he reported the disclosure that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
   rationale: Replaced 'disclosure' with 'manifestation' to more directly reflect ἐμφανισμός. Kept the rest substantially the same as accurate, complete, and natural.
-
 - timestamp: '2026-05-18T03:00:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.'
-  to: 'And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.'
+  from: And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
+  to: And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the disclosure that had taken place''].'
+- timestamp: '2026-11-09T18:53:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he arrived in Jerusalem and was courteously received by the high priest of the city[a], he reported the manifestation that had taken place, explained for what reason he was present, and inquired whether these things were truly so.
+  to: When Heliodorus arrived in Jerusalem, the city’s high priest received him courteously. Heliodorus told him what had been reported, explained why he had come, and asked whether it was true.
+  rationale: The first draft and lexical rationale correctly understood this as a disclosure of information, whereas the later 'manifestation' obscures the narrative. I restore that meaning and retain the courteous character of the reception.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -147,3 +149,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/003/009.job-48995.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After a courteous reception in Jerusalem, Heliodorus explained the treasury report and his mission and asked whether the report was true.
+  meaning_decisions:
+  - source_phrase: ἀνέθετο περὶ τοῦ γεγονότος ἐμφανισμοῦ
+    prior_rendering: he reported the manifestation that had taken place
+    new_rendering: Heliodorus told him what had been reported
+    rationale: The noun refers to the information previously disclosed about the money, not a supernatural manifestation.
+  - source_phrase: καί τινος ἕνεκεν πάρεστι, διεσάφησεν
+    prior_rendering: explained for what reason he was present
+    new_rendering: explained why he had come
+    rationale: The clause concerns the purpose of his mission, which this English expresses directly.
+  - source_phrase: ἐπυνθάνετό δε εἰ ταῖς ἀληθείαις ταῦτα οὕτως ἔχοντα τυγχάνει
+    prior_rendering: inquired whether these things were truly so
+    new_rendering: asked whether it was true
+    rationale: The question seeks confirmation of the report just described; the pronoun has a clear antecedent.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly understood this as a disclosure of information, whereas the later 'manifestation' obscures the narrative. I restore that meaning and retain the courteous character of the reception.

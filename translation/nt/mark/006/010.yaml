@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἔλεγεν αὐτοῖς· Ὅπου ⸀ἐὰν εἰσέλθητε εἰς οἰκίαν, ἐκεῖ μένετε ἕως ἂν ἐξέλθητε ἐκεῖθεν.
 translation:
-  text: And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or: “until you go out from there.” The Greek is more literally “until you leave from there,” which could be taken more woodenly, but here likely refers to leaving that locality.'
-    reason: lexical_alternative
+  text: He said to them, “Whenever you enter a house, stay there until you leave that town.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: he was saying
@@ -81,14 +77,20 @@ revisions:
   from: And he was saying to them, “Wherever you enter into a house, stay there until you leave that place.”
   to: And he was saying to them, “Wherever you enter into a house, stay there until you leave that place.”
   rationale: Removed the unnecessary 'into' after 'enter' for more natural English while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”'
-  to: 'And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”'
+  from: And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”
+  to: And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you enter into a house''].'
+- timestamp: '2026-11-09T17:14:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he was saying to them[a], “Wherever you enter a house, stay there until you leave that place.”
+  to: He said to them, “Whenever you enter a house, stay there until you leave that town.”
+  rationale: I retain the current idiomatic “enter a house” and the documented interpretation that departure means leaving the locality. The former note’s essential clarification is now explicit in the text.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -111,3 +113,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/006/010.job-56257.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:04Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus tells the Twelve to remain in the same lodging throughout their stay in each locality.
+  meaning_decisions:
+  - source_phrase: ἕως ἂν ἐξέλθητε ἐκεῖθεν
+    prior_rendering: until you leave that place
+    new_rendering: until you leave that town
+    rationale: The departure is from the locality, not merely from the house. “That town” makes the instruction to keep the same lodging intelligible without an explanatory note.
+  footnote_kinds: {}
+  history_weighed: I retain the current idiomatic “enter a house” and the documented interpretation that departure means leaving the locality. The former note’s essential clarification is now explicit in the text.

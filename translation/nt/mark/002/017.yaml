@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: καὶ ἀκούσας ὁ Ἰησοῦς λέγει αὐτοῖς ⸀ὅτι Οὐ χρείαν ἔχουσιν οἱ ἰσχύοντες ἰατροῦ ἀλλ’ οἱ κακῶς ἔχοντες· οὐκ ἦλθον καλέσαι δικαίους ἀλλὰ ⸀ἁμαρτωλούς.
 translation:
-  text: And when Jesus heard it, he says to them, “Those who are strong[a] have no need of a physician, but those who are sick. I did not come to call the righteous[b], but sinners.”
-  philosophy: optimal-equivalence
+  text: When Jesus heard this, he said to them, “The healthy do not need a physician, but the sick do. I did not come to call the righteous[a], but sinners.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'those who are healthy' for 'those who are strong'; the Greek literally refers to those who are strong or well.
-    reason: lexical_alternative
-  - marker: b
-    text: '''The righteous'' may be heard ironically in context, that is, those regarded as righteous or who consider themselves righteous; the Greek text itself simply says ''the righteous.'''
+    text: 'Possibly ironic: those regarded as righteous, or who consider themselves righteous.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἀκούσας
@@ -127,13 +124,12 @@ revisions:
   from: And when Jesus heard it, he says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous, but sinners.”
   to: And hearing it, Jesus says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous, but sinners.”
   rationale: Replaced 'when Jesus heard it' with the more direct 'hearing it' to reflect the participle ἀκούσας more closely; retained the present 'says' for λέγει. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And hearing it[a], Jesus says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous[b], but sinners.”'
-  to: 'And when Jesus heard it, he says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous, but sinners.”'
+  from: And hearing it[a], Jesus says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous[b], but sinners.”
+  to: And when Jesus heard it, he says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous, but sinners.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''when Jesus heard it''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -143,6 +139,13 @@ revisions:
   from: And when Jesus heard it, he says to them, “Those who are strong have no need of a physician, but those who are sick. I did not come to call the righteous, but sinners.”
   to: And when Jesus heard it, he says to them, “Those who are strong[a] have no need of a physician, but those who are sick. I did not come to call the righteous[b], but sinners.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('those who are strong') because the note quotes that phrase from the rendering; [b] anchored to ('The righteous') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:14:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when Jesus heard it, he says to them, “Those who are strong[a] have no need of a physician, but those who are sick. I did not come to call the righteous[b], but sinners.”
+  to: When Jesus heard this, he said to them, “The healthy do not need a physician, but the sick do. I did not come to call the righteous[a], but sinners.”
+  rationale: The recorded revision and revert concern only the introductory participle and do not settle the saying’s meaning. I retain the caution about possible irony in “the righteous,” but move “healthy” from the earlier footnote into the text because the medical contrast establishes that sense.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -165,3 +168,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/002/017.job-56140.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:29Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus explains that his mission is to call sinners, just as a physician is needed by the sick rather than the healthy.
+  meaning_decisions:
+  - source_phrase: Οὐ χρείαν ἔχουσιν οἱ ἰσχύοντες ἰατροῦ ἀλλ’ οἱ κακῶς ἔχοντες
+    prior_rendering: Those who are strong have no need of a physician, but those who are sick
+    new_rendering: The healthy do not need a physician, but the sick do
+    rationale: The medical contrast establishes that being strong here means being well, not possessing physical strength; the concise parallel clauses preserve the saying’s proverbial force.
+  - source_phrase: λέγει αὐτοῖς
+    prior_rendering: he says to them
+    new_rendering: he said to them
+    rationale: Mark’s historical present advances a past narrative; English simple past conveys that function without an unexplained tense shift.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded revision and revert concern only the introductory participle and do not settle the saying’s meaning. I retain the caution about possible irony in “the righteous,” but move “healthy” from the earlier footnote into the text because the medical contrast establishes that sense.

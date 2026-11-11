@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: Ἀλλ’ οὐκ ἐν πᾶσιν ἡ γνῶσις· τινὲς δὲ τῇ ⸀συνηθείᾳ ⸂ἕως ἄρτι τοῦ εἰδώλου⸃ ὡς εἰδωλόθυτον ἐσθίουσιν, καὶ ἡ συνείδησις αὐτῶν ἀσθενὴς οὖσα μολύνεται.
 translation:
-  text: But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.
-  philosophy: optimal-equivalence
+  text: But not everyone has this knowledge. Some are still influenced by their former idol worship[a], so they eat the food as an offering to an idol, and their weak consciences are defiled.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more literally, 'because of habit/custom until now with the idol.' The Greek phrase is difficult; the sense is that some still live under the influence of their former connection with idol worship.
-    reason: lexical_alternative
-  - marker: b
-    text: Some manuscripts read 'conscience of the idol' or have related variation in this clause; the main text follows the SBLGNT reading.
+    text: Other manuscripts read “with consciousness of the idol” rather than “through familiarity with the idol.”
     reason: textual_variant
 lexical_decisions:
 - source_word: γνῶσις
@@ -92,14 +89,20 @@ revisions:
   from: But not everyone has this knowledge. Some, because of their former association with the idol, eat the food as idol-sacrificed, and their conscience, being weak, is defiled.
   to: But not everyone has this knowledge. Some, because of their former association with the idol, eat the food as idol-sacrificed, and their conscience, being weak, is defiled.
   rationale: Replaced 'because of their former association with the idol' with 'through familiarity with the idol until now' to reflect the Greek more closely, including ἕως ἄρτι ('until now'). Changed 'the food as idol-sacrificed' to 'it as food sacrificed to an idol' for more natural and precise rendering of εἰδωλόθυτον ἐσθίουσιν.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.'
-  to: 'But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.'
+  from: But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.
+  to: But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''former association''].'
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But not everyone has this knowledge[a]. Some, through familiarity with the idol until now, eat it as food sacrificed to an idol, and their conscience, being weak[b], is defiled.
+  to: But not everyone has this knowledge. Some are still influenced by their former idol worship[a], so they eat the food as an offering to an idol, and their weak consciences are defiled.
+  rationale: The draft and lexical rationale identify former association with idol worship, while the later review rightly emphasizes that its influence continues “until now.” I combine those gains rather than follow the conflicting automated revision and revert claims mechanically.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -119,3 +122,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/008/007.job-52777.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Some believers remain influenced by their former idol worship and eat the food as an idol offering, defiling their weak consciences.
+  meaning_decisions:
+  - source_phrase: τῇ συνηθείᾳ ἕως ἄρτι τοῦ εἰδώλου
+    prior_rendering: through familiarity with the idol until now
+    new_rendering: are still influenced by their former idol worship
+    rationale: The phrase concerns an ingrained association with idol worship whose influence persists; “still” preserves the temporal force without suggesting that mere acquaintance with an idol is the problem.
+  - source_phrase: ὡς εἰδωλόθυτον ἐσθίουσιν
+    prior_rendering: eat it as food sacrificed to an idol
+    new_rendering: eat the food as an offering to an idol
+    rationale: 'This brings out how these believers understand their eating: the food retains its religious significance as an idol offering.'
+  - source_phrase: ἡ συνείδησις αὐτῶν ἀσθενὴς οὖσα μολύνεται
+    prior_rendering: their conscience, being weak, is defiled
+    new_rendering: their weak consciences are defiled
+    rationale: The Greek singular is distributive; English plural makes clear that each person's conscience is affected while retaining the weight of “defiled.”
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The draft and lexical rationale identify former association with idol worship, while the later review rightly emphasizes that its influence continues “until now.” I combine those gains rather than follow the conflicting automated revision and revert claims mechanically.

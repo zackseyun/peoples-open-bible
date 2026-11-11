@@ -4,21 +4,12 @@ source:
   edition: SBLGNT
   text: ὅταν δὲ τὸ ⸂φθαρτὸν τοῦτο ἐνδύσηται ἀφθαρσίαν καὶ τὸ⸃ θνητὸν τοῦτο ἐνδύσηται ⸀ἀθανασίαν, τότε γενήσεται ὁ λόγος ὁ γεγραμμένος· Κατεπόθη ὁ θάνατος εἰς νῖκος.
 translation:
-  text: 'But when this perishable puts on imperishability[a], and this mortal puts on immortality[d][c][b], then the written word will come to pass: “Death has been swallowed up in victory.”'
-  philosophy: optimal-equivalence
+  text: 'But when this perishable body puts on imperishability, and this mortal body puts on immortality, then the written saying will be fulfilled: “Death has been swallowed up in victory[a].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the saying that is written.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'then the written word will be fulfilled.' The Greek verb is more literally 'will happen' or 'will come to pass.'
-    reason: alternative_reading
-  - marker: c
-    text: Quoted from Isaiah 25:8, with wording reflecting the Greek tradition Paul cites.
+    text: Isaiah 25:8.
     reason: cross_reference
-  - marker: d
-    text: Or 'the word that is written'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: φθαρτὸν
   chosen: perishable
@@ -126,6 +117,13 @@ revisions:
   from: 'But when this perishable puts on imperishability[a], and this mortal puts on immortality[d][c][b], then the written word will come to pass: “Death has been swallowed up in victory.”'
   to: 'But when this perishable puts on imperishability[a], and this mortal puts on immortality[d][c][b], then the written word will come to pass: “Death has been swallowed up in victory.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will happen''].'
+- timestamp: '2026-11-09T17:05:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'But when this perishable puts on imperishability[a], and this mortal puts on immortality[d][c][b], then the written word will come to pass: “Death has been swallowed up in victory.”'
+  to: 'But when this perishable body puts on imperishability, and this mortal body puts on immortality, then the written saying will be fulfilled: “Death has been swallowed up in victory[a].”'
+  rationale: Earlier reviews improved the stiff introduction but disagreed over whether to retain a more literal rendering of γίνομαι. The contextual meaning is the realization of Scripture's declaration, so I use “will be fulfilled” and consolidate the duplicated, misplaced notes into the quotation reference.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:30Z'
@@ -152,3 +150,30 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_corinthians/015/054.job-39025.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:17Z'
+  change_level: refined
+  confidence: high
+  meaning: When mortal bodies become imperishable and immortal, Scripture's declaration of death's defeat will be fulfilled.
+  meaning_decisions:
+  - source_phrase: τὸ φθαρτὸν τοῦτο ... τὸ θνητὸν τοῦτο
+    prior_rendering: this perishable ... this mortal
+    new_rendering: this perishable body ... this mortal body
+    rationale: Supplying the understood noun makes the referent clear and maintains the explicit bodily language already used in verse 53.
+  - source_phrase: ὁ λόγος ὁ γεγραμμένος
+    prior_rendering: the written word
+    new_rendering: the written saying
+    rationale: “Saying” identifies the particular scriptural declaration that follows, rather than potentially suggesting Scripture as a whole.
+  - source_phrase: τότε γενήσεται
+    prior_rendering: then ... will come to pass
+    new_rendering: then ... will be fulfilled
+    rationale: In context, the event declared in the written saying becomes reality; “will be fulfilled” expresses that relationship directly.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: Earlier reviews improved the stiff introduction but disagreed over whether to retain a more literal rendering of γίνομαι. The contextual meaning is the realization of Scripture's declaration, so I use “will be fulfilled” and consolidate the duplicated, misplaced notes into the quotation reference.

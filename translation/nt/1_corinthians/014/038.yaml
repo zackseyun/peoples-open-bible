@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: εἰ δέ τις ἀγνοεῖ, ⸀ἀγνοεῖται.
 translation:
-  text: But if anyone does not recognize this[b][a], he is not recognized.
-  philosophy: optimal-equivalence
+  text: But if anyone does not acknowledge this, he is not acknowledged[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts read, 'if anyone is ignorant, let him be ignorant.' The adopted text reads, 'if anyone ignores this, he is ignored.'
+    text: Some manuscripts read, 'But if anyone is ignorant, let him remain ignorant.'
     reason: textual_variant
-  - marker: b
-    text: Or 'does not acknowledge ... is not acknowledged.' The Greek uses the same verb in active and passive forms for rhetorical effect.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: εἰ
   chosen: if
@@ -77,14 +74,20 @@ revisions:
   from: But if anyone ignores this, he is ignored.
   to: But if anyone ignores this, he is ignored.
   rationale: Revised 'ignores' to 'does not recognize' and 'is ignored' to 'is not recognized' to reflect the lexical sense of ἀγνοεῖ / ἀγνοεῖται more accurately and preserve the verbal parallelism.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if anyone does not recognize this[b][a], he is not recognized.'
-  to: 'But if anyone does not recognize this[b][a], he is not recognized.'
+  from: But if anyone does not recognize this[b][a], he is not recognized.
+  to: But if anyone does not recognize this[b][a], he is not recognized.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is ignored''].'
+- timestamp: '2026-11-09T17:04:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if anyone does not recognize this[b][a], he is not recognized.
+  to: But if anyone does not acknowledge this, he is not acknowledged[a].
+  rationale: I weighed both the earlier 'ignores ... is ignored' and the later rationale for 'does not recognize ... is not recognized'; the automated revert documents no independent textual change. 'Acknowledge' preserves their shared reciprocal force while making the connection to verse 37 clearer.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -104,3 +107,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/014/038.job-52950.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:04:45Z'
+  change_level: refined
+  confidence: medium
+  meaning: Anyone who fails to acknowledge the authority of Paul's instructions is himself denied acknowledgment.
+  meaning_decisions:
+  - source_phrase: ἀγνοεῖ, ἀγνοεῖται
+    prior_rendering: does not recognize this, he is not recognized
+    new_rendering: does not acknowledge this, he is not acknowledged
+    rationale: The issue is acknowledgment of the authority asserted in verse 37, not merely identifying or understanding something; the repeated verb preserves Paul's reciprocal warning without naming the agent of the passive.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I weighed both the earlier 'ignores ... is ignored' and the later rationale for 'does not recognize ... is not recognized'; the automated revert documents no independent textual change. 'Acknowledge' preserves their shared reciprocal force while making the connection to verse 37 clearer.

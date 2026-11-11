@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὅτε δὲ ἤγγισεν ὁ καιρὸς τῶν καρπῶν, ἀπέστειλεν τοὺς δούλους αὐτοῦ πρὸς τοὺς γεωργοὺς λαβεῖν τοὺς καρποὺς αὐτοῦ.
 translation:
-  text: But when the season for the fruits had drawn near[a][b], he sent his servants to the tenant farmers to collect his fruits.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'farmers,' 'tenants,' or 'vine-growers.' The Greek geōrgous refers to cultivators; 'tenant farmers' makes explicit their role in leasing and working another man's vineyard in this parable.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'his slaves.' The Greek word doulous can mean either 'servants' or 'slaves'; here 'servants' was chosen because the parable emphasizes their representative role as the landowner's agents rather than their bonded status.
-    reason: lexical_alternative
+  text: When harvest time drew near, he sent his servants to the tenant farmers to collect his share of the fruit.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅτε δὲ
   chosen: But when
@@ -98,14 +91,20 @@ revisions:
   from: But when the season for fruit had drawn near, he sent his servants to the tenant farmers to collect his fruit.
   to: But when the season for fruit had drawn near, he sent his servants to the tenant farmers to collect his fruit.
   rationale: Added the article and changed singular 'fruit' to plural 'fruits' to reflect the Greek τῶν καρπῶν ... τοὺς καρποὺς more accurately and completely.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.'
-  to: 'But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.'
+  from: But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.
+  to: But when the season for the fruits had drawn near[b][a], he sent his servants to the tenant farmers to collect his fruits.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for fruit''].'
+- timestamp: '2026-11-09T17:14:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when the season for the fruits had drawn near[a][b], he sent his servants to the tenant farmers to collect his fruits.
+  to: When harvest time drew near, he sent his servants to the tenant farmers to collect his share of the fruit.
+  rationale: The automated changes concerning articles and plural ‘fruits’ carry little meaning-based weight; English collective ‘fruit’ conveys the yield naturally. The earlier rationale correctly recognized that the owner was collecting produce owed to him, which the new wording makes explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +126,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/021/034.job-57256.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As harvest approached, the owner sent his servants to collect the fruit owed to him by the tenants.
+  meaning_decisions:
+  - source_phrase: ὅτε δὲ ἤγγισεν ὁ καιρὸς τῶν καρπῶν
+    prior_rendering: But when the season for the fruits had drawn near
+    new_rendering: When harvest time drew near
+    rationale: The phrase identifies the approaching harvest, not a contrasting event; natural English conveys the agricultural timing without reproducing the Greek genitive construction.
+  - source_phrase: λαβεῖν τοὺς καρποὺς αὐτοῦ
+    prior_rendering: to collect his fruits
+    new_rendering: to collect his share of the fruit
+    rationale: In the leasing arrangement, the owner sends for the portion of the yield owed to him; the wording makes that understood relationship clear while retaining the fruit imagery.
+  footnote_kinds: {}
+  history_weighed: The automated changes concerning articles and plural ‘fruits’ carry little meaning-based weight; English collective ‘fruit’ conveys the yield naturally. The earlier rationale correctly recognized that the owner was collecting produce owed to him, which the new wording makes explicit.

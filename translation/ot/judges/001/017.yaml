@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וַ/יֵּ֤לֶךְ יְהוּדָה֙ אֶת שִׁמְע֣וֹן אָחִ֔י/ו וַ/יַּכּ֕וּ אֶת הַֽ/כְּנַעֲנִ֖י יוֹשֵׁ֣ב צְפַ֑ת וַ/יַּחֲרִ֣ימוּ אוֹתָ֔/הּ וַ/יִּקְרָ֥א אֶת שֵׁם הָ/עִ֖יר חָרְמָֽה־־־־׃
 translation:
-  text: Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.
-  philosophy: optimal-equivalence
+  text: Then the tribe of Judah went with its brother tribe Simeon, and they struck down the Canaanites living in Zephath and devoted the city to destruction. So the city was named Hormah[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hormah sounds like the Hebrew word for something devoted to destruction (ḥerem), explaining the city's name.
+    text: Hormah echoes the Hebrew word ḥerem, meaning something devoted to destruction.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'utterly destroyed it' / 'put it under the ban.' The Hebrew verb refers to devoting something irrevocably, often by destruction.
-    reason: alternative_reading
-  - marker: c
-    text: Hebrew 'he called'; the singular likely refers to Judah as a collective or representative subject. Some translations smooth this to 'they called.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֵּלֶךְ
   chosen: went with
@@ -116,14 +110,20 @@ revisions:
   from: Then Judah went with Simeon his brother, and they struck down the Canaanites living in Zephath and devoted it to destruction; so he called the name of the city Hormah.
   to: Then Judah went with Simeon his brother, and they struck down the Canaanites living in Zephath and devoted it to destruction; so he called the name of the city Hormah.
   rationale: Changed 'he called' to 'they called' to match the plural verb in the source. Kept the rest of the wording, which is accurate and natural.
-
 - timestamp: '2026-05-18T02:55:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.'
-  to: 'Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.'
+  from: Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.
+  to: Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he called''].'
+- timestamp: '2026-11-09T20:32:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Judah went with Simeon his brother[a], and they struck down the Canaanites living in Zephath and devoted it to destruction[c][b]; so they called the name of the city Hormah.
+  to: Then the tribe of Judah went with its brother tribe Simeon, and they struck down the Canaanites living in Zephath and devoted the city to destruction. So the city was named Hormah[a].
+  rationale: No maintainer revision is recorded; I retain the established martial wording and the rendering “devoted to destruction,” which preserves the sacred-ban sense. Contrary to one review’s rationale, the Hebrew naming verb is singular, so passive English avoids the disputed shift between “he” and “they”; the name footnote is retained at its proper location.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +143,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/001/017.job-68993.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:22Z'
+  change_level: refined
+  confidence: high
+  meaning: Judah and Simeon struck down Zephath’s Canaanite inhabitants and devoted the city to destruction, which its new name Hormah commemorates.
+  meaning_decisions:
+  - source_phrase: יְהוּדָה אֶת שִׁמְעוֹן אָחִיו
+    prior_rendering: Judah went with Simeon his brother
+    new_rendering: the tribe of Judah went with its brother tribe Simeon
+    rationale: These names designate tribes rather than the ancestral brothers themselves; making that explicit preserves the kinship language without misleading modern readers.
+  - source_phrase: וַיַּחֲרִימוּ אוֹתָהּ
+    prior_rendering: devoted it to destruction
+    new_rendering: devoted the city to destruction
+    rationale: The feminine pronoun refers to Zephath; naming its referent makes clear that the city, not merely the defeated Canaanites, was devoted to destruction.
+  - source_phrase: וַיִּקְרָא אֶת שֵׁם הָעִיר חָרְמָה
+    prior_rendering: so they called the name of the city Hormah
+    new_rendering: So the city was named Hormah
+    rationale: Natural English replaces the Hebrew naming formula, while the passive avoids specifying a plural naming subject where the Hebrew verb is singular.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: No maintainer revision is recorded; I retain the established martial wording and the rendering “devoted to destruction,” which preserves the sacred-ban sense. Contrary to one review’s rationale, the Hebrew naming verb is singular, so passive English avoids the disputed shift between “he” and “they”; the name footnote is retained at its proper location.

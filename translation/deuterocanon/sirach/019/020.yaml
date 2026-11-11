@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'reverent,' possibly implying fear of the Lord; the Greek does not state the object of fear.
-    reason: lexical_alternative
+  text: Better one with little understanding who fears the Lord than one who abounds in prudence but transgresses the law.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κρείττων
   chosen: Better is
@@ -122,14 +118,20 @@ revisions:
   from: Better is one who is lacking yet has understanding and fear, than one who abounds in prudence and transgresses the law.
   to: Better is one who is lacking yet has understanding and fear, than one who abounds in prudence and transgresses the law.
   rationale: Added commas to clarify the structure and render ἐν συνέσει ἔμφοβος more naturally as 'with understanding and fear' while preserving the meaning. No substantive lexical change.
-
 - timestamp: '2026-05-18T02:58:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.'
-  to: 'Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.'
+  from: Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.
+  to: Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has understanding''].'
+- timestamp: '2026-11-09T20:12:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Better is one who is lacking[a], with understanding and fear, than one who abounds in prudence and transgresses the law.
+  to: Better one with little understanding who fears the Lord than one who abounds in prudence but transgresses the law.
+  rationale: No maintainer revision is recorded, and the automated history adds no substantive guidance. I retain 'prudence' and 'transgresses the law,' but correct the attachment of 'in understanding' and depart from the earlier reluctance to name the object of fear because the immediate context supplies it.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -149,3 +151,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/019/020.job-51487.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A person with little understanding who fears the Lord is better than a highly discerning person who violates the law.
+  meaning_decisions:
+  - source_phrase: ἡττώμενος ἐν συνέσει
+    prior_rendering: one who is lacking, with understanding
+    new_rendering: one with little understanding
+    rationale: The phrase 'in understanding' specifies what the person lacks; it does not describe understanding that the person possesses. This also establishes the contrast with someone who abounds in prudence.
+  - source_phrase: ἔμφοβος
+    prior_rendering: fear
+    new_rendering: who fears the Lord
+    rationale: Although the adjective does not state the object of fear, verse 17 explicitly identifies fear of the Lord as the foundation of wisdom. Making that understood object explicit conveys reverence rather than leaving modern readers to infer ordinary fearfulness.
+  footnote_kinds: {}
+  history_weighed: No maintainer revision is recorded, and the automated history adds no substantive guidance. I retain 'prudence' and 'transgresses the law,' but correct the attachment of 'in understanding' and depart from the earlier reluctance to name the object of fear because the immediate context supplies it.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וּ/בָ֣אנוּ אֵלָ֗י/ו ב/אחת הַ/מְּקוֹמֹת֙ אֲשֶׁ֣ר נִמְצָ֣א שָׁ֔ם וְ/נַ֣חְנוּ עָלָ֔י/ו כַּ/אֲשֶׁ֛ר יִפֹּ֥ל הַ/טַּ֖ל עַל הָ/אֲדָמָ֑ה וְ/לֹֽא נ֥וֹתַר בּ֛/וֹ וּ/בְ/כָל הָ/אֲנָשִׁ֥ים אֲשֶׁר אִתּ֖/וֹ גַּם אֶחָֽד־־־־־׃
 translation:
-  text: Then we will come upon him in one of the places where he is found[a], and we will settle on him just as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'we will descend on him'; the Hebrew verb literally means 'settle/rest upon,' here used in a military simile of overwhelming coverage.
-    reason: lexical_alternative
+  text: Then we will come upon him wherever he is found and settle over him as dew falls on the ground. Neither he nor any of the men with him will survive—not even one.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּבָאנוּ
   chosen: Then we will come upon
@@ -97,14 +93,20 @@ revisions:
   from: Then we will come upon him in one of the places where he is found, and we will settle on him just as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
   to: Then we will come upon him in one of the places where he is found, and we will fall on him as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
   rationale: Replaced 'settle on him' with 'fall on him' for closer lexical accuracy to the Hebrew and better parallel with 'as the dew falls on the ground.'
-
 - timestamp: '2026-05-15T20:54:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then we will come upon him in one of the places where he is found[a], and we will fall on him as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.'
-  to: 'Then we will come upon him in one of the places where he is found[a], and we will settle on him just as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.'
-  rationale: 'Drafter chose ''settle on him'' for נוּחַ (settle/rest, the actual Hebrew verb) preserving the deliberate two-verb contrast with naphal in the dew simile (''as the dew falls''). Azure substituted ''fall on him'' — but נוּחַ is NOT naphal; azure imported the wrong Hebrew root and erased the literary contrast, falsely claiming ''closer lexical accuracy''.'
+  from: Then we will come upon him in one of the places where he is found[a], and we will fall on him as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
+  to: Then we will come upon him in one of the places where he is found[a], and we will settle on him just as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
+  rationale: Drafter chose 'settle on him' for נוּחַ (settle/rest, the actual Hebrew verb) preserving the deliberate two-verb contrast with naphal in the dew simile ('as the dew falls'). Azure substituted 'fall on him' — but נוּחַ is NOT naphal; azure imported the wrong Hebrew root and erased the literary contrast, falsely claiming 'closer lexical accuracy'.
+- timestamp: '2026-11-09T17:29:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then we will come upon him in one of the places where he is found[a], and we will settle on him just as the dew falls on the ground; and not one will be left of him and of all the men who are with him—not even one.
+  to: Then we will come upon him wherever he is found and settle over him as dew falls on the ground. Neither he nor any of the men with him will survive—not even one.
+  rationale: The earlier revert rightly distinguished נוח, “settle,” from נפל, “fall,” in the dew comparison. I preserve that contrast while clarifying the location clause and the promise of no survivors.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -124,3 +126,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/017/012.job-45907.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Hushai promises that the assembled army will overwhelm David wherever he is found and leave neither him nor any of his men alive.
+  meaning_decisions:
+  - source_phrase: בְּאַחַת הַמְּקֹמוֹת אֲשֶׁר נִמְצָא שָׁם
+    prior_rendering: in one of the places where he is found
+    new_rendering: wherever he is found
+    rationale: The promise applies to whatever location David is discovered in; English does not need the redundant location construction.
+  - source_phrase: וְנַחְנוּ עָלָיו
+    prior_rendering: we will settle on him
+    new_rendering: settle over him
+    rationale: “Over” brings out the image of complete coverage while retaining the verb “settle” and its contrast with the falling dew.
+  - source_phrase: וְלֹא נוֹתַר בּוֹ וּבְכָל־הָאֲנָשִׁים אֲשֶׁר אִתּוֹ גַּם אֶחָד
+    prior_rendering: not one will be left of him and of all the men who are with him—not even one
+    new_rendering: Neither he nor any of the men with him will survive—not even one
+    rationale: The Hebrew includes David himself and every accompanying man among those who will not survive; the current English construction is unclear.
+  footnote_kinds: {}
+  history_weighed: The earlier revert rightly distinguished נוח, “settle,” from נפל, “fall,” in the dew comparison. I preserve that contrast while clarifying the location clause and the promise of no survivors.

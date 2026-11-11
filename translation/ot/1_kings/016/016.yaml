@@ -4,17 +4,55 @@ source:
   edition: WLC
   text: וַ/יִּשְׁמַ֤ע הָ/עָם֙ הַ/חֹנִ֣ים לֵ/אמֹ֔ר קָשַׁ֣ר זִמְרִ֔י וְ/גַ֖ם הִכָּ֣ה אֶת הַ/מֶּ֑לֶךְ וַ/יַּמְלִ֣כוּ כָֽל יִ֠שְׂרָאֵל אֶת עָמְרִ֨י שַׂר צָבָ֧א עַל יִשְׂרָאֵ֛ל בַּ/יּ֥וֹם הַ/ה֖וּא בַּֽ/מַּחֲנֶֽה־־־־־׃
 translation:
-  text: 'And the people who were camped there heard it said, “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army over Israel, king that day in the camp.'
+  text: 'The army in the camp heard the report: “Zimri has conspired against the king and has also killed him.” So that same day in the camp, all the Israelites there made Omri, the army commander, king over Israel.'
+  philosophy: dynamic
 revisions:
 - timestamp: '2026-05-18T03:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the people who were encamped heard it said[a], “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army[c][b], king over Israel that day in the camp.'
-  to: 'And the people who were camped there heard it said, “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army over Israel, king that day in the camp.'
+  from: And the people who were encamped heard it said[a], “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army[c][b], king over Israel that day in the camp.
+  to: And the people who were camped there heard it said, “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army over Israel, king that day in the camp.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the people who were camped there'', ''the commander of the army over Israel'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T17:22:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the people who were camped there heard it said, “Zimri has conspired and has also struck down the king.” So all Israel made Omri, the commander of the army over Israel, king that day in the camp.
+  to: 'The army in the camp heard the report: “Zimri has conspired against the king and has also killed him.” So that same day in the camp, all the Israelites there made Omri, the army commander, king over Israel.'
+  rationale: The recorded earlier wording correctly attached “over Israel” to the kingship, while the automated revert produced the current awkward attachment to the army. I restore the clearer grammatical relationship and make the camp's military setting explicit.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:59:39Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: 1 Kings 16:16 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the people who were camped there'', ''the commander of the army over Israel'']. Applied via defini'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After hearing that Zimri has killed the king, the Israelites assembled with the army immediately appoint their commander Omri king over Israel.
+  meaning_decisions:
+  - source_phrase: וַיִּשְׁמַע הָעָם הַחֹנִים לֵאמֹר
+    prior_rendering: And the people who were camped there heard it said
+    new_rendering: The army in the camp heard the report
+    rationale: The context identifies these people as the military force, and the formula introduces a reported announcement.
+  - source_phrase: קָשַׁר זִמְרִי וְגַם הִכָּה אֶת הַמֶּלֶךְ
+    prior_rendering: Zimri has conspired and has also struck down the king
+    new_rendering: Zimri has conspired against the king and has also killed him
+    rationale: The conspiracy's target is understood, and the preceding account establishes that the striking was fatal.
+  - source_phrase: כָל יִשְׂרָאֵל
+    prior_rendering: all Israel
+    new_rendering: all the Israelites there
+    rationale: The action takes place in the army camp; the collective expression does not mean that every Israelite throughout the country was physically present or supported Omri.
+  - source_phrase: וַיַּמְלִכוּ ... אֶת עָמְרִי שַׂר צָבָא עַל יִשְׂרָאֵל
+    prior_rendering: made Omri, the commander of the army over Israel, king
+    new_rendering: made Omri, the army commander, king over Israel
+    rationale: “Over Israel” belongs with making Omri king; attaching it to the army command obscures the scope of his appointment.
+  footnote_kinds: {}
+  history_weighed: The recorded earlier wording correctly attached “over Israel” to the kingship, while the automated revert produced the current awkward attachment to the army. I restore the clearer grammatical relationship and make the camp's military setting explicit.

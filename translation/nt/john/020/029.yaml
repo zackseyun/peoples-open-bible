@@ -4,11 +4,11 @@ source:
   edition: SBLGNT
   text: λέγει αὐτῷ ὁ Ἰησοῦς· Ὅτι ἑώρακάς με πεπίστευκας; μακάριοι οἱ μὴ ἰδόντες καὶ πιστεύσαντες.
 translation:
-  text: Jesus said to him, “Because[a] you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
-  philosophy: optimal-equivalence
+  text: Jesus said to him, “Have you believed because you have seen me[a]? Blessed are those who have not seen and yet have believed.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'Because you have seen me, you have believed.' The Greek can be read as either a question or a statement.
+    text: Or, “You have believed because you have seen me.” The sentence can be read as a question or a statement.
     reason: alternative_reading
 lexical_decisions:
 - source_word: λέγει αὐτῷ
@@ -85,13 +85,12 @@ revisions:
   from: Jesus said to him, “Because you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
   to: Jesus said to him, “Because you have seen me, you have believed? Blessed are those who have not seen and have believed.”
   rationale: Removed 'yet' to avoid adding a connective not explicit in the Greek; otherwise retained the draft's wording and punctuation.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jesus said to him[a], “Because you have seen me, you have believed? Blessed are those who have not seen and have believed.”'
-  to: 'Jesus said to him, “Because you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”'
+  from: Jesus said to him[a], “Because you have seen me, you have believed? Blessed are those who have not seen and have believed.”
+  to: Jesus said to him, “Because you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and yet have believed''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -101,6 +100,13 @@ revisions:
   from: Jesus said to him, “Because you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
   to: Jesus said to him, “Because[a] you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Because') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:11:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jesus said to him, “Because[a] you have seen me, you have believed? Blessed are those who have not seen and yet have believed.”
+  to: Jesus said to him, “Have you believed because you have seen me[a]? Blessed are those who have not seen and yet have believed.”
+  rationale: I retain the question reading with the serious statement alternative in a note. The history’s removal and restoration of “yet” concerned source transparency; I keep “yet” because it communicates the evident contrast in English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +126,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/020/029.job-7613.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus contrasts Thomas’s belief after seeing him with the blessedness of those who believe without seeing.
+  meaning_decisions:
+  - source_phrase: Ὅτι ἑώρακάς με πεπίστευκας;
+    prior_rendering: Because you have seen me, you have believed?
+    new_rendering: Have you believed because you have seen me?
+    rationale: Preserves the source edition’s interrogative reading and both perfect verbs while forming a natural English question.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the question reading with the serious statement alternative in a note. The history’s removal and restoration of “yet” concerned source transparency; I keep “yet” because it communicates the evident contrast in English.

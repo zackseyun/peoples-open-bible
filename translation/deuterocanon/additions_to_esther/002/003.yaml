@@ -21,12 +21,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 2 = Addition B, renumbered from the curated ADE stream where this royal-letter section is already isolated cleanly.
 translation:
-  text: And when I asked my counselors how this might be brought to completion[a], Haman showed us the way—he who excelled among us in prudence, had been proved unchanging in goodwill and in steadfast loyalty, and had received the second rank of honor in the kingdom.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Haman pointed it out to us' or 'Haman made it known to us.' The Greek leaves the direct object implicit after 'how this might be brought to completion.'
-    reason: lexical_alternative
+  text: When I asked my counselors how this could be accomplished, Haman—who excelled among us in prudence, had demonstrated constant goodwill and steadfast loyalty, and had received the second-highest rank of honor in the kingdom—informed us
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πυθομένου δέ μου
   chosen: when I asked
@@ -122,14 +118,20 @@ revisions:
   from: And when I asked my counselors how this might be brought to completion, Haman showed us the way—he who excelled among us in prudence, had been proved unchanging in goodwill and in steadfast loyalty, and had received the second rank of honor in the kingdom.
   to: And when I asked my counselors how this might be brought to completion, Haman showed us—he who excelled among us in prudence, had been proved unwavering in goodwill and steadfast fidelity, and had received the second honor of the kingdom.
   rationale: Removed 'the way' since it is not explicit in the Greek; adjusted 'unchanging' to 'unwavering' and 'loyalty' to 'fidelity' for a more formal rendering of the Greek; simplified 'second rank of honor in the kingdom' to 'second honor of the kingdom' to stay closer to the source wording.
-
 - timestamp: '2026-05-15T14:54:24Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when I asked my counselors how this might be brought to completion[a], Haman showed us—he who excelled among us in prudence, had been proved unwavering in goodwill and steadfast fidelity, and had received the second honor of the kingdom.'
-  to: 'And when I asked my counselors how this might be brought to completion[a], Haman showed us the way—he who excelled among us in prudence, had been proved unchanging in goodwill and in steadfast loyalty, and had received the second rank of honor in the kingdom.'
-  rationale: 'Restored 4 chosen renderings; azure substituted alternatives the drafter explicitly considered and rejected.'
+  from: And when I asked my counselors how this might be brought to completion[a], Haman showed us—he who excelled among us in prudence, had been proved unwavering in goodwill and steadfast fidelity, and had received the second honor of the kingdom.
+  to: And when I asked my counselors how this might be brought to completion[a], Haman showed us the way—he who excelled among us in prudence, had been proved unchanging in goodwill and in steadfast loyalty, and had received the second rank of honor in the kingdom.
+  rationale: Restored 4 chosen renderings; azure substituted alternatives the drafter explicitly considered and rejected.
+- timestamp: '2026-11-09T18:59:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when I asked my counselors how this might be brought to completion[a], Haman showed us the way—he who excelled among us in prudence, had been proved unchanging in goodwill and in steadfast loyalty, and had received the second rank of honor in the kingdom.
+  to: When I asked my counselors how this could be accomplished, Haman—who excelled among us in prudence, had demonstrated constant goodwill and steadfast loyalty, and had received the second-highest rank of honor in the kingdom—informed us
+  rationale: The review rightly questioned 'the way,' but its replacement left the disclosure incomplete; 'informed us' connects directly to verse 4. I retain the documented political meaning 'loyalty' and the substance of Haman's second-place honor.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -149,3 +151,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/002/003.job-50229.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king praises Haman's prudence, goodwill, loyalty, and high rank as he introduces Haman's response to his inquiry.
+  meaning_decisions:
+  - source_phrase: ἐν τῇ εὐνοίᾳ ἀπαραλλάκτως καὶ βεβαίᾳ πίστει ἀποδεδειγμένος
+    prior_rendering: had been proved unchanging in goodwill and in steadfast loyalty
+    new_rendering: had demonstrated constant goodwill and steadfast loyalty
+    rationale: The phrase praises demonstrated reliability in royal service; the new wording expresses that character assessment naturally while preserving both goodwill and loyalty.
+  - source_phrase: δεύτερον τῶν βασιλείων γέρας ἀπενηνεγμένος
+    prior_rendering: had received the second rank of honor in the kingdom
+    new_rendering: had received the second-highest rank of honor in the kingdom
+    rationale: The honor places Haman immediately below the king, rather than merely describing a second category of distinction.
+  - source_phrase: Ἁμὰν ἐπεδείξεν ἡμῖν
+    prior_rendering: Haman showed us the way
+    new_rendering: Haman ... informed us
+    rationale: The disclosure is the accusation that follows in verse 4, not explicitly a method for accomplishing the king's aim.
+  footnote_kinds: {}
+  history_weighed: The review rightly questioned 'the way,' but its replacement left the disclosure incomplete; 'informed us' connects directly to verse 4. I retain the documented political meaning 'loyalty' and the substance of Haman's second-place honor.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יְהִ֨י הַ/יּ֜וֹם וַ/יַּעֲבֹ֧ר אֱלִישָׁ֣ע אֶל שׁוּנֵ֗ם וְ/שָׁם֙ אִשָּׁ֣ה גְדוֹלָ֔ה וַ/תַּחֲזֶק בּ֖/וֹ לֶ/אֱכָל לָ֑חֶם וַֽ/יְהִי֙ מִ/דֵּ֣י עָבְר֔/וֹ יָסֻ֥ר שָׁ֖מָּ/ה לֶ/אֱכָל לָֽחֶם־־־־׃
 translation:
-  text: And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.
-  philosophy: optimal-equivalence
+  text: One day Elisha passed through Shunem, where a prominent woman[a] urged him to have a meal. So whenever he passed by, he would stop there for a meal.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'a great woman'; the phrase likely refers to social prominence or means.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'to eat bread,' an idiom for taking a meal.
-    reason: lexical_alternative
+    text: Or, “a wealthy woman.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיְהִי הַיּוֹם
   chosen: And one day
@@ -89,14 +86,20 @@ revisions:
   from: And one day Elisha passed through Shunem, where there was a prominent woman, and she urged him to eat food. So whenever he passed by, he would turn in there to eat food.
   to: And one day Elisha passed through Shunem, where there was a prominent woman, and she urged him to eat food. So whenever he passed by, he would turn in there to eat food.
   rationale: Replaced 'food' with 'bread' to reflect the Hebrew more precisely and consistently in both occurrences; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.'
-  to: 'And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.'
+  from: And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.
+  to: And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to eat food''].'
+- timestamp: '2026-11-09T17:26:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And one day Elisha passed through Shunem[a], where there was a prominent woman, and she urged him to eat bread. So whenever he passed by[b], he would turn in there to eat bread.
+  to: One day Elisha passed through Shunem, where a prominent woman[a] urged him to have a meal. So whenever he passed by, he would stop there for a meal.
+  rationale: I retained “prominent” because the earlier deliberation rightly resisted narrowing her standing to wealth alone. Although the review history is inconsistent about bread and food, its lexical rationale clearly recognizes a meal idiom, which supports moving beyond the current literal wording.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -116,3 +119,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/004/008.job-60341.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A prominent woman in Shunem persuades Elisha to accept a meal, and her home becomes his customary meal stop when he passes through.
+  meaning_decisions:
+  - source_phrase: לֶאֱכָל לָחֶם
+    prior_rendering: to eat bread
+    new_rendering: to have a meal; for a meal
+    rationale: Eating bread is the Hebrew expression for taking a meal here, not a statement that her hospitality consisted specifically of bread.
+  - source_phrase: יָסֻר שָׁמָּה
+    prior_rendering: he would turn in there
+    new_rendering: he would stop there
+    rationale: The action is stopping at her home to eat; “turn in” can suggest going to bed to a contemporary reader.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained “prominent” because the earlier deliberation rightly resisted narrowing her standing to wealth alone. Although the review history is inconsistent about bread and food, its lexical rationale clearly recognizes a meal idiom, which supports moving beyond the current literal wording.

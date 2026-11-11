@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: שָׁ֤ם אַשּׁוּר֙ וְ/כָל קְהָלָ֔/הּ סְבִֽיבוֹתָ֖י/ו קִבְרֹתָ֑י/ו כֻּלָּ֣/ם חֲלָלִ֔ים הַ/נֹּפְלִ֖ים בֶּ/חָֽרֶב־׃
 translation:
-  text: There is Assyria and all her assembly[a], with his graves all around him; all of them are slain, fallen by the sword.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Hebrew shifts in gender/personification: ''Assyria'' and ''all her assembly'' are followed by masculine suffixes in ''his graves'' and ''around him.'' The translation preserves this shift rather than smoothing it out.'
-    reason: lexical_alternative
+  text: There lies Assyria with all her company, their graves all around her; all of them are slain, fallen by the sword.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שָׁם
   chosen: There is
@@ -93,14 +89,20 @@ revisions:
   from: There is Assyria and all her assembly, with his graves all around him; all of them are slain, fallen by the sword.
   to: There is Assyria and all her assembly, her graves all around her; all of them are slain, fallen by the sword.
   rationale: 'Adjusted pronouns for consistency with the feminine referent ''Assyria'': changed ''his graves all around him'' to ''her graves all around her.'''
-
 - timestamp: '2026-05-16T02:38:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There is Assyria and all her assembly[a], her graves all around her; all of them are slain, fallen by the sword.'
-  to: 'There is Assyria and all her assembly[a], with his graves all around him; all of them are slain, fallen by the sword.'
-  rationale: 'Azure normalized Hebrew masculine 3ms suffixes (קִבְרֹתָיו, סְבִיבוֹתָיו) to feminine ''her graves all around her'' for English consistency — erasing intentional Hebrew gender shift drafter documented in footnote.'
+  from: There is Assyria and all her assembly[a], her graves all around her; all of them are slain, fallen by the sword.
+  to: There is Assyria and all her assembly[a], with his graves all around him; all of them are slain, fallen by the sword.
+  rationale: Azure normalized Hebrew masculine 3ms suffixes (קִבְרֹתָיו, סְבִיבוֹתָיו) to feminine 'her graves all around her' for English consistency — erasing intentional Hebrew gender shift drafter documented in footnote.
+- timestamp: '2026-11-09T17:44:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There is Assyria and all her assembly[a], with his graves all around him; all of them are slain, fallen by the sword.
+  to: There lies Assyria with all her company, their graves all around her; all of them are slain, fallen by the sword.
+  rationale: The automated revision and subsequent revert disagreed over preserving the Hebrew gender shift; neither was a MAINTAINER decision. I retain the surrounding-graves image but depart from the restored masculine pronouns because they obscure the referents in English, and omit the grammatical footnote because the shift does not establish a distinct figure.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -120,3 +122,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/032/022.job-64112.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Assyria and her entire company lie among the dead, with the company’s graves surrounding her, all having fallen by the sword.
+  meaning_decisions:
+  - source_phrase: שָׁם אַשּׁוּר
+    prior_rendering: There is Assyria
+    new_rendering: There lies Assyria
+    rationale: The surrounding description of Sheol and graves makes this a presentation of Assyria lying among the dead, not merely a statement of location.
+  - source_phrase: וְכָל קְהָלָהּ
+    prior_rendering: and all her assembly
+    new_rendering: with all her company
+    rationale: “Company” conveys the gathered body accompanying Assyria without suggesting a formal deliberative assembly or restricting the group exclusively to soldiers.
+  - source_phrase: סְבִיבוֹתָיו קִבְרֹתָיו
+    prior_rendering: with his graves all around him
+    new_rendering: their graves all around her
+    rationale: The tableau, continued in verse 23, places the company’s graves around personified Assyria. Consistent English pronouns convey that relationship without suggesting an otherwise unidentified male figure.
+  footnote_kinds: {}
+  history_weighed: The automated revision and subsequent revert disagreed over preserving the Hebrew gender shift; neither was a MAINTAINER decision. I retain the surrounding-graves image but depart from the restored masculine pronouns because they obscure the referents in English, and omit the grammatical footnote because the shift does not establish a distinct figure.

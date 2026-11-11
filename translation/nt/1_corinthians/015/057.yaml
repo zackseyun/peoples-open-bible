@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: τῷ δὲ θεῷ χάρις τῷ διδόντι ἡμῖν τὸ νῖκος διὰ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ.
 translation:
-  text: But thanks be to God[a], who gives us the victory through our Lord Jesus Christ.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
+  text: But thanks be to God, who gives us the victory through our Lord Jesus Christ.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: χάρις
   chosen: thanks be to
@@ -103,10 +99,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "But thanks be to God, who gives us the victory through our Lord Jesus Messiah."
-  to: "But thanks be to God, who gives us the victory through our Lord Jesus the Messiah."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: But thanks be to God, who gives us the victory through our Lord Jesus Messiah.
+  to: But thanks be to God, who gives us the victory through our Lord Jesus the Messiah.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But thanks be to God[a], who gives us the victory through our Lord Jesus Christ.
+  to: But thanks be to God, who gives us the victory through our Lord Jesus Christ.
+  rationale: The history alternates between “Jesus Christ” and forms using “Messiah,” largely because earlier policy passes disagreed. I retain the current “Jesus Christ” in accordance with the standing ruling for this name construction and omit the unnecessary terminology note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +130,17 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/015/057.job-53006.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:17Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul gives thanks to God for granting believers victory over death through their Lord Jesus Christ.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The history alternates between “Jesus Christ” and forms using “Messiah,” largely because earlier policy passes disagreed. I retain the current “Jesus Christ” in accordance with the standing ruling for this name construction and omit the unnecessary terminology note.

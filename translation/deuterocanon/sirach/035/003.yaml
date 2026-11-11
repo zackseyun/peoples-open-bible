@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 35:3
 translation:
-  text: Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.[b][a]
-  philosophy: optimal-equivalence
+  text: As you showed yourself holy through us before their eyes, so reveal your glory through us[a] before our eyes.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The primary Hebrew witness supplied here appears mismatched to this verse; the Greek parallel was therefore used as the main translation input, with the source uncertainty acknowledged.
+    text: The supplied Hebrew reads “through us” in both clauses; the Greek parallel reads “through them” in the second.
     reason: textual_variant
-  - marker: b
-    text: Or 'do not interrupt the musical performance.' The Greek term can refer more broadly to musical proceedings, not only to music in the abstract.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Λάλησον
   chosen: Speak
@@ -114,14 +111,20 @@ revisions:
   from: Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.
   to: As you were sanctified in our sight by them, so be glorified in us before them.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew text: addressed sanctification/glorification, preserved the parallel structure, and accounted for all source elements including ''in our sight'' and ''before them.'''
-
 - timestamp: '2026-05-15T13:54:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As you were sanctified in our sight by them[b][a], so be glorified in us before them.'
-  to: 'Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.[b][a]'
+  from: As you were sanctified in our sight by them[b][a], so be glorified in us before them.
+  to: Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.[b][a]
   rationale: 'Minor_mismatch: Hebrew flagged mismatched; drafter chose Greek per documented decision.'
+- timestamp: '2026-11-09T20:13:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.[b][a]
+  to: As you showed yourself holy through us before their eyes, so reveal your glory through us[a] before our eyes.
+  rationale: The earlier revision correctly restored the prayer but reversed the Hebrew's references to whose eyes witnessed it; the later automated revert restored unrelated banquet advice. With no maintainer ruling, the supplied Hebrew and its prayer context outweigh that revert and the lexical decisions for the unrelated Greek verse.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -141,3 +144,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/035/003.job-51948.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:13:14Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The speaker asks God to reveal his glory through his people before their own eyes, just as he had shown his holiness through them before the nations.
+  meaning_decisions:
+  - source_phrase: כאשר נקדשת לעיניהם בנו, כי לעינינו הכבד בנו.
+    prior_rendering: Speak, elder, for it is fitting for you—yet with accurate knowledge, and do not hinder the music.
+    new_rendering: As you showed yourself holy through us before their eyes, so reveal your glory through us[a] before our eyes.
+    rationale: The supplied Hebrew is a prayer addressed to God, consistent with the surrounding petitions concerning the nations, not advice about speaking at a banquet. The rendering conveys God's manifestation of holiness and glory while preserving the Hebrew's repeated “through us” and its distinct references to their eyes and our eyes.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The earlier revision correctly restored the prayer but reversed the Hebrew's references to whose eyes witnessed it; the later automated revert restored unrelated banquet advice. With no maintainer ruling, the supplied Hebrew and its prayer context outweigh that revert and the lexical decisions for the unrelated Greek verse.

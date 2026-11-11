@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/אֶל הַ/כָּתֵ֣ף מִ/ח֗וּצָ/ה לָ/עוֹלֶה֙ לְ/פֶ֨תַח֙ הַ/שַּׁ֣עַר הַ/צָּפ֔וֹנָ/ה שְׁנַ֖יִם שֻׁלְחָנ֑וֹת וְ/אֶל הַ/כָּתֵ֣ף הָ/אַחֶ֗רֶת אֲשֶׁר֙ לְ/אֻלָ֣ם הַ/שַּׁ֔עַר שְׁנַ֖יִם שֻׁלְחָנֽוֹת־־׃
 translation:
-  text: And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'side' / 'flank' for 'shoulder' in this architectural description.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'at the ascent' or 'where one goes up to the entrance of the north gate.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'which was by the porch of the gate'; the Hebrew expression indicates association with the gate's porch/vestibule.
-    reason: lexical_alternative
+  text: Outside, beside the steps leading up to the north gate's entrance, were two tables on one side; on the other side of the gate's portico were two more.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כָּתֵף
   chosen: shoulder
@@ -102,14 +92,20 @@ revisions:
   from: And on the outer side of the shoulder, by the ascent to the entrance of the north gate, were two tables; and on the other shoulder, which belonged to the porch of the gate, were two tables.
   to: And on the outer side of the shoulder, by the ascent to the entrance of the north gate, were two tables; and on the other shoulder, which belonged to the porch of the gate, were two tables.
   rationale: Replaced both instances of 'shoulder' with 'side' for more natural and contextually accurate English in architectural description; otherwise retained the structure and content.
-
 - timestamp: '2026-05-18T02:55:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.'
-  to: 'And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.'
+  from: And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.
+  to: And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shoulder''].'
+- timestamp: '2026-11-09T17:40:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on the outer side[a], by the ascent to the entrance of the north gate, were two tables; and on the other side, which belonged to the porch of the gate[c][b], were two tables.
+  to: Outside, beside the steps leading up to the north gate's entrance, were two tables on one side; on the other side of the gate's portico were two more.
+  rationale: The automated review recognized that architectural 'shoulder' means 'side'; the revert defended source transparency rather than a different spatial meaning. I retain the current wording's gain and clarify the ascent and the relationship to the portico.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -129,3 +125,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/040/040.job-64334.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:40:23Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Four further tables stand outside near the ascent to the north gate, two on each side of its portico.
+  meaning_decisions:
+  - source_phrase: וְאֶל הַכָּתֵף מִחוּצָה לָעוֹלֶה לְפֶתַח הַשַּׁעַר הַצָּפוֹנָה
+    prior_rendering: on the outer side, by the ascent to the entrance of the north gate
+    new_rendering: Outside, beside the steps leading up to the north gate's entrance ... on one side
+    rationale: The description locates the tables outside beside the upward approach; the preceding verse has already identified the steps.
+  - source_phrase: וְאֶל הַכָּתֵף הָאַחֶרֶת אֲשֶׁר לְאֻלָם הַשַּׁעַר
+    prior_rendering: on the other side, which belonged to the porch of the gate
+    new_rendering: on the other side of the gate's portico
+    rationale: The phrase describes a spatial relationship, not ownership, and 'portico' keeps the same architectural referent as verse 39.
+  footnote_kinds: {}
+  history_weighed: The automated review recognized that architectural 'shoulder' means 'side'; the revert defended source transparency rather than a different spatial meaning. I retain the current wording's gain and clarify the ascent and the relationship to the portico.

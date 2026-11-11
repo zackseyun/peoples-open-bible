@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יֵּצְא֗וּ נַעֲרֵ֛י שָׂרֵ֥י הַ/מְּדִינ֖וֹת בָּ/רִֽאשֹׁנָ֑ה וַ/יִּשְׁלַ֣ח בֶּן הֲדַ֗ד וַ/יַּגִּ֤ידוּ ל/וֹ֙ לֵ/אמֹ֔ר אֲנָשִׁ֕ים יָצְא֖וּ מִ/שֹּׁמְרֽוֹן־׃
 translation:
-  text: Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”
-  philosophy: optimal-equivalence
+  text: The young attendants[a] of the provincial officials went out first. Ben-hadad sent out scouts, who reported to him, “Men have come out of Samaria.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew simply says 'Ben-hadad sent'; 'sent out scouts' makes explicit the implied object from the context of the ensuing report.
-    reason: lexical_alternative
+    text: Or, “young men.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: נַעֲרֵי
   chosen: the young men of
@@ -85,14 +85,20 @@ revisions:
   from: Then the young men of the provincial commanders went out first, and Ben-hadad sent out scouts, and they reported to him, saying, “Men have come out from Samaria.”
   to: Then the young men of the provincial commanders went out first, and Ben-hadad sent out scouts, and they reported to him, saying, “Men have come out from Samaria.”
   rationale: Replaced 'provincial commanders' with 'commanders of the provinces' for closer lexical correspondence, and removed 'out scouts' since the source simply says 'sent' without specifying scouts.
-
 - timestamp: '2026-05-16T07:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”'
-  to: 'Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”'
+  from: Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”
+  to: Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”
   rationale: 'Azure substituted BOTH documented rejected_alternatives: ''commanders of the provinces'' (drafter chose ''provincial commanders'' for concise optimal-equivalence) and bare ''sent'' (drafter chose ''sent out scouts'' to surface implied military object).'
+- timestamp: '2026-11-09T17:22:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the young men of the commanders of the provinces went out first[a], and Ben-hadad sent, and they reported to him, saying, “Men have come out from Samaria.”
+  to: The young attendants[a] of the provincial officials went out first. Ben-hadad sent out scouts, who reported to him, “Men have come out of Samaria.”
+  rationale: The history debated the first draft’s 'sent out scouts' against a bare 'sent'; the contextual clarification is preferable to leaving the English verb incomplete. The documented lexical discussion also recognizes these men as attendants, and no maintainer revision requires the longer construct-chain wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -112,3 +118,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/020/017.job-58655.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The provincial officials’ young attendants led the advance, and Ben-hadad’s scouts reported that men had come out of Samaria.
+  meaning_decisions:
+  - source_phrase: נַעֲרֵי שָׂרֵי הַמְּדִינוֹת
+    prior_rendering: the young men of the commanders of the provinces
+    new_rendering: the young attendants of the provincial officials
+    rationale: The phrase identifies men attached to provincial leaders, not merely young men from those provinces; 'officials' does not impose a specifically military rank on the leaders.
+  - source_phrase: וַיִּשְׁלַח בֶּן הֲדַד וַיַּגִּידוּ לוֹ
+    prior_rendering: Ben-hadad sent, and they reported to him
+    new_rendering: Ben-hadad sent out scouts, who reported to him
+    rationale: The ensuing reconnaissance report supplies the unstated object of 'sent'; making it explicit completes the English sentence without adding a new event.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history debated the first draft’s 'sent out scouts' against a bare 'sent'; the contextual clarification is preferable to leaving the English verb incomplete. The documented lexical discussion also recognizes these men as attendants, and no maintainer revision requires the longer construct-chain wording.

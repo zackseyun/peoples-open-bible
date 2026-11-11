@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַֽ/יַּעֲנ֞וּ חֲמֵ֣שֶׁת הָ/אֲנָשִׁ֗ים הַ/הֹלְכִים֮ לְ/רַגֵּל֮ אֶת הָ/אָ֣רֶץ לַיִשׁ֒ וַ/יֹּֽאמְרוּ֙ אֶל אֲחֵי/הֶ֔ם הַ/יְדַעְתֶּ֗ם כִּ֠י יֵ֣שׁ בַּ/בָּתִּ֤ים הָ/אֵ֨לֶּה֙ אֵפ֣וֹד וּ/תְרָפִ֔ים וּ/פֶ֖סֶל וּ/מַסֵּכָ֑ה וְ/עַתָּ֖ה דְּע֥וּ מַֽה תַּעֲשֽׂוּ־־־׃
 translation:
-  text: Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”
-  philosophy: optimal-equivalence
+  text: Then the five men who had gone to spy out the land of Laish said to their fellow Danites, “Do you know that these houses contain an ephod[a], household idols, a carved image, and a cast image? Now consider what you will do.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'teraphim'; the Hebrew term refers to household cult images or household gods.
-    reason: lexical_alternative
-  - marker: b
-    text: Traditional English often has 'molten image' for 'cast image.'
+    text: A priestly garment or sacred object associated with seeking divine guidance; its precise form here is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּעֲנוּ
@@ -151,14 +148,20 @@ revisions:
   from: Then the five men who had gone to spy out the land of Laish answered and said to their brothers, “Do you know that in these houses there are an ephod, household idols, a carved image, and a cast image? So now, know what you will do.”
   to: Then the five men who had gone to spy out the land of Laish answered and said to their brothers, “Do you know that in these houses there are an ephod, household idols, a carved image, and a cast image? So now, know what you will do.”
   rationale: Replaced 'household idols' with 'teraphim' for closer lexical accuracy to the source term תְרָפִים and to avoid interpretive expansion. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”'
-  to: 'Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”'
+  from: Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”
+  to: Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''household idols''].'
+- timestamp: '2026-11-09T18:15:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the five men who had gone to spy out the land of Laish answered and said to their brothers[a], “Do you know that in these houses there are an ephod, teraphim, a carved image, and a cast image? So now[b], know what you will do.”
+  to: Then the five men who had gone to spy out the land of Laish said to their fellow Danites, “Do you know that these houses contain an ephod[a], household idols, a carved image, and a cast image? Now consider what you will do.”
+  rationale: The first draft and documented lexical decision favor household idols, whereas the later transliteration obscures the object type without a meaning-based gain. I retain the inventory’s distinctions and the open-ended prompt, translating the speech and deliberation idioms naturally.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -178,3 +181,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/018/014.job-69311.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:15:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The five scouts told their fellow Danites about Micah’s sacred objects and urged them to consider their next action.
+  meaning_decisions:
+  - source_phrase: וַיַּעֲנוּ ... וַיֹּאמְרוּ אֶל אֲחֵיהֶם
+    prior_rendering: answered and said to their brothers
+    new_rendering: said to their fellow Danites
+    rationale: The speech formula introduces their intervention without requiring a previously spoken question, and the kinship term identifies tribal companions.
+  - source_phrase: תְּרָפִים
+    prior_rendering: teraphim
+    new_rendering: household idols
+    rationale: Names the domestic cult images intelligibly while preserving their distinction from the carved and cast images.
+  - source_phrase: וְעַתָּה דְּעוּ מַה תַּעֲשׂוּ
+    prior_rendering: So now, know what you will do
+    new_rendering: Now consider what you will do
+    rationale: The imperative calls for informed deliberation about their response; the English leaves the contemplated action unstated, as the Hebrew does.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft and documented lexical decision favor household idols, whereas the later transliteration obscures the object type without a meaning-based gain. I retain the inventory’s distinctions and the open-ended prompt, translating the speech and deliberation idioms naturally.

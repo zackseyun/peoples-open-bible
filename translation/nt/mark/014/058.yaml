@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὅτι Ἡμεῖς ἠκούσαμεν αὐτοῦ λέγοντος ὅτι Ἐγὼ καταλύσω τὸν ναὸν τοῦτον τὸν χειροποίητον καὶ διὰ τριῶν ἡμερῶν ἄλλον ἀχειροποίητον οἰκοδομήσω·
 translation:
-  text: that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “in three days.” The Greek expression διὰ τριῶν ἡμερῶν here most naturally indicates the span within which the action would occur.
-    reason: lexical_alternative
-  - marker: b
-    text: “Made with hands” and “not made with hands” preserve the Greek contrast between χειροποίητον and ἀχειροποίητον.
-    reason: lexical_alternative
+  text: “We heard him say, ‘I will destroy this temple made by human hands, and in three days I will build another not made by human hands.’”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅτι
   chosen: that
@@ -115,14 +108,20 @@ revisions:
   from: that, ‘We heard him saying, “I will destroy this temple made with hands, and within three days I will build another not made with hands.”’
   to: that, ‘We heard him saying, “I will destroy this temple made with hands, and within three days I will build another not made with hands.”’
   rationale: Changed “within three days” to “in three days” for a more direct and natural rendering of διὰ τριῶν ἡμερῶν; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’'
-  to: 'that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’'
+  from: that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’
+  to: that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''within three days''].'
+- timestamp: '2026-11-09T17:14:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: that[a], ‘We heard him saying, “I will destroy this temple made with hands[b], and in three days I will build another not made with hands.”’
+  to: “We heard him say, ‘I will destroy this temple made by human hands, and in three days I will build another not made by human hands.’”
+  rationale: The recorded timing history is inconsistent, but the current “in three days” conveys the span naturally and is retained. I preserve the reported accusation and the construction contrast without explaining what the second temple represents.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +143,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/014/058.job-38758.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:47Z'
+  change_level: refined
+  confidence: high
+  meaning: The witnesses claim that Jesus said he would destroy the human-built temple and build another not made by human hands in three days.
+  meaning_decisions:
+  - source_phrase: ὅτι Ἡμεῖς ἠκούσαμεν αὐτοῦ λέγοντος ὅτι
+    prior_rendering: that, ‘We heard him saying,
+    new_rendering: “We heard him say,
+    rationale: English quotation marks carry the quotation-introducing function of both occurrences of ὅτι; retaining “that” before direct speech obscures the sentence.
+  - source_phrase: τὸν χειροποίητον ... ἀχειροποίητον
+    prior_rendering: made with hands ... not made with hands
+    new_rendering: made by human hands ... not made by human hands
+    rationale: The contrast concerns human construction, not merely manual work; making “human” explicit preserves the image and its wider resonance.
+  footnote_kinds: {}
+  history_weighed: The recorded timing history is inconsistent, but the current “in three days” conveys the span naturally and is retained. I preserve the reported accusation and the construction contrast without explaining what the second temple represents.

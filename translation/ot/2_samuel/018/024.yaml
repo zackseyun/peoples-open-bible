@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/דָוִ֥ד יוֹשֵׁ֖ב בֵּין שְׁנֵ֣י הַ/שְּׁעָרִ֑ים וַ/יֵּ֨לֶךְ הַ/צֹּפֶ֜ה אֶל גַּ֤ג הַ/שַּׁ֨עַר֙ אֶל הַ֣/חוֹמָ֔ה וַ/יִּשָּׂ֤א אֶת עֵינָי/ו֙ וַ/יַּ֔רְא וְ/הִנֵּה אִ֖ישׁ רָ֥ץ לְ/בַדּֽ/וֹ־־־־־׃
 translation:
-  text: David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
-  philosophy: optimal-equivalence
+  text: David was sitting between the two gates[a]. The watchman went up to the roof of the gatehouse by the wall. He looked out and saw a man running alone.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "between the two gatehouses"; the Hebrew literally says "between the two gates," likely referring to the space within a fortified gateway.
-    reason: lexical_alternative
+    text: Fortified city entrances often had an inner gate and an outer gate.
+    reason: cultural_note
 lexical_decisions:
 - source_word: יוֹשֵׁב
   chosen: was sitting
@@ -17,7 +17,7 @@ lexical_decisions:
   - sat
   - was staying
   lexicon: HALOT
-  rationale: "The participle describes David's ongoing posture/state at this moment in the narrative, so the English progressive 'was sitting' best reflects the durative sense in readable narrative English. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The participle describes David''s ongoing posture/state at this moment in the narrative, so the English progressive ''was sitting'' best reflects the durative sense in readable narrative English. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: בֵּין שְׁנֵי הַשְּׁעָרִים
   chosen: between the two gates
   alternatives:
@@ -93,13 +93,12 @@ revisions:
   from: Now David was sitting between the two gates, and the watchman went to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running by himself.
   to: Now David was sitting between the two gates, and the watchman went to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running by himself.
   rationale: Changed 'went' to 'went up' to reflect ascent to the roof, and 'by himself' to 'alone' for more natural formal English.
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.'
-  to: 'Now David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.'
+  from: Now David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
+  to: Now David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by himself''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -108,6 +107,13 @@ revisions:
   from: Now David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
   to: David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:28:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David was sitting between the two gates[a], and the watchman went up to the roof of the gate by the wall. He lifted up his eyes and looked, and behold, a man was running alone.
+  to: David was sitting between the two gates[a]. The watchman went up to the roof of the gatehouse by the wall. He looked out and saw a man running alone.
+  rationale: I retain the current wording’s ongoing posture, ascent to the roof, and solitary runner. The architectural discussion supports clarifying “gate” as “gatehouse,” while the observation idiom can be expressed without the draft’s source-shaped sequence.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +133,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/018/024.job-45843.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:36Z'
+  change_level: refined
+  confidence: high
+  meaning: While David sits within the city gateway, the watchman climbs to the roof and spots a solitary runner.
+  meaning_decisions:
+  - source_phrase: אֶל גַּג הַשַּׁעַר אֶל הַחוֹמָה
+    prior_rendering: to the roof of the gate by the wall
+    new_rendering: to the roof of the gatehouse by the wall
+    rationale: The roof belongs to the gateway structure, not to the gate doors; “gatehouse” makes the architecture intelligible.
+  - source_phrase: וַיִּשָּׂא אֶת עֵינָיו וַיַּרְא וְהִנֵּה
+    prior_rendering: He lifted up his eyes and looked, and behold
+    new_rendering: He looked out and saw
+    rationale: The construction introduces what the watchman observes; it does not require the reader to picture a separate gesture of lifting his eyes.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current wording’s ongoing posture, ascent to the roof, and solitary runner. The architectural discussion supports clarifying “gate” as “gatehouse,” while the observation idiom can be expressed without the draft’s source-shaped sequence.

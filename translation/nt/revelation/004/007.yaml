@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ τὸ ζῷον τὸ πρῶτον ὅμοιον λέοντι, καὶ τὸ δεύτερον ζῷον ὅμοιον μόσχῳ, καὶ τὸ τρίτον ζῷον ⸀ἔχων ⸂τὸ πρόσωπον ὡς⸃ ἀνθρώπου, καὶ τὸ τέταρτον ζῷον ὅμοιον ἀετῷ πετομένῳ·
 translation:
-  text: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man[a], and the fourth living creature was like an eagle in flight.
-  philosophy: optimal-equivalence
+  text: The first living creature was like a lion, the second like a calf[a], the third had a face like that of a human being, and the fourth was like an eagle in flight.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'a human face.' The Greek literally says 'a face like a man.'
-    reason: lexical_alternative
+    text: Or, “an ox.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ζῷον
   chosen: living creature
@@ -92,13 +92,12 @@ revisions:
   from: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man, and the fourth living creature was like an eagle in flight.
   to: And the first living creature was like a lion, and the second living creature like an ox, and the third living creature had a face like a man, and the fourth living creature was like a flying eagle.
   rationale: Changed 'calf' to 'ox' for better lexical accuracy for μόσχῳ in this visionary context, and changed 'an eagle in flight' to 'a flying eagle' for a more direct rendering of ἀετῷ πετομένῳ. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the first living creature was like a lion[a], and the second living creature like an ox, and the third living creature had a face like a man, and the fourth living creature was like a flying eagle.'
-  to: 'And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man, and the fourth living creature was like an eagle in flight.'
+  from: And the first living creature was like a lion[a], and the second living creature like an ox, and the third living creature had a face like a man, and the fourth living creature was like a flying eagle.
+  to: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man, and the fourth living creature was like an eagle in flight.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in flight''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -108,6 +107,13 @@ revisions:
   from: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man, and the fourth living creature was like an eagle in flight.
   to: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man[a], and the fourth living creature was like an eagle in flight.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('a face like a man') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:16:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the first living creature was like a lion, and the second living creature like a calf, and the third living creature had a face like a man[a], and the fourth living creature was like an eagle in flight.
+  to: The first living creature was like a lion, the second like a calf[a], the third had a face like that of a human being, and the fourth was like an eagle in flight.
+  rationale: I retain the draft's “calf” and “eagle in flight”; the ordinary meaning of μόσχος supports the former, while “ox” remains a serious alternative. The earlier human-face note is now carried directly in the text without losing the comparison.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +133,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/004/007.job-47416.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The four living creatures respectively resemble a lion, a calf, a human face, and an eagle in flight.
+  meaning_decisions:
+  - source_phrase: τὸ πρόσωπον ὡς ἀνθρώπου
+    prior_rendering: a face like a man
+    new_rendering: a face like that of a human being
+    rationale: The comparison is between faces, and ἀνθρώπου identifies human likeness without requiring a specifically male interpretation.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the draft's “calf” and “eagle in flight”; the ordinary meaning of μόσχος supports the former, while “ox” remains a serious alternative. The earlier human-face note is now carried directly in the text without losing the comparison.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἡμέρας παρατηρεῖσθε καὶ μῆνας καὶ καιροὺς καὶ ἐνιαυτούς.
 translation:
-  text: You are carefully observing days and months and seasons[a] and years.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'You observe days and months and appointed times and years.' The list refers to calendrical observances; 'appointed times' is a possible rendering of 'seasons' (καιρούς).
-    reason: lexical_alternative
+  text: You are carefully observing religious days, months, appointed times, and years.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἡμέρας
   chosen: days
@@ -76,13 +72,12 @@ revisions:
   from: You are carefully observing days and months and seasons and years.
   to: You are observing days and months and seasons and years.
   rationale: Removed 'carefully' because παρατηρεῖσθε here is adequately represented by 'are observing' without adding emphasis not explicit in the Greek.
-
 - timestamp: '2026-05-18T03:10:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You are observing days and months and seasons and years[a].'
-  to: 'You are carefully observing days and months and seasons and years.'
+  from: You are observing days and months and seasons and years[a].
+  to: You are carefully observing days and months and seasons and years.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''are carefully observing''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -92,6 +87,13 @@ revisions:
   from: You are carefully observing days and months and seasons and years.
   to: You are carefully observing days and months and seasons[a] and years.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('seasons') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:09:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You are carefully observing days and months and seasons[a] and years.
+  to: You are carefully observing religious days, months, appointed times, and years.
+  rationale: The history disputes whether “carefully” is needed; the lexical evidence for close or scrupulous observance supports retaining it. I move the earlier note’s calendrical clarification into the text, without specifying Sabbaths, festivals, or other individual observances.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -111,3 +113,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/galatians/004/010.job-54281.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:00Z'
+  change_level: refined
+  confidence: high
+  meaning: The Galatians are meticulously keeping religious calendar observances.
+  meaning_decisions:
+  - source_phrase: ἡμέρας παρατηρεῖσθε καὶ μῆνας καὶ καιροὺς καὶ ἐνιαυτούς
+    prior_rendering: You are carefully observing days and months and seasons and years
+    new_rendering: You are carefully observing religious days, months, appointed times, and years
+    rationale: The context makes these religious calendar observances, not ordinary attention to passing time; the supplied modifier communicates what the first hearers understood without identifying particular rites.
+  - source_phrase: καιρούς
+    prior_rendering: seasons
+    new_rendering: appointed times
+    rationale: This conveys scheduled occasions in a religious calendar and avoids suggesting the weather seasons.
+  footnote_kinds: {}
+  history_weighed: The history disputes whether “carefully” is needed; the lexical evidence for close or scrupulous observance supports retaining it. I move the earlier note’s calendrical clarification into the text, without specifying Sabbaths, festivals, or other individual observances.

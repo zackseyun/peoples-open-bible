@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἰδοὺ τρίτον ⸀τοῦτο ἑτοίμως ἔχω ἐλθεῖν πρὸς ὑμᾶς, καὶ οὐ ⸀καταναρκήσω· οὐ γὰρ ζητῶ τὰ ὑμῶν ἀλλὰ ὑμᾶς, οὐ γὰρ ὀφείλει τὰ τέκνα τοῖς γονεῦσιν θησαυρίζειν, ἀλλὰ οἱ γονεῖς τοῖς τέκνοις.
 translation:
-  text: Look, this is the third time I am ready to come[a] to you, and I will not be a burden[b] to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'this third time I am ready to come to you.'
-    reason: lexical_alternative
-  - marker: b
-    text: The verb rendered 'be a burden' can carry the sense of imposing oneself financially on someone.
-    reason: lexical_alternative
+  text: Look, for the third time I am ready to come to you, and I will not be a financial burden to you. For I do not seek your possessions, but you. Children are not obligated to save up for their parents, but parents for their children.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἰδοὺ
   chosen: Look
@@ -109,13 +102,12 @@ revisions:
   from: Look, this is the third time I am ready to come to you, and I will not be a burden to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
   to: Look, this is the third time I am ready to come to you, and I will not be a burden. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
   rationale: Removed the added words 'to you' after 'a burden' for closer alignment with the Greek, while retaining natural English. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Look[a], this is the third time I am ready to come to you, and I will not be a burden. For I do not seek what is yours, but you. For children are not obligated to store up for their parents[b], but parents for their children.'
-  to: 'Look, this is the third time I am ready to come to you, and I will not be a burden to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.'
+  from: Look[a], this is the third time I am ready to come to you, and I will not be a burden. For I do not seek what is yours, but you. For children are not obligated to store up for their parents[b], but parents for their children.
+  to: Look, this is the third time I am ready to come to you, and I will not be a burden to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''be a burden to you''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -125,6 +117,13 @@ revisions:
   from: Look, this is the third time I am ready to come to you, and I will not be a burden to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
   to: Look, this is the third time I am ready to come[a] to you, and I will not be a burden[b] to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('I am ready to come') because the note names that rendering; [b] anchored to ('be a burden') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:06:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Look, this is the third time I am ready to come[a] to you, and I will not be a burden[b] to you. For I do not seek what is yours, but you. For children are not obligated to store up for their parents, but parents for their children.
+  to: Look, for the third time I am ready to come to you, and I will not be a financial burden to you. For I do not seek your possessions, but you. Children are not obligated to save up for their parents, but parents for their children.
+  rationale: The recorded revisions concern supplying 'to you' after 'burden'; the addressee is clear, so I retain it and clarify the financial sense. I preserve the wording's focus on readiness rather than settling the debated visit chronology.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +143,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_corinthians/012/014.job-53603.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:45Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul is ready to come again without seeking financial support because he wants the Corinthians themselves and regards providing for them as a parent's responsibility.
+  meaning_decisions:
+  - source_phrase: οὐ καταναρκήσω
+    prior_rendering: I will not be a burden to you
+    new_rendering: I will not be a financial burden to you
+    rationale: The verb concerns imposing the expense of his support on them, not every possible kind of burden.
+  - source_phrase: οὐ γὰρ ζητῶ τὰ ὑμῶν ἀλλὰ ὑμᾶς
+    prior_rendering: For I do not seek what is yours, but you
+    new_rendering: For I do not seek your possessions, but you
+    rationale: The contrast is between their material resources and the people themselves; 'possessions' makes that contrast immediately clear.
+  - source_phrase: θησαυρίζειν
+    prior_rendering: to store up
+    new_rendering: to save up
+    rationale: The family analogy concerns accumulating resources for another's provision, which 'save up' conveys naturally.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions concern supplying 'to you' after 'burden'; the addressee is clear, so I retain it and clarify the financial sense. I preserve the wording's focus on readiness rather than settling the debated visit chronology.

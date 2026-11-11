@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἰδών τινα ἀδικούμενον ἠμύνατο καὶ ἐποίησεν ἐκδίκησιν τῷ καταπονουμένῳ πατάξας τὸν Αἰγύπτιον.
 translation:
-  text: And when he saw someone being wronged[b][a], he defended him and brought justice for the one being oppressed by striking down the Egyptian.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'executed vengeance for the one being oppressed.' The Greek expression ἐποίησεν ἐκδίκησιν can carry the sense of avenging or vindicating.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'by striking the Egyptian.' The verb can simply mean 'strike'; 'striking down' reflects the likely lethal outcome in context.
-    reason: lexical_alternative
+  text: When he saw someone being wronged, he defended him and avenged the oppressed man by striking down the Egyptian.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἰδών
   chosen: when he saw
@@ -103,14 +96,20 @@ revisions:
   from: And when he saw someone being wronged, he defended him and brought justice for the one being oppressed by striking down the Egyptian.
   to: And when he saw someone being wronged, he defended him and avenged the one being oppressed by striking down the Egyptian.
   rationale: Replaced 'brought justice for' with 'avenged' to more directly reflect ἐποίησεν ἐκδίκησιν while keeping the sentence natural and formal.
-
 - timestamp: '2026-05-16T22:08:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when he saw someone being wronged[b][a], he defended him and avenged the one being oppressed by striking down the Egyptian.'
-  to: 'And when he saw someone being wronged[b][a], he defended him and brought justice for the one being oppressed by striking down the Egyptian.'
-  rationale: 'Restored drafter ''brought justice for the one being oppressed'' (preserving the chosen periphrastic rendering of ἐποίησεν ἐκδίκησιν) per chosen renderings.'
+  from: And when he saw someone being wronged[b][a], he defended him and avenged the one being oppressed by striking down the Egyptian.
+  to: And when he saw someone being wronged[b][a], he defended him and brought justice for the one being oppressed by striking down the Egyptian.
+  rationale: Restored drafter 'brought justice for the one being oppressed' (preserving the chosen periphrastic rendering of ἐποίησεν ἐκδίκησιν) per chosen renderings.
+- timestamp: '2026-11-09T18:06:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he saw someone being wronged[b][a], he defended him and brought justice for the one being oppressed by striking down the Egyptian.
+  to: When he saw someone being wronged, he defended him and avenged the oppressed man by striking down the Egyptian.
+  rationale: An earlier review adopted 'avenged,' but an automated revert restored the periphrastic wording without a maintainer ruling. The recorded rationale rightly excludes personal vindictiveness, yet avenging the victim need not imply that motive and better conveys the retributive action described.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -130,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/007/024.job-46619.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:06:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Moses defended an oppressed man and avenged the wrong done to him by striking down the Egyptian.
+  meaning_decisions:
+  - source_phrase: ἐποίησεν ἐκδίκησιν
+    prior_rendering: brought justice
+    new_rendering: avenged
+    rationale: The expression describes retaliatory action on the victim’s behalf; 'avenged' conveys that action more precisely than the general phrase 'brought justice.'
+  - source_phrase: τῷ καταπονουμένῳ
+    prior_rendering: for the one being oppressed
+    new_rendering: the oppressed man
+    rationale: The substantival participle identifies the victim, and this concise English form preserves the severity of his treatment.
+  footnote_kinds: {}
+  history_weighed: An earlier review adopted 'avenged,' but an automated revert restored the periphrastic wording without a maintainer ruling. The recorded rationale rightly excludes personal vindictiveness, yet avenging the victim need not imply that motive and better conveys the retributive action described.

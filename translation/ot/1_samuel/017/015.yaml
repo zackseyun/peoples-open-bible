@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/דָוִ֛ד הֹלֵ֥ךְ וָ/שָׁ֖ב מֵ/עַ֣ל שָׁא֑וּל לִ/רְע֛וֹת אֶת צֹ֥אן אָבִ֖י/ו בֵּֽית לָֽחֶם־־׃
 translation:
-  text: David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'David went and returned from Saul to pasture his father's flock at Bethlehem.'
-    reason: lexical_alternative
+  text: David went back and forth between Saul and Bethlehem to shepherd his father’s flock.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הֹלֵךְ וָשָׁב
   chosen: would go back and forth
@@ -17,7 +13,7 @@ lexical_decisions:
   - went and returned
   - kept going and returning
   lexicon: HALOT
-  rationale: "The paired participle/qal forms of הלך and שוב express repeated or customary movement rather than a single trip. 'Would go back and forth' captures the iterative sense in natural English better than a wooden 'went and returned.' Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The paired participle/qal forms of הלך and שוב express repeated or customary movement rather than a single trip. ''Would go back and forth'' captures the iterative sense in natural English better than a wooden ''went and returned.'' Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: מֵעַל שָׁאוּל
   lemma: מֵעַל
   chosen: from Saul
@@ -76,16 +72,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Now David would go back and forth from Saul to shepherd his father''s flock at Bethlehem.'
-  to: 'Now David would go back and forth from Saul to shepherd his father''s flock at Bethlehem.'
+  from: Now David would go back and forth from Saul to shepherd his father's flock at Bethlehem.
+  to: Now David would go back and forth from Saul to shepherd his father's flock at Bethlehem.
   rationale: Changed 'would go' to 'went' for a more direct rendering of the Hebrew verbal sequence, while retaining the sense of repeated movement. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now David went back and forth from Saul to shepherd his father''s flock at Bethlehem[a].'
-  to: 'Now David went back and forth from Saul to shepherd his father''s flock at Bethlehem[a].'
+  from: Now David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
+  to: Now David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''would go back and forth''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -94,6 +89,13 @@ revisions:
   from: Now David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
   to: David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:23:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David went back and forth from Saul to shepherd his father's flock at Bethlehem[a].
+  to: David went back and forth between Saul and Bethlehem to shepherd his father’s flock.
+  rationale: The draft, current wording, and lexical rationale agree that the movement is repeated rather than a single departure. I preserve 'went back and forth' and 'shepherd,' clarify the travel endpoints, and drop the unnecessary formal alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -113,3 +115,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/017/015.job-59157.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:05Z'
+  change_level: refined
+  confidence: high
+  meaning: David repeatedly travels between Saul and Bethlehem so that he can continue shepherding his father’s flock.
+  meaning_decisions:
+  - source_phrase: הֹלֵךְ וָשָׁב מֵעַל שָׁאוּל לִרְעוֹת אֶת צֹאן אָבִיו בֵּית לָחֶם
+    prior_rendering: went back and forth from Saul to shepherd his father's flock at Bethlehem
+    new_rendering: went back and forth between Saul and Bethlehem to shepherd his father’s flock
+    rationale: Naming both endpoints makes the repeated movement clear while retaining shepherding as the purpose of David’s returns to Bethlehem.
+  footnote_kinds: {}
+  history_weighed: The draft, current wording, and lexical rationale agree that the movement is repeated rather than a single departure. I preserve 'went back and forth' and 'shepherd,' clarify the travel endpoints, and drop the unnecessary formal alternative.

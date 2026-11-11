@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὅταν δὲ ⸀εἰσφέρωσιν ὑμᾶς ἐπὶ τὰς συναγωγὰς καὶ τὰς ἀρχὰς καὶ τὰς ἐξουσίας, μὴ ⸀μεριμνήσητε πῶς ⸂ἢ τί⸃ ἀπολογήσησθε ἢ τί εἴπητε·
 translation:
-  text: But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'how you should make your defense.'
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'the synagogues and the rulers and the authorities' refers to religious and civil bodies before whom disciples might be examined.
-    reason: cultural_note
+  text: But whenever you are brought before synagogue courts, rulers, and authorities, do not worry about how to defend yourselves, what to say in your defense, or what you should say;
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅταν δὲ
   chosen: But whenever
@@ -105,14 +98,20 @@ revisions:
   from: But whenever they bring you before the synagogues and the rulers and the authorities, do not worry about how or what you should defend yourselves, or what you should say;
   to: But whenever they bring you before the synagogues and the rulers and the authorities, do not worry about how or what you should defend yourselves, or what you should say;
   rationale: Revised 'what you should defend yourselves' to 'what you should say in your defense' for accurate rendering of ἀπολογήσησθε and natural English. Kept the rest essentially unchanged.
-
 - timestamp: '2026-05-18T03:00:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];'
-  to: 'But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];'
+  from: But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];
+  to: But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you should defend yourselves''].'
+- timestamp: '2026-11-09T17:11:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But whenever they bring you before the synagogues and the rulers and the authorities[a], do not worry about how or what you should say in your defense, or what you should say[b];
+  to: But whenever you are brought before synagogue courts, rulers, and authorities, do not worry about how to defend yourselves, what to say in your defense, or what you should say;
+  rationale: The earlier review repaired the ungrammatical defense clause, and I preserve that gain despite the low-weight automated revert. The documented legal function of the synagogues is now expressed in the main text rather than left to a footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +133,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/012/011.job-38910.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When disciples are brought before religious or civil authorities, they should not be anxious about presenting their defense or deciding what to say.
+  meaning_decisions:
+  - source_phrase: εἰσφέρωσιν ὑμᾶς
+    prior_rendering: they bring you
+    new_rendering: you are brought
+    rationale: The unnamed agents are incidental; the passive makes the threatened judicial appearance clear without introducing an unexplained 'they.'
+  - source_phrase: ἐπὶ τὰς συναγωγὰς
+    prior_rendering: before the synagogues
+    new_rendering: before synagogue courts
+    rationale: The legal context identifies the synagogues as bodies conducting examination or judgment, not simply buildings to which the disciples are taken.
+  - source_phrase: πῶς ἢ τί ἀπολογήσησθε ἢ τί εἴπητε
+    prior_rendering: how or what you should say in your defense, or what you should say
+    new_rendering: how to defend yourselves, what to say in your defense, or what you should say
+    rationale: The list separately conveys the manner of defense, its content, and the broader question of what to say, preserving all three elements in grammatical English.
+  footnote_kinds: {}
+  history_weighed: The earlier review repaired the ungrammatical defense clause, and I preserve that gain despite the low-weight automated revert. The documented legal function of the synagogues is now expressed in the main text rather than left to a footnote.

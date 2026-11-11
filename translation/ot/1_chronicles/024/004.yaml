@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּמָּצְא֣וּ בְֽנֵי אֶלְעָזָ֡ר רַבִּ֞ים לְ/רָאשֵׁ֧י הַ/גְּבָרִ֛ים מִן בְּנֵ֥י אִיתָמָ֖ר וַֽ/יַּחְלְק֑וּ/ם לִ/בְנֵ֨י אֶלְעָזָ֜ר רָאשִׁ֤ים לְ/בֵית אָבוֹת֙ שִׁשָּׁ֣ה עָשָׂ֔ר וְ/לִ/בְנֵ֧י אִיתָמָ֛ר לְ/בֵ֥ית אֲבוֹתָ֖/ם שְׁמוֹנָֽה־־־׃
 translation:
-  text: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'as heads of the warriors' for 'as heads of the mighty men.' The Hebrew גְּבָרִים can denote strong or valiant men, not merely adult males.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Fathers’ houses'' refers to ancestral family clans or households, a standard kinship-administrative unit in Israel.'
-    reason: cultural_note
+  text: 'More family heads were found among Eleazar''s descendants than among Ithamar''s, so the divisions were arranged accordingly: sixteen ancestral family heads from Eleazar''s line and eight from Ithamar''s.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּמָּצְאוּ
   chosen: were found to be
@@ -96,7 +89,6 @@ revisions:
   from: 'The sons of Eleazar were found to be more numerous as heads of the mighty men than the sons of Ithamar, so they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses, eight.'
   to: 'The sons of Eleazar were found to be more numerous as heads of the mighty men than the sons of Ithamar, so they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses, eight.'
   rationale: Changed 'mighty men' to 'men' for better lexical accuracy, since the Hebrew here refers to men/great men in context of family heads rather than warriors. Added a comma after 'more numerous' for readability; otherwise retained the structure and content.
-
 - timestamp: '2026-05-18T02:58:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -104,6 +96,13 @@ revisions:
   from: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
   to: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''as heads of the mighty men''].'
+- timestamp: '2026-11-09T17:19:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'The sons of Eleazar were found to be more numerous[a], as heads of the men, than the sons of Ithamar, and they divided them thus: for the sons of Eleazar, sixteen heads of fathers’ houses, and for the sons of Ithamar, according to their fathers’ houses[b], eight.'
+  to: 'More family heads were found among Eleazar''s descendants than among Ithamar''s, so the divisions were arranged accordingly: sixteen ancestral family heads from Eleazar''s line and eight from Ithamar''s.'
+  rationale: The review's rationale correctly recognizes family leadership rather than military prowess, despite the inconsistent change records and automated revert. The ancestral-house distinction is preserved in the main text, so the earlier explanatory notes are no longer needed.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -123,3 +122,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/024/004.job-44347.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Eleazar's line had more family heads than Ithamar's, resulting in sixteen ancestral family heads from Eleazar's line and eight from Ithamar's.
+  meaning_decisions:
+  - source_phrase: וַיִּמָּצְאוּ בְנֵי אֶלְעָזָר רַבִּים לְרָאשֵׁי הַגְּבָרִים מִן בְּנֵי אִיתָמָר
+    prior_rendering: The sons of Eleazar were found to be more numerous, as heads of the men, than the sons of Ithamar
+    new_rendering: More family heads were found among Eleazar's descendants than among Ithamar's
+    rationale: The comparison concerns the number of leading men available as family heads, not simply the total number of descendants or warriors.
+  - source_phrase: וַיַּחְלְקוּם
+    prior_rendering: and they divided them thus
+    new_rendering: so the divisions were arranged accordingly
+    rationale: The arrangement follows from the unequal numbers of family heads; the causal connection is made explicit.
+  - source_phrase: רָאשִׁים לְבֵית אָבוֹת ... לְבֵית אֲבוֹתָם
+    prior_rendering: heads of fathers’ houses ... according to their fathers’ houses
+    new_rendering: ancestral family heads
+    rationale: The Hebrew denotes leaders of ancestral family units, not heads of physical houses; the parallel count of eight carries the same understood designation.
+  footnote_kinds: {}
+  history_weighed: The review's rationale correctly recognizes family leadership rather than military prowess, despite the inconsistent change records and automated revert. The ancestral-house distinction is preserved in the main text, so the earlier explanatory notes are no longer needed.

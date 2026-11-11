@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐὰν εἴπῃ τὸ οὖς· Ὅτι οὐκ εἰμὶ ὀφθαλμός, οὐκ εἰμὶ ἐκ τοῦ σώματος, οὐ παρὰ τοῦτο οὐκ ἔστιν ἐκ τοῦ σώματος·
 translation:
-  text: And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'I am not part of the body' ... 'that does not make it any less a part of the body.' The Greek repeats 'from the body' for rhetorical effect.
-    reason: lexical_alternative
+  text: And if the ear says, “Because I am not an eye, I do not belong to the body,” that does not make it any less a part of the body.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καὶ
   chosen: And
@@ -84,14 +80,20 @@ revisions:
   from: And if the ear says, ‘Because I am not an eye, I am not from the body,’ it is not for this reason not from the body.
   to: And if the ear says, ‘Because I am not an eye, I am not from the body,’ it is not for this reason not from the body.
   rationale: Changed 'from the body' to 'of the body' for more natural English and closer fit to the Greek ἐκ τοῦ σώματος in this context; retained the formal structure of the argument.
-
 - timestamp: '2026-05-18T03:00:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.'
-  to: 'And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.'
+  from: And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.
+  to: And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the body''].'
+- timestamp: '2026-11-09T17:06:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if the ear says[a], ‘Because I am not an eye, I am not of the body,’ it is not for this reason not of the body.
+  to: And if the ear says, “Because I am not an eye, I do not belong to the body,” that does not make it any less a part of the body.
+  rationale: As in verse 15, the recorded footnote already expresses the meaning more successfully than the formal main text. I use that gain consistently while retaining the statement form and the parallel ear–eye image.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -111,3 +113,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/012/016.job-52889.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An ear’s difference from an eye likewise does not diminish its belonging to the body.
+  meaning_decisions:
+  - source_phrase: οὐκ εἰμὶ ἐκ τοῦ σώματος
+    prior_rendering: I am not of the body
+    new_rendering: I do not belong to the body
+    rationale: The repeated phrase concerns belonging to the body, as in the preceding verse.
+  - source_phrase: οὐ παρὰ τοῦτο οὐκ ἔστιν ἐκ τοῦ σώματος
+    prior_rendering: it is not for this reason not of the body
+    new_rendering: that does not make it any less a part of the body
+    rationale: The natural English denial preserves Paul’s conclusion without the confusing double-negative construction.
+  footnote_kinds: {}
+  history_weighed: As in verse 15, the recorded footnote already expresses the meaning more successfully than the formal main text. I use that gain consistently while retaining the statement form and the parallel ear–eye image.

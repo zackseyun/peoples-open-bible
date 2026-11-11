@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֧אמֶר הַ/מֶּ֛לֶךְ אֶל שִׁמְעִ֖י לֹ֣א תָמ֑וּת וַ/יִּשָּׁ֥בַֽע ל֖/וֹ הַ/מֶּֽלֶךְ־׃ס
 translation:
-  text: And the king said to Shimei[a], “You shall not die.” And the king swore to him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more interpretively, “You shall not be put to death.” The Hebrew literally says, “You shall not die,” which may function here as a royal promise of pardon from execution.
-    reason: lexical_alternative
+  text: The king said to Shimei, “You shall not be put to death.” And he confirmed it with an oath.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And ... said
@@ -78,14 +74,20 @@ revisions:
   from: And the king said to Shimei, “You shall not die.” And the king swore it to him.
   to: And the king said to Shimei, “You shall not die.” And the king swore it to him.
   rationale: Removed 'it' after 'swore' for more natural and accurate English; the source simply says the king swore to him.
-
 - timestamp: '2026-05-17T05:36:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king said to Shimei[a], “You shall not die.” And the king swore to him.'
-  to: 'And the king said to Shimei[a], “You shall not die.” And the king swore to him.'
+  from: And the king said to Shimei[a], “You shall not die.” And the king swore to him.
+  to: And the king said to Shimei[a], “You shall not die.” And the king swore to him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''swore it to him''].'
+- timestamp: '2026-11-09T17:29:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king said to Shimei[a], “You shall not die.” And the king swore to him.
+  to: The king said to Shimei, “You shall not be put to death.” And he confirmed it with an oath.
+  rationale: The earlier footnote already recognized that the promise concerns execution, and the first draft explicitly connected the oath to it. Those gains are carried into the main text rather than leaving the meaning in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -105,3 +107,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/019/024.job-45955.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:02Z'
+  change_level: refined
+  confidence: high
+  meaning: David promises Shimei that he will not be executed and confirms the promise by oath.
+  meaning_decisions:
+  - source_phrase: לֹא תָמוּת
+    prior_rendering: You shall not die
+    new_rendering: You shall not be put to death
+    rationale: In direct response to the proposed execution, this is a royal assurance of protection from that punishment.
+  - source_phrase: וַיִּשָּׁבַע לוֹ הַמֶּלֶךְ
+    prior_rendering: And the king swore to him
+    new_rendering: And he confirmed it with an oath
+    rationale: The oath confirms the promise just spoken; making that connection explicit avoids an incomplete-sounding English expression.
+  footnote_kinds: {}
+  history_weighed: The earlier footnote already recognized that the promise concerns execution, and the first draft explicitly connected the oath to it. Those gains are carried into the main text rather than leaving the meaning in a note.

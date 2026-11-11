@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּֽאמְרוּ֙ אֶל מֹשֶׁ֔ה עֲבָדֶ֣י/ךָ נָֽשְׂא֗וּ אֶת רֹ֛אשׁ אַנְשֵׁ֥י הַ/מִּלְחָמָ֖ה אֲשֶׁ֣ר בְּ/יָדֵ֑/נוּ וְ/לֹא נִפְקַ֥ד מִמֶּ֖/נּוּ אִֽישׁ־־־׃
 translation:
-  text: And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'have lifted up the head of the men of war,' a Hebrew idiom for taking a count or census.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'who are in our charge.' Literally, 'who are in our hand.'
-    reason: lexical_alternative
+  text: They said to Moses, “Your servants have counted the fighting men under our command, and not one of us is missing.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עֲבָדֶיךָ
   chosen: your servants
@@ -70,14 +63,20 @@ revisions:
   from: and they said to Moses, “Your servants have taken a count of the men of war who are under our command, and not one man from us is missing.”
   to: and they said to Moses, “Your servants have taken a count of the men of war who are under our command, and not one man from us is missing.”
   rationale: Capitalized the opening conjunction for sentence style and changed 'from us' to 'of us' for more natural formal English while preserving the sense.
-
 - timestamp: '2026-05-18T02:57:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”'
-  to: 'And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”'
+  from: And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”
+  to: And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''not one man from us is missing''].'
+- timestamp: '2026-11-09T18:32:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they said to Moses[a], “Your servants have taken a count of the men of war who are under our command[b], and not one man of us is missing.”
+  to: They said to Moses, “Your servants have counted the fighting men under our command, and not one of us is missing.
+  rationale: The recorded review rightly sought more idiomatic wording for 'from us,' and the lexical guidance correctly interprets the census and command idioms. I retain the deferential 'Your servants' and let the quotation continue into verse 50.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -97,3 +96,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/031/049.job-41298.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:32:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The officers report respectfully to Moses that they have counted their fighting men and none is missing.
+  meaning_decisions:
+  - source_phrase: נָשְׂאוּ אֶת רֹאשׁ אַנְשֵׁי הַמִּלְחָמָה
+    prior_rendering: have taken a count of the men of war
+    new_rendering: have counted the fighting men
+    rationale: The Hebrew idiom means counting the soldiers; the direct rendering conveys its administrative meaning without retaining an opaque image.
+  - source_phrase: וְלֹא נִפְקַד מִמֶּנּוּ אִישׁ
+    prior_rendering: and not one man of us is missing
+    new_rendering: and not one of us is missing
+    rationale: The referents are already identified as fighting men, so the natural English expression retains the complete absence of losses without the awkward 'man of us.'
+  footnote_kinds: {}
+  history_weighed: The recorded review rightly sought more idiomatic wording for 'from us,' and the lexical guidance correctly interprets the census and command idioms. I retain the deferential 'Your servants' and let the quotation continue into verse 50.

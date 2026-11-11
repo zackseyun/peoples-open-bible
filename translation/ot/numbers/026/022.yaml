@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: אֵ֛לֶּה מִשְׁפְּחֹ֥ת יְהוּדָ֖ה לִ/פְקֻדֵי/הֶ֑ם שִׁשָּׁ֧ה וְ/שִׁבְעִ֛ים אֶ֖לֶף וַ/חֲמֵ֥שׁ מֵאֽוֹת׃ס
 translation:
-  text: 'These were the clans of Judah according to those numbered of them: seventy-six thousand five hundred[a].'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "according to their number"; the Hebrew census expression לִפְקֻדֵיהֶם refers to those enrolled or counted.
-    reason: lexical_alternative
+  text: These were the clans of Judah. The men counted totaled seventy-six thousand five hundred.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֵלֶּה
   chosen: These were
@@ -66,7 +62,6 @@ revisions:
   from: 'These were the clans of Judah according to those numbered from them: seventy-six thousand five hundred.'
   to: 'These were the clans of Judah according to those numbered from them: seventy-six thousand five hundred.'
   rationale: Changed 'from them' to 'of them' for a more formal and idiomatic rendering of the census formula while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -74,6 +69,13 @@ revisions:
   from: 'These were the clans of Judah according to those numbered of them: seventy-six thousand five hundred[a].'
   to: 'These were the clans of Judah according to those numbered of them: seventy-six thousand five hundred[a].'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''according to those numbered from them''].'
+- timestamp: '2026-11-09T18:31:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'These were the clans of Judah according to those numbered of them: seventy-six thousand five hundred[a].'
+  to: These were the clans of Judah. The men counted totaled seventy-six thousand five hundred.
+  rationale: The history alternates between 'of them' and 'from them' without changing the underlying census meaning. That meaning and the exact total are preserved in direct English, making the explanatory footnote unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -93,3 +95,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/026/022.job-41734.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:11Z'
+  change_level: refined
+  confidence: high
+  meaning: Judah’s clans have a census total of seventy-six thousand five hundred men.
+  meaning_decisions:
+  - source_phrase: לִפְקֻדֵיהֶם
+    prior_rendering: according to those numbered of them
+    new_rendering: The men counted totaled
+    rationale: The expression reports the census enrollment, and the context identifies those enrolled as military-age men.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'of them' and 'from them' without changing the underlying census meaning. That meaning and the exact total are preserved in direct English, making the explanatory footnote unnecessary.

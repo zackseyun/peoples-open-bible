@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: If they still bring charges against you[a], we will execute judgment on them, and we will fight against them by sea and by land.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Greek: ''we will fight you by sea and by land.'' In context, this likely means either ''we will fight for you'' or reflects a textual difficulty in the transmitted wording.'
-    reason: textual_variant
+  text: So if they bring further complaints against you, we will secure justice for them and wage war against you by sea and by land.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐὰν
   chosen: If
@@ -142,7 +138,13 @@ revisions:
   from: If they still bring charges against you, we will execute judgment on them, and we will fight you by sea and by land.
   to: If they still bring charges against you, we will execute judgment on them, and we will fight against them by sea and by land.
   rationale: Changed the final clause from 'we will fight you' to 'we will fight against them' to match the Greek, which refers back to 'they'/'them' throughout the sentence.
-
+- timestamp: '2026-11-09T18:52:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If they still bring charges against you[a], we will execute judgment on them, and we will fight against them by sea and by land.
+  to: So if they bring further complaints against you, we will secure justice for them and wage war against you by sea and by land.”
+  rationale: The automated revision incorrectly claimed that the Greek supports “fight against them”; the source explicitly says “you,” as the first draft recognized. The earlier discussion's supposed contextual difficulty disappears when the speech is correctly understood as a warning to Demetrius and αὐτοῖς as justice for the Jews.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -162,3 +164,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/008/032.job-48419.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Rome warns Demetrius that further Jewish complaints against him will lead it to secure justice for the Jews and wage war against him.
+  meaning_decisions:
+  - source_phrase: ἐὰν οὖν ἔτι ἐντύχωσιν κατὰ σοῦ
+    prior_rendering: If they still bring charges against you
+    new_rendering: So if they bring further complaints against you
+    rationale: The Jews are petitioning against Demetrius's mistreatment; οὖν connects this consequence to the preceding warning, while ἔτι indicates further complaints.
+  - source_phrase: ποιήσομεν αὐτοῖς τὴν κρίσιν
+    prior_rendering: we will execute judgment on them
+    new_rendering: we will secure justice for them
+    rationale: The dative identifies the Jews as beneficiaries of Roman justice, not as the people Rome threatens to punish.
+  - source_phrase: πολεμήσομέν σε
+    prior_rendering: we will fight against them
+    new_rendering: wage war against you
+    rationale: The explicit second-person singular object refers to Demetrius, who is addressed throughout the quoted warning.
+  footnote_kinds: {}
+  history_weighed: The automated revision incorrectly claimed that the Greek supports “fight against them”; the source explicitly says “you,” as the first draft recognized. The earlier discussion's supposed contextual difficulty disappears when the speech is correctly understood as a warning to Demetrius and αὐτοῖς as justice for the Jews.

@@ -14,15 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a judge of a country/region.' The Greek χώρας can denote land, country, or region.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'will not kill' or 'will not remove.' The Greek verb can carry a range from killing to doing away with; here it underscores the idol's inability to punish.
-    reason: lexical_alternative
+  text: One of these gods holds a scepter like a human judge over a country, yet he cannot put to death anyone who sins against him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σκήπτρον
   chosen: scepter
@@ -104,14 +97,20 @@ revisions:
   from: And he holds a scepter like a man, a judge of a land, who will not destroy the one who sins against him.
   to: And he holds a scepter like a man, a judge of a land, who will not destroy the one who sins against him.
   rationale: Changed 'land' to 'country' for a more natural rendering of χώρας in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.'
-  to: 'And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.'
+  from: And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.
+  to: And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of a land''].'
+- timestamp: '2026-11-09T19:03:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he holds a scepter like a man[a], a judge of a country[b], who will not destroy the one who sins against him.
+  to: One of these gods holds a scepter like a human judge over a country, yet he cannot put to death anyone who sins against him.
+  rationale: The documented interpretation correctly contrasts the god’s judicial insignia with its inability to punish, but the current relative clause can attach that inability to the human judge. I make the contrast explicit and use the verb’s death-dealing sense rather than the broader “destroy.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +130,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/013.job-50852.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A god may bear a judge’s symbol of authority, but it cannot execute judgment against someone who sins against it.
+  meaning_decisions:
+  - source_phrase: καὶ σκήπτρον ἔχει ὡς ἄνθρωπος κριτὴς χώρας
+    prior_rendering: And he holds a scepter like a man, a judge of a country
+    new_rendering: One of these gods holds a scepter like a human judge over a country
+    rationale: The representative singular god is identified explicitly, and the human comparison is expressed as one coherent description.
+  - source_phrase: ὃς τὸν εἰς αὐτὸν ἁμαρτάνοντα οὐκ ἀνελεῖ
+    prior_rendering: who will not destroy the one who sins against him
+    new_rendering: yet he cannot put to death anyone who sins against him
+    rationale: The limitation belongs to the god, not the human judge, and concerns inability rather than restraint; “put to death” carries the verb’s force in this judicial setting.
+  footnote_kinds: {}
+  history_weighed: The documented interpretation correctly contrasts the god’s judicial insignia with its inability to punish, but the current relative clause can attach that inability to the human judge. I make the contrast explicit and use the verb’s death-dealing sense rather than the broader “destroy.”

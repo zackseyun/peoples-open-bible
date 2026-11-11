@@ -29,12 +29,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 12:15
 translation:
-  text: Afterward you will understand my words[a], and for my sister you will sigh.
-  philosophy: optimal-equivalence
+  text: Afterward you will understand my words and sigh over what I told you[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew is difficult here, especially the phrase rendered ''for my sister.'' The Greek witness reads instead: ''He will remain with you for an hour, and if you turn aside, he will not endure,'' reflecting a substantially different text or interpretation.'
-    reason: alternative_reading
+    text: The rare Hebrew noun means “declaration” or “statement”; compare Job 13:17.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: וּלְאָחוֹר
   chosen: Afterward
@@ -122,14 +122,20 @@ revisions:
   from: Afterward you will attain my words, and for my sister you will sigh.
   to: Afterward you will attain my words, and for my sister you will sigh.
   rationale: Changed 'attain' to 'understand' for more natural and contextually fitting English for תַּשִּׂיג with 'my words'; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Afterward you will understand my words[a], and for my sister you will sigh.'
-  to: 'Afterward you will understand my words[a], and for my sister you will sigh.'
+  from: Afterward you will understand my words[a], and for my sister you will sigh.
+  to: Afterward you will understand my words[a], and for my sister you will sigh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will attain''].'
+- timestamp: '2026-11-09T19:06:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Afterward you will understand my words[a], and for my sister you will sigh.
+  to: Afterward you will understand my words and sigh over what I told you[a].
+  rationale: The earlier pass improved 'attain' to 'understand,' which I retain. The history's 'my sister' reading overlooks the noun for 'declaration' and breaks the parallel with 'my words.'
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -149,3 +155,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/012/015.job-51296.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Only afterward will the reader grasp the teacher's warning and sigh over what was said.
+  meaning_decisions:
+  - source_phrase: וּלְאַחְוָתִי תִּתְאַנָּח
+    prior_rendering: and for my sister you will sigh
+    new_rendering: and sigh over what I told you
+    rationale: The noun is best understood as 'my declaration,' attested in Job 13:17; it parallels 'my words' and refers to the teacher's warning, not an otherwise unmentioned sister.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The earlier pass improved 'attain' to 'understand,' which I retain. The history's 'my sister' reading overlooks the noun for 'declaration' and breaks the parallel with 'my words.'

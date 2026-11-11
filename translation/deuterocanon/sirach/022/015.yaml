@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: It is easier to carry sand and salt and a lump of iron than a senseless man[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a senseless man,' 'a foolish man,' or 'a man without understanding.'
-    reason: lexical_alternative
+  text: It is easier to bear sand, salt, and a lump of iron than a senseless person.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἄμμον
   chosen: sand
@@ -124,14 +120,20 @@ revisions:
   from: It is easier to carry sand and salt and a lump of iron than an unintelligent man.
   to: It is easier to carry sand and salt and a lump of iron than an unintelligent man.
   rationale: Replaced 'unintelligent' with 'senseless' to better reflect ἀσύνετον in a formal biblical register and avoid a modern IQ-oriented nuance.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'It is easier to carry sand and salt and a lump of iron than a senseless man[a].'
-  to: 'It is easier to carry sand and salt and a lump of iron than a senseless man[a].'
+  from: It is easier to carry sand and salt and a lump of iron than a senseless man[a].
+  to: It is easier to carry sand and salt and a lump of iron than a senseless man[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''unintelligent''].'
+- timestamp: '2026-11-09T19:06:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: It is easier to carry sand and salt and a lump of iron than a senseless man[a].
+  to: It is easier to bear sand, salt, and a lump of iron than a senseless person.
+  rationale: I retain the current wording’s “senseless,” supported by the earlier review’s concern about the IQ-related implications of “unintelligent.” The redundant alternatives note is unnecessary once the main text carries that distinction.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +153,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/022/015.job-51571.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Bearing heavy materials is easier than enduring a person who lacks sense.
+  meaning_decisions:
+  - source_phrase: ὑπενεγκεῖν
+    prior_rendering: to carry
+    new_rendering: to bear
+    rationale: “Bear” preserves the physical burden while making the comparison with enduring a troublesome person intelligible.
+  - source_phrase: ἄνθρωπον ἀσύνετον
+    prior_rendering: a senseless man
+    new_rendering: a senseless person
+    rationale: The proverb concerns a human being without sense, not specifically a male; “senseless” preserves the wisdom context without suggesting an assessment of intelligence.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s “senseless,” supported by the earlier review’s concern about the IQ-related implications of “unintelligent.” The redundant alternatives note is unnecessary once the main text carries that distinction.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: לָ/מָ֤ה אָמַ֨רְתָּ֙ אֲחֹ֣תִ/י הִ֔וא וָ/אֶקַּ֥ח אֹתָ֛/הּ לִ֖/י לְ/אִשָּׁ֑ה וְ/עַתָּ֕ה הִנֵּ֥ה אִשְׁתְּ/ךָ֖ קַ֥ח וָ/לֵֽךְ׃
 translation:
-  text: Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'and I took her for me as a wife.' The main text renders the sense idiomatically while preserving Pharaoh's claim that Abram's statement led to his taking Sarai.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'I took her for myself as a wife'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'look, here is your wife'.
-    reason: previous_rendering
+  text: Why did you say, ‘She is my sister’? That is why I took her to be my wife. Now, here is your wife. Take her and go.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לָמָה
   chosen: Why
@@ -130,9 +120,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”'
-  to: 'Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”'
+  from: Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”
+  to: Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that I took''].'
+- timestamp: '2026-11-09T17:41:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Why did you say[a], ‘She is my sister,’ and I took her to be my wife? And now, here is your wife[c][b]. Take her and go.”
+  to: Why did you say, ‘She is my sister’? That is why I took her to be my wife. Now, here is your wife. Take her and go.”
+  rationale: I retain the earlier gains in 'took her to be my wife' and the concise 'here is your wife.' The history recognizes the causal connection but disputes how to express it; the separate consequence sentence preserves that meaning without suggesting purpose.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T08:21:07Z'
@@ -160,3 +157,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/012/019.job-37620.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:41:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Pharaoh blames Abram’s claim for his taking Sarai as a wife, then returns her and commands Abram to leave.
+  meaning_decisions:
+  - source_phrase: וָאֶקַּח אֹתָהּ לִי לְאִשָּׁה
+    prior_rendering: and I took her to be my wife
+    new_rendering: That is why I took her to be my wife.
+    rationale: Pharaoh presents his taking Sarai as the consequence of Abram’s claim; a separate sentence states that connection clearly without the possible implication of purpose in 'so that.'
+  footnote_kinds: {}
+  history_weighed: I retain the earlier gains in 'took her to be my wife' and the concise 'here is your wife.' The history recognizes the causal connection but disputes how to express it; the separate consequence sentence preserves that meaning without suggesting purpose.

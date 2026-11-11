@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְבַקֵּ֥שׁ דָּוִ֛ד אֶת הָ/אֱלֹהִ֖ים בְּעַ֣ד הַ/נָּ֑עַר וַ/יָּ֤צָם דָּוִד֙ צ֔וֹם וּ/בָ֥א וְ/לָ֖ן וְ/שָׁכַ֥ב אָֽרְצָ/ה־׃
 translation:
-  text: And David sought God on behalf of the boy[b][a]. David fasted a fast, and he went in and spent the night and lay on the ground.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'David fasted' or 'David kept a fast.' The Hebrew uses a cognate expression, literally 'fasted a fast,' for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: '''The boy'' refers to David''s child who was struck with illness (vv. 15, 18). ''The child'' is also a possible rendering of the Hebrew term here.'
-    reason: lexical_alternative
+  text: David pleaded with God on behalf of the child. He kept a fast and went inside, where he spent the night lying on the ground.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְבַקֵּשׁ
   chosen: sought
@@ -88,14 +81,20 @@ revisions:
   from: And David sought God on behalf of the boy. David fasted a fast, and he went in and spent the night and lay on the ground.
   to: And David sought God on behalf of the boy. David fasted and went in and spent the night lying on the ground.
   rationale: 'Removed the unnatural idiom ''fasted a fast'' to ''fasted''; streamlined the final sequence to natural formal English while preserving all actions: went in, spent the night, and lay/lying on the ground.'
-
 - timestamp: '2026-05-15T20:24:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And David sought God on behalf of the boy[b][a]. David fasted and went in and spent the night lying on the ground.'
-  to: 'And David sought God on behalf of the boy[b][a]. David fasted a fast, and he went in and spent the night and lay on the ground.'
-  rationale: 'Drafter chose ''fasted a fast'' for the Hebrew figura etymologica וַיָּצָם ... צוֹם (cognate accusative for emphasis), with a footnote acknowledging the construction. Azure stripped to bare ''fasted'' calling it ''unnatural idiom'' without engaging the documented intentional preservation of the Hebrew rhetorical device.'
+  from: And David sought God on behalf of the boy[b][a]. David fasted and went in and spent the night lying on the ground.
+  to: And David sought God on behalf of the boy[b][a]. David fasted a fast, and he went in and spent the night and lay on the ground.
+  rationale: Drafter chose 'fasted a fast' for the Hebrew figura etymologica וַיָּצָם ... צוֹם (cognate accusative for emphasis), with a footnote acknowledging the construction. Azure stripped to bare 'fasted' calling it 'unnatural idiom' without engaging the documented intentional preservation of the Hebrew rhetorical device.
+- timestamp: '2026-11-09T17:28:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And David sought God on behalf of the boy[b][a]. David fasted a fast, and he went in and spent the night and lay on the ground.
+  to: David pleaded with God on behalf of the child. He kept a fast and went inside, where he spent the night lying on the ground.
+  rationale: The earlier revision correctly recognized the need to untangle the final clauses, while the revert stressed the cognate fasting expression's emphasis. 'Kept a fast' preserves the deliberate observance in natural English, and 'pleaded' makes the contextual intercession explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -117,3 +116,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/2_samuel/012/016.job-37574.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David earnestly intercedes with God for the sick child, observing a fast and spending the night lying on the ground.
+  meaning_decisions:
+  - source_phrase: וַיְבַקֵּשׁ דָּוִד אֶת הָאֱלֹהִים בְּעַד הַנָּעַר
+    prior_rendering: David sought God on behalf of the boy
+    new_rendering: David pleaded with God on behalf of the child
+    rationale: In context David is entreating God for his sick infant, not searching for God or making an inquiry; 'child' avoids suggesting an older boy.
+  - source_phrase: וַיָּצָם דָּוִד צוֹם
+    prior_rendering: David fasted a fast
+    new_rendering: He kept a fast
+    rationale: This renders the cognate construction as deliberate observance of a fast rather than an unnatural English repetition.
+  - source_phrase: וּבָא וְלָן וְשָׁכַב אָרְצָה
+    prior_rendering: he went in and spent the night and lay on the ground
+    new_rendering: went inside, where he spent the night lying on the ground
+    rationale: The final actions describe how David passed the night, not three disconnected events; the English makes that relationship clear without specifying an unmentioned room.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly recognized the need to untangle the final clauses, while the revert stressed the cognate fasting expression's emphasis. 'Kept a fast' preserves the deliberate observance in natural English, and 'pleaded' makes the contextual intercession explicit.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוָ֜ה אֶל שְׁמוּאֵ֗ל עַד מָתַי֙ אַתָּה֙ מִתְאַבֵּ֣ל אֶל שָׁא֔וּל וַ/אֲנִ֣י מְאַסְתִּ֔י/ו מִ/מְּלֹ֖ךְ עַל יִשְׂרָאֵ֑ל מַלֵּ֨א קַרְנְ/ךָ֜ שֶׁ֗מֶן וְ/לֵ֤ךְ אֶֽשְׁלָחֲ/ךָ֙ אֶל יִשַׁ֣י בֵּֽית הַלַּחְמִ֔י כִּֽי רָאִ֧יתִי בְּ/בָנָ֛י/ו לִ֖/י מֶֽלֶךְ־־־־־־־׃
 translation:
-  text: And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”
-  philosophy: optimal-equivalence
+  text: Yahweh said to Samuel, “How long will you grieve over Saul, since I have rejected him as king over Israel? Fill your horn with oil and go. I am sending you to Jesse the Bethlehemite, for I have chosen a king for myself among his sons[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'for I have provided for myself a king among his sons.' The Hebrew verb is literally 'seen,' but in context it can imply selection or provision.
+    text: Literally, “I have seen for myself a king among his sons.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יְהוָה
@@ -112,14 +112,20 @@ revisions:
   from: And the LORD said to Samuel, “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have seen for myself a king among his sons.”
   to: And the LORD said to Samuel, “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have seen for myself a king among his sons.”
   rationale: Revised the final clause from 'I have seen for myself a king' to 'I have provided for myself a king' to better reflect the Hebrew idiom רָאִיתִי לִי, which here conveys selecting/providing rather than literal sight. Kept the rest of the draft unchanged.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”'
-  to: 'And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”'
+  from: And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”
+  to: And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I have seen for myself''].'
+- timestamp: '2026-11-09T17:22:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh said to Samuel[a], “How long will you grieve over Saul, since I have rejected him from being king over Israel? Fill your horn with oil and go; I am sending you to Jesse the Bethlehemite, for I have provided for myself a king among his sons.”
+  to: Yahweh said to Samuel, “How long will you grieve over Saul, since I have rejected him as king over Israel? Fill your horn with oil and go. I am sending you to Jesse the Bethlehemite, for I have chosen a king for myself among his sons[a].”
+  rationale: The earlier review recognized selection or provision in the Hebrew idiom, while the recorded revert preferred literal seeing language. I retain the review's meaning-based gain, make selection explicit, and preserve the literal wording in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -141,3 +147,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/016/001.job-59124.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh tells Samuel to stop grieving over Saul's rejected kingship and go to Jesse, among whose sons Yahweh has chosen a king.
+  meaning_decisions:
+  - source_phrase: מְאַסְתִּיו מִמְּלֹךְ עַל יִשְׂרָאֵל
+    prior_rendering: I have rejected him from being king over Israel
+    new_rendering: I have rejected him as king over Israel
+    rationale: This expresses Saul's disqualification from kingship in natural English without implying that he has already ceased to reign.
+  - source_phrase: רָאִיתִי בְּבָנָיו לִי מֶלֶךְ
+    prior_rendering: I have provided for myself a king among his sons
+    new_rendering: I have chosen a king for myself among his sons
+    rationale: In this selection narrative, Yahweh has identified his chosen king, not merely supplied one; the footnote preserves the seeing language that resonates with verse 7.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review recognized selection or provision in the Hebrew idiom, while the recorded revert preferred literal seeing language. I retain the review's meaning-based gain, make selection explicit, and preserve the literal wording in a correctly placed note.

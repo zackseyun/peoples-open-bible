@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: λαβόντες δὲ ⸂οἱ μαθηταὶ αὐτοῦ⸃ νυκτὸς ⸂διὰ τοῦ τείχους καθῆκαν αὐτὸν⸃ χαλάσαντες ἐν σπυρίδι.
 translation:
-  text: But his disciples took him by night and lowered him through the wall in a large basket[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'through an opening in the wall.' The Greek says literally 'through the wall,' likely referring to an aperture or window in the city wall.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek uses two lowering expressions ('lowered' and 'letting down'), a vivid construction emphasizing the manner of escape.
-    reason: lexical_alternative
+  text: But his disciples took him by night and lowered him in a large basket through an opening in the city wall.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λαβόντες
   lemma: λαμβάνω
@@ -93,14 +86,20 @@ revisions:
   from: But his disciples took him by night and lowered him through the wall, letting him down in a large basket.
   to: But his disciples took him by night and lowered him through the wall, letting him down in a large basket.
   rationale: Removed the redundant participial expansion 'letting him down,' since 'lowered him' already renders the Greek action. Kept 'through the wall' and 'in a large basket' for accuracy and natural formal English.
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But his disciples took him by night and lowered him through the wall in a large basket[a][b].'
-  to: 'But his disciples took him by night and lowered him through the wall in a large basket[a][b].'
+  from: But his disciples took him by night and lowered him through the wall in a large basket[a][b].
+  to: But his disciples took him by night and lowered him through the wall in a large basket[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''letting him down''].'
+- timestamp: '2026-11-09T17:06:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But his disciples took him by night and lowered him through the wall in a large basket[a][b].
+  to: But his disciples took him by night and lowered him in a large basket through an opening in the city wall.
+  rationale: The earlier review correctly recognized that the two lowering expressions describe one action and need not be duplicated in English. I retain the current wording’s compression and move its explanation of the wall opening into the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +119,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/009/025.job-46669.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:25Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul’s disciples help him escape at night by lowering him in a large basket through an opening in the city wall.
+  meaning_decisions:
+  - source_phrase: διὰ τοῦ τείχους
+    prior_rendering: through the wall
+    new_rendering: through an opening in the city wall
+    rationale: Makes the physical route intelligible without specifying an opening’s particular form.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized that the two lowering expressions describe one action and need not be duplicated in English. I retain the current wording’s compression and move its explanation of the wall opening into the main text.

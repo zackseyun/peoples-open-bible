@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But after three years[a], word came to those around Judas that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'it fell upon those around Judas'—an idiom meaning that news or a report reached them.
-    reason: lexical_alternative
+  text: Three years later, news reached Judas and his men that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Μετὰ δὲ τριετῆ χρόνον
   chosen: But after three years
@@ -94,14 +90,20 @@ revisions:
   from: But after three years, word came to those around Judas that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
   to: But after three years, news reached those around Judas that Demetrius son of Seleucus had sailed in through the harbor at Tripolis with a strong force and a fleet,
   rationale: Replaced 'word came' with 'news reached' for more natural formal English, and revised 'sailed into the harbor' to 'sailed in through the harbor' to reflect διὰ τοῦ ... λιμένος more closely.
-
 - timestamp: '2026-05-16T16:07:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But after three years[a], news reached those around Judas that Demetrius son of Seleucus had sailed in through the harbor at Tripolis with a strong force and a fleet,'
-  to: 'But after three years[a], word came to those around Judas that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,'
-  rationale: 'Restored drafter ''word came to those around Judas'' (preserving the chosen English narrative idiom) and ''had sailed into the harbor at Tripolis'' (preserving the chosen directional ''into'') per chosen renderings.'
+  from: But after three years[a], news reached those around Judas that Demetrius son of Seleucus had sailed in through the harbor at Tripolis with a strong force and a fleet,
+  to: But after three years[a], word came to those around Judas that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
+  rationale: Restored drafter 'word came to those around Judas' (preserving the chosen English narrative idiom) and 'had sailed into the harbor at Tripolis' (preserving the chosen directional 'into') per chosen renderings.
+- timestamp: '2026-11-09T18:57:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But after three years[a], word came to those around Judas that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
+  to: Three years later, news reached Judas and his men that Demetrius son of Seleucus had sailed into the harbor at Tripolis with a strong force and a fleet,
+  rationale: The earlier review’s preference for 'news reached' improves clarity, while its more literal harbor wording adds little. The current idiomatic description of sailing into the harbor is retained, and the unnecessary literal-idiom footnote is dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +123,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/001.job-49389.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:14Z'
+  change_level: refined
+  confidence: high
+  meaning: Three years later, Judas and his followers learned that Demetrius had arrived at Tripolis with substantial military and naval strength.
+  meaning_decisions:
+  - source_phrase: Μετὰ δὲ τριετῆ χρόνον
+    prior_rendering: But after three years
+    new_rendering: Three years later
+    rationale: The conjunction marks a narrative transition, not a meaningful contrast; the new wording expresses the elapsed time naturally.
+  - source_phrase: προσέπεσεν τοῖς περὶ τὸν Ἰούδαν
+    prior_rendering: word came to those around Judas
+    new_rendering: news reached Judas and his men
+    rationale: The Greek expression includes Judas himself together with his followers, rather than merely people standing around him.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s preference for 'news reached' improves clarity, while its more literal harbor wording adds little. The current idiomatic description of sailing into the harbor is retained, and the unnecessary literal-idiom footnote is dropped.

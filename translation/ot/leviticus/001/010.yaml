@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אִם מִן הַ/צֹּ֨אן קָרְבָּנ֧/וֹ מִן הַ/כְּשָׂבִ֛ים א֥וֹ מִן הָ/עִזִּ֖ים לְ/עֹלָ֑ה זָכָ֥ר תָּמִ֖ים יַקְרִיבֶֽ/נּוּ־־־־׃
 translation:
-  text: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering[a], he shall offer it, a male without blemish[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'as a burnt offering.'
-    reason: lexical_alternative
-  - marker: b
-    text: '''Without blemish'' means free from physical defect, the required condition for this sacrifice.'
-    reason: cultural_note
+  text: If his burnt offering is from the flock, whether a sheep or a goat, he shall offer a male without blemish.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאִם
   chosen: And if
@@ -111,13 +104,12 @@ revisions:
   from: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering, he shall offer it, a male without blemish.
   to: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering, he shall offer a male without blemish.
   rationale: 'Removed the redundant pronoun ''it'' and smoothed the word order so the English more naturally reflects the Hebrew: the offering itself is specified as ''a male without blemish.'''
-
 - timestamp: '2026-05-18T03:00:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if his offering is from the flock[a], from the sheep or from the goats, for a burnt offering[b], he shall offer a male without blemish.'
-  to: 'And if his offering is from the flock, from the sheep or from the goats, for a burnt offering, he shall offer it, a male without blemish.'
+  from: And if his offering is from the flock[a], from the sheep or from the goats, for a burnt offering[b], he shall offer a male without blemish.
+  to: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering, he shall offer it, a male without blemish.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he shall offer it''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +119,13 @@ revisions:
   from: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering, he shall offer it, a male without blemish.
   to: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering[a], he shall offer it, a male without blemish[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('for a burnt offering') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('Without blemish') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:16:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if his offering is from the flock, from the sheep or from the goats, for a burnt offering[a], he shall offer it, a male without blemish[b].
+  to: If his burnt offering is from the flock, whether a sheep or a goat, he shall offer a male without blemish.
+  rationale: The review correctly recognized that removing “it” improves the English without losing the Hebrew object suffix's meaning. The automated revert supplied no meaning-based reason to restore that redundancy, and the explicit male and unblemished requirements remain unchanged.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +145,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/001/010.job-45300.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:16:11Z'
+  change_level: refined
+  confidence: high
+  meaning: A sheep or goat brought as a burnt offering must be a male without blemish.
+  meaning_decisions:
+  - source_phrase: מִן הַצֹּאן קָרְבָּנוֹ מִן הַכְּשָׂבִים אוֹ מִן הָעִזִּים לְעֹלָה
+    prior_rendering: his offering is from the flock, from the sheep or from the goats, for a burnt offering
+    new_rendering: his burnt offering is from the flock, whether a sheep or a goat
+    rationale: Putting the sacrificial category first makes the condition immediately clear, while the representative singulars identify the two permitted kinds of flock animal.
+  - source_phrase: זָכָר תָּמִים יַקְרִיבֶנּוּ
+    prior_rendering: he shall offer it, a male without blemish
+    new_rendering: he shall offer a male without blemish
+    rationale: The direct English object carries the animal's required sex and condition without the redundant pronoun.
+  footnote_kinds: {}
+  history_weighed: The review correctly recognized that removing “it” improves the English without losing the Hebrew object suffix's meaning. The automated revert supplied no meaning-based reason to restore that redundancy, and the explicit male and unblemished requirements remain unchanged.

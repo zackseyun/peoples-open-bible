@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: לֹ֥א תַטֶּ֛ה מִשְׁפַּ֥ט אֶבְיֹנְ/ךָ֖ בְּ/רִיבֽ/וֹ׃
 translation:
-  text: You shall not pervert the justice due to your poor person in his dispute[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'You shall not deny justice to your poor man in his lawsuit.'
-    reason: lexical_alternative
+  text: You shall not pervert the justice due to a poor person among you in their lawsuit.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֹא
   chosen: not
@@ -79,14 +75,20 @@ revisions:
   from: You shall not pervert the justice due to your poor man in his dispute.
   to: You shall not pervert the justice due to your poor man in his dispute.
   rationale: Replaced 'poor man' with 'poor person' to reflect the Hebrew more accurately and avoid adding gender not explicit in the source; otherwise retained the formal wording and structure.
-
 - timestamp: '2026-05-18T02:54:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall not pervert the justice due to your poor person in his dispute[a].'
-  to: 'You shall not pervert the justice due to your poor person in his dispute[a].'
+  from: You shall not pervert the justice due to your poor person in his dispute[a].
+  to: You shall not pervert the justice due to your poor person in his dispute[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''your poor man''].'
+- timestamp: '2026-11-09T17:36:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall not pervert the justice due to your poor person in his dispute[a].
+  to: You shall not pervert the justice due to a poor person among you in their lawsuit.
+  rationale: The recorded review favored 'poor person,' which the current wording already uses; the no-change revert supplies no semantic reason to undo it. I retain the strong wording about perverting justice and clarify the communal relationship.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/023/006.job-62845.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:23Z'
+  change_level: refined
+  confidence: high
+  meaning: A poor member of the community must receive the justice due to them in their legal case.
+  meaning_decisions:
+  - source_phrase: אֶבְיֹנְךָ
+    prior_rendering: your poor person
+    new_rendering: a poor person among you
+    rationale: The possessive identifies a needy member of the addressed community, not a person owned by the addressee.
+  - source_phrase: בְּרִיבוֹ
+    prior_rendering: in his dispute
+    new_rendering: in their lawsuit
+    rationale: The context is judicial, and singular 'their' naturally agrees with the retained generic expression 'a poor person.'
+  footnote_kinds: {}
+  history_weighed: The recorded review favored 'poor person,' which the current wording already uses; the no-change revert supplies no semantic reason to undo it. I retain the strong wording about perverting justice and clarify the communal relationship.

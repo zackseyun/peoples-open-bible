@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: προσελθόντες δὲ διήγειραν αὐτὸν λέγοντες· Ἐπιστάτα ἐπιστάτα, ἀπολλύμεθα· ὁ δὲ ⸀διεγερθεὶς ἐπετίμησεν τῷ ἀνέμῳ καὶ τῷ κλύδωνι τοῦ ὕδατος, καὶ ἐπαύσαντο, καὶ ἐγένετο γαλήνη.
 translation:
-  text: Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “the surging waves” for “the raging of the water.”
-    reason: lexical_alternative
+  text: Then they went to him and woke him, saying, “Master, Master, we are perishing!” He awoke and rebuked the wind and the surging waves, and they subsided. All was calm.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: προσελθόντες
   chosen: they came
@@ -118,14 +114,20 @@ revisions:
   from: Then they came and woke him, saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the raging of the water, and they ceased, and there was a calm.
   to: Then they came and woke him, saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the raging of the water, and they ceased, and there was a calm.
   rationale: Changed 'the raging of the water' to 'the surging of the water' for a more precise rendering of κλύδων while keeping formal, natural English. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:00:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.'
-  to: 'Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.'
+  from: Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.
+  to: Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the raging of the water''].'
+- timestamp: '2026-11-09T17:11:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then they came and woke him[a], saying, “Master, Master, we are perishing!” And he, having awakened, rebuked the wind and the surging of the water, and they ceased, and there was a calm.
+  to: Then they went to him and woke him, saying, “Master, Master, we are perishing!” He awoke and rebuked the wind and the surging waves, and they subsided. All was calm.
+  rationale: I preserved the current wording's more precise surging imagery, along with “Master,” the repeated appeal, and “rebuked.” The conflicting automated revision and revert records do not establish a meaning-based reason to restore the older phrasing.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -147,3 +149,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/008/024.job-38949.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:51Z'
+  change_level: refined
+  confidence: high
+  meaning: The disciples wake Jesus in fear for their lives, and his rebuke brings the wind and waves to rest.
+  meaning_decisions:
+  - source_phrase: κλύδωνι τοῦ ὕδατος
+    prior_rendering: the surging of the water
+    new_rendering: the surging waves
+    rationale: The phrase describes the water's swelling, turbulent waves; the new wording preserves that image in natural English.
+  - source_phrase: ἐπαύσαντο, καὶ ἐγένετο γαλήνη
+    prior_rendering: they ceased, and there was a calm
+    new_rendering: they subsided. All was calm
+    rationale: This expresses both the cessation of wind and waves and the resulting calm without the awkward indefinite noun construction.
+  footnote_kinds: {}
+  history_weighed: I preserved the current wording's more precise surging imagery, along with “Master,” the repeated appeal, and “rebuked.” The conflicting automated revision and revert records do not establish a meaning-based reason to restore the older phrasing.

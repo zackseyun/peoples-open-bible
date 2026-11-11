@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: On the day the days of your life are completed[a], and at the time of death, give an inheritance.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'in the day of the completion of the days of your life.'
-    reason: lexical_alternative
+  text: On the day your life comes to an end, at the time of death, leave an inheritance.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν ἡμέρᾳ
   chosen: On the day
@@ -108,17 +104,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'On the day your life''s days are completed, and at the time of death, give an inheritance.'
-  to: 'On the day your life''s days are completed, and at the time of death, give an inheritance.'
+  from: On the day your life's days are completed, and at the time of death, give an inheritance.
+  to: On the day your life's days are completed, and at the time of death, give an inheritance.
   rationale: Replaced 'your life's days' with 'the days of your life' for more natural and formal English while preserving the Greek sense. No other changes.
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On the day the days of your life are completed[a], and at the time of death, give an inheritance.'
-  to: 'On the day the days of your life are completed[a], and at the time of death, give an inheritance.'
+  from: On the day the days of your life are completed[a], and at the time of death, give an inheritance.
+  to: On the day the days of your life are completed[a], and at the time of death, give an inheritance.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["your life''s days"].'
+- timestamp: '2026-11-09T19:08:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On the day the days of your life are completed[a], and at the time of death, give an inheritance.
+  to: On the day your life comes to an end, at the time of death, leave an inheritance.
+  rationale: As in verse 24, I express life's end naturally rather than retain the accumulated genitives. The supplied source repeats this instruction, so I preserve it without adding a recipient from the preceding verse.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -138,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/032.job-51907.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:09Z'
+  change_level: refined
+  confidence: high
+  meaning: The reader should leave an inheritance at the end of his life.
+  meaning_decisions:
+  - source_phrase: ἐν ἡμέρᾳ συντελείας ἡμερῶν ζωῆς σου
+    prior_rendering: On the day the days of your life are completed
+    new_rendering: On the day your life comes to an end
+    rationale: The phrase means the end of one's life, which English can express without reproducing the repeated 'days' construction.
+  - source_phrase: διδὸς κληρονομίαν
+    prior_rendering: give an inheritance
+    new_rendering: leave an inheritance
+    rationale: In the explicitly death-related setting, 'leave an inheritance' naturally conveys the giving of property as a bequest without supplying a recipient.
+  footnote_kinds: {}
+  history_weighed: As in verse 24, I express life's end naturally rather than retain the accumulated genitives. The supplied source repeats this instruction, so I preserve it without adding a recipient from the preceding verse.

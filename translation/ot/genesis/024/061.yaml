@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תָּ֨קָם רִבְקָ֜ה וְ/נַעֲרֹתֶ֗י/הָ וַ/תִּרְכַּ֨בְנָה֙ עַל הַ/גְּמַלִּ֔ים וַ/תֵּלַ֖כְנָה אַחֲרֵ֣י הָ/אִ֑ישׁ וַ/יִּקַּ֥ח הָ/עֶ֛בֶד אֶת רִבְקָ֖ה וַ/יֵּלַֽךְ־־׃
 translation:
-  text: Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went on his way.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'her maids' or 'her young women attendants.' The Hebrew term refers to young women and in context likely to Rebekah's female attendants.
-    reason: lexical_alternative
+  text: Then Rebekah and the young women who attended her rose, mounted the camels, and followed the man. The servant took Rebekah with him and went on his way.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַתָּקָם
   chosen: arose
@@ -89,14 +85,20 @@ revisions:
   from: Then Rebekah and her young women arose, mounted the camels, and went after the man. So the servant took Rebekah and went on his way.
   to: Then Rebekah and her young women arose, mounted the camels, and went after the man. And the servant took Rebekah and went.
   rationale: Replaced 'So' with 'And' for closer alignment to the Hebrew narrative sequence, and simplified 'went on his way' to 'went' to avoid adding words not explicit in the source.
-
 - timestamp: '2026-05-15T21:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went.'
-  to: 'Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went on his way.'
-  rationale: 'Drafter chose ''went on his way'' over ''went'' (explicit rejected alternative) as idiomatic English for a travel narrative reflecting continuation of the journey. Azure substituted the rejected alternative on bare ''avoid adding words not explicit in source'' grounds. (So→And change retained — genuine waw-consecutive grammar argument.)'
+  from: Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went.
+  to: Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went on his way.
+  rationale: Drafter chose 'went on his way' over 'went' (explicit rejected alternative) as idiomatic English for a travel narrative reflecting continuation of the journey. Azure substituted the rejected alternative on bare 'avoid adding words not explicit in source' grounds. (So→And change retained — genuine waw-consecutive grammar argument.)
+- timestamp: '2026-11-09T17:43:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Rebekah and her young women arose[a], mounted the camels, and went after the man. And the servant took Rebekah and went on his way.
+  to: Then Rebekah and the young women who attended her rose, mounted the camels, and followed the man. The servant took Rebekah with him and went on his way.
+  rationale: The history’s defense of “went on his way” correctly treats it as idiomatic travel language rather than an unsupported addition, so it is retained. The earlier footnote’s identification of the young women as attendants is brought into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/024/061.job-65082.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Rebekah and her female attendants mount the camels and follow the servant as he departs with her.
+  meaning_decisions:
+  - source_phrase: נַעֲרֹתֶיהָ
+    prior_rendering: her young women
+    new_rendering: the young women who attended her
+    rationale: The possessive expression identifies Rebekah’s female attendants, not merely young women associated with her; the revised wording carries their contextual role while preserving their description.
+  - source_phrase: וַתֵּלַכְנָה אַחֲרֵי הָאִישׁ
+    prior_rendering: went after the man
+    new_rendering: followed the man
+    rationale: They travel behind him under his guidance, rather than pursuing him.
+  - source_phrase: וַיִּקַּח הָעֶבֶד אֶת רִבְקָה
+    prior_rendering: the servant took Rebekah
+    new_rendering: The servant took Rebekah with him
+    rationale: The travel context supplies the sense of taking her along, which is now explicit.
+  footnote_kinds: {}
+  history_weighed: The history’s defense of “went on his way” correctly treats it as idiomatic travel language rather than an unsupported addition, so it is retained. The earlier footnote’s identification of the young women as attendants is brought into the text.

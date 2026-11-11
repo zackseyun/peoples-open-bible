@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֵּ֣שֶׁב יַעֲקֹ֔ב בְּ/אֶ֖רֶץ מְגוּרֵ֣י אָבִ֑י/ו בְּ/אֶ֖רֶץ כְּנָֽעַן׃
 translation:
-  text: Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or more formally, 'And Jacob settled in the land of his father's sojournings, in the land of Canaan.'
-    reason: lexical_alternative
+  text: Jacob lived in the land of Canaan, where his father had lived as a foreign resident.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֵּשֶׁב
   chosen: Jacob lived
@@ -18,7 +14,7 @@ lexical_decisions:
   - Then Jacob dwelt
   - Now Jacob lived
   lexicon: HALOT
-  rationale: "From ישׁב, the wayyiqtol advances the narrative. 'Lived' is natural modern English and fits the broad sense of residing/dwelling here without overstating permanence. 'Now' reflects the discourse transition often carried by the waw-consecutive in narrative. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'From ישׁב, the wayyiqtol advances the narrative. ''Lived'' is natural modern English and fits the broad sense of residing/dwelling here without overstating permanence. ''Now'' reflects the discourse transition often carried by the waw-consecutive in narrative. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: בְּאֶרֶץ
   chosen: in the land
   alternatives:
@@ -65,13 +61,12 @@ revisions:
   from: Now Jacob lived in the land where his father had sojourned, in the land of Canaan.
   to: Now Jacob lived in the land where his father had sojourned, in the land of Canaan.
   rationale: Replaced 'where his father had sojourned' with the more literal and formal 'of his father's sojournings' to reflect מְגוּרֵי אָבִיו more closely while preserving natural English.
-
 - timestamp: '2026-05-17T10:30:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Jacob lived in the land of his father''s sojournings[a], in the land of Canaan.'
-  to: 'Now Jacob lived in the land of his father''s sojournings[a], in the land of Canaan.'
+  from: Now Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
+  to: Now Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''where his father had sojourned''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -80,6 +75,13 @@ revisions:
   from: Now Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
   to: Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:45:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jacob lived in the land of his father's sojournings[a], in the land of Canaan.
+  to: Jacob lived in the land of Canaan, where his father had lived as a foreign resident.
+  rationale: The earlier review favored the formal construct 'his father's sojournings,' but the lexical record identifies foreign residence as its important meaning. I preserve that meaning rather than the Hebrew noun construction.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -101,3 +103,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/037/001.job-65438.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob lived in Canaan, where his father had lived as a foreign resident.
+  meaning_decisions:
+  - source_phrase: בְּאֶרֶץ מְגוּרֵי אָבִיו בְּאֶרֶץ כְּנָעַן
+    prior_rendering: in the land of his father's sojournings, in the land of Canaan
+    new_rendering: in the land of Canaan, where his father had lived as a foreign resident
+    rationale: The reordered relative clause conveys the location naturally while making explicit that the father's residence was that of an outsider, not simply a native inhabitant.
+  footnote_kinds: {}
+  history_weighed: The earlier review favored the formal construct 'his father's sojournings,' but the lexical record identifies foreign residence as its important meaning. I preserve that meaning rather than the Hebrew noun construction.

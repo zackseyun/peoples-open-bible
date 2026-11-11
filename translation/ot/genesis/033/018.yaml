@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יָּבֹא֩ יַעֲקֹ֨ב שָׁלֵ֜ם עִ֣יר שְׁכֶ֗ם אֲשֶׁר֙ בְּ/אֶ֣רֶץ כְּנַ֔עַן בְּ/בֹא֖/וֹ מִ/פַּדַּ֣ן אֲרָ֑ם וַ/יִּ֖חַן אֶת פְּנֵ֥י הָ/עִֽיר־׃
 translation:
-  text: Jacob came safely to the city of Shechem[a], which is in the land of Canaan, when he came from Paddan-aram[b], and he camped before the city.
-  philosophy: optimal-equivalence
+  text: On his return from Paddan-aram, Jacob arrived safely[a] at the city of Shechem in the land of Canaan and camped in front of the city.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Jacob came to Salem, a city of Shechem.' The Hebrew שָׁלֵם (shalem) may be read either as 'safely/in peace' or as the place name 'Salem.'
+    text: Or, “Jacob arrived at Salem, a city of Shechem,” reading the Hebrew shalem as a place name rather than “safely.”
     reason: alternative_reading
-  - marker: b
-    text: Or 'when he came from Paddan-aram'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: וַיָּבֹא
   chosen: came
@@ -94,12 +91,18 @@ revisions:
   from: Jacob came safely to the city of Shechem, which is in the land of Canaan, on his coming from Paddan-aram, and he camped before the city.
   to: Jacob came safely to the city of Shechem, which is in the land of Canaan, when he came from Paddan-aram, and he camped before the city.
   rationale: Changed 'on his coming' to the more natural 'when he came' while preserving the sense. No other changes needed.
+- timestamp: '2026-11-09T17:44:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jacob came safely to the city of Shechem[a], which is in the land of Canaan, when he came from Paddan-aram[b], and he camped before the city.
+  to: On his return from Paddan-aram, Jacob arrived safely[a] at the city of Shechem in the land of Canaan and camped in front of the city.
+  rationale: Earlier revisions struggled with the repeated arrival wording; restructuring the sentence resolves that problem more naturally. I retained the preferred safe-arrival interpretation and its serious place-name alternative.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:44:41Z'
   unchanged: false
   changes_summary: Changed 'on his coming' to the more natural 'when he came' while preserving the sense. No other changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +125,26 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/033/018.job-37870.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:56Z'
+  change_level: refined
+  confidence: high
+  meaning: On his return from Paddan-aram, Jacob reaches Shechem safely in Canaan and camps in front of the city.
+  meaning_decisions:
+  - source_phrase: וַיָּבֹא יַעֲקֹב ... בְּבֹאוֹ מִפַּדַּן אֲרָם
+    prior_rendering: Jacob came ... when he came from Paddan-aram
+    new_rendering: On his return from Paddan-aram, Jacob arrived
+    rationale: The temporal phrase situates this arrival within Jacob’s homeward journey; placing it first avoids the repeated “came” without implying a new journey.
+  - source_phrase: אֶת פְּנֵי הָעִיר
+    prior_rendering: before the city
+    new_rendering: in front of the city
+    rationale: The phrase is spatial, not temporal, and the English makes that distinction explicit.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier revisions struggled with the repeated arrival wording; restructuring the sentence resolves that problem more naturally. I retained the preferred safe-arrival interpretation and its serious place-name alternative.

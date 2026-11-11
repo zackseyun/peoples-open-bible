@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וְ/כָל יִשְׂרָאֵ֞ל שָׁמְע֣וּ לֵ/אמֹ֗ר הִכָּ֤ה שָׁאוּל֙ אֶת נְצִ֣יב פְּלִשְׁתִּ֔ים וְ/גַם נִבְאַשׁ יִשְׂרָאֵ֖ל בַּ/פְּלִשְׁתִּ֑ים וַ/יִּצָּעֲק֥וּ הָ/עָ֛ם אַחֲרֵ֥י שָׁא֖וּל הַ/גִּלְגָּֽל־־־׃
 translation:
-  text: And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.
-  philosophy: optimal-equivalence
+  text: 'All Israel heard the report: “Saul has defeated the Philistine garrison[a], and Israel has become a stench to the Philistines.” Then the troops were summoned to join Saul at Gilgal.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the Philistine prefect/governor” or “the Philistine outpost.” The Hebrew term can refer either to an official or to a stationed garrison; the military context favors “garrison.”
-    reason: lexical_alternative
-  - marker: b
-    text: Literally “Israel had become a stench to the Philistines,” an idiom meaning Israel had become detestable or odious to them.
-    reason: lexical_alternative
-  - marker: c
-    text: Or “the people were called together after Saul at Gilgal.” The Hebrew expression likely refers to mustering the people to follow Saul in battle.
-    reason: lexical_alternative
+    text: Or “the Philistine governor”; the Hebrew term can denote an official or a stationed military force.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: שָׁמְעוּ לֵאמֹר
   chosen: heard it said
@@ -99,14 +93,20 @@ revisions:
   from: And all Israel heard it said, “Saul has struck down the Philistine garrison, and Israel has also become odious to the Philistines.” Then the people were summoned to join Saul at Gilgal.
   to: And all Israel heard it said, “Saul has struck down the Philistine garrison, and Israel has also become odious to the Philistines.” Then the people were summoned to join Saul at Gilgal.
   rationale: Changed 'were summoned' to 'were called out' to more closely reflect the Hebrew verb for mustering/calling the people, while keeping the rest of the verse intact.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.'
-  to: 'And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.'
+  from: And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.
+  to: And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were summoned to join''].'
+- timestamp: '2026-11-09T17:21:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all Israel heard it said[a], “Saul has struck down the Philistine garrison[c][b], and Israel has also become odious to the Philistines.” Then the people were called out to join Saul at Gilgal.
+  to: 'All Israel heard the report: “Saul has defeated the Philistine garrison[a], and Israel has become a stench to the Philistines.” Then the troops were summoned to join Saul at Gilgal.'
+  rationale: The recorded passes disagree over “called out” and “summoned,” but neither changes the underlying military summons. I use the first draft’s clearer “summoned,” restore the forceful stench image, and repair the association between the remaining note and its phrase.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +126,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/013/004.job-59021.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Israel heard that Saul had defeated the Philistine garrison and made Israel detestable to the Philistines, so the troops were summoned to Saul at Gilgal.
+  meaning_decisions:
+  - source_phrase: שָׁמְעוּ לֵאמֹר הִכָּה שָׁאוּל אֶת נְצִיב פְּלִשְׁתִּים
+    prior_rendering: heard it said, “Saul has struck down the Philistine garrison
+    new_rendering: 'heard the report: “Saul has defeated the Philistine garrison'
+    rationale: This naturally introduces the circulating report and uses the same military wording as verse 3, while preserving the report’s attribution to Saul rather than Jonathan.
+  - source_phrase: וְגַם נִבְאַשׁ יִשְׂרָאֵל בַּפְּלִשְׁתִּים
+    prior_rendering: and Israel has also become odious to the Philistines
+    new_rendering: and Israel has become a stench to the Philistines
+    rationale: The stench metaphor still communicates intense disgust in English and preserves the force of the source image.
+  - source_phrase: וַיִּצָּעֲקוּ הָעָם אַחֲרֵי שָׁאוּל
+    prior_rendering: the people were called out to join Saul
+    new_rendering: the troops were summoned to join Saul
+    rationale: The clause describes military mobilization, not a general gathering of the population.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded passes disagree over “called out” and “summoned,” but neither changes the underlying military summons. I use the first draft’s clearer “summoned,” restore the forceful stench image, and repair the association between the remaining note and its phrase.

@@ -20,11 +20,14 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: If[a], then, even a woman—an old woman and a mother of children—endured the tortures up to death while seeing the sufferings of her children, godly reason is master of the passions.
-  philosophy: optimal-equivalence
+  text: If, then, even a woman—elderly and a mother—endured torture to the point of death while watching her children cry out in agony[a], godly reason is master of the passions[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more literally, 'while seeing her children wailing/crying aloud.' The Greek syntax in this clause is compressed, and the wording may emphasize the mother's witnessing of her children's cries amid their torture.
+    text: Or, 'while witnessing her children's suffering'; the Greek clause is compressed.
+    reason: alternative_reading
+  - marker: b
+    text: Here and throughout the chapter, 'passions' refers to powerful emotions and impulses.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Εἰ δὲ τοίνυν
@@ -146,14 +149,20 @@ revisions:
   from: If, then, even a woman—an old woman and a mother of children—endured the tortures up to death while seeing the sufferings of her children, godly reason is master of the passions.
   to: If, then, even a woman—an aged woman and a mother of children—endured tortures unto death while seeing the sufferings of her children, godly reason is master of the passions.
   rationale: Changed 'an old woman' to 'an aged woman' for more formal register, and 'the tortures up to death' to 'tortures unto death' for more natural formal English while preserving the sense. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-16T19:07:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If[a], then, even a woman—an aged woman and a mother of children—endured tortures unto death while seeing the sufferings of her children, godly reason is master of the passions.'
-  to: 'If[a], then, even a woman—an old woman and a mother of children—endured the tortures up to death while seeing the sufferings of her children, godly reason is master of the passions.'
-  rationale: 'Restored drafter ''an old woman'' (preserving the chosen rendering) and ''the tortures up to death'' (preserving the chosen definite article and ''up to death'' phrasing) per chosen renderings.'
+  from: If[a], then, even a woman—an aged woman and a mother of children—endured tortures unto death while seeing the sufferings of her children, godly reason is master of the passions.
+  to: If[a], then, even a woman—an old woman and a mother of children—endured the tortures up to death while seeing the sufferings of her children, godly reason is master of the passions.
+  rationale: Restored drafter 'an old woman' (preserving the chosen rendering) and 'the tortures up to death' (preserving the chosen definite article and 'up to death' phrasing) per chosen renderings.
+- timestamp: '2026-11-09T18:59:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If[a], then, even a woman—an old woman and a mother of children—endured the tortures up to death while seeing the sufferings of her children, godly reason is master of the passions.
+  to: If, then, even a woman—elderly and a mother—endured torture to the point of death while watching her children cry out in agony[a], godly reason is master of the passions[b].
+  rationale: The earlier revisions concerned register more than meaning, so I retained the established conclusion about godly reason. The lexical record and earlier footnote supported making the children's cries explicit, with the broader reading preserved as an alternative.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -173,3 +182,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/016/001.job-50137.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:52Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The elderly mother's endurance through death while witnessing her children's agony demonstrates that godly reason rules the passions.
+  meaning_decisions:
+  - source_phrase: καὶ γυνὴ καὶ γεραιὰ καὶ ἐπὶ παιδῶν μήτηρ
+    prior_rendering: even a woman—an old woman and a mother of children
+    new_rendering: even a woman—elderly and a mother
+    rationale: Preserves the threefold rhetorical emphasis on her sex, age, and motherhood without redundant English phrasing.
+  - source_phrase: τὰς μέχρι θανάτου βασάνους
+    prior_rendering: the tortures up to death
+    new_rendering: torture to the point of death
+    rationale: Expresses the extent of her endurance in natural English.
+  - source_phrase: ὁρῶσα τῶν τέκνων· ὁλολυγμένων
+    prior_rendering: while seeing the sufferings of her children
+    new_rendering: while watching her children cry out in agony
+    rationale: Restores the agonized cries recognized in the lexical record and earlier footnote, while noting the uncertainty of the compressed construction.
+  footnote_kinds:
+    a: alternative_meaning
+    b: name_or_term
+  history_weighed: The earlier revisions concerned register more than meaning, so I retained the established conclusion about godly reason. The lexical record and earlier footnote supported making the children's cries explicit, with the broader reading preserved as an alternative.

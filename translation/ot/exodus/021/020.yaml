@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/כִֽי יַכֶּה֩ אִ֨ישׁ אֶת עַבְדּ֜/וֹ א֤וֹ אֶת אֲמָת/וֹ֙ בַּ/שֵּׁ֔בֶט וּ/מֵ֖ת תַּ֣חַת יָד֑/וֹ נָקֹ֖ם יִנָּקֵֽם־־־׃
 translation:
-  text: And if a man strikes his male servant or his female servant with a rod[a], and the servant dies under his hand, he must surely be avenged.
-  philosophy: optimal-equivalence
+  text: If a man strikes his male or female servant[a] with a rod and the servant dies while being struck, retribution must be exacted for the servant's death.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'he shall surely be punished.' The Hebrew more literally says, 'he shall surely be avenged,' an emphatic legal formula.
-    reason: lexical_alternative
+    text: These servants were enslaved people, not hired workers.
+    reason: cultural_note
 lexical_decisions:
 - source_word: וְ/כִֽי
   chosen: And if
@@ -103,14 +103,20 @@ revisions:
   from: And if a man strikes his male slave or his female slave with a rod, and he dies under his hand, he must surely be avenged.
   to: And if a man strikes his male slave or his female slave with a rod, and he dies under his hand, he must surely be avenged.
   rationale: Clarified the pronoun in 'and the slave dies under his hand' to avoid ambiguity while preserving the Hebrew sense; otherwise retained the draft's wording.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if a man strikes his male slave or his female slave with a rod[a], and the slave dies under his hand, he must surely be avenged.'
-  to: 'And if a man strikes his male slave or his female slave with a rod[a], and the slave dies under his hand, he must surely be avenged.'
+  from: And if a man strikes his male slave or his female slave with a rod[a], and the slave dies under his hand, he must surely be avenged.
+  to: And if a man strikes his male slave or his female slave with a rod[a], and the slave dies under his hand, he must surely be avenged.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and he dies''].'
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if a man strikes his male servant or his female servant with a rod[a], and the servant dies under his hand, he must surely be avenged.
+  to: If a man strikes his male or female servant[a] with a rod and the servant dies while being struck, retribution must be exacted for the servant's death.
+  rationale: The recorded review recognized the need to identify the servant as the one who dies, a clarification already present in the current wording. I retain that gain and the documented refusal to specify the exact punishment, while making the legal consequence explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -130,3 +136,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/020.job-62795.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A master whose servant dies while being struck with a rod must face retribution for the servant's death.
+  meaning_decisions:
+  - source_phrase: תַּחַת יָדוֹ
+    prior_rendering: under his hand
+    new_rendering: while being struck
+    rationale: The contrast with survival for a day or two in the next verse concerns death during the assault, not simply death while belonging to the master.
+  - source_phrase: נָקֹם יִנָּקֵם
+    prior_rendering: he must surely be avenged
+    new_rendering: retribution must be exacted for the servant's death
+    rationale: This removes the ambiguous pronoun and conveys mandatory legal retribution without specifying a penalty the verse does not name.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded review recognized the need to identify the servant as the one who dies, a clarification already present in the current wording. I retain that gain and the documented refusal to specify the exact punishment, while making the legal consequence explicit.

@@ -17,15 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'heed the words of your servant girl.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'my master will not turn aside from his undertakings.'
-    reason: lexical_alternative
+  text: If you follow your maidservant’s advice, God will bring the undertaking to completion with you, and my lord will not be thwarted in his purposes.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κατακολουθήσῃς
   chosen: follow
@@ -133,14 +126,20 @@ revisions:
   from: And if you follow the words of your servant girl, God will fully accomplish the matter with you, and my lord will not fail in his plans.
   to: And if you follow the words of your servant girl, God will fully accomplish the matter with you, and my lord will not fail in his plans.
   rationale: Changed 'fail in his plans' to 'depart from his purposes' to more closely reflect οὐκ ἀποστεῖται ... τῶν ἐπιτηδευμάτων αὐτοῦ. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.'
-  to: 'And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.'
+  from: And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.
+  to: And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will not fail''].'
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if you follow the words of your servant girl[a], God will fully accomplish the matter with you[b], and my lord will not depart from his purposes.
+  to: If you follow your maidservant’s advice, God will bring the undertaking to completion with you, and my lord will not be thwarted in his purposes.
+  rationale: The first draft’s ‘will not fail in his plans’ recognized the assurance of successful accomplishment. The later ‘depart from his purposes’ followed the source construction more closely but obscured that force; the relationship expressed by ‘with you’ remains unresolved.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -160,3 +159,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/011/006.job-50722.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judith promises that following her advice will allow God to complete the undertaking with Holofernes and prevent his purposes from being thwarted.
+  meaning_decisions:
+  - source_phrase: κατακολουθήσῃς τοῖς λόγοις τῆς παιδίσκης σου
+    prior_rendering: follow the words of your servant girl
+    new_rendering: follow your maidservant’s advice
+    rationale: The words are counsel to be acted upon, and ‘maidservant’ preserves Judith’s deferential self-description without suggesting that this widow is a young girl.
+  - source_phrase: τελείως πρᾶγμα ποιήσει μετὰ σοῦ ὁ θεός
+    prior_rendering: God will fully accomplish the matter with you
+    new_rendering: God will bring the undertaking to completion with you
+    rationale: The new wording expresses complete accomplishment naturally while retaining ‘with you’ and the undertaking’s unspecified scope.
+  - source_phrase: οὐκ ἀποστεῖται ὁ κύριός μου τῶν ἐπιτηδευμάτων αὐτοῦ
+    prior_rendering: my lord will not depart from his purposes
+    new_rendering: my lord will not be thwarted in his purposes
+    rationale: The contextual assurance concerns achieving his designs, not merely his resolve to remain committed to them.
+  footnote_kinds: {}
+  history_weighed: The first draft’s ‘will not fail in his plans’ recognized the assurance of successful accomplishment. The later ‘depart from his purposes’ followed the source construction more closely but obscured that force; the relationship expressed by ‘with you’ remains unresolved.

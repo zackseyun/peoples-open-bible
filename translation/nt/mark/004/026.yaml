@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: Καὶ ἔλεγεν· Οὕτως ἐστὶν ἡ βασιλεία τοῦ θεοῦ ⸀ὡς ἄνθρωπος βάλῃ τὸν σπόρον ἐπὶ τῆς γῆς
 translation:
-  text: 'And he was saying[c][b][a], “The kingdom of God is like this: as when a man casts the seed upon the ground,”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “The kingdom of God is as if a man should sow seed on the ground.” The comparison continues into the next verse, and the Greek is somewhat compressed.
-    reason: alternative_reading
-  - marker: b
-    text: Greek 'a man'; the masculine form is retained because the source uses a grammatically masculine representative figure.
-    reason: lexical_alternative
-  - marker: c
-    text: 'Or ''is like this: as when''.'
-    reason: previous_rendering
+  text: 'He also said, “The kingdom of God is like this: a man scatters seed on the ground.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔλεγεν
   chosen: he was saying
@@ -106,12 +96,18 @@ revisions:
   from: 'And he was saying, “The kingdom of God is like this: a man a man casts the seed upon the ground,”'
   to: 'And he was saying, “The kingdom of God is like this: as when a man casts the seed upon the ground,”'
   rationale: Removed the duplicated phrase 'a man' and rendered ὡς more naturally as 'as when' to reflect the Greek construction while keeping the formal tone.
+- timestamp: '2026-11-09T17:13:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And he was saying[c][b][a], “The kingdom of God is like this: as when a man casts the seed upon the ground,”'
+  to: 'He also said, “The kingdom of God is like this: a man scatters seed on the ground.'
+  rationale: The first recorded revision correctly identified the redundant comparative wording, but its application produced a duplicated 'a man' that the later pass repaired. I retain that repair while implementing the earlier clarity gain cleanly, keeping the comparison open to the rest of the parable.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:52:46Z'
   unchanged: false
   changes_summary: Removed the duplicated phrase 'a man' and rendered ὡς more naturally as 'as when' to reflect the Greek construction while keeping the formal tone.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -136,3 +132,29 @@ cross_check:
     major-issues: 2
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/mark/004/026.job-38812.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:32Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus introduces a comparison between the kingdom of God and a man sowing seed on the ground.
+  meaning_decisions:
+  - source_phrase: Καὶ ἔλεγεν
+    prior_rendering: And he was saying
+    new_rendering: He also said
+    rationale: Naturally introduces another parable in the sequence.
+  - source_phrase: Οὕτως ἐστὶν ἡ βασιλεία τοῦ θεοῦ ὡς
+    prior_rendering: 'The kingdom of God is like this: as when'
+    new_rendering: 'The kingdom of God is like this:'
+    rationale: The colon introduces the comparison without the redundant 'as when'; the comparison still includes the unfolding story in the following verses.
+  - source_phrase: ἄνθρωπος βάλῃ τὸν σπόρον ἐπὶ τῆς γῆς
+    prior_rendering: a man casts the seed upon the ground
+    new_rendering: a man scatters seed on the ground
+    rationale: Expresses the agricultural sense of casting seed in natural English without changing the action or the representative figure.
+  footnote_kinds: {}
+  history_weighed: The first recorded revision correctly identified the redundant comparative wording, but its application produced a duplicated 'a man' that the later pass repaired. I retain that repair while implementing the earlier clarity gain cleanly, keeping the comparison open to the rest of the parable.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: עַל חַטֹּ֤אות יָרָבְעָם֙ אֲשֶׁ֣ר חָטָ֔א וַ/אֲשֶׁ֥ר הֶחֱטִ֖יא אֶת יִשְׂרָאֵ֑ל בְּ/כַעְס֕/וֹ אֲשֶׁ֣ר הִכְעִ֔יס אֶת יְהוָ֖ה אֱלֹהֵ֥י יִשְׂרָאֵֽל־־־׃
 translation:
-  text: because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'by his anger'; the Hebrew noun can denote anger or provocation, but here 'provocation' best matches the following verb 'provoked.'
-    reason: lexical_alternative
+  text: This happened because of the sins Jeroboam had committed and had caused Israel to commit, and because he had provoked Yahweh, the God of Israel, to anger.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עַל
   chosen: because of
@@ -93,14 +89,20 @@ revisions:
   from: because of the sins of Jeroboam that he committed and by which he caused Israel to sin, by his provocation with which he provoked the LORD, the God of Israel.
   to: because of the sins of Jeroboam that he committed and by which he caused Israel to sin, by his provocation with which he provoked the LORD, the God of Israel.
   rationale: Replaced the second 'by' phrase with 'and because of' to reflect the repeated causal structure more clearly and improve natural English while preserving the formal sense.
-
 - timestamp: '2026-05-18T02:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.'
-  to: 'because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.'
+  from: because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.
+  to: because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by his provocation''].'
+- timestamp: '2026-11-09T17:21:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: because of the sins of Jeroboam that he committed and by which he caused Israel to sin[a], and because of his provocation by which he provoked Yahweh, the God of Israel.
+  to: This happened because of the sins Jeroboam had committed and had caused Israel to commit, and because he had provoked Yahweh, the God of Israel, to anger.
+  rationale: I preserved the causal clarity of the current wording rather than returning to the older 'by his provocation.' The lexical rationale rightly identifies provocation rather than Jeroboam’s internal anger, and the new text carries that distinction without a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +124,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/015/030.job-58518.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeroboam’s house is destroyed because of his own sins, the sins he caused Israel to commit, and his provocation of Yahweh.
+  meaning_decisions:
+  - source_phrase: עַל חַטֹּאות יָרָבְעָם אֲשֶׁר חָטָא וַאֲשֶׁר הֶחֱטִיא אֶת יִשְׂרָאֵל
+    prior_rendering: because of the sins of Jeroboam that he committed and by which he caused Israel to sin
+    new_rendering: This happened because of the sins Jeroboam had committed and had caused Israel to commit
+    rationale: The supplied backward reference makes the verse a complete English sentence while preserving its explanation of the preceding destruction and Jeroboam’s responsibility for national sin.
+  - source_phrase: בְּכַעְסוֹ אֲשֶׁר הִכְעִיס אֶת יְהוָה אֱלֹהֵי יִשְׂרָאֵל
+    prior_rendering: and because of his provocation by which he provoked Yahweh, the God of Israel
+    new_rendering: and because he had provoked Yahweh, the God of Israel, to anger
+    rationale: The noun-verb repetition denotes provocation to anger; a direct verbal clause conveys that meaning without implying that Jeroboam’s own anger is the issue.
+  footnote_kinds: {}
+  history_weighed: I preserved the causal clarity of the current wording rather than returning to the older 'by his provocation.' The lexical rationale rightly identifies provocation rather than Jeroboam’s internal anger, and the new text carries that distinction without a note.

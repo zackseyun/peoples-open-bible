@@ -26,18 +26,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek text begins mid-sentence in this verse as transmitted here; 'judgment' likely continues a thought from the preceding clause.
-    reason: textual_variant
-  - marker: b
-    text: Or 'vindicate our brothers.' The Greek verb can denote either avenging or securing justice for someone.
-    reason: lexical_alternative
-  - marker: c
-    text: That is, 'to live in accordance with what he says'; the Greek literally says 'to walk according to the things spoken by him.'
-    reason: lexical_alternative
+  text: justice and avenging our brothers? We have been willing to serve your father and to live by what he said,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: κρίσιν
   chosen: judgment
@@ -123,14 +113,20 @@ revisions:
   from: judgment, and avenge our brothers? We are pleased to serve your father and to walk according to what is spoken by him,
   to: judgment, and avenge our brothers? We are pleased to serve your father and to walk according to what is spoken by him,
   rationale: Changed 'what is spoken by him' to 'what is said by him' for more natural formal English while preserving the Greek sense.
-
 - timestamp: '2026-05-18T02:58:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],'
-  to: 'judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],'
+  from: judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],
+  to: judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''according to what is spoken by him''].'
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: judgment[a], and avenge our brothers? We are pleased to serve your father and to walk according to what is said by him[c][b],
+  to: justice and avenging our brothers? We have been willing to serve your father and to live by what he said,
+  rationale: The history recognizes willingness and obedient conduct as the underlying senses, although its wording favored literal constructions. I retain “serve” and “our brothers” while expressing those senses directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +146,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/023.job-48297.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The petitioners demand justice for their brothers and appeal to their willingness to serve and obey the king’s father.
+  meaning_decisions:
+  - source_phrase: κρίσιν, καὶ ἐκδικήσεις τοὺς ἀδελφοὺς ἡμῶν
+    prior_rendering: judgment, and avenge our brothers?
+    new_rendering: justice and avenging our brothers?
+    rationale: The petition seeks royal redress and retaliation; the wording completes the question begun in verse 22.
+  - source_phrase: ἡμεῖς εὐδοκοῦμεν δουλεύειν τῷ πατρί σου
+    prior_rendering: We are pleased to serve your father
+    new_rendering: We have been willing to serve your father
+    rationale: The speakers appeal to their willing allegiance to the deceased king, not to present enjoyment of serving him.
+  - source_phrase: πορεύεσθαι τοῖς ὑπʼ αὐτοῦ λεγομένοις
+    prior_rendering: to walk according to what is said by him
+    new_rendering: to live by what he said
+    rationale: The idiom describes conduct governed by the former king’s instructions.
+  footnote_kinds: {}
+  history_weighed: The history recognizes willingness and obedient conduct as the underlying senses, although its wording favored literal constructions. I retain “serve” and “our brothers” while expressing those senses directly.

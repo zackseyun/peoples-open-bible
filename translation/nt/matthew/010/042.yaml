@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ ὃς ⸀ἂν ποτίσῃ ἕνα τῶν μικρῶν τούτων ποτήριον ψυχροῦ μόνον εἰς ὄνομα μαθητοῦ, ἀμὴν λέγω ὑμῖν, οὐ μὴ ἀπολέσῃ τὸν μισθὸν αὐτοῦ.
 translation:
-  text: And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.
-  philosophy: optimal-equivalence
+  text: And truly I tell you, anyone who gives one of these little ones[a] even a cup of cold water because that person is a disciple will certainly not lose their reward.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more formally, 'in the name of a disciple.' The Greek phrase indicates that the act is done because of the recipient's identity as a disciple.
-    reason: alternative_reading
-  - marker: b
-    text: '''Little ones'' here likely refers to those of low status among Jesus'' followers, not necessarily only to children.'
-    reason: cross_reference
+    text: In this context, 'little ones' refers to lowly or seemingly insignificant disciples, not necessarily children.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ὃς ἂν
   chosen: whoever
@@ -114,14 +111,20 @@ revisions:
   from: And whoever gives one of these little ones even a cup of cold water only because he is a disciple, truly I say to you, he will certainly not lose his reward.
   to: And whoever gives one of these little ones even a cup of cold water only because he is a disciple, truly I say to you, he will certainly not lose his reward.
   rationale: Replaced 'only because he is a disciple' with 'in the name of a disciple' to more directly reflect εἰς ὄνομα μαθητοῦ without interpretive expansion. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.'
-  to: 'And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.'
+  from: And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.
+  to: And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because he is a disciple''].'
+- timestamp: '2026-11-09T17:14:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And whoever gives one of these little ones even a cup of cold water in the name of a disciple[a], truly I say to you[b], he will certainly not lose his reward.
+  to: And truly I tell you, anyone who gives one of these little ones[a] even a cup of cold water because that person is a disciple will certainly not lose their reward.
+  rationale: The first draft and documented lexical decision already support 'because he is a disciple'; the later no-change and automated-revert records do not establish a stronger contrary judgment. I render that identity-based reason directly, without the draft's ambiguous 'only because,' since μόνον emphasizes the small gift.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -143,3 +146,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/matthew/010/042.job-27557.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Even giving a lowly disciple a cup of cold water because they are a disciple is certain to be rewarded.
+  meaning_decisions:
+  - source_phrase: εἰς ὄνομα μαθητοῦ
+    prior_rendering: in the name of a disciple
+    new_rendering: because that person is a disciple
+    rationale: 'The phrase gives the reason for the kindness: recognition of the recipient as a disciple. The explicit reference to ''that person'' helps distinguish the recipient from the giver who receives the reward.'
+  - source_phrase: καὶ ὃς ἂν ... ἀμὴν λέγω ὑμῖν, οὐ μὴ ἀπολέσῃ τὸν μισθὸν αὐτοῦ
+    prior_rendering: And whoever ... truly I say to you, he will certainly not lose his reward
+    new_rendering: And truly I tell you, anyone who ... will certainly not lose their reward
+    rationale: Moving the solemn assurance to the opening produces a complete, natural English sentence while retaining the emphatic certainty of the promise. Singular 'their' preserves its application to any giver.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft and documented lexical decision already support 'because he is a disciple'; the later no-change and automated-revert records do not establish a stronger contrary judgment. I render that identity-based reason directly, without the draft's ambiguous 'only because,' since μόνον emphasizes the small gift.

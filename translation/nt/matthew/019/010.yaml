@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: Λέγουσιν αὐτῷ οἱ ⸀μαθηταί· Εἰ οὕτως ἐστὶν ἡ αἰτία τοῦ ἀνθρώπου μετὰ τῆς γυναικός, οὐ συμφέρει γαμῆσαι.
 translation:
-  text: His disciples said to him[a], “If that is the case of a man with his wife, it is not beneficial to marry.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “If such is the case of a man with a wife.” The Greek phrase is compact and may also be rendered “the matter” or “the situation” instead of “the case.”
-    reason: lexical_alternative
+  text: His disciples said to him, “If that is the situation between a man and his wife, it is better not to marry.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Λέγουσιν αὐτῷ
   chosen: said to him
@@ -97,14 +93,20 @@ revisions:
   from: His disciples said to him, “If that is the case of a man with his wife, it is not beneficial to marry.”
   to: His disciples said to him, “If such is the case of a man with his wife, it is not advisable to marry.”
   rationale: Changed 'that' to 'such' for a more natural formal rendering of οὕτως, and 'not beneficial' to 'not advisable' to better reflect οὐ συμφέρει idiomatically in context.
-
 - timestamp: '2026-05-16T22:08:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'His disciples said to him[a], “If such is the case of a man with his wife, it is not advisable to marry.”'
-  to: 'His disciples said to him[a], “If that is the case of a man with his wife, it is not beneficial to marry.”'
-  rationale: 'Restored drafter ''If that is the case of a man with his wife'' (preserving the chosen ''that'' demonstrative) and ''it is not beneficial to marry'' (preserving the chosen ''beneficial'' rendering of συμφέρει) per chosen renderings.'
+  from: His disciples said to him[a], “If such is the case of a man with his wife, it is not advisable to marry.”
+  to: His disciples said to him[a], “If that is the case of a man with his wife, it is not beneficial to marry.”
+  rationale: Restored drafter 'If that is the case of a man with his wife' (preserving the chosen 'that' demonstrative) and 'it is not beneficial to marry' (preserving the chosen 'beneficial' rendering of συμφέρει) per chosen renderings.
+- timestamp: '2026-11-09T17:14:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: His disciples said to him[a], “If that is the case of a man with his wife, it is not beneficial to marry.”
+  to: His disciples said to him, “If that is the situation between a man and his wife, it is better not to marry.”
+  rationale: The earlier revision recognized that 'not beneficial' was less idiomatic, though an automated revert restored it. I follow that clarity gain with 'better not to marry,' preserving the disciples’ pragmatic reaction rather than turning it into Jesus’ own teaching.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +128,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/019/010.job-57180.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The disciples respond that if marriage carries such obligations, it is better not to marry.
+  meaning_decisions:
+  - source_phrase: Εἰ οὕτως ἐστὶν ἡ αἰτία τοῦ ἀνθρώπου μετὰ τῆς γυναικός
+    prior_rendering: If that is the case of a man with his wife
+    new_rendering: If that is the situation between a man and his wife
+    rationale: The disciples are reacting to the marital situation Jesus has described; the revised wording makes the compact Greek relationship intelligible in English.
+  - source_phrase: οὐ συμφέρει γαμῆσαι
+    prior_rendering: it is not beneficial to marry
+    new_rendering: it is better not to marry
+    rationale: This expresses the disciples’ practical conclusion about the advantage of marrying, rather than sounding like an abstract assessment of marriage’s benefits.
+  footnote_kinds: {}
+  history_weighed: The earlier revision recognized that 'not beneficial' was less idiomatic, though an automated revert restored it. I follow that clarity gain with 'better not to marry,' preserving the disciples’ pragmatic reaction rather than turning it into Jesus’ own teaching.

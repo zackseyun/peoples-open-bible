@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וּ/בָ֖אתָ שָׁ֑מָּ/ה וּ/רְאֵֽה שָׁ֠ם יֵה֨וּא בֶן יְהוֹשָׁפָ֜ט בֶּן נִמְשִׁ֗י וּ/בָ֨אתָ֙ וַ/הֲקֵֽמֹת/וֹ֙ מִ/תּ֣וֹך אֶחָ֔י/ו וְ/הֵבֵיאתָ֥ אֹת֖/וֹ חֶ֥דֶר בְּ/חָֽדֶר־־־׃
 translation:
-  text: When you arrive there[a], look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'a room within a room,' that is, a private inner chamber.
-    reason: lexical_alternative
+  text: When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, have him get up from among his fellow officers, and bring him into an inner room.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וּבָאתָ שָׁמָּה
   chosen: When you arrive there
@@ -89,13 +85,12 @@ revisions:
   from: When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
   to: When you arrive there, look there for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
   rationale: Added 'there' after 'look' to reflect the repeated שם in the source; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When you arrive there[a], look there for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.'
-  to: 'When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.'
+  from: When you arrive there[a], look there for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
+  to: When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''look for''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -105,6 +100,13 @@ revisions:
   from: When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
   to: When you arrive there[a], look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:27:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When you arrive there[a], look for Jehu son of Jehoshaphat, son of Nimshi. Go in, get him up from among his brothers, and bring him into an inner room.
+  to: When you arrive there, look for Jehu son of Jehoshaphat, son of Nimshi. Go in, have him get up from among his fellow officers, and bring him into an inner room.
+  rationale: The revision history’s repeated “there” added no meaning beyond the arrival clause, so the current opening stands. I retain the established “inner room” but make the military sense of “brothers” explicit from the immediate context.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +126,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/009/002.job-60476.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:08Z'
+  change_level: refined
+  confidence: high
+  meaning: The messenger must find Jehu, separate him from his fellow officers, and take him into an inner room.
+  meaning_decisions:
+  - source_phrase: וַהֲקֵמֹתוֹ מִתּוֹךְ אֶחָיו
+    prior_rendering: get him up from among his brothers
+    new_rendering: have him get up from among his fellow officers
+    rationale: Verse 5 identifies the gathering as army commanders; “brothers” here means fellow officers, not siblings.
+  footnote_kinds: {}
+  history_weighed: The revision history’s repeated “there” added no meaning beyond the arrival clause, so the current opening stands. I retain the established “inner room” but make the military sense of “brothers” explicit from the immediate context.

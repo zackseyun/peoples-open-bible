@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀πάντες γὰρ οὗτοι ἐκ τοῦ περισσεύοντος αὐτοῖς ἔβαλον εἰς τὰ ⸀δῶρα, αὕτη δὲ ἐκ τοῦ ὑστερήματος αὐτῆς ⸀πάντα τὸν βίον ὃν εἶχεν ἔβαλεν.
 translation:
-  text: For all these gave into the gifts[a] out of their abundance, but she, out of her lack[b], put in all the livelihood[c] she had.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the offerings.' The Greek says 'the gifts,' referring to donated gifts in the temple context.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'out of her poverty' or 'out of her need.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all her living' or 'her whole means of living'; not 'all her life' in the sense of her entire existence.
-    reason: lexical_alternative
+  text: For all these people gave their offerings out of their abundance, but she, out of her poverty, put in all she had to live on.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πάντες γὰρ οὗτοι
   chosen: For all these
@@ -112,13 +102,12 @@ revisions:
   from: For all these gave into the gifts out of their abundance, but she, out of her lack, put in all the livelihood she had.
   to: For all these gave out of their abundance into the gifts, but she, out of her lack, put in all the livelihood she had.
   rationale: Removed the first 'these' from an awkward construction by reordering to more natural English, and kept all source elements. Retained 'gifts' for τὰ δῶρα and 'livelihood' for τὸν βίον; 'lack' renders ὑστέρημα adequately here.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For all these gave out of their abundance into the gifts[a], but she, out of her lack[c][b], put in all the livelihood she had.'
-  to: 'For all these gave into the gifts out of their abundance, but she, out of her lack, put in all the livelihood she had.'
+  from: For all these gave out of their abundance into the gifts[a], but she, out of her lack[c][b], put in all the livelihood she had.
+  to: For all these gave into the gifts out of their abundance, but she, out of her lack, put in all the livelihood she had.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''gave into the gifts''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +117,13 @@ revisions:
   from: For all these gave into the gifts out of their abundance, but she, out of her lack, put in all the livelihood she had.
   to: For all these gave into the gifts[a] out of their abundance, but she, out of her lack[b], put in all the livelihood[c] she had.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('out of her lack') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('all the livelihood') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:13:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For all these gave into the gifts[a] out of their abundance, but she, out of her lack[b], put in all the livelihood[c] she had.
+  to: For all these people gave their offerings out of their abundance, but she, out of her poverty, put in all she had to live on.”
+  rationale: The recorded review recognized the awkwardness of 'gave into the gifts,' but its reordering did not resolve it, and the subsequent automated revert carries little meaning-based weight. I preserve the established material sense of βίος while expressing it clearly in the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +146,29 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/021/004.job-38992.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The wealthy gave from their abundance, but the widow gave everything she had to live on despite her poverty.
+  meaning_decisions:
+  - source_phrase: ἔβαλον εἰς τὰ δῶρα
+    prior_rendering: gave into the gifts
+    new_rendering: gave their offerings
+    rationale: The Greek describes contributing to the offerings; the prior construction does not communicate that naturally in English.
+  - source_phrase: ἐκ τοῦ ὑστερήματος αὐτῆς
+    prior_rendering: out of her lack
+    new_rendering: out of her poverty
+    rationale: The deficiency here is material poverty, not an unspecified lack.
+  - source_phrase: πάντα τὸν βίον ὃν εἶχεν
+    prior_rendering: all the livelihood she had
+    new_rendering: all she had to live on
+    rationale: This means all her available means of subsistence, not her occupation or her entire lifetime.
+  footnote_kinds: {}
+  history_weighed: The recorded review recognized the awkwardness of 'gave into the gifts,' but its reordering did not resolve it, and the subsequent automated revert carries little meaning-based weight. I preserve the established material sense of βίος while expressing it clearly in the main text.

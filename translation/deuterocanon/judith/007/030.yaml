@@ -19,12 +19,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”
-  philosophy: optimal-equivalence
+  text: Uzziah said to them, “Take courage, brothers and sisters. Let us hold out for five more days. Within that time the Lord our God will turn his mercy toward us, for he will not abandon us forever[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'for he will not forsake us forever' / 'he will not utterly abandon us.' The Greek phrase 'to the end' can idiomatically express final or complete abandonment.
-    reason: lexical_alternative
+    text: Or, “he will not abandon us completely.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Θαρσεῖτε
   chosen: Take courage
@@ -142,14 +142,20 @@ revisions:
   from: And Uzziah said to them, “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy back toward us, for he will not abandon us to the end.”
   to: And Uzziah said to them, “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy back toward us, for he will not abandon us to the end.”
   rationale: Removed 'back' since it is not explicit in the Greek, and revised 'to the end' to the more natural 'forever' for εἰς τέλος while preserving the sense.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”'
-  to: 'And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”'
+  from: And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”
+  to: And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for he will not abandon us to the end''].'
+- timestamp: '2026-11-09T19:01:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Uzziah said to them[a], “Take courage, brothers; let us hold out for five more days, within which the Lord our God will turn his mercy toward us, for he will not abandon us forever.”
+  to: Uzziah said to them, “Take courage, brothers and sisters. Let us hold out for five more days. Within that time the Lord our God will turn his mercy toward us, for he will not abandon us forever[a].
+  rationale: The revision’s “forever” makes the earlier “to the end” intelligible, and I retain it with the documented alternative of complete abandonment. I keep the weighty image of mercy turning toward the people, but the explicitly mixed audience supports an inclusive familial address rather than the earlier grammatical-gender rationale.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -169,3 +175,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/007/030.job-50641.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:47Z'
+  change_level: refined
+  confidence: high
+  meaning: Uzziah urges the community to endure five more days, assuring them that God will turn his mercy toward them rather than abandon them forever.
+  meaning_decisions:
+  - source_phrase: ἀδελφοί
+    prior_rendering: brothers
+    new_rendering: brothers and sisters
+    rationale: Uzziah addresses the assembled community of young men, women, and children described in verse 23; the familial address includes the women rather than restricting his words to the men.
+  - source_phrase: ἐν αἷς
+    prior_rendering: within which
+    new_rendering: Within that time
+    rationale: A new sentence carries the same five-day expectation more naturally and preserves the time limit confirmed in verse 31.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The revision’s “forever” makes the earlier “to the end” intelligible, and I retain it with the documented alternative of complete abandonment. I keep the weighty image of mercy turning toward the people, but the explicitly mixed audience supports an inclusive familial address rather than the earlier grammatical-gender rationale.

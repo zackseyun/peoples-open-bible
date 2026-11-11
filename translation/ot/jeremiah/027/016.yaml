@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אֶל הַ/כֹּהֲנִים֩ וְ/אֶל כָּל הָ/עָ֨ם הַ/זֶּ֜ה דִּבַּ֣רְתִּי לֵ/אמֹ֗ר כֹּה֮ אָמַ֣ר יְהוָה֒ אַֽל תִּשְׁמְע֞וּ אֶל דִּבְרֵ֣י נְבִֽיאֵי/כֶ֗ם הַֽ/נִּבְּאִ֤ים לָ/כֶם֙ לֵ/אמֹ֔ר הִנֵּ֨ה כְלֵ֧י בֵית יְהוָ֛ה מוּשָׁבִ֥ים מִ/בָּבֶ֖לָ/ה עַתָּ֣ה מְהֵרָ֑ה כִּ֣י שֶׁ֔קֶר הֵ֖מָּה נִבְּאִ֥ים לָ/כֶֽם־־־־־־׃
 translation:
-  text: 'And to the priests and to all this people I spoke[a], saying, “Thus says Yahweh: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Behold, the vessels of the house of Yahweh are being brought back from Babylon now, quickly,’ for they are prophesying falsely to you.”'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “are being returned from Babylon very soon.” The Hebrew says literally, “now, quickly,” emphasizing the immediacy claimed by the false prophets.
-    reason: lexical_alternative
+  text: 'I also spoke to the priests and all these people: “Thus says Yahweh: Do not listen to your prophets who tell you, ‘Look, the furnishings of Yahweh’s temple will be brought back from Babylon very soon,’ for they are prophesying falsely to you.”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאֶל ... וְאֶל
   chosen: And to ... and to
@@ -143,7 +139,6 @@ revisions:
   from: 'And to the priests and to all this people I spoke, saying, “Thus says the LORD: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Look, the vessels of the house of the LORD are being brought back from Babylon now, quickly,’ for they are prophesying a lie to you.”'
   to: 'And to the priests and to all this people I spoke, saying, “Thus says the LORD: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Look, the vessels of the house of the LORD are being brought back from Babylon now, quickly,’ for they are prophesying a lie to you.”'
   rationale: Replaced 'Look' with the more formal 'Behold' for register, and changed 'are prophesying a lie to you' to 'are prophesying falsely to you' for more natural English while preserving the sense of שקר.
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -151,6 +146,13 @@ revisions:
   from: 'And to the priests and to all this people I spoke[a], saying, “Thus says Yahweh: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Behold, the vessels of the house of Yahweh are being brought back from Babylon now, quickly,’ for they are prophesying falsely to you.”'
   to: 'And to the priests and to all this people I spoke[a], saying, “Thus says Yahweh: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Behold, the vessels of the house of Yahweh are being brought back from Babylon now, quickly,’ for they are prophesying falsely to you.”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for they are prophesying a lie to you''].'
+- timestamp: '2026-11-09T17:58:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And to the priests and to all this people I spoke[a], saying, “Thus says Yahweh: Do not listen to the words of your prophets who are prophesying to you, saying, ‘Behold, the vessels of the house of Yahweh are being brought back from Babylon now, quickly,’ for they are prophesying falsely to you.”'
+  to: 'I also spoke to the priests and all these people: “Thus says Yahweh: Do not listen to your prophets who tell you, ‘Look, the furnishings of Yahweh’s temple will be brought back from Babylon very soon,’ for they are prophesying falsely to you.”'
+  rationale: I retain the current 'prophesying falsely,' while the earlier change from 'Look' to 'Behold' supplied no meaning-based gain. The lexical notes correctly emphasize imminence, which the main text now expresses without the wooden 'now, quickly.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -172,3 +174,33 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/027/016.job-67702.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:58:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeremiah warned the priests and people not to believe prophets who falsely promised the imminent return of the temple furnishings from Babylon.
+  meaning_decisions:
+  - source_phrase: וְאֶל הַכֹּהֲנִים וְאֶל כָּל הָעָם הַזֶּה דִּבַּרְתִּי לֵאמֹר
+    prior_rendering: And to the priests and to all this people I spoke, saying
+    new_rendering: I also spoke to the priests and all these people
+    rationale: Natural English preserves the additional audience without reproducing the Hebrew word order and redundant quotation introduction.
+  - source_phrase: אַל תִּשְׁמְעוּ אֶל דִּבְרֵי נְבִיאֵיכֶם הַנִּבְּאִים לָכֶם לֵאמֹר
+    prior_rendering: Do not listen to the words of your prophets who are prophesying to you, saying
+    new_rendering: Do not listen to your prophets who tell you
+    rationale: The compact introduction conveys the warning against their spoken claim; their activity remains explicitly identified as false prophecy at the end of the verse.
+  - source_phrase: הִנֵּה כְלֵי בֵית יְהוָה
+    prior_rendering: Behold, the vessels of the house of Yahweh
+    new_rendering: Look, the furnishings of Yahweh’s temple
+    rationale: '''Look'' preserves the attention-getting force, ''temple'' identifies the building, and ''furnishings'' reflects the broader range of objects described in verse 19 rather than suggesting only containers.'
+  - source_phrase: מוּשָׁבִים מִבָּבֶלָה עַתָּה מְהֵרָה
+    prior_rendering: are being brought back from Babylon now, quickly
+    new_rendering: will be brought back from Babylon very soon
+    rationale: The participle and paired adverbs announce an imminent return; the new wording conveys that false promise naturally rather than implying a visibly ongoing shipment.
+  footnote_kinds: {}
+  history_weighed: I retain the current 'prophesying falsely,' while the earlier change from 'Look' to 'Behold' supplied no meaning-based gain. The lexical notes correctly emphasize imminence, which the main text now expresses without the wooden 'now, quickly.'

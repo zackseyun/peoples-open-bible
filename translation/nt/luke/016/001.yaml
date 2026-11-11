@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἔλεγεν δὲ καὶ πρὸς τοὺς ⸀μαθητάς· Ἄνθρωπός τις ἦν πλούσιος ὃς εἶχεν οἰκονόμον, καὶ οὗτος διεβλήθη αὐτῷ ὡς διασκορπίζων τὰ ὑπάρχοντα αὐτοῦ.
 translation:
-  text: He was also saying to the disciples[a], “There was a certain rich man who had a manager[b], and this man was accused to him of squandering his possessions.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'steward' for 'manager' (οἰκονόμος), a traditional rendering referring to one entrusted with oversight of a household or estate.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'was reported to him' / 'was denounced to him.' The verb can denote an accusation or adverse report, not necessarily a proven charge.
-    reason: lexical_alternative
+  text: Jesus also said to the disciples, “There was a rich man who had an estate manager. Someone accused the manager of squandering the rich man's property.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἔλεγεν
   chosen: was saying
@@ -107,7 +100,13 @@ revisions:
   from: Now he was also saying to the disciples, “There was a certain rich man who had a manager, and this man was accused to him of squandering his possessions.”
   to: He was also saying to the disciples, “There was a certain rich man who had a manager, and this man was accused to him of squandering his possessions.”
   rationale: Changed 'Now he was also saying' to 'He was also saying' for more natural English while preserving the imperfect sense. No other changes needed.
-
+- timestamp: '2026-11-09T17:14:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He was also saying to the disciples[a], “There was a certain rich man who had a manager[b], and this man was accused to him of squandering his possessions.”
+  to: Jesus also said to the disciples, “There was a rich man who had an estate manager. Someone accused the manager of squandering the rich man's property.
+  rationale: The recorded revision only removed the introductory 'Now.' I retain the lexical decisions' distinction between accusation and proven misconduct, but replace their source-shaped syntax with clear English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +128,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/016/001.job-38976.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus tells his disciples about a rich man whose estate manager was accused of wasting his property.
+  meaning_decisions:
+  - source_phrase: Ἔλεγεν δὲ καὶ πρὸς τοὺς μαθητάς
+    prior_rendering: He was also saying to the disciples
+    new_rendering: Jesus also said to the disciples
+    rationale: The imperfect introduces a teaching scene; natural English does not require a progressive construction, and naming Jesus makes the understood subject explicit.
+  - source_phrase: οἰκονόμον
+    prior_rendering: manager
+    new_rendering: estate manager
+    rationale: The debts and commodities in the following verses establish that this is someone administering a wealthy man's property, not an unspecified modern manager.
+  - source_phrase: καὶ οὗτος διεβλήθη αὐτῷ ὡς διασκορπίζων τὰ ὑπάρχοντα αὐτοῦ
+    prior_rendering: and this man was accused to him of squandering his possessions
+    new_rendering: Someone accused the manager of squandering the rich man's property
+    rationale: This removes the unnatural construction and ambiguous pronouns while retaining the report as an accusation rather than an established finding.
+  footnote_kinds: {}
+  history_weighed: The recorded revision only removed the introductory 'Now.' I retain the lexical decisions' distinction between accusation and proven misconduct, but replace their source-shaped syntax with clear English.

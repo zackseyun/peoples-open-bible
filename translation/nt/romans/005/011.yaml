@@ -4,21 +4,8 @@ source:
   edition: SBLGNT
   text: οὐ μόνον δέ, ἀλλὰ καὶ καυχώμενοι ἐν τῷ θεῷ διὰ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, δι’ οὗ νῦν τὴν καταλλαγὴν ἐλάβομεν.
 translation:
-  text: And not only that[a], but we also boast in God through our Lord Jesus Christ[d][c][b], through whom we have now received the reconciliation.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'boast' or 'exult in God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Greek Christos; traditionally 'Christ.'
-    reason: alternative_reading
-  - marker: c
-    text: Or simply 'received reconciliation.'
-    reason: lexical_alternative
-  - marker: d
-    text: For 'Lord,' alternatives sometimes considered include 'Master' or, in other contexts, 'LORD.'
-    reason: lexical_alternative
+  text: Not only that, but we also exult in God through our Lord Jesus Christ, through whom we have now received reconciliation.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: καυχώμενοι
   chosen: rejoice
@@ -96,11 +83,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "And not only that, but we also boast in God through our Lord Jesus Messiah, through whom we have now received the reconciliation."
-  to: "And not only that, but we also boast in God through our Lord Jesus the Messiah, through whom we have now received the reconciliation."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: And not only that, but we also boast in God through our Lord Jesus Messiah, through whom we have now received the reconciliation.
+  to: And not only that, but we also boast in God through our Lord Jesus the Messiah, through whom we have now received the reconciliation.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:17:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And not only that[a], but we also boast in God through our Lord Jesus Christ[d][c][b], through whom we have now received the reconciliation.
+  to: Not only that, but we also exult in God through our Lord Jesus Christ, through whom we have now received reconciliation.
+  rationale: The later revision preferred “boast” for direct lexical correspondence, a rhetorical feature preserved in the note at verse 2; “exult” carries its positive force in the main text. I retain “Jesus Christ” under the standing ruling and omit the Greek-shaped article before the abstract noun “reconciliation.”
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +116,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/005/011.job-7768.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Beyond the assurance of future salvation, we also celebrate God through Jesus Christ, through whom we have already received reconciliation.
+  meaning_decisions:
+  - source_phrase: καυχώμενοι
+    prior_rendering: we also boast
+    new_rendering: we also exult
+    rationale: As in verses 2 and 3, this is joyful confidence grounded in God rather than self-exaltation; the consistent rendering preserves the passage's recurring expression of celebration.
+  footnote_kinds: {}
+  history_weighed: The later revision preferred “boast” for direct lexical correspondence, a rhetorical feature preserved in the note at verse 2; “exult” carries its positive force in the main text. I retain “Jesus Christ” under the standing ruling and omit the Greek-shaped article before the abstract noun “reconciliation.”

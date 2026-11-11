@@ -21,14 +21,11 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.
-  philosophy: optimal-equivalence
+  text: But your holy ones had abundant light. The Egyptians heard their voices but could not see them; though your holy ones too had suffered, the Egyptians counted them blessed[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'saints' for 'holy ones.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek verb ἐπεπώθεισαν is difficult in context. Literally it often means 'had longed for,' but here it is taken in context to mean they had undergone or suffered the same things, which explains why they then counted them blessed.
+    text: Alternatively, the difficult final clause has been understood as saying that the Egyptians counted the holy ones blessed because they had not suffered as the Egyptians had.
     reason: alternative_reading
 lexical_decisions:
 - source_word: τοῖς ... ὁσίοις σου
@@ -108,14 +105,20 @@ revisions:
   from: But for your holy ones there was very great light; hearing their voice but not seeing their form, since they indeed had suffered the same things, they counted them blessed.
   to: But for your holy ones there was very great light; hearing their voice but not seeing their form, since they indeed had suffered the same things, they counted them blessed.
   rationale: Changed 'had suffered the same things' to 'had not suffered the same things' to reflect the Greek κἀκεῖνοι ἐπεπώθεισαν in context, where the sense is that they had not undergone the same afflictions and therefore counted them blessed. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.'
-  to: 'But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.'
+  from: But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.
+  to: But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had suffered the same things''].'
+- timestamp: '2026-11-09T19:13:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But for your holy ones there was very great light[a]; hearing their voice but not seeing their form, since they indeed had not suffered the same things[b], they counted them blessed.
+  to: But your holy ones had abundant light. The Egyptians heard their voices but could not see them; though your holy ones too had suffered, the Egyptians counted them blessed[a].
+  rationale: The history alternates between an affirmative and a negative account of the suffering, without a MAINTAINER ruling. I return to the first draft’s affirmative sense because the supplied Greek lacks a negative, while preserving the alternative interpretation in a note.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -135,3 +138,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/018/001.job-39372.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God’s holy ones enjoyed abundant light, and the Egyptians recognized them as blessed despite their earlier suffering, hearing their voices without being able to see them.
+  meaning_decisions:
+  - source_phrase: ὧν φωνὴν ἀκούοντες μορφὴν δὲ οὐχ ὁρῶντες
+    prior_rendering: hearing their voice but not seeing their form
+    new_rendering: The Egyptians heard their voices but could not see them
+    rationale: The surrounding contrast identifies the Egyptians as the hearers and the holy ones as those heard; naming the subject removes the prior wording’s confusing pronouns.
+  - source_phrase: ὅτι μὲν οὖν κἀκεῖνοι ἐπεπώθεισαν, ἐμακάριζον
+    prior_rendering: since they indeed had not suffered the same things, they counted them blessed
+    new_rendering: though your holy ones too had suffered, the Egyptians counted them blessed
+    rationale: The supplied clause is difficult but contains no negative. Taking its verb in the experiential sense reflected in the history, the affirmative reading refers to the holy ones’ earlier suffering rather than their participation in the present plague; the established negative interpretation is retained in a footnote.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history alternates between an affirmative and a negative account of the suffering, without a MAINTAINER ruling. I return to the first draft’s affirmative sense because the supplied Greek lacks a negative, while preserving the alternative interpretation in a note.

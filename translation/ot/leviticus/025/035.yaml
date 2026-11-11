@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וְ/כִֽי יָמ֣וּךְ אָחִ֔י/ךָ וּ/מָ֥טָה יָד֖/וֹ עִמָּ֑/ךְ וְ/הֶֽחֱזַ֣קְתָּ בּ֔/וֹ גֵּ֧ר וְ/תוֹשָׁ֛ב וָ/חַ֖י עִמָּֽ/ךְ־׃
 translation:
-  text: If your brother becomes poor and his hand falters beside you[a], then you shall support him[b]; so that he may live beside you as a resident foreigner or a temporary resident.
-  philosophy: optimal-equivalence
+  text: If an Israelite brother living among you becomes poor and can no longer support himself, you must support him as you would a resident foreigner or a lodger[a], so that he can continue to live among you[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'support him—the resident foreigner and the temporary resident'; the Hebrew phrase 'resident foreigner and temporary resident' is syntactically compressed and may be understood differently.
-    reason: alternative_reading
-  - marker: b
-    text: Literally, 'his hand falters with you,' an idiom for losing means or becoming unable to support himself.
+    text: The Hebrew term denotes a resident without an inherited landholding.
     reason: lexical_alternative
+  - marker: b
+    text: Alternatively, the command may include support for the resident foreigner and the lodger as well.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְכִי
   chosen: If
@@ -125,14 +125,20 @@ revisions:
   from: If your brother becomes poor and his hand falters beside you, then you shall support him—as a resident foreigner or a temporary resident—so that he may live beside you.
   to: If your brother becomes poor and his hand falters with you, then you shall support him; he shall live with you as a resident foreigner or a temporary resident.
   rationale: 'Adjusted phrasing for closer lexical accuracy and naturalness: changed ''beside you'' to ''with you'' for עִמָּךְ, and restructured the final clause so ''as a resident foreigner or a temporary resident'' modifies his status more naturally while preserving the Hebrew sense.'
-
 - timestamp: '2026-05-15T12:09:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If your brother becomes poor and his hand falters with you[a], then you shall support him[b]; he shall live with you as a resident foreigner or a temporary resident.'
-  to: 'If your brother becomes poor and his hand falters beside you[a], then you shall support him[b]; so that he may live beside you as a resident foreigner or a temporary resident.'
-  rationale: 'Restored relational-spatial ''beside you'' (echo) and purpose-result ''so that he may live''.'
+  from: If your brother becomes poor and his hand falters with you[a], then you shall support him[b]; he shall live with you as a resident foreigner or a temporary resident.
+  to: If your brother becomes poor and his hand falters beside you[a], then you shall support him[b]; so that he may live beside you as a resident foreigner or a temporary resident.
+  rationale: Restored relational-spatial 'beside you' (echo) and purpose-result 'so that he may live'.
+- timestamp: '2026-11-09T18:22:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If your brother becomes poor and his hand falters beside you[a], then you shall support him[b]; so that he may live beside you as a resident foreigner or a temporary resident.
+  to: If an Israelite brother living among you becomes poor and can no longer support himself, you must support him as you would a resident foreigner or a lodger[a], so that he can continue to live among you[b].
+  rationale: The history rightly preserves the purpose of support and recognizes ambiguity in the resident terms, but its placement of 'as' can suggest a change of status. I restore the comparison to the support itself, translate the failing-hand idiom, and retain the serious alternative scope in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -152,3 +158,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/035.job-45223.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:00Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: An impoverished Israelite who can no longer support himself must receive support that enables him to remain in the community.
+  meaning_decisions:
+  - source_phrase: אָחִיךָ ... עִמָּךְ
+    prior_rendering: your brother ... beside you
+    new_rendering: an Israelite brother living among you
+    rationale: The kinship language expresses responsibility toward a fellow Israelite within the community, not only a biological sibling or someone physically beside the addressee.
+  - source_phrase: וּמָטָה יָדוֹ
+    prior_rendering: and his hand falters
+    new_rendering: and can no longer support himself
+    rationale: The idiom describes loss of economic means, not a physical problem with his hand.
+  - source_phrase: גֵּר וְתוֹשָׁב
+    prior_rendering: as a resident foreigner or a temporary resident
+    new_rendering: as you would a resident foreigner or a lodger
+    rationale: The comparison concerns how the needy brother is supported, not a change in his ethnic identity; תושב denotes a dependent resident and does not itself require a brief stay.
+  - source_phrase: וָחַי עִמָּךְ
+    prior_rendering: so that he may live beside you
+    new_rendering: so that he can continue to live among you
+    rationale: The intended outcome is continued life within the community through material support.
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+  history_weighed: The history rightly preserves the purpose of support and recognizes ambiguity in the resident terms, but its placement of 'as' can suggest a change of status. I restore the comparison to the support itself, translate the failing-hand idiom, and retain the serious alternative scope in a note.

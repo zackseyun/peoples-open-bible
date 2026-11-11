@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ἄλλοι δὲ ἄλλο τι ⸀ἐπεφώνουν ἐν τῷ ὄχλῳ· μὴ ⸂δυναμένου δὲ αὐτοῦ⸃ γνῶναι τὸ ἀσφαλὲς διὰ τὸν θόρυβον ἐκέλευσεν ἄγεσθαι αὐτὸν εἰς τὴν παρεμβολήν.
 translation:
-  text: But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.
-  philosophy: optimal-equivalence
+  text: But some in the crowd were shouting one thing, and others another. Unable to learn the facts because of the uproar, the commander ordered Paul to be taken into the barracks[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "the truth of the matter" or "what was certain."
-    reason: lexical_alternative
-  - marker: b
-    text: '"Barracks" refers to the Roman military quarters, likely within the fortress complex attached to the temple area.'
+    text: The barracks were Roman military quarters in the fortress overlooking the temple grounds.
     reason: cultural_note
 lexical_decisions:
 - source_word: ἄλλοι δὲ ἄλλο τι ἐπεφώνουν
@@ -86,14 +83,20 @@ revisions:
   from: But some were shouting one thing, and others another, in the crowd. Since he was not able to learn the facts because of the uproar, he ordered him to be brought into the barracks.
   to: But some were shouting one thing, and others another, in the crowd. Since he was not able to learn the facts because of the uproar, he ordered him to be brought into the barracks.
   rationale: Moved 'in the crowd' to modify those shouting for more natural English while preserving the Greek sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.'
-  to: 'But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.'
+  from: But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.
+  to: But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some were shouting one thing, and others another''].'
+- timestamp: '2026-11-09T17:07:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But some in the crowd were shouting one thing[a], and others another. Since he was not able to learn the facts because of the uproar[b], he ordered him to be brought into the barracks.
+  to: But some in the crowd were shouting one thing, and others another. Unable to learn the facts because of the uproar, the commander ordered Paul to be taken into the barracks[a].
+  rationale: I retain the current placement of 'in the crowd,' which the review improved, along with the well-supported 'facts' and 'barracks.' The remaining refinement resolves the competing pronoun references, and the barracks note is retained in corrected position.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +116,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/021/034.job-47004.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Conflicting shouts prevented the commander from establishing the facts, so he ordered Paul taken into the barracks.
+  meaning_decisions:
+  - source_phrase: μὴ δυναμένου δὲ αὐτοῦ γνῶναι τὸ ἀσφαλὲς διὰ τὸν θόρυβον ἐκέλευσεν ἄγεσθαι αὐτὸν
+    prior_rendering: Since he was not able to learn the facts because of the uproar, he ordered him to be brought
+    new_rendering: Unable to learn the facts because of the uproar, the commander ordered Paul to be taken
+    rationale: Explicitly identifying the commander and Paul makes the cause and resulting order clear without adding new content.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current placement of 'in the crowd,' which the review improved, along with the well-supported 'facts' and 'barracks.' The remaining refinement resolves the competing pronoun references, and the barracks note is retained in corrected position.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/תֵּ֥לֶךְ וַ/תַּעֲשֶׂ֖ה כִּ/דְבַ֣ר אֵלִיָּ֑הוּ וַ/תֹּ֧אכַל הוא ו/היא וּ/בֵיתָ֖/הּ יָמִֽים־׃
 translation:
-  text: So she went and did according to the word of Elijah[a], and she ate—he and she and her household—for many days.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'and she ate, he and she and her household, days.' The Hebrew uses a singular verb followed by an explicit list of those who ate.
-    reason: lexical_alternative
+  text: So she went and did as Elijah had told her. She, Elijah, and her household ate for many days.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַתֵּלֶךְ
   chosen: So she went
@@ -80,14 +76,20 @@ revisions:
   from: So she went and did according to the word of Elijah, and she ate—he and she and her household—for many days.
   to: So she went and did according to the word of Elijah, and she and he and her household ate for many days.
   rationale: Reordered the clause to reflect the Hebrew subject sequence more naturally in English and removed the em dash construction. Kept 'according to the word of Elijah' and 'for many days' as accurate renderings.
-
 - timestamp: '2026-05-16T07:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So she went and did according to the word of Elijah[a], and she and he and her household ate for many days.'
-  to: 'So she went and did according to the word of Elijah[a], and she ate—he and she and her household—for many days.'
-  rationale: 'Azure collapsed drafter''s deliberate 3fs singular-verb + appositive construction (''and she ate—he and she...'') into plural-subject clause (functionally drafter''s rejected ''and they ate'') and reordered ''he and she''→''she and he'' (drafter''s explicit rejected_alternative; drafter preserved הוּא וְהִיא Hebrew order).'
+  from: So she went and did according to the word of Elijah[a], and she and he and her household ate for many days.
+  to: So she went and did according to the word of Elijah[a], and she ate—he and she and her household—for many days.
+  rationale: Azure collapsed drafter's deliberate 3fs singular-verb + appositive construction ('and she ate—he and she...') into plural-subject clause (functionally drafter's rejected 'and they ate') and reordered 'he and she'→'she and he' (drafter's explicit rejected_alternative; drafter preserved הוּא וְהִיא Hebrew order).
+- timestamp: '2026-11-09T17:21:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So she went and did according to the word of Elijah[a], and she ate—he and she and her household—for many days.
+  to: So she went and did as Elijah had told her. She, Elijah, and her household ate for many days.
+  rationale: The review’s move toward a plural English subject clarified the meaning, while the automated revert defended Hebrew agreement and pronoun order rather than a different understanding. With no maintainer ruling at issue, I use natural English agreement and identify Elijah explicitly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -110,3 +112,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/017/015.job-58570.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The widow follows Elijah’s instructions, and she, Elijah, and her household have food for many days.
+  meaning_decisions:
+  - source_phrase: כִּדְבַר אֵלִיָּהוּ
+    prior_rendering: according to the word of Elijah
+    new_rendering: as Elijah had told her
+    rationale: The phrase describes her carrying out Elijah’s spoken instructions, which this wording expresses directly.
+  - source_phrase: וַתֹּאכַל הוּא וְהִיא וּבֵיתָהּ יָמִים
+    prior_rendering: and she ate—he and she and her household—for many days
+    new_rendering: She, Elijah, and her household ate for many days
+    rationale: The Hebrew names everyone who ate after a singular verb; ordinary English requires a coordinated subject rather than an anomalous singular construction.
+  footnote_kinds: {}
+  history_weighed: The review’s move toward a plural English subject clarified the meaning, while the automated revert defended Hebrew agreement and pronoun order rather than a different understanding. With no maintainer ruling at issue, I use natural English agreement and identify Elijah explicitly.

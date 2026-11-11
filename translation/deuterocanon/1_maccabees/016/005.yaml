@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
-  philosophy: optimal-equivalence
+  text: Early the next morning they marched into the plain. There a large force of infantry and cavalry came to confront them, and a stream[a] lay between the two armies.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a torrent-bed' or 'a seasonal stream.' The Greek term refers to a winter-flowing watercourse and may denote either the stream itself or its channel.
+    text: The Greek word refers to a seasonal torrent or its channel.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀναστάντες τὸ πρωὶ
@@ -102,14 +102,20 @@ revisions:
   from: And when they rose early in the morning, they were going out into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
   to: And when they rose early in the morning, they were going out into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
   rationale: Changed 'they were going out' to 'they went' for a more natural rendering of the narrative imperfect here. Kept 'wadi' as a suitable rendering of χειμάρρους.
-
 - timestamp: '2026-05-18T02:59:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.'
-  to: 'And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.'
+  from: And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
+  to: And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were going out''].'
+- timestamp: '2026-11-09T19:54:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when they rose early in the morning[a], they went into the plain; and behold, a large force came to meet them, infantry and cavalry, and a wadi was between them.
+  to: Early the next morning they marched into the plain. There a large force of infantry and cavalry came to confront them, and a stream[a] lay between the two armies.
+  rationale: The recorded review favored a natural narrative tense, which I retain rather than restoring the draft’s cumbersome progressive. The lexical concern behind “wadi” remains valid, but its geographical precision is better supplied in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +135,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/016/005.job-48872.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:54:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The next morning the force enters the plain and faces a large enemy force of infantry and cavalry across a stream.
+  meaning_decisions:
+  - source_phrase: ἀναστάντες τὸ πρωὶ ἐπορεύοντο εἰς τὸ πεδίον
+    prior_rendering: when they rose early in the morning, they went into the plain
+    new_rendering: Early the next morning they marched into the plain
+    rationale: The overnight stay establishes that this is the next morning, and the military movement is naturally described as marching.
+  - source_phrase: καὶ ἰδοὺ δύναμις πολλὴ εἰς συνάντησιν αὐτοῖς, πεζικοὶ καὶ ἱππεῖς
+    prior_rendering: and behold, a large force came to meet them, infantry and cavalry
+    new_rendering: There a large force of infantry and cavalry came to confront them
+    rationale: The narrative introduces an opposing force, not a friendly meeting; “confront” conveys the encounter’s military meaning.
+  - source_phrase: χειμάρρους ἦν ἀνὰ μέσον αὐτῶν
+    prior_rendering: a wadi was between them
+    new_rendering: a stream lay between the two armies
+    rationale: “Stream” makes the geographical obstacle immediately intelligible, while the note preserves the seasonal-watercourse sense and “two armies” clarifies who is separated.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The recorded review favored a natural narrative tense, which I retain rather than restoring the draft’s cumbersome progressive. The lexical concern behind “wadi” remains valid, but its geographical precision is better supplied in a correctly placed note.

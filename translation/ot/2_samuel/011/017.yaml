@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֵּ֨צְא֜וּ אַנְשֵׁ֤י הָ/עִיר֙ וַ/יִּלָּחֲמ֣וּ אֶת יוֹאָ֔ב וַ/יִּפֹּ֥ל מִן הָ/עָ֖ם מֵ/עַבְדֵ֣י דָוִ֑ד וַ/יָּ֕מָת גַּ֖ם אוּרִיָּ֥ה הַ/חִתִּֽי־־׃
 translation:
-  text: The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'went out' for 'came out.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'from the people, from David’s servants,' a partitive expression meaning that some of David’s men fell.
-    reason: lexical_alternative
+  text: The city’s defenders came out and fought against Joab’s forces. Some of David’s troops fell, and Uriah the Hittite also died.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֵּצְאוּ
   chosen: came out
@@ -86,14 +79,20 @@ revisions:
   from: The men of the city came out and fought against Joab, and some of the people, from David’s servants, fell; Uriah the Hittite also died.
   to: The men of the city came out and fought against Joab, and some of the people, from David’s servants, fell; Uriah the Hittite also died.
   rationale: Replaced 'from David’s servants' with 'among David’s servants' for more natural English while preserving the sense of מֵעַבְדֵי דָוִד. No other changes needed.
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.'
-  to: 'The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.'
+  from: The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.
+  to: The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from David’s servants''].'
+- timestamp: '2026-11-09T17:28:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The men of the city came out and fought against Joab[a], and some of the people among David’s servants fell[b]; Uriah the Hittite also died.
+  to: The city’s defenders came out and fought against Joab’s forces. Some of David’s troops fell, and Uriah the Hittite also died.
+  rationale: The earlier discussion correctly recognized the partitive construction and the military setting, but its wording remained cumbersome. I carry those conclusions directly into English and retain Uriah’s death as the final, emphasized casualty.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -113,3 +112,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/011/017.job-45860.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The city’s defenders attack Joab’s forces, and some of David’s troops, including Uriah, are killed.
+  meaning_decisions:
+  - source_phrase: אַנְשֵׁי הָעִיר וַיִּלָּחֲמוּ אֶת יוֹאָב
+    prior_rendering: The men of the city came out and fought against Joab
+    new_rendering: The city’s defenders came out and fought against Joab’s forces
+    rationale: The context identifies these men as the city’s combatants and uses Joab’s name for the force he commands; making both referents explicit avoids suggesting a personal encounter with Joab alone.
+  - source_phrase: וַיִּפֹּל מִן הָעָם מֵעַבְדֵי דָוִד
+    prior_rendering: some of the people among David’s servants fell
+    new_rendering: Some of David’s troops fell
+    rationale: The overlapping partitive expressions identify casualties among the soldiers serving David, not two distinct groups; the military image “fell” remains natural and forceful.
+  footnote_kinds: {}
+  history_weighed: The earlier discussion correctly recognized the partitive construction and the military setting, but its wording remained cumbersome. I carry those conclusions directly into English and retain Uriah’s death as the final, emphasized casualty.

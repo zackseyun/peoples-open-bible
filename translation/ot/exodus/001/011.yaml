@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּשִׂ֤ימוּ עָלָי/ו֙ שָׂרֵ֣י מִסִּ֔ים לְמַ֥עַן עַנֹּת֖/וֹ בְּ/סִבְלֹתָ֑/ם וַ/יִּ֜בֶן עָרֵ֤י מִסְכְּנוֹת֙ לְ/פַרְעֹ֔ה אֶת פִּתֹ֖ם וְ/אֶת רַעַמְסֵֽס־־׃
 translation:
-  text: 'So they set taskmasters over him to afflict him with their burdens[c][b][a], and he built storage cities for Pharaoh: Pithom and Rameses.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'over them' and 'they built'; the Hebrew uses singular forms ('over him,' 'he built') to refer collectively to Israel.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'store cities.'
-    reason: lexical_alternative
-  - marker: c
-    text: Rameses may also be rendered 'Raamses.'
-    reason: lexical_alternative
+  text: 'So the Egyptians appointed taskmasters over the Israelites to oppress them with forced labor. The Israelites built storage cities for Pharaoh: Pithom and Rameses.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּשִׂימוּ
   chosen: they set
@@ -106,14 +96,20 @@ revisions:
   from: 'So they set taskmasters over him to afflict him with their burdens, and he built storage cities for Pharaoh: Pithom and Rameses.'
   to: 'So they set taskmasters over them to afflict them with their burdens, and they built storage cities for Pharaoh: Pithom and Rameses.'
   rationale: Changed singular pronouns and verb to plural ('him/he' to 'them/they') to match the referent Israel/the people in context and the Hebrew sense here; otherwise retained the wording.
-
 - timestamp: '2026-05-15T10:54:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'So they set taskmasters over them to afflict them with their burdens[c][b][a], and they built storage cities for Pharaoh: Pithom and Rameses.'
   to: 'So they set taskmasters over him to afflict him with their burdens[c][b][a], and he built storage cities for Pharaoh: Pithom and Rameses.'
-  rationale: 'Restored Hebrew 3ms morphology (collective-singular idiom) per drafter''s documented reasoning.'
+  rationale: Restored Hebrew 3ms morphology (collective-singular idiom) per drafter's documented reasoning.
+- timestamp: '2026-11-09T17:34:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'So they set taskmasters over him to afflict him with their burdens[c][b][a], and he built storage cities for Pharaoh: Pithom and Rameses.'
+  to: 'So the Egyptians appointed taskmasters over the Israelites to oppress them with forced labor. The Israelites built storage cities for Pharaoh: Pithom and Rameses.'
+  rationale: The earlier review correctly identified the singular forms as collective references to Israel; the later automated revert restored their morphology without changing that referent. I use explicit English plurals and identify forced labor from the officials and building context, while retaining the established city names.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +129,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/001/011.job-62286.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:17Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Egyptians imposed forced labor on the Israelites to oppress them, and the Israelites built Pithom and Rameses as storage cities for Pharaoh.
+  meaning_decisions:
+  - source_phrase: וַיָּשִׂימוּ עָלָיו שָׂרֵי מִסִּים
+    prior_rendering: So they set taskmasters over him
+    new_rendering: So the Egyptians appointed taskmasters over the Israelites
+    rationale: The implied agents are the Egyptians, and the singular object refers collectively to Israel; explicit subjects prevent readers from mistaking the passage for action against one man.
+  - source_phrase: לְמַעַן עַנֹּתוֹ בְּסִבְלֹתָם
+    prior_rendering: to afflict him with their burdens
+    new_rendering: to oppress them with forced labor
+    rationale: In the context of corvée officials and city building, the burdens are imposed labor obligations, and the stated purpose is oppression of the people.
+  - source_phrase: וַיִּבֶן
+    prior_rendering: and he built
+    new_rendering: The Israelites built
+    rationale: The singular verb has Israel as its collective subject; naming the Israelites makes clear who performed the construction.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly identified the singular forms as collective references to Israel; the later automated revert restored their morphology without changing that referent. I use explicit English plurals and identify forced labor from the officials and building context, while retaining the established city names.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/כֹל֩ אֲשֶׁ֨ר לֹֽא יָב֜וֹא לִ/שְׁלֹ֣שֶׁת הַ/יָּמִ֗ים כַּ/עֲצַ֤ת הַ/שָּׂרִים֙ וְ/הַ/זְּקֵנִ֔ים יָחֳרַ֖ם כָּל רְכוּשׁ֑/וֹ וְ/ה֥וּא יִבָּדֵ֖ל מִ/קְּהַ֥ל הַ/גּוֹלָֽה־־׃ס
 translation:
-  text: And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.
-  philosophy: optimal-equivalence
+  text: As the officials and elders had decided, anyone who failed to come within three days would forfeit all his property[a] and would himself be excluded from the community of the returned exiles.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'shall be forfeited' or 'shall be put under the ban.' The Hebrew verb denotes being placed under חרם, a ban/devotion that can imply destruction or confiscation.
+    text: Literally, “all his property would be placed under the ban.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְכֹל אֲשֶׁר
@@ -111,14 +111,20 @@ revisions:
   from: And everyone who does not come within three days, according to the counsel of the officials and the elders, all his property shall be devoted to destruction, and he himself shall be separated from the assembly of the exiles.
   to: And everyone who does not come within three days, according to the counsel of the officials and the elders, all his property shall be devoted to destruction, and he himself shall be separated from the assembly of the exiles.
   rationale: Changed 'devoted to destruction' to 'forfeited' to better fit the legal sense of יחרם here in context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.'
-  to: 'And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.'
+  from: And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.
+  to: And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shall be devoted to destruction''].'
+- timestamp: '2026-11-09T17:42:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And everyone who does not come within three days[a], according to the counsel of the officials and the elders, all his property shall be forfeited, and he himself shall be separated from the assembly of the exiles.
+  to: As the officials and elders had decided, anyone who failed to come within three days would forfeit all his property[a] and would himself be excluded from the community of the returned exiles.
+  rationale: The history’s contextual move from “devoted to destruction” to “forfeited” is sound and is preserved despite the automated revert rationale. The technical ban language remains in a correctly placed note, without implying that the property must be physically destroyed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -138,3 +144,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/ezra/010/008.job-43014.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The officials and elders impose forfeiture of property and exclusion from the returned community on anyone who misses the three-day deadline.
+  meaning_decisions:
+  - source_phrase: כַּעֲצַת הַשָּׂרִים וְהַזְּקֵנִים
+    prior_rendering: according to the counsel of the officials and the elders
+    new_rendering: As the officials and elders had decided
+    rationale: This is an authoritative administrative decision, not merely advice.
+  - source_phrase: וְכֹל אֲשֶׁר לֹא יָבוֹא ... יָחֳרַם כָּל רְכוּשׁוֹ
+    prior_rendering: everyone who does not come ... all his property shall be forfeited
+    new_rendering: anyone who failed to come ... would forfeit all his property
+    rationale: The revised syntax states the conditional penalty clearly within the past-tense account of the proclamation.
+  - source_phrase: וְהוּא יִבָּדֵל מִקְּהַל הַגּוֹלָה
+    prior_rendering: he himself shall be separated from the assembly of the exiles
+    new_rendering: would himself be excluded from the community of the returned exiles
+    rationale: The penalty concerns exclusion from communal membership, not merely separation from a particular meeting.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history’s contextual move from “devoted to destruction” to “forfeited” is sound and is preserved despite the automated revert rationale. The technical ban language remains in a correctly placed note, without implying that the property must be physically destroyed.

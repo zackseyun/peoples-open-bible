@@ -16,11 +16,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”
-  philosophy: optimal-equivalence
+  text: But he said to them, “The fire you have against me is not so scorching as to make me a coward[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “as to make me act like a coward,” or more literally, “as to make me unmanly.”
+    text: Literally 'to make me unmanly', that is, to make me lose courage.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: καυστικώτερον
@@ -100,14 +100,20 @@ revisions:
   from: But he said to them, “The fire you have against me is not so scorching as to make me cowardly.”
   to: But he said to them, “The fire you have against me is not so scorching as to make me cowardly.”
   rationale: Revised the final phrase from 'make me cowardly' to 'make me a coward' to reflect the Greek more naturally and accurately as a predicate of personal character rather than an adverbial quality.
-
 - timestamp: '2026-05-18T02:59:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”'
-  to: 'But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”'
+  from: But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”
+  to: But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''make me cowardly''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: But he said to them[a], “The fire you have against me is not so scorching as to make me a coward.”
+  to: But he said to them, “The fire you have against me is not so scorching as to make me a coward[a].”
+  rationale: The automated revert claimed to restore 'make me cowardly', but 'make me a coward' stands in the current text and states the point well, so it is kept, with the footnote placed on the word it explains.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +133,18 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/010/014.job-49984.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: kept
+  confidence: high
+  meaning: The fourth brother answers that their fire is not hot enough to make him lose his courage.
+  meaning_decisions: []
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The automated revert claimed to restore 'make me cowardly', but 'make me a coward' stands in the current text and states the point well, so it is kept, with the footnote placed on the word it explains.

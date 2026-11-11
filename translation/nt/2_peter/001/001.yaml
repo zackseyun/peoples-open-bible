@@ -4,21 +4,18 @@ source:
   edition: SBLGNT
   text: ⸀Συμεὼν Πέτρος δοῦλος καὶ ἀπόστολος Ἰησοῦ Χριστοῦ τοῖς ἰσότιμον ἡμῖν λαχοῦσιν πίστιν ἐν δικαιοσύνῃ τοῦ θεοῦ ἡμῶν καὶ σωτῆρος Ἰησοῦ Χριστοῦ·
 translation:
-  text: 'Simeon Peter[a], a servant and apostle of Jesus Christ[d][c][b], to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus Christ:'
-  philosophy: optimal-equivalence
+  text: 'Simeon Peter, a servant[a] and apostle of Jesus Christ, to those who have received a faith as precious as ours[b] through the righteousness of our God and Savior Jesus Christ[c]:'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a faith of equal standing with ours.' The adjective can emphasize equal value, honor, or privilege.
+    text: The Greek term denotes a slave rather than a hired worker.
     reason: lexical_alternative
   - marker: b
-    text: Or 'through the righteousness' or 'by the righteousness.' The preposition may express sphere or means.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek most naturally reads 'our God and Savior Jesus the Messiah' as one referent, identifying Jesus as both God and Savior. A less likely alternative is 'our God and the Savior Jesus the Messiah,' referring to two persons.
+    text: Or “a faith of equal standing with ours.”
     reason: alternative_reading
-  - marker: d
-    text: Or 'equally precious with ours'.
-    reason: previous_rendering
+  - marker: c
+    text: Less likely, “of our God and of the Savior Jesus Christ,” referring to two persons.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Συμεὼν Πέτρος
   chosen: Simeon Peter
@@ -130,15 +127,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'Simeon Peter, a slave and apostle of Jesus Messiah, to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus Messiah:'"
-  to: "'Simeon Peter, a slave and apostle of Jesus the Messiah, to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus the Messiah:'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: '''Simeon Peter, a slave and apostle of Jesus Messiah, to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus Messiah:'''
+  to: '''Simeon Peter, a slave and apostle of Jesus the Messiah, to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus the Messiah:'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Simeon Peter[a], a servant and apostle of Jesus Christ[d][c][b], to those who have obtained a faith as precious as ours in the righteousness of our God and Savior Jesus Christ:'
+  to: 'Simeon Peter, a servant[a] and apostle of Jesus Christ, to those who have received a faith as precious as ours[b] through the righteousness of our God and Savior Jesus Christ[c]:'
+  rationale: I retain the earlier improvement to “as precious as ours” and the well-supported identification of Jesus as both God and Savior. The standing rulings govern “servant” and “Jesus Christ,” while a note preserves the bonded force emphasized in the lexical record.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:37:51Z'
   unchanged: false
   changes_summary: 'Changed ''slave'' to ''servant'' for more natural formal register while still accurately rendering δοῦλος in this epistolary self-description. No other changes needed. [Regression fix applied: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -161,3 +164,28 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/2_peter/001/001.job-38889.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:28Z'
+  change_level: refined
+  confidence: high
+  meaning: Peter introduces himself as Jesus Christ’s servant and apostle and addresses believers who have received faith as precious as the apostles’ through the righteousness of Jesus Christ, their God and Savior.
+  meaning_decisions:
+  - source_phrase: λαχοῦσιν πίστιν
+    prior_rendering: have obtained a faith
+    new_rendering: have received a faith
+    rationale: The verb presents faith as something allotted or received, not achieved; “received” makes that distinction clearer.
+  - source_phrase: ἐν δικαιοσύνῃ
+    prior_rendering: in the righteousness
+    new_rendering: through the righteousness
+    rationale: The instrumental reading best explains how the recipients received this equally precious faith; the prior wording leaves that relationship obscure in English.
+  footnote_kinds:
+    a: name_or_term
+    b: alternative_meaning
+    c: alternative_meaning
+  history_weighed: I retain the earlier improvement to “as precious as ours” and the well-supported identification of Jesus as both God and Savior. The standing rulings govern “servant” and “Jesus Christ,” while a note preserves the bonded force emphasized in the lexical record.

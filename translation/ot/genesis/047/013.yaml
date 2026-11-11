@@ -4,22 +4,15 @@ source:
   edition: WLC
   text: וְ/לֶ֤חֶם אֵין֙ בְּ/כָל הָ/אָ֔רֶץ כִּֽי כָבֵ֥ד הָ/רָעָ֖ב מְאֹ֑ד וַ/תֵּ֜לַהּ אֶ֤רֶץ מִצְרַ֨יִם֙ וְ/אֶ֣רֶץ כְּנַ֔עַן מִ/פְּנֵ֖י הָ/רָעָֽב־־׃
 translation:
-  text: There was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'bread'; here likely used more broadly for food in general.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'languished' / 'fainted' for 'were exhausted.' The Hebrew verb is figurative, describing the debilitating effect of the famine on Egypt and Canaan.
-    reason: lexical_alternative
+  text: There was no food anywhere in the land because the famine was very severe. Egypt and Canaan were wasting away because of the famine.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לֶחֶם
   chosen: food
   alternatives:
   - bread
   lexicon: HALOT
-  rationale: "Though literally 'bread,' in famine contexts לֶחֶם commonly stands metonymically for food in general. 'Food' better conveys the sense in natural English without over-literal narrowing to baked bread. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Though literally ''bread,'' in famine contexts לֶחֶם commonly stands metonymically for food in general. ''Food'' better conveys the sense in natural English without over-literal narrowing to baked bread. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: אֵין
   chosen: there was no
   alternatives:
@@ -103,13 +96,12 @@ revisions:
   from: Now there was no food in all the land, because the famine was very severe; and the land of Egypt and the land of Canaan were exhausted because of the famine.
   to: Now there was no food in all the land, because the famine was very severe; and the land of Egypt and the land of Canaan were exhausted because of the famine.
   rationale: Changed 'were exhausted' to 'languished' to more closely reflect the Hebrew verb ותלהּ, while preserving formal register and natural English. All other wording is accurate and complete.
-
 - timestamp: '2026-05-17T09:21:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now there was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.'
-  to: 'Now there was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.'
+  from: Now there was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
+  to: Now there was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''were exhausted''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -118,6 +110,13 @@ revisions:
   from: Now there was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
   to: There was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:46:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There was no food in all the land[a], because the famine was very severe[b]; and the land of Egypt and the land of Canaan languished because of the famine.
+  to: There was no food anywhere in the land because the famine was very severe. Egypt and Canaan were wasting away because of the famine.
+  rationale: The earlier 'were exhausted' and later 'languished' both recognize the famine’s debilitating effect. I preserve that meaning and its figurative force rather than treating the change history’s formal preference as decisive.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -139,3 +138,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/047/013.job-65714.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:46:26Z'
+  change_level: refined
+  confidence: high
+  meaning: The severe famine leaves the land without food and wears down Egypt and Canaan.
+  meaning_decisions:
+  - source_phrase: וַתֵּלַהּ אֶרֶץ מִצְרַיִם וְאֶרֶץ כְּנַעַן
+    prior_rendering: and the land of Egypt and the land of Canaan languished
+    new_rendering: Egypt and Canaan were wasting away
+    rationale: The verb depicts debilitating weakness under famine. 'Wasting away' preserves the collective image and makes its severity clear.
+  footnote_kinds: {}
+  history_weighed: The earlier 'were exhausted' and later 'languished' both recognize the famine’s debilitating effect. I preserve that meaning and its figurative force rather than treating the change history’s formal preference as decisive.

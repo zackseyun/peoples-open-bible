@@ -30,12 +30,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 38:12
 translation:
-  text: Also give the physician a place[a], and do not dismiss him, for there is need of him as well.
-  philosophy: optimal-equivalence
+  text: Make room for the physician as well[a]; do not dismiss him, for you need him too.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek adds, 'for the Lord created him,' before 'and do not let him depart from you.'
-    reason: alternative_reading
+    text: The Greek adds, 'for the Lord created him.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: וגם
   chosen: Also
@@ -115,14 +115,20 @@ revisions:
   from: Also give the physician a place, and do not let him depart, for there is need of him as well.
   to: Also give the physician a place, and do not let him depart, for there is need of him as well.
   rationale: Changed 'do not let him depart' to 'do not dismiss him' to better reflect the sense of not sending the physician away, while keeping the verse formal and natural.
-
 - timestamp: '2026-05-18T02:57:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Also give the physician a place[a], and do not dismiss him, for there is need of him as well.'
-  to: 'Also give the physician a place[a], and do not dismiss him, for there is need of him as well.'
+  from: Also give the physician a place[a], and do not dismiss him, for there is need of him as well.
+  to: Also give the physician a place[a], and do not dismiss him, for there is need of him as well.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''do not let him depart''].'
+- timestamp: '2026-11-09T19:08:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Also give the physician a place[a], and do not dismiss him, for there is need of him as well.
+  to: Make room for the physician as well[a]; do not dismiss him, for you need him too.
+  rationale: The review's 'do not dismiss him' clearly expresses the practical warning and is retained despite the recorded revert rationale. The Hebrew remains the main text, with the Greek's creation clause confined to a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -142,3 +148,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/038/012.job-52055.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:17Z'
+  change_level: refined
+  confidence: high
+  meaning: Alongside prayer and offerings, the sick person must also accept and retain the physician's help.
+  meaning_decisions:
+  - source_phrase: וגם לרופא תן מקום
+    prior_rendering: Also give the physician a place
+    new_rendering: Make room for the physician as well
+    rationale: The idiom calls for allowing the physician his proper part in treatment, not simply assigning him a location.
+  - source_phrase: כי גם בו צורך
+    prior_rendering: for there is need of him as well
+    new_rendering: for you need him too
+    rationale: The patient is the understood person in need, and the direct construction carries the additive emphasis naturally.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The review's 'do not dismiss him' clearly expresses the practical warning and is retained despite the recorded revert rationale. The Hebrew remains the main text, with the Greek's creation clause confined to a note.

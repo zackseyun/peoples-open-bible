@@ -30,15 +30,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “from the king’s order.” The Greek phrase can be read administratively either as a fiscal account/register or as the king’s directive; the financial context here favors “account.”
-    reason: lexical_alternative
-  - marker: b
-    text: “The sanctuary” renders Greek “the holy things/holy places,” referring here to the sacred temple complex.
-    reason: lexical_alternative
+  text: The cost of rebuilding and renovating the sanctuary’s structures shall be paid from the royal treasury.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἰκοδομηθῆναι
   chosen: the rebuilding
@@ -119,14 +112,20 @@ revisions:
   from: And for the rebuilding and the renovation of the works of the sanctuary, the expense will be given from the king’s account.
   to: And for the rebuilding and the renovation of the works of the sanctuary, the expense will be given from the king’s account.
   rationale: Changed 'from the king’s account' to 'by order of the king' to more accurately reflect ἐκ τοῦ λόγου τοῦ βασιλέως ('from/by the word/order of the king').
-
 - timestamp: '2026-05-18T02:58:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.'
-  to: 'And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.'
+  from: And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.
+  to: And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from the king’s account''].'
+- timestamp: '2026-11-09T18:53:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And for the rebuilding and the renovation of the works of the sanctuary[b][a], the expense will be given by order of the king.
+  to: The cost of rebuilding and renovating the sanctuary’s structures shall be paid from the royal treasury.
+  rationale: The first draft and the fiscal lexical rationale favor a funding source rather than merely a royal order. I follow that reading, consistent with the same expression in verses 40 and 45.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +145,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/010/044.job-48552.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Demetrius promises royal funding for rebuilding and renovating the sanctuary’s structures.
+  meaning_decisions:
+  - source_phrase: τοῦ οἰκοδομηθῆναι καὶ τοῦ ἐπικαινισθῆναι τὰ ἔργα τῶν ἁγίων
+    prior_rendering: for the rebuilding and the renovation of the works of the sanctuary
+    new_rendering: of rebuilding and renovating the sanctuary’s structures
+    rationale: Here the works are what is physically rebuilt and renovated; 'structures' distinguishes them from the activity of construction.
+  - source_phrase: ἡ δαπάνη δοθήσεται ἐκ τοῦ λόγου τοῦ βασιλέως
+    prior_rendering: the expense will be given by order of the king
+    new_rendering: The cost ... shall be paid from the royal treasury
+    rationale: The expense and the parallel financial grants favor a royal funding source, not merely a directive authorizing the work.
+  footnote_kinds: {}
+  history_weighed: The first draft and the fiscal lexical rationale favor a funding source rather than merely a royal order. I follow that reading, consistent with the same expression in verses 40 and 45.

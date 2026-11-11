@@ -28,12 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 16:17
 translation:
-  text: Do not say[a], “I am hidden from God, and from on high who will remember me? In a great people I will not be known; and what is my life among the ends of the winds, all the sons of man?”
-  philosophy: optimal-equivalence
+  text: Do not say, “I am hidden from God; who will remember me from on high? Among so many people I will go unnoticed; what does my life count for among all humankind, spread to the farthest reaches of the earth[a]?”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''in immeasurable creation'' instead of ''among the ends of the winds,'' likely reflecting a different Vorlage or an interpretive rendering of a difficult Hebrew phrase.'
-    reason: alternative_reading
+    text: The Hebrew ends with the difficult phrase “like the ends of the winds, all the children of man,” apparently evoking humanity across the world's farthest reaches; the Greek reads “in immeasurable creation.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: אַל תֹּאמַר
   chosen: Do not say
@@ -140,14 +140,20 @@ revisions:
   from: Do not say, “I am hidden from God, and from on high who will remember me? In a great people I will not be known; and what is my life among the ends of the winds, all the sons of man?”
   to: Do not say, “I am hidden from God, and from on high who will remember me? Among a numerous people I will not be known; and what is my soul among all the children of man, like the ends of the winds?”
   rationale: Adjusted 'in a great people' to 'among a numerous people' for more natural English; changed 'life' to 'soul' to reflect נַפְשִׁי more closely; reordered the final clause to account for all source words more clearly and naturally.
-
 - timestamp: '2026-05-15T13:39:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not say[a], “I am hidden from God, and from on high who will remember me? Among a numerous people I will not be known; and what is my soul among all the children of man, like the ends of the winds?”'
-  to: 'Do not say[a], “I am hidden from God, and from on high who will remember me? In a great people I will not be known; and what is my life among the ends of the winds, all the sons of man?”'
-  rationale: 'Restored 3 documented chosen renderings (Hebrew weightiness, life over soul, gender-accurate ''sons of man'').'
+  from: Do not say[a], “I am hidden from God, and from on high who will remember me? Among a numerous people I will not be known; and what is my soul among all the children of man, like the ends of the winds?”
+  to: Do not say[a], “I am hidden from God, and from on high who will remember me? In a great people I will not be known; and what is my life among the ends of the winds, all the sons of man?”
+  rationale: Restored 3 documented chosen renderings (Hebrew weightiness, life over soul, gender-accurate 'sons of man').
+- timestamp: '2026-11-09T19:05:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not say[a], “I am hidden from God, and from on high who will remember me? In a great people I will not be known; and what is my life among the ends of the winds, all the sons of man?”
+  to: Do not say, “I am hidden from God; who will remember me from on high? Among so many people I will go unnoticed; what does my life count for among all humankind, spread to the farthest reaches of the earth[a]?”
+  rationale: The earlier revision correctly recognized the numerical force of “great people,” although the automated revert restored the less intelligible wording. I retain “life,” supported by the recorded contextual reasoning, and clarify the final clause rather than reproducing its opaque syntax.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -167,3 +173,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/016/017.job-51389.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:30Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The reader must not suppose that being one person among humanity's vast numbers makes one's life invisible or insignificant to God.
+  meaning_decisions:
+  - source_phrase: בְּעַם כָּבֵד לֹא אִוָּדֵעַ
+    prior_rendering: In a great people I will not be known
+    new_rendering: Among so many people I will go unnoticed
+    rationale: The speaker imagines anonymity within a numerous population, not membership in an especially distinguished people.
+  - source_phrase: וּמַה נַפְשִׁי
+    prior_rendering: and what is my life
+    new_rendering: what does my life count for
+    rationale: The rhetorical question concerns the supposed insignificance of the speaker's life.
+  - source_phrase: כְּקַצּוֹת רוּחוֹת כּלָ בּנֵי אָדָם
+    prior_rendering: among the ends of the winds, all the sons of man
+    new_rendering: among all humankind, spread to the farthest reaches of the earth
+    rationale: The difficult wording appears to evoke humanity's vast extent; the main text communicates that probable sense, while the note preserves the unusual Hebrew image and the Greek alternative.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier revision correctly recognized the numerical force of “great people,” although the automated revert restored the less intelligible wording. I retain “life,” supported by the recorded contextual reasoning, and clarify the final clause rather than reproducing its opaque syntax.

@@ -24,12 +24,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.
-  philosophy: optimal-equivalence
+  text: But as for you, do not suppose that you will go unpunished[a], since you have attempted to fight against God.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'having attempted to oppose God.' The Greek verb is literally 'to fight against God.'
-    reason: lexical_alternative
+    text: Or, “be held guiltless.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: σὺ δὲ
   chosen: But as for you
@@ -110,14 +110,20 @@ revisions:
   from: But as for you, do not suppose that you will be innocent, since you have attempted to fight against God.
   to: But as for you, do not suppose that you will be innocent, since you have attempted to fight against God.
   rationale: Replaced 'since you have attempted' with 'having attempted' to reflect the participial construction more directly and formally, while preserving natural English.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.'
-  to: 'But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.'
+  from: But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.
+  to: But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''since you have attempted''].'
+- timestamp: '2026-11-09T19:00:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But as for you[a], do not suppose that you will be innocent, having attempted to fight against God.
+  to: But as for you, do not suppose that you will go unpunished[a], since you have attempted to fight against God.
+  rationale: There is no MAINTAINER revision; the earlier preference for “innocent” was weighed against the context's emphasis on divine punishment. The first draft and lexical rationale support the restored causal “since,” while “fight against God” preserves the force consistently recognized in the history.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +143,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/007/019.job-49153.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:30Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The sixth brother warns the king that his attempt to fight against God will not go unpunished.
+  meaning_decisions:
+  - source_phrase: ἀθῷος ἔσεσθαι
+    prior_rendering: you will be innocent
+    new_rendering: you will go unpunished
+    rationale: The adjective can express freedom from guilt or liability. In this contrast with suffering for sin and the surrounding warnings of divine retribution, the point is that the king cannot expect immunity from punishment; the alternative sense is retained in a footnote.
+  - source_phrase: ἐπιχειρήσας
+    prior_rendering: having attempted
+    new_rendering: since you have attempted
+    rationale: The participle gives the basis for the warning. Making that causal connection explicit conveys the meaning more clearly than reproducing the participial form.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: There is no MAINTAINER revision; the earlier preference for “innocent” was weighed against the context's emphasis on divine punishment. The first draft and lexical rationale support the restored causal “since,” while “fight against God” preserves the force consistently recognized in the history.

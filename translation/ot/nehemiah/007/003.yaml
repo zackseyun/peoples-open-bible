@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: ו/יאמר לָ/הֶ֗ם לֹ֣א יִפָּֽתְח֞וּ שַׁעֲרֵ֤י יְרוּשָׁלִַ֨ם֙ עַד חֹ֣ם הַ/שֶּׁ֔מֶשׁ וְ/עַ֨ד הֵ֥ם עֹמְדִ֛ים יָגִ֥יפוּ הַ/דְּלָת֖וֹת וֶ/אֱחֹ֑זוּ וְ/הַעֲמֵ֗יד מִשְׁמְרוֹת֙ יֹשְׁבֵ֣י יְרוּשָׁלִַ֔ם אִ֚ישׁ בְּ/מִשְׁמָר֔/וֹ וְ/אִ֖ישׁ נֶ֥גֶד בֵּיתֽ/וֹ־׃
 translation:
-  text: And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”
-  philosophy: optimal-equivalence
+  text: I said to them, “The gates of Jerusalem must not be opened until the sun grows hot. While the guards are still on duty, have them shut and fasten the doors. Station guards from among the inhabitants of Jerusalem, some at their assigned posts and others in front of their own houses[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “until the sun grows hot,” that is, not merely at sunrise but later in the morning.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “hold them”; in context this means to fasten or secure the doors after shutting them.
-    reason: lexical_alternative
-  - marker: c
-    text: Or “appoint watches from among the inhabitants of Jerusalem.” The Hebrew term can refer either to guards or to guard-duties/watches.
-    reason: lexical_alternative
+    text: Or 'each at his assigned post and each in front of his own house.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: יִפָּתְחוּ
   chosen: must not be opened
@@ -122,14 +116,20 @@ revisions:
   from: And I said to them, “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and secure them. And appoint guards from the inhabitants of Jerusalem, each at his watch and each opposite his own house.”
   to: And I said to them, “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and secure them. And appoint guards from the inhabitants of Jerusalem, each at his watch and each opposite his own house.”
   rationale: Changed “secure them” to “fasten them” for a more precise rendering of the verb meaning to hold/fasten; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:54:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”'
-  to: 'And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”'
+  from: And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”
+  to: And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''secure them''].'
+- timestamp: '2026-11-09T19:25:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I said to them[a], “The gates of Jerusalem must not be opened until the sun is hot. While they are still standing guard, let them shut the doors and fasten them. And appoint guards from the inhabitants of Jerusalem[c][b], each at his watch and each opposite his own house.”
+  to: I said to them, “The gates of Jerusalem must not be opened until the sun grows hot. While the guards are still on duty, have them shut and fasten the doors. Station guards from among the inhabitants of Jerusalem, some at their assigned posts and others in front of their own houses[a].”
+  rationale: The reviews differ chiefly over 'secure' and 'fasten'; I retain 'fasten' without specifying a fastening mechanism. The lexical notes support making the guards and their assigned posts explicit while preserving uncertainty about the distribution of duties.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -149,3 +149,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/007/003.job-42536.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:25:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Nehemiah ordered delayed gate opening, secure closure under guard, and defensive watches drawn from Jerusalem’s residents.
+  meaning_decisions:
+  - source_phrase: וְעַד הֵם עֹמְדִים יָגִיפוּ הַדְּלָתוֹת וֶאֱחֹזוּ
+    prior_rendering: While they are still standing guard, let them shut the doors and fasten them
+    new_rendering: While the guards are still on duty, have them shut and fasten the doors
+    rationale: The guards are the implied subject, and their continued presence on duty is the condition for securing the doors.
+  - source_phrase: וְהַעֲמֵיד מִשְׁמְרוֹת ... אִישׁ בְּמִשְׁמָרוֹ וְאִישׁ נֶגֶד בֵּיתוֹ
+    prior_rendering: And appoint guards ... each at his watch and each opposite his own house
+    new_rendering: Station guards ... some at their assigned posts and others in front of their own houses
+    rationale: The command concerns placing residents on defensive duty. The repeated distributive expression can distinguish assignments to regular posts from assignments in front of homes; the other serious reading is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The reviews differ chiefly over 'secure' and 'fasten'; I retain 'fasten' without specifying a fastening mechanism. The lexical notes support making the guards and their assigned posts explicit while preserving uncertainty about the distribution of duties.

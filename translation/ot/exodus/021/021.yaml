@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: אַ֥ךְ אִם י֛וֹם א֥וֹ יוֹמַ֖יִם יַעֲמֹ֑ד לֹ֣א יֻקַּ֔ם כִּ֥י כַסְפּ֖/וֹ הֽוּא־׃ס
 translation:
-  text: However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.
-  philosophy: optimal-equivalence
+  text: But if the servant survives for a day or two, no retribution shall be exacted from the master, because the servant is his property[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'he shall not be punished.' The Hebrew more specifically speaks of vengeance or legal retribution being exacted.
+    text: Literally, 'because he is his money,' referring to the servant as the master's financial investment.
     reason: lexical_alternative
-  - marker: b
-    text: Literally, 'for he is his money,' expressing the slave's economic value to the master.
-    reason: cultural_note
 lexical_decisions:
 - source_word: אַךְ
   chosen: However
@@ -105,14 +102,20 @@ revisions:
   from: However, if he remains alive for a day or two, he shall not be avenged, for he is his money.
   to: However, if he remains alive for a day or two, he shall not be avenged, for he is his money.
   rationale: Changed 'remains alive' to 'survives' for a more natural rendering of the verb while preserving the meaning. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:56:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.'
-  to: 'However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.'
+  from: However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.
+  to: However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''remains alive''].'
+- timestamp: '2026-11-09T17:36:00Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: However[a], if he survives for a day or two, he shall not be avenged[b], for he is his money.
+  to: But if the servant survives for a day or two, no retribution shall be exacted from the master, because the servant is his property[a].
+  rationale: The review and revert debate 'survives' versus 'remains alive'; both recognize continued life rather than full recovery, which I preserve. The earlier rationale rightly resisted softening the economic explanation, so the main text retains ownership language and the note retains 'his money.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +135,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/021/021.job-62796.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:00Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If the beaten servant remains alive for a day or two, the master is exempt from the retribution just prescribed because the servant is his property.
+  meaning_decisions:
+  - source_phrase: לֹא יֻקַּם
+    prior_rendering: he shall not be avenged
+    new_rendering: no retribution shall be exacted from the master
+    rationale: Explicitly identifies the master as the person exempted from the retribution prescribed in verse 20, without suggesting exemption from every other injury law.
+  - source_phrase: כִּי כַסְפּוֹ הוּא
+    prior_rendering: for he is his money
+    new_rendering: because the servant is his property
+    rationale: The literal wording is obscure in English; 'property' conveys the blunt ownership rationale, while the footnote preserves its specifically economic expression.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review and revert debate 'survives' versus 'remains alive'; both recognize continued life rather than full recovery, which I preserve. The earlier rationale rightly resisted softening the economic explanation, so the main text retains ownership language and the note retains 'his money.'

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: לָ/נֻ֨ס שָׁ֜מָּ/ה רוֹצֵ֗חַ אֲשֶׁ֨ר יִרְצַ֤ח אֶת רֵעֵ֨/הוּ֙ בִּ/בְלִי דַ֔עַת וְ/ה֛וּא לֹא שֹׂנֵ֥א ל֖/וֹ מִ/תְּמ֣וֹל שִׁלְשׁ֑וֹם וְ/נָ֗ס אֶל אַחַ֛ת מִן הֶ/עָרִ֥ים הָ/אֵ֖ל וָ/חָֽי־־־־־׃
 translation:
-  text: so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'without knowledge'; in this legal context, the sense is that the killing was unwitting or unintentional.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'from yesterday or the day before,' an idiom meaning 'previously' or 'formerly.'
-    reason: lexical_alternative
+  text: so that anyone who killed his neighbor unintentionally and had not hated him beforehand could flee to one of these cities and live.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לָנֻס שָׁמָּה
   chosen: so that ... may flee there
@@ -108,14 +101,20 @@ revisions:
   from: so that a manslayer who kills his neighbor unintentionally, without prior knowledge, and was not hating him previously, may flee there to one of these cities and live.
   to: so that a manslayer who kills his neighbor unintentionally, without prior knowledge, and was not hating him previously, may flee there to one of these cities and live.
   rationale: Changed 'without prior knowledge' to 'without knowledge' for closer lexical accuracy to בבלי דעת; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:56:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.'
-  to: 'so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.'
+  from: so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.
+  to: so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''unintentionally, without prior knowledge''].'
+- timestamp: '2026-11-09T17:30:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: so that a manslayer who kills his neighbor unintentionally[a], without knowledge, and was not hating him previously[b], may flee there to one of these cities and live.
+  to: so that anyone who killed his neighbor unintentionally and had not hated him beforehand could flee to one of these cities and live.
+  rationale: The recorded review and revert dispute “without knowledge” versus “without prior knowledge,” but neither is a maintainer ruling and both preserve unnecessary duplication. I retain the agreed legal meaning—unintentional killing without prior hatred—and express it directly.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +134,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/004/042.job-61394.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The cities would preserve the life of someone who killed a neighbor unintentionally and without prior hatred.
+  meaning_decisions:
+  - source_phrase: רוֹצֵחַ אֲשֶׁר יִרְצַח אֶת רֵעֵהוּ בִּבְלִי דַעַת
+    prior_rendering: a manslayer who kills his neighbor unintentionally, without knowledge
+    new_rendering: anyone who killed his neighbor unintentionally
+    rationale: The relative clause identifies the person who caused the death, and “unintentionally” carries the legal meaning of “without knowledge”; retaining both English expressions falsely suggests two separate conditions.
+  - source_phrase: וְהוּא לֹא שֹׂנֵא לוֹ מִתְּמוֹל שִׁלְשֹׁם
+    prior_rendering: and was not hating him previously
+    new_rendering: and had not hated him beforehand
+    rationale: Natural English expresses the absence of prior hostility without an awkward progressive construction.
+  - source_phrase: לָנֻס שָׁמָּה ... וְנָס אֶל אַחַת מִן הֶעָרִים הָאֵל וָחָי
+    prior_rendering: may flee there to one of these cities and live
+    new_rendering: could flee to one of these cities and live
+    rationale: The purpose and resumed flight clause can be expressed together, with the modal matching Moses’ past designation of the cities.
+  footnote_kinds: {}
+  history_weighed: The recorded review and revert dispute “without knowledge” versus “without prior knowledge,” but neither is a maintainer ruling and both preserve unnecessary duplication. I retain the agreed legal meaning—unintentional killing without prior hatred—and express it directly.

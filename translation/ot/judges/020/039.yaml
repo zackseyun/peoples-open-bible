@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּהֲפֹ֥ךְ אִֽישׁ יִשְׂרָאֵ֖ל בַּ/מִּלְחָמָ֑ה וּ/בִנְיָמִ֡ן הֵחֵל֩ לְ/הַכּ֨וֹת חֲלָלִ֤ים בְּ/אִֽישׁ יִשְׂרָאֵל֙ כִּ/שְׁלֹשִׁ֣ים אִ֔ישׁ כִּ֣י אָמְר֔וּ אַךְ֩ נִגּ֨וֹף נִגָּ֥ף הוּא֙ לְ/פָנֵ֔י/נוּ כַּ/מִּלְחָמָ֖ה הָ/רִאשֹׁנָֽה־־׃
 translation:
-  text: Then the men of Israel turned in the battle[a], and Benjamin began to strike down the slain among the men of Israel, about thirty men, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'he is utterly defeated' uses a singular form, likely referring to Israel collectively; it could also be rendered 'they are utterly defeated.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'began to strike down about thirty men from among the men of Israel.' The Hebrew phrase with 'the slain' is terse and battle-idiomatic.
-    reason: lexical_alternative
+  text: Then the men of Israel fell back in battle, and the Benjaminites began to kill Israelites—about thirty men—for they said, “Surely we have utterly defeated them, as in the first battle.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּהֲפֹךְ
   chosen: turned
@@ -131,14 +124,20 @@ revisions:
   from: Then the men of Israel turned in the battle, and Benjamin began to strike down the slain among the men of Israel, about thirty men, for they said, “Surely he is utterly defeated before us, as in the first battle.”
   to: Then the men of Israel turned in the battle, and Benjamin began to strike down some of the men of Israel, about thirty men slain, for they said, “Surely he is utterly defeated before us, as in the first battle.”
   rationale: Replaced 'the slain among the men of Israel' with 'some of the men of Israel, about thirty men slain' to reflect the Hebrew more accurately and naturally; retained the singular 'he is utterly defeated' for the collective Israel as in the source.
-
 - timestamp: '2026-05-16T03:54:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the men of Israel turned in the battle[a], and Benjamin began to strike down some of the men of Israel, about thirty men slain, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”'
-  to: 'Then the men of Israel turned in the battle[a], and Benjamin began to strike down the slain among the men of Israel, about thirty men, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”'
-  rationale: 'Azure restructured ''strike down the slain among the men of Israel, about thirty men'' to ''strike down some of the men of Israel, about thirty men slain'', inserting ''some'' with no Hebrew basis and moving חֲלָלִים to modify the numeral.'
+  from: Then the men of Israel turned in the battle[a], and Benjamin began to strike down some of the men of Israel, about thirty men slain, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”
+  to: Then the men of Israel turned in the battle[a], and Benjamin began to strike down the slain among the men of Israel, about thirty men, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”
+  rationale: Azure restructured 'strike down the slain among the men of Israel, about thirty men' to 'strike down some of the men of Israel, about thirty men slain', inserting 'some' with no Hebrew basis and moving חֲלָלִים to modify the numeral.
+- timestamp: '2026-11-09T18:21:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the men of Israel turned in the battle[a], and Benjamin began to strike down the slain among the men of Israel, about thirty men, for they said, “Surely he is utterly defeated before us[b], as in the first battle.”
+  to: Then the men of Israel fell back in battle, and the Benjaminites began to kill Israelites—about thirty men—for they said, “Surely we have utterly defeated them, as in the first battle.”
+  rationale: The earlier review’s effort to clarify the casualty idiom supports this rendering; the automated revert restored the Hebrew’s surface form but left a misleading English expression. There is no MAINTAINER revision, and the earlier footnotes are unnecessary because the main text now makes the casualties and collective referent clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -158,3 +157,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/020/039.job-69384.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: As the Israelites fell back, the Benjaminites killed about thirty of them and confidently mistook the retreat for another decisive victory.
+  meaning_decisions:
+  - source_phrase: וַיַּהֲפֹךְ אִישׁ יִשְׂרָאֵל בַּמִּלְחָמָה
+    prior_rendering: Then the men of Israel turned in the battle
+    new_rendering: Then the men of Israel fell back in battle
+    rationale: The surrounding narrative identifies this movement as Israel’s tactical withdrawal, which Benjamin mistakes for defeat; 'turned' leaves the direction and purpose unclear.
+  - source_phrase: וּבִנְיָמִן
+    prior_rendering: and Benjamin
+    new_rendering: and the Benjaminites
+    rationale: The tribal name refers collectively to Benjamin’s fighting men, not an individual.
+  - source_phrase: הֵחֵל לְהַכּוֹת חֲלָלִים בְּאִישׁ יִשְׂרָאֵל כִּשְׁלֹשִׁים אִישׁ
+    prior_rendering: began to strike down the slain among the men of Israel, about thirty men
+    new_rendering: began to kill Israelites—about thirty men
+    rationale: The Hebrew describes inflicting fatal casualties, not striking people who were already dead; the new wording preserves both the beginning of the action and the approximate death toll.
+  - source_phrase: אַךְ נִגּוֹף נִגָּף הוּא לְפָנֵינוּ
+    prior_rendering: Surely he is utterly defeated before us
+    new_rendering: Surely we have utterly defeated them
+    rationale: The singular pronoun represents Israel collectively. Natural English makes that referent plural and expresses defeat at Benjamin’s hands without the misleading individual 'he,' while retaining the emphatic confidence.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s effort to clarify the casualty idiom supports this rendering; the automated revert restored the Hebrew’s surface form but left a misleading English expression. There is no MAINTAINER revision, and the earlier footnotes are unnecessary because the main text now makes the casualties and collective referent clear.

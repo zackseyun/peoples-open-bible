@@ -29,15 +29,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'mercenary forces' for 'foreign forces'; the Greek specifically refers to non-native troops and may imply hired foreign soldiers.
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'all the forces from the time of his fathers' likely means the traditional troops inherited from his forefathers' rule, in contrast to the foreign troops he retained.
-    reason: cultural_note
+  text: When King Demetrius saw that the land was quiet under his rule and that he faced no opposition, he dismissed all his troops, sending each man home, except for the foreign mercenaries he had recruited from the islands of other nations. All the troops he had inherited from his forefathers became hostile to him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἡσύχασεν
   chosen: was quiet
@@ -156,14 +149,20 @@ revisions:
   from: And King Demetrius saw that the land was quiet before him and that nothing opposed him, so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations; and all the forces from the time of his fathers became hostile to him.
   to: And King Demetrius saw that the land was quiet before him and that nothing opposed him, so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations; and all the forces from the time of his fathers became hostile to him.
   rationale: Revised the final clause from 'from the time of his fathers' to 'from his fathers' for closer lexical accuracy to the Greek while preserving formal register and natural English.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.'
-  to: 'And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.'
+  from: And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.
+  to: And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the forces from the time of his fathers''].'
+- timestamp: '2026-11-09T18:54:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And King Demetrius saw that the land was quiet before him and that nothing opposed him[a], so he dismissed all his forces, each to his own place, except for the foreign forces that he had recruited from the islands of the nations[b]; and all the forces from his fathers became hostile to him.
+  to: When King Demetrius saw that the land was quiet under his rule and that he faced no opposition, he dismissed all his troops, sending each man home, except for the foreign mercenaries he had recruited from the islands of other nations. All the troops he had inherited from his forefathers became hostile to him.
+  rationale: The history oscillates between “from his fathers” and “from the time of his fathers,” while its rationale consistently identifies inherited dynastic troops. I express that agreed meaning directly and bring the documented mercenary sense into the main text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -183,3 +182,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/038.job-48635.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Believing his realm secure, Demetrius dismisses his inherited troops while retaining foreign mercenaries, and the dismissed forces become hostile to him.
+  meaning_decisions:
+  - source_phrase: ἡσύχασεν ἡ γῆ ἐνώπιον αὐτοῦ
+    prior_rendering: the land was quiet before him
+    new_rendering: the land was quiet under his rule
+    rationale: The quietness concerns the condition of the realm under his kingship, not something occurring physically in front of him.
+  - source_phrase: ἕκαστον εἰς τὸν ἴδιον τόπον
+    prior_rendering: each to his own place
+    new_rendering: sending each man home
+    rationale: In the context of dismissal from military service, the distributive phrase describes the soldiers’ return to their own places of residence.
+  - source_phrase: τῶν ξένων δυνάμεων ὧν ἐξενολόγησεν
+    prior_rendering: the foreign forces that he had recruited
+    new_rendering: the foreign mercenaries he had recruited
+    rationale: The military recruitment verb identifies the retained outsiders as hired foreign troops.
+  - source_phrase: ἀπὸ τῶν νήσων τῶν ἐθνῶν
+    prior_rendering: from the islands of the nations
+    new_rendering: from the islands of other nations
+    rationale: The phrase identifies the foreign island peoples from whom these troops were recruited.
+  - source_phrase: πᾶσαι αἱ δυνάμεις αἱ ἀπὸ τῶν πατέρων
+    prior_rendering: all the forces from his fathers
+    new_rendering: All the troops he had inherited from his forefathers
+    rationale: These are the established dynastic forces inherited by Demetrius, contrasted with the foreign soldiers he retained.
+  footnote_kinds: {}
+  history_weighed: The history oscillates between “from his fathers” and “from the time of his fathers,” while its rationale consistently identifies inherited dynastic troops. I express that agreed meaning directly and bring the documented mercenary sense into the main text.

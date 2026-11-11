@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: ἐκ τούτου ⸂ὁ Πιλᾶτος ἐζήτει⸃ ἀπολῦσαι αὐτόν· οἱ δὲ Ἰουδαῖοι ⸀ἐκραύγασαν λέγοντες· Ἐὰν τοῦτον ἀπολύσῃς, οὐκ εἶ φίλος τοῦ Καίσαρος· πᾶς ὁ βασιλέα ἑαυτὸν ποιῶν ἀντιλέγει τῷ Καίσαρι.
 translation:
-  text: From then on[a] Pilate was seeking to release him. But the Jews[b] shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar[c].”
-  philosophy: optimal-equivalence
+  text: From then on[a] Pilate kept trying to release him. But the Jewish leaders shouted, “If you release this man, you are not Caesar’s friend[b]. Anyone who makes himself king opposes Caesar.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “Because of this Pilate kept trying to release him.” The Greek phrase ἐκ τούτου can be understood temporally (“from then on”) or causally (“because of this”).
-    reason: lexical_alternative
+    text: Or, “Because of this”; the expression can mark either a temporal sequence or a causal connection.
+    reason: alternative_reading
   - marker: b
-    text: In John, “the Jews” often refers more specifically to the Judean authorities or to particular Jewish opponents in the narrative context, not necessarily to the Jewish people as a whole.
+    text: “Caesar’s friend” expresses political loyalty and may also echo an imperial honorific.
     reason: cultural_note
-  - marker: c
-    text: Or, “opposes Caesar” or “sets himself against Caesar.”
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐκ τούτου
   chosen: From then on
@@ -109,13 +106,12 @@ revisions:
   from: From then on Pilate was seeking to release him. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar.”
   to: From then on Pilate was seeking to release him. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king opposes Caesar.”
   rationale: Changed “speaks against Caesar” to “opposes Caesar” for a more accurate rendering of ἀντιλέγει in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'From then on Pilate was seeking to release him[a]. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend[c][b]. Everyone who makes himself a king opposes Caesar.”'
-  to: 'From then on Pilate was seeking to release him. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar.”'
+  from: From then on Pilate was seeking to release him[a]. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend[c][b]. Everyone who makes himself a king opposes Caesar.”
+  to: From then on Pilate was seeking to release him. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''speaks against Caesar''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -125,6 +121,13 @@ revisions:
   from: From then on Pilate was seeking to release him. But the Jews shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar.”
   to: From then on[a] Pilate was seeking to release him. But the Jews[b] shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar[c].”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('From then on') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('the Jews') because the note quotes that phrase from the rendering; [c] anchored to ('speaks against Caesar') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:11:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: From then on[a] Pilate was seeking to release him. But the Jews[b] shouted, saying, “If you release this man, you are not Caesar’s friend. Everyone who makes himself a king speaks against Caesar[c].”
+  to: From then on[a] Pilate kept trying to release him. But the Jewish leaders shouted, “If you release this man, you are not Caesar’s friend[b]. Anyone who makes himself king opposes Caesar.”
+  rationale: The review’s 'opposes Caesar' captures the political accusation more fully than the reverted 'speaks against Caesar.' I retain the temporal reading with its causal alternative, and let the identified speakers determine the reference of 'the Jews.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +147,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/019/012.job-7554.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Pilate continues trying to release Jesus, but the Jewish leaders warn that doing so would show disloyalty to Caesar.
+  meaning_decisions:
+  - source_phrase: ἐζήτει ἀπολῦσαι αὐτόν
+    prior_rendering: was seeking to release him
+    new_rendering: kept trying to release him
+    rationale: The imperfect describes continuing efforts toward release, not merely an inward wish.
+  - source_phrase: οἱ δὲ Ἰουδαῖοι
+    prior_rendering: But the Jews
+    new_rendering: But the Jewish leaders
+    rationale: The continuing confrontation identifies this group as the authorities pressing Pilate, as in verses 6–7.
+  - source_phrase: ἀντιλέγει τῷ Καίσαρι
+    prior_rendering: speaks against Caesar
+    new_rendering: opposes Caesar
+    rationale: The accusation concerns rival political authority and disloyalty, not simply words spoken against the emperor.
+  footnote_kinds:
+    a: alternative_meaning
+    b: cultural_background
+  history_weighed: The review’s 'opposes Caesar' captures the political accusation more fully than the reverted 'speaks against Caesar.' I retain the temporal reading with its causal alternative, and let the identified speakers determine the reference of 'the Jews.'

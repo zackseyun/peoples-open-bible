@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/יִתֵּ֣ן יְ֠הוָה גַּ֣ם אֶת יִשְׂרָאֵ֤ל עִמְּ/ךָ֙ בְּ/יַד פְּלִשְׁתִּ֔ים וּ/מָחָ֕ר אַתָּ֥ה וּ/בָנֶ֖י/ךָ עִמִּ֑/י גַּ֚ם אֶת מַחֲנֵ֣ה יִשְׂרָאֵ֔ל יִתֵּ֥ן יְהוָ֖ה בְּ/יַד פְּלִשְׁתִּֽים־־־־׃
 translation:
-  text: And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'with me in death' or 'with me in Sheol.' The Hebrew simply says 'with me.'
-    reason: alternative_reading
-  - marker: b
-    text: Or, 'the camp of Israel.' The Hebrew term can mean 'camp' or, in context, 'army.'
-    reason: lexical_alternative
+  text: Yahweh will also hand Israel over to the Philistines along with you, and tomorrow you and your sons will be with me. Yahweh will also hand Israel’s army over to the Philistines.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -104,14 +97,20 @@ revisions:
   from: And the LORD will also give Israel with you into the hand of the Philistines, and tomorrow you and your sons will be with me. The LORD will also give the army of Israel into the hand of the Philistines.
   to: And the LORD will also give Israel with you into the hand of the Philistines, and tomorrow you and your sons will be with me. The LORD will also give the army of Israel into the hand of the Philistines.
   rationale: Changed 'army of Israel' to 'camp of Israel' for closer lexical accuracy to מַחֲנֶה while preserving natural formal English. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:56:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.'
-  to: 'And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.'
+  from: And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.
+  to: And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the army of Israel''].'
+- timestamp: '2026-11-09T17:23:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yahweh will also give Israel with you into the hand of the Philistines[a], and tomorrow you and your sons will be with me[b]. Yahweh will also give the camp of Israel into the hand of the Philistines.
+  to: Yahweh will also hand Israel over to the Philistines along with you, and tomorrow you and your sons will be with me. Yahweh will also hand Israel’s army over to the Philistines.
+  rationale: The earlier draft and lexical rationale correctly identified ‘army’ as the battle-context meaning, outweighing the later preference for the more literal ‘camp.’ I retain the solemn ‘with me,’ which announces death in context without specifying an afterlife location or condition.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -134,3 +133,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/028/019.job-59462.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:53Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Samuel predicts Israel’s defeat by the Philistines and the deaths of Saul and his sons the next day.
+  meaning_decisions:
+  - source_phrase: וְיִתֵּן יְהוָה גַּם אֶת יִשְׂרָאֵל עִמְּךָ בְּיַד פְּלִשְׁתִּים
+    prior_rendering: And Yahweh will also give Israel with you into the hand of the Philistines
+    new_rendering: Yahweh will also hand Israel over to the Philistines along with you
+    rationale: The hand idiom means surrendering Saul and Israel to enemy power; ‘hand over’ carries that meaning naturally while retaining related imagery.
+  - source_phrase: מַחֲנֵה יִשְׂרָאֵל
+    prior_rendering: the camp of Israel
+    new_rendering: Israel’s army
+    rationale: In this prediction of military defeat, the word denotes the assembled fighting force rather than merely its campsite.
+  - source_phrase: יִתֵּן יְהוָה בְּיַד פְּלִשְׁתִּים
+    prior_rendering: Yahweh will also give the camp of Israel into the hand of the Philistines
+    new_rendering: Yahweh will also hand Israel’s army over to the Philistines
+    rationale: The repeated surrender formula is retained, but expressed as the natural English ‘hand over.’
+  footnote_kinds: {}
+  history_weighed: The earlier draft and lexical rationale correctly identified ‘army’ as the battle-context meaning, outweighing the later preference for the more literal ‘camp.’ I retain the solemn ‘with me,’ which announces death in context without specifying an afterlife location or condition.

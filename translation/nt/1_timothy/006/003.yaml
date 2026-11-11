@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: εἴ τις ἑτεροδιδασκαλεῖ καὶ μὴ προσέρχεται ὑγιαίνουσι λόγοις, τοῖς τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, καὶ τῇ κατ’ εὐσέβειαν διδασκαλίᾳ,
 translation:
-  text: If anyone teaches a different doctrine and does not agree with sound words[a], those of our Lord Jesus Christ, and with the teaching that accords with godliness[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'the words of our Lord Jesus the Messiah.'
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
+  text: If anyone teaches a different doctrine and does not accept the sound words of our Lord Jesus Christ and the teaching that accords with godliness,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἑτεροδιδασκαλεῖ
   chosen: teaches a different doctrine
@@ -113,10 +106,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "If anyone teaches a different doctrine and does not agree with sound words, those of our Lord Jesus Messiah, and with the teaching that accords with godliness,"
-  to: "If anyone teaches a different doctrine and does not agree with sound words, those of our Lord Jesus the Messiah, and with the teaching that accords with godliness,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: If anyone teaches a different doctrine and does not agree with sound words, those of our Lord Jesus Messiah, and with the teaching that accords with godliness,
+  to: If anyone teaches a different doctrine and does not agree with sound words, those of our Lord Jesus the Messiah, and with the teaching that accords with godliness,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If anyone teaches a different doctrine and does not agree with sound words[a], those of our Lord Jesus Christ, and with the teaching that accords with godliness[b],
+  to: If anyone teaches a different doctrine and does not accept the sound words of our Lord Jesus Christ and the teaching that accords with godliness,
+  rationale: The automated history alternated between 'Christ' and 'Messiah,' without a maintainer ruling on this verse. I retain the current name construction 'Jesus Christ' under the standing rule and preserve the earlier distinction between sound teaching and godliness.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +137,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_timothy/006/003.job-53382.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:10Z'
+  change_level: refined
+  confidence: high
+  meaning: Anyone who teaches a different doctrine and refuses the sound words of Jesus and teaching consistent with godliness falls under the condemnation that follows.
+  meaning_decisions:
+  - source_phrase: μὴ προσέρχεται
+    prior_rendering: does not agree with
+    new_rendering: does not accept
+    rationale: The verb concerns accepting or adhering to authoritative teaching, rather than merely finding oneself in intellectual agreement with it.
+  - source_phrase: ὑγιαίνουσι λόγοις, τοῖς τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ
+    prior_rendering: sound words, those of our Lord Jesus Christ
+    new_rendering: the sound words of our Lord Jesus Christ
+    rationale: A direct English genitive conveys the identification without the cumbersome apposition, while retaining the health imagery that contrasts with verse 4.
+  footnote_kinds: {}
+  history_weighed: The automated history alternated between 'Christ' and 'Messiah,' without a maintainer ruling on this verse. I retain the current name construction 'Jesus Christ' under the standing rule and preserve the earlier distinction between sound teaching and godliness.

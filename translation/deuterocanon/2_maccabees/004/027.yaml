@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more explicitly, 'he paid nothing toward the money he had promised to the king.' The Greek says literally that he 'set in order/arranged nothing' concerning the promised money.
-    reason: lexical_alternative
+  text: Menelaus held on to the office, yet he made no provision at all for paying the money he had promised to the king.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀρχῆς
   chosen: office
@@ -97,14 +93,20 @@ revisions:
   from: But Menelaus held on to the office, yet he made no arrangement at all for the money he had promised to the king.
   to: But Menelaus held on to the office, yet he made no arrangement at all for the money he had promised to the king.
   rationale: Changed 'made no arrangement' to 'made no provision' for more natural and accurate rendering of οὐδὲν εὐτάκτει in this context; retained the rest.
-
 - timestamp: '2026-05-18T02:59:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.'
-  to: 'But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.'
+  from: But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.
+  to: But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''made no arrangement at all''].'
+- timestamp: '2026-11-09T18:55:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Menelaus held on to the office[a], yet he made no provision at all for the money he had promised to the king.
+  to: Menelaus held on to the office, yet he made no provision at all for paying the money he had promised to the king.
+  rationale: The current “made no provision” already improves on the earlier “made no arrangement” and preserves the verb’s administrative sense. I retain it and make the implied payment explicit, so the earlier footnote is no longer needed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -124,3 +126,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/004/027.job-49053.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:02Z'
+  change_level: refined
+  confidence: high
+  meaning: Menelaus retained the office but made no provision for paying what he had promised the king.
+  meaning_decisions:
+  - source_phrase: τῶν δὲ ἐπηγγελμένων τῷ βασιλεῖ χρημάτων οὐδὲν εὐτάκτει
+    prior_rendering: yet he made no provision at all for the money he had promised to the king
+    new_rendering: yet he made no provision at all for paying the money he had promised to the king
+    rationale: Adding “paying” identifies what he failed to arrange while retaining the distinction between making no provision and explicitly paying nothing.
+  footnote_kinds: {}
+  history_weighed: The current “made no provision” already improves on the earlier “made no arrangement” and preserves the verb’s administrative sense. I retain it and make the implied payment explicit, so the earlier footnote is no longer needed.

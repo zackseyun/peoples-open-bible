@@ -26,12 +26,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 34:14
 translation:
-  text: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The supplied Cairo Geniza Hebrew line for this verse reads, 'He will not neglect the cry of an orphan, nor a widow when she multiplies her complaint,' which does not match the Greek wording here and likely reflects a verse-line mismatch in the source data.
-    reason: textual_variant
+  text: One who fears the Lord will not be shaken or lose courage, for the Lord is his hope.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ φοβούμενος
   chosen: One who fears
@@ -112,13 +108,12 @@ revisions:
   from: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope.
   to: He will not ignore the cry of the orphan, or the widow when she pours out her complaint.
   rationale: 'Replaced the unrelated draft with a translation that matches the Hebrew: rendered לא יטש as ''will not ignore,'' צעקת יתום as ''the cry of the orphan,'' and ואלמנה כי תרבה שיח as ''or the widow when she pours out her complaint.'''
-
 - timestamp: '2026-05-15T14:13:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He will not ignore the cry of the orphan[a], or the widow when she pours out her complaint.'
-  to: 'One who fears the Lord will not be shaken, and will not be afraid, for he is his hope.'
+  from: He will not ignore the cry of the orphan[a], or the widow when she pours out her complaint.
+  to: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope.
   rationale: 'Major_mismatch: drafter chose Greek (φοβούμενος Κύριον); azure rendered mismatched Hebrew.'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -128,6 +123,13 @@ revisions:
   from: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope.
   to: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] the note comments on the verse as a whole rather than a single phrase, so it is anchored at the end of the verse. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:08:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: One who fears the Lord will not be shaken, and will not be afraid, for he is his hope[a].
+  to: One who fears the Lord will not be shaken or lose courage, for the Lord is his hope.
+  rationale: I retain the documented Greek reading rather than importing the orphan-and-widow line from the unaligned Hebrew record. The earlier lexical rationale supports distinguishing loss of courage from fear, while the final pronoun benefits from an explicit referent.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -147,3 +149,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/034/014.job-51928.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Those who fear the Lord can remain steadfast and courageous because their hope rests in him.
+  meaning_decisions:
+  - source_phrase: οὐ μὴ δειλιάσῃ
+    prior_rendering: will not be afraid
+    new_rendering: or lose courage
+    rationale: The second verb emphasizes becoming fainthearted, distinguishing it from the preceding verb of fright or agitation.
+  - source_phrase: ἐλπὶς αὐτοῦ αὐτός
+    prior_rendering: he is his hope
+    new_rendering: the Lord is his hope
+    rationale: Naming the Lord prevents the two masculine pronouns from obscuring who supplies the worshiper's hope.
+  footnote_kinds: {}
+  history_weighed: I retain the documented Greek reading rather than importing the orphan-and-widow line from the unaligned Hebrew record. The earlier lexical rationale supports distinguishing loss of courage from fear, while the final pronoun benefits from an explicit referent.

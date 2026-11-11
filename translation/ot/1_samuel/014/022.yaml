@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/כֹל֩ אִ֨ישׁ יִשְׂרָאֵ֜ל הַ/מִּֽתְחַבְּאִ֤ים בְּ/הַר אֶפְרַ֨יִם֙ שָֽׁמְע֔וּ כִּֽי נָ֖סוּ פְּלִשְׁתִּ֑ים וַֽ/יַּדְבְּק֥וּ גַם הֵ֛מָּה אַחֲרֵי/הֶ֖ם בַּ/מִּלְחָמָֽה־־־׃
 translation:
-  text: And every man of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too joined the pursuit in the battle.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'and they clung after them in the battle,' an idiom meaning they closely pursued the fleeing Philistines.
-    reason: lexical_alternative
+  text: All the men of Israel who had been hiding in the hill country of Ephraim heard that the Philistines had fled, and they too joined in the battle, pursuing them closely.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְכֹל אִישׁ יִשְׂרָאֵל
   chosen: And every man of Israel
@@ -90,14 +86,20 @@ revisions:
   from: And every man of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled, and they too joined the pursuit in the battle.
   to: And all the men of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled, and they too closely pursued them in the battle.
   rationale: Changed 'every man' to 'all the men' for agreement with the plural participle and pronouns; changed 'had hidden themselves' to match the plural subject naturally; changed 'joined the pursuit' to 'closely pursued them' to more directly reflect וידבקו ... אחרי־הם.
-
 - timestamp: '2026-05-15T11:24:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the men of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too closely pursued them in the battle.'
-  to: 'And every man of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too joined the pursuit in the battle.'
-  rationale: 'Restored distributive ''every man'' and idiomatic ''joined the pursuit''.'
+  from: And all the men of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too closely pursued them in the battle.
+  to: And every man of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too joined the pursuit in the battle.
+  rationale: Restored distributive 'every man' and idiomatic 'joined the pursuit'.
+- timestamp: '2026-11-09T17:23:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And every man of Israel who had hidden themselves in the hill country of Ephraim heard that the Philistines had fled[a], and they too joined the pursuit in the battle.
+  to: All the men of Israel who had been hiding in the hill country of Ephraim heard that the Philistines had fled, and they too joined in the battle, pursuing them closely.
+  rationale: The review improved plural agreement and recovered the close-pursuit sense. The later automated revert restored the draft’s wording, but the source and context support retaining those improvements.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/022.job-59059.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:41Z'
+  change_level: refined
+  confidence: high
+  meaning: The Israelite men who had been hiding hear of the Philistine flight and join the fighting in close pursuit.
+  meaning_decisions:
+  - source_phrase: כֹל אִישׁ יִשְׂרָאֵל הַמִּתְחַבְּאִים
+    prior_rendering: every man of Israel who had hidden themselves
+    new_rendering: All the men of Israel who had been hiding
+    rationale: The Hebrew collective construction and plural participle are expressed with consistent English plural agreement.
+  - source_phrase: וַיַּדְבְּקוּ גַם הֵמָּה אַחֲרֵיהֶם בַּמִּלְחָמָה
+    prior_rendering: they too joined the pursuit in the battle
+    new_rendering: they too joined in the battle, pursuing them closely
+    rationale: This preserves both their new participation and the close pursuit expressed by the verb.
+  footnote_kinds: {}
+  history_weighed: The review improved plural agreement and recovered the close-pursuit sense. The later automated revert restored the draft’s wording, but the source and context support retaining those improvements.

@@ -30,12 +30,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 45:25
 translation:
-  text: 'And his covenant was with David son of Jesse, from the tribe of Judah: the inheritance of the king is from son to son alone, but the inheritance of Aaron is also for his offspring[a].'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The Hebrew witness for this verse is shorter and appears compressed; the Greek parallel preserves the fuller contrast: the royal inheritance belongs to a single dynastic line, while Aaron''s inheritance belongs to his offspring.'
-    reason: textual_variant
+  text: The high priesthood was to belong to him and his offspring forever. God also made a covenant with David son of Jesse, from the tribe of Judah.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וגם בריתו עם דוד
   chosen: And his covenant was with David
@@ -115,16 +111,22 @@ revisions:
   reviewer_model: gpt-5.4
   category: revision_pass
   from: 'And his covenant was with David son of Jesse, from the tribe of Judah: the inheritance of the king is from son to son alone, but the inheritance of Aaron is also for his offspring.'
-  to: 'which shall belong to him and to his offspring, a high priesthood forever. And his covenant was with David son of Jesse, from the tribe of Judah.'
+  to: which shall belong to him and to his offspring, a high priesthood forever. And his covenant was with David son of Jesse, from the tribe of Judah.
   rationale: Replaced the draft with a translation that matches the provided Hebrew text. Restored the omitted first clause about the perpetual high priesthood for him and his offspring, and removed the added material about the king's inheritance and Aaron's inheritance, which is not present in the supplied source.
-
 - timestamp: '2026-05-15T13:39:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'which shall belong to him and to his offspring[a], a high priesthood forever. And his covenant was with David son of Jesse, from the tribe of Judah.'
+  from: which shall belong to him and to his offspring[a], a high priesthood forever. And his covenant was with David son of Jesse, from the tribe of Judah.
   to: 'And his covenant was with David son of Jesse, from the tribe of Judah: the inheritance of the king is from son to son alone, but the inheritance of Aaron is also for his offspring[a].'
   rationale: 'Major_mismatch: azure stripped Greek-primary royal/Aaronic inheritance clauses despite documented decision.'
+- timestamp: '2026-11-09T19:09:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And his covenant was with David son of Jesse, from the tribe of Judah: the inheritance of the king is from son to son alone, but the inheritance of Aaron is also for his offspring[a].'
+  to: The high priesthood was to belong to him and his offspring forever. God also made a covenant with David son of Jesse, from the tribe of Judah.
+  rationale: The source-focused April revision rightly restored the high-priesthood clause; its automated reversal carries less weight than the supplied Hebrew. I retain that restoration and leave the inheritance comparison to verse 26, where the Hebrew places it.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -144,3 +146,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/045/025.job-52271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The covenant grants Phinehas and his descendants the high priesthood forever, and God also has a covenant with David of Judah.
+  meaning_decisions:
+  - source_phrase: אשר תהיה לו ולזרעו, כהונה גדולה על עולם
+    prior_rendering: Not rendered explicitly.
+    new_rendering: The high priesthood was to belong to him and his offspring forever.
+    rationale: The supplied Hebrew explicitly promises the enduring high priesthood to Phinehas and his offspring. It should not be replaced with the Greek's more general comparison of inheritances.
+  - source_phrase: וגם בריתו עם דוד, בן ישי למטה יהודה
+    prior_rendering: 'And his covenant was with David son of Jesse, from the tribe of Judah: the inheritance of the king is from son to son alone, but the inheritance of Aaron is also for his offspring.'
+    new_rendering: God also made a covenant with David son of Jesse, from the tribe of Judah.
+    rationale: The divine covenant partner is made explicit. The royal and Aaronic inheritance comparison is not added here because its Hebrew counterpart occurs in the supplied record for verse 26.
+  footnote_kinds: {}
+  history_weighed: The source-focused April revision rightly restored the high-priesthood clause; its automated reversal carries less weight than the supplied Hebrew. I retain that restoration and leave the inheritance comparison to verse 26, where the Hebrew places it.

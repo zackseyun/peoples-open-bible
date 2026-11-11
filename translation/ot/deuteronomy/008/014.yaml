@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/רָ֖ם לְבָבֶ֑/ךָ וְ/שָֽׁכַחְתָּ֙ אֶת יְהוָ֣ה אֱלֹהֶ֔י/ךָ הַ/מּוֹצִיאֲ/ךָ֛ מֵ/אֶ֥רֶץ מִצְרַ֖יִם מִ/בֵּ֥ית עֲבָדִֽים־׃
 translation:
-  text: then your heart is lifted up[a], and you forget Yahweh your God, who brought you from the land of Egypt, from the house of servants.
-  philosophy: optimal-equivalence
+  text: your heart does not grow proud and you do not forget Yahweh your God, who brought you out of the land of Egypt, out of slavery[a],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'from the house of slavery' or 'from the house of bondage.' The Hebrew is literally 'from the house of slaves.'
+    text: Literally, 'out of the house of slaves.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְרָם
@@ -97,14 +97,20 @@ revisions:
   from: then your heart is lifted up, and you forget the LORD your God, who brought you out from the land of Egypt, from the house of slaves.
   to: then your heart is lifted up, and you forget the LORD your God, who brought you out of the land of Egypt, out of the house of slavery.
   rationale: Adjusted the preposition from 'from' to 'out of' for more natural English and changed 'house of slaves' to the more idiomatic and standard 'house of slavery,' which better reflects the Hebrew while preserving formal register.
-
 - timestamp: '2026-05-16T05:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'then your heart is lifted up[a], and you forget Yahweh your God, who brought you out of the land of Egypt, out of the house of slavery.'
-  to: 'then your heart is lifted up[a], and you forget Yahweh your God, who brought you from the land of Egypt, from the house of slaves.'
-  rationale: 'Azure substituted ''house of slavery'' — drafter''s explicit rejected_alternative for מִבֵּית עֲבָדִים. Drafter chose ''slaves'' (plural noun) for concrete social reality vs abstract ''slavery''. Also changed ''from'' → ''out of'' (rejected stylistic).'
+  from: then your heart is lifted up[a], and you forget Yahweh your God, who brought you out of the land of Egypt, out of the house of slavery.
+  to: then your heart is lifted up[a], and you forget Yahweh your God, who brought you from the land of Egypt, from the house of slaves.
+  rationale: Azure substituted 'house of slavery' — drafter's explicit rejected_alternative for מִבֵּית עֲבָדִים. Drafter chose 'slaves' (plural noun) for concrete social reality vs abstract 'slavery'. Also changed 'from' → 'out of' (rejected stylistic).
+- timestamp: '2026-11-09T17:30:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: then your heart is lifted up[a], and you forget Yahweh your God, who brought you from the land of Egypt, from the house of servants.
+  to: your heart does not grow proud and you do not forget Yahweh your God, who brought you out of the land of Egypt, out of slavery[a],
+  rationale: The earlier review clarified the exodus wording as 'out of' and 'slavery,' but an automated revert favored concrete source forms rather than a different understanding of the event. I retain the review’s meaning-based gain, clarify the pride idiom, and preserve the literal slavery-house expression in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +133,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/008/014.job-61478.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:30:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Prosperity must not make Israel proud or cause it to forget Yahweh, who rescued it from slavery in Egypt.
+  meaning_decisions:
+  - source_phrase: וְרָם לְבָבֶךָ
+    prior_rendering: then your heart is lifted up
+    new_rendering: your heart does not grow proud
+    rationale: The lifted heart denotes arrogance, not encouragement or joy; 'grows proud' clarifies the image while retaining 'heart,' and the negative continues the warning begun in verse 12.
+  - source_phrase: וְשָׁכַחְתָּ
+    prior_rendering: and you forget
+    new_rendering: and you do not forget
+    rationale: The negative is required by the English warning construction begun in verse 12 and does not change the Hebrew clause’s scope.
+  - source_phrase: הַמּוֹצִיאֲךָ מֵאֶרֶץ מִצְרַיִם מִבֵּית עֲבָדִים
+    prior_rendering: who brought you from the land of Egypt, from the house of servants
+    new_rendering: who brought you out of the land of Egypt, out of slavery
+    rationale: The exodus formula recalls release from actual enslavement; 'house of servants' obscures that reality, while 'out of slavery' communicates it directly.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review clarified the exodus wording as 'out of' and 'slavery,' but an automated revert favored concrete source forms rather than a different understanding of the event. I retain the review’s meaning-based gain, clarify the pride idiom, and preserve the literal slavery-house expression in a correctly placed note.

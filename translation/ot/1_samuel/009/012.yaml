@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וַ/תַּעֲנֶ֧ינָה אוֹתָ֛/ם וַ/תֹּאמַ֥רְנָה יֵּ֖שׁ הִנֵּ֣ה לְ/פָנֶ֑י/ךָ מַהֵ֣ר עַתָּ֗ה כִּ֤י הַ/יּוֹם֙ בָּ֣א לָ/עִ֔יר כִּ֣י זֶ֧בַח הַ/יּ֛וֹם לָ/עָ֖ם בַּ/בָּמָֽה׀׃
 translation:
-  text: They answered them and said[a], “Yes, look—he is just ahead of you. Hurry now, because he came to the city today[b], because today there is a sacrifice for the people at the high place.”
-  philosophy: optimal-equivalence
+  text: They replied, “Yes, look—he is just ahead of you. Hurry now, for he came to the city today because the people are offering a sacrifice today at the high place[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'There he is before you'; the Hebrew uses an affirmative particle plus a deictic expression.
-    reason: lexical_alternative
-  - marker: b
-    text: '''High place'' refers to an elevated local worship site.'
+    text: An elevated local worship site.
     reason: cultural_note
 lexical_decisions:
 - source_word: וַתַּעֲנֶינָה
@@ -113,14 +110,20 @@ revisions:
   from: They answered them and said, “Yes, look—he is just ahead of you. Hurry now, because he came to the city today, for the people have a sacrifice today at the high place.”
   to: They answered them and said, “Yes, look—he is ahead of you. Hurry now, for he has come to the city today, because today there is a sacrifice for the people at the high place.”
   rationale: Adjusted tense from 'came' to 'has come' for better aspect, removed 'just' as unsupported, and rendered the final clause more literally as 'today there is a sacrifice for the people at the high place.'
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They answered them and said[a], “Yes, look—he is ahead of you. Hurry now, for he has come to the city today[b], because today there is a sacrifice for the people at the high place.”'
-  to: 'They answered them and said[a], “Yes, look—he is just ahead of you. Hurry now, because he came to the city today[b], because today there is a sacrifice for the people at the high place.”'
-  rationale: 'Azure dropped ''just'' from drafter''s documented spatial-immediacy rendering of לְפָנֶיךָ, and substituted ''for he has come'' (drafter''s explicit rejected_alternative for כִּי הַיּוֹם בָּא לָעִיר — drafter chose simple past after weighing aspect).'
+  from: They answered them and said[a], “Yes, look—he is ahead of you. Hurry now, for he has come to the city today[b], because today there is a sacrifice for the people at the high place.”
+  to: They answered them and said[a], “Yes, look—he is just ahead of you. Hurry now, because he came to the city today[b], because today there is a sacrifice for the people at the high place.”
+  rationale: Azure dropped 'just' from drafter's documented spatial-immediacy rendering of לְפָנֶיךָ, and substituted 'for he has come' (drafter's explicit rejected_alternative for כִּי הַיּוֹם בָּא לָעִיר — drafter chose simple past after weighing aspect).
+- timestamp: '2026-11-09T17:22:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They answered them and said[a], “Yes, look—he is just ahead of you. Hurry now, because he came to the city today[b], because today there is a sacrifice for the people at the high place.”
+  to: They replied, “Yes, look—he is just ahead of you. Hurry now, for he came to the city today because the people are offering a sacrifice today at the high place[a].”
+  rationale: I retain the current wording’s nearby location, simple-past arrival, and untranslated historical term “high place.” The revision history’s competing connective choices are resolved by making the two levels of explanation clear, and the worship-site note is placed on its actual term.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -140,3 +143,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/009/012.job-58937.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:21Z'
+  change_level: refined
+  confidence: high
+  meaning: The women urged them to hurry because the seer was nearby, having come that day for the people’s sacrifice at the local worship site.
+  meaning_decisions:
+  - source_phrase: וַתַּעֲנֶינָה אוֹתָם וַתֹּאמַרְנָה
+    prior_rendering: They answered them and said
+    new_rendering: They replied
+    rationale: The paired Hebrew speech verbs introduce one response and do not describe two separate acts.
+  - source_phrase: כִּי הַיּוֹם בָּא לָעִיר כִּי זֶבַח הַיּוֹם לָעָם בַּבָּמָה
+    prior_rendering: because he came to the city today, because today there is a sacrifice for the people at the high place
+    new_rendering: for he came to the city today because the people are offering a sacrifice today at the high place
+    rationale: The first clause supports their urging to hurry; the second explains Samuel’s arrival for the community’s sacrificial event.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the current wording’s nearby location, simple-past arrival, and untranslated historical term “high place.” The revision history’s competing connective choices are resolved by making the two levels of explanation clear, and the worship-site note is placed on its actual term.

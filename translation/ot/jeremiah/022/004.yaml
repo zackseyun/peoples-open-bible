@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּ֤י אִם עָשׂוֹ֙ תַּֽעֲשׂ֔וּ אֶת הַ/דָּבָ֖ר הַ/זֶּ֑ה וּ/בָ֣אוּ בְ/שַׁעֲרֵ֣י הַ/בַּ֣יִת הַ/זֶּ֡ה מְלָכִים֩ יֹשְׁבִ֨ים לְ/דָוִ֜ד עַל כִּסְא֗/וֹ רֹֽכְבִים֙ בָּ/רֶ֣כֶב וּ/בַ/סּוּסִ֔ים ה֥וּא ו/עבד/ו וְ/עַמּֽ/וֹ־־־׃
 translation:
-  text: For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'this matter' or 'this word.' The Hebrew דָּבָר can refer to a word, matter, or thing.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'he, his servants, and his people,' with singular pronouns used distributively after 'kings.'
-    reason: lexical_alternative
+  text: For if you truly carry out these commands, kings who sit on David’s throne will enter through the gates of this palace, riding in chariots and on horses—each with his servants and his people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי אִם
   chosen: For if
@@ -99,14 +92,20 @@ revisions:
   from: For if you truly do this thing, then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—they, their servants, and their people.
   to: For if you truly do this thing, then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—they, their servants, and their people.
   rationale: Changed “they, their servants, and their people” to “he, his servants, and his people” to reflect the singular pronoun in the source after the collective reference to kings.
-
 - timestamp: '2026-05-18T02:56:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.'
-  to: 'For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.'
+  from: For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.
+  to: For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they, their servants, and their people''].'
+- timestamp: '2026-11-09T17:57:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For if you truly do this thing[a], then kings sitting on David’s throne will enter through the gates of this house, riding in chariots and on horses—he, his servants[b], and his people.
+  to: For if you truly carry out these commands, kings who sit on David’s throne will enter through the gates of this palace, riding in chariots and on horses—each with his servants and his people.
+  rationale: The history debated singular versus plural English for the distributive pronouns. “Each with his…” preserves the source’s individual reference to every king while retaining the documented understanding of continuing Davidic succession.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -126,3 +125,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/022/004.job-67562.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:21Z'
+  change_level: retranslated
+  confidence: high
+  meaning: If the king and his people truly fulfill Yahweh’s commands, Davidic kings will continue to enter the palace in royal processions with their servants and people.
+  meaning_decisions:
+  - source_phrase: עָשׂוֹ תַּעֲשׂוּ אֶת הַדָּבָר הַזֶּה
+    prior_rendering: you truly do this thing
+    new_rendering: you truly carry out these commands
+    rationale: The phrase refers to the conduct commanded in verse 3, not an unspecified thing; “truly” retains the emphatic construction.
+  - source_phrase: בְּשַׁעֲרֵי הַבַּיִת הַזֶּה
+    prior_rendering: through the gates of this house
+    new_rendering: through the gates of this palace
+    rationale: The royal processions enter the palace introduced in verse 1.
+  - source_phrase: הוּא וַעֲבָדָיו וְעַמּוֹ
+    prior_rendering: he, his servants, and his people
+    new_rendering: each with his servants and his people
+    rationale: The singular pronouns refer distributively to each of the preceding plural kings; “each” conveys this without broken English agreement.
+  footnote_kinds: {}
+  history_weighed: The history debated singular versus plural English for the distributive pronouns. “Each with his…” preserves the source’s individual reference to every king while retaining the documented understanding of continuing Davidic succession.

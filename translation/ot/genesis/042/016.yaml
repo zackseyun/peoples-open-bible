@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: שִׁלְח֨וּ מִ/כֶּ֣ם אֶחָד֮ וְ/יִקַּ֣ח אֶת אֲחִי/כֶם֒ וְ/אַתֶּם֙ הֵאָ֣סְר֔וּ וְ/יִבָּֽחֲנוּ֙ דִּבְרֵי/כֶ֔ם הַֽ/אֱמֶ֖ת אִתְּ/כֶ֑ם וְ/אִם לֹ֕א חֵ֣י פַרְעֹ֔ה כִּ֥י מְרַגְּלִ֖ים אַתֶּֽם־־׃
 translation:
-  text: Send one of you[a], and let him bring your brother, while you remain confined, so that your words may be tested, whether the truth is with you. But if not, as Pharaoh lives[d][c][b], surely you are spies.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'and let him take your brother.' The Hebrew verb commonly means 'take,' but here it refers to fetching the brother and bringing him back.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'and you be imprisoned' / 'and you remain under guard.' The Hebrew verb can denote being bound or held in custody.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'whether the truth is with you,' that is, whether you are telling the truth.
-    reason: lexical_alternative
-  - marker: d
-    text: '''As Pharaoh lives'' is an oath formula invoking Pharaoh''s life.'
-    reason: cultural_note
+  text: Send one of you to bring your brother, while the rest of you are held in custody. Your words will be tested to see whether you are telling the truth. If not, I swear by Pharaoh’s life that you are spies.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שִׁלְחוּ
   chosen: Send
@@ -105,7 +92,13 @@ revisions:
   from: Send one of you, and let him bring your brother, while you remain confined, so that your words may be tested whether the truth is with you. But if not, as Pharaoh lives, surely you are spies.
   to: Send one of you, and let him bring your brother, while you remain confined, so that your words may be tested, whether the truth is with you. But if not, as Pharaoh lives, surely you are spies.
   rationale: Added a comma after 'tested' for clearer English syntax. No lexical changes were needed.
-
+- timestamp: '2026-11-09T17:45:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Send one of you[a], and let him bring your brother, while you remain confined, so that your words may be tested, whether the truth is with you. But if not, as Pharaoh lives[d][c][b], surely you are spies.
+  to: Send one of you to bring your brother, while the rest of you are held in custody. Your words will be tested to see whether you are telling the truth. If not, I swear by Pharaoh’s life that you are spies.”
+  rationale: The recorded revision only added a comma and left the difficult syntax unresolved. The lexical explanations establish both the factual sense of “the truth is with you” and the oath’s function, which are now carried directly in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +122,29 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/042/016.job-65581.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joseph orders one brother to fetch the youngest while the others are detained, declaring under oath that failure to establish their truthfulness confirms his accusation.
+  meaning_decisions:
+  - source_phrase: וְאַתֶּם הֵאָסְרוּ
+    prior_rendering: while you remain confined
+    new_rendering: while the rest of you are held in custody
+    rationale: The confinement applies to those other than the brother sent home; “are held” also avoids unnecessarily implying that their imprisonment has already begun.
+  - source_phrase: וְיִבָּחֲנוּ דִּבְרֵיכֶם הַאֱמֶת אִתְּכֶם
+    prior_rendering: so that your words may be tested, whether the truth is with you
+    new_rendering: Your words will be tested to see whether you are telling the truth
+    rationale: The test concerns the truthfulness of their statements; the English expresses this directly rather than presenting truth as something located with them.
+  - source_phrase: וְאִם לֹא חֵי פַרְעֹה כִּי מְרַגְּלִים אַתֶּם
+    prior_rendering: But if not, as Pharaoh lives, surely you are spies
+    new_rendering: If not, I swear by Pharaoh’s life that you are spies
+    rationale: The explicit oath carries the emphatic force and makes the consequence of a failed test clear, consistently with verse 15.
+  footnote_kinds: {}
+  history_weighed: The recorded revision only added a comma and left the difficult syntax unresolved. The lexical explanations establish both the factual sense of “the truth is with you” and the oath’s function, which are now carried directly in the main text.

@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/אִ֨ישׁ וְ/אִשָּׁ֜ה לֹֽא יְחַיֶּ֣ה דָוִ֗ד לְ/הָבִ֥יא גַת֙ לֵ/אמֹ֔ר פֶּן יַגִּ֥דוּ עָלֵ֖י/נוּ לֵ/אמֹ֑ר כֹּֽה עָשָׂ֤ה דָוִד֙ וְ/כֹ֣ה מִשְׁפָּט֔/וֹ כָּל הַ֨/יָּמִ֔ים אֲשֶׁ֥ר יָשַׁ֖ב בִּ/שְׂדֵ֥ה פְלִשְׁתִּֽים־־־־׃
 translation:
-  text: David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”
-  philosophy: optimal-equivalence
+  text: David left no man or woman alive to be taken to Gath, for he thought, “Otherwise they might report about us and say, ‘This is what David did.’” This was his practice[a] throughout his stay in Philistine territory.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''in the field of the Philistines,'' an idiom for Philistine territory or countryside.'
-    reason: cultural_note
-  - marker: b
-    text: Or 'this was his custom' / 'this was his manner' for 'this has been his practice.'
-    reason: lexical_alternative
+    text: Alternatively, the statement about David’s practice may continue the imagined survivors’ report rather than resume the narrator’s account.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאִישׁ וְאִשָּׁה
   chosen: neither man nor woman
@@ -108,14 +105,20 @@ revisions:
   from: David left alive neither man nor woman, to bring to Gath, saying, “Otherwise they might report about us, saying, ‘This is what David did, and this has been his practice all the days that he lived in the country of the Philistines.’”
   to: David left alive neither man nor woman, to bring to Gath, saying, “Otherwise they might report about us, saying, ‘This is what David did, and this has been his practice all the days that he lived in the country of the Philistines.’”
   rationale: Removed the comma after 'woman' for smoother English and changed 'has been his practice' to 'was his practice' for better narrative tense consistency.
-
 - timestamp: '2026-05-18T02:55:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”'
-  to: 'David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”'
+  from: David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”
+  to: David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this has been his practice''].'
+- timestamp: '2026-11-09T17:24:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David left alive neither man nor woman to bring to Gath[a], saying, “Otherwise they might report about us, saying, ‘This is what David did[b], and this was his practice all the days that he lived in the country of the Philistines.’”
+  to: David left no man or woman alive to be taken to Gath, for he thought, “Otherwise they might report about us and say, ‘This is what David did.’” This was his practice[a] throughout his stay in Philistine territory.
+  rationale: The earlier review improved punctuation and narrative tense, but the recorded passes left the closing statement inside the imagined report. I retain their clarity gains while treating that statement as the narrator’s summary, consistent with the passage’s account of repeated conduct.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +138,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/027/011.job-59444.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:13Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: David consistently leaves no survivors to be taken to Gath because they could reveal his actual raids.
+  meaning_decisions:
+  - source_phrase: לא יחיה דוד להביא גת לאמר פן יגדו עלינו לאמר
+    prior_rendering: David left alive neither man nor woman to bring to Gath, saying, “Otherwise they might report about us, saying”
+    new_rendering: David left no man or woman alive to be taken to Gath, for he thought, “Otherwise they might report about us and say”
+    rationale: The passive clearly identifies the survivors as those who would be taken to Gath, and the quotation supplies David’s reason for leaving none alive.
+  - source_phrase: וכה משפטו כל הימים אשר ישב בשדה פלשתים
+    prior_rendering: and this was his practice all the days that he lived in the country of the Philistines
+    new_rendering: This was his practice throughout his stay in Philistine territory
+    rationale: The best-supported reading resumes the narrator’s description of David’s habitual conduct after the imagined report, rather than attributing the whole duration summary to hypothetical survivors; the alternative remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review improved punctuation and narrative tense, but the recorded passes left the closing statement inside the imagined report. I retain their clarity gains while treating that statement as the narrator’s summary, consistent with the passage’s account of repeated conduct.

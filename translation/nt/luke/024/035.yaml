@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ αὐτοὶ ἐξηγοῦντο τὰ ἐν τῇ ὁδῷ καὶ ὡς ἐγνώσθη αὐτοῖς ἐν τῇ κλάσει τοῦ ἄρτου.
 translation:
-  text: And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.
-  philosophy: optimal-equivalence
+  text: Then the two themselves recounted what had happened on the road and how he was made known to them[a] in the breaking of the bread.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'he was recognized by them.' The Greek uses a passive verb, which may emphasize either their recognition of him or that he was made known to them.
+    text: Or, “was recognized by them.”
     reason: alternative_reading
-  - marker: b
-    text: Or, 'in the breaking of bread.' The Greek can be read more generally, but 'the bread' fits the specific meal scene in context.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: αὐτοὶ
   chosen: they themselves
@@ -97,14 +94,20 @@ revisions:
   from: And they themselves were recounting the things on the road, and how he was made known to them in the breaking of the bread.
   to: And they themselves were recounting the things on the road, and how he was made known to them in the breaking of the bread.
   rationale: Added 'that had happened' to make explicit the implied sense of τὰ ἐν τῇ ὁδῷ in natural English while preserving the formal structure.
-
 - timestamp: '2026-05-18T03:00:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.'
-  to: 'And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.'
+  from: And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.
+  to: And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the things on the road''].'
+- timestamp: '2026-11-09T17:13:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they themselves were recounting the things that had happened on the road[b][a], and how he was made known to them in the breaking of the bread.
+  to: Then the two themselves recounted what had happened on the road and how he was made known to them[a] in the breaking of the bread.
+  rationale: The current wording already incorporates the useful clarification that the road reference concerns what happened there, despite the automated revert’s preference for the compressed phrase. I preserve that gain and the passive 'made known,' retaining the serious recognition alternative in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +130,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/024/035.job-38898.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:34Z'
+  change_level: refined
+  confidence: high
+  meaning: The two disciples then give their own account of the journey and of Jesus being made known to them in the breaking of the bread.
+  meaning_decisions:
+  - source_phrase: καὶ αὐτοὶ
+    prior_rendering: And they themselves
+    new_rendering: Then the two themselves
+    rationale: Naming the two distinguishes their answering report from the assembled group’s announcement in the preceding verse and preserves the emphatic pronoun.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording already incorporates the useful clarification that the road reference concerns what happened there, despite the automated revert’s preference for the compressed phrase. I preserve that gain and the passive 'made known,' retaining the serious recognition alternative in a correctly placed note.

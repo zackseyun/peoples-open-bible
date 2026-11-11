@@ -23,15 +23,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],
-  philosophy: optimal-equivalence
+  text: The king chose Bacchides, one of the king’s Friends[a] and governor of the region beyond the River[b], a man of high standing in the kingdom and loyal to the king.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: “The king’s Friends” likely reflects an official court rank or recognized class of royal advisers/companions in Hellenistic administration, not merely personal friendship.
+    text: “Friends” was a recognized rank at Hellenistic royal courts.
     reason: cultural_note
   - marker: b
-    text: “Beyond the River” is a territorial designation, probably the region west of the Euphrates under imperial administration; alternatively, simply “beyond the River.”
-    reason: lexical_alternative
+    text: “Beyond the River” is a regional designation; the river is the Euphrates.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ἐπέλεξεν
   chosen: chose
@@ -105,14 +105,20 @@ revisions:
   from: And the king chose Bacchides, one of the king’s Friends, ruling in the region beyond the River, and great in the kingdom, and faithful to the king,
   to: And the king chose Bacchides, one of the king’s Friends, ruling in the region beyond the River, and great in the kingdom, and faithful to the king,
   rationale: Changed 'ruling in the region beyond the River' to 'governor of the region beyond the River' to more naturally and accurately render the participle as an official title/function in context.
-
 - timestamp: '2026-05-18T02:59:02Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],'
-  to: 'And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],'
+  from: And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],
+  to: And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the region beyond the River''].'
+- timestamp: '2026-11-09T18:52:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the king chose Bacchides[a], one of the king’s Friends, governor of the region beyond the River, and great in the kingdom, and faithful to the king[b],
+  to: The king chose Bacchides, one of the king’s Friends[a] and governor of the region beyond the River[b], a man of high standing in the kingdom and loyal to the king.
+  rationale: The current “governor” preserves the recorded review's useful clarification of Bacchides's function. The court title and regional designation are retained, with their explanatory notes attached to the correct phrases.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +138,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/007/008.job-48345.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Demetrius selected Bacchides, a royal court associate and regional governor with high status and proven loyalty.
+  meaning_decisions:
+  - source_phrase: μέγαν ἐν τῇ βασιλείᾳ
+    prior_rendering: great in the kingdom
+    new_rendering: a man of high standing in the kingdom
+    rationale: The adjective describes Bacchides's political status and influence, not greatness in an unspecified sense.
+  - source_phrase: πιστὸν τῷ βασιλεῖ
+    prior_rendering: faithful to the king
+    new_rendering: loyal to the king
+    rationale: Political loyalty is the contextual sense, answering the delegation's request for someone the king trusts.
+  footnote_kinds:
+    a: cultural_background
+    b: cultural_background
+  history_weighed: The current “governor” preserves the recorded review's useful clarification of Bacchides's function. The court title and regional designation are retained, with their explanatory notes attached to the correct phrases.

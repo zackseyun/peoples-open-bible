@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: τινὲς δὲ ἐξ αὐτῶν εἶπαν· Οὐκ ἐδύνατο οὗτος ὁ ἀνοίξας τοὺς ὀφθαλμοὺς τοῦ τυφλοῦ ποιῆσαι ἵνα καὶ οὗτος μὴ ἀποθάνῃ;
 translation:
-  text: But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have made it so that this man would not die?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “Could he not have kept this man from dying?”
-    reason: lexical_alternative
+  text: But some of them said, “Could not this man, who opened the eyes of the blind man, also have kept Lazarus from dying?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τινὲς δὲ ἐξ αὐτῶν
   chosen: But some of them
@@ -106,14 +102,20 @@ revisions:
   from: But some of them said, “Could not this man, who opened the eyes of the blind man, also have made it so that this man would not die?”
   to: But some of them said, “Could not this man, who opened the eyes of the blind man, also have caused that this man should not die?”
   rationale: Replaced 'have made it so that ... would not die' with the more formal and closer 'have caused that ... should not die,' preserving the ἵνα clause more directly while keeping natural translation style.
-
 - timestamp: '2026-05-16T20:22:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have caused that this man should not die?”'
-  to: 'But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have made it so that this man would not die?”'
-  rationale: 'Restored drafter ''have made it so that this man would not die'' (preserving the chosen ''made it so that'' English idiom) per chosen renderings.'
+  from: But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have caused that this man should not die?”
+  to: But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have made it so that this man would not die?”
+  rationale: Restored drafter 'have made it so that this man would not die' (preserving the chosen 'made it so that' English idiom) per chosen renderings.
+- timestamp: '2026-11-09T17:10:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But some of them said[a], “Could not this man, who opened the eyes of the blind man, also have made it so that this man would not die?”
+  to: But some of them said, “Could not this man, who opened the eyes of the blind man, also have kept Lazarus from dying?”
+  rationale: Both the reviewed wording and its automated restoration remained unnecessarily shaped by the Greek causative clause. The earlier footnote already supplied the natural meaning, which now enters the main text while the pointed question and blindness image remain.
 cross_check:
   status: moderate_agreement
   agreement: 0.88
@@ -135,3 +137,21 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/john/011/037.job-27850.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Some onlookers question why Jesus, who restored the blind man’s sight, did not prevent Lazarus’s death.
+  meaning_decisions:
+  - source_phrase: ποιῆσαι ἵνα καὶ οὗτος μὴ ἀποθάνῃ
+    prior_rendering: also have made it so that this man would not die
+    new_rendering: also have kept Lazarus from dying
+    rationale: The causative construction means preventing the death; naming Lazarus clarifies that the second demonstrative refers to him rather than Jesus.
+  footnote_kinds: {}
+  history_weighed: Both the reviewed wording and its automated restoration remained unnecessarily shaped by the Greek causative clause. The earlier footnote already supplied the natural meaning, which now enters the main text while the pointed question and blindness image remain.

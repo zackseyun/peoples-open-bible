@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הַ/מִּזְלָג֧וֹת וְ/הַ/מִּזְרָק֛וֹת וְ/הַ/קְּשָׂוֺ֖ת זָהָ֣ב טָה֑וֹר וְ/לִ/כְפוֹרֵ֨י הַ/זָּהָ֤ב בְּ/מִשְׁקָל֙ לִ/כְפ֣וֹר וּ/כְפ֔וֹר וְ/לִ/כְפוֹרֵ֥י הַ/כֶּ֛סֶף בְּ/מִשְׁקָ֖ל לִ/כְפ֥וֹר וּ/כְפֽוֹר׃
 translation:
-  text: and the forks[a], the basins, and the pitchers[b] of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew repeats 'for bowl and bowl,' a distributive expression meaning each vessel had its own assigned weight.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'flagons' for 'pitchers.' The Hebrew term denotes a pouring vessel.
-    reason: lexical_alternative
+  text: The forks, basins, and pitchers were to be of pure gold. He specified the weight of gold for each gold bowl and the weight of silver for each silver bowl.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִּזְלָגוֹת
   chosen: forks
@@ -88,13 +81,12 @@ revisions:
   from: and the forks, the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
   to: and the forks, the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl; and for the silver bowls, by weight for each bowl.
   rationale: Removed the unnatural repeated phrase 'and bowl' in both clauses. Rendered the distributive sense naturally as 'for each bowl' while preserving the verse's meaning and formal register.
-
 - timestamp: '2026-05-18T03:09:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and the forks[a], the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl; and for the silver bowls[b], by weight for each bowl.'
-  to: 'and the forks, the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.'
+  from: and the forks[a], the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl; and for the silver bowls[b], by weight for each bowl.
+  to: and the forks, the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for each bowl and bowl''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -104,6 +96,13 @@ revisions:
   from: and the forks, the basins, and the pitchers of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
   to: and the forks[a], the basins, and the pitchers[b] of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('pitchers') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:20:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and the forks[a], the basins, and the pitchers[b] of pure gold; and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl.
+  to: The forks, basins, and pitchers were to be of pure gold. He specified the weight of gold for each gold bowl and the weight of silver for each silver bowl.
+  rationale: I adopt the April review's natural 'each bowl' rather than the automated revert's repeated 'each bowl and bowl.' The established utensil identifications remain, and the earlier notes are unnecessary once individual allocation is clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -123,3 +122,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/028/017.job-44820.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:58Z'
+  change_level: refined
+  confidence: high
+  meaning: David specifies pure gold for several utensils and individual weights for the gold and silver bowls.
+  meaning_decisions:
+  - source_phrase: וְהַמִּזְלָגוֹת וְהַמִּזְרָקוֹת וְהַקְּשָׂוֹת זָהָב טָהוֹר
+    prior_rendering: and the forks, the basins, and the pitchers of pure gold
+    new_rendering: The forks, basins, and pitchers were to be of pure gold
+    rationale: Makes the material specification a complete sentence and reflects the context of preparations for future construction.
+  - source_phrase: וְלִכְפוֹרֵי הַזָּהָב בְּמִשְׁקָל לִכְפוֹר וּכְפוֹר וְלִכְפוֹרֵי הַכֶּסֶף בְּמִשְׁקָל לִכְפוֹר וּכְפוֹר
+    prior_rendering: and for the golden bowls, by weight for each bowl and bowl; and for the silver bowls, by weight for each bowl and bowl
+    new_rendering: He specified the weight of gold for each gold bowl and the weight of silver for each silver bowl
+    rationale: Conveys the individual allocation of each metal without duplicating the Hebrew distributive construction.
+  footnote_kinds: {}
+  history_weighed: I adopt the April review's natural 'each bowl' rather than the automated revert's repeated 'each bowl and bowl.' The established utensil identifications remain, and the earlier notes are unnecessary once individual allocation is clear.

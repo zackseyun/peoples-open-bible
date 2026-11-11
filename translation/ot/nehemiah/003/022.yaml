@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וְ/אַחֲרָ֛י/ו הֶחֱזִ֥יקוּ הַ/כֹּהֲנִ֖ים אַנְשֵׁ֥י הַ/כִּכָּֽר׃
 translation:
-  text: After him the priests[a], the men of the plain, made repairs.
-  philosophy: optimal-equivalence
+  text: Next to him the priests from the plain[a] made repairs.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the plain' or 'the district' for 'the surrounding region.' The Hebrew כִּכָּר can denote a plain or circular district; the exact local reference here is uncertain.
-    reason: lexical_alternative
+    text: Or, “the surrounding district”; the precise area meant is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאַחֲרָיו
   chosen: After him
@@ -67,14 +67,20 @@ revisions:
   from: After him the priests, the men of the surrounding region, made repairs.
   to: After him the priests, the men of the surrounding region, made repairs.
   rationale: Revised 'surrounding region' to 'the plain' for closer lexical accuracy to הַכִּכָּר ('the plain/circle,' i.e., the plain region). Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:55:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'After him the priests[a], the men of the plain, made repairs.'
-  to: 'After him the priests[a], the men of the plain, made repairs.'
+  from: After him the priests[a], the men of the plain, made repairs.
+  to: After him the priests[a], the men of the plain, made repairs.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the surrounding region''].'
+- timestamp: '2026-11-09T18:25:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After him the priests[a], the men of the plain, made repairs.
+  to: Next to him the priests from the plain[a] made repairs.
+  rationale: The history alternates between “plain” and “surrounding region,” without a MAINTAINER decision establishing the geography. I retain the current “plain” and give the serious regional alternative in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -94,3 +100,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/003/022.job-42733.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:12Z'
+  change_level: refined
+  confidence: medium
+  meaning: Priests from the plain repaired the neighboring section of the wall.
+  meaning_decisions:
+  - source_phrase: וְאַחֲרָיו
+    prior_rendering: After him
+    new_rendering: Next to him
+    rationale: The phrase locates the priests’ work beside the preceding section.
+  - source_phrase: הַכֹּהֲנִים אַנְשֵׁי הַכִּכָּר
+    prior_rendering: the priests, the men of the plain
+    new_rendering: the priests from the plain
+    rationale: The second phrase identifies where these priests came from; natural English expresses that relationship with “from.”
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history alternates between “plain” and “surrounding region,” without a MAINTAINER decision establishing the geography. I retain the current “plain” and give the serious regional alternative in a correctly placed note.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר הַ/מֶּ֔לֶךְ מַֽה נַּעֲשָׂ֞ה יְקָ֧ר וּ/גְדוּלָּ֛ה לְ/מָרְדֳּכַ֖י עַל זֶ֑ה וַ/יֹּ֨אמְר֜וּ נַעֲרֵ֤י הַ/מֶּ֨לֶךְ֙ מְשָׁ֣רְתָ֔י/ו לֹא נַעֲשָׂ֥ה עִמּ֖/וֹ דָּבָֽר־־־׃
 translation:
-  text: Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “What honor and greatness was done for Mordecai because of this?”
-    reason: lexical_alternative
+  text: The king asked, “What honor and distinction has Mordecai received for this?” The king’s attendants replied, “Nothing has been done for him.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַה נַּעֲשָׂה
   chosen: What ... has been bestowed
@@ -90,14 +86,20 @@ revisions:
   from: Then the king said, “What honor and distinction has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
   to: Then the king said, “What honor and distinction has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
   rationale: Changed 'distinction' to 'greatness' to more closely reflect וּגְדוּלָּה ('greatness') alongside 'honor' for יְקָר, while keeping the rest of the verse natural and complete.
-
 - timestamp: '2026-05-17T21:36:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”'
-  to: 'Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”'
+  from: Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
+  to: Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''distinction''].'
+- timestamp: '2026-11-09T17:33:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king said[a], “What honor and greatness has been bestowed on Mordecai for this?” The king’s young men who attended him said, “Nothing has been done for him.”
+  to: The king asked, “What honor and distinction has Mordecai received for this?” The king’s attendants replied, “Nothing has been done for him.”
+  rationale: The first draft and lexical rationale preferred ‘distinction’ because it conveys bestowed public status; the later argument for ‘greatness’ emphasized lexical form rather than contextual meaning. I restore ‘distinction’ and retain the attendants’ unqualified answer.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -117,3 +119,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/esther/006/003.job-42213.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:44Z'
+  change_level: refined
+  confidence: high
+  meaning: The king discovers that Mordecai has received no honor or distinction for reporting the conspiracy.
+  meaning_decisions:
+  - source_phrase: יְקָר וּגְדוּלָּה
+    prior_rendering: honor and greatness
+    new_rendering: honor and distinction
+    rationale: The question concerns recognition or elevated standing conferred by the king, not an abstract quality of greatness.
+  - source_phrase: נַעֲרֵי הַמֶּלֶךְ מְשָׁרְתָיו
+    prior_rendering: The king’s young men who attended him
+    new_rendering: The king’s attendants
+    rationale: The expression identifies the men by their court service; their age is not the point, and the same group is called attendants in verse 5.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale preferred ‘distinction’ because it conveys bestowed public status; the later argument for ‘greatness’ emphasized lexical form rather than contextual meaning. I restore ‘distinction’ and retain the attendants’ unqualified answer.

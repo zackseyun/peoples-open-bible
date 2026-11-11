@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּהְי֤וּ בְנֵֽי רְאוּבֵן֙ בְּכֹ֣ר יִשְׂרָאֵ֔ל תּוֹלְדֹתָ֥/ם לְ/מִשְׁפְּחֹתָ֖/ם לְ/בֵ֣ית אֲבֹתָ֑/ם בְּ/מִסְפַּ֤ר שֵׁמוֹת֙ לְ/גֻלְגְּלֹתָ֔/ם כָּל זָכָ֗ר מִ/בֶּ֨ן עֶשְׂרִ֤ים שָׁנָה֙ וָ/מַ֔עְלָ/ה כֹּ֖ל יֹצֵ֥א צָבָֽא־־׃
 translation:
-  text: 'The sons of Reuben[a], the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone going out to war:'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'by their skulls/heads,' an idiom meaning each individual was counted separately.
-    reason: lexical_alternative
+  text: Among the descendants of Reuben, Israel’s firstborn son, every man twenty years old or older who was able to serve in the army was counted individually by name, according to lineage, clan, and ancestral household.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּהְיוּ
   chosen: The sons of Reuben ...
@@ -108,7 +104,6 @@ revisions:
   from: 'The sons of Reuben, the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone able to go out to war:'
   to: 'The sons of Reuben, the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone able to go out to war:'
   rationale: Changed 'able to go out to war' to 'going out to war' for closer lexical accuracy to the source phrase 'all going out to the army/war.'
-
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -116,6 +111,13 @@ revisions:
   from: 'The sons of Reuben[a], the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone going out to war:'
   to: 'The sons of Reuben[a], the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone going out to war:'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everyone able to go out to war''].'
+- timestamp: '2026-11-09T18:26:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'The sons of Reuben[a], the firstborn of Israel, by their generations, by their clans, by their fathers’ houses, according to the number of names, head by head, every male from twenty years old and upward, everyone going out to war:'
+  to: Among the descendants of Reuben, Israel’s firstborn son, every man twenty years old or older who was able to serve in the army was counted individually by name, according to lineage, clan, and ancestral household.
+  rationale: The draft and lexical rationale identify military eligibility, while the recorded automated review favored the more literal 'going out to war.' I preserve the eligibility sense and express the census formula directly; the individual-counting note is now carried by the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +137,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/001/020.job-41369.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:26:35Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Reuben’s descendants were individually counted by name and ancestral grouping, including every man aged twenty or older who could serve in the army.
+  meaning_decisions:
+  - source_phrase: בְנֵי רְאוּבֵן בְּכֹר יִשְׂרָאֵל
+    prior_rendering: The sons of Reuben, the firstborn of Israel
+    new_rendering: Among the descendants of Reuben, Israel’s firstborn son
+    rationale: The census concerns Reuben’s later descendants, not his immediate sons; the apposition identifies Reuben as Israel’s firstborn son.
+  - source_phrase: תּוֹלְדֹתָם לְמִשְׁפְּחֹתָם לְבֵית אֲבֹתָם
+    prior_rendering: by their generations, by their clans, by their fathers’ houses
+    new_rendering: according to lineage, clan, and ancestral household
+    rationale: These expressions describe descent and nested kinship groupings, not age cohorts or physical houses.
+  - source_phrase: בְּמִסְפַּר שֵׁמוֹת לְגֻלְגְּלֹתָם
+    prior_rendering: according to the number of names, head by head
+    new_rendering: was counted individually by name
+    rationale: The phrase describes individual enumeration by name; the explicit census verb supplies the action understood in the Hebrew heading.
+  - source_phrase: כָּל זָכָר מִבֶּן עֶשְׂרִים שָׁנָה וָמַעְלָה כֹּל יֹצֵא צָבָא
+    prior_rendering: every male from twenty years old and upward, everyone going out to war
+    new_rendering: every man twenty years old or older who was able to serve in the army
+    rationale: The age threshold concerns adult males eligible for military service, not only men presently departing for battle.
+  footnote_kinds: {}
+  history_weighed: The draft and lexical rationale identify military eligibility, while the recorded automated review favored the more literal 'going out to war.' I preserve the eligibility sense and express the census formula directly; the individual-counting note is now carried by the text.

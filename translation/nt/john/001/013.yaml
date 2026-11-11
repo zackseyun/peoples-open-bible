@@ -4,12 +4,15 @@ source:
   edition: SBLGNT
   text: οἳ οὐκ ἐξ αἱμάτων οὐδὲ ἐκ θελήματος σαρκὸς οὐδὲ ἐκ θελήματος ἀνδρὸς ἀλλ’ ἐκ θεοῦ ἐγεννήθησαν.
 translation:
-  text: who were born[a], not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
-  philosophy: optimal-equivalence
+  text: They were born not of human descent, nor of sexual desire[a], nor of a husband's will[b], but of God.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more idiomatically, 'not from bloodlines.' The Greek has the plural 'bloods,' an unusual expression referring to natural descent or human parentage.
+    text: Literally, “the will of the flesh.”
     reason: lexical_alternative
+  - marker: b
+    text: Or, “a man's will.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἳ
   chosen: who
@@ -91,13 +94,12 @@ revisions:
   from: who were born, not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
   to: who were born, not from blood, nor from the will of the flesh, nor from the will of man, but from God.
   rationale: Changed 'bloods' to the more natural English 'blood' and 'a man' to the more idiomatic and likely generic 'man'; retained the structure and meaning of the Greek.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who were born[a], not from blood, nor from the will of the flesh, nor from the will of man, but from God.'
-  to: 'who were born, not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.'
+  from: who were born[a], not from blood, nor from the will of the flesh, nor from the will of man, but from God.
+  to: who were born, not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from bloods''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -107,6 +109,13 @@ revisions:
   from: who were born, not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
   to: who were born[a], not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who were born[a], not from bloods, nor from the will of the flesh, nor from the will of a man, but from God.
+  to: They were born not of human descent, nor of sexual desire[a], nor of a husband's will[b], but of God.
+  rationale: The earlier review recognized that “bloods” was unnatural English, while the automated revert restored it without new semantic evidence. I follow the documented natural-parentage and procreation meanings rather than the source-shaped wording, retaining the broader male-agency reading in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -130,3 +139,31 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/001/013.job-54660.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:27Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: These children owe their birth to God, not to ancestry, sexual desire, or a husband's will.
+  meaning_decisions:
+  - source_phrase: ἐξ αἱμάτων
+    prior_rendering: from bloods
+    new_rendering: of human descent
+    rationale: The unusual plural refers to natural parentage or ancestry; translating its meaning avoids an opaque English expression.
+  - source_phrase: ἐκ θελήματος σαρκὸς
+    prior_rendering: from the will of the flesh
+    new_rendering: of sexual desire
+    rationale: In this birth context, the phrase concerns the bodily impulse involved in ordinary procreation, not a general doctrine about sinful human willing; the flesh wording is preserved in a note.
+  - source_phrase: ἐκ θελήματος ἀνδρὸς
+    prior_rendering: from the will of a man
+    new_rendering: of a husband's will
+    rationale: The procreation context favors the husband's agency in fathering a child; the broader sense of “a man's will” remains a serious alternative and is noted.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The earlier review recognized that “bloods” was unnatural English, while the automated revert restored it without new semantic evidence. I follow the documented natural-parentage and procreation meanings rather than the source-shaped wording, retaining the broader male-agency reading in a note.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ εὑρών τινα Ἰουδαῖον ὀνόματι Ἀκύλαν, Ποντικὸν τῷ γένει, προσφάτως ἐληλυθότα ἀπὸ τῆς Ἰταλίας καὶ Πρίσκιλλαν γυναῖκα αὐτοῦ διὰ τὸ ⸀διατεταχέναι Κλαύδιον χωρίζεσθαι πάντας τοὺς Ἰουδαίους ⸀ἀπὸ τῆς Ῥώμης, προσῆλθεν αὐτοῖς,
 translation:
-  text: And he found a Jew named Aquila[a], a native of Pontus, who had recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to leave Rome; and he went to them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "all the Jews to be expelled from Rome." The Greek more literally speaks of being separated from Rome; the main text uses the natural English "leave Rome."
-    reason: lexical_alternative
+  text: Paul found a Jew named Aquila, a native of Pontus, who had recently come from Italy with his wife Priscilla because Emperor Claudius had ordered all the Jews to leave Rome. He went to them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εὑρών
   chosen: found
@@ -101,14 +97,20 @@ revisions:
   from: And he found a Jew named Aquila, a native of Pontus, who had recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to leave Rome; and he went to them.
   to: And he found a Jew named Aquila, a native of Pontus, recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to depart from Rome; and he went to them.
   rationale: Adjusted 'who had recently come' to 'recently come' for closer alignment with the participial structure, and changed 'leave Rome' to 'depart from Rome' to reflect the Greek more formally.
-
 - timestamp: '2026-05-16T22:14:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he found a Jew named Aquila[a], a native of Pontus, recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to depart from Rome; and he went to them.'
-  to: 'And he found a Jew named Aquila[a], a native of Pontus, who had recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to leave Rome; and he went to them.'
-  rationale: 'Restored drafter ''who had recently come from Italy'' (preserving the chosen relative-clause structure) and ''all the Jews to leave Rome'' (preserving the chosen ''leave'' rendering) per chosen renderings.'
+  from: And he found a Jew named Aquila[a], a native of Pontus, recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to depart from Rome; and he went to them.
+  to: And he found a Jew named Aquila[a], a native of Pontus, who had recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to leave Rome; and he went to them.
+  rationale: Restored drafter 'who had recently come from Italy' (preserving the chosen relative-clause structure) and 'all the Jews to leave Rome' (preserving the chosen 'leave' rendering) per chosen renderings.
+- timestamp: '2026-11-09T20:30:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he found a Jew named Aquila[a], a native of Pontus, who had recently come from Italy with Priscilla his wife because Claudius had ordered all the Jews to leave Rome; and he went to them.
+  to: Paul found a Jew named Aquila, a native of Pontus, who had recently come from Italy with his wife Priscilla because Emperor Claudius had ordered all the Jews to leave Rome. He went to them.
+  rationale: There are no MAINTAINER revisions; the earlier formalizing revision offers no meaning-based reason to replace the clear wording “who had recently come” or “leave Rome.” Both are retained, while the footnote about expulsion is dropped because the main text already conveys the compulsory departure.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -128,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/018/002.job-46792.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul finds and approaches Aquila, a Jew originally from Pontus who has recently come from Italy with his wife Priscilla because Claudius ordered all Jews to leave Rome.
+  meaning_decisions:
+  - source_phrase: καὶ εὑρών … προσῆλθεν αὐτοῖς
+    prior_rendering: And he found …; and he went to them.
+    new_rendering: Paul found … . He went to them.
+    rationale: Naming Paul makes the understood subject explicit, while splitting the sentence gives the background information and his subsequent approach clearer narrative shape.
+  - source_phrase: Κλαύδιον
+    prior_rendering: Claudius
+    new_rendering: Emperor Claudius
+    rationale: Identifying Claudius as emperor supplies the authority behind the order, something the first hearers would have known.
+  footnote_kinds: {}
+  history_weighed: There are no MAINTAINER revisions; the earlier formalizing revision offers no meaning-based reason to replace the clear wording “who had recently come” or “leave Rome.” Both are retained, while the footnote about expulsion is dropped because the main text already conveys the compulsory departure.

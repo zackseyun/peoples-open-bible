@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ⸀Εἶπεν αὐτοῖς ὁ Ἰησοῦς· Ἐγώ εἰμι ὁ ἄρτος τῆς ζωῆς· ὁ ἐρχόμενος πρὸς ἐμὲ οὐ μὴ πεινάσῃ, καὶ ὁ πιστεύων εἰς ⸀ἐμὲ οὐ μὴ ⸀διψήσει πώποτε.
 translation:
-  text: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again[a].”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'will by no means ever thirst.' The Greek uses an emphatic negation with 'ever.'
-    reason: lexical_alternative
+  text: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Εἶπεν
   chosen: said
@@ -108,13 +104,12 @@ revisions:
   from: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again.”
   to: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst.”
   rationale: Removed 'again' because πώποτε means 'ever/never at any time,' not 'again.' The rest of the draft is accurate and natural.
-
 - timestamp: '2026-05-18T03:10:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Jesus said to them[a], “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst.”'
-  to: 'Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again.”'
+  from: Jesus said to them[a], “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst.”
+  to: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will never thirst again''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -124,6 +119,13 @@ revisions:
   from: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again.”
   to: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again[a].”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('will never thirst again') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:17Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst again[a].”
+  to: Jesus said to them, “I am the bread of life; the one who comes to me will never hunger, and the one who believes in me will never thirst.
+  rationale: The April review correctly observed that πώποτε means “ever,” not “again”; the later wholesale automated revert supplied no verse-specific reason to reject that correction. The rest of the established wording carries the metaphor and promise well and is retained.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -146,3 +148,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/low_agreement_recheck/nt/john/006/035.job-27829.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:17Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus declares that he himself is the bread of life and promises lasting satisfaction to those who come to him and believe in him.
+  meaning_decisions:
+  - source_phrase: οὐ μὴ διψήσει πώποτε
+    prior_rendering: will never thirst again
+    new_rendering: will never thirst
+    rationale: The source emphatically excludes thirst at any time; “again” introduces a recurrence distinction that the wording does not express.
+  footnote_kinds: {}
+  history_weighed: The April review correctly observed that πώποτε means “ever,” not “again”; the later wholesale automated revert supplied no verse-specific reason to reject that correction. The rest of the established wording carries the metaphor and promise well and is retained.

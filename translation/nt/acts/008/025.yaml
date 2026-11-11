@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Οἱ μὲν οὖν διαμαρτυράμενοι καὶ λαλήσαντες τὸν λόγον τοῦ κυρίου ⸀ὑπέστρεφον εἰς ⸀Ἱεροσόλυμα, πολλάς τε κώμας τῶν Σαμαριτῶν ⸀εὐηγγελίζοντο.
 translation:
-  text: So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in many Samaritan villages.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'and they were proclaiming the good news'.
-    reason: previous_rendering
+  text: So, after solemnly testifying and proclaiming the word of the Lord, Peter and John made their way back to Jerusalem, announcing the good news in many Samaritan villages along the way.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: διαμαρτυράμενοι
   chosen: had solemnly testified
@@ -103,9 +96,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.'
-  to: 'So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.'
+  from: So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.
+  to: So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in many villages of the Samaritans''].'
+- timestamp: '2026-11-09T17:06:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So[a], after they had solemnly testified and spoken the word of the Lord, they were returning to Jerusalem[b], and were proclaiming the good news in many Samaritan villages.
+  to: So, after solemnly testifying and proclaiming the word of the Lord, Peter and John made their way back to Jerusalem, announcing the good news in many Samaritan villages along the way.
+  rationale: The earlier revisions sought smoother coordination while retaining the ongoing journey and proclamation. I preserve those gains and the weight of “solemnly testified,” but make the participants and the travel setting explicit rather than leaving them behind repeated pronouns.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:01:09Z'
@@ -132,3 +132,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/acts/008/025.job-38685.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:06:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: After bearing solemn witness and proclaiming the Lord’s word, Peter and John made their way back to Jerusalem while announcing the good news in many Samaritan villages.
+  meaning_decisions:
+  - source_phrase: Οἱ μὲν οὖν
+    prior_rendering: So ... they
+    new_rendering: So ... Peter and John
+    rationale: Naming the established subjects prevents Simon’s intervening speech from making the return journey’s participants unclear.
+  - source_phrase: διαμαρτυράμενοι καὶ λαλήσαντες τὸν λόγον τοῦ κυρίου
+    prior_rendering: after they had solemnly testified and spoken the word of the Lord
+    new_rendering: after solemnly testifying and proclaiming the word of the Lord
+    rationale: “Proclaiming” expresses what speaking the Lord’s word means in this missionary context, while “solemnly testifying” retains the weight of their witness.
+  - source_phrase: ὑπέστρεφον εἰς Ἱεροσόλυμα, πολλάς τε κώμας τῶν Σαμαριτῶν εὐηγγελίζοντο
+    prior_rendering: they were returning to Jerusalem, and were proclaiming the good news in many Samaritan villages
+    new_rendering: made their way back to Jerusalem, announcing the good news in many Samaritan villages along the way
+    rationale: The two imperfect verbs describe the return journey and the proclamation accompanying it; the revised sentence makes their relationship clear without repeated progressive auxiliaries.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions sought smoother coordination while retaining the ongoing journey and proclamation. I preserve those gains and the weight of “solemnly testified,” but make the participants and the travel setting explicit rather than leaving them behind repeated pronouns.

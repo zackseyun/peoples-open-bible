@@ -4,18 +4,15 @@ source:
   edition: SBLGNT
   text: γέγραπται γὰρ ἐν βίβλῳ ψαλμῶν· Γενηθήτω ἡ ἔπαυλις αὐτοῦ ἔρημος καὶ μὴ ἔστω ὁ κατοικῶν ἐν αὐτῇ, καί· Τὴν ἐπισκοπὴν αὐτοῦ ⸀λαβέτω ἕτερος.
 translation:
-  text: For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’
-  philosophy: optimal-equivalence
+  text: '“For it is written in the book of Psalms: ‘Let his dwelling place become desolate; let no one dwell in it[a]’, and, ‘Let another take his office[b]’.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'homestead' or 'habitation' for 'dwelling' (ἔπαυλις).
-    reason: lexical_alternative
+    text: Psalm 69:25.
+    reason: cross_reference
   - marker: b
-    text: Or 'Let no one dwell in it' or 'let there be no inhabitant in it.'
-    reason: lexical_alternative
-  - marker: c
-    text: '''Office'' translates ἐπισκοπή; alternatively ''overseership.'' Older English versions often have ''bishopric,'' but that may suggest a later technical church office not required by the context.'
-    reason: alternative_reading
+    text: Psalm 109:8.
+    reason: cross_reference
 lexical_decisions:
 - source_word: γέγραπται
   chosen: it is written
@@ -102,14 +99,20 @@ revisions:
   from: For it is written in the book of Psalms, ‘Let his dwelling become desolate, and let there be no one living in it,’ and, ‘Let another take his office.’
   to: For it is written in the book of Psalms, ‘Let his dwelling become desolate, and let there be no one living in it,’ and, ‘Let another take his office.’
   rationale: Revised ‘dwelling’ to ‘dwelling place’ for closer lexical correspondence to ἔπαυλις, and ‘living’ to ‘dwelling’ for consistency with the κατοικῶν wording in the citation. Kept ‘office’ for ἐπισκοπή as a natural formal rendering in context.
-
 - timestamp: '2026-05-18T03:01:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’'
-  to: 'For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’'
+  from: For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’
+  to: For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''let there be no one living in it''].'
+- timestamp: '2026-11-09T17:05:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For it is written in the book of Psalms[a], ‘Let his dwelling place become desolate, and let there be no one dwelling in it,’ and[c][b], ‘Let another take his office.’
+  to: '“For it is written in the book of Psalms: ‘Let his dwelling place become desolate; let no one dwell in it[a]’, and, ‘Let another take his office[b]’.'
+  rationale: The recorded review supports “dwelling place” and the nontechnical “office,” both of which I retain. I compress the second poetic clause and replace synonym notes with references to the two passages on which Peter’s argument depends.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -129,3 +132,23 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/001/020.job-46696.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Peter cites two psalms as scriptural grounds for Judas’s dwelling becoming desolate and another person taking his office.
+  meaning_decisions:
+  - source_phrase: μὴ ἔστω ὁ κατοικῶν ἐν αὐτῇ
+    prior_rendering: let there be no one dwelling in it
+    new_rendering: let no one dwell in it
+    rationale: The shorter clause preserves the command and the poetic parallelism without the source-shaped existential construction.
+  footnote_kinds:
+    a: cross_reference
+    b: cross_reference
+  history_weighed: The recorded review supports “dwelling place” and the nontechnical “office,” both of which I retain. I compress the second poetic clause and replace synonym notes with references to the two passages on which Peter’s argument depends.

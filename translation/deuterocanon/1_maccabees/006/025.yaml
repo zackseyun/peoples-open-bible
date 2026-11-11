@@ -26,12 +26,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.
-  philosophy: optimal-equivalence
+  text: were put to death, and our ancestral property was plundered. They attacked not only us but also all the lands along their borders[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'all their borders' or 'all the regions around them.' The Greek term can denote boundary lines or the territories defined by them.
-    reason: lexical_alternative
+    text: Or, “all their territories.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐθανατοῦντο
   chosen: were being put to death
@@ -105,14 +105,20 @@ revisions:
   from: They were being put to death, and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their neighboring territories.
   to: They were being put to death, and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their neighboring territories.
   rationale: Replaced 'all their neighboring territories' with 'all their territories' for closer lexical accuracy to πάντα τὰ ὅρια αὐτῶν; 'neighboring' is not explicit in the Greek.
-
 - timestamp: '2026-05-18T02:58:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.'
-  to: 'They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.'
+  from: They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.
+  to: They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''neighboring territories''].'
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They were being put to death[a], and our inheritances were being plundered. And they stretched out their hand not only against us, but also against all their territories.
+  to: were put to death, and our ancestral property was plundered. They attacked not only us but also all the lands along their borders[a].
+  rationale: The history debated whether the territories were neighboring lands and rightly cautioned against an unsupported expansion. I render the border-region sense in context while recording the current wording’s serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +138,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/025.job-48299.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Members of the petitioners’ party were killed and their ancestral property plundered, while the rebels also attacked surrounding territories.
+  meaning_decisions:
+  - source_phrase: ἐθανατοῦντο
+    prior_rendering: They were being put to death
+    new_rendering: were put to death
+    rationale: The subject is supplied by the clause at the end of verse 24; continuing it prevents confusion between victims and attackers.
+  - source_phrase: αἱ κληρονομίαι ἡμῶν
+    prior_rendering: our inheritances
+    new_rendering: our ancestral property
+    rationale: The reference is to inherited possessions and land, not merely an anticipated bequest.
+  - source_phrase: ἐξέτειναν χεῖρα
+    prior_rendering: stretched out their hand
+    new_rendering: attacked
+    rationale: The expression denotes hostile action in this military complaint.
+  - source_phrase: ἐπὶ πάντα τὰ ὅρια αὐτῶν
+    prior_rendering: against all their territories
+    new_rendering: all the lands along their borders
+    rationale: The surrounding campaigns support a reference to border regions beyond the petitioners themselves; the broader territorial understanding remains in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history debated whether the territories were neighboring lands and rightly cautioned against an unsupported expansion. I render the border-region sense in context while recording the current wording’s serious alternative.

@@ -8,12 +8,15 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sinned before you, who did not listen to the voice of you, their God, and the evils have clung to us.
-  philosophy: optimal-equivalence
+  text: Lord Almighty, God of Israel, please hear the prayer of the dead of Israel[a] and of the sons of those who sinned against you and did not listen to you, their God[b]. Calamities have clung to us.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the calamities have clung to us' or 'the disasters have stuck to us.' The Greek literally says 'the evils have clung to us.'
-    reason: lexical_alternative
+    text: This may also describe the exiles as people as good as dead; compare verses 10–11.
+    reason: alternative_reading
+  - marker: b
+    text: Or, 'sons who sinned against you and did not listen to you, their God.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Κύριε
   chosen: Lord
@@ -126,14 +129,20 @@ revisions:
   from: Lord Almighty, God of Israel, please hear the prayer of the dead of Israel and of the sons who sinned before you, who did not listen to the voice of you, their God, and so the evils have clung to us.
   to: Lord Almighty, God of Israel, please hear the prayer of the dead of Israel and of the sons who sin against you, who did not listen to your voice, their God, and the evils have clung to us.
   rationale: Revised 'who sinned before you' to 'who sin against you' for closer lexical alignment with ἁμαρτανόντων ἐναντίον σου; changed 'the voice of you' to natural English 'your voice'; removed 'and so' because it is not explicit in the Greek.
-
 - timestamp: '2026-05-15T16:24:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sin against you, who did not listen to your voice, their God, and the evils have clung to us.'
-  to: 'Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sinned before you, who did not listen to the voice of you, their God, and the evils have clung to us.'
-  rationale: 'Restored 2 chosen renderings preserving ἐναντίον ''before'' (not ''against'') and documented apposition. Kept azure''s removal of ''and so''.'
+  from: Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sin against you, who did not listen to your voice, their God, and the evils have clung to us.
+  to: Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sinned before you, who did not listen to the voice of you, their God, and the evils have clung to us.
+  rationale: Restored 2 chosen renderings preserving ἐναντίον 'before' (not 'against') and documented apposition. Kept azure's removal of 'and so'.
+- timestamp: '2026-11-09T19:01:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Lord Almighty[a], God of Israel, please hear the prayer of the dead of Israel and of the sons who sinned before you, who did not listen to the voice of you, their God, and the evils have clung to us.
+  to: Lord Almighty, God of Israel, please hear the prayer of the dead of Israel[a] and of the sons of those who sinned against you and did not listen to you, their God[b]. Calamities have clung to us.
+  rationale: The earlier decisions preserve important cautions about 'the dead' and the clinging image, which I retain. I depart from the earlier construction of 'sons' because the surrounding references to the fathers' sins favor sons of sinners, and I preserve the serious alternatives in notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -153,3 +162,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/003/004.job-50374.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:13Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The community asks God to hear Israel's dead and the sons of disobedient sinners amid the calamities that have clung to them.
+  meaning_decisions:
+  - source_phrase: υἱῶν τῶν ἁμαρτανόντων
+    prior_rendering: the sons who sinned
+    new_rendering: the sons of those who sinned
+    rationale: The genitive construction can identify the sinners as the fathers of these sons; the surrounding appeals concerning ancestral wrongdoing favor this reading, with the other construction retained in a note.
+  - source_phrase: ἐναντίον σου
+    prior_rendering: before you
+    new_rendering: against you
+    rationale: In this confession, the phrase identifies an offense against God, not simply an act performed in his presence.
+  - source_phrase: οἳ οὐκ ἤκουσαν τῆς φωνῆς σου θεοῦ αὐτῶν
+    prior_rendering: who did not listen to the voice of you, their God
+    new_rendering: and did not listen to you, their God
+    rationale: Natural English preserves both the refusal to heed God and the identifying apposition without reproducing the awkward possessive construction.
+  - source_phrase: ἐκολλήθη ἡμῖν τὰ κακά
+    prior_rendering: the evils have clung to us
+    new_rendering: Calamities have clung to us
+    rationale: The context concerns the disasters resulting from disobedience, rather than moral evils adhering to the community; the vivid clinging image remains.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The earlier decisions preserve important cautions about 'the dead' and the clinging image, which I retain. I depart from the earlier construction of 'sons' because the surrounding references to the fathers' sins favor sons of sinners, and I preserve the serious alternatives in notes.

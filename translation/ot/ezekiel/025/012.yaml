@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כֹּ֤ה אָמַר֙ אֲדֹנָ֣/י יְהוִ֔ה יַ֣עַן עֲשׂ֥וֹת אֱד֛וֹם בִּ/נְקֹ֥ם נָקָ֖ם לְ/בֵ֣ית יְהוּדָ֑ה וַ/יֶּאְשְׁמ֥וּ אָשׁ֖וֹם וְ/נִקְּמ֥וּ בָ/הֶֽם׃
 translation:
-  text: 'Thus says the Lord GOD: Because Edom acted in vengeance against the house of Judah[a], and became very guilty, and took vengeance on them[b],'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'in avenging vengeance,' an emphatic expression for acting vengefully or taking full vengeance.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'incurred guilt greatly' / 'were found very guilty.' The Hebrew uses an emphatic guilt expression.
-    reason: lexical_alternative
+  text: 'Thus says the Lord Yahweh: ‘Because Edom took vengeance on the people of Judah and incurred grievous guilt by taking revenge on them—'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אֲדֹנָי יְהוִה
   chosen: the Lord GOD
@@ -93,14 +86,20 @@ revisions:
   from: 'Thus says the Lord GOD: Because Edom acted in vengeance against the house of Judah, and became very guilty, and took vengeance on them,'
   to: 'Thus says the Lord GOD: Because Edom acted vengefully against the house of Judah, and incurred grievous guilt, and took vengeance on them,'
   rationale: Changed 'acted in vengeance' to 'acted vengefully' for more natural English, and 'became very guilty' to 'incurred grievous guilt' to better reflect the Hebrew idiom while keeping a formal register.
-
 - timestamp: '2026-05-16T02:08:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Thus says the Lord GOD: Because Edom acted vengefully against the house of Judah[a], and incurred grievous guilt, and took vengeance on them[b],'
   to: 'Thus says the Lord GOD: Because Edom acted in vengeance against the house of Judah[a], and became very guilty, and took vengeance on them[b],'
-  rationale: 'Azure substituted ''acted vengefully'' (drafter''s rejected alternative — drafter chose ''in vengeance'' for Hebrew prepositional structure) and ''incurred grievous guilt'' (rejected for chosen ''became very guilty'' — emphatic state of cognate construction).'
+  rationale: Azure substituted 'acted vengefully' (drafter's rejected alternative — drafter chose 'in vengeance' for Hebrew prepositional structure) and 'incurred grievous guilt' (rejected for chosen 'became very guilty' — emphatic state of cognate construction).
+- timestamp: '2026-11-09T17:39:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says the Lord GOD: Because Edom acted in vengeance against the house of Judah[a], and became very guilty, and took vengeance on them[b],'
+  to: 'Thus says the Lord Yahweh: ‘Because Edom took vengeance on the people of Judah and incurred grievous guilt by taking revenge on them—'
+  rationale: The earlier review’s “incurred grievous guilt” better expresses the emphatic culpability than “became very guilty.” The subsequent revert defended Hebrew-shaped phrasing rather than a different meaning, so I recover that gain and make the connection between revenge and guilt explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +122,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/ezekiel/025/012.job-28520.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:07Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Edom’s revenge against Judah has made it gravely guilty and is the reason for Yahweh’s judgment.
+  meaning_decisions:
+  - source_phrase: אֲדֹנָי יְהוִה
+    prior_rendering: the Lord GOD
+    new_rendering: the Lord Yahweh
+    rationale: The divine name is retained as required by the standing ruling.
+  - source_phrase: עֲשׂוֹת אֱדוֹם בִּנְקֹם נָקָם לְבֵית יְהוּדָה
+    prior_rendering: Edom acted in vengeance against the house of Judah
+    new_rendering: Edom took vengeance on the people of Judah
+    rationale: The construction describes revenge carried out against Judah’s people; “took vengeance” conveys the action naturally rather than mirroring the Hebrew preposition.
+  - source_phrase: וַיֶּאְשְׁמוּ אָשׁוֹם וְנִקְּמוּ בָהֶם
+    prior_rendering: and became very guilty, and took vengeance on them
+    new_rendering: and incurred grievous guilt by taking revenge on them
+    rationale: The cognate construction emphasizes serious culpability, and the repeated mention of revenge identifies the act that incurred that guilt.
+  footnote_kinds: {}
+  history_weighed: The earlier review’s “incurred grievous guilt” better expresses the emphatic culpability than “became very guilty.” The subsequent revert defended Hebrew-shaped phrasing rather than a different meaning, so I recover that gain and make the connection between revenge and guilt explicit.

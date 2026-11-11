@@ -9,14 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.
-  philosophy: optimal-equivalence
+  text: For a horse appeared to them, adorned with a magnificent saddlecloth and carrying a fearsome rider. It charged headlong and struck at Heliodorus with its front hooves[a]; its rider appeared to be wearing a full suit of golden armor.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'decked out with splendid trappings'; the Greek term refers to the horse's ornamental gear.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'shook' or 'struck' Heliodorus with its front hoofs.' The verb can suggest a violent battering.
+    text: Literally, 'shook its front hooves at Heliodorus.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ὤφθη
@@ -118,14 +115,20 @@ revisions:
   from: For a horse appeared to them with a fearsome rider, adorned with a most beautiful harness; and rushing headlong, it struck Heliodorus with its front hoofs, while the one seated on it appeared to be wearing golden armor.
   to: For a horse appeared to them with a fearsome rider, adorned with a most beautiful harness; and rushing headlong, it struck Heliodorus with its front hoofs, while the one seated on it appeared to be wearing golden armor.
   rationale: Changed 'harness' to 'saddlecloth' for better lexical accuracy of σαγή; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.'
-  to: 'For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.'
+  from: For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.
+  to: For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''adorned with a most beautiful harness''].'
+- timestamp: '2026-11-09T18:55:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For a horse appeared to them with a fearsome rider[a], adorned with a most beautiful saddlecloth; and rushing headlong, it struck Heliodorus with its front hoofs[b], while the one seated on it appeared to be wearing golden armor.
+  to: For a horse appeared to them, adorned with a magnificent saddlecloth and carrying a fearsome rider. It charged headlong and struck at Heliodorus with its front hooves[a]; its rider appeared to be wearing a full suit of golden armor.
+  rationale: I retain the current 'saddlecloth,' which improves the first draft's broader 'harness,' and preserve the concrete apparition without identifying or explaining the rider. The recorded treatment of the hoof attack needed greater care because the Greek directs the hoof movement at Heliodorus rather than unambiguously stating a landed blow.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -145,3 +148,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/003/025.job-49011.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A magnificently adorned horse with a fearsome, golden-armored rider appears and attacks Heliodorus with its front hooves.
+  meaning_decisions:
+  - source_phrase: φοβερὸν ἔχων τὸν ἐπιβάτην, καὶ καλλίστῃ σαγῇ διακεκοσμημένος
+    prior_rendering: with a fearsome rider, adorned with a most beautiful saddlecloth
+    new_rendering: adorned with a magnificent saddlecloth and carrying a fearsome rider
+    rationale: Makes clear that the horse, not the rider, wears the saddlecloth, while retaining the extraordinary beauty of its adornment.
+  - source_phrase: ἔσεισεν τῷ Ἡλιοδώρῳ τὰς ἐμπροσθίους ὁπλάς
+    prior_rendering: it struck Heliodorus with its front hoofs
+    new_rendering: struck at Heliodorus with its front hooves
+    rationale: Preserves the violent attack while avoiding an assertion of contact beyond the Greek description of shaking or striking the hooves at him.
+  - source_phrase: ὁ δὲ ἐπικαθήμενος ἐφαίνετο χρυσῆν πανοπλίαν ἔχων
+    prior_rendering: the one seated on it appeared to be wearing golden armor
+    new_rendering: its rider appeared to be wearing a full suit of golden armor
+    rationale: Uses the clear English antecedent and conveys that πανοπλία denotes complete armor.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current 'saddlecloth,' which improves the first draft's broader 'harness,' and preserve the concrete apparition without identifying or explaining the rider. The recorded treatment of the hoof attack needed greater care because the Greek directs the hoof movement at Heliodorus rather than unambiguously stating a landed blow.

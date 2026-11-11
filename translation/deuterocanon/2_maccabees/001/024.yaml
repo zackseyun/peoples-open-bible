@@ -16,15 +16,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: 'And the prayer was in this form: “Lord God[a], creator of all things, the awesome and mighty and righteous and merciful one[b], the only king and good one,”'
-  philosophy: optimal-equivalence
+  text: 'The prayer was as follows: “Lord God, creator of all things, awesome and mighty, righteous and merciful, the only king, who is good[a],'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the awesome one” / “the fearsome one” for “the fearful”; the Greek adjective denotes one who inspires fear or awe.
-    reason: lexical_alternative
-  - marker: b
-    text: Or simply “good” or “kind” for “good one”; the Greek χρηστός can carry the sense of goodness, kindness, or benevolence.
-    reason: lexical_alternative
+    text: Or, “kind”; the word can emphasize goodness shown in benevolence.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἦν δὲ ἡ προσευχὴ τὸν τρόπον ἔχουσα τοῦτον
   chosen: And the prayer was in this form
@@ -130,7 +127,6 @@ revisions:
   from: 'And the prayer was in this form: “Lord God, creator of all things, the fearful and mighty and righteous and merciful one, the only king and good one,”'
   to: 'And the prayer was in this form: “Lord God, creator of all things, the fearful and mighty and righteous and merciful one, the only king and good one,”'
   rationale: Changed 'fearful' to 'awesome' for more natural and accurate formal English; retained the rest of the structure and wording.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -138,6 +134,13 @@ revisions:
   from: 'And the prayer was in this form: “Lord God[a], creator of all things, the awesome and mighty and righteous and merciful one[b], the only king and good one,”'
   to: 'And the prayer was in this form: “Lord God[a], creator of all things, the awesome and mighty and righteous and merciful one[b], the only king and good one,”'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the fearful''].'
+- timestamp: '2026-11-09T18:54:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And the prayer was in this form: “Lord God[a], creator of all things, the awesome and mighty and righteous and merciful one[b], the only king and good one,”'
+  to: 'The prayer was as follows: “Lord God, creator of all things, awesome and mighty, righteous and merciful, the only king, who is good[a],'
+  rationale: I retain the current 'awesome,' which correctly expresses inspiring awe rather than being afraid, and preserve 'Lord God,' 'righteous,' and 'merciful.' The prayer’s list continues into verse 25, so the quotation remains open rather than ending here.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +160,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/001/024.job-48915.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:25Z'
+  change_level: refined
+  confidence: high
+  meaning: The prayer begins by addressing God as universal creator, awesome, mighty, righteous, merciful, uniquely king, and good.
+  meaning_decisions:
+  - source_phrase: ἦν δὲ ἡ προσευχὴ τὸν τρόπον ἔχουσα τοῦτον
+    prior_rendering: And the prayer was in this form
+    new_rendering: The prayer was as follows
+    rationale: This is the natural English introduction to the prayer that follows.
+  - source_phrase: ὁ φοβερὸς καὶ ὁ ἰσχυρὸς καὶ δίκαιος καὶ ἐλεήμων
+    prior_rendering: the awesome and mighty and righteous and merciful one
+    new_rendering: awesome and mighty, righteous and merciful
+    rationale: The paired attributes preserve the solemn cadence without making English reproduce the Greek articles and repeated conjunctions.
+  - source_phrase: ὁ μόνος βασιλεὺς καὶ χρηστός
+    prior_rendering: the only king and good one
+    new_rendering: the only king, who is good
+    rationale: The wording clearly confesses God’s unique kingship and goodness without the awkward English 'good one'; the benevolent sense is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current 'awesome,' which correctly expresses inspiring awe rather than being afraid, and preserve 'Lord God,' 'righteous,' and 'merciful.' The prayer’s list continues into verse 25, so the quotation remains open rather than ending here.

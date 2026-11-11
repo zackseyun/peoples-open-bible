@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands[a].
-  philosophy: optimal-equivalence
+  text: The men of the city took up their positions[a]. The fighting against the city lasted all that day and all that night, and the city was delivered into Judas’s hands.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''into his hands'' (singular). Some translators smooth this to ''their hands'' to match the earlier plural subjects, but the source text here reads singular.'
-    reason: alternative_reading
+    text: Literally, 'the men of the city encamped, and they fought against the city'; the wording is compressed, with an apparent change of subject.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: παρενέβαλον
   chosen: encamped
@@ -100,13 +100,12 @@ revisions:
   from: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.
   to: And the men of the city encamped, and they fought all that day and all that night, and the city was delivered into his hands.
   rationale: Removed 'against the city,' which is not represented in the Greek and makes the sentence self-contradictory. Retained the rest with natural formal wording.
-
 - timestamp: '2026-05-18T03:09:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the men of the city encamped[a], and they fought all that day and all that night, and the city was delivered into his hands.'
-  to: 'And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.'
+  from: And the men of the city encamped[a], and they fought all that day and all that night, and the city was delivered into his hands.
+  to: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they fought against''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -116,6 +115,13 @@ revisions:
   from: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands.
   to: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('into his hands') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:52:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the men of the city encamped, and they fought against the city all that day and all that night, and the city was delivered into his hands[a].
+  to: The men of the city took up their positions[a]. The fighting against the city lasted all that day and all that night, and the city was delivered into Judas’s hands.
+  rationale: The reviewer noticed the self-contradiction but incorrectly stated that 'against the city' lacked Greek support; τὴν πόλιν is explicit and must remain. I preserve both the city's men and the attack on the city, expose the compressed subject transition in a note, and retain Judas as the singular recipient of the victory.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -135,3 +141,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/005/050.job-48256.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:22Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The city’s defenders took up their positions, fighting lasted through the day and night, and Ephron ultimately fell into Judas’s hands.
+  meaning_decisions:
+  - source_phrase: παρενέβαλον οἱ ἄνδρες τῆς πόλεως
+    prior_rendering: the men of the city encamped
+    new_rendering: The men of the city took up their positions
+    rationale: In the immediate siege setting, the verb describes the defenders establishing their military positions rather than an ordinary encampment.
+  - source_phrase: ἐπολέμησαν τὴν πόλιν ὅλην τὴν ἡμέραν ἐκείνην καὶ ὅλην τὴν νύκτα
+    prior_rendering: they fought against the city all that day and all that night
+    new_rendering: The fighting against the city lasted all that day and all that night
+    rationale: The impersonal phrasing preserves the explicit attack on the city without making its defenders attack their own city or silently altering the Greek noun phrase.
+  - source_phrase: ἐν χερσὶν αὐτοῦ
+    prior_rendering: into his hands
+    new_rendering: into Judas’s hands
+    rationale: Naming Judas identifies the singular possessor clearly after the preceding plural parties, while preserving the image of control.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The reviewer noticed the self-contradiction but incorrectly stated that 'against the city' lacked Greek support; τὴν πόλιν is explicit and must remain. I preserve both the city's men and the attack on the city, expose the compressed subject transition in a note, and retain Judas as the singular recipient of the victory.

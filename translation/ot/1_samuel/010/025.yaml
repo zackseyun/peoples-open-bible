@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יְדַבֵּ֨ר שְׁמוּאֵ֜ל אֶל הָ/עָ֗ם אֵ֚ת מִשְׁפַּ֣ט הַ/מְּלֻכָ֔ה וַ/יִּכְתֹּ֣ב בַּ/סֵּ֔פֶר וַ/יַּנַּ֖ח לִ/פְנֵ֣י יְהוָ֑ה וַ/יְשַׁלַּ֧ח שְׁמוּאֵ֛ל אֶת כָּל הָ/עָ֖ם אִ֥ישׁ לְ/בֵיתֽ/וֹ־־־׃
 translation:
-  text: Then Samuel told the people the rights and duties of the kingship[a], and he wrote them in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.
-  philosophy: optimal-equivalence
+  text: Then Samuel explained to the people the rights and duties of kingship[a]. He wrote them down and laid the document before Yahweh. Then Samuel sent all the people away, each to his own home.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the procedure/custom of the kingship.” The Hebrew phrase can refer to the legal ordinances or established practice of royal rule.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew “each man to his house,” a distributive expression meaning the people departed individually to their own households.
-    reason: lexical_alternative
+    text: Or, “the established practice of kingship.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיְדַבֵּר
   chosen: told
@@ -99,14 +96,20 @@ revisions:
   from: Then Samuel told the people the rights and duties of the kingship, and he wrote them in the book and laid it before the LORD. Then Samuel sent all the people away, each man to his house.
   to: Then Samuel told the people the custom of the kingship, and he wrote it in the book and laid it before the LORD. Then Samuel sent all the people away, each man to his house.
   rationale: Changed 'rights and duties of the kingship' to 'custom of the kingship' for closer lexical accuracy to מִשְׁפַּט הַמְּלֻכָה; changed 'them' to 'it' to match the singular object.
-
 - timestamp: '2026-05-16T05:24:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Samuel told the people the custom of the kingship[a], and he wrote it in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.'
-  to: 'Then Samuel told the people the rights and duties of the kingship[a], and he wrote them in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.'
-  rationale: 'Azure substituted ''custom of the kingship'' (blend of drafter''s rejected alts ''custom of the kingdom'' + ''procedure of kingship'' — drafter chose ''rights and duties'' for reciprocal legal framework) and ''it'' for drafter''s chosen ''them'' (referring to stipulations).'
+  from: Then Samuel told the people the custom of the kingship[a], and he wrote it in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.
+  to: Then Samuel told the people the rights and duties of the kingship[a], and he wrote them in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.
+  rationale: Azure substituted 'custom of the kingship' (blend of drafter's rejected alts 'custom of the kingdom' + 'procedure of kingship' — drafter chose 'rights and duties' for reciprocal legal framework) and 'it' for drafter's chosen 'them' (referring to stipulations).
+- timestamp: '2026-11-09T17:23:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Samuel told the people the rights and duties of the kingship[a], and he wrote them in the book and laid it before Yahweh. Then Samuel sent all the people away[b], each man to his house.
+  to: Then Samuel explained to the people the rights and duties of kingship[a]. He wrote them down and laid the document before Yahweh. Then Samuel sent all the people away, each to his own home.
+  rationale: The recorded debate shows why the current legal wording carries more contextual meaning than the review’s bare “custom,” so I retain “rights and duties” and the plural “them.” The serious alternative remains in a note, while the written record and individual dismissal are expressed more clearly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -129,3 +132,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/010/025.job-58975.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:45Z'
+  change_level: refined
+  confidence: medium
+  meaning: Samuel explains and records the terms of kingship, places the document before Yahweh, and dismisses the people to their homes.
+  meaning_decisions:
+  - source_phrase: וַיִּכְתֹּב בַּסֵּפֶר וַיַּנַּח לִפְנֵי יְהוָה
+    prior_rendering: he wrote them in the book and laid it before Yahweh
+    new_rendering: He wrote them down and laid the document before Yahweh
+    rationale: The source describes a written record deposited before Yahweh; “document” conveys that without suggesting a bound volume or requiring readers to identify a previously mentioned book.
+  - source_phrase: אִישׁ לְבֵיתוֹ
+    prior_rendering: each man to his house
+    new_rendering: each to his own home
+    rationale: The expression distributes the dismissal among individuals returning to their respective homes rather than emphasizing their sex or the buildings themselves.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded debate shows why the current legal wording carries more contextual meaning than the review’s bare “custom,” so I retain “rights and duties” and the plural “them.” The serious alternative remains in a note, while the written record and individual dismissal are expressed more clearly.

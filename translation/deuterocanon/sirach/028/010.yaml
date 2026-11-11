@@ -21,15 +21,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: As the fuel[a] of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict[b] it will be kindled.
-  philosophy: optimal-equivalence
+  text: The more fuel a fire has, the more fiercely it burns; the greater a person's strength, the greater their wrath; the greater their wealth, the more they increase their anger; the more entrenched the conflict[a], the more fiercely it blazes.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'wood' instead of 'fuel' for ὕλην; the Greek more literally refers to the material that feeds a fire.
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause could also be understood more interpretively as 'according to how severe the conflict is, so it will blaze up.'
-    reason: lexical_alternative
+    text: Or 'the more intense the conflict.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ὕλην
   chosen: fuel
@@ -149,16 +146,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'As the fuel of a fire, so it will be kindled; according to a man''s strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict it will be kindled.'
-  to: 'As the fuel of a fire, so it will be kindled; according to a man''s strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the intensity of the conflict it will be kindled.'
+  from: As the fuel of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict it will be kindled.
+  to: As the fuel of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the intensity of the conflict it will be kindled.
   rationale: Revised 'firmness of the conflict' to 'intensity of the conflict' for a more natural and contextually fitting rendering of στερέωσιν while preserving the formal structure of the verse.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'As the fuel of a fire[a], so it will be kindled; according to a man''s strength, so will his wrath be; and according to his wealth he will raise up his anger[b], and according to the intensity of the conflict it will be kindled.'
-  to: 'As the fuel of a fire, so it will be kindled; according to a man''s strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict it will be kindled.'
+  from: As the fuel of a fire[a], so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger[b], and according to the intensity of the conflict it will be kindled.
+  to: As the fuel of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict it will be kindled.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''firmness''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -168,6 +164,13 @@ revisions:
   from: As the fuel of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict it will be kindled.
   to: As the fuel[a] of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict[b] it will be kindled.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('fuel') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('conflict') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:07:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: As the fuel[a] of a fire, so it will be kindled; according to a man's strength, so will his wrath be; and according to his wealth he will raise up his anger, and according to the firmness of the conflict[b] it will be kindled.
+  to: The more fuel a fire has, the more fiercely it burns; the greater a person's strength, the greater their wrath; the greater their wealth, the more they increase their anger; the more entrenched the conflict[a], the more fiercely it blazes.
+  rationale: The earlier review recognized that 'firmness of the conflict' was unclear, and its automated reversal supplies no meaning-based reason to retain that wording. I preserve the proportional fire imagery and the distinction between wrath and anger, while noting the alternative understanding of the final clause.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -187,3 +190,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/028/010.job-51734.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:15Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: As fuel determines a fire's blaze, a person's strength and wealth magnify anger, which burns more fiercely as conflict becomes entrenched.
+  meaning_decisions:
+  - source_phrase: κατὰ τὴν ὕλην πυρὸς οὕτως ἐκκαυθήσεται
+    prior_rendering: As the fuel of a fire, so it will be kindled
+    new_rendering: The more fuel a fire has, the more fiercely it burns
+    rationale: The comparison concerns the proportion between fuel and the resulting blaze, not simply whether ignition occurs.
+  - source_phrase: κατὰ τὴν ἰσχὺν τοῦ ἀνθρώπου ὁ θυμὸς αὐτοῦ ἔσται
+    prior_rendering: according to a man's strength, so will his wrath be
+    new_rendering: the greater a person's strength, the greater their wrath
+    rationale: The comparative construction makes the proportional relationship immediately intelligible while retaining the general human scope.
+  - source_phrase: κατὰ τὸν πλοῦτον ἀνυψώσει ὀργὴν αὐτοῦ
+    prior_rendering: according to his wealth he will raise up his anger
+    new_rendering: the greater their wealth, the more they increase their anger
+    rationale: '''Raise up'' means intensify here; the new wording preserves the person''s agency and the relationship to wealth.'
+  - source_phrase: κατὰ τὴν στερέωσιν τῆς μάχης ἐκκαυθήσεται
+    prior_rendering: according to the firmness of the conflict it will be kindled
+    new_rendering: the more entrenched the conflict, the more fiercely it blazes
+    rationale: '''Entrenched'' conveys the conflict''s established strength, whereas ''firmness'' is opaque in English; intensity is also a plausible understanding.'
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review recognized that 'firmness of the conflict' was unclear, and its automated reversal supplies no meaning-based reason to retain that wording. I preserve the proportional fire imagery and the distinction between wrath and anger, while noting the alternative understanding of the final clause.

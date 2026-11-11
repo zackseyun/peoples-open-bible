@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּגֶּד ל֤/וֹ שְׁמוּאֵל֙ אֶת כָּל הַ/דְּבָרִ֔ים וְ/לֹ֥א כִחֵ֖ד מִמֶּ֑/נּוּ וַ/יֹּאמַ֕ר יְהוָ֣ה ה֔וּא הַ/טּ֥וֹב בְּ/עֵינָ֖/ו יַעֲשֶֽׂה־־־׃פ
 translation:
-  text: So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”
-  philosophy: optimal-equivalence
+  text: So Samuel told him everything and hid nothing from him. Eli said, “He is Yahweh; let him do what seems good to him[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'he will do what is good in his eyes.' The Hebrew imperfect may be understood as either a submissive wish ('let him do') or a simple future.
+    text: Or, 'he will do what seems good to him.'
     reason: alternative_reading
-  - marker: b
-    text: Hebrew 'in his eyes,' an idiom meaning according to his own judgment or what seems good to him.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּגֶּד
   chosen: told
@@ -105,14 +102,20 @@ revisions:
   from: So Samuel told him everything and hid nothing from him. And he said, “He is the LORD; let him do what is good in his eyes.”
   to: So Samuel told him everything and hid nothing from him. And he said, “He is the LORD; let him do what is good in his eyes.”
   rationale: Changed 'everything' to 'all the words' for closer lexical correspondence to כָּל־הַדְּבָרִים; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:56:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”'
-  to: 'So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”'
+  from: So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”
+  to: So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everything''].'
+- timestamp: '2026-11-09T17:21:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Samuel told him all the words and hid nothing from him[a]. And he said, “He is Yahweh[b]; let him do what is good in his eyes.”
+  to: So Samuel told him everything and hid nothing from him. Eli said, “He is Yahweh; let him do what seems good to him[a].”
+  rationale: The first draft and documented lexical rationale favor 'everything,' while a later automated pass favored closer correspondence with 'all the words.' I restore the meaning-focused wording and retain the established submissive reading of Eli’s response, with the serious predictive alternative in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +138,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/003/018.job-58836.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Samuel conceals nothing, and Eli accepts that Yahweh may carry out the judgment as he considers good.
+  meaning_decisions:
+  - source_phrase: אֶת כָּל הַדְּבָרִים
+    prior_rendering: all the words
+    new_rendering: everything
+    rationale: The point is Samuel’s complete disclosure of the revelation, which 'everything' expresses naturally.
+  - source_phrase: וַיֹּאמַר
+    prior_rendering: And he said
+    new_rendering: Eli said
+    rationale: The explicit name makes the change from Samuel’s report to Eli’s response immediately clear.
+  - source_phrase: הַטּוֹב בְּעֵינָיו
+    prior_rendering: what is good in his eyes
+    new_rendering: what seems good to him
+    rationale: The idiom expresses Yahweh’s own judgment of what is good; the new wording carries that evaluative sense directly.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and documented lexical rationale favor 'everything,' while a later automated pass favored closer correspondence with 'all the words.' I restore the meaning-focused wording and retain the established submissive reading of Eli’s response, with the serious predictive alternative in a correctly placed note.

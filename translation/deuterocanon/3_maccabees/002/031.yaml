@@ -15,12 +15,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But some[a], lightly despising the foundations of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the supports of the city's devotions' or 'the foundations of the city's piety.' The Greek uses a metaphorical term for bases or supports.
-    reason: lexical_alternative
+  text: Some, however, treated the foundations of the city's piety with careless contempt and readily submitted, imagining that their future association with the king would bring them great renown.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἐνιοι
   chosen: some
@@ -133,17 +129,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'But some, lightly despising the supports of the city''s piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.'
-  to: 'But some, lightly despising the supports of the city''s piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.'
+  from: But some, lightly despising the supports of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
+  to: But some, lightly despising the supports of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
   rationale: Changed 'supports' to 'foundations' for a more natural and accurate rendering of ἐπιβάθρας in this context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But some[a], lightly despising the foundations of the city''s piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.'
-  to: 'But some[a], lightly despising the foundations of the city''s piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.'
+  from: But some[a], lightly despising the foundations of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
+  to: But some[a], lightly despising the foundations of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''supports''].'
+- timestamp: '2026-11-09T18:56:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But some[a], lightly despising the foundations of the city's piety, readily gave themselves up, as though they would share in some great renown from the association with the king that was to come.
+  to: Some, however, treated the foundations of the city's piety with careless contempt and readily submitted, imagining that their future association with the king would bring them great renown.
+  rationale: I retained the current 'foundations' and the weight of 'piety,' rather than replacing the image with an explanation. The recorded discussion supports careless contempt and anticipated royal association; both are expressed more directly without identifying the city more narrowly than the source does.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -163,3 +165,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/002/031.job-49538.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Some readily submitted out of careless contempt for the city's piety, imagining that association with the king would bring them great renown.
+  meaning_decisions:
+  - source_phrase: ἐπιπολαίως τὰς τῆς πόλεως εὐσεβείας ἐπιβάθρας στυγοῦντες
+    prior_rendering: lightly despising the foundations of the city's piety
+    new_rendering: treated the foundations of the city's piety with careless contempt
+    rationale: The adverb describes shallow disregard, not mild contempt; the foundations image and civic reference remain intact.
+  - source_phrase: εὐχερῶς ἑαυτοὺς ἐδίδοσαν
+    prior_rendering: readily gave themselves up
+    new_rendering: readily submitted
+    rationale: In response to the offered concession, this describes willing compliance rather than merely surrendering for arrest.
+  - source_phrase: ὡς μεγάλης τινὸς κοινωνήσοντες εὐκλείας ἀπὸ τῆς ἐσομένης τῷ βασιλεῖ συναναστροφῆς
+    prior_rendering: as though they would share in some great renown from the association with the king that was to come
+    new_rendering: imagining that their future association with the king would bring them great renown
+    rationale: The new wording preserves the anticipated honor and the author's distancing presentation of their expectation.
+  footnote_kinds: {}
+  history_weighed: I retained the current 'foundations' and the weight of 'piety,' rather than replacing the image with an explanation. The recorded discussion supports careless contempt and anticipated royal association; both are expressed more directly without identifying the city more narrowly than the source does.

@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: וַ/יִּקַּ֣ח דָּוִ֣יד אֶת עֲטֶֽרֶת מַלְכָּ/ם֩ מֵ/עַ֨ל רֹאשׁ֜/וֹ וַֽ/יִּמְצָאָ֣/הּ מִשְׁקַ֣ל כִּכַּר זָהָ֗ב וּ/בָ/הּ֙ אֶ֣בֶן יְקָרָ֔ה וַ/תְּהִ֖י עַל רֹ֣אשׁ דָּוִ֑יד וּ/שְׁלַ֥ל הָ/עִ֛יר הוֹצִ֖יא הַרְבֵּ֥ה מְאֹֽד־־׀־־׃
 translation:
-  text: And David took the crown of their king[a] from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head[b]. And he carried off very much plunder from the city.
-  philosophy: optimal-equivalence
+  text: David took their king’s crown[a] from his head. He found that it weighed a talent[b] of gold and was set with a precious stone. It was placed on David’s head, and he carried off a vast amount of plunder from the city.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the crown of Milcom' (or 'Malcam'), taking מַלְכָּם as the name of the Ammonite god rather than 'their king.'
+    text: Or “the crown of Milcom,” the Ammonite god, taken from the head of his image.
     reason: alternative_reading
   - marker: b
-    text: A talent was a large ancient unit of weight, often estimated at roughly 75 pounds or 34 kilograms, though exact values varied.
-    reason: cultural_note
+    text: A talent was an ancient unit of weight, approximately 75 pounds (34 kilograms), though its size varied.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: עֲטֶרֶת
   chosen: crown
@@ -110,13 +110,12 @@ revisions:
   from: And David took the crown of their king from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head. And he carried off very much plunder from the city.
   to: And David took the crown of their king from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was on David’s head. And he carried off very much plunder from the city.
   rationale: Changed 'it was placed on David’s head' to 'it was on David’s head' to more directly reflect the Hebrew without adding an implied passive action not stated in the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:09:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And David took the crown of their king from his head and found that it weighed a talent of gold[a], and in it was a precious stone; and it was on David’s head[b]. And he carried off very much plunder from the city.'
-  to: 'And David took the crown of their king from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head. And he carried off very much plunder from the city.'
+  from: And David took the crown of their king from his head and found that it weighed a talent of gold[a], and in it was a precious stone; and it was on David’s head[b]. And he carried off very much plunder from the city.
+  to: And David took the crown of their king from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head. And he carried off very much plunder from the city.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it was placed on David’s head''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -126,6 +125,13 @@ revisions:
   from: And David took the crown of their king from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head. And he carried off very much plunder from the city.
   to: And David took the crown of their king[a] from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head[b]. And he carried off very much plunder from the city.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('their king') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:19:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And David took the crown of their king[a] from his head and found that it weighed a talent of gold, and in it was a precious stone; and it was placed on David’s head[b]. And he carried off very much plunder from the city.
+  to: David took their king’s crown[a] from his head. He found that it weighed a talent[b] of gold and was set with a precious stone. It was placed on David’s head, and he carried off a vast amount of plunder from the city.
+  rationale: I retained the established king reading and its serious Milcom alternative. The automated review’s objection to “was placed” concerned formal correspondence rather than meaning, so the current wording remains appropriate.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +151,23 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/020/002.job-44685.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:23Z'
+  change_level: refined
+  confidence: medium
+  meaning: David took the Ammonite king’s costly crown, had it placed on his own head, and carried away abundant plunder from Rabbah.
+  meaning_decisions:
+  - source_phrase: וּבָהּ אֶבֶן יְקָרָה
+    prior_rendering: and in it was a precious stone
+    new_rendering: and was set with a precious stone
+    rationale: The stone is part of the crown’s ornamentation; the new wording makes that relationship natural and clear in English.
+  footnote_kinds:
+    a: alternative_meaning
+    b: name_or_term
+  history_weighed: I retained the established king reading and its serious Milcom alternative. The automated review’s objection to “was placed” concerned formal correspondence rather than meaning, so the current wording remains appropriate.

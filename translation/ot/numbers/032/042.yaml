@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/נֹ֣בַח הָלַ֔ךְ וַ/יִּלְכֹּ֥ד אֶת קְנָ֖ת וְ/אֶת בְּנֹתֶ֑י/הָ וַ/יִּקְרָ֧א לָ֦/ה נֹ֖בַח בִּ/שְׁמֽ/וֹ־־׃פ
 translation:
-  text: And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.
-  philosophy: optimal-equivalence
+  text: And Nobah went and captured Kenath and its dependent towns[a], and called it Nobah after his own name.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'its daughters,' an idiom referring to the smaller settlements dependent on Kenath.
+    text: Literally, “its daughters,” an idiom for towns dependent on Kenath.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נֹבַח
@@ -81,14 +81,20 @@ revisions:
   from: And Nobah went and captured Kenath and its villages, and he called it Nobah, after his own name.
   to: And Nobah went and captured Kenath and its villages, and he called it Nobah, after his own name.
   rationale: Removed the unnecessary repeated subject 'he' before 'called' for slightly more natural formal English; otherwise retained the accurate rendering of the verse.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.'
-  to: 'And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.'
+  from: And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.
+  to: And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he called it''].'
+- timestamp: '2026-11-09T18:33:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Nobah went and captured Kenath and its villages[a], and called it Nobah, after his own name.
+  to: And Nobah went and captured Kenath and its dependent towns[a], and called it Nobah after his own name.
+  rationale: The current wording’s omission of the repeated “he” is retained; the automated history records only that small stylistic adjustment. The earlier note correctly identifies dependent settlements, and that relationship now appears in the text while the meaningful source image remains in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +114,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/032/042.job-41944.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:33:09Z'
+  change_level: refined
+  confidence: high
+  meaning: Nobah captures Kenath and its dependent towns and renames Kenath after himself.
+  meaning_decisions:
+  - source_phrase: בְּנֹתֶיהָ
+    prior_rendering: its villages
+    new_rendering: its dependent towns
+    rationale: The daughter-town idiom expresses dependence on the principal city, not merely the presence of nearby villages.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The current wording’s omission of the repeated “he” is retained; the automated history records only that small stylistic adjustment. The earlier note correctly identifies dependent settlements, and that relationship now appears in the text while the meaningful source image remains in a footnote.

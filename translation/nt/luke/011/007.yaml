@@ -4,17 +4,11 @@ source:
   edition: SBLGNT
   text: κἀκεῖνος ἔσωθεν ἀποκριθεὶς εἴπῃ· Μή μοι κόπους πάρεχε· ἤδη ἡ θύρα κέκλεισται, καὶ τὰ παιδία μου μετ’ ἐμοῦ εἰς τὴν κοίτην εἰσίν· οὐ δύναμαι ἀναστὰς δοῦναί σοι.
 translation:
-  text: and he from inside answers and says, ‘Do not trouble me[a]. The door has already been shut[b], and my children are with me in bed[c]. I am not able to get up and give you anything.’
-  philosophy: optimal-equivalence
+  text: And the friend answers from inside, ‘Do not trouble me. The door is already shut, and my children are with me in bed[a]. I cannot get up and give you anything.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Do not cause me trouble' or 'Do not keep bothering me.' The Greek idiom literally involves 'providing troubles.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the door is already shut.' The Greek perfect verb can emphasize either the completed action ('has been shut') or the resulting state ('is shut').
-    reason: lexical_alternative
-  - marker: c
-    text: '''In bed'' refers to the shared sleeping place in a household setting, not to marital intimacy.'
+    text: Families commonly shared a sleeping area, so getting up could disturb the children.
     reason: cultural_note
 lexical_decisions:
 - source_word: κἀκεῖνος
@@ -101,13 +95,12 @@ revisions:
   from: and he from inside answers and says, ‘Do not trouble me. The door has already been shut, and my children are with me in bed. I am not able to get up and give you anything.’
   to: and he from inside answers and says, ‘Do not trouble me. The door has already been shut, and my children are with me in bed. I am not able to get up and give you.’
   rationale: Removed “anything” because it is not present in the Greek; otherwise retained the draft wording.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and he from inside answers and says[a], ‘Do not trouble me. The door has already been shut, and my children are with me in bed[c][b]. I am not able to get up and give you.’'
-  to: 'and he from inside answers and says, ‘Do not trouble me. The door has already been shut, and my children are with me in bed. I am not able to get up and give you anything.’'
+  from: and he from inside answers and says[a], ‘Do not trouble me. The door has already been shut, and my children are with me in bed[c][b]. I am not able to get up and give you.’
+  to: and he from inside answers and says, ‘Do not trouble me. The door has already been shut, and my children are with me in bed. I am not able to get up and give you anything.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I am not able to get up and give you anything''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -117,6 +110,13 @@ revisions:
   from: and he from inside answers and says, ‘Do not trouble me. The door has already been shut, and my children are with me in bed. I am not able to get up and give you anything.’
   to: and he from inside answers and says, ‘Do not trouble me[a]. The door has already been shut[b], and my children are with me in bed[c]. I am not able to get up and give you anything.’
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Do not trouble me') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('The door has already been shut') because the note's quoted alternative matches the lexical decision rendered there; [c] anchored to ('In bed') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:18:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and he from inside answers and says, ‘Do not trouble me[a]. The door has already been shut[b], and my children are with me in bed[c]. I am not able to get up and give you anything.’
+  to: And the friend answers from inside, ‘Do not trouble me. The door is already shut, and my children are with me in bed[a]. I cannot get up and give you anything.’
+  rationale: I retained 'anything,' whose temporary removal rested on source-form concerns even though English needs the implied object. The household-setting insight is preserved in a shorter cultural note, while grammatical alternatives that add little meaning are dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +138,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/011/007.job-55590.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:35Z'
+  change_level: refined
+  confidence: high
+  meaning: The friend inside initially refuses because the house is shut for the night and the family is already in bed.
+  meaning_decisions:
+  - source_phrase: κἀκεῖνος ἔσωθεν ἀποκριθεὶς εἴπῃ
+    prior_rendering: and he from inside answers and says
+    new_rendering: And the friend answers from inside
+    rationale: The two Greek speech verbs form a single reply formula; naming the friend clarifies who speaks without changing the scene.
+  - source_phrase: ἤδη ἡ θύρα κέκλεισται
+    prior_rendering: The door has already been shut
+    new_rendering: The door is already shut
+    rationale: The perfect emphasizes the door’s present closed state, which is the speaker’s reason for refusing.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retained 'anything,' whose temporary removal rested on source-form concerns even though English needs the implied object. The household-setting insight is preserved in a shorter cultural note, while grammatical alternatives that add little meaning are dropped.

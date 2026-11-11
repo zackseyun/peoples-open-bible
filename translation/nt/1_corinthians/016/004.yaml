@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐὰν δὲ ⸂ἄξιον ᾖ⸃ τοῦ κἀμὲ πορεύεσθαι, σὺν ἐμοὶ πορεύσονται.
 translation:
-  text: And if it is worthwhile for me to go also[a], they will go with me.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'if it is fitting for me also to go.' The Greek expression can denote what is appropriate, fitting, or worthwhile in the circumstances.
-    reason: lexical_alternative
+  text: And if it is worthwhile for me to go also, they will go with me.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐὰν δὲ
   chosen: And if
@@ -77,13 +73,12 @@ revisions:
   from: And if it is worthwhile for me to go also, they will go with me.
   to: And if it is fitting for me to go also, they will go with me.
   rationale: Changed 'worthwhile' to 'fitting' to better reflect ἄξιον in this context as 'appropriate/fitting' rather than value-based usefulness. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if it is fitting for me to go also[a], they will go with me.'
-  to: 'And if it is worthwhile for me to go also, they will go with me.'
+  from: And if it is fitting for me to go also[a], they will go with me.
+  to: And if it is worthwhile for me to go also, they will go with me.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''it is worthwhile''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -93,6 +88,13 @@ revisions:
   from: And if it is worthwhile for me to go also, they will go with me.
   to: And if it is worthwhile for me to go also[a], they will go with me.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if it is worthwhile for me to go also[a], they will go with me.
+  to: And if it is worthwhile for me to go also, they will go with me.
+  rationale: The earlier change to 'fitting' highlights appropriateness, but its later automated reversal carries little independent interpretive weight. The current 'worthwhile' already conveys that the journey must be warranted by the circumstances, so I retain it without a near-synonym footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -112,3 +114,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/016/004.job-53010.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:14Z'
+  change_level: kept
+  confidence: high
+  meaning: If Paul's own participation in the journey is warranted, the approved delegates will travel with him.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The earlier change to 'fitting' highlights appropriateness, but its later automated reversal carries little independent interpretive weight. The current 'worthwhile' already conveys that the journey must be warranted by the circumstances, so I retain it without a near-synonym footnote.

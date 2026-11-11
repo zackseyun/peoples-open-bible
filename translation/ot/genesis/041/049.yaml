@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּצְבֹּ֨ר יוֹסֵ֥ף בָּ֛ר כְּ/ח֥וֹל הַ/יָּ֖ם הַרְבֵּ֣ה מְאֹ֑ד עַ֛ד כִּי חָדַ֥ל לִ/סְפֹּ֖ר כִּי אֵ֥ין מִסְפָּֽר־־׃
 translation:
-  text: And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Joseph,' using the traditional English form of the name.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'for there is no number,' an idiom meaning it was beyond counting.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'like the sand of the sea, very much'.
-    reason: previous_rendering
+  text: Joseph stored up grain in very great abundance, like the sand of the sea, until he stopped counting it because it was beyond counting.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּצְבֹּר
   chosen: stored up
@@ -104,9 +94,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.'
-  to: 'And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.'
+  from: And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.
+  to: And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because it was without number''].'
+- timestamp: '2026-11-09T17:45:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Yoseph stored up grain[a], like the sand of the sea, in very great abundance, until he stopped counting[c][b], because there was no number.
+  to: Joseph stored up grain in very great abundance, like the sand of the sea, until he stopped counting it because it was beyond counting.
+  rationale: The earlier awkward-English review rightly integrated the abundance expression with the simile; I preserve that gain rather than the later source-order preference. The recorded explanation of “without number” supports putting “beyond counting” directly in the text.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T08:36:09Z'
@@ -136,3 +133,29 @@ cross_check:
     agree: 1
     minor-issues: 4
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/041/049.job-37639.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:45Z'
+  change_level: refined
+  confidence: high
+  meaning: Joseph accumulates such immense quantities of grain that he stops keeping count.
+  meaning_decisions:
+  - source_phrase: יוֹסֵף
+    prior_rendering: Yoseph
+    new_rendering: Joseph
+    rationale: The recognizable English form follows the standing naming instruction and identifies him consistently with the surrounding verses.
+  - source_phrase: כְּחוֹל הַיָּם הַרְבֵּה מְאֹד
+    prior_rendering: like the sand of the sea, in very great abundance
+    new_rendering: in very great abundance, like the sand of the sea
+    rationale: The arrangement integrates the intensifier with the accumulation while preserving the full force of the biblical simile.
+  - source_phrase: כִּי אֵין מִסְפָּר
+    prior_rendering: because there was no number
+    new_rendering: because it was beyond counting
+    rationale: The idiom explains that the quantity exceeded practical enumeration, not that numbers were unavailable.
+  footnote_kinds: {}
+  history_weighed: The earlier awkward-English review rightly integrated the abundance expression with the simile; I preserve that gain rather than the later source-order preference. The recorded explanation of “without number” supports putting “beyond counting” directly in the text.

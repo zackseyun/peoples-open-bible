@@ -24,14 +24,14 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Since our father has departed to the gods[a], and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews[b],
-  philosophy: optimal-equivalence
+  text: Since our father has departed to the gods[a], we wish the people of our kingdom to attend to Jewish affairs[b] without disturbance.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''has departed to the gods,'' a Hellenistic royal euphemism for death; some translations simplify this to ''has died.'''
-    reason: lexical_alternative
+    text: A royal expression for death that presents the deceased king as joining the gods.
+    reason: cultural_note
   - marker: b
-    text: The final clause is syntactically compressed in Greek and may also be understood more broadly as 'to give attention to Jewish affairs.'
+    text: Or, “to care for the Jews”; the Greek construction is compressed and difficult.
     reason: alternative_reading
 lexical_decisions:
 - source_word: τοῦ πατρὸς ἡμῶν
@@ -115,14 +115,20 @@ revisions:
   from: Since our father has departed to the gods, and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews,
   to: Since our father has departed to the gods, and since we desire that those in the kingdom, being undisturbed, should devote themselves to the affairs of the Jews,
   rationale: 'Revised for more natural and accurate English: changed ''want'' to ''desire,'' ''free from disturbance'' to ''undisturbed,'' and replaced ''turn to the care of the Jews'' with ''should devote themselves to the affairs of the Jews'' to better reflect πρὸς τὴν τῶν Ἰουδαίων ἐπιμέλειαν without awkwardness.'
-
 - timestamp: '2026-05-16T16:22:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Since our father has departed to the gods[a], and since we desire that those in the kingdom, being undisturbed, should devote themselves to the affairs of the Jews[b],'
-  to: 'Since our father has departed to the gods[a], and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews[b],'
-  rationale: 'Restored drafter ''being free from disturbance'' (preserving the chosen explicit phrasing) and ''to turn to the care of the Jews'' (preserving the chosen caring-turn idiom) per chosen renderings.'
+  from: Since our father has departed to the gods[a], and since we desire that those in the kingdom, being undisturbed, should devote themselves to the affairs of the Jews[b],
+  to: Since our father has departed to the gods[a], and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews[b],
+  rationale: Restored drafter 'being free from disturbance' (preserving the chosen explicit phrasing) and 'to turn to the care of the Jews' (preserving the chosen caring-turn idiom) per chosen renderings.
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Since our father has departed to the gods[a], and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews[b],
+  to: Since our father has departed to the gods[a], we wish the people of our kingdom to attend to Jewish affairs[b] without disturbance.
+  rationale: The earlier review usefully preferred “affairs” to the opaque “turn to the care” construction; the automated revert supplies no stronger meaning-based evidence. I retain the difficult source reference to the Jews rather than silently replacing it with the subjects’ own affairs.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -142,3 +148,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/011/023.job-49302.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Antiochus invokes his father’s death and expresses his wish that the people of his kingdom attend to Jewish affairs without disturbance.
+  meaning_decisions:
+  - source_phrase: βουλόμενοι τοὺς ἐκ τῆς βασιλείας ἀπερισπάστως ὄντας γενέσθαι πρὸς τὴν τῶν Ἰουδαίων ἐπιμέλειαν
+    prior_rendering: and since we want those in the kingdom, being free from disturbance, to turn to the care of the Jews
+    new_rendering: we wish the people of our kingdom to attend to Jewish affairs without disturbance
+    rationale: The new wording gives the compressed construction an intelligible English structure while retaining its explicit reference to Jewish affairs and its concern for freedom from disturbance.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The earlier review usefully preferred “affairs” to the opaque “turn to the care” construction; the automated revert supplies no stronger meaning-based evidence. I retain the difficult source reference to the Jews rather than silently replacing it with the subjects’ own affairs.

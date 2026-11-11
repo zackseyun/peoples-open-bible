@@ -4,21 +4,12 @@ source:
   edition: SBLGNT
   text: ἀλλὰ διὰ τοῦτο ἠλεήθην, ἵνα ἐν ἐμοὶ πρώτῳ ἐνδείξηται ⸂Χριστὸς Ἰησοῦς⸃ τὴν ⸀ἅπασαν μακροθυμίαν, πρὸς ὑποτύπωσιν τῶν μελλόντων πιστεύειν ἐπ’ αὐτῷ εἰς ζωὴν αἰώνιον.
 translation:
-  text: But for this reason I received mercy[a], so that in me, as the foremost[d][c][b], Christ Jesus might display all his patience as a pattern for those who were going to believe in him for eternal life.
-  philosophy: optimal-equivalence
+  text: 'But I received mercy for this very reason: so that in me, the worst of sinners[a], Christ Jesus might display the full extent of his patience as an example for those who would believe in him for eternal life.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
+    text: Or, “in me first,” emphasizing Paul as an initial example.
     reason: alternative_reading
-  - marker: b
-    text: Or 'those who would believe in him.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'all his forbearance' or 'all his longsuffering.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'those who were going to believe'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: ἠλεήθην
   chosen: I received mercy
@@ -132,12 +123,18 @@ revisions:
   from: But for this reason I received mercy, so that in me, as the foremost, Christ Jesus might display all his patience as a pattern for those who were going to believe in him for eternal life.
   to: But for this reason I received mercy, so that in me, as the foremost, Messiah Jesus might display all his patience as a pattern for those who were going to believe in him for eternal life.
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
+- timestamp: '2026-11-09T17:05:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But for this reason I received mercy[a], so that in me, as the foremost[d][c][b], Christ Jesus might display all his patience as a pattern for those who were going to believe in him for eternal life.
+  to: 'But I received mercy for this very reason: so that in me, the worst of sinners[a], Christ Jesus might display the full extent of his patience as an example for those who would believe in him for eternal life.'
+  rationale: The earlier review's “would believe” expressed the prospective sense well; the later source-order preference provides no meaning-based reason to reject it. I retain mercy, Christ's patience, and eternal life while clarifying the exemplary role of Paul's case.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:36:35Z'
   unchanged: false
   changes_summary: 'Replaced the colon with a comma for smoother English flow, changed ''Messiah Jesus'' to ''Christ Jesus'' for standard formal rendering of Χριστὸς Ἰησοῦς, and revised ''would believe'' to ''were going to believe'' to more directly reflect τῶν μελλόντων πιστεύειν. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -159,3 +156,34 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_timothy/001/016.job-38880.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:50Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Paul received mercy so that Christ Jesus could display his patience through him as an example for future believers who would receive eternal life.
+  meaning_decisions:
+  - source_phrase: ἐν ἐμοὶ πρώτῳ
+    prior_rendering: in me, as the foremost
+    new_rendering: in me, the worst of sinners
+    rationale: The phrase most naturally recalls Paul's ranking among sinners in verse 15; making the reference explicit preserves the argument that even his case demonstrates Christ's patience.
+  - source_phrase: τὴν ἅπασαν μακροθυμίαν
+    prior_rendering: all his patience
+    new_rendering: the full extent of his patience
+    rationale: This communicates the emphatic fullness of Christ's patient forbearance rather than suggesting a quantity of patience being used up.
+  - source_phrase: πρὸς ὑποτύπωσιν
+    prior_rendering: as a pattern
+    new_rendering: as an example
+    rationale: Paul's experience demonstrates Christ's patience to future believers; “example” avoids suggesting that they must reproduce Paul's conduct or circumstances.
+  - source_phrase: τῶν μελλόντων πιστεύειν
+    prior_rendering: those who were going to believe
+    new_rendering: those who would believe
+    rationale: This preserves futurity relative to Paul's experience in more natural English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review's “would believe” expressed the prospective sense well; the later source-order preference provides no meaning-based reason to reject it. I retain mercy, Christ's patience, and eternal life while clarifying the exemplary role of Paul's case.

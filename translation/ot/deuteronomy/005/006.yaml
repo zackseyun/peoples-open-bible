@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אָֽנֹכִי֙ יְהוָ֣ה אֱלֹהֶ֔י/ךָ אֲשֶׁ֧ר הוֹצֵאתִ֛י/ךָ מֵ/אֶ֥רֶץ מִצְרַ֖יִם מִ/בֵּ֥ית עֲבָדִֽים׃
 translation:
-  text: I am Yahweh your God[a], who brought you from the land of Egypt, from the house of servants.
-  philosophy: optimal-equivalence
+  text: I am Yahweh your God, who brought you out of the land of Egypt, out of the house of slavery[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from the house of slavery' or traditionally 'from the house of bondage.' The Hebrew is literally 'from the house of slaves.'
+    text: Literally, 'house of slaves,' describing Egypt as a place of bondage.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אָֽנֹכִי
@@ -95,14 +95,20 @@ revisions:
   from: I am the LORD your God, who brought you out from the land of Egypt, from the house of slaves.
   to: I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery.
   rationale: Changed 'out from' to the more natural 'out of' in both phrases, and revised 'the house of slaves' to the idiomatic and contextually accurate 'the house of slavery.'
-
 - timestamp: '2026-05-16T06:09:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I am Yahweh your God[a], who brought you out of the land of Egypt, out of the house of slavery.'
-  to: 'I am Yahweh your God[a], who brought you from the land of Egypt, from the house of slaves.'
-  rationale: 'Azure substituted ''house of slavery'' — drafter''s verbatim rejected_alternative for מִבֵּית עֲבָדִים (drafter chose plural noun ''slaves'' for concrete morphology). Also ''out of'' for ''from'' (rejected stylistic).'
+  from: I am Yahweh your God[a], who brought you out of the land of Egypt, out of the house of slavery.
+  to: I am Yahweh your God[a], who brought you from the land of Egypt, from the house of slaves.
+  rationale: Azure substituted 'house of slavery' — drafter's verbatim rejected_alternative for מִבֵּית עֲבָדִים (drafter chose plural noun 'slaves' for concrete morphology). Also 'out of' for 'from' (rejected stylistic).
+- timestamp: '2026-11-09T17:31:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I am Yahweh your God[a], who brought you from the land of Egypt, from the house of servants.
+  to: I am Yahweh your God, who brought you out of the land of Egypt, out of the house of slavery[a].
+  rationale: The April review correctly recognized the bondage idiom, while the later automated revert prioritized the plural noun’s form. I restore the clear liberation sense while preserving the concrete house image and documenting the literal wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +130,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/005/006.job-61405.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:29Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh identifies himself as Israel’s God who brought them out of Egyptian slavery.
+  meaning_decisions:
+  - source_phrase: הוֹצֵאתִיךָ מֵאֶרֶץ מִצְרַיִם
+    prior_rendering: brought you from the land of Egypt
+    new_rendering: brought you out of the land of Egypt
+    rationale: The verb explicitly describes bringing Israel out; restoring 'out' makes the act of deliverance clear.
+  - source_phrase: מִבֵּית עֲבָדִים
+    prior_rendering: from the house of servants
+    new_rendering: out of the house of slavery
+    rationale: The phrase describes Egypt as the place of Israel’s enslavement, not a household occupied by ordinary servants.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The April review correctly recognized the bondage idiom, while the later automated revert prioritized the plural noun’s form. I restore the clear liberation sense while preserving the concrete house image and documenting the literal wording.

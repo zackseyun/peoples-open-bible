@@ -28,12 +28,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 21:1
 translation:
-  text: Three things I hated[a], and four I did not love.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The extant Hebrew line supplied in Zone 1 does not match Sirach 21:1 here; it reads, 'Child, have you sinned? Do so no more, and pray concerning your former sins.' Because of that mismatch, the Greek witness is followed for this verse.
-    reason: textual_variant
+  text: My child, have you sinned? Do not do so again, and pray for forgiveness for your past sins.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Τέκνον
   chosen: Child
@@ -110,14 +106,20 @@ revisions:
   from: Child, have you sinned? Do so no more, and pray concerning your former sins.
   to: Three things I hated, and four I did not love.
   rationale: Replaced the unrelated draft with a direct rendering of the Hebrew, preserving the numerical parallelism and the contrast between 'hated' and 'did not love.'
-
 - timestamp: '2026-05-15T13:54:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Three things I hated[a], and four I did not love.'
-  to: 'Three things I hated[a], and four I did not love.'
+  from: Three things I hated[a], and four I did not love.
+  to: Three things I hated[a], and four I did not love.
   rationale: 'Minor_mismatch: Hebrew is displaced line; drafter chose Greek per documented theological_decision.'
+- timestamp: '2026-11-09T19:06:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Three things I hated[a], and four I did not love.
+  to: My child, have you sinned? Do not do so again, and pray for forgiveness for your past sins.
+  rationale: The automated revision adopted the displaced Hebrew line and left a footnote contradicting the resulting text. The first draft and documented Greek-based decision preserve the chapter’s opening admonition, which I restore in clearer English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +139,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/021/001.job-51529.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The teacher urges his child to stop repeating sin and pray for forgiveness for sins already committed.
+  meaning_decisions:
+  - source_phrase: Τέκνον ... ἥμαρτες ... μὴ προσθῇς μηκέτι ... περὶ τῶν προτέρων σου ... δεήθητι
+    prior_rendering: Three things I hated, and four I did not love.
+    new_rendering: My child, have you sinned? Do not do so again, and pray for forgiveness for your past sins.
+    rationale: The supplied Hebrew numerical saying does not correspond to this verse or its context. The documented Greek wording supplies the opening admonition, with forgiveness expressing the purpose of the prayer concerning past sins.
+  footnote_kinds: {}
+  history_weighed: The automated revision adopted the displaced Hebrew line and left a footnote contradicting the resulting text. The first draft and documented Greek-based decision preserve the chapter’s opening admonition, which I restore in clearer English.

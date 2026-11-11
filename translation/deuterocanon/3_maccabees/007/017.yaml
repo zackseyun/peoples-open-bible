@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'bearing roses.' The Greek epithet ῥοδοφόρον is a descriptive title for Ptolemais, linked to the place's distinctive character.
-    reason: lexical_alternative
+  text: They arrived at Ptolemais, known as “Rose-bearing” because of the nature of the place. The fleet waited for them there for seven days, as they had agreed together.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Παραγενηθέντες
   chosen: When they arrived
@@ -118,14 +114,20 @@ revisions:
   from: When they arrived at Ptolemais, which is called Rose-bearing because of the character of the place, where the fleet waited for them for seven days by their common decision,
   to: When they arrived at Ptolemais, which is called Rose-bearing because of the character of the place, where the fleet waited for them for seven days by their common decision,
   rationale: Changed 'character of the place' to 'nature of the place' for more natural and accurate rendering of ἰδιότητα, while preserving the formal structure and all source elements.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,'
-  to: 'When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,'
+  from: When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,
+  to: When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''because of the character of the place''].'
+- timestamp: '2026-11-09T18:57:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When they arrived at Ptolemais[a], which is called Rose-bearing because of the nature of the place, where the fleet waited for them for seven days by their common decision,
+  to: They arrived at Ptolemais, known as “Rose-bearing” because of the nature of the place. The fleet waited for them there for seven days, as they had agreed together.
+  rationale: The earlier revisions differ only over “character” and “nature,” neither of which establishes a more specific explanation of the epithet. The descriptive name and seven-day duration remain intact, while the Greek sentence structure is recast as complete English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +147,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/007/017.job-49700.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:03Z'
+  change_level: refined
+  confidence: high
+  meaning: They arrive at Ptolemais, known as Rose-bearing, where the fleet waits seven days in accordance with their shared decision.
+  meaning_decisions:
+  - source_phrase: Παραγενηθέντες δὲ εἰς Πτολεμαΐδα ... ἐν ᾗ προσέμεινεν αὐτοὺς ὁ στόλος
+    prior_rendering: When they arrived at Ptolemais ... where the fleet waited for them
+    new_rendering: They arrived at Ptolemais ... The fleet waited for them there
+    rationale: Complete English sentences convey the arrival and the fleet's waiting without leaving this verse as a suspended clause.
+  - source_phrase: κατὰ κοινὴν αὐτῶν βουλήν
+    prior_rendering: by their common decision
+    new_rendering: as they had agreed together
+    rationale: This expresses the collective decision in natural English while retaining the people's role in determining the delay.
+  footnote_kinds: {}
+  history_weighed: The earlier revisions differ only over “character” and “nature,” neither of which establishes a more specific explanation of the epithet. The descriptive name and seven-day duration remain intact, while the Greek sentence structure is recast as complete English.

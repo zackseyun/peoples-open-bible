@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἢ τίς ⸀ἐστιν ἐξ ὑμῶν ἄνθρωπος, ὃν ⸀αἰτήσει ὁ υἱὸς αὐτοῦ ἄρτον— μὴ λίθον ἐπιδώσει αὐτῷ;
 translation:
-  text: Or what man is there among you whom his son asks for bread[a]—he will not give him a stone, will he?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more inclusively in English idiom, 'what person is there among you'; Greek has 'man' in a representative sense.
-    reason: lexical_alternative
+  text: Or if your son asks you for bread, would any of you give him a stone?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἢ
   chosen: Or
@@ -108,13 +104,12 @@ revisions:
   from: Or what man is there among you whose son will ask him for bread, and he will give him a stone?
   to: Or what man is there among you whose son will ask him for bread, and he will give him a stone?
   rationale: Changed 'will ask' to 'asks' to better reflect the Greek subjunctive in a general present-condition statement, while preserving the formal and natural sense.
-
 - timestamp: '2026-05-18T03:00:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Or what man is there among you whose son asks him for bread[a], and he will give him a stone?'
-  to: 'Or what man is there among you whose son asks him for bread[a], and he will give him a stone?'
+  from: Or what man is there among you whose son asks him for bread[a], and he will give him a stone?
+  to: Or what man is there among you whose son asks him for bread[a], and he will give him a stone?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will ask''].'
 - timestamp: '2026-08-27T21:08:39Z'
   adjudicator: source-audit
@@ -125,6 +120,13 @@ revisions:
   from: Or what man is there among you whose son asks him for bread[a], and he will give him a stone?
   to: Or what man is there among you whom his son asks for bread[a]—he will not give him a stone, will he?
   rationale: The draft flattens the Greek anacoluthon (marked by the dash in SBLGNT) by adding an unsupported "and" to connect the clauses. It also loses the explicit negative expectation of the rhetorical question introduced by `μὴ` (`μὴ λίθον ἐπιδώσει αὐτῷ;`), which BDAG explicitly cites as expecting a negative answer (BDAG, μή 1.b.α). The following verse (7:10) correctly translates the exact same construction as "he will not give him a snake, will he?". Restoring "whom" for the accusative relative pronoun `ὃν` allows the English to match the Greek syntax and rhetorical structure perfectly while resolving the cross-verse inconsistency.
+- timestamp: '2026-11-09T20:35:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Or what man is there among you whom his son asks for bread[a]—he will not give him a stone, will he?
+  to: Or if your son asks you for bread, would any of you give him a stone?
+  rationale: The latest audit rightly restored the question's negative expectation, and that gain is retained. Its source-shaped 'whom' construction is replaced with natural English; no MAINTAINER revision is recorded, and the earlier inclusivity footnote is unnecessary with 'any of you.'
 cross_check:
   status: moderate_agreement
   agreement: 0.8
@@ -146,3 +148,25 @@ cross_check:
   verdict_counts:
     major-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/matthew/007/009.job-27549.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:35:45Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus asks his hearers to recognize that none of them would answer a son's request for bread by giving him a stone.
+  meaning_decisions:
+  - source_phrase: τίς ἐστιν ἐξ ὑμῶν ἄνθρωπος, ὃν αἰτήσει ὁ υἱὸς αὐτοῦ ἄρτον
+    prior_rendering: what man is there among you whom his son asks for bread
+    new_rendering: if your son asks you for bread, would any of you
+    rationale: Restructuring the representative question into direct address conveys the same parent-and-son situation without the awkward English relative clause. The general situation is naturally expressed with 'asks,' rather than a predictive future.
+  - source_phrase: μὴ λίθον ἐπιδώσει αὐτῷ;
+    prior_rendering: he will not give him a stone, will he?
+    new_rendering: would any of you give him a stone?
+    rationale: The English rhetorical question naturally expects 'No,' preserving the force of μή without reproducing the Greek's interrupted construction.
+  footnote_kinds: {}
+  history_weighed: The latest audit rightly restored the question's negative expectation, and that gain is retained. Its source-shaped 'whom' construction is replaced with natural English; no MAINTAINER revision is recorded, and the earlier inclusivity footnote is unnecessary with 'any of you.'

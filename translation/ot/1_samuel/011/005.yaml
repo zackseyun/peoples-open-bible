@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הִנֵּ֣ה שָׁא֗וּל בָּ֣א אַחֲרֵ֤י הַ/בָּקָר֙ מִן הַ/שָּׂדֶ֔ה וַ/יֹּ֣אמֶר שָׁא֔וּל מַה לָּ/עָ֖ם כִּ֣י יִבְכּ֑וּ וַ/יְסַ֨פְּרוּ ל֔/וֹ אֶת דִּבְרֵ֖י אַנְשֵׁ֥י יָבֵֽישׁ־־־־׃
 translation:
-  text: And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “following the oxen.” The Hebrew phrase אַחֲרֵי הַבָּקָר can be understood as Saul coming along after the bovines from the field.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “the message of the men of Jabesh.” Literally, “the words of the men of Jabesh.”
-    reason: lexical_alternative
+  text: Just then Saul was coming in from the field, following the cattle. He asked, “What is troubling the people? Why are they weeping?” They told him what the men of Jabesh had said.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהִנֵּה
   chosen: And behold
@@ -91,14 +84,20 @@ revisions:
   from: And behold, Saul was coming in from the field behind the cattle, and Saul said, “What is wrong with the people, that they are weeping?” And they told him the words of the men of Jabesh.
   to: And behold, Saul was coming in from the field behind the cattle, and Saul said, “What is wrong with the people, that they are weeping?” And they told him the words of the men of Jabesh.
   rationale: Changed 'coming in from the field' to 'coming from the field' for closer alignment with the source; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.'
-  to: 'And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.'
+  from: And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.
+  to: And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was coming in''].'
+- timestamp: '2026-11-09T17:22:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And behold[a], Saul was coming from the field behind the cattle, and Saul said, “What is wrong with the people[b], that they are weeping?” And they told him the words of the men of Jabesh.
+  to: Just then Saul was coming in from the field, following the cattle. He asked, “What is troubling the people? Why are they weeping?” They told him what the men of Jabesh had said.
+  rationale: The lexical record rightly preserves the ongoing arrival and Saul’s position behind the cattle. The recorded passes chiefly debated surface alignment, so I retain their concrete scene while making the question and report natural English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +120,33 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/011/005.job-58982.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:51Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul returns from the field behind his cattle, asks why the people are weeping, and hears the report from Jabesh.
+  meaning_decisions:
+  - source_phrase: וְהִנֵּה שָׁאוּל בָּא
+    prior_rendering: And behold, Saul was coming
+    new_rendering: Just then Saul was coming in
+    rationale: The scene-setting construction draws attention to Saul’s arrival during the lament; contemporary narrative English can carry that force without “behold.”
+  - source_phrase: אַחֲרֵי הַבָּקָר
+    prior_rendering: behind the cattle
+    new_rendering: following the cattle
+    rationale: This makes the movement clear while retaining the concrete picture of Saul returning behind the animals.
+  - source_phrase: מַה לָעָם כִּי יִבְכּוּ
+    prior_rendering: What is wrong with the people, that they are weeping?
+    new_rendering: What is troubling the people? Why are they weeping?
+    rationale: Saul asks about the cause of their distress, not what is defective about the people.
+  - source_phrase: אֶת דִּבְרֵי אַנְשֵׁי יָבֵישׁ
+    prior_rendering: the words of the men of Jabesh
+    new_rendering: what the men of Jabesh had said
+    rationale: The phrase refers to the content of the message already delivered.
+  footnote_kinds: {}
+  history_weighed: The lexical record rightly preserves the ongoing arrival and Saul’s position behind the cattle. The recorded passes chiefly debated surface alignment, so I retain their concrete scene while making the question and report natural English.

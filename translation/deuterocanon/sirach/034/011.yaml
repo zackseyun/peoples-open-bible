@@ -26,15 +26,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 34:11
 translation:
-  text: I have seen many things in my wandering, and my understanding is more than my words.[b][a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The extant Cairo Geniza Hebrew line supplied here does not match this verse's sense and appears to reflect displaced material; the translation therefore follows the Greek witness for Sirach 34:11.
-    reason: textual_variant
-  - marker: b
-    text: Or 'in my error,' 'in my travels,' or 'in my straying' for 'in my wandering.'
-    reason: lexical_alternative
+  text: I have seen many things in my travels, and I understand more than I can put into words.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πολλὰ ἑόρακα
   chosen: I have seen many things
@@ -105,14 +98,20 @@ revisions:
   from: I have seen many things in my wandering, and my understanding is more than my words.
   to: He who gives to the poor lends to Yahweh, and he will repay him for his good deed.
   rationale: 'Replaced the unrelated draft with a translation matching the Hebrew: rendered מלוה יהוה as ''lends to Yahweh,'' נותן לאביון as ''gives to the poor,'' and מי בעל גמולות כי אם הוא as ''he will repay him for his good deed.'''
-
 - timestamp: '2026-05-15T14:13:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He who gives to the poor lends to Yahweh[b][a], and he will repay him for his good deed.'
-  to: 'I have seen many things in my wandering, and my understanding is more than my words.[b][a]'
+  from: He who gives to the poor lends to Yahweh[b][a], and he will repay him for his good deed.
+  to: I have seen many things in my wandering, and my understanding is more than my words.[b][a]
   rationale: 'Major_mismatch: drafter chose Greek per documented decision; azure rendered displaced Hebrew.'
+- timestamp: '2026-11-09T19:08:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I have seen many things in my wandering, and my understanding is more than my words.[b][a]
+  to: I have seen many things in my travels, and I understand more than I can put into words.
+  rationale: The history establishes the Greek autobiographical saying as the operative text rather than the displaced Hebrew material about giving. Its own rationale identifies both travel and understanding beyond expression, and the new wording carries those conclusions directly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +131,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/034/011.job-51925.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The author has learned much through travel, more than he can express in words.
+  meaning_decisions:
+  - source_phrase: ἐν τῇ ἀποπλανήσει μου
+    prior_rendering: in my wandering
+    new_rendering: in my travels
+    rationale: The autobiographical statement continues the preceding account of knowledge gained through travel, not a confession of moral error.
+  - source_phrase: πλείονα τῶν λόγων μου σύνεσίς μου
+    prior_rendering: my understanding is more than my words
+    new_rendering: I understand more than I can put into words
+    rationale: The comparison concerns understanding exceeding its verbal expression, which the new wording states naturally.
+  footnote_kinds: {}
+  history_weighed: The history establishes the Greek autobiographical saying as the operative text rather than the displaced Hebrew material about giving. Its own rationale identifies both travel and understanding beyond expression, and the new wording carries those conclusions directly.

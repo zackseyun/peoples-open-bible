@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὁμοίως δὲ καὶ Ἰάκωβον καὶ Ἰωάννην υἱοὺς Ζεβεδαίου, οἳ ἦσαν κοινωνοὶ τῷ Σίμωνι. καὶ εἶπεν πρὸς τὸν Σίμωνα ⸀ὁ Ἰησοῦς· Μὴ φοβοῦ· ἀπὸ τοῦ νῦν ἀνθρώπους ἔσῃ ζωγρῶν.
 translation:
-  text: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid[b]; from now on you will be catching people alive[a].”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “catching men alive.” The Greek uses a term meaning to capture or take alive, preserving a life-giving nuance distinct from the more familiar “fishers of men” in Matthew 4:19 and Mark 1:17.
-    reason: lexical_alternative
-  - marker: b
-    text: Compare Matthew 4:19 and Mark 1:17, where Jesus says, “I will make you fishers of men.” Luke’s wording here is distinct and should not be flattened into the parallel phrasing.
-    reason: cross_reference
+  text: James and John, Zebedee’s sons and Simon’s partners, were just as astonished. Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁμοίως δὲ καὶ
   chosen: and likewise also
@@ -101,13 +94,12 @@ revisions:
   from: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”
   to: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid; from now on you will be catching people.”
   rationale: Removed 'alive' from 'catching people alive' to avoid overtranslating ζωγρῶν in the main text; the sense can be handled in a footnote. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and likewise also James and John[a], Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid[b]; from now on you will be catching people.”'
-  to: 'and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”'
+  from: and likewise also James and John[a], Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid[b]; from now on you will be catching people.”
+  to: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''catching people alive''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -117,6 +109,13 @@ revisions:
   from: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”
   to: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid[b]; from now on you will be catching people alive[a].”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('catching people alive') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:11:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and likewise also James and John, Zebedee’s sons, who were partners with Simon. And Jesus said to Simon, “Do not be afraid[b]; from now on you will be catching people alive[a].”
+  to: James and John, Zebedee’s sons and Simon’s partners, were just as astonished. Jesus said to Simon, “Do not be afraid; from now on you will be catching people alive.”
+  rationale: The automated review removed 'alive,' and the later automated revert restored it; the decisive evidence is that ζωγρέω means taking alive. I therefore retain Luke’s distinctive wording rather than harmonizing it with 'fishers of men,' and omit notes whose point the main text already carries.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -139,3 +138,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/005/010.job-27702.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: James and John share the astonishment, and Jesus reassures Simon that his work from now on will be catching people alive.
+  meaning_decisions:
+  - source_phrase: ὁμοίως δὲ καὶ Ἰάκωβον καὶ Ἰωάννην υἱοὺς Ζεβεδαίου, οἳ ἦσαν κοινωνοὶ τῷ Σίμωνι
+    prior_rendering: and likewise also James and John, Zebedee’s sons, who were partners with Simon
+    new_rendering: James and John, Zebedee’s sons and Simon’s partners, were just as astonished
+    rationale: The Greek carries forward the preceding verse’s statement of astonishment without repeating its verb. Supplying the understood predicate makes this verse a natural English sentence while preserving the comparison and both relationships.
+  footnote_kinds: {}
+  history_weighed: The automated review removed 'alive,' and the later automated revert restored it; the decisive evidence is that ζωγρέω means taking alive. I therefore retain Luke’s distinctive wording rather than harmonizing it with 'fishers of men,' and omit notes whose point the main text already carries.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אֶל הַ/זְּקֵנִ֤ים אָמַר֙ שְׁבוּ לָ֣/נוּ בָ/זֶ֔ה עַ֥ד אֲשֶׁר נָשׁ֖וּב אֲלֵי/כֶ֑ם וְ/הִנֵּ֨ה אַהֲרֹ֤ן וְ/חוּר֙ עִמָּ/כֶ֔ם מִי בַ֥עַל דְּבָרִ֖ים יִגַּ֥שׁ אֲלֵ/הֶֽם־־־־׃
 translation:
-  text: And to the elders he said[a], “Wait here for us until we return to you. And look, Aaron and Hur are with you. Whoever has a dispute, let him approach them.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “Whoever has a case, let him approach them.”
-    reason: lexical_alternative
+  text: He said to the elders, “Wait here for us until we return to you. Look, Aaron and Hur are with you. Whoever has a dispute should go to them.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַזְּקֵנִים
   chosen: the elders
@@ -105,14 +101,20 @@ revisions:
   from: And to the elders he said, “Wait here for us until we return to you. And look, Aaron and Hur are with you. Whoever has a dispute, let him approach them.”
   to: And to the elders he said, “Wait here for us until we return to you. And behold, Aaron and Hur are with you. Whoever has a matter, let him approach them.”
   rationale: Replaced 'look' with the more formal 'behold' for register, and 'has a dispute' with 'has a matter' to more closely reflect the Hebrew expression בעל דברים.
-
 - timestamp: '2026-05-16T02:54:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And to the elders he said[a], “Wait here for us until we return to you. And behold, Aaron and Hur are with you. Whoever has a matter, let him approach them.”'
-  to: 'And to the elders he said[a], “Wait here for us until we return to you. And look, Aaron and Hur are with you. Whoever has a dispute, let him approach them.”'
-  rationale: 'Azure substituted ''behold'' (drafter''s explicit rejected alternative for וְהִנֵּה — drafter chose ''look'' as non-archaic) and ''has a matter'' for drafter''s chosen ''has a dispute'' (idiomatic legal force of בַעַל דְּבָרִים).'
+  from: And to the elders he said[a], “Wait here for us until we return to you. And behold, Aaron and Hur are with you. Whoever has a matter, let him approach them.”
+  to: And to the elders he said[a], “Wait here for us until we return to you. And look, Aaron and Hur are with you. Whoever has a dispute, let him approach them.”
+  rationale: Azure substituted 'behold' (drafter's explicit rejected alternative for וְהִנֵּה — drafter chose 'look' as non-archaic) and 'has a matter' for drafter's chosen 'has a dispute' (idiomatic legal force of בַעַל דְּבָרִים).
+- timestamp: '2026-11-09T17:35:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And to the elders he said[a], “Wait here for us until we return to you. And look, Aaron and Hur are with you. Whoever has a dispute, let him approach them.”
+  to: He said to the elders, “Wait here for us until we return to you. Look, Aaron and Hur are with you. Whoever has a dispute should go to them.”
+  rationale: The automated reversal restored the contextually precise 'dispute' after a source-transparent change to 'matter'; I preserve that gain and retain 'Look.' I only naturalize the sentence structure and the direction to seek Aaron and Hur.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +134,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/024/014.job-62883.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:20Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses tells the elders to wait for his and Joshua's return and directs anyone with a dispute to Aaron and Hur.
+  meaning_decisions:
+  - source_phrase: יִגַּשׁ אֲלֵהֶם
+    prior_rendering: let him approach them
+    new_rendering: should go to them
+    rationale: This is an instruction to bring a dispute to the designated leaders, not merely permission to approach; the generic subject does not establish a male-only restriction.
+  footnote_kinds: {}
+  history_weighed: The automated reversal restored the contextually precise 'dispute' after a source-transparent change to 'matter'; I preserve that gain and retain 'Look.' I only naturalize the sentence structure and the direction to seek Aaron and Hur.

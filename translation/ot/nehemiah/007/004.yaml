@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/הָ/עִ֞יר רַחֲבַ֤ת יָדַ֨יִם֙ וּ/גְדוֹלָ֔ה וְ/הָ/עָ֥ם מְעַ֖ט בְּ/תוֹכָ֑/הּ וְ/אֵ֥ין בָּתִּ֖ים בְּנוּיִֽם׃
 translation:
-  text: The city was wide and large[a], but the people within it were few, and no houses had been built.
-  philosophy: optimal-equivalence
+  text: The city was large and spacious, but few people lived in it, and houses had not yet been rebuilt[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'And the city was broad and large ... and the people were few in it, and there were no houses built.' The Hebrew is more formally coordinate; the main text smooths the syntax into natural English while preserving the sense.
+    text: Literally, 'there were no houses built'; the context concerns restoring the city after its destruction.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְהָעִיר
@@ -17,7 +17,7 @@ lexical_decisions:
   - And the city
   - Now the city
   lexicon: HALOT
-  rationale: "הָעִיר is straightforwardly 'the city.' The prefixed conjunction וְ can be rendered simply 'and,' but in English narrative flow 'now' naturally signals a descriptive aside following the preceding context without overstating coordination. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'הָעִיר is straightforwardly ''the city.'' The prefixed conjunction וְ can be rendered simply ''and,'' but in English narrative flow ''now'' naturally signals a descriptive aside following the preceding context without overstating coordination. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: רַחֲבַת יָדַיִם
   chosen: wide
   alternatives:
@@ -75,13 +75,12 @@ revisions:
   from: Now the city was wide and large, but the people within it were few, and no houses had been rebuilt.
   to: Now the city was wide and large, but the people within it were few, and no houses had been rebuilt.
   rationale: Changed 'had been rebuilt' to 'had been built' for closer lexical accuracy to the Hebrew, which simply says 'built' without the 're-' prefix.
-
 - timestamp: '2026-05-18T02:54:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the city was wide and large[a], but the people within it were few, and no houses had been built.'
-  to: 'Now the city was wide and large[a], but the people within it were few, and no houses had been built.'
+  from: Now the city was wide and large[a], but the people within it were few, and no houses had been built.
+  to: Now the city was wide and large[a], but the people within it were few, and no houses had been built.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and no houses had been rebuilt''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -90,6 +89,13 @@ revisions:
   from: Now the city was wide and large[a], but the people within it were few, and no houses had been built.
   to: The city was wide and large[a], but the people within it were few, and no houses had been built.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T19:25:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The city was wide and large[a], but the people within it were few, and no houses had been built.
+  to: The city was large and spacious, but few people lived in it, and houses had not yet been rebuilt[a].
+  rationale: The first draft and lexical rationale understood the houses as awaiting restoration, while the later review preferred 'built' for lexical closeness. The surrounding context supports restoring 'rebuilt,' with the compressed literal statement preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +115,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/007/004.job-42548.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:25:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem occupied a large area but remained sparsely populated, with its residential rebuilding still unfinished.
+  meaning_decisions:
+  - source_phrase: רַחֲבַת יָדַיִם וּגְדוֹלָה
+    prior_rendering: wide and large
+    new_rendering: large and spacious
+    rationale: The Hebrew idiom describes the city’s extensive area, naturally expressed by 'large and spacious.'
+  - source_phrase: וְאֵין בָּתִּים בְּנוּיִם
+    prior_rendering: and no houses had been built
+    new_rendering: and houses had not yet been rebuilt
+    rationale: The postexilic setting and the existing houses mentioned in verse 3 point to residential restoration still awaiting completion, rather than an absolute absence of houses.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical rationale understood the houses as awaiting restoration, while the later review preferred 'built' for lexical closeness. The surrounding context supports restoring 'rebuilt,' with the compressed literal statement preserved in a note.

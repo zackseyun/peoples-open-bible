@@ -15,15 +15,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'seeing the acute affliction that had seized him.' The Greek describes a sudden severe condition without specifying its exact nature.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'fearing lest even the living/life should fail.' That is, they feared he might die.
-    reason: lexical_alternative
+  text: So his friends and bodyguards saw the severe punishment that had overtaken him and feared that he might even die.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅθεν
   chosen: Therefore
@@ -112,14 +105,20 @@ revisions:
   from: Therefore his friends and bodyguards, seeing the sharp distress that had come upon him, hurried to set matters straight, fearing that even his life might fail him,
   to: Therefore his friends and bodyguards, seeing the sharp distress that had come upon him, hurried to set matters straight, fearing that even his life might fail him.
   rationale: Changed 'sharp distress' to 'acute distress' for more natural formal English, and simplified 'might fail him' to 'might fail' to reflect the Greek more directly.
-
 - timestamp: '2026-05-16T19:52:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.'
-  to: 'Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.'
-  rationale: 'Restored drafter ''the sharp distress'' (preserving the chosen rendering) and ''that even his life might fail him'' (preserving the chosen explicit pronoun) per chosen renderings.'
+  from: Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.
+  to: Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.
+  rationale: Restored drafter 'the sharp distress' (preserving the chosen rendering) and 'that even his life might fail him' (preserving the chosen explicit pronoun) per chosen renderings.
+- timestamp: '2026-11-09T18:55:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore his friends and bodyguards[a], seeing the acute distress that had come upon him, hurried to set matters straight[b], fearing that even his life might fail.
+  to: So his friends and bodyguards saw the severe punishment that had overtaken him and feared that he might even die.
+  rationale: The earlier history refined the description of distress but retained a grammatical misreading of εὔθυναν as an attendants’ action. The source syntax requires removing 'hurried to set matters straight'; their actual rescue action belongs to the following verse.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -139,3 +138,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/002/022.job-49529.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:38Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king’s friends and bodyguards recognize the severity of the punishment that has overtaken him and fear that he may die.
+  meaning_decisions:
+  - source_phrase: ὀξεῖαν ἰδόντες τὴν καταλαβοῦσαν αὐτὸν εὔθυναν
+    prior_rendering: seeing the acute distress that had come upon him, hurried to set matters straight
+    new_rendering: saw the severe punishment that had overtaken him
+    rationale: Here εὔθυναν is the accusative noun modified by 'severe' and governed by 'seeing,' not a finite verb describing corrective action by the attendants; the prior rendering adds an action absent from this verse.
+  - source_phrase: φοβούμενοι μὴ καὶ τὸ ζῆν ἐκλείπῃ
+    prior_rendering: fearing that even his life might fail
+    new_rendering: feared that he might even die
+    rationale: The expression means that his life might cease; direct English conveys their fear without an obscure idiom, and the participle becomes a natural finite clause.
+  footnote_kinds: {}
+  history_weighed: The earlier history refined the description of distress but retained a grammatical misreading of εὔθυναν as an attendants’ action. The source syntax requires removing 'hurried to set matters straight'; their actual rescue action belongs to the following verse.

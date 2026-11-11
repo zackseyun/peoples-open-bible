@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ὁ δὲ εἶπεν αὐτῷ· Τί με ⸂ἐρωτᾷς περὶ τοῦ ἀγαθοῦ; εἷς ἐστιν ὁ ἀγαθός⸃· εἰ δὲ θέλεις ⸂εἰς τὴν ζωὴν εἰσελθεῖν⸃, ⸀τήρησον τὰς ἐντολάς.
 translation:
-  text: And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”
-  philosophy: optimal-equivalence
+  text: Jesus replied, “Why do you ask me about what is good[a]? There is only one who is good. But if you want to enter life, keep the commandments.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Some manuscripts and the parallel accounts read, 'Why do you call me good? No one is good except one—God.' Matthew's SBLGNT text instead reads, 'Why do you ask me about what is good? One is the good one.'
+    text: Some manuscripts read, “Why do you call me good? No one is good except God alone.”
     reason: textual_variant
-  - marker: b
-    text: Or more idiomatically, 'There is one who is good.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Τί με ἐρωτᾷς περὶ τοῦ ἀγαθοῦ
   chosen: Why do you ask me about what is good?
@@ -85,14 +82,20 @@ revisions:
   from: And he said to him, “Why do you ask me about what is good? One is the good one. But if you want to enter into life, keep the commandments.”
   to: And he said to him, “Why do you ask me about what is good? One is the good one. But if you want to enter into life, keep the commandments.”
   rationale: Revised 'One is the good one' to the more natural and accurate 'One is good,' which better reflects the Greek without awkward literalism. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:01:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”'
-  to: 'And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”'
+  from: And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”
+  to: And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''One is the good one''].'
+- timestamp: '2026-11-09T17:14:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to him[a], “Why do you ask me about what is good? One is good. But if you want to enter into life[b], keep the commandments.”
+  to: Jesus replied, “Why do you ask me about what is good[a]? There is only one who is good. But if you want to enter life, keep the commandments.”
+  rationale: The history consistently distinguishes Matthew's question about what is good from the parallel question about calling Jesus good. I preserve that distinction while replacing the awkward isolated statement about 'One' with a clear English sentence.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +118,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/019/017.job-57187.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:50Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus directs the man to God's goodness and tells him to keep the commandments if he wants to enter life.
+  meaning_decisions:
+  - source_phrase: εἷς ἐστιν ὁ ἀγαθός
+    prior_rendering: One is good.
+    new_rendering: There is only one who is good.
+    rationale: Expresses the force of the statement in natural English without importing the different wording of the parallel accounts.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The history consistently distinguishes Matthew's question about what is good from the parallel question about calling Jesus good. I preserve that distinction while replacing the awkward isolated statement about 'One' with a clear English sentence.

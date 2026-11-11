@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/יַּ֣עַל הָֽ/אַרְבֶּ֗ה עַ֚ל כָּל אֶ֣רֶץ מִצְרַ֔יִם וַ/יָּ֕נַח בְּ/כֹ֖ל גְּב֣וּל מִצְרָ֑יִם כָּבֵ֣ד מְאֹ֔ד לְ֠/פָנָי/ו לֹא הָ֨יָה כֵ֤ן אַרְבֶּה֙ כָּמֹ֔/הוּ וְ/אַחֲרָ֖י/ו לֹ֥א יִֽהְיֶה כֵּֽן־־־׃
 translation:
-  text: And the locusts came up over all the land of Egypt and settled in every territory of Egypt[a]—an extremely severe swarm. never before had there been locusts like it, nor will there be again after it.
-  philosophy: optimal-equivalence
+  text: The locusts spread over the whole land of Egypt and settled throughout its territory—an immense swarm[a]. Never before had there been a swarm like it, nor will there ever be again.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'very heavy.' The expression describes the locust invasion as exceptionally weighty or severe.
+    text: Literally, “very heavy,” describing the swarm’s density and severity.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיַּעַל
@@ -98,14 +98,20 @@ revisions:
   from: And the locusts came up over all the land of Egypt and settled in every territory of Egypt—an extremely severe swarm. Never before had there been locusts like it, nor will there be again after it.
   to: And the locusts came up over all the land of Egypt and settled within all the territory of Egypt, very severe; never before had there been locusts like it, nor will there be again after it.
   rationale: Replaced 'in every territory' with 'within all the territory' to better reflect the singular collective noun, and changed 'an extremely severe swarm' to 'very severe' to match the Hebrew wording without adding 'swarm,' which is not explicit in the source.
-
 - timestamp: '2026-05-15T10:54:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the locusts came up over all the land of Egypt and settled within all the territory of Egypt[a], very severe; never before had there been locusts like it, nor will there be again after it.'
-  to: 'And the locusts came up over all the land of Egypt and settled in every territory of Egypt[a]—an extremely severe swarm. never before had there been locusts like it, nor will there be again after it.'
-  rationale: 'Restored distributive ''every territory'' and explicit ''swarm'' noun.'
+  from: And the locusts came up over all the land of Egypt and settled within all the territory of Egypt[a], very severe; never before had there been locusts like it, nor will there be again after it.
+  to: And the locusts came up over all the land of Egypt and settled in every territory of Egypt[a]—an extremely severe swarm. never before had there been locusts like it, nor will there be again after it.
+  rationale: Restored distributive 'every territory' and explicit 'swarm' noun.
+- timestamp: '2026-11-09T17:34:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the locusts came up over all the land of Egypt and settled in every territory of Egypt[a]—an extremely severe swarm. never before had there been locusts like it, nor will there be again after it.
+  to: The locusts spread over the whole land of Egypt and settled throughout its territory—an immense swarm[a]. Never before had there been a swarm like it, nor will there ever be again.
+  rationale: The earlier review usefully clarified the singular territorial expression, while the revert rightly retained an explicit collective noun. I combine those gains and preserve the unmatched-before-and-after claim without adding a limitation absent from the verse.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +131,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/010/014.job-62514.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An unmatched locust swarm spreads and settles throughout Egypt, with no comparable swarm before it or afterward.
+  meaning_decisions:
+  - source_phrase: וַיַּעַל הָאַרְבֶּה עַל כָּל אֶרֶץ מִצְרַיִם
+    prior_rendering: And the locusts came up over all the land of Egypt
+    new_rendering: The locusts spread over the whole land of Egypt
+    rationale: The clause describes the invasion extending across Egypt, fulfilling the preceding command.
+  - source_phrase: בְּכֹל גְּבוּל מִצְרָיִם
+    prior_rendering: in every territory of Egypt
+    new_rendering: throughout its territory
+    rationale: The singular territorial expression denotes Egypt’s entire domain, not a set of separately identified territories.
+  - source_phrase: כָּבֵד מְאֹד
+    prior_rendering: an extremely severe swarm
+    new_rendering: an immense swarm
+    rationale: The surrounding comparisons and the covering of the land emphasize the swarm’s extraordinary mass; the note retains the source’s language of weight and severity.
+  - source_phrase: לְפָנָיו לֹא הָיָה כֵן אַרְבֶּה כָּמֹהוּ וְאַחֲרָיו לֹא יִהְיֶה כֵּן
+    prior_rendering: never before had there been locusts like it, nor will there be again after it
+    new_rendering: Never before had there been a swarm like it, nor will there ever be again
+    rationale: The comparison concerns the collective invasion, not a distinctive kind of individual locust.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review usefully clarified the singular territorial expression, while the revert rightly retained an explicit collective noun. I combine those gains and preserve the unmatched-before-and-after claim without adding a limitation absent from the verse.

@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אָבְלָ֣ה יְהוּדָ֔ה וּ/שְׁעָרֶ֥י/הָ אֻמְלְל֖וּ קָדְר֣וּ לָ/אָ֑רֶץ וְ/צִוְחַ֥ת יְרוּשָׁלִַ֖ם עָלָֽתָה׃
 translation:
-  text: Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.
-  philosophy: optimal-equivalence
+  text: Judah mourns, and her gates languish; her people sit on the ground in mourning[a], and Jerusalem’s cry rises.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'are dark to the ground' / 'grow black on the ground.' The Hebrew verb can denote becoming dark, often in mourning imagery.
+    text: Literally, “they are dark to the ground,” an image of mourning and abasement.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אָבְלָה
@@ -91,14 +91,20 @@ revisions:
   from: Judah mourns, and her gates languish; they sit in darkness on the ground, and the cry of Jerusalem goes up.
   to: Judah mourns, and her gates languish; they sit in darkness on the ground, and the cry of Jerusalem goes up.
   rationale: Replaced 'they sit in darkness' with 'they grow dark' to more closely reflect קָדְרוּ ('they are dark/grow dark') without adding the idea of sitting, while preserving the formal tone and flow.
-
 - timestamp: '2026-05-18T02:56:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.'
-  to: 'Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.'
+  from: Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.
+  to: Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sit in darkness''].'
+- timestamp: '2026-11-09T17:55:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Judah mourns[a], and her gates languish; they grow dark on the ground, and the cry of Jerusalem goes up.
+  to: Judah mourns, and her gates languish; her people sit on the ground in mourning[a], and Jerusalem’s cry rises.
+  rationale: The history contrasts the first draft’s mourning posture with the later, more literal “grow dark.” I recover the first draft’s contextual sense while identifying the people represented by the gates.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -118,3 +124,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/014/002.job-67409.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:55:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Judah’s people languish in mourning, and Jerusalem’s cry of distress rises.
+  meaning_decisions:
+  - source_phrase: וּשְׁעָרֶיהָ אֻמְלְלוּ קָדְרוּ לָאָרֶץ
+    prior_rendering: and her gates languish; they grow dark on the ground
+    new_rendering: and her gates languish; her people sit on the ground in mourning
+    rationale: The gates represent the city’s public life and people, not buildings changing color; making the mourners explicit conveys the darkened, humbled state depicted by the Hebrew.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history contrasts the first draft’s mourning posture with the later, more literal “grow dark.” I recover the first draft’s contextual sense while identifying the people represented by the gates.

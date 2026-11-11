@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἀλλ’ οὐχ ὡς τὸ παράπτωμα, οὕτως καὶ τὸ χάρισμα· εἰ γὰρ τῷ τοῦ ἑνὸς παραπτώματι οἱ πολλοὶ ἀπέθανον, πολλῷ μᾶλλον ἡ χάρις τοῦ θεοῦ καὶ ἡ δωρεὰ ἐν χάριτι τῇ τοῦ ἑνὸς ἀνθρώπου Ἰησοῦ Χριστοῦ εἰς τοὺς πολλοὺς ἐπερίσσευσεν.
 translation:
-  text: But the gift is not like the trespass[a]. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus Christ[b], overflowed to the many.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the gift in grace' / 'the gift that came by grace.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Jesus the Messiah.'
-    reason: lexical_alternative
+  text: But the gift is not like the trespass. For if the many died through the trespass of the one man, how much more did God’s grace and the gift that came through the grace of the one man, Jesus Christ, overflow to the many!
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παράπτωμα
   chosen: trespass
@@ -106,11 +99,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "But the gift is not like the trespass. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus Messiah, overflowed to the many."
-  to: "But the gift is not like the trespass. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus the Messiah, overflowed to the many."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: But the gift is not like the trespass. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus Messiah, overflowed to the many.
+  to: But the gift is not like the trespass. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus the Messiah, overflowed to the many.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T20:32:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the gift is not like the trespass[a]. For if by the trespass of the one man the many died, much more the grace of God and the gift by the grace of the one man, Jesus Christ[b], overflowed to the many.
+  to: But the gift is not like the trespass. For if the many died through the trespass of the one man, how much more did God’s grace and the gift that came through the grace of the one man, Jesus Christ, overflow to the many!
+  rationale: Although later automated reversals favored “Jesus the Messiah,” the standing ruling calls for “Jesus Christ” in this name construction. The deliberated one/many contrast and overflowing-grace imagery remain intact.
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +133,25 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/romans/005/015.job-28067.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:32:25Z'
+  change_level: refined
+  confidence: high
+  meaning: Although one man’s trespass brought death to the many, God’s grace and the gift through Jesus Christ overflowed to the many with far greater abundance.
+  meaning_decisions:
+  - source_phrase: ἡ χάρις τοῦ θεοῦ καὶ ἡ δωρεὰ ἐν χάριτι τῇ τοῦ ἑνὸς ἀνθρώπου Ἰησοῦ Χριστοῦ
+    prior_rendering: the grace of God and the gift by the grace of the one man, Jesus Christ
+    new_rendering: God’s grace and the gift that came through the grace of the one man, Jesus Christ
+    rationale: Unpacking the compressed construction makes the relationship between grace, the gift, and Jesus Christ clear while retaining both occurrences of grace.
+  - source_phrase: πολλῷ μᾶλλον ... ἐπερίσσευσεν
+    prior_rendering: much more ... overflowed
+    new_rendering: how much more did ... overflow
+    rationale: The emphatic English comparison gives Paul’s greater-grace argument a complete, natural construction without turning the conditional premise into uncertainty.
+  footnote_kinds: {}
+  history_weighed: Although later automated reversals favored “Jesus the Messiah,” the standing ruling calls for “Jesus Christ” in this name construction. The deliberated one/many contrast and overflowing-grace imagery remain intact.

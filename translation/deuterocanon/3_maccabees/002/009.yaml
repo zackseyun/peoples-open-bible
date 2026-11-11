@@ -15,15 +15,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And because I love the house of Israel[a], I have promised that if a turning away comes upon us and distress overtakes us, and we come to our place and pray[b], I will hear our prayer.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'apostasy' for 'a turning away'; the Greek ἀποστροφή can denote defection or turning away, but the broader context here does not require the more technical term in the main text.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek text is somewhat awkward at this point, and the source record flags a major mismatch. The translation retains the first-person promise of the Greek rather than smoothing it into indirect speech.
-    reason: textual_variant
+  text: And out of love for the house of Israel, you promised that if we turn away from you and distress overtakes us, and we come to our sanctuary and pray, you will hear our prayer.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀγαπῶν
   chosen: because I love
@@ -127,14 +120,20 @@ revisions:
   from: And because I love the house of Israel, I have promised that if a turning away comes upon us and distress overtakes us, and we come to our place and pray, I will hear our prayer.
   to: And loving the house of Israel, I promised that if a turning away should happen among us and distress should overtake us, and if we come to our place and pray, you will hear our prayer.
   rationale: 'Adjusted wording for closer alignment with the Greek: rendered ἀγαπῶν more directly as ''loving,'' changed ''because'' to avoid adding causation, made the conditional clauses more explicit (''should happen among us,'' ''should overtake us''), and revised ''I will hear'' to ''you will hear'' to match the likely prayer address and the verb form in context.'
-
 - timestamp: '2026-05-15T16:24:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And loving the house of Israel[a], I promised that if a turning away should happen among us and distress should overtake us, and if we come to our place and pray[b], you will hear our prayer.'
-  to: 'And because I love the house of Israel[a], I have promised that if a turning away comes upon us and distress overtakes us, and we come to our place and pray[b], I will hear our prayer.'
+  from: And loving the house of Israel[a], I promised that if a turning away should happen among us and distress should overtake us, and if we come to our place and pray[b], you will hear our prayer.
+  to: And because I love the house of Israel[a], I have promised that if a turning away comes upon us and distress overtakes us, and we come to our place and pray[b], I will hear our prayer.
   rationale: 'Restored 5 chosen renderings; critical: ''I will hear'' is documented theological_decision (first-person divine speech retained).'
+- timestamp: '2026-11-09T19:56:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And because I love the house of Israel[a], I have promised that if a turning away comes upon us and distress overtakes us, and we come to our place and pray[b], I will hear our prayer.
+  to: And out of love for the house of Israel, you promised that if we turn away from you and distress overtakes us, and we come to our sanctuary and pray, you will hear our prayer.
+  rationale: The earlier review corrected the final verb to 'you' but left the promise in the first person; the automated revert restored both mistaken first-person renderings. The Greek forms and the uninterrupted prayer require second-person address throughout, so I depart from the recorded grammatical rationale.
 cross_check:
   status: needs_review
   agreement: 0.2
@@ -154,3 +153,33 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/002/009.job-49516.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:56:04Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Out of love for Israel, God promised to hear their prayer if they turned away from him, suffered distress, and returned to their sanctuary to pray.
+  meaning_decisions:
+  - source_phrase: ἀγαπῶν τὸν οἶκον τοῦ Ἰσραήλ
+    prior_rendering: because I love the house of Israel
+    new_rendering: out of love for the house of Israel
+    rationale: The participle describes God's love as the motive for his promise within the continuing prayer addressed to him.
+  - source_phrase: ἐπηγγείλω ... εἰσακούσῃ
+    prior_rendering: I have promised ... I will hear
+    new_rendering: you promised ... you will hear
+    rationale: These forms address God in the second person; they do not introduce first-person divine speech.
+  - source_phrase: ἐὰν γένηται ἡμῶν ἀποστροφή
+    prior_rendering: if a turning away comes upon us
+    new_rendering: if we turn away from you
+    rationale: The phrase describes defection on the people's part, not a vaguely external event that happens to them.
+  - source_phrase: ἐλθόντες εἰς τὸν τόπον ἡμῶν
+    prior_rendering: we come to our place
+    new_rendering: we come to our sanctuary
+    rationale: The preceding verse identifies the consecrated place, so its function as their sanctuary is already understood.
+  footnote_kinds: {}
+  history_weighed: The earlier review corrected the final verb to 'you' but left the promise in the first person; the automated revert restored both mistaken first-person renderings. The Greek forms and the uninterrupted prayer require second-person address throughout, so I depart from the recorded grammatical rationale.

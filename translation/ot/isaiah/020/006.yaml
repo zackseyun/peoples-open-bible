@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ֠/אָמַר יֹשֵׁ֨ב הָ/אִ֣י הַ/זֶּה֮ בַּ/יּ֣וֹם הַ/הוּא֒ הִנֵּה כֹ֣ה מַבָּטֵ֗/נוּ אֲשֶׁר נַ֤סְנוּ שָׁם֙ לְ/עֶזְרָ֔ה לְ/הִ֨נָּצֵ֔ל מִ/פְּנֵ֖י מֶ֣לֶךְ אַשּׁ֑וּר וְ/אֵ֖יךְ נִמָּלֵ֥ט אֲנָֽחְנוּ־־׃ס
 translation:
-  text: And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’
-  philosophy: optimal-equivalence
+  text: On that day the people of this coastland[a] will say, ‘Look what has become of our hope! We fled there for help, to be delivered from the king of Assyria. How, then, can we ourselves escape?’”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'this is our expectation' or 'this is what we looked to.' The Hebrew expression refers to the object in which they placed their hope.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Coastland'' may also be rendered ''island.'' In Isaiah, the term often refers more broadly to maritime lands or coastal regions.'
-    reason: lexical_alternative
+    text: Here, the coastal region along the eastern Mediterranean.
+    reason: cultural_note
 lexical_decisions:
 - source_word: יֹשֵׁב הָאִי הַזֶּה
   chosen: the inhabitant of this coastland
@@ -97,14 +94,20 @@ revisions:
   from: And the inhabitant of this coastland will say in that day, ‘Look, this is what has become of our hope, where we fled for help to be delivered from the king of Assyria. And how shall we escape?’
   to: And the inhabitant of this coastland will say in that day, ‘Look, this is what has become of our hope, where we fled for help to be delivered from the king of Assyria. And how shall we escape?’
   rationale: Removed 'what has become of' because the Hebrew more directly says 'this is our hope/look to,' not an expanded paraphrase. Kept the rest substantially the same for accuracy and natural formal English.
-
 - timestamp: '2026-05-17T18:36:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’'
-  to: 'And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’'
+  from: And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’
+  to: And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''this is what has become of our hope''].'
+- timestamp: '2026-11-09T17:47:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the inhabitant of this coastland will say in that day[a], ‘Look, this is our hope, where we fled for help to be delivered from the king of Assyria[b]. And how shall we escape?’
+  to: On that day the people of this coastland[a] will say, ‘Look what has become of our hope! We fled there for help, to be delivered from the king of Assyria. How, then, can we ourselves escape?’”
+  rationale: The first draft and lexical rationale support “what has become of our hope,” while the later review preferred a shorter rendering for source-transparency; the recorded revert adds little weight. I restore the fuller contextual sense because the speakers are confronting the ruin of the powers they trusted, not simply identifying them.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +127,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/020/006.job-66288.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people of the coastal region will see their hoped-for rescuers defeated and despair of escaping Assyria themselves.
+  meaning_decisions:
+  - source_phrase: יֹשֵׁב הָאִי הַזֶּה
+    prior_rendering: the inhabitant of this coastland
+    new_rendering: the people of this coastland
+    rationale: The singular Hebrew expression refers collectively to the population, not to one particular resident.
+  - source_phrase: הִנֵּה כֹה מַבָּטֵנוּ אֲשֶׁר נַסְנוּ שָׁם לְעֶזְרָה לְהִנָּצֵל
+    prior_rendering: Look, this is our hope, where we fled for help to be delivered
+    new_rendering: Look what has become of our hope! We fled there for help, to be delivered
+    rationale: The exclamation points to the disastrous condition of their former object of hope; splitting the clauses makes that disillusionment and their earlier flight for help clear.
+  - source_phrase: וְאֵיךְ נִמָּלֵט אֲנָחְנוּ
+    prior_rendering: And how shall we escape?
+    new_rendering: How, then, can we ourselves escape?
+    rationale: The question draws the despairing inference from their rescuers' defeat, and the explicit Hebrew pronoun emphasizes the contrast with their own prospects.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft and lexical rationale support “what has become of our hope,” while the later review preferred a shorter rendering for source-transparency; the recorded revert adds little weight. I restore the fuller contextual sense because the speakers are confronting the ruin of the powers they trusted, not simply identifying them.

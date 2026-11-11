@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐξῆλθεν οὖν ὁ Πέτρος καὶ ὁ ἄλλος μαθητής, καὶ ἤρχοντο εἰς τὸ μνημεῖον.
 translation:
-  text: So Peter and the other disciple went out and were going to the tomb[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they went to the tomb.' The Greek imperfect verb can be rendered more simply, but 'they were going' preserves the ongoing action more explicitly.
-    reason: lexical_alternative
+  text: So Peter and the other disciple set out for the tomb.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξῆλθεν
   chosen: went out
@@ -72,14 +68,20 @@ revisions:
   from: So Peter and the other disciple went out, and they were going to the tomb.
   to: So Peter and the other disciple went out, and they were going to the tomb.
   rationale: Removed the second 'and' for smoother English while preserving the Greek sequence and meaning.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Peter and the other disciple went out and were going to the tomb[a].'
-  to: 'So Peter and the other disciple went out and were going to the tomb[a].'
+  from: So Peter and the other disciple went out and were going to the tomb[a].
+  to: So Peter and the other disciple went out and were going to the tomb[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were going''].'
+- timestamp: '2026-11-09T18:10:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Peter and the other disciple went out and were going to the tomb[a].
+  to: So Peter and the other disciple set out for the tomb.
+  rationale: The earlier deliberation emphasized departure followed by ongoing travel, a distinction retained in “set out for.” The recorded revisions and reverts mainly concern sentence shape and do not require the cumbersome progressive wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -99,3 +101,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/john/020/003.job-7587.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:10:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Peter and the other disciple responded to Mary’s report by setting out for the tomb.
+  meaning_decisions:
+  - source_phrase: ἐξῆλθεν … καὶ ἤρχοντο εἰς τὸ μνημεῖον
+    prior_rendering: went out and were going to the tomb
+    new_rendering: set out for the tomb
+    rationale: This natural English expression conveys their departure and movement toward the tomb without implying that they had already arrived or entered.
+  footnote_kinds: {}
+  history_weighed: The earlier deliberation emphasized departure followed by ongoing travel, a distinction retained in “set out for.” The recorded revisions and reverts mainly concern sentence shape and do not require the cumbersome progressive wording.

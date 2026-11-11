@@ -15,15 +15,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Josiah met him[a]. And the king of Egypt sent word to him, saying, “What is there between me and you[b], O king of Judea?”
-  philosophy: optimal-equivalence
+  text: 'to meet him. The king of Egypt sent him this message: “What quarrel is there between you and me[a], king of Judah?'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, “What have I to do with you?”
+    text: Literally, “What is there between me and you?”—an expression challenging another person’s involvement.
     reason: lexical_alternative
-  - marker: b
-    text: 'Greek: “king of Judea”; the historical parallel in Chronicles would correspond to “king of Judah.”'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀπάντησιν
   chosen: met
@@ -102,7 +99,13 @@ revisions:
   from: Josiah met him. And the king of Egypt sent word to him, saying, “What is there between me and you, king of Judea?”
   to: Josiah met him. And the king of Egypt sent word to him, saying, “What is there between me and you, O king of Judea?”
   rationale: Added 'O' before the direct address 'king of Judea' to better reflect the vocative in formal English; otherwise retained the draft.
-
+- timestamp: '2026-11-09T18:49:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Josiah met him[a]. And the king of Egypt sent word to him, saying, “What is there between me and you[b], O king of Judea?”
+  to: 'to meet him. The king of Egypt sent him this message: “What quarrel is there between you and me[a], king of Judah?'
+  rationale: The initial words complete verse 23, so they are not rendered as a second encounter. The earlier discussion recognized the challenge idiom, but preserved its form rather than conveying its force; that force is now explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -122,3 +125,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/001/024.job-47479.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Josiah went to meet Pharaoh, who sent a message questioning what quarrel there was between them.
+  meaning_decisions:
+  - source_phrase: ἀπάντησιν αὐτῷ Ἰωσείας
+    prior_rendering: Josiah met him
+    new_rendering: to meet him
+    rationale: These words complete the motion clause begun in verse 23 rather than describing a second, separate encounter.
+  - source_phrase: Τί ἐμοὶ καὶ σοὶ ἐστίν
+    prior_rendering: What is there between me and you
+    new_rendering: What quarrel is there between you and me
+    rationale: The idiom challenges Josiah’s involvement in Pharaoh’s campaign; the prior English could sound like a question about their personal relationship.
+  - source_phrase: βασιλεῦ τῆς Ἰουδαίας
+    prior_rendering: O king of Judea
+    new_rendering: king of Judah
+    rationale: Judah is the recognizable English name of Josiah’s historical kingdom, and direct address does not require an archaic “O.”
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The initial words complete verse 23, so they are not rendered as a second encounter. The earlier discussion recognized the challenge idiom, but preserved its form rather than conveying its force; that force is now explicit.

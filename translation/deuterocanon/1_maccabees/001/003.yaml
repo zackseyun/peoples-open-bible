@@ -17,11 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up[a].
-  philosophy: optimal-equivalence
+  text: He advanced to the ends of the earth and took plunder from a multitude of nations. The earth fell silent before him; he was exalted, and his heart grew proud[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'his heart grew proud.' The Greek literally says, 'his heart was lifted up,' an idiom often associated with pride.
+    text: Literally, “his heart was lifted up.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: διῆλθεν
@@ -111,13 +111,12 @@ revisions:
   from: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.
   to: And he passed to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.
   rationale: Changed 'passed on' to 'passed' for a more direct rendering of διῆλθεν; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he passed to the ends of the earth[a], and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.'
-  to: 'And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.'
+  from: And he passed to the ends of the earth[a], and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.
+  to: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''passed on''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +126,13 @@ revisions:
   from: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up.
   to: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('his heart was lifted up') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:50:57Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he passed on to the ends of the earth, and took plunder from a multitude of nations; and the earth was quiet before him, and he was exalted, and his heart was lifted up[a].
+  to: He advanced to the ends of the earth and took plunder from a multitude of nations. The earth fell silent before him; he was exalted, and his heart grew proud[a].
+  rationale: The earlier review addressed only “passed on,” while the lexical and theological records already recognized the pride conveyed by the final idiom. That recognized meaning is now expressed in the main text, with the source image preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +152,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/001/003.job-47954.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:57Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Alexander’s far-reaching conquests subdued the world, elevated his standing, and made him proud.
+  meaning_decisions:
+  - source_phrase: διῆλθεν ἕως ἄκρων τῆς γῆς
+    prior_rendering: passed on to the ends of the earth
+    new_rendering: advanced to the ends of the earth
+    rationale: “Advanced” conveys movement in conquest while retaining the author’s expansive image.
+  - source_phrase: ἡσύχασεν ἡ γῆ ἐνώπιον αὐτοῦ
+    prior_rendering: the earth was quiet before him
+    new_rendering: The earth fell silent before him
+    rationale: The earth’s silence expresses the cessation of resistance under Alexander’s dominance.
+  - source_phrase: ἐπήρθη ἡ καρδία αὐτοῦ
+    prior_rendering: his heart was lifted up
+    new_rendering: his heart grew proud
+    rationale: In this context the lifted-heart idiom means pride, not encouragement or joy; the literal image remains in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review addressed only “passed on,” while the lexical and theological records already recognized the pride conveyed by the final idiom. That recognized meaning is now expressed in the main text, with the source image preserved in a note.

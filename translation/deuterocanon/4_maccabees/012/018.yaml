@@ -18,15 +18,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But I call upon the God of my fathers[b][a], that he may be merciful to my nation.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the ancestral God' or 'the God of my ancestors.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to my nation,' 'to my kin,' or more literally 'to my race/lineage.'
-    reason: lexical_alternative
+  text: And I call upon the God of my fathers to show mercy to my people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπικαλοῦμαι
   chosen: I call upon
@@ -123,14 +116,20 @@ revisions:
   from: But I call upon the God of my fathers, that he may be merciful to my people.
   to: But I call upon the God of my fathers, that he may be merciful to my people.
   rationale: Revised 'my people' to 'my nation' to more directly reflect τῷ γένει μου ('my race/people/nation') while keeping the formal tone and natural English.
-
 - timestamp: '2026-05-18T02:59:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But I call upon the God of my fathers[b][a], that he may be merciful to my nation.'
-  to: 'But I call upon the God of my fathers[b][a], that he may be merciful to my nation.'
+  from: But I call upon the God of my fathers[b][a], that he may be merciful to my nation.
+  to: But I call upon the God of my fathers[b][a], that he may be merciful to my nation.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to my people''].'
+- timestamp: '2026-11-09T18:59:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But I call upon the God of my fathers[b][a], that he may be merciful to my nation.
+  to: And I call upon the God of my fathers to show mercy to my people.
+  rationale: The first draft and documented theological decision both support “my people,” and the automated history supplies no compelling reason to prefer “my nation.” I retain “the God of my fathers” for its ancestral resonance and drop notes that only offer synonymous wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +149,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/012/018.job-50043.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:15Z'
+  change_level: refined
+  confidence: high
+  meaning: The boy appeals to the God of his fathers to show mercy to his people.
+  meaning_decisions:
+  - source_phrase: δὲ
+    prior_rendering: But
+    new_rendering: And
+    rationale: The prayer continues his declaration of fidelity rather than contradicting it.
+  - source_phrase: ὅπως ἐλέως γένηται
+    prior_rendering: that he may be merciful
+    new_rendering: to show mercy
+    rationale: The infinitive naturally expresses the requested action while preserving the petition for mercy.
+  - source_phrase: τῷ γένει μου
+    prior_rendering: to my nation
+    new_rendering: to my people
+    rationale: The broader Jewish community is intended, without the modern political implications that “nation” can carry.
+  footnote_kinds: {}
+  history_weighed: The first draft and documented theological decision both support “my people,” and the automated history supplies no compelling reason to prefer “my nation.” I retain “the God of my fathers” for its ancestral resonance and drop notes that only offer synonymous wording.

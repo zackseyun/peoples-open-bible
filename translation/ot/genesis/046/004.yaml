@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: אָנֹכִ֗י אֵרֵ֤ד עִמְּ/ךָ֙ מִצְרַ֔יְמָ/ה וְ/אָנֹכִ֖י אַֽעַלְ/ךָ֣ גַם עָלֹ֑ה וְ/יוֹסֵ֕ף יָשִׁ֥ית יָד֖/וֹ עַל עֵינֶֽי/ךָ־־׃
 translation:
-  text: I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.
-  philosophy: optimal-equivalence
+  text: I myself will go down with you to Egypt, and I myself will surely bring you back up. Joseph will close your eyes[a] when you die.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, 'Joseph will close your eyes,' referring to Joseph being present at Jacob's death.
+    text: Literally, “place his hand on your eyes.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: אָנֹכִי
@@ -91,14 +91,20 @@ revisions:
   from: I myself will go down with you to Egypt, and I myself will also surely bring you up; and Joseph will place his hand over your eyes.
   to: I myself will go down with you to Egypt, and I myself will also surely bring you up; and Joseph will place his hand over your eyes.
   rationale: Changed 'over your eyes' to 'on your eyes' for a more accurate rendering of the Hebrew preposition while preserving the idiomatic expression.
-
 - timestamp: '2026-05-17T08:36:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.'
-  to: 'I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.'
+  from: I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.
+  to: I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will place his hand over your eyes''].'
+- timestamp: '2026-11-09T17:45:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I myself will go down with you to Egypt[a], and I myself will also surely bring you up; and Joseph will place his hand on your eyes.
+  to: I myself will go down with you to Egypt, and I myself will surely bring you back up. Joseph will close your eyes[a] when you die.”
+  rationale: The recorded revisions concern “on” versus “over” and include automated reverts, not maintainer decisions. The earlier lexical discussion identifies the deathbed meaning and rightly leaves the promise of being brought up broad; both gains are retained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +126,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/046/004.job-65679.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God promises to accompany Jacob to Egypt, surely bring him back up, and ensure that Joseph is present at his death.
+  meaning_decisions:
+  - source_phrase: וְאָנֹכִי אַעַלְךָ גַם עָלֹה
+    prior_rendering: and I myself will also surely bring you up
+    new_rendering: and I myself will surely bring you back up
+    rationale: The emphatic assurance remains, while “back up” makes the return from Egypt clear without specifying how or through whom the promise will be fulfilled.
+  - source_phrase: וְיוֹסֵף יָשִׁית יָדוֹ עַל עֵינֶיךָ
+    prior_rendering: and Joseph will place his hand on your eyes
+    new_rendering: Joseph will close your eyes when you die
+    rationale: The gesture signifies closing Jacob’s eyes at death and assures him of Joseph’s presence; the literal wording is preserved in a footnote.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revisions concern “on” versus “over” and include automated reverts, not maintainer decisions. The earlier lexical discussion identifies the deathbed meaning and rightly leaves the promise of being brought up broad; both gains are retained.

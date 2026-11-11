@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὡς δὲ ⸀προέτειναν αὐτὸν τοῖς ἱμᾶσιν εἶπεν πρὸς τὸν ἑστῶτα ἑκατόνταρχον ὁ Παῦλος· Εἰ ἄνθρωπον Ῥωμαῖον καὶ ἀκατάκριτον ἔξεστιν ὑμῖν μαστίζειν;
 translation:
-  text: But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “a Roman citizen.” The Greek says “a Roman man,” but in this legal context the point is Paul's protected status as a Roman citizen.
-    reason: lexical_alternative
+  text: When they had stretched him out with leather straps, Paul said to the centurion standing nearby, “Is it lawful for you to flog a Roman citizen who has not been condemned?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: προέτειναν ... τοῖς ἱμᾶσιν
   chosen: had stretched him out with the straps
@@ -81,14 +77,20 @@ revisions:
   from: But when they had stretched him out with the straps, Paul said to the centurion standing there, “Is it lawful for you to flog a Roman man who is uncondemned?”
   to: But when they had stretched him out with the straps, Paul said to the centurion standing there, “Is it lawful for you to flog a Roman man who is uncondemned?”
   rationale: Changed 'Roman man' to 'Roman citizen' for more accurate and natural rendering of ἄνθρωπον Ῥωμαῖον in this legal context; otherwise retained the draft.
-
 - timestamp: '2026-05-18T03:00:41Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”'
-  to: 'But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”'
+  from: But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”
+  to: But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a Roman man''].'
+- timestamp: '2026-11-09T17:08:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when they had stretched him out with the straps[a], Paul said to the centurion standing there, “Is it lawful for you to flog a Roman citizen who is uncondemned?”
+  to: When they had stretched him out with leather straps, Paul said to the centurion standing nearby, “Is it lawful for you to flog a Roman citizen who has not been condemned?”
+  rationale: The current “Roman citizen” preserves the earlier review’s important legal clarification despite the recorded source-transparent preference for “Roman man.” I retain that gain, the stretching action, and the precise rank of centurion, while dropping the now-redundant citizenship note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -108,3 +110,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/022/025.job-46558.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:44Z'
+  change_level: refined
+  confidence: high
+  meaning: As Paul was prepared for flogging, he challenged the centurion’s legal authority to flog an uncondemned Roman citizen.
+  meaning_decisions:
+  - source_phrase: τοῖς ἱμᾶσιν
+    prior_rendering: with the straps
+    new_rendering: with leather straps
+    rationale: The term denotes leather straps or thongs, making the physical preparation for flogging more concrete.
+  - source_phrase: ἀκατάκριτον
+    prior_rendering: who is uncondemned
+    new_rendering: who has not been condemned
+    rationale: The expanded wording clearly states the absence of a judicial condemnation without changing the legal condition Paul invokes.
+  footnote_kinds: {}
+  history_weighed: The current “Roman citizen” preserves the earlier review’s important legal clarification despite the recorded source-transparent preference for “Roman man.” I retain that gain, the stretching action, and the precise rank of centurion, while dropping the now-redundant citizenship note.

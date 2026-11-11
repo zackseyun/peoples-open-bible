@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ἀσύμφωνοι δὲ ὄντες πρὸς ἀλλήλους ἀπελύοντο, εἰπόντος τοῦ Παύλου ῥῆμα ἓν ὅτι Καλῶς τὸ πνεῦμα τὸ ἅγιον ἐλάλησεν διὰ Ἠσαΐου τοῦ προφήτου πρὸς τοὺς πατέρας ⸀ὑμῶν
 translation:
-  text: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word[a]: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers[b]'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “one word” or “one statement.” The Greek literally says “one word,” here functioning as a concluding remark.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “to your ancestors.” The Greek reads “to your fathers,” referring to Israel’s forefathers.
-    reason: lexical_alternative
+  text: 'They disagreed with one another and began to leave after Paul had made one final statement: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers,'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀσύμφωνοι ... ὄντες
   chosen: since they were disagreeing
@@ -114,14 +107,13 @@ revisions:
   from: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers'
   to: 'And disagreeing among themselves, they were departing after Paul had spoken one final word: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers'
   rationale: Replaced 'since they were disagreeing with one another' with the more direct participial phrasing 'disagreeing among themselves'; changed 'they were leaving' to 'they were departing' for a more formal register; changed 'had said' to 'had spoken' to better match the Greek.
-
 - timestamp: '2026-05-15T16:54:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'And disagreeing among themselves[b][a], they were departing after Paul had spoken one final word: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers'
   to: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers'
-  rationale: 'Restored 3 chosen renderings; ''had spoken'' is for λαλέω (later), not εἰπόντος (= ''had said'').'
+  rationale: Restored 3 chosen renderings; 'had spoken' is for λαλέω (later), not εἰπόντος (= 'had said').
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
   reviewer_model: claude-opus-5
@@ -130,6 +122,13 @@ revisions:
   from: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers'
   to: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word[a]: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers[b]'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('one final word') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('to your fathers') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:08:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And since they were disagreeing with one another, they were leaving after Paul had said one final word[a]: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers[b]'
+  to: 'They disagreed with one another and began to leave after Paul had made one final statement: “The Holy Spirit spoke rightly through Isaiah the prophet to your fathers,'
+  rationale: The history consistently understands 'one word' as a concluding statement and places the departure after it; I retain both gains. The attribution of Isaiah's speech to the Holy Spirit and the address 'your fathers' remain unchanged.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -151,3 +150,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/028/025.job-53987.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:49Z'
+  change_level: refined
+  confidence: high
+  meaning: The visitors began leaving in disagreement after Paul introduced a final statement affirming the Holy Spirit's words through Isaiah to their fathers.
+  meaning_decisions:
+  - source_phrase: ἀσύμφωνοι δὲ ὄντες πρὸς ἀλλήλους ἀπελύοντο
+    prior_rendering: And since they were disagreeing with one another, they were leaving
+    new_rendering: They disagreed with one another and began to leave
+    rationale: The wording presents their disagreement and the breaking up of the gathering naturally, without making the participial construction carry an unnecessarily explicit causal claim.
+  - source_phrase: εἰπόντος τοῦ Παύλου ῥῆμα ἓν
+    prior_rendering: after Paul had said one final word
+    new_rendering: after Paul had made one final statement
+    rationale: The expression introduces a concluding utterance, not a single spoken word.
+  footnote_kinds: {}
+  history_weighed: The history consistently understands 'one word' as a concluding statement and places the departure after it; I retain both gains. The attribution of Isaiah's speech to the Holy Spirit and the address 'your fathers' remain unchanged.

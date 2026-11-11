@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: גַּ֣ם בָּ/עֵ֤ת הַ/הִיא֙ אָמַ֣רְתִּי לָ/עָ֔ם אִ֣ישׁ וְ/נַעֲר֔/וֹ יָלִ֖ינוּ בְּ/ת֣וֹךְ יְרוּשָׁלִָ֑ם וְ/הָֽיוּ לָ֧/נוּ הַ/לַּ֛יְלָה מִשְׁמָ֖ר וְ/הַ/יּ֥וֹם מְלָאכָֽה־׃
 translation:
-  text: Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “each man and his servant”; the Hebrew נַעַר can mean a youth, servant, attendant, or subordinate worker depending on context.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “that they might be a watch for us at night and for work by day.”
-    reason: lexical_alternative
+  text: At that time I also said to the people, “Let each man and his servant spend the night within Jerusalem, so that they can guard us by night and work by day.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: גַּם
   chosen: Also
@@ -100,14 +93,20 @@ revisions:
   from: Also at that time I said to the people, “Let each man and his young servant spend the night within Jerusalem, so that they may be a guard for us by night and workers by day.”
   to: Also at that time I said to the people, “Let each man and his young servant spend the night within Jerusalem, so that they may be a guard for us by night and workers by day.”
   rationale: Replaced 'young servant' with 'servant' for lexical accuracy, since the Hebrew נער can mean servant/attendant without emphasizing youth here. Simplified 'so that they may be' to 'and let them be' to reflect the straightforward coordination of the source more closely.
-
 - timestamp: '2026-05-18T02:54:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”'
-  to: 'Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”'
+  from: Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”
+  to: Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''each man and his young servant''].'
+- timestamp: '2026-11-09T18:25:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Also at that time I said to the people[a], “Let each man and his servant spend the night within Jerusalem[b], and let them be a guard for us by night and workers by day.”
+  to: At that time I also said to the people, “Let each man and his servant spend the night within Jerusalem, so that they can guard us by night and work by day.”
+  rationale: The first draft and lexical rationale correctly recognized the purpose relationship, which the later formal coordination weakened. The current “servant” is retained because the context establishes a subordinate role without requiring an emphasis on youth.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -127,3 +126,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nehemiah/004/016.job-42756.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:44Z'
+  change_level: refined
+  confidence: high
+  meaning: Nehemiah instructed each worker and his servant to stay overnight in Jerusalem so they could guard the city at night and work during the day.
+  meaning_decisions:
+  - source_phrase: וְהָיוּ לָנוּ הַלַּיְלָה מִשְׁמָר וְהַיּוֹם מְלָאכָה
+    prior_rendering: and let them be a guard for us by night and workers by day
+    new_rendering: so that they can guard us by night and work by day
+    rationale: The clause states the intended function of staying in Jerusalem, not merely an unrelated second command; the night-and-day parallel remains intact.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly recognized the purpose relationship, which the later formal coordination weakened. The current “servant” is retained because the context establishes a subordinate role without requiring an emphasis on youth.

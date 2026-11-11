@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִ֗י כַּ/אֲשֶׁ֨ר כִּלָּ֣ה יִצְחָק֮ לְ/בָרֵ֣ךְ אֶֽת יַעֲקֹב֒ וַ/יְהִ֗י אַ֣ךְ יָצֹ֤א יָצָא֙ יַעֲקֹ֔ב מֵ/אֵ֥ת פְּנֵ֖י יִצְחָ֣ק אָבִ֑י/ו וְ/עֵשָׂ֣ו אָחִ֔י/ו בָּ֖א מִ/צֵּידֽ/וֹ־׃
 translation:
-  text: And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'had just gone out.' The Hebrew uses an infinitive absolute with the finite verb ('going out had gone out') to intensify the immediacy of Jacob's departure.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'And it happened, as soon as Isaac had finished blessing Jacob, that just as Jacob had barely gone out from the presence of Isaac his father, Esau his brother came in from his hunting.'.
-    reason: previous_rendering
+  text: Isaac had just finished blessing Jacob, and Jacob had barely left his father Isaac’s presence when his brother Esau returned from the hunt.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened
@@ -115,9 +108,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.'
-  to: 'And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.'
+  from: And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.
+  to: And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''had barely gone out''].'
+- timestamp: '2026-11-09T17:43:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened that as soon as Isaac had finished blessing Jacob[a], and Jacob had just gone out from the presence of Isaac his father[b], Esau his brother came in from his hunting.
+  to: Isaac had just finished blessing Jacob, and Jacob had barely left his father Isaac’s presence when his brother Esau returned from the hunt.
+  rationale: The reviews consistently recognized the near overlap of departure and return, despite alternating between 'barely' and 'just.' That timing is retained, while the wider narrative corrects the lexical rationale that treated Esau’s return as entry into Isaac’s presence.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T10:42:18Z'
@@ -146,3 +146,25 @@ cross_check:
     agree: 1
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/027/030.job-37766.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Esau returns from hunting immediately after Isaac’s blessing and Jacob’s departure.
+  meaning_decisions:
+  - source_phrase: וַיְהִי כַּאֲשֶׁר כִּלָּה ... וַיְהִי אַךְ יָצֹא יָצָא
+    prior_rendering: And it happened that as soon as Isaac had finished ... and Jacob had just gone out
+    new_rendering: Isaac had just finished ... and Jacob had barely left ... when
+    rationale: The Hebrew event-introduction formulas and emphatic departure construction convey a narrowly missed encounter. The revised temporal sentence carries that suspense without stacked introductory clauses.
+  - source_phrase: בָּא מִצֵּידוֹ
+    prior_rendering: came in from his hunting
+    new_rendering: returned from the hunt
+    rationale: Esau returns from hunting here and only prepares and brings the meal in verse 31. 'Returned' avoids prematurely placing him in Isaac’s room.
+  footnote_kinds: {}
+  history_weighed: The reviews consistently recognized the near overlap of departure and return, despite alternating between 'barely' and 'just.' That timing is retained, while the wider narrative corrects the lexical rationale that treated Esau’s return as entry into Isaac’s presence.

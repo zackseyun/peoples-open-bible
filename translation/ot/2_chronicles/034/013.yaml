@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/עַ֣ל הַ/סַּבָּלִ֗ים וּֽ/מְנַצְּחִים֙ לְ/כֹל֙ עֹשֵׂ֣ה מְלָאכָ֔ה לַ/עֲבוֹדָ֖ה וַ/עֲבוֹדָ֑ה וּ/מֵֽ/הַ/לְוִיִּ֔ם סוֹפְרִ֥ים וְ/שֹׁטְרִ֖ים וְ/שׁוֹעֲרִֽים׃
 translation:
-  text: They were over the burden-bearers and supervised everyone doing work for service after service; and some of the Levites were scribes[a], officers, and gatekeepers.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for each kind of service.' The Hebrew repeats 'service' (literally, 'for service and service'), likely expressing distribution across the various tasks.
-    reason: lexical_alternative
+  text: They supervised the load carriers and all the workers, whatever their task. Some of the Levites served as scribes, officers, and gatekeepers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעַל
   chosen: were over
@@ -98,14 +94,20 @@ revisions:
   from: They were over the burden-bearers and supervised everyone doing work for service after service; and some of the Levites were scribes, officers, and gatekeepers.
   to: They were over the burden-bearers and supervised all who did the work for each kind of service; and some of the Levites were scribes, officers, and gatekeepers.
   rationale: Revised 'everyone doing work for service after service' to 'all who did the work for each kind of service' for more natural English and a closer rendering of the repeated עבודה without awkward paraphrase.
-
 - timestamp: '2026-05-15T20:09:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They were over the burden-bearers and supervised all who did the work for each kind of service; and some of the Levites were scribes[a], officers, and gatekeepers.'
-  to: 'They were over the burden-bearers and supervised everyone doing work for service after service; and some of the Levites were scribes[a], officers, and gatekeepers.'
-  rationale: 'Drafter chose ''for service after service'' for לַעֲבוֹדָה וַעֲבוֹדָה preserving the Hebrew repetition''s distributive/iterative force; azure substituted ''for each kind of service'' (drafter''s listed alternative) on ''more natural English'' grounds without engaging the surface-repetition argument.'
+  from: They were over the burden-bearers and supervised all who did the work for each kind of service; and some of the Levites were scribes[a], officers, and gatekeepers.
+  to: They were over the burden-bearers and supervised everyone doing work for service after service; and some of the Levites were scribes[a], officers, and gatekeepers.
+  rationale: Drafter chose 'for service after service' for לַעֲבוֹדָה וַעֲבוֹדָה preserving the Hebrew repetition's distributive/iterative force; azure substituted 'for each kind of service' (drafter's listed alternative) on 'more natural English' grounds without engaging the surface-repetition argument.
+- timestamp: '2026-11-09T17:25:13Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They were over the burden-bearers and supervised everyone doing work for service after service; and some of the Levites were scribes[a], officers, and gatekeepers.
+  to: They supervised the load carriers and all the workers, whatever their task. Some of the Levites served as scribes, officers, and gatekeepers.
+  rationale: The review’s 'for each kind of service' recognized the distributive meaning, while the automated revert chiefly defended preservation of the repetition. I retain the review’s semantic gain rather than the source-shaped wording; its point is now in the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/034/013.job-60206.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:25:13Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Levites supervised the load carriers and workers across all their tasks, while others performed scribal, administrative, and gatekeeping duties.
+  meaning_decisions:
+  - source_phrase: וְעַל הַסַּבָּלִים וּמְנַצְּחִים לְכֹל עֹשֵׂה מְלָאכָה
+    prior_rendering: They were over the burden-bearers and supervised everyone doing work
+    new_rendering: They supervised the load carriers and all the workers
+    rationale: Both constructions describe oversight; combining them gives natural English while retaining the specific reference to workers who carried loads.
+  - source_phrase: לַעֲבוֹדָה וַעֲבוֹדָה
+    prior_rendering: for service after service
+    new_rendering: whatever their task
+    rationale: The repetition distributes the supervision across the various kinds of work rather than emphasizing a temporal sequence of services.
+  footnote_kinds: {}
+  history_weighed: The review’s 'for each kind of service' recognized the distributive meaning, while the automated revert chiefly defended preservation of the repetition. I retain the review’s semantic gain rather than the source-shaped wording; its point is now in the main text.

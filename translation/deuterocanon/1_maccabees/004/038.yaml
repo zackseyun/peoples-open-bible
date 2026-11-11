@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'profaned' for 'defiled.' The Greek emphasizes desecration of what is sacred.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek term rendered 'side chambers' refers to rooms attached to or associated with the temple complex; the exact architectural nuance is uncertain.
-    reason: cultural_note
+  text: They saw our sanctuary laid waste, the altar defiled, and the gates burned down. The courts were overgrown with plants, like a thicket or a mountainside, and the temple chambers had been torn down.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἁγίασμα
   chosen: sanctuary
@@ -136,14 +129,20 @@ revisions:
   from: And they saw our sanctuary laid waste, and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains, and the side chambers torn down.
   to: And they saw our sanctuary laid waste, and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains, and the side chambers torn down.
   rationale: Changed 'side chambers' to 'chambers' for a more direct rendering of παστοφόρια without interpretive narrowing; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:58:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.'
-  to: 'And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.'
+  from: And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.
+  to: And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''side chambers''].'
+- timestamp: '2026-11-09T18:51:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they saw our sanctuary laid waste[a], and the altar defiled, and the gates burned down, and in the courts plants growing as in a thicket or as on one of the mountains[b], and the chambers torn down.
+  to: They saw our sanctuary laid waste, the altar defiled, and the gates burned down. The courts were overgrown with plants, like a thicket or a mountainside, and the temple chambers had been torn down.
+  rationale: I preserve our sanctuary, maintaining the narrator’s identification with Israel, and retain laid waste and defiled as distinct descriptions. The later preference for chambers over side chambers avoids unnecessary architectural narrowing; temple chambers now carries the useful part of the earlier note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -163,3 +162,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/038.job-48183.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:36Z'
+  change_level: refined
+  confidence: high
+  meaning: They found their sanctuary devastated and desecrated, with burned gates, overgrown courts, and demolished temple chambers.
+  meaning_decisions:
+  - source_phrase: ἐν ταῖς αὐλαῖς φυτὰ πεφυκότα ὡς ἐν δρυμῷ ἢ ὡς ἐν ἑνὶ τῶν ὀρέων
+    prior_rendering: in the courts plants growing as in a thicket or as on one of the mountains
+    new_rendering: The courts were overgrown with plants, like a thicket or a mountainside
+    rationale: The comparison communicates unchecked wild growth in the sacred courts; the new sentence retains both images and makes the devastation immediately intelligible.
+  - source_phrase: τὰ παστοφόρια καθῃρημένα
+    prior_rendering: the chambers torn down
+    new_rendering: the temple chambers had been torn down
+    rationale: Temple identifies the chambers’ association without assigning an uncertain architectural position or function.
+  footnote_kinds: {}
+  history_weighed: I preserve our sanctuary, maintaining the narrator’s identification with Israel, and retain laid waste and defiled as distinct descriptions. The later preference for chambers over side chambers avoids unnecessary architectural narrowing; temple chambers now carries the useful part of the earlier note.

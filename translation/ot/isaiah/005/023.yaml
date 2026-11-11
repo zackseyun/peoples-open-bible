@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: מַצְדִּיקֵ֥י רָשָׁ֖ע עֵ֣קֶב שֹׁ֑חַד וְ/צִדְקַ֥ת צַדִּיקִ֖ים יָסִ֥ירוּ מִמֶּֽ/נּוּ׃ס
 translation:
-  text: who acquit the wicked for a bribe[a], and take away the righteousness of the righteous from him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'who justify the wicked because of a bribe, and remove the justice of the righteous from him.'
-    reason: lexical_alternative
+  text: who acquit the wicked for a bribe and deny the righteous justice.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מַצְדִּיקֵי
   chosen: who acquit
@@ -100,14 +96,20 @@ revisions:
   from: who acquit the wicked for a bribe, and take away the righteousness of the righteous from him.
   to: who acquit the wicked for a bribe, and deprive the righteous of their righteousness.
   rationale: Replaced the awkward and ambiguous 'take away the righteousness of the righteous from him' with the more natural and accurate 'deprive the righteous of their righteousness,' which better reflects the plural 'righteous' and the sense of removing justice/right from them.
-
 - timestamp: '2026-05-15T23:24:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who acquit the wicked for a bribe[a], and deprive the righteous of their righteousness.'
-  to: 'who acquit the wicked for a bribe[a], and take away the righteousness of the righteous from him.'
-  rationale: 'Azure substituted ''deprive the righteous of their righteousness'' for drafter''s chosen ''take away the righteousness of the righteous from him''. ''Deprive of'' is drafter''s rejected alternative; ''their'' flattens the Masoretic 3ms distributive suffix מִמֶּנּוּ.'
+  from: who acquit the wicked for a bribe[a], and deprive the righteous of their righteousness.
+  to: who acquit the wicked for a bribe[a], and take away the righteousness of the righteous from him.
+  rationale: Azure substituted 'deprive the righteous of their righteousness' for drafter's chosen 'take away the righteousness of the righteous from him'. 'Deprive of' is drafter's rejected alternative; 'their' flattens the Masoretic 3ms distributive suffix מִמֶּנּוּ.
+- timestamp: '2026-11-09T17:48:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who acquit the wicked for a bribe[a], and take away the righteousness of the righteous from him.
+  to: who acquit the wicked for a bribe and deny the righteous justice.
+  rationale: The review recognized the original clause’s awkwardness, but its replacement still risked suggesting the loss of moral righteousness. The automated revert rightly noted the distributive singular, yet that grammar does not require an unclear 'from him' in English.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -127,3 +129,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/005/023.job-66032.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:19Z'
+  change_level: retranslated
+  confidence: high
+  meaning: These corrupt men accept bribes to acquit the wicked and deny justice to the righteous.
+  meaning_decisions:
+  - source_phrase: וְצִדְקַת צַדִּיקִים יָסִירוּ מִמֶּנּוּ
+    prior_rendering: and take away the righteousness of the righteous from him
+    new_rendering: and deny the righteous justice
+    rationale: In this judicial context, the noun denotes the just claim or vindication owed to righteous people, not moral righteousness that judges can remove from them; natural English conveys the distributive sense without a dangling singular pronoun.
+  footnote_kinds: {}
+  history_weighed: The review recognized the original clause’s awkwardness, but its replacement still risked suggesting the loss of moral righteousness. The automated revert rightly noted the distributive singular, yet that grammar does not require an unclear 'from him' in English.

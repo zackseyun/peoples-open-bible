@@ -17,12 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to resort to their livestock.' The Greek idiom literally says 'to fall upon their livestock,' implying turning to the animals as food in desperation.
-    reason: lexical_alternative
+  text: For when their food had run out and water was in short supply, they decided to eat their livestock and resolved to consume everything that God had forbidden them to eat in his laws.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξέλειπεν
   chosen: had run out
@@ -146,14 +142,20 @@ revisions:
   from: For when their food had run out and all water had become scarce, they decided to fall upon their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
   to: For when their food had run out and all water had become scarce, they decided to fall upon their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
   rationale: Changed 'fall upon their livestock' to 'use their livestock' for more natural English and closer sense of resorting to their animals for food.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.'
-  to: 'For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.'
+  from: For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
+  to: For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to fall upon their livestock''].'
+- timestamp: '2026-11-09T19:02:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For when their food had run out and all water had become scarce[a], they decided to use their livestock, and they determined to consume everything that God had commanded them by his laws not to eat.
+  to: For when their food had run out and water was in short supply, they decided to eat their livestock and resolved to consume everything that God had forbidden them to eat in his laws.
+  rationale: The review correctly identified resorting to the animals for food, but ‘use their livestock’ still leaves that intended action obscure. The clarification now belongs in the main text, while the important distinction between exhausted food and scarce water remains.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -173,3 +175,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/011/012.job-50728.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:29Z'
+  change_level: refined
+  confidence: high
+  meaning: Judith claims that exhausted food and scarce water have led her people to decide to eat their animals and consume foods forbidden by God’s laws.
+  meaning_decisions:
+  - source_phrase: ἐσπανίσθη πᾶν ὕδωρ
+    prior_rendering: all water had become scarce
+    new_rendering: water was in short supply
+    rationale: The natural English expression conveys a comprehensive water shortage while preserving the distinction between scarcity and complete exhaustion.
+  - source_phrase: ἐβουλεύσαντο ἐπιβαλεῖν τοῖς κτήνεσιν αὐτῶν
+    prior_rendering: they decided to use their livestock
+    new_rendering: they decided to eat their livestock
+    rationale: The surrounding references to food and consumption establish that they intend to turn to their animals as food; ‘use’ leaves the essential action unspecified.
+  - source_phrase: πάντα ὅσα διεστείλατο αὐτοῖς ὁ θεὸς τοῖς νόμοις αὐτοῦ μὴ φαγεῖν διέγνωσαν δαπανῆσαι
+    prior_rendering: they determined to consume everything that God had commanded them by his laws not to eat
+    new_rendering: resolved to consume everything that God had forbidden them to eat in his laws
+    rationale: The prohibition is expressed directly without weakening either its divine authority or the comprehensive force of ‘everything.’
+  footnote_kinds: {}
+  history_weighed: The review correctly identified resorting to the animals for food, but ‘use their livestock’ still leaves that intended action obscure. The clarification now belongs in the main text, while the important distinction between exhausted food and scarce water remains.

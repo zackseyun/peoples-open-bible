@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from tests import test_letter_jeremiah_69_70_correction as original
+from tests.meaning_pass_baseline import pre_meaning_pass_view
 
 APPLIED = 'a0ae3c29b4525087faa1ceab1ed2822301aa2f37'
 METHOD = 'docs/TEXTUAL_ADJUDICATION_METHOD.md'
@@ -16,6 +17,12 @@ def reviewed(path):
 
 class LetterJeremiahLiveSuccessorTests(original.LetterJeremiahCorrectionTests):
     """Inherit all four source/candidate/corpus/export checks without edits."""
+
+    def test_live_tree_is_exact_baseline_or_reviewed_candidate(self):
+        # The meaning-first pass later revised the other verses on purpose; check
+        # them as they stood before it (tests/meaning_pass_baseline.py).
+        with pre_meaning_pass_view():
+            super().test_live_tree_is_exact_baseline_or_reviewed_candidate()
 
     def check_live_evidence(self):
         raw = (original.ROOT / original.EVIDENCE).read_bytes()

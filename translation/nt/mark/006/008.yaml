@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ παρήγγειλεν αὐτοῖς ἵνα μηδὲν αἴρωσιν εἰς ὁδὸν εἰ μὴ ῥάβδον μόνον, μὴ ⸂ἄρτον, μὴ πήραν⸃, μὴ εἰς τὴν ζώνην χαλκόν,
 translation:
-  text: And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a traveler's bag' for provisions.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'copper'; that is, copper coins or money carried in the belt.
-    reason: lexical_alternative
+  text: He instructed them to take nothing for the journey except a staff—no bread, no travel bag, no copper coins in their belts.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: παρήγγειλεν
   chosen: instructed
@@ -94,14 +87,20 @@ revisions:
   from: And he instructed them to take nothing for the journey except only a staff—no bread, no bag, no copper in their belt—
   to: And he instructed them to take nothing for the journey except only a staff—no bread, no bag, no copper in their belt—
   rationale: Removed the redundant 'except only' construction and rendered μόνος more naturally as 'a staff only.'
-
 - timestamp: '2026-05-18T03:00:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—'
-  to: 'And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—'
+  from: And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—
+  to: And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''except only a staff''].'
+- timestamp: '2026-11-09T17:14:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he instructed them to take nothing for the journey except a staff only—no bread[a], no bag[b], no copper in their belt—
+  to: He instructed them to take nothing for the journey except a staff—no bread, no travel bag, no copper coins in their belts.
+  rationale: The recorded passes disagree about the placement of “only,” but neither supplies a maintainer ruling, and “nothing … except” already expresses the restriction. The documented travel-bag and copper-coin senses are now carried by the main text rather than misplaced notes.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -124,3 +123,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/mark/006/008.job-56255.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:04Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus instructs the Twelve to travel with a staff but without bread, a provision bag, or money.
+  meaning_decisions:
+  - source_phrase: πήραν
+    prior_rendering: bag
+    new_rendering: travel bag
+    rationale: The specific kind of bag is made explicit, carrying the documented provision-bag sense into the text.
+  - source_phrase: χαλκόν
+    prior_rendering: copper
+    new_rendering: copper coins
+    rationale: The metal names coinage here, not raw copper; supplying “coins” makes the monetary prohibition clear while retaining the specified material.
+  footnote_kinds: {}
+  history_weighed: The recorded passes disagree about the placement of “only,” but neither supplies a maintainer ruling, and “nothing … except” already expresses the restriction. The documented travel-bag and copper-coin senses are now carried by the main text rather than misplaced notes.

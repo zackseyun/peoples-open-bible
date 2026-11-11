@@ -18,11 +18,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: she loved piety more[a], which saves unto eternal life according to God.
-  philosophy: optimal-equivalence
+  text: She loved godliness more—the godliness that saves for eternal life in accordance with God's will[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'which saves for eternal life in accordance with God,' with κατὰ θεόν expressing conformity to God's will or standard.
+    text: Literally, 'according to God.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: εὐσέβειαν
@@ -107,14 +107,20 @@ revisions:
   from: she loved piety more, the kind that saves for eternal life according to God.
   to: she loved piety more, the kind that saves for eternal life according to God.
   rationale: Replaced the appositional phrase 'the kind that saves' with 'which saves' for a more direct rendering of the participle, and changed 'for eternal life' to 'unto eternal life' to reflect εἰς more formally.
-
 - timestamp: '2026-05-16T18:22:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'she loved piety more[a], which saves unto eternal life according to God.'
-  to: 'she loved piety more[a], which saves unto eternal life according to God.'
-  rationale: 'Restored drafter ''the kind that saves'' (preserving the chosen appositional ''kind'' rendering) and ''for eternal life'' (preserving the chosen ''for'' preposition) per chosen renderings.'
+  from: she loved piety more[a], which saves unto eternal life according to God.
+  to: she loved piety more[a], which saves unto eternal life according to God.
+  rationale: Restored drafter 'the kind that saves' (preserving the chosen appositional 'kind' rendering) and 'for eternal life' (preserving the chosen 'for' preposition) per chosen renderings.
+- timestamp: '2026-11-09T18:59:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: she loved piety more[a], which saves unto eternal life according to God.
+  to: She loved godliness more—the godliness that saves for eternal life in accordance with God's will[a].
+  rationale: The review improved the participial connection but introduced the unnecessary archaism 'unto,' while the revert favored 'for.' I preserve the direct connection and ordinary 'for,' clarifying the compressed final phrase with a literal note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -134,3 +140,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/015/003.job-50107.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:54Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: She loved godliness more because it brings salvation for eternal life in accordance with God’s will.
+  meaning_decisions:
+  - source_phrase: τὴν εὐσέβειαν μᾶλλον ἠγάπησεν τὴν σώζουσαν
+    prior_rendering: she loved piety more, which saves
+    new_rendering: She loved godliness more—the godliness that saves
+    rationale: The apposition clearly identifies godliness as what saves, while maintaining the same term across the opening argument.
+  - source_phrase: εἰς αἰώνιον ζωὴν κατὰ θεόν
+    prior_rendering: unto eternal life according to God
+    new_rendering: for eternal life in accordance with God's will
+    rationale: '''For'' expresses the goal naturally, and the final phrase communicates conformity to God rather than sounding like an attribution of a quotation; the compressed literal wording is retained in a note.'
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review improved the participial connection but introduced the unnecessary archaism 'unto,' while the revert favored 'for.' I preserve the direct connection and ordinary 'for,' clarifying the compressed final phrase with a literal note.

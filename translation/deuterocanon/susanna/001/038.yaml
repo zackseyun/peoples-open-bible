@@ -28,12 +28,8 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And they did not know that we were standing there. Then we rushed together[a], saying, 'Let us find out who these men are.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'who these are'; 'men' is supplied from the immediate context, where the speakers refer to the two young men.
-    reason: lexical_alternative
+  text: They did not know we were standing there. Then we rushed forward together, saying, ‘Let us find out who they are.’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὐκ ᾔδεισαν
   chosen: did not know
@@ -104,14 +100,20 @@ revisions:
   from: And they did not know that we were standing there. Then we rushed together at one another, saying, 'Let us find out who these men are.'
   to: And they did not know that we were standing there. Then we rushed together at one another, saying, 'Let us find out who these men are.'
   rationale: Removed the awkward and inaccurate 'at one another.' The Greek means 'we rushed together' or 'we sprang upon them together,' not that we rushed at each other. The rest is retained.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they did not know that we were standing there. Then we rushed together[a], saying, ''Let us find out who these men are.'''
-  to: 'And they did not know that we were standing there. Then we rushed together[a], saying, ''Let us find out who these men are.'''
-  rationale: 'Restored drafter ''we rushed together at one another'' preserving the chosen rendering with reflexive force per chosen renderings.'
+  from: And they did not know that we were standing there. Then we rushed together[a], saying, 'Let us find out who these men are.'
+  to: And they did not know that we were standing there. Then we rushed together[a], saying, 'Let us find out who these men are.'
+  rationale: Restored drafter 'we rushed together at one another' preserving the chosen rendering with reflexive force per chosen renderings.
+- timestamp: '2026-11-09T19:09:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they did not know that we were standing there. Then we rushed together[a], saying, 'Let us find out who these men are.'
+  to: They did not know we were standing there. Then we rushed forward together, saying, ‘Let us find out who they are.’
+  rationale: The review correctly rejected “at one another” as misleading, despite conflicting automated records that favored preserving the reciprocal form. The earlier lexical rationale and footnote also misidentified the pair as two young men, so that unsupported specification is removed.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -131,3 +133,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/038.job-52455.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The elders claimed that the pair had not noticed them and that they moved forward together to discover their identities.
+  meaning_decisions:
+  - source_phrase: συνεπιτάμεθα ἀλλήλοις
+    prior_rendering: we rushed together
+    new_rendering: we rushed forward together
+    rationale: The narrative describes a coordinated movement toward the pair, not the elders rushing at each other; “forward” makes the direction understood from the next verse explicit.
+  - source_phrase: τίνες εἰσὶν οὗτοι
+    prior_rendering: who these men are
+    new_rendering: who they are
+    rationale: The referents are Susanna and the alleged young man, not two men; the masculine plural can designate this mixed pair.
+  footnote_kinds: {}
+  history_weighed: The review correctly rejected “at one another” as misleading, despite conflicting automated records that favored preserving the reciprocal form. The earlier lexical rationale and footnote also misidentified the pair as two young men, so that unsupported specification is removed.

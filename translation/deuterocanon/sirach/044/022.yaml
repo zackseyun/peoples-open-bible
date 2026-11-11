@@ -30,14 +30,14 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 44:22
 translation:
-  text: And in Isaac he established[a], because of Abraham his father, a covenant with every firstborn[b], and the blessing rested on the head of Israel.
-  philosophy: optimal-equivalence
+  text: For Isaac too God raised up a son[a], for the sake of his father Abraham. He granted him the covenant of the firstborn[b], and the blessing rested on the head of Israel.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''a blessing of all men and a covenant,'' where the Hebrew here reads ''a covenant with every firstborn.'' The Hebrew line is difficult, and the Greek preserves a broader universal sense.'
-    reason: alternative_reading
+    text: The Hebrew reads “raised up a son”; Greek instead says that God confirmed it likewise for Isaac, referring to the preceding promise.
+    reason: textual_variant
   - marker: b
-    text: The Hebrew text appears troubled at the point where it reads 'son'; the Greek parallel supports the sense 'covenant' in this verse.
+    text: The Hebrew clause is difficult, apparently “he gave him the covenant of every firstborn.” Greek instead speaks of “the blessing of all people and the covenant” being established on Jacob’s head.
     reason: textual_variant
 lexical_decisions:
 - source_word: וגם ליצחק הקים
@@ -126,14 +126,20 @@ revisions:
   from: And in Isaac he established, because of Abraham his father, a covenant with every firstborn, and the blessing rested on the head of Israel.
   to: And also for Isaac he established a son, because of Abraham his father. He gave him the covenant of every firstborn, and the blessing rested on the head of Israel.
   rationale: Restored the omitted word 'son' after Isaac, split the verse at the sentence break, and revised 'in Isaac he established' to 'for Isaac he established a son' for closer alignment with the Hebrew. Also rendered נתיו explicitly as 'He gave him' to account for the verb.
-
 - timestamp: '2026-05-15T13:39:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And also for Isaac he established a son[a], because of Abraham his father. He gave him the covenant of every firstborn[b], and the blessing rested on the head of Israel.'
-  to: 'And in Isaac he established[a], because of Abraham his father, a covenant with every firstborn[b], and the blessing rested on the head of Israel.'
-  rationale: 'Restored 2 documented text-critical decisions (ἐν τῷ Ἰσαὰκ; בן → covenant per Greek διαθήκην).'
+  from: And also for Isaac he established a son[a], because of Abraham his father. He gave him the covenant of every firstborn[b], and the blessing rested on the head of Israel.
+  to: And in Isaac he established[a], because of Abraham his father, a covenant with every firstborn[b], and the blessing rested on the head of Israel.
+  rationale: Restored 2 documented text-critical decisions (ἐν τῷ Ἰσαὰκ; בן → covenant per Greek διαθήκην).
+- timestamp: '2026-11-09T20:10:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in Isaac he established[a], because of Abraham his father, a covenant with every firstborn[b], and the blessing rested on the head of Israel.
+  to: For Isaac too God raised up a son[a], for the sake of his father Abraham. He granted him the covenant of the firstborn[b], and the blessing rested on the head of Israel.
+  rationale: The later automated revert favored a Greek-supported covenant reading over “son,” but the supplied Hebrew permits a coherent statement about a son, so I restore the attested noun. I preserve the firstborn reading cautiously rather than presenting the history’s troubled Hebrew-Greek combination as certain.
 cross_check:
   status: needs_review
   agreement: 0.4
@@ -153,3 +159,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/044/022.job-52245.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:10:09Z'
+  change_level: retranslated
+  confidence: low
+  meaning: For Abraham’s sake God gave Isaac a son and continued the covenant associated with the firstborn and the blessing that rested on Israel.
+  meaning_decisions:
+  - source_phrase: וגם ליצחק הקים בן
+    prior_rendering: And in Isaac he established ... a covenant
+    new_rendering: For Isaac too God raised up a son
+    rationale: The supplied Hebrew explicitly contains “son” and can form a coherent statement about the continuation of Isaac’s family; replacing that noun with “covenant” is not required by the Hebrew syntax, though the Greek alternative remains important.
+  - source_phrase: בעבור אברהם אביו
+    prior_rendering: because of Abraham his father
+    new_rendering: for the sake of his father Abraham
+    rationale: The phrase identifies Abraham as the reason for God’s favor toward Isaac; “for the sake of” expresses that relational force naturally.
+  - source_phrase: ברית כל ראשון נתיו
+    prior_rendering: a covenant with every firstborn
+    new_rendering: He granted him the covenant of the firstborn
+    rationale: The grant verb is restored, and the difficult firstborn expression is understood generically as the covenant associated with the firstborn, rather than a separate covenant made with every firstborn individual; the uncertainty is expressly noted.
+  footnote_kinds:
+    a: textual_variant
+    b: textual_variant
+  history_weighed: The later automated revert favored a Greek-supported covenant reading over “son,” but the supplied Hebrew permits a coherent statement about a son, so I restore the attested noun. I preserve the firstborn reading cautiously rather than presenting the history’s troubled Hebrew-Greek combination as certain.

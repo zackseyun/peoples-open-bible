@@ -19,15 +19,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man's life[b], and no one has been known to return from Hades.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “no one has been known who was released from Hades,” preserving the more literal force of the participle ὁ ἀναλύσας.
-    reason: lexical_alternative
-  - marker: b
-    text: Greek “at the end of a man,” a generic singular expression for human mortality.
-    reason: lexical_alternative
+  text: For they reasoned wrongly and said among themselves, “Our life is short and sorrowful; there is no remedy for death, and no one has ever been known to return from the realm of the dead.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λογισάμενοι οὐκ ὀρθῶς
   chosen: reasoning wrongly
@@ -140,14 +133,20 @@ revisions:
   from: For they said among themselves, reasoning wrongly, “Our life is short and sorrowful, and there is no healing at the end of a man’s life, and no one has been known to return from Hades.”
   to: For they said among themselves, reasoning wrongly, “Our life is short and sorrowful, and there is no healing at the end of a man’s life, and no one has been known to return from Hades.”
   rationale: Changed “healing” to “remedy” for more natural rendering of ἴασις in this context; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man''s life[b], and no one has been known to return from Hades.”'
-  to: 'For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man''s life[b], and no one has been known to return from Hades.”'
+  from: For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man's life[b], and no one has been known to return from Hades.”
+  to: For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man's life[b], and no one has been known to return from Hades.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the end of a man’s life''].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For they said among themselves[a], reasoning wrongly, “Our life is short and sorrowful, and there is no remedy at the end of a man's life[b], and no one has been known to return from Hades.”
+  to: For they reasoned wrongly and said among themselves, “Our life is short and sorrowful; there is no remedy for death, and no one has ever been known to return from the realm of the dead.
+  rationale: The recorded review favors 'remedy,' which aptly conveys the claim that death cannot be cured. I retain the history's understanding of return from Hades, but express the realm's meaning directly and leave the quotation open because their speech continues.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -167,3 +166,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/001.job-39583.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The wicked wrongly argue that life is short and sorrowful and that death admits neither remedy nor return.
+  meaning_decisions:
+  - source_phrase: οὐκ ἔστιν ἴασις ἐν τελευτῇ ἀνθρώπου
+    prior_rendering: there is no remedy at the end of a man's life
+    new_rendering: there is no remedy for death
+    rationale: The terminal point of human life is death; naming it directly makes the speakers' claim clear while retaining the image of a remedy.
+  - source_phrase: ἐξ ᾅδου
+    prior_rendering: from Hades
+    new_rendering: from the realm of the dead
+    rationale: This conveys the Greek Jewish meaning of Hades without requiring readers to distinguish the realm from the Greek deity or from final punishment.
+  footnote_kinds: {}
+  history_weighed: The recorded review favors 'remedy,' which aptly conveys the claim that death cannot be cured. I retain the history's understanding of return from Hades, but express the realm's meaning directly and leave the quotation open because their speech continues.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וְ/אֵ֨ת כָּל עָרֵ֤י הַֽ/מִּסְכְּנוֹת֙ אֲשֶׁ֣ר הָי֣וּ לִ/שְׁלֹמֹ֔ה וְ/אֵת֙ עָרֵ֣י הָ/רֶ֔כֶב וְ/אֵ֖ת עָרֵ֣י הַ/פָּרָשִׁ֑ים וְ/אֵ֣ת חֵ֣שֶׁק שְׁלֹמֹ֗ה אֲשֶׁ֤ר חָשַׁק֙ לִ/בְנ֤וֹת בִּ/ירוּשָׁלִַ֨ם֙ וּ/בַ/לְּבָנ֔וֹן וּ/בְ/כֹ֖ל אֶ֥רֶץ מֶמְשַׁלְתּֽ/וֹ־׀׃
 translation:
-  text: also all the storage cities that belonged to Solomon[a], the chariot cities, the horsemen's cities, and whatever Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'store cities' or 'supply cities.' The Hebrew refers to cities designated for storage or provisions.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'cities of the horsemen' or 'cavalry cities.' The Hebrew term refers more specifically to horsemen than to horses in general.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally, 'the desire of Solomon which he desired to build,' a Hebrew emphatic expression for what Solomon strongly wished to build.
-    reason: lexical_alternative
+  text: Solomon also built all his storage cities, the cities for his chariots, the cities for his horsemen, and whatever he desired to build in Jerusalem, in Lebanon, and throughout the land he ruled.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: עָרֵי הַמִּסְכְּנוֹת
   chosen: storage cities
@@ -97,14 +87,20 @@ revisions:
   from: also all the storage cities that belonged to Solomon, the chariot cities, the horsemen’s cities, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion.
   to: also all the storage cities that belonged to Solomon, the chariot cities, the cities of the horsemen, and all that Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion.
   rationale: Changed 'horsemen’s cities' to 'cities of the horsemen' for a more formal and direct rendering, and changed 'whatever Solomon desired' to 'all that Solomon desired' to reflect the Hebrew more completely and consistently.
-
 - timestamp: '2026-05-16T06:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'also all the storage cities that belonged to Solomon[a], the chariot cities, the cities of the horsemen, and all that Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.'
-  to: 'also all the storage cities that belonged to Solomon[a], the chariot cities, the horsemen''s cities, and whatever Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.'
-  rationale: 'Azure substituted ''cities of the horsemen'' (drafter''s explicit rejected_alternative — drafter chose possessive form) and ''all that Solomon desired'' (rejected class — drafter chose ''whatever'' for cognate-construction breadth).'
+  from: also all the storage cities that belonged to Solomon[a], the chariot cities, the cities of the horsemen, and all that Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.
+  to: also all the storage cities that belonged to Solomon[a], the chariot cities, the horsemen's cities, and whatever Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.
+  rationale: Azure substituted 'cities of the horsemen' (drafter's explicit rejected_alternative — drafter chose possessive form) and 'all that Solomon desired' (rejected class — drafter chose 'whatever' for cognate-construction breadth).
+- timestamp: '2026-11-09T17:20:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: also all the storage cities that belonged to Solomon[a], the chariot cities, the horsemen's cities, and whatever Solomon desired to build in Jerusalem, in Lebanon[c][b], and in all the land of his dominion.
+  to: Solomon also built all his storage cities, the cities for his chariots, the cities for his horsemen, and whatever he desired to build in Jerusalem, in Lebanon, and throughout the land he ruled.
+  rationale: The history rightly preserves 'storage cities,' the distinction between chariots and horsemen, and the breadth of 'whatever Solomon desired.' I retain those meanings while replacing possessive and construct-chain wording that obscures the cities’ purpose.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +120,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/009/019.job-58320.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:20:54Z'
+  change_level: refined
+  confidence: high
+  meaning: Solomon also built supply cities, cities for his military forces, and the other projects he desired throughout his realm.
+  meaning_decisions:
+  - source_phrase: וְאֵת כָּל עָרֵי הַמִּסְכְּנוֹת אֲשֶׁר הָיוּ לִשְׁלֹמֹה
+    prior_rendering: also all the storage cities that belonged to Solomon
+    new_rendering: Solomon also built all his storage cities
+    rationale: The building action is understood from the continuing list; supplying it makes the verse readable while preserving ownership and total scope.
+  - source_phrase: עָרֵי הָרֶכֶב ... עָרֵי הַפָּרָשִׁים
+    prior_rendering: the chariot cities, the horsemen's cities
+    new_rendering: the cities for his chariots, the cities for his horsemen
+    rationale: These phrases describe cities designated for military forces, not cities owned by individual horsemen.
+  - source_phrase: בְכֹל אֶרֶץ מֶמְשַׁלְתּוֹ
+    prior_rendering: in all the land of his dominion
+    new_rendering: throughout the land he ruled
+    rationale: This naturally conveys the full territorial extent of Solomon’s rule.
+  footnote_kinds: {}
+  history_weighed: The history rightly preserves 'storage cities,' the distinction between chariots and horsemen, and the breadth of 'whatever Solomon desired.' I retain those meanings while replacing possessive and construct-chain wording that obscures the cities’ purpose.

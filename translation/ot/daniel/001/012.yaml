@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: נַס נָ֥א אֶת עֲבָדֶ֖י/ךָ יָמִ֣ים עֲשָׂרָ֑ה וְ/יִתְּנוּ לָ֜/נוּ מִן הַ/זֵּרֹעִ֛ים וְ/נֹאכְלָ֖ה וּ/מַ֥יִם וְ/נִשְׁתֶּֽה־־־־׃
 translation:
-  text: Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.
-  philosophy: optimal-equivalence
+  text: '“Please test your servants for ten days: give us vegetables[a] to eat and water to drink.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'foods from seeds' or 'seed-food'; the Hebrew term refers broadly to plant-based food grown from seed.
+    text: The Hebrew term refers broadly to plant foods grown from seed, including vegetables and legumes.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נַס
@@ -87,14 +87,20 @@ revisions:
   from: 'Please test your servants for ten days: let us be given some vegetables to eat and water to drink.'
   to: 'Please test your servants for ten days: let us be given some vegetables to eat and water to drink.'
   rationale: Replaced the colon with a comma for smoother formal English, added 'and' to reflect the Hebrew conjunction, and removed 'some' since it is not explicit in the source.
-
 - timestamp: '2026-05-18T02:55:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.'
-  to: 'Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.'
+  from: Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.
+  to: Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some vegetables''].'
+- timestamp: '2026-11-09T17:32:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Please test your servants for ten days[a], and let us be given vegetables to eat and water to drink.
+  to: '“Please test your servants for ten days: give us vegetables[a] to eat and water to drink.'
+  rationale: The recorded passes mainly debate conjunctions and whether to include 'some,' rather than the meaning of the request. I retain the established 'servants' and 'vegetables,' preserve the broader food sense in a correctly placed note, and make the request more direct.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -114,3 +120,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/001/012.job-44109.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:05Z'
+  change_level: refined
+  confidence: high
+  meaning: Daniel asks the steward to test them for ten days on a diet of vegetables and water.
+  meaning_decisions:
+  - source_phrase: וְיִתְּנוּ לָנוּ
+    prior_rendering: and let us be given
+    new_rendering: give us
+    rationale: The steward controls their provisions, so a direct request naturally conveys the intended action without the cumbersome impersonal passive.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The recorded passes mainly debate conjunctions and whether to include 'some,' rather than the meaning of the request. I retain the established 'servants' and 'vegetables,' preserve the broader food sense in a correctly placed note, and make the request more direct.

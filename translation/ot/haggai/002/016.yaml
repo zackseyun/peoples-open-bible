@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: מִֽ/הְיוֹתָ֥/ם בָּא֙ אֶל עֲרֵמַ֣ת עֶשְׂרִ֔ים וְ/הָיְתָ֖ה עֲשָׂרָ֑ה בָּ֣א אֶל הַ/יֶּ֗קֶב לַ/חְשֹׂף֙ חֲמִשִּׁ֣ים פּוּרָ֔ה וְ/הָיְתָ֖ה עֶשְׂרִֽים־־׃
 translation:
-  text: When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
-  philosophy: optimal-equivalence
+  text: In those days, when someone came to a heap of grain expecting twenty measures, there were only ten; when someone came to the wine vat to draw fifty measures[a], there were only twenty.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew 'fifty purah,' a liquid measure or container of uncertain exact size.
+    text: The Hebrew term purah may refer to a liquid measure or a vessel; its exact size is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מִהְיוֹתָם
@@ -89,14 +89,20 @@ revisions:
   from: How was it with you in those days? How was it with you in those days? When one came to a heap of twenty measures, there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
   to: When one came to a heap of twenty measures, there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
   rationale: Removed the added introductory phrase 'How was it with you in those days?' because it is not represented in this clause of the source. Retained the rest with minor consistency review; the wording is accurate and natural.
-
 - timestamp: '2026-05-18T02:58:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.'
-  to: 'When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.'
+  from: When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
+  to: When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''How was it with you in those days?''].'
+- timestamp: '2026-11-09T17:47:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When one came to a heap of twenty measures[a], there were only ten; when one came to the wine vat to draw fifty measures, there were only twenty.
+  to: In those days, when someone came to a heap of grain expecting twenty measures, there were only ten; when someone came to the wine vat to draw fifty measures[a], there were only twenty.
+  rationale: Accepted the review’s removal of the duplicated introductory questions rather than restoring them. The source does retain a temporal link to the earlier period, which is expressed briefly, and the measure note is moved to the phrase it explains.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -116,3 +122,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/haggai/002/016.job-65875.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:47:26Z'
+  change_level: refined
+  confidence: high
+  meaning: During that earlier period, grain and wine yields fell far short of what people expected.
+  meaning_decisions:
+  - source_phrase: מִהְיוֹתָם בָּא
+    prior_rendering: When one came
+    new_rendering: In those days, when someone came
+    rationale: Carries the opening temporal reference into English without introducing the unsupported question found in the first draft.
+  - source_phrase: עֲרֵמַת עֶשְׂרִים וְהָיְתָה עֲשָׂרָה
+    prior_rendering: a heap of twenty measures, there were only ten
+    new_rendering: a heap of grain expecting twenty measures, there were only ten
+    rationale: Identifies the harvested material and clarifies that twenty was the anticipated quantity, whereas ten was the actual yield.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: Accepted the review’s removal of the duplicated introductory questions rather than restoring them. The source does retain a temporal link to the earlier period, which is expressed briefly, and the measure note is moved to the phrase it explains.

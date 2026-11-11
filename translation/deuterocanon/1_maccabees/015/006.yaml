@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: to make your own coinage for the currency of your country;[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to mint your own coin as the currency of your country.' The Greek uses a general verb ('make') with terms for coined money and currency.
-    reason: lexical_alternative
+  text: I also grant you the right to mint your own coinage as the currency of your country.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ποιῆσαι
   chosen: to make
@@ -82,14 +78,20 @@ revisions:
   from: to make your own coinage for the currency of your country;
   to: to make your own coinage for your country;
   rationale: Removed the redundant phrase 'for the currency of' to more naturally and accurately reflect the Greek, which simply grants the right to mint one's own coinage for the country.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'to make your own coinage for your country;[a]'
-  to: 'to make your own coinage for the currency of your country;[a]'
-  rationale: 'Restored drafter ''for the currency of your country'' (preserving the explicit currency-purpose phrase) per chosen renderings.'
+  from: to make your own coinage for your country;[a]
+  to: to make your own coinage for the currency of your country;[a]
+  rationale: Restored drafter 'for the currency of your country' (preserving the explicit currency-purpose phrase) per chosen renderings.
+- timestamp: '2026-11-09T18:53:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: to make your own coinage for the currency of your country;[a]
+  to: I also grant you the right to mint your own coinage as the currency of your country.
+  rationale: The review sought to remove redundancy, while the later revert rightly preserved the explicit currency function. The new sentence keeps that distinction and incorporates the earlier footnote’s useful 'mint' wording into the main text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -109,3 +111,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/015/006.job-48832.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Antiochus authorizes Simon to issue his own coinage as his country’s currency.
+  meaning_decisions:
+  - source_phrase: ποιῆσαι κόμμα ἴδιον νόμισμα τῆς χώρας σου
+    prior_rendering: to make your own coinage for the currency of your country
+    new_rendering: I also grant you the right to mint your own coinage as the currency of your country
+    rationale: The infinitive expresses an authorized privilege within the royal grant; supplying that authorization makes the verse a complete English sentence, and 'mint' is the contextual meaning of making coinage.
+  footnote_kinds: {}
+  history_weighed: The review sought to remove redundancy, while the later revert rightly preserved the explicit currency function. The new sentence keeps that distinction and incorporates the earlier footnote’s useful 'mint' wording into the main text.

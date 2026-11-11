@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Κατήντησεν δὲ ⸀καὶ εἰς Δέρβην καὶ ⸀εἰς Λύστραν. καὶ ἰδοὺ μαθητής τις ἦν ἐκεῖ ὀνόματι Τιμόθεος, υἱὸς ⸀γυναικὸς Ἰουδαίας πιστῆς, πατρὸς δὲ Ἕλληνος,
 translation:
-  text: He also came to Derbe and to Lystra[a]. And behold, a certain disciple was there named Timothy, the son of a believing Jewish woman, but of a Greek father[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the son of a Jewish woman who was faithful.' The Greek adjective can mean either 'believing' or 'faithful,' though in Acts the sense 'believing' is more likely here.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'there was a certain disciple there'.
-    reason: previous_rendering
+  text: Paul also came to Derbe and Lystra. A disciple named Timothy was there; his mother was a Jewish believer, but his father was Greek.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Κατήντησεν
   chosen: came
@@ -113,12 +106,18 @@ revisions:
   from: there was a certain disciple there
   to: a certain disciple was there
   rationale: The current rendering uses an existential 'there was' followed by a locational 'there' to translate 'ἦν ἐκεῖ'. This creates a slightly redundant and awkward English phrase. While the intent to preserve the force of ἐκεῖ is understandable, a construction like 'a certain disciple was there' is more natural in English and conveys the exact same meaning without loss.
+- timestamp: '2026-11-09T17:07:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He also came to Derbe and to Lystra[a]. And behold, a certain disciple was there named Timothy, the son of a believing Jewish woman, but of a Greek father[b],
+  to: Paul also came to Derbe and Lystra. A disciple named Timothy was there; his mother was a Jewish believer, but his father was Greek.
+  rationale: The automated revision rightly removed the redundant existential construction; that gain is retained. The recorded lexical discussion supports understanding Timothy's mother as a believer, rather than merely describing her as reliable.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:40:39Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +140,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/nt/acts/016/001.job-38695.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul arrives in Derbe and Lystra, where Timothy is introduced as a disciple with a Jewish believing mother and a Greek father.
+  meaning_decisions:
+  - source_phrase: Κατήντησεν δὲ καί
+    prior_rendering: He also came
+    new_rendering: Paul also came
+    rationale: Naming the subject understood from the preceding narrative makes the transition clear without adding information.
+  - source_phrase: υἱὸς γυναικὸς Ἰουδαίας πιστῆς, πατρὸς δὲ Ἕλληνος
+    prior_rendering: the son of a believing Jewish woman, but of a Greek father
+    new_rendering: his mother was a Jewish believer, but his father was Greek
+    rationale: Complete clauses clearly convey Timothy's contrasting parental backgrounds, which explain the action in verse 3.
+  footnote_kinds: {}
+  history_weighed: The automated revision rightly removed the redundant existential construction; that gain is retained. The recorded lexical discussion supports understanding Timothy's mother as a believer, rather than merely describing her as reliable.

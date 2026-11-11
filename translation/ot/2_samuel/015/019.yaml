@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר הַ/מֶּ֨לֶךְ֙ אֶל אִתַּ֣י הַ/גִּתִּ֔י לָ֧/מָּה תֵלֵ֛ךְ גַּם אַתָּ֖ה אִתָּ֑/נוּ שׁ֣וּב וְ/שֵׁ֤ב עִם הַ/מֶּ֨לֶךְ֙ כִּֽי נָכְרִ֣י אַ֔תָּה וְ/גַם גֹּלֶ֥ה אַתָּ֖ה לִ/מְקוֹמֶֽ/ךָ־־־־־׃
 translation:
-  text: Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”
-  philosophy: optimal-equivalence
+  text: Then the king said to Ittai the Gittite, “Why should you too go with us? Go back and stay with the king[a], for you are a foreigner and an exile from your homeland[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Why will you also go with us?'
-    reason: lexical_alternative
-  - marker: b
-    text: The phrase 'stay with the king' may refer to remaining under the reigning royal authority in Jerusalem; the Hebrew does not explicitly name the referent.
+    text: Likely a reference to Absalom, the rival claimant to the throne.
     reason: alternative_reading
-  - marker: c
-    text: Or 'and also an exile to your place.' The Hebrew wording is compressed and may emphasize Ittai's displaced status and his connection to his own homeland/place.
-    reason: lexical_alternative
+  - marker: b
+    text: Or, “for you are a foreigner and an exile as well; return to your own place.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: Then ... said
@@ -113,14 +110,20 @@ revisions:
   from: Then the king said to Ittai the Gittite, “Why are you also going with us? Go back and stay with the king, for you are a foreigner and also an exile to your own place.”
   to: Then the king said to Ittai the Gittite, “Why are you also going with us? Go back and stay with the king, for you are a foreigner and also an exile to your own place.”
   rationale: Changed 'Go back' to 'Return' for a more formal register and adjusted 'an exile to your own place' to 'an exile from your own place' for clearer and more accurate English.
-
 - timestamp: '2026-05-17T04:06:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”'
-  to: 'Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”'
+  from: Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”
+  to: Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to your own place''].'
+- timestamp: '2026-11-09T17:29:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king said to Ittai the Gittite[a], “Why are you also going with us? Return and stay with the king[c][b], for you are a foreigner and also an exile from your own place.”
+  to: Then the king said to Ittai the Gittite, “Why should you too go with us? Go back and stay with the king[a], for you are a foreigner and an exile from your homeland[b].”
+  rationale: The later 'an exile from your own place' conveys the sense better than the first draft’s opaque 'to your own place'; I retain that gain and clarify 'place' as homeland. As the recorded rationale advises, the identity of 'the king' remains implicit in the main text.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -140,3 +143,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/015/019.job-45624.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:23Z'
+  change_level: refined
+  confidence: medium
+  meaning: David tells the foreign exile Ittai that he need not join the flight and may return to remain with the king.
+  meaning_decisions:
+  - source_phrase: לָמָּה תֵלֵךְ גַּם אַתָּה אִתָּנוּ
+    prior_rendering: Why are you also going with us?
+    new_rendering: Why should you too go with us?
+    rationale: David questions whether Ittai should bear the hardship of joining them, rather than merely asking for an explanation of his movement.
+  - source_phrase: וְגַם גֹּלֶה אַתָּה לִמְקוֹמֶךָ
+    prior_rendering: and also an exile from your own place
+    new_rendering: and an exile from your homeland
+    rationale: The best-supported understanding concerns displacement from Ittai’s native country; 'homeland' makes that sense clearer while a note preserves the alternative attachment.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The later 'an exile from your own place' conveys the sense better than the first draft’s opaque 'to your own place'; I retain that gain and clarify 'place' as homeland. As the recorded rationale advises, the identity of 'the king' remains implicit in the main text.

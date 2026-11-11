@@ -4,21 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּקַּ֨ח אַבְרָהָ֜ם אֶת יִשְׁמָעֵ֣אל בְּנ֗/וֹ וְ/אֵ֨ת כָּל יְלִידֵ֤י בֵית/וֹ֙ וְ/אֵת֙ כָּל מִקְנַ֣ת כַּסְפּ֔/וֹ כָּל זָכָ֕ר בְּ/אַנְשֵׁ֖י בֵּ֣ית אַבְרָהָ֑ם וַ/יָּ֜מָל אֶת בְּשַׂ֣ר עָרְלָתָ֗/ם בְּ/עֶ֨צֶם֙ הַ/יּ֣וֹם הַ/זֶּ֔ה כַּ/אֲשֶׁ֛ר דִּבֶּ֥ר אִתּ֖/וֹ אֱלֹהִֽים־־־־־׃
 translation:
-  text: So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.
-  philosophy: optimal-equivalence
+  text: So Abraham gathered his son Ishmael, all those born in his household, and all those bought with his money—every male in Abraham’s household—and circumcised them[a] on that very day, just as God had told him.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'those acquired with his silver'; the phrase refers to persons purchased into Abraham’s household.
+    text: Literally, “circumcised the flesh of their foreskins.”
     reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'on this very day,' an idiom emphasizing that Abraham acted immediately that same day.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'just as God had said to him.'
-    reason: alternative_reading
-  - marker: d
-    text: Or 'every male among the men of Abraham’s house'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: וַיִּקַּח
   chosen: took
@@ -123,9 +114,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.'
-  to: 'So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.'
+  from: So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.
+  to: So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''just as God had spoken with him''].'
+- timestamp: '2026-11-09T17:42:23Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Abraham took Ishmael his son[a], and all those born in his house, and all those bought with his money, every male among the men of Abraham’s household, and circumcised the flesh of their foreskin on that very day[d][c][b], just as God had spoken to him.
+  to: So Abraham gathered his son Ishmael, all those born in his household, and all those bought with his money—every male in Abraham’s household—and circumcised them[a] on that very day, just as God had told him.
+  rationale: The earlier readability revision recognized the redundancy of 'every male among the men,' while the later revision restored it for formal correspondence. I preserve the full male scope and all household categories in clearer English, retaining the history's emphasis on obedience that very day.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T11:21:19Z'
@@ -154,3 +152,34 @@ cross_check:
     major-issues: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/017/023.job-37807.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:42:23Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Abraham immediately obeys God by circumcising Ishmael and every male in his household, whether homeborn or purchased.
+  meaning_decisions:
+  - source_phrase: וַיִּקַּח אַבְרָהָם
+    prior_rendering: Abraham took
+    new_rendering: Abraham gathered
+    rationale: Here 'took' introduces Abraham's assembling the people for circumcision, not taking them to an unstated destination.
+  - source_phrase: יְלִידֵי בֵיתוֹ ... כָּל זָכָר בְּאַנְשֵׁי בֵּית אַבְרָהָם
+    prior_rendering: those born in his house ... every male among the men of Abraham’s household
+    new_rendering: those born in his household ... every male in Abraham’s household
+    rationale: '''Household'' conveys the social group rather than merely a building, and ''every male'' preserves the exhaustive male scope without the redundant ''among the men.'''
+  - source_phrase: וַיָּמָל אֶת בְּשַׂר עָרְלָתָם
+    prior_rendering: circumcised the flesh of their foreskin
+    new_rendering: circumcised them
+    rationale: The standard English verb already identifies the bodily operation and naturally takes the people as its object. A footnote preserves the explicit flesh wording that echoes the covenant command.
+  - source_phrase: כַּאֲשֶׁר דִּבֶּר אִתּוֹ אֱלֹהִים
+    prior_rendering: just as God had spoken to him
+    new_rendering: just as God had told him
+    rationale: The comparison concerns compliance with God's instructions, not merely correspondence to words spoken during the conversation.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier readability revision recognized the redundancy of 'every male among the men,' while the later revision restored it for formal correspondence. I preserve the full male scope and all household categories in clearer English, retaining the history's emphasis on obedience that very day.

@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Μετὰ δὲ ἡμέρας τινὰς παραγενόμενος ὁ Φῆλιξ σὺν Δρουσίλλῃ τῇ ⸀ἰδίᾳ γυναικὶ οὔσῃ Ἰουδαίᾳ μετεπέμψατο τὸν Παῦλον καὶ ἤκουσεν αὐτοῦ περὶ τῆς εἰς Χριστὸν ⸀Ἰησοῦν πίστεως.
 translation:
-  text: After some days[a], Felix came with Drusilla, his own wife, who was Jewish[b], and sent for Paul and heard him concerning faith in Christ Jesus.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'trust in Jesus the Messiah.' The noun πίστις can also carry the sense of 'trust,' though 'faith' is the default rendering.
-    reason: lexical_alternative
+  text: Several days later, Felix came with his wife Drusilla, who was Jewish. He sent for Paul and listened to him speak about faith in Christ Jesus.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Μετὰ δὲ ἡμέρας τινὰς
   chosen: After some days
@@ -21,7 +14,7 @@ lexical_decisions:
   - Several days later
   - Now after some days
   lexicon: BDAG
-  rationale: "μετά with the accusative plus ἡμέρας τινάς is a temporal expression meaning 'after some days.' δέ is rendered with a light discourse marker ('Now') to preserve narrative flow without overtranslating. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'μετά with the accusative plus ἡμέρας τινάς is a temporal expression meaning ''after some days.'' δέ is rendered with a light discourse marker (''Now'') to preserve narrative flow without overtranslating. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: παραγενόμενος
   lemma: παραγίνομαι
   chosen: came
@@ -122,12 +115,11 @@ revisions:
   rationale: Changed 'about the faith in Messiah Jesus' to 'concerning faith in Christ Jesus' for more natural English and closer rendering of περὶ τῆς εἰς Χριστὸν Ἰησοῦν πίστεως without adding 'the' before faith.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now after some days, Felix came with Drusilla, his own wife, who was Jewish, and sent for Paul and heard him concerning faith in Christ Jesus.
   to: Now after some days, Felix came with Drusilla, his own wife, who was Jewish, and sent for Paul and heard him concerning faith in Messiah Jesus.
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -135,6 +127,13 @@ revisions:
   from: Now after some days[a], Felix came with Drusilla, his own wife, who was Jewish[b], and sent for Paul and heard him concerning faith in Messiah Jesus.
   to: After some days[a], Felix came with Drusilla, his own wife, who was Jewish[b], and sent for Paul and heard him concerning faith in Messiah Jesus.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:12:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: After some days[a], Felix came with Drusilla, his own wife, who was Jewish[b], and sent for Paul and heard him concerning faith in Christ Jesus.
+  to: Several days later, Felix came with his wife Drusilla, who was Jewish. He sent for Paul and listened to him speak about faith in Christ Jesus.
+  rationale: The history alternates between Messiah Jesus and Christ Jesus, but the standing ruling specifies Christ Jesus for this name construction, agreeing with the current text. I retain faith and omit the lexical trust alternative because it does not represent a distinct contextual interpretation.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +156,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/acts/024/024.job-53973.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Several days later, Felix came with his Jewish wife Drusilla and summoned Paul to hear about faith in Christ Jesus.
+  meaning_decisions:
+  - source_phrase: τῇ ἰδίᾳ γυναικὶ
+    prior_rendering: his own wife
+    new_rendering: his wife
+    rationale: The phrase identifies Drusilla as Felix’s wife; English own would suggest a contrast that the context does not establish.
+  - source_phrase: ἤκουσεν αὐτοῦ περὶ τῆς εἰς Χριστὸν Ἰησοῦν πίστεως
+    prior_rendering: heard him concerning faith in Christ Jesus
+    new_rendering: listened to him speak about faith in Christ Jesus
+    rationale: This makes clear that Felix listened to Paul’s exposition, while retaining faith directed toward Christ Jesus.
+  footnote_kinds: {}
+  history_weighed: The history alternates between Messiah Jesus and Christ Jesus, but the standing ruling specifies Christ Jesus for this name construction, agreeing with the current text. I retain faith and omit the lexical trust alternative because it does not represent a distinct contextual interpretation.

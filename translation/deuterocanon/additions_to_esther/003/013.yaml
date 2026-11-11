@@ -12,12 +12,12 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 3 = Addition C, segmented from Swete pages 781-784 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”
-  philosophy: optimal-equivalence
+  text: She pleaded with the Lord, the God of Israel, and said, “My Lord, our king, you alone are God[a]. Help me, for I am alone and have no helper except you,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more smoothly, “you alone are.” The Greek is elliptical here.
-    reason: lexical_alternative
+    text: Or “you alone are our king.” The Greek says “you are alone,” leaving the description of God’s uniqueness implicit.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐδεῖτο
   chosen: was pleading
@@ -125,14 +125,20 @@ revisions:
   from: And she was pleading with the Lord, the God of Israel, and said, “My Lord, our king, you alone are one; help me, who am alone and have no helper except you,”
   to: And she was pleading with the Lord, the God of Israel, and said, “My Lord, our king, you alone are one; help me, who am alone and have no helper except you,”
   rationale: Revised “you alone are one” to “you alone are the only one” for more natural English while preserving the emphatic Greek μόνος.
-
 - timestamp: '2026-05-18T02:59:54Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”'
-  to: 'And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”'
+  from: And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”
+  to: And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you alone are one''].'
+- timestamp: '2026-11-09T18:59:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she was pleading with the Lord[a], the God of Israel, and said, “My Lord, our king, you alone are the only one; help me, who am alone and have no helper except you,”
+  to: She pleaded with the Lord, the God of Israel, and said, “My Lord, our king, you alone are God[a]. Help me, for I am alone and have no helper except you,
+  rationale: Neither the first draft’s “you alone are one” nor the later “you alone are the only one” clearly communicates the confession, and μόνος is not a numeral. I retained the documented emphasis on God’s uniqueness and Esther’s matching aloneness, while acknowledging the uncertainty of the implicit predicate.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -152,3 +158,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/003/013.job-50246.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Esther appeals to Israel’s Lord and king as the unique God, asking him to help her in her isolation because she has no other helper.
+  meaning_decisions:
+  - source_phrase: σὺ εἶ μόνος
+    prior_rendering: you alone are the only one
+    new_rendering: you alone are God
+    rationale: The prayer affirms God’s uniqueness rather than his isolation; supplying “God” conveys the best-supported sense while retaining “alone” to echo Esther’s own aloneness, with the royal understanding noted as an alternative.
+  - source_phrase: βοήθησόν μοι τῇ μόνῃ καὶ μὴ ἔχουσῃ βοηθὸν εἰ μὴ σέ
+    prior_rendering: help me, who am alone and have no helper except you
+    new_rendering: Help me, for I am alone and have no helper except you
+    rationale: Esther’s isolation and lack of another helper are the grounds for her appeal, expressed naturally as a separate plea.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Neither the first draft’s “you alone are one” nor the later “you alone are the only one” clearly communicates the confession, and μόνος is not a numeral. I retained the documented emphasis on God’s uniqueness and Esther’s matching aloneness, while acknowledging the uncertainty of the implicit predicate.

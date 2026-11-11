@@ -24,14 +24,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And now, O Lord, holy in every holiness[b], keep this house[a], recently purified, undefiled forever.
-  philosophy: optimal-equivalence
+  text: And now, O Lord, most holy[a], keep this house, recently purified, undefiled forever.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'this temple.' Greek 'this house' is a common biblical way of referring to the sanctuary.
-    reason: lexical_alternative
-  - marker: b
-    text: The address 'holy in every holiness' is a close rendering of an unusual Greek expression; it may also be understood as 'holy above every consecration' or similarly intensive language.
+    text: Literally, “holy Lord of all holiness”; the phrase may also refer to his lordship over all that is consecrated.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἄγιε
@@ -131,13 +128,12 @@ revisions:
   from: And now, O Lord, holy in every holiness, keep this house, recently purified, undefiled forever.
   to: And now, O Lord, holy in all holiness, keep this house, recently purified, undefiled forever.
   rationale: Revised 'holy in every holiness' to 'holy in all holiness' for more natural formal English while preserving the Greek sense. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now[a], O Lord, holy in all holiness, keep this house, recently purified[b], undefiled forever.'
-  to: 'And now, O Lord, holy in every holiness, keep this house, recently purified, undefiled forever.'
+  from: And now[a], O Lord, holy in all holiness, keep this house, recently purified[b], undefiled forever.
+  to: And now, O Lord, holy in every holiness, keep this house, recently purified, undefiled forever.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in every holiness''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -147,6 +143,13 @@ revisions:
   from: And now, O Lord, holy in every holiness, keep this house, recently purified, undefiled forever.
   to: And now, O Lord, holy in every holiness[b], keep this house[a], recently purified, undefiled forever.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('this house') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('holy in every holiness') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:55:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now, O Lord, holy in every holiness[b], keep this house[a], recently purified, undefiled forever.
+  to: And now, O Lord, most holy[a], keep this house, recently purified, undefiled forever.
+  rationale: The documented rationale identifies an intensification of God’s holiness and cautions against adding “source of all holiness.” I retained that restraint and the biblical image of the temple as a house, while moving the difficult wording into a note; no maintainer revision was supplied.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -166,3 +169,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/036.job-49424.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The priests appeal to the Lord’s supreme holiness and ask him to preserve the recently purified temple from defilement forever.
+  meaning_decisions:
+  - source_phrase: ἄγιε παντὸς ἁγιασμοῦ κύριε
+    prior_rendering: O Lord, holy in every holiness
+    new_rendering: O Lord, most holy
+    rationale: The main text conveys the address’s intensive emphasis on holiness rather than reproducing an opaque genitive construction; the note preserves the fuller wording and another serious understanding.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The documented rationale identifies an intensification of God’s holiness and cautions against adding “source of all holiness.” I retained that restraint and the biblical image of the temple as a house, while moving the difficult wording into a note; no maintainer revision was supplied.

@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: וַ/יְמָאֵ֗ן וַ/יֹּ֨אמֶר֙ לֹ֣א אֹכַ֔ל וַ/יִּפְרְצוּ ב֤/וֹ עֲבָדָי/ו֙ וְ/גַם הָ֣/אִשָּׁ֔ה וַ/יִּשְׁמַ֖ע לְ/קֹלָ֑/ם וַ/יָּ֨קָם֙ מֵֽ/הָ/אָ֔רֶץ וַ/יֵּ֖שֶׁב אֶל הַ/מִּטָּֽה־־־׃
 translation:
-  text: But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “pressed him” for “urged him strongly”; the Hebrew idiom conveys strong insistence.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, “he listened to their voice.”
-    reason: lexical_alternative
-  - marker: c
-    text: “Bed” may also refer to a couch or divan in this setting.
-    reason: cultural_note
+  text: But he refused and said, “I will not eat.” Yet his servants and the woman pressed him, and he listened to them. So he rose from the ground and sat on the bed.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְמָאֵן
   chosen: he refused
@@ -95,14 +85,20 @@ revisions:
   from: But he refused and said, “I will not eat.” Yet his servants, along with the woman, urged him strongly, and he listened to their voice. So he rose from the ground and sat on the bed.
   to: But he refused and said, “I will not eat.” Yet his servants, along with the woman, urged him strongly, and he listened to their voice. So he rose from the ground and sat on the bed.
   rationale: Removed 'strongly' because the Hebrew does not explicitly add an adverb here; otherwise retained the draft's accurate and natural rendering.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.'
-  to: 'But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.'
+  from: But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.
+  to: But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''urged him strongly''].'
+- timestamp: '2026-11-09T17:23:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he refused and said[a], “I will not eat.” Yet his servants, along with the woman, urged him, and he listened to their voice[c][b]. So he rose from the ground and sat on the bed.
+  to: But he refused and said, “I will not eat.” Yet his servants and the woman pressed him, and he listened to them. So he rose from the ground and sat on the bed.
+  rationale: The draft’s ‘urged him strongly’ and the lexical discussion recognize insistence inherent in the verb, despite the later removal of the adverb. ‘Pressed him’ preserves that gain, while ‘bed’ remains a suitable rendering in the domestic setting.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +118,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/028/023.job-59466.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:53Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul initially refuses food but yields to the insistence of his servants and the woman and gets up to sit on the bed.
+  meaning_decisions:
+  - source_phrase: וַיִּפְרְצוּ בוֹ עֲבָדָיו וְגַם הָאִשָּׁה
+    prior_rendering: his servants, along with the woman, urged him
+    new_rendering: his servants and the woman pressed him
+    rationale: The verb itself conveys strong insistence; ‘pressed him’ preserves that force without requiring an added adverb.
+  - source_phrase: וַיִּשְׁמַע לְקֹלָם
+    prior_rendering: he listened to their voice
+    new_rendering: he listened to them
+    rationale: This English expression naturally conveys responsive listening and compliance, rather than merely hearing a collective voice.
+  footnote_kinds: {}
+  history_weighed: The draft’s ‘urged him strongly’ and the lexical discussion recognize insistence inherent in the verb, despite the later removal of the adverb. ‘Pressed him’ preserves that gain, while ‘bed’ remains a suitable rendering in the domestic setting.

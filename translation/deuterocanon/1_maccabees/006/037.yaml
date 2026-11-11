@@ -26,15 +26,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.
-  philosophy: optimal-equivalence
+  text: Each elephant carried a strong, covered wooden tower secured to it with special harnesses[a]. On each were thirty-two fighting men and the elephant’s Indian driver.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'its Indian.' The phrase likely refers to the Indian handler or driver assigned to each elephant.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says 'beast' here; the wider context indicates these were elephants.
-    reason: lexical_alternative
+    text: Or, “fitted with engines of war.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: πύργοι ξύλινοι
   chosen: wooden towers
@@ -119,14 +116,20 @@ revisions:
   from: and on them were strong wooden towers, covered over, on each beast, fitted on them with engines; and on each one were thirty-two men who fought on them, and its Indian driver.
   to: and on them were strong wooden towers, covered over, on each beast, fitted on them with engines; and on each one were thirty-two men who fought on them, and its Indian driver.
   rationale: Replaced 'men who fought on them' with the more natural and formal 'fighting men' while preserving the Greek sense. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-16T14:37:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.'
-  to: 'and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.'
-  rationale: 'Restored drafter ''thirty-two men who fought on them'' (preserving the chosen explicit relative-clause modifier) per chosen renderings.'
+  from: and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.
+  to: and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.
+  rationale: Restored drafter 'thirty-two men who fought on them' (preserving the chosen explicit relative-clause modifier) per chosen renderings.
+- timestamp: '2026-11-09T18:52:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and on them were strong wooden towers[a], covered over, on each beast, fitted on them with engines; and on each one were thirty-two fighting men[b], and its Indian driver.
+  to: Each elephant carried a strong, covered wooden tower secured to it with special harnesses[a]. On each were thirty-two fighting men and the elephant’s Indian driver.
+  rationale: The earlier revisions improved the description of the fighting men but left the attachment clause unclear. I retain their combat role and the Indian driver while reading the fastening clause in the context of towers mounted on elephants.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -146,3 +149,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/006/037.job-48311.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:20Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Each elephant carries a sturdy covered tower, with thirty-two fighting men and an Indian driver aboard.
+  meaning_decisions:
+  - source_phrase: πύργοι ξύλινοι ... ἐφʼ ἑκάστου θηρίου
+    prior_rendering: on them were strong wooden towers, covered over, on each beast
+    new_rendering: Each elephant carried a strong, covered wooden tower
+    rationale: The repeated constructions describe one protected wooden tower mounted on each elephant.
+  - source_phrase: ἐζωσμένοι ἐπʼ αὐτοῖς μηχαναῖς
+    prior_rendering: fitted on them with engines
+    new_rendering: secured to it with special harnesses
+    rationale: The language of girding something onto the animals most naturally describes apparatus fastening the towers in place; the weaponry interpretation remains a serious alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revisions improved the description of the fighting men but left the attachment clause unclear. I retain their combat role and the Indian driver while reading the fastening clause in the context of towers mounted on elephants.

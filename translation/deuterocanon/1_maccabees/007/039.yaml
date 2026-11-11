@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'a Syrian force met him' or 'the army of Syria met him.' The Greek δύναμις can denote a military force or army.
-    reason: lexical_alternative
+  text: Nicanor left Jerusalem and camped at Beth-horon, where a Syrian force joined him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξῆλθεν
   chosen: went out
@@ -92,14 +88,20 @@ revisions:
   from: And Nicanor went out from Jerusalem and camped at Beth-horon, and a force from Syria met him.
   to: And Nicanor went out from Jerusalem and camped at Beth-horon, and a force from Syria met him.
   rationale: Changed 'from Syria' to 'of Syria' to more directly reflect the genitive 'δύναμις Συρίας' ('a Syrian force' / 'a force of Syria') while preserving natural formal English.
-
 - timestamp: '2026-05-18T02:58:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.'
-  to: 'And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.'
+  from: And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.
+  to: And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a force from Syria''].'
+- timestamp: '2026-11-09T18:52:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Nicanor went out from Jerusalem and camped at Beth-horon[a], and a force of Syria met him.
+  to: Nicanor left Jerusalem and camped at Beth-horon, where a Syrian force joined him.
+  rationale: The recorded changes between “from Syria” and “of Syria” concerned form rather than a significant difference in meaning. Although the earlier lexical rationale hesitated over “joined,” the surrounding military narrative supports that contextual sense.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +121,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/007/039.job-48376.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:24Z'
+  change_level: refined
+  confidence: high
+  meaning: Nicanor leaves Jerusalem, camps at Beth-horon, and is joined by a Syrian force.
+  meaning_decisions:
+  - source_phrase: συνήντησεν αὐτῷ
+    prior_rendering: met him
+    new_rendering: joined him
+    rationale: In the military narrative, the Syrian force meets Nicanor as a friendly reinforcement, not as an opposing army or an unexplained encounter.
+  - source_phrase: δύναμις Συρίας
+    prior_rendering: a force of Syria
+    new_rendering: a Syrian force
+    rationale: The adjectival construction naturally conveys the force’s Syrian identity without an awkward English genitive.
+  footnote_kinds: {}
+  history_weighed: The recorded changes between “from Syria” and “of Syria” concerned form rather than a significant difference in meaning. Although the earlier lexical rationale hesitated over “joined,” the surrounding military narrative supports that contextual sense.

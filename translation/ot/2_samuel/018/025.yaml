@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּקְרָ֤א הַ/צֹּפֶה֙ וַ/יַּגֵּ֣ד לַ/מֶּ֔לֶךְ וַ/יֹּ֣אמֶר הַ/מֶּ֔לֶךְ אִם לְ/בַדּ֖/וֹ בְּשׂוֹרָ֣ה בְּ/פִ֑י/ו וַ/יֵּ֥לֶךְ הָל֖וֹךְ וְ/קָרֵֽב־׃
 translation:
-  text: Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “there is news in his mouth.” The Hebrew noun can mean simply “news,” though in this context it likely implies favorable news.
-    reason: lexical_alternative
+  text: The watchman called out and told the king. The king said, “If he is alone, he has news to tell.” The runner kept coming nearer and nearer.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַצֹּפֶה
   chosen: the watchman
@@ -82,14 +78,20 @@ revisions:
   from: Then the watchman called out and told the king. And the king said, “If he is by himself, there is good news in his mouth.” And he kept coming nearer and nearer.
   to: Then the watchman called out and told the king. And the king said, “If he is by himself, there is good news in his mouth.” And he kept coming nearer and nearer.
   rationale: Changed 'good news' to 'news' for closer lexical accuracy, since the Hebrew/Greek wording indicates 'news/tidings' without explicitly specifying 'good.'
-
 - timestamp: '2026-05-17T05:09:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.'
-  to: 'Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.'
+  from: Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.
+  to: Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''good news''].'
+- timestamp: '2026-11-09T17:28:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the watchman called out and told the king. And the king said[a], “If he is by himself, there is news in his mouth.” And he kept coming nearer and nearer.
+  to: The watchman called out and told the king. The king said, “If he is alone, he has news to tell.” The runner kept coming nearer and nearer.
+  rationale: The records differ over “news” and “good news”; I retain the current “news,” since David explicitly adds the favorable assessment in verse 27. The earlier rendering of continued approach already captures the Hebrew well.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +111,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/018/025.job-45851.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:36Z'
+  change_level: refined
+  confidence: high
+  meaning: David takes the solitary runner to be a messenger, and the runner steadily approaches.
+  meaning_decisions:
+  - source_phrase: בְּשׂוֹרָה בְּפִיו
+    prior_rendering: there is news in his mouth
+    new_rendering: he has news to tell
+    rationale: The expression means that the runner carries a spoken report, not that anything is physically in his mouth.
+  - source_phrase: וַיֵּלֶךְ הָלוֹךְ וְקָרֵב
+    prior_rendering: he kept coming nearer and nearer
+    new_rendering: The runner kept coming nearer and nearer
+    rationale: The explicit subject prevents the reader from taking the preceding king as the person approaching.
+  footnote_kinds: {}
+  history_weighed: The records differ over “news” and “good news”; I retain the current “news,” since David explicitly adds the favorable assessment in verse 27. The earlier rendering of continued approach already captures the Hebrew well.

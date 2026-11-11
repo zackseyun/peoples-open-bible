@@ -14,15 +14,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.
-  philosophy: optimal-equivalence
+  text: Their priests sell the sacrifices offered to them[a] and use the proceeds for themselves; likewise, the women preserve some of the sacrificial meat but share none with the poor or the helpless.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'receiving back their sacrifices.' The Greek participle can denote reclaiming or receiving the offerings for their own use.
-    reason: lexical_alternative
-  - marker: b
-    text: The verb translated 'preserving' likely refers to preserving food by salting or curing.
-    reason: cultural_note
+    text: Or “take back the sacrifices offered to them and use them for themselves.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀποδιδόμενοι
   chosen: taking back
@@ -104,14 +101,20 @@ revisions:
   from: And their priests, taking back their sacrifices, make use of them; likewise their women, preserving some from them, give none to the poor or the weak.
   to: And their priests, taking back their sacrifices, make use of them; likewise their women, preserving some from them, give none to the poor or the weak.
   rationale: Changed 'weak' to 'helpless' for a more accurate rendering of ἀδυνάτῳ in this context; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.'
-  to: 'And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.'
+  from: And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.
+  to: And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the weak''].'
+- timestamp: '2026-11-09T19:02:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And their priests[a], taking back their sacrifices, make use of them; likewise their women, preserving some from them[b], give none to the poor or the helpless.
+  to: Their priests sell the sacrifices offered to them[a] and use the proceeds for themselves; likewise, the women preserve some of the sacrificial meat but share none with the poor or the helpless.
+  rationale: The earlier notes favored reclaiming the offerings, but the verb’s established commercial sense better explains the priests’ private benefit; I retain the earlier reading in a footnote. I preserve “helpless,” the current revision’s useful clarification, and bring the food-preserving sense into the text.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -131,3 +134,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/027.job-50866.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The priests profit from the offerings, while the women preserve sacrificial food without sharing it with the poor or helpless.
+  meaning_decisions:
+  - source_phrase: τὰς θυσίας αὐτῶν ἀποδιδόμενοι … καταχρῶνται
+    prior_rendering: taking back their sacrifices, make use of them
+    new_rendering: sell the sacrifices offered to them and use the proceeds for themselves
+    rationale: The middle form of ἀποδίδωμι can mean “sell,” which gives a coherent account of how the priests turn the offerings to their own use; the earlier understanding remains a serious alternative.
+  - source_phrase: αἱ γυναῖκες ἀπʼ αὐτῶν ταριχεύουσαι
+    prior_rendering: their women, preserving some from them
+    new_rendering: the women preserve some of the sacrificial meat
+    rationale: The Greek does not specify a possessive relationship, and the preserving verb concerns food; naming the sacrificial meat makes the otherwise obscure action intelligible.
+  - source_phrase: οὔτε πτωχῷ οὔτε ἀδυνάτῳ μὴ μεταδῶσιν
+    prior_rendering: give none to the poor or the helpless
+    new_rendering: share none with the poor or the helpless
+    rationale: “Share” conveys giving others a portion of the preserved food.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier notes favored reclaiming the offerings, but the verb’s established commercial sense better explains the priests’ private benefit; I retain the earlier reading in a footnote. I preserve “helpless,” the current revision’s useful clarification, and bring the food-preserving sense into the text.

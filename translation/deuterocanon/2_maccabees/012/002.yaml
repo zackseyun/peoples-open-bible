@@ -9,11 +9,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.
-  philosophy: optimal-equivalence
+  text: But some of the local commanders—Timotheus, Apollonius son of Gennaeus, Hieronymus, Demophon, and Nicanor the Cypriarch[a]—would not let the Jews live in peace.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''the Cypriarch,'' a title for Nicanor; rendered ''the governor of Cyprus'' for clarity.'
+    text: An official title, possibly meaning governor of Cyprus or commander of Cypriot troops.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: τῶν ... κατὰ τόπον στρατηγῶν
@@ -94,14 +94,20 @@ revisions:
   from: But of the local commanders, Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the governor of Cyprus, would not let them live in peace.
   to: But of the local commanders, Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the governor of Cyprus, would not let them live in peace.
   rationale: Replaced interpretive 'the governor of Cyprus' with the more direct transliteration 'the Cypriarch' to reflect the Greek title Κυπριάρχης more accurately without expansion. Kept the rest unchanged as faithful and natural.
-
 - timestamp: '2026-05-18T03:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.'
-  to: 'But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.'
+  from: But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.
+  to: But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the governor of Cyprus''].'
+- timestamp: '2026-11-09T18:56:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But of the local commanders[a], Timotheus and Apollonius son of Gennaeus, and further Hieronymus and Demophon, and besides these Nicanor the Cypriarch, would not let them live in peace.
+  to: But some of the local commanders—Timotheus, Apollonius son of Gennaeus, Hieronymus, Demophon, and Nicanor the Cypriarch[a]—would not let the Jews live in peace.
+  rationale: The history alternates between explaining Κυπριάρχης as governor of Cyprus and retaining the title itself. Because the precise office is uncertain, I retain the current title and explain its serious possible meanings in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +127,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/012/002.job-49319.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:31Z'
+  change_level: refined
+  confidence: high
+  meaning: Several local commanders continued to prevent the Jews from living peacefully despite the agreements.
+  meaning_decisions:
+  - source_phrase: τῶν δὲ κατὰ τόπον στρατηγῶν
+    prior_rendering: But of the local commanders
+    new_rendering: But some of the local commanders
+    rationale: The partitive construction identifies particular commanders among the regional officials.
+  - source_phrase: οὐκ εἴων αὐτοὺς ἡσυχίαν ἄγειν
+    prior_rendering: would not let them live in peace
+    new_rendering: would not let the Jews live in peace
+    rationale: Naming the Jews prevents the pronoun from appearing to refer to members of the long list of commanders.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The history alternates between explaining Κυπριάρχης as governor of Cyprus and retaining the title itself. Because the precise office is uncertain, I retain the current title and explain its serious possible meanings in a footnote.

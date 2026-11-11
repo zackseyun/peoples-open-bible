@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אַל תֹּ֘אמַ֤ר ל/רעי/ך לֵ֣ךְ וָ֭/שׁוּב וּ/מָחָ֥ר אֶתֵּ֗ן וְ/יֵ֣שׁ אִתָּֽ/ךְ־׀׃
 translation:
-  text: Do not say to your neighbor, “Go, and come back[a]; tomorrow I will give,” when you have it with you[b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “return.”
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause means that the person already has the means to give and should not delay.
-    reason: cultural_note
+  text: Do not say to your neighbor, “Go and come back; I will give it to you tomorrow,” when you already have it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: רֵעַ
   chosen: neighbor
@@ -104,6 +97,13 @@ revisions:
   from: Do not say to your neighbor[a], “Go, and come back[b], and tomorrow I will give,” when you have it with you.
   to: Do not say to your neighbor, “Go, and come back[a]; tomorrow I will give,” when you have it with you[b].
   rationale: The translation remains source-faithful. Note a properly belongs with “come back,” and note b with the availability clause. The semicolon also clearly separates the quoted commands from the promised future gift.
+- timestamp: '2026-11-09T18:33:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not say to your neighbor, “Go, and come back[a]; tomorrow I will give,” when you have it with you[b].
+  to: Do not say to your neighbor, “Go and come back; I will give it to you tomorrow,” when you already have it.
+  rationale: The August cleanup usefully separated the commands from the promised gift, and that structure remains. I depart from the earlier preference for leaving the gift's object unstated because English needs the implied object here, and the availability note is now carried by the text.
 source_audit:
   status: revised
   reviewed_at: '2026-08-28T22:15:44Z'
@@ -112,3 +112,25 @@ source_audit:
   scope: WLC Hebrew, immediate literary context, natural-English and interpretation-boundary review
   human_or_scholar_review: false
   review_summary: The translation remains source-faithful. Note a properly belongs with “come back,” and note b with the availability clause. The semicolon also clearly separates the quoted commands from the promised future gift.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:33:49Z'
+  change_level: refined
+  confidence: high
+  meaning: One must not postpone giving a neighbor what is already available to give.
+  meaning_decisions:
+  - source_phrase: וּמָחָר אֶתֵּן
+    prior_rendering: tomorrow I will give
+    new_rendering: I will give it to you tomorrow
+    rationale: The object and recipient are obvious in the Hebrew exchange; supplying them produces complete, natural English without identifying what is being given.
+  - source_phrase: וְיֵשׁ אִתָּךְ
+    prior_rendering: when you have it with you
+    new_rendering: when you already have it
+    rationale: The offense is needless delay despite present possession, not necessarily having the item physically on one's person; 'already' makes that contrast clear.
+  footnote_kinds: {}
+  history_weighed: The August cleanup usefully separated the commands from the promised gift, and that structure remains. I depart from the earlier preference for leaving the gift's object unstated because English needs the implied object here, and the availability note is now carried by the text.

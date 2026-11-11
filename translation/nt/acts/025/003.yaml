@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: αἰτούμενοι χάριν κατ’ αὐτοῦ ὅπως μεταπέμψηται αὐτὸν εἰς Ἰερουσαλήμ, ἐνέδραν ποιοῦντες ἀνελεῖν αὐτὸν κατὰ τὴν ὁδόν.
 translation:
-  text: asking a favor against him[a], that he would have him brought to Jerusalem, while setting an ambush to kill him on the way.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'that he would send for him to Jerusalem.' The Greek verb can mean 'send for' or 'have brought.'
-    reason: lexical_alternative
+  text: asking him to grant them a favor at Paul’s expense by having Paul brought to Jerusalem. They were preparing an ambush to kill him on the way.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: αἰτούμενοι
   chosen: asking
@@ -94,14 +90,20 @@ revisions:
   from: asking a favor against him, that he would have him brought to Jerusalem, while setting an ambush to kill him on the way.
   to: asking a favor against him, that he might have him brought to Jerusalem, setting an ambush to kill him on the way.
   rationale: Changed 'would' to 'might' for more natural rendering of ὅπως + subjunctive, and removed 'while' to keep the participial construction more formally aligned with the Greek.
-
 - timestamp: '2026-05-16T22:08:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'asking a favor against him[a], that he might have him brought to Jerusalem, setting an ambush to kill him on the way.'
-  to: 'asking a favor against him[a], that he would have him brought to Jerusalem, while setting an ambush to kill him on the way.'
-  rationale: 'Restored drafter ''that he would have him brought to Jerusalem'' (preserving the chosen ''would'' modal) and ''while setting an ambush'' (preserving the chosen temporal ''while'') per chosen renderings.'
+  from: asking a favor against him[a], that he might have him brought to Jerusalem, setting an ambush to kill him on the way.
+  to: asking a favor against him[a], that he would have him brought to Jerusalem, while setting an ambush to kill him on the way.
+  rationale: Restored drafter 'that he would have him brought to Jerusalem' (preserving the chosen 'would' modal) and 'while setting an ambush' (preserving the chosen temporal 'while') per chosen renderings.
+- timestamp: '2026-11-09T17:07:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: asking a favor against him[a], that he would have him brought to Jerusalem, while setting an ambush to kill him on the way.
+  to: asking him to grant them a favor at Paul’s expense by having Paul brought to Jerusalem. They were preparing an ambush to kill him on the way.
+  rationale: The review and automated revert debated modal wording and participial form rather than the underlying meaning. I retained the hostile favor and planned ambush but replaced the cumbersome linkage with explicit English.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +123,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/025/003.job-46576.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:07:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: They requested Paul’s transfer to Jerusalem as a favor to themselves, while preparing to ambush and kill him during the journey.
+  meaning_decisions:
+  - source_phrase: αἰτούμενοι χάριν κατ’ αὐτοῦ ὅπως μεταπέμψηται αὐτὸν εἰς Ἰερουσαλήμ
+    prior_rendering: asking a favor against him, that he would have him brought to Jerusalem
+    new_rendering: asking him to grant them a favor at Paul’s expense by having Paul brought to Jerusalem
+    rationale: The favor benefits the petitioners and works against Paul; the new wording expresses that relationship naturally and identifies the requested favor as his transfer.
+  - source_phrase: ἐνέδραν ποιοῦντες ἀνελεῖν αὐτὸν κατὰ τὴν ὁδόν
+    prior_rendering: while setting an ambush to kill him on the way
+    new_rendering: They were preparing an ambush to kill him on the way
+    rationale: A separate sentence makes clear that the petitioners, not Festus, were preparing the ambush, and preserves its connection with their request.
+  footnote_kinds: {}
+  history_weighed: The review and automated revert debated modal wording and participial form rather than the underlying meaning. I retained the hostile favor and planned ambush but replaced the cumbersome linkage with explicit English.

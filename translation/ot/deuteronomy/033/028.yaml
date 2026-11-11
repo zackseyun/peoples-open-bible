@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּשְׁכֹּן֩ יִשְׂרָאֵ֨ל בֶּ֤טַח בָּדָד֙ עֵ֣ין יַעֲקֹ֔ב אֶל אֶ֖רֶץ דָּגָ֣ן וְ/תִיר֑וֹשׁ אַף שָׁמָ֖י/ו יַֽעַרְפוּ טָֽל־־׃
 translation:
-  text: So Israel lived in safety[a], alone; Jacob's fountain in a land of grain and new wine[b]; even his heavens dripped dew.
-  philosophy: optimal-equivalence
+  text: So Israel lived in safety; Jacob’s descendants[a] lived apart in a land of grain and new wine; even the heavens above them dripped dew.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the eye of Jacob.' The Hebrew word can mean either 'eye' or 'spring/fountain'; the main text follows the sense that best fits the imagery of agricultural abundance.
+    text: Literally, “the spring of Jacob,” a poetic image of the people descended from Jacob.
     reason: lexical_alternative
-  - marker: b
-    text: Or 'dwelt securely, by itself.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיִּשְׁכֹּן
   chosen: lived
@@ -123,14 +120,20 @@ revisions:
   from: So Israel lived in safety, alone; Jacob’s fountain was in a land of grain and new wine; even his heavens dripped dew.
   to: So Israel dwelt in safety, alone; the fountain of Jacob in a land of grain and new wine; even his heavens drip down dew.
   rationale: 'Revised for closer lexical accuracy and formal register: changed ''lived'' to ''dwelt,'' ''Jacob’s fountain was'' to ''the fountain of Jacob'' to avoid adding ''was,'' and ''dripped'' to ''drip down'' to reflect the verbal form more directly.'
-
 - timestamp: '2026-05-16T06:09:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Israel dwelt in safety[a], alone; the fountain of Jacob in a land of grain and new wine[b]; even his heavens drip down dew.'
-  to: 'So Israel lived in safety[a], alone; Jacob''s fountain in a land of grain and new wine[b]; even his heavens dripped dew.'
-  rationale: 'Azure substituted ''dwelt'' (drafter''s rejected_alternative for וַיִּשְׁכֹּן — drafter rejected as ''more formal but less natural'') and ''the fountain of Jacob'' (drafter''s rejected_alternative for עֵין יַעֲקֹב). Also tense-shifted ''dripped'' → ''drip down''.'
+  from: So Israel dwelt in safety[a], alone; the fountain of Jacob in a land of grain and new wine[b]; even his heavens drip down dew.
+  to: So Israel lived in safety[a], alone; Jacob's fountain in a land of grain and new wine[b]; even his heavens dripped dew.
+  rationale: Azure substituted 'dwelt' (drafter's rejected_alternative for וַיִּשְׁכֹּן — drafter rejected as 'more formal but less natural') and 'the fountain of Jacob' (drafter's rejected_alternative for עֵין יַעֲקֹב). Also tense-shifted 'dripped' → 'drip down'.
+- timestamp: '2026-11-09T17:33:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Israel lived in safety[a], alone; Jacob's fountain in a land of grain and new wine[b]; even his heavens dripped dew.
+  to: So Israel lived in safety; Jacob’s descendants[a] lived apart in a land of grain and new wine; even the heavens above them dripped dew.
+  rationale: The earlier history treated the fountain as agricultural imagery and favored “lived” over “dwelt.” I retain “lived” but take the parallel with Israel to identify Jacob’s fountain as his descendants, and restore the second line’s implicit verb.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -150,3 +153,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/033/028.job-62054.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:58Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Moses pictures Israel, Jacob’s descendants, living safely apart in a fertile land supplied with grain, new wine, and dew.
+  meaning_decisions:
+  - source_phrase: בָּדָד עֵין יַעֲקֹב אֶל אֶרֶץ
+    prior_rendering: alone; Jacob’s fountain in a land
+    new_rendering: Jacob’s descendants lived apart in a land
+    rationale: The parallel with Israel identifies Jacob’s spring as the people issuing from him; the second poetic clause describes their distinct, secure habitation rather than merely locating a water source.
+  - source_phrase: שָׁמָיו
+    prior_rendering: his heavens
+    new_rendering: the heavens above them
+    rationale: The possessive refers to the skies over Israel, now expressed through the plural “descendants”; the wording clarifies that relationship rather than suggesting ownership of heaven.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier history treated the fountain as agricultural imagery and favored “lived” over “dwelt.” I retain “lived” but take the parallel with Israel to identify Jacob’s fountain as his descendants, and restore the second line’s implicit verb.

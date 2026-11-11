@@ -20,15 +20,12 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.
-  philosophy: optimal-equivalence
+  text: They will come in fear at the reckoning of their sins[a], and their lawless deeds will confront them and convict them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'fearful' or 'as cowards' for 'in cowardice.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'from opposite them'; the sense is that their own lawless deeds confront and convict them openly, face-to-face.
-    reason: lexical_alternative
+    text: Or, “They will come in fear as they reflect on their sins.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐλεύσονται
   chosen: They will come
@@ -121,14 +118,20 @@ revisions:
   from: They will come in cowardice, reasoning over their sins, and their lawless deeds will convict them to their face.
   to: They will come in cowardice, reasoning over their sins, and their lawless deeds will convict them to their face.
   rationale: Changed 'in cowardice' to 'in fear' for a more natural and accurate rendering of δειλοί in context, while preserving the rest of the verse.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.'
-  to: 'They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.'
+  from: They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.
+  to: They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in cowardice''].'
+- timestamp: '2026-11-09T19:10:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: They will come in fear[a], reasoning over their sins[b], and their lawless deeds will convict them to their face.
+  to: They will come in fear at the reckoning of their sins[a], and their lawless deeds will confront them and convict them.
+  rationale: The earlier move from 'cowardice' to 'fear' fits the judgment scene despite the later automated revert. I retain that gain and render συλλογισμός as a reckoning rather than mere reasoning, while noting the possibility of inward reflection.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -148,3 +151,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/004/020.job-39536.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:54Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The ungodly will face the reckoning of their sins in fear, with their own lawless deeds confronting them as evidence of guilt.
+  meaning_decisions:
+  - source_phrase: ἐν συλλογισμῷ ἁμαρτημάτων αὐτῶν
+    prior_rendering: reasoning over their sins
+    new_rendering: at the reckoning of their sins
+    rationale: Conveys an accounting of sins in the judgment scene without specifying who performs the reckoning; inward reflection remains a serious alternative.
+  - source_phrase: ἐλέγξει αὐτοὺς ἐξ ἐναντίας τὰ ἀνομήματα αὐτῶν
+    prior_rendering: their lawless deeds will convict them to their face
+    new_rendering: their lawless deeds will confront them and convict them
+    rationale: Carries the face-to-face opposition into natural English while preserving the personification of their deeds as witnesses against them.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier move from 'cowardice' to 'fear' fits the judgment scene despite the later automated revert. I retain that gain and render συλλογισμός as a reckoning rather than mere reasoning, while noting the possibility of inward reflection.

@@ -19,15 +19,12 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].
-  philosophy: optimal-equivalence
+  text: But the Egyptians, after welcoming the foreigners with festivities, subjected them to terrible suffering[a], even though they already shared the same rights as their hosts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''those who had already shared in the same just things'' or ''the same provisions''; the phrase likely refers to having been granted the same standing or benefits.'
+    text: The supplied Greek has a difficult reading meaning “meals/banquets” where “terrible” is expected; “terrible suffering” gives the probable intended sense.
     reason: lexical_alternative
-  - marker: b
-    text: 'The Greek text here reads a word usually meaning ''meals'' or ''banquets'' (''at banquets/with meals''), but the sentence is difficult; the translation gives the probable sense in context: they later mistreated them.'
-    reason: textual_variant
 lexical_decisions:
 - source_word: μετὰ ἑορτασμάτων
   chosen: with festivities
@@ -128,14 +125,20 @@ revisions:
   from: But those who had welcomed with festivities people who had already shared in the same rights as they did later afflicted them with terrible sufferings.
   to: But those who had welcomed with festivities people who had already shared in the same rights as they did later afflicted them with terrible sufferings.
   rationale: Removed 'people' and 'as they did later' as unsupported additions; kept the sense of equal rights/shared status and formalized the wording for closer alignment with the Greek.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].'
-  to: 'But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].'
+  from: But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].
+  to: But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people who had already shared in the same rights as they did''].'
+- timestamp: '2026-11-09T19:13:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But those who had welcomed with festivities those who had already shared in the same rights afflicted them with terrible sufferings[a][b].
+  to: But the Egyptians, after welcoming the foreigners with festivities, subjected them to terrible suffering[a], even though they already shared the same rights as their hosts.
+  rationale: I retain the documented understanding of shared rights and the earlier POB’s probable sense of terrible suffering, while keeping the supplied Greek’s difficulty visible. The earlier welcome followed by mistreatment is inherent in the participial construction, so expressing that sequence is warranted.
 cross_check:
   status: needs_review
   agreement: 0.65
@@ -155,3 +158,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/016.job-39494.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:13:26Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Egyptians turned their festive welcome into cruel oppression of foreigners who already shared their rights.
+  meaning_decisions:
+  - source_phrase: οἱ δὲ μετὰ ἑορτασμάτων εἰσδεξάμενοι
+    prior_rendering: But those who had welcomed with festivities
+    new_rendering: But the Egyptians, after welcoming the foreigners with festivities
+    rationale: Naming the understood subject and expressing the earlier welcome as a temporal clause clarifies the reversal from hospitality to oppression.
+  - source_phrase: τοὺς ἤδη τῶν αὐτῶν μετεσχηκότας δικαίων
+    prior_rendering: those who had already shared in the same rights
+    new_rendering: even though they already shared the same rights as their hosts
+    rationale: The shared rights aggravate the wrongdoing; the concessive clause makes this moral contrast explicit without specifying particular civic privileges.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the documented understanding of shared rights and the earlier POB’s probable sense of terrible suffering, while keeping the supplied Greek’s difficulty visible. The earlier welcome followed by mistreatment is inherent in the participial construction, so expressing that sequence is warranted.

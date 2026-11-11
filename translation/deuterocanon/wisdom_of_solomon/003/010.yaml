@@ -10,14 +10,14 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.
-  philosophy: optimal-equivalence
+  text: But the ungodly, who disregarded the righteous man[a] and turned away from the Lord, will receive the punishment their own reasoning deserves[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'according to what they thought' or 'for what they plotted.' The Greek emphasizes that their punishment corresponds to their own reasoning and designs.
-    reason: lexical_alternative
+    text: Or 'righteousness.'
+    reason: alternative_reading
   - marker: b
-    text: Or 'the righteous one.' The singular likely points to the representative righteous person in the book's argument.
+    text: Or 'the punishment their schemes deserve.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἀσεβεῖς
@@ -106,14 +106,20 @@ revisions:
   from: But the ungodly will have punishment in keeping with what they reasoned, having neglected the righteous man and having departed from the Lord.
   to: But the ungodly will have punishment in keeping with what they reasoned, having neglected the righteous man and having departed from the Lord.
   rationale: Changed 'in keeping with' to 'according to' for a more direct rendering of καθʼ ἃ while preserving formal register. Retained 'the righteous man' for τοῦ δικαίου and 'having departed from the Lord' for ἀποστάντες.
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.'
-  to: 'But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.'
+  from: But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.
+  to: But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in keeping with what they reasoned''].'
+- timestamp: '2026-11-09T19:11:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the ungodly will have punishment according to what they reasoned[b][a], having neglected the righteous man and having departed from the Lord.
+  to: But the ungodly, who disregarded the righteous man[a] and turned away from the Lord, will receive the punishment their own reasoning deserves[b].
+  rationale: The recorded disagreement between 'in keeping with' and 'according to' is low-weight and concerns wording rather than the correspondence between reasoning and punishment. I preserve that correspondence and the representative righteous man while making the identification of the ungodly direct and natural.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -133,3 +139,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/003/010.job-39513.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The ungodly who disregard the righteous and turn away from the Lord will receive punishment fitting their own reasoning.
+  meaning_decisions:
+  - source_phrase: καθʼ ἃ ἐλογίσαντο ἕξουσιν ἐπιτιμίαν
+    prior_rendering: will have punishment according to what they reasoned
+    new_rendering: will receive the punishment their own reasoning deserves
+    rationale: The punishment corresponds to the ungodly reasoning developed earlier in the book. The new wording expresses that fitting judgment naturally, while the note preserves the possible emphasis on hostile schemes.
+  - source_phrase: οἱ ἀμελήσαντες τοῦ δικαίου
+    prior_rendering: having neglected the righteous man
+    new_rendering: who disregarded the righteous man
+    rationale: The repeated article identifies the ungodly by their conduct. 'Disregarded' better conveys their refusal to take the righteous man seriously than 'neglected,' which can suggest failure to provide care.
+  - source_phrase: τοῦ κυρίου ἀποστάντες
+    prior_rendering: having departed from the Lord
+    new_rendering: turned away from the Lord
+    rationale: The expression concerns abandoning allegiance to God, not a spatial departure. A direct relative clause replaces the cumbersome participial chain without changing its content.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The recorded disagreement between 'in keeping with' and 'according to' is low-weight and concerns wording rather than the correspondence between reasoning and punishment. I preserve that correspondence and the representative righteous man while making the identification of the ungodly direct and natural.

@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ֠/יֹּאמֶר מִ֣י שָֽׂמְ/ךָ֞ לְ/אִ֨ישׁ שַׂ֤ר וְ/שֹׁפֵט֙ עָלֵ֔י/נוּ הַ/לְ/הָרְגֵ֨/נִי֙ אַתָּ֣ה אֹמֵ֔ר כַּ/אֲשֶׁ֥ר הָרַ֖גְתָּ אֶת הַ/מִּצְרִ֑י וַ/יִּירָ֤א מֹשֶׁה֙ וַ/יֹּאמַ֔ר אָכֵ֖ן נוֹדַ֥ע הַ/דָּבָֽר־׃
 translation:
-  text: But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “Do you mean to kill me as you killed the Egyptian?”
-    reason: lexical_alternative
+  text: But he said, “Who made you a ruler and a judge over us? Do you intend to kill me as you killed the Egyptian?” Then Moses was afraid and said, “Surely what I did has become known.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: מִי
   chosen: Who
@@ -110,14 +106,20 @@ revisions:
   from: But he said, “Who made you a man, a ruler, and a judge over us? Are you saying you will kill me as you killed the Egyptian?” Then Moses was afraid and said, “Surely the matter has become known.”
   to: But he said, “Who made you a man, a ruler, and a judge over us? Are you saying you will kill me as you killed the Egyptian?” Then Moses was afraid and said, “Surely the matter has become known.”
   rationale: 'Removed the redundant ''a man'' before ''a ruler and a judge'' for more natural English, since ''man'' functions appositionally in Hebrew. Adjusted the direct-speech punctuation to reflect the quoted question more clearly: ''Are you saying, ‘Will you kill me...?’''.'
-
 - timestamp: '2026-05-18T02:56:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”'
-  to: 'But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”'
+  from: But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”
+  to: But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Are you saying you will kill me''].'
+- timestamp: '2026-11-09T17:33:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he said[a], “Who made you a ruler and a judge over us? Are you saying, ‘Will you kill me as you killed the Egyptian?’” Then Moses was afraid and said, “Surely the matter has become known.”
+  to: But he said, “Who made you a ruler and a judge over us? Do you intend to kill me as you killed the Egyptian?” Then Moses was afraid and said, “Surely what I did has become known.”
+  rationale: The earlier review correctly removed the redundant “a man,” but its nested question obscures the accusation. I bring the previously footnoted intention reading into the text because it fits the Hebrew construction and the exchange.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/002/014.job-62310.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Hebrew man challenges Moses’s authority and exposes his killing of the Egyptian, making Moses afraid that his deed has become known.
+  meaning_decisions:
+  - source_phrase: הַלְהָרְגֵנִי אַתָּה אֹמֵר
+    prior_rendering: Are you saying, ‘Will you kill me
+    new_rendering: Do you intend to kill me
+    rationale: The Hebrew construction questions Moses’s intention, rather than introducing a question supposedly quoted by Moses; the prior nested quotation obscures the speaker’s accusation.
+  - source_phrase: אָכֵן נוֹדַע הַדָּבָר
+    prior_rendering: Surely the matter has become known.
+    new_rendering: Surely what I did has become known.
+    rationale: The context identifies the matter as Moses’s killing of the Egyptian; making that referent explicit conveys his frightened realization.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly removed the redundant “a man,” but its nested question obscures the accusation. I bring the previously footnoted intention reading into the text because it fits the Hebrew construction and the exchange.

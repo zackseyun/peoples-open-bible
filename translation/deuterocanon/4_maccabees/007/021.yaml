@@ -18,12 +18,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: For who, while devoutly pursuing philosophy according to[a] the whole rule of philosophy, and having put his trust in God,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'living philosophically in a devout way according to the whole standard of philosophy.' The Greek compresses both the manner ('devoutly') and the practice ('pursuing philosophy') into a participial phrase.
-    reason: lexical_alternative
+  text: For who, living devoutly by the full standard of philosophy and having put his trust in God,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπεὶ
   chosen: For
@@ -127,13 +123,12 @@ revisions:
   from: For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,
   to: For who, while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,
   rationale: Changed 'pursuing philosophy' to 'practicing philosophy' to better reflect φιλοσοφῶν in a formal, natural way while preserving the structure and completeness of the Greek.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For who[a], while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,'
-  to: 'For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,'
+  from: For who[a], while devoutly practicing philosophy according to the whole rule of philosophy, and having put his trust in God,
+  to: For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''pursuing philosophy''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -143,6 +138,13 @@ revisions:
   from: For who, while devoutly pursuing philosophy according to the whole rule of philosophy, and having put his trust in God,
   to: For who, while devoutly pursuing philosophy according to[a] the whole rule of philosophy, and having put his trust in God,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('according to') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:58:26Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For who, while devoutly pursuing philosophy according to[a] the whole rule of philosophy, and having put his trust in God,
+  to: For who, living devoutly by the full standard of philosophy and having put his trust in God,
+  rationale: The review’s move toward “practicing” correctly recognized a lived philosophy, although an automated revert restored “pursuing.” I carry that insight into “living devoutly” and retain the expression of settled trust in God.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -162,3 +164,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/007/021.job-49906.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:26Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The author appeals to someone whose devout way of life fully conforms to philosophy and whose trust rests in God.
+  meaning_decisions:
+  - source_phrase: πρὸς ὅλον τὸν τῆς φιλοσοφίας κανόνα εὐσεβῶς φιλοσοφῶν
+    prior_rendering: while devoutly pursuing philosophy according to the whole rule of philosophy
+    new_rendering: living devoutly by the full standard of philosophy
+    rationale: Philosophy here is a practiced way of life, not merely a subject of inquiry; the wording also preserves complete conformity to its governing standard.
+  footnote_kinds: {}
+  history_weighed: The review’s move toward “practicing” correctly recognized a lived philosophy, although an automated revert restored “pursuing.” I carry that insight into “living devoutly” and retain the expression of settled trust in God.

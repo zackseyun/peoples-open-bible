@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יְהִי֩ כְּ/כַלּ֨וֹת יְהוֹשֻׁ֜עַ וּ/בְנֵ֣י יִשְׂרָאֵ֗ל לְ/הַכּוֹתָ֛/ם מַכָּ֥ה גְדוֹלָֽה מְאֹ֖ד עַד תֻּמָּ֑/ם וְ/הַ/שְּׂרִידִים֙ שָׂרְד֣וּ מֵ/הֶ֔ם וַ/יָּבֹ֖אוּ אֶל עָרֵ֥י הַ/מִּבְצָֽר־־־׃
 translation:
-  text: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'the survivors survived from them,' preserving a noun-verb repetition for emphasis.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'the Israelites' for 'the sons of Israel.' The main text preserves the Hebrew expression more closely.
-    reason: lexical_alternative
+  text: Joshua and the Israelites finished destroying the enemy in a devastating slaughter, though some survivors escaped into the fortified cities.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְהִי
   chosen: And it happened that
@@ -100,14 +93,20 @@ revisions:
   from: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter, until they were wiped out, though the survivors from them survived and entered the fortified cities,
   to: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter, until they were wiped out, though the survivors from them survived and entered the fortified cities,
   rationale: Replaced 'though' with 'and' to reflect the Hebrew conjunction more accurately and avoid an unintended concessive sense. Kept the rest of the draft unchanged.
-
 - timestamp: '2026-05-17T07:21:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],'
-  to: 'And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],'
+  from: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],
+  to: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''though the survivors''].'
+- timestamp: '2026-11-09T18:08:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened that when Joshua and the sons of Israel had finished striking them with a very great slaughter[a], until they were wiped out, and the survivors from them survived and entered the fortified cities[b],
+  to: Joshua and the Israelites finished destroying the enemy in a devastating slaughter, though some survivors escaped into the fortified cities.
+  rationale: The first draft and lexical rationale recognized the concessive relationship, while the later review preferred a formally matching “and.” I follow the contextual relationship and preserve both the sweeping destruction claim and the explicit survival of some enemies.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -127,3 +126,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/010/020.job-68655.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:08:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Joshua and the Israelites completed the enemy’s destruction in a devastating slaughter, though some survivors escaped into fortified cities.
+  meaning_decisions:
+  - source_phrase: וַיְהִי כְּכַלּוֹת יְהוֹשֻׁעַ וּבְנֵי יִשְׂרָאֵל
+    prior_rendering: And it happened that when Joshua and the sons of Israel had finished
+    new_rendering: Joshua and the Israelites finished
+    rationale: A complete English sentence expresses this stage of the action without leaving a suspended temporal clause; “Israelites” conveys the national designation.
+  - source_phrase: לְהַכּוֹתָם מַכָּה גְדוֹלָה מְאֹד עַד תֻּמָּם
+    prior_rendering: striking them with a very great slaughter, until they were wiped out
+    new_rendering: destroying the enemy in a devastating slaughter
+    rationale: This carries both the extreme lethality and the completed destruction without reproducing the awkward verb-noun construction.
+  - source_phrase: וְהַשְּׂרִידִים שָׂרְדוּ מֵהֶם וַיָּבֹאוּ אֶל עָרֵי הַמִּבְצָר
+    prior_rendering: and the survivors from them survived and entered the fortified cities
+    new_rendering: though some survivors escaped into the fortified cities
+    rationale: The survivors qualify the preceding destruction language, and the repeated noun and verb mean that some of the defeated enemy escaped.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale recognized the concessive relationship, while the later review preferred a formally matching “and.” I follow the contextual relationship and preserve both the sweeping destruction claim and the explicit survival of some enemies.

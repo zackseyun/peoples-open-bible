@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּ֣שֶׂם אֹתָ֣/הּ יוֹסֵ֡ף לְ/חֹק֩ עַד הַ/יּ֨וֹם הַ/זֶּ֜ה עַל אַדְמַ֥ת מִצְרַ֛יִם לְ/פַרְעֹ֖ה לַ/חֹ֑מֶשׁ רַ֞ק אַדְמַ֤ת הַ/כֹּֽהֲנִים֙ לְ/בַדָּ֔/ם לֹ֥א הָיְתָ֖ה לְ/פַרְעֹֽה־־׃
 translation:
-  text: 'So Joseph made it a statute that stands to this day concerning the land of Egypt: the fifth is for Pharaoh[d][c][b][a]. Only the land of the priests alone did not become Pharaoh’s.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'one-fifth for Pharaoh.' The Hebrew לַחֹמֶשׁ denotes a fifth part, that is, a 20 percent levy.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'Only the land of the priests alone'.
-    reason: previous_rendering
-  - marker: c
-    text: Or 'made it a statute to this day'.
-    reason: previous_rendering
-  - marker: d
-    text: 'Or '': for Pharaoh, the fifth''.'
-    reason: previous_rendering
+  text: 'So Joseph made it a statute that stands to this day concerning the land of Egypt: the fifth of the harvest is for Pharaoh. Only the priests’ land did not become Pharaoh’s.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּשֶׂם
   chosen: made
@@ -145,7 +132,14 @@ revisions:
   category: doctrine_realignment
   from: 'So Joseph made it a statute to this day concerning the land of Egypt: a fifth belongs to Pharaoh[d][c][b][a]. Only the land of the priests alone did not become Pharaoh’s.'
   to: 'So Joseph made it a statute that stands to this day concerning the land of Egypt: the fifth is for Pharaoh[d][c][b][a]. Only the land of the priests alone did not become Pharaoh’s.'
-  rationale: 'Drafter chose ''the fifth'' for the definite-article-marked לַחֹמֶשׁ (Hebrew is definite). Azure changed to indefinite ''a fifth'' (dropping the article) on false ''more accurate'' claim. Also silently reverted Gemini''s well-reasoned syntactic fix ''that stands to this day'' (attaching עַד הַיּוֹם הַזֶּה to the statute rather than the making-act).'
+  rationale: Drafter chose 'the fifth' for the definite-article-marked לַחֹמֶשׁ (Hebrew is definite). Azure changed to indefinite 'a fifth' (dropping the article) on false 'more accurate' claim. Also silently reverted Gemini's well-reasoned syntactic fix 'that stands to this day' (attaching עַד הַיּוֹם הַזֶּה to the statute rather than the making-act).
+- timestamp: '2026-11-09T17:46:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'So Joseph made it a statute that stands to this day concerning the land of Egypt: the fifth is for Pharaoh[d][c][b][a]. Only the land of the priests alone did not become Pharaoh’s.'
+  to: 'So Joseph made it a statute that stands to this day concerning the land of Egypt: the fifth of the harvest is for Pharaoh. Only the priests’ land did not become Pharaoh’s.'
+  rationale: The important earlier correction attaching “to this day” to the statute’s continuing validity is retained, along with the definite “the fifth.” The earlier removal of redundant “only … alone” is also recovered.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-15T21:39:51Z'
@@ -174,3 +168,25 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/047/026.job-37675.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:46:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Joseph makes Pharaoh’s one-fifth share an enduring statute, while the priests’ land remains outside Pharaoh’s ownership.
+  meaning_decisions:
+  - source_phrase: לְפַרְעֹה לַחֹמֶשׁ
+    prior_rendering: the fifth is for Pharaoh
+    new_rendering: the fifth of the harvest is for Pharaoh
+    rationale: The harvest is the understood basis of the fifth; stating it prevents confusion between a share of produce and a share of land.
+  - source_phrase: רַק אַדְמַת הַכֹּהֲנִים לְבַדָּם
+    prior_rendering: Only the land of the priests alone
+    new_rendering: Only the priests’ land
+    rationale: The English “only” fully expresses the exclusive exception without duplicating it with “alone.”
+  footnote_kinds: {}
+  history_weighed: The important earlier correction attaching “to this day” to the statute’s continuing validity is retained, along with the definite “the fifth.” The earlier removal of redundant “only … alone” is also recovered.

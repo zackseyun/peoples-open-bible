@@ -16,12 +16,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Then the king enclosed it and made it sacred[a], after testing the matter.
-  philosophy: optimal-equivalence
+  text: After verifying what had happened, the king enclosed the site and made it sacred[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'made it a sanctuary.' The Greek can be taken either as predicative ('made it sacred') or substantivally ('made it a sanctuary').
-    reason: lexical_alternative
+    text: Or, 'made it a sanctuary.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: περιφράξας
   lemma: περιφράσσω
@@ -99,7 +99,13 @@ revisions:
   from: Then the king enclosed the place and made it sacred, after testing the matter.
   to: Then the king enclosed it and made it sacred, after testing the matter.
   rationale: Replaced 'the place' with 'it' to reflect the implied object more directly and avoid adding a noun not explicit in the Greek; otherwise retained the draft's accurate and natural rendering.
-
+- timestamp: '2026-11-09T18:53:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the king enclosed it and made it sacred[a], after testing the matter.
+  to: After verifying what had happened, the king enclosed the site and made it sacred[a].
+  rationale: The review replaced the draft’s explicit 'the place' with 'it' solely for source transparency; I restore the referent because it is clear in Greek context but easily missed in English. The documented preference for consecrating the site rather than necessarily building a temple is retained, with the substantive alternative noted.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -119,3 +125,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/001/034.job-48925.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:42Z'
+  change_level: refined
+  confidence: high
+  meaning: After verifying what happened, the king encloses the site and establishes it as sacred.
+  meaning_decisions:
+  - source_phrase: δοκιμάσας τὸ πρᾶγμα
+    prior_rendering: after testing the matter
+    new_rendering: After verifying what had happened
+    rationale: The participle describes examination establishing the reported event’s authenticity; placing it first makes the sequence clear.
+  - source_phrase: περιφράξας δὲ ὁ βασιλεὺς
+    prior_rendering: Then the king enclosed it
+    new_rendering: the king enclosed the site
+    rationale: The implied object is the place where the water appeared, not the water or the sacrifices; naming it prevents an unclear pronoun.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review replaced the draft’s explicit 'the place' with 'it' solely for source transparency; I restore the referent because it is clear in Greek context but easily missed in English. The documented preference for consecrating the site rather than necessarily building a temple is retained, with the substantive alternative noted.

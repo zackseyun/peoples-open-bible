@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 10:4
 translation:
-  text: In the hand of[a] God is the rule of every man, and before the lawgiver he sets his splendor[b].
-  philosophy: optimal-equivalence
+  text: The authority of every man is in God's hand, and he displays his splendor before the lawgiver[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek parallel: ''In the hand of the Lord is the authority of the earth, and he will raise up the useful one over it at the right time.'' The Greek reflects a substantially different second line and likely a different Hebrew Vorlage or interpretive development.'
-    reason: alternative_reading
-  - marker: b
-    text: Or 'his majesty' or 'his honor' for 'his splendor.'
-    reason: lexical_alternative
+    text: Greek 10:4 reads, 'The authority of the earth is in the Lord's hand, and at the right time he will raise up a suitable man over it.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: בְּיַד
   chosen: in the hand of
@@ -138,13 +135,12 @@ revisions:
   from: In the hand of God is the rule of every man, and before the lawgiver he sets his splendor.
   to: In the hand of God is the rule of every man, and before the lawgiver he sets his honor.
   rationale: Changed 'splendor' to 'honor' for a more accurate rendering of הוֹד in this context; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T03:09:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the hand of God is the rule of every man[b][a], and before the lawgiver he sets his honor.'
-  to: 'In the hand of God is the rule of every man, and before the lawgiver he sets his splendor.'
+  from: In the hand of God is the rule of every man[b][a], and before the lawgiver he sets his honor.
+  to: In the hand of God is the rule of every man, and before the lawgiver he sets his splendor.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his splendor''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -154,6 +150,13 @@ revisions:
   from: In the hand of God is the rule of every man, and before the lawgiver he sets his splendor.
   to: In the hand of[a] God is the rule of every man, and before the lawgiver he sets his splendor[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in the hand of') because the note names that rendering; [b] anchored to ('his splendor') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the hand of[a] God is the rule of every man, and before the lawgiver he sets his splendor[b].
+  to: The authority of every man is in God's hand, and he displays his splendor before the lawgiver[a].
+  rationale: The revision to 'honor' was an automated judgment, and its subsequent reversal was also automated; neither settles the sense. I retain the broader, weightier 'splendor,' while preserving the Hebrew lawgiver clause rather than replacing it with the differently ordered Greek saying.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -173,3 +176,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/010/004.job-51220.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:45Z'
+  change_level: refined
+  confidence: medium
+  meaning: Every man's governing authority is subject to God, who displays his splendor before the lawgiver.
+  meaning_decisions:
+  - source_phrase: בְּיַד אֱלֹהִים מֶמְשֶׁלֶת כָּל גֶּבֶר
+    prior_rendering: In the hand of God is the rule of every man
+    new_rendering: The authority of every man is in God's hand
+    rationale: This makes clear that each man's authority is under God's control, rather than suggesting that the phrase simply describes God ruling every man.
+  - source_phrase: וְלִפְנֵי מְחוֹקֵק יָשִׁית הוֹדוֹ
+    prior_rendering: and before the lawgiver he sets his splendor
+    new_rendering: and he displays his splendor before the lawgiver
+    rationale: Setting splendor before someone means presenting it to their sight; 'displays' conveys that action without turning it into an explicit grant of political authority.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The revision to 'honor' was an automated judgment, and its subsequent reversal was also automated; neither settles the sense. I retain the broader, weightier 'splendor,' while preserving the Hebrew lawgiver clause rather than replacing it with the differently ordered Greek saying.

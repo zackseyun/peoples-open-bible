@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּֽי שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ דַ֔עַת וְ/תוֹרָ֖ה יְבַקְשׁ֣וּ מִ/פִּ֑י/הוּ כִּ֛י מַלְאַ֥ךְ יְהוָֽה צְבָא֖וֹת הֽוּא־־־׃
 translation:
-  text: For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "law" or "teaching" for "instruction" (Hebrew torah).
-    reason: lexical_alternative
-  - marker: b
-    text: 'Traditional rendering: "the LORD of hosts."'
-    reason: lexical_alternative
+  text: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of Yahweh of Armies.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שִׂפְתֵי כֹהֵן
   chosen: the lips of a priest
@@ -97,14 +90,20 @@ revisions:
   from: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of the LORD of Armies.
   to: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of the LORD of Armies.
   rationale: Replaced 'people should seek' with 'they should seek' to avoid adding a word not explicit in the Hebrew while preserving the indefinite plural sense. No other changes needed.
-
 - timestamp: '2026-05-17T07:51:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.'
-  to: 'For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.'
+  from: For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.
+  to: For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''people should seek instruction from his mouth''].'
+- timestamp: '2026-11-09T18:22:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the lips of a priest should guard knowledge[a], and they should seek instruction from his mouth[b], because he is the messenger of Yahweh of Armies.
+  to: For the lips of a priest should guard knowledge, and people should seek instruction from his mouth, because he is the messenger of Yahweh of Armies.
+  rationale: The first draft and lexical rationale correctly supply “people” as the implied subject. The later source-transparent preference for “they” obscures that subject, so I restore the clearer wording.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +124,21 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/malachi/002/007.job-42328.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:22:59Z'
+  change_level: refined
+  confidence: high
+  meaning: A priest should preserve knowledge and provide the instruction people seek because he serves as Yahweh’s messenger.
+  meaning_decisions:
+  - source_phrase: יְבַקְשׁוּ מִפִּיהוּ
+    prior_rendering: they should seek instruction from his mouth
+    new_rendering: people should seek instruction from his mouth
+    rationale: Supplies the understood human subject so that “they” cannot mistakenly refer to the priest’s lips.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly supply “people” as the implied subject. The later source-transparent preference for “they” obscures that subject, so I restore the clearer wording.

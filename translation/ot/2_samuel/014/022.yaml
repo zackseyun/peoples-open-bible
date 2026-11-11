@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּפֹּל֩ יוֹאָ֨ב אֶל פָּנָ֥י/ו אַ֛רְצָ/ה וַ/יִּשְׁתַּ֖חוּ וַ/יְבָ֣רֶךְ אֶת הַ/מֶּ֑לֶךְ וַ/יֹּ֣אמֶר יוֹאָ֡ב הַ/יּוֹם֩ יָדַ֨ע עַבְדְּ/ךָ֜ כִּי מָצָ֨אתִי חֵ֤ן בְּ/עֵינֶ֨י/ךָ֙ אֲדֹנִ֣/י הַ/מֶּ֔לֶךְ אֲשֶׁר עָשָׂ֥ה הַ/מֶּ֖לֶךְ אֶת דְּבַ֥ר עבד/ו־־־־־׃
 translation:
-  text: Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'has done the word of his servant.'
-    reason: lexical_alternative
+  text: Then Joab fell facedown to the ground in homage and blessed the king. He said, “Today your servant knows that I have found favor with you, my lord the king, because the king has granted his servant’s request.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּפֹּל ... אֶל פָּנָיו אַרְצָה
   chosen: fell with his face to the ground
@@ -109,14 +105,20 @@ revisions:
   from: Then Joab fell with his face to the ground, bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has granted his servant’s request.”
   to: Then Joab fell with his face to the ground, bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has granted his servant’s request.”
   rationale: Revised the final clause from interpretive 'has granted his servant’s request' to the more literal and accurate 'has done the word of his servant,' reflecting the Hebrew more closely while preserving natural English elsewhere.
-
 - timestamp: '2026-05-17T04:36:42Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”'
-  to: 'Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”'
+  from: Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”
+  to: Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has granted his servant’s request''].'
+- timestamp: '2026-11-09T18:28:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Joab fell with his face to the ground[a], bowed down, and blessed the king. Joab said, “Today your servant knows that I have found favor in your eyes, my lord the king, because the king has done the word of his servant.”
+  to: Then Joab fell facedown to the ground in homage and blessed the king. He said, “Today your servant knows that I have found favor with you, my lord the king, because the king has granted his servant’s request.”
+  rationale: The first draft and lexical rationale already rendered the final clause as granting the request. I restore that gain over the automated literalizing revision and retain “blessed,” since the text says more than merely that Joab thanked the king.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +138,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/014/022.job-45700.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:28:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Joab bows before the king, blesses him, and recognizes the granted request as evidence of royal favor.
+  meaning_decisions:
+  - source_phrase: וַיִּפֹּל יוֹאָב אֶל פָּנָיו אַרְצָה וַיִּשְׁתַּחוּ
+    prior_rendering: Joab fell with his face to the ground, bowed down
+    new_rendering: Joab fell facedown to the ground in homage
+    rationale: The two verbs describe his prostration and its courtly significance; the English integrates them without suggesting an additional bow after he is already facedown.
+  - source_phrase: מָצָאתִי חֵן בְּעֵינֶיךָ
+    prior_rendering: I have found favor in your eyes
+    new_rendering: I have found favor with you
+    rationale: The idiom concerns the king’s favorable regard, which natural English expresses without the reference to eyes.
+  - source_phrase: עָשָׂה הַמֶּלֶךְ אֶת דְּבַר עַבְדּוֹ
+    prior_rendering: the king has done the word of his servant
+    new_rendering: the king has granted his servant’s request
+    rationale: The king has complied with Joab’s petition; “done the word” obscures that meaning in English.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale already rendered the final clause as granting the request. I restore that gain over the automated literalizing revision and retain “blessed,” since the text says more than merely that Joab thanked the king.

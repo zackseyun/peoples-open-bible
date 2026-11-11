@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֧סֶף ע֣וֹד אַבְנֵ֗ר לֵ/אמֹר֙ אֶל עֲשָׂהאֵ֔ל ס֥וּר לְ/ךָ֖ מֵ/אַֽחֲרָ֑/י לָ֤/מָּה אַכֶּ֨/כָּה֙ אַ֔רְצָ/ה וְ/אֵיךְ֙ אֶשָּׂ֣א פָנַ֔/י אֶל יוֹאָ֖ב אָחִֽי/ךָ־־׃
 translation:
-  text: Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'How could I face Joab your brother?' The Hebrew literally says, 'How could I lift up my face to Joab your brother?'
-    reason: lexical_alternative
+  text: Abner said again to Asahel, “Stop pursuing me. Why should I strike you down? How could I then face your brother Joab?”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּסֶף עוֹד
   chosen: said again
@@ -71,14 +67,20 @@ revisions:
   from: Abner said again to Asahel, “Turn aside from following me. Why should I strike you down to the ground? Then how could I lift up my face to Joab your brother?”
   to: Abner said again to Asahel, “Turn aside from following me. Why should I strike you down to the ground? Then how could I lift up my face to Joab your brother?”
   rationale: Changed 'strike you down to the ground' to 'strike you to the ground' for a more natural and closer rendering; the rest is accurate and complete.
-
 - timestamp: '2026-05-17T06:06:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”'
-  to: 'Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”'
+  from: Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”
+  to: Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Why should I strike you down to the ground?''].'
+- timestamp: '2026-11-09T17:28:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Abner said again to Asahel[a], “Turn aside from following me. Why should I strike you to the ground? Then how could I lift up my face to Joab your brother?”
+  to: Abner said again to Asahel, “Stop pursuing me. Why should I strike you down? How could I then face your brother Joab?”
+  rationale: Earlier deliberation correctly identifies lifting one’s face as the ability to face someone without shame. I bring that meaning into the main text and retain the vivid warning with 'strike you down.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -98,3 +100,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/002/022.job-46048.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:21Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Abner again warns Asahel to stop pursuing him because striking him down would leave Abner unable to face Asahel’s brother Joab.
+  meaning_decisions:
+  - source_phrase: סוּר לְךָ מֵאַחֲרָי
+    prior_rendering: Turn aside from following me
+    new_rendering: Stop pursuing me
+    rationale: Abner is demanding that Asahel break off the chase; the direct English conveys the command’s force.
+  - source_phrase: לָמָּה אַכֶּכָּה אַרְצָה
+    prior_rendering: Why should I strike you to the ground?
+    new_rendering: Why should I strike you down?
+    rationale: '''Strike you down'' naturally conveys the threatened disabling or fatal blow while retaining the downward image.'
+  - source_phrase: וְאֵיךְ אֶשָּׂא פָנַי אֶל יוֹאָב אָחִיךָ
+    prior_rendering: Then how could I lift up my face to Joab your brother?
+    new_rendering: How could I then face your brother Joab?
+    rationale: The Hebrew idiom concerns being able to confront someone without shame; English 'face' carries that meaning and preserves the central image.
+  footnote_kinds: {}
+  history_weighed: Earlier deliberation correctly identifies lifting one’s face as the ability to face someone without shame. I bring that meaning into the main text and retain the vivid warning with 'strike you down.'

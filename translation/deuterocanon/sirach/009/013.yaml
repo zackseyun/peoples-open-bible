@@ -27,12 +27,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 9:13
 translation:
-  text: Keep far away from a man who has authority to kill, and you will not have to fear death.[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'The extant Hebrew witness for this verse reads a different saying: ''Do not abandon an old friend, for a new one will not compare with him.'' The Greek tradition instead reads the warning reflected in the main text.'
-    reason: alternative_reading
+  text: Do not abandon an old friend, for a new one is not his equal.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μακρὰν ἄπεχε
   chosen: Keep far away
@@ -118,14 +114,20 @@ revisions:
   from: Keep far away from a man who has authority to kill, and you will not have to fear death.
   to: Do not abandon an old friend, for a new one will not compare with him.
   rationale: 'Replaced unrelated draft text with a translation that matches the Hebrew: אַל תִּטֹּשׁ = ''Do not abandon,'' אוֹהֵב יָשָׁן = ''an old friend,'' and כִּי חָדָשׁ לֹא יִדְמֶה לוֹ = ''for a new one will not compare with him.'''
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not abandon an old friend[a], for a new one will not compare with him.'
-  to: 'Keep far away from a man who has authority to kill, and you will not have to fear death.[a]'
-  rationale: 'Restored Greek-primary translation per PHILOSOPHY.md (major_mismatch flag).'
+  from: Do not abandon an old friend[a], for a new one will not compare with him.
+  to: Keep far away from a man who has authority to kill, and you will not have to fear death.[a]
+  rationale: Restored Greek-primary translation per PHILOSOPHY.md (major_mismatch flag).
+- timestamp: '2026-11-09T19:04:18Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Keep far away from a man who has authority to kill, and you will not have to fear death.[a]
+  to: Do not abandon an old friend, for a new one is not his equal.
+  rationale: The earlier review correctly restored the Hebrew saying, but an automated policy revert reinstated a different Greek line. With no maintainer ruling requiring that substitution, the supplied source and its connection to verse 14 govern this rendering.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -145,3 +147,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/009/013.job-51209.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:18Z'
+  change_level: retranslated
+  confidence: high
+  meaning: An established friend should not be abandoned for a new friend who has not yet proved his worth.
+  meaning_decisions:
+  - source_phrase: אַל תִּטֹּשׁ אוֹהֵב יָשָׁן, כִּי חָדָשׁ לֹא יִדְמֶה לוֹ
+    prior_rendering: Keep far away from a man who has authority to kill, and you will not have to fear death.
+    new_rendering: Do not abandon an old friend, for a new one is not his equal.
+    rationale: The supplied Hebrew concerns established friendship, not lethal authority, and leads directly into the wine-and-friendship comparison in the next verse.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly restored the Hebrew saying, but an automated policy revert reinstated a different Greek line. With no maintainer ruling requiring that substitution, the supplied source and its connection to verse 14 govern this rendering.

@@ -28,15 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 42:23
 translation:
-  text: All these live and endure forever; in every need, all obey.[a][b]
-  philosophy: optimal-equivalence
+  text: All these live and endure forever[a]; they all obey him whenever they are needed[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Cairo Geniza Hebrew printed here reads a different line, roughly, 'And who can be satisfied to behold? The splendor of the height of the sky in purity.' Older evidence from Masada and the Greek tradition support the sense reflected in the main text; the Hebrew line appears to be displaced from nearby context.
+    text: The printed Cairo Geniza Hebrew has a different, apparently displaced line about beholding the sky's splendor; this translation follows the Greek, supported by the older Masada witness.
     reason: textual_variant
   - marker: b
-    text: Or 'for every purpose' / 'in all necessities' for 'in every need.'
-    reason: lexical_alternative
+    text: Or, 'for every purpose' or 'for every use.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ומי ישבע / ישמע
   chosen: All these live
@@ -125,14 +125,20 @@ revisions:
   from: All these live and endure forever; in every need, all obey.
   to: And who can have enough of looking at the splendor of the height of heaven in its purity?
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew: a rhetorical question (''who can have enough''), ''looking at,'' ''the splendor,'' ''the height of heaven,'' and ''in its purity.'''
-
 - timestamp: '2026-05-15T13:39:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And who can have enough of looking at the splendor of the height of heaven in its purity?[a][b]'
-  to: 'All these live and endure forever; in every need, all obey.[a][b]'
-  rationale: 'Azure overrode documented theological_decision to use Greek (Hebrew displaced/corrupt; Masada supports Greek).'
+  from: And who can have enough of looking at the splendor of the height of heaven in its purity?[a][b]
+  to: All these live and endure forever; in every need, all obey.[a][b]
+  rationale: Azure overrode documented theological_decision to use Greek (Hebrew displaced/corrupt; Masada supports Greek).
+- timestamp: '2026-11-09T19:08:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All these live and endure forever; in every need, all obey.[a][b]
+  to: All these live and endure forever[a]; they all obey him whenever they are needed[b].
+  rationale: 'The documented textual judgment explains why the printed Hebrew is not followed here: the coherent Greek line has older Hebrew support, while the Cairo line appears displaced. I retain that judgment rather than repeat the automated revision that translated the displaced line.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -152,3 +158,23 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/042/023.job-52188.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:21Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: God's created works endure and remain obedient whenever they are needed.
+  meaning_decisions:
+  - source_phrase: ἐν πάσαις χρείαις ... ὑπακούει
+    prior_rendering: in every need, all obey
+    new_rendering: they all obey him whenever they are needed
+    rationale: The wording describes creation's obedient responsiveness for every need or use; the new rendering makes that relationship intelligible and identifies God as the understood recipient of obedience.
+  footnote_kinds:
+    a: textual_variant
+    b: alternative_meaning
+  history_weighed: 'The documented textual judgment explains why the printed Hebrew is not followed here: the coherent Greek line has older Hebrew support, while the Cairo line appears displaced. I retain that judgment rather than repeat the automated revision that translated the displaced line.'

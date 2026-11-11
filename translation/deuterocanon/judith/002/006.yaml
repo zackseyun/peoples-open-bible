@@ -14,15 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'toward the west' / 'westward.' The Greek phrase ἐπὶ δυσμᾶς can denote direction as well as region.
-    reason: lexical_alternative
-  - marker: b
-    text: The expression 'the word of my mouth' is a literal rendering of a Greek phrase meaning a spoken command or decree.
-    reason: lexical_alternative
+  text: You are to march against all the lands to the west, because their people disobeyed my command.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐξελεύσῃ
   chosen: you shall go out
@@ -95,14 +88,20 @@ revisions:
   from: And you shall go out to meet all the land in the west, because they disobeyed the word of my mouth.
   to: And you shall go out to meet all the land in the west, because they disobeyed the word of my mouth.
   rationale: Changed 'in the west' to 'toward the west' to more closely reflect ἐπὶ δυσμᾶς while preserving formal, natural English. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.'
-  to: 'And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.'
+  from: And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.
+  to: And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the west''].'
+- timestamp: '2026-11-09T19:00:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you shall go out to meet all the land toward the west[b][a], because they disobeyed the word of my mouth.
+  to: You are to march against all the lands to the west, because their people disobeyed my command.
+  rationale: The history weighs 'in the west' against 'toward the west'; 'to the west' preserves the geographic relation without forcing that distinction. The lexical record recognizes both the hostile encounter and the command sense that are now explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +121,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/002/006.job-50518.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Holofernes is ordered to confront the western lands because their inhabitants disobeyed the king.
+  meaning_decisions:
+  - source_phrase: ἐξελεύσῃ εἰς συνάντησιν
+    prior_rendering: you shall go out to meet
+    new_rendering: You are to march against
+    rationale: This encounter is a military confrontation, not a peaceful meeting; the command-like future is made explicit.
+  - source_phrase: πάσῃ τῇ γῇ ἐπὶ δυσμᾶς
+    prior_rendering: all the land toward the west
+    new_rendering: all the lands to the west
+    rationale: The collective territorial expression concerns the western countries targeted by the campaign.
+  - source_phrase: ἠπείθησαν τῷ ῥήματι τοῦ στόματός μου
+    prior_rendering: they disobeyed the word of my mouth
+    new_rendering: their people disobeyed my command
+    rationale: The plural subject refers to the inhabitants of the lands, and the spoken word is the king’s order.
+  footnote_kinds: {}
+  history_weighed: The history weighs 'in the west' against 'toward the west'; 'to the west' preserves the geographic relation without forcing that distinction. The lexical record recognizes both the hostile encounter and the command sense that are now explicit.

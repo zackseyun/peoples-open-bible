@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: ἐν τούτῳ ⸀γινώσκετε τὸ πνεῦμα τοῦ θεοῦ· πᾶν πνεῦμα ὃ ὁμολογεῖ Ἰησοῦν Χριστὸν ἐν σαρκὶ ἐληλυθότα ἐκ τοῦ θεοῦ ἐστιν,
 translation:
-  text: 'By this you know the Spirit of God: every spirit that confesses Jesus Christ having come in the flesh is from God[c][b][a],'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'has come in the flesh.' The Greek uses a perfect participle, emphasizing the enduring significance of Jesus the Messiah's coming in real human flesh.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'confesses Jesus the Messiah as having come in the flesh'.
-    reason: previous_rendering
+  text: 'This is how you recognize the Spirit of God: every spirit that confesses that Jesus the Messiah has come in the flesh is from God.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν τούτῳ
   chosen: By this
@@ -129,15 +119,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'By this you know the Spirit of God: every spirit that confesses Jesus Messiah having come in the flesh is from God,'"
-  to: "'By this you know the Spirit of God: every spirit that confesses Jesus the Messiah having come in the flesh is from God,'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: '''By this you know the Spirit of God: every spirit that confesses Jesus Messiah having come in the flesh is from God,'''
+  to: '''By this you know the Spirit of God: every spirit that confesses Jesus the Messiah having come in the flesh is from God,'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:05:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'By this you know the Spirit of God: every spirit that confesses Jesus Christ having come in the flesh is from God[c][b][a],'
+  to: 'This is how you recognize the Spirit of God: every spirit that confesses that Jesus the Messiah has come in the flesh is from God.'
+  rationale: The earlier revision correctly identified the clarity gained by a 'that' clause; the later return to a participle was motivated by formal correspondence rather than meaning. The latest article-restoration revision and the lexical decision support 'Jesus the Messiah.'
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:35:39Z'
   unchanged: false
   changes_summary: 'Replaced ''Jesus Messiah has come'' with ''Jesus Christ having come'' to more directly reflect Ἰησοῦν Χριστὸν ἐν σαρκὶ ἐληλυθότα and avoid adding ''that.'' [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -159,3 +155,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/1_john/004/002.job-38861.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God's Spirit is recognized by the confession that Jesus the Messiah has truly come in the flesh.
+  meaning_decisions:
+  - source_phrase: ἐν τούτῳ γινώσκετε
+    prior_rendering: By this you know
+    new_rendering: This is how you recognize
+    rationale: The phrase introduces a criterion for discerning God's Spirit, not merely a statement of knowledge.
+  - source_phrase: ὁμολογεῖ Ἰησοῦν Χριστὸν ἐν σαρκὶ ἐληλυθότα
+    prior_rendering: confesses Jesus Christ having come in the flesh
+    new_rendering: confesses that Jesus the Messiah has come in the flesh
+    rationale: A finite 'that' clause conveys the Greek construction naturally and clearly. The confession presents Jesus as the Messiah, so the title is explicit; 'has come in the flesh' preserves both his real embodied coming and its continuing significance.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly identified the clarity gained by a 'that' clause; the later return to a participle was motivated by formal correspondence rather than meaning. The latest article-restoration revision and the lexical decision support 'Jesus the Messiah.'

@@ -19,12 +19,8 @@ source:
   confidence: high
   validation: no_reference
 translation:
-  text: Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'do not be excessive with anyone'; Greek 'with any flesh.'
-    reason: lexical_alternative
+  text: Assign him work suited to him; if he does not obey, make his shackles heavier. But do not go to excess in dealing with anyone, and do nothing without sound judgment.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἰς ἔργα κατάστησον
   chosen: Set him to work
@@ -128,14 +124,20 @@ revisions:
   from: Set him to work as is fitting for him, and if he does not obey discipline, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
   to: Set him to work as is fitting for him, and if he does not obey discipline, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
   rationale: Changed 'does not obey discipline' to 'does not obey' for closer lexical accuracy to πειθαρχῇ, which does not explicitly include 'discipline.'
-
 - timestamp: '2026-05-18T02:58:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.'
-  to: 'Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.'
+  from: Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
+  to: Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''if he does not obey discipline''].'
+- timestamp: '2026-11-09T19:08:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Set him to work as is fitting for him[a], and if he does not obey, make his fetters heavy; but do not be excessive with any flesh, and do nothing without judgment.
+  to: Assign him work suited to him; if he does not obey, make his shackles heavier. But do not go to excess in dealing with anyone, and do nothing without sound judgment.
+  rationale: The review's removal of 'discipline' correctly leaves obedience to authority implicit, and I retain that gain. I clarify suitability, physical restraint, and the human-reference idiom without softening either the shackles or the warning against excess.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +157,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/030.job-51905.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:09Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The owner should assign suitable work and impose heavier shackles for disobedience, but must avoid excess and act with sound judgment.
+  meaning_decisions:
+  - source_phrase: εἰς ἔργα κατάστησον καθὼς πρέπει αὐτῷ
+    prior_rendering: Set him to work as is fitting for him
+    new_rendering: Assign him work suited to him
+    rationale: The instruction concerns assigning appropriate work; the revised wording expresses that relationship directly.
+  - source_phrase: βάρυνον τὰς πέδας αὐτοῦ
+    prior_rendering: make his fetters heavy
+    new_rendering: make his shackles heavier
+    rationale: The command intensifies physical restraint by increasing its weight; 'shackles' makes the instrument readily recognizable without reducing its harshness.
+  - source_phrase: μὴ περισσεύσῃς ἐν πάσῃ σαρκί
+    prior_rendering: do not be excessive with any flesh
+    new_rendering: do not go to excess in dealing with anyone
+    rationale: The warning places a limit on treatment of every human being; 'any flesh' is a human-reference idiom, not a reference to bodily substance.
+  - source_phrase: ἄνευ κρίσεως μὴ ποιήσῃς μηδέν
+    prior_rendering: do nothing without judgment
+    new_rendering: do nothing without sound judgment
+    rationale: The context requires considered, discerning action rather than a judicial proceeding or an unspecified judgment.
+  footnote_kinds: {}
+  history_weighed: The review's removal of 'discipline' correctly leaves obedience to authority implicit, and I retain that gain. I clarify suitability, physical restraint, and the human-reference idiom without softening either the shackles or the warning against excess.

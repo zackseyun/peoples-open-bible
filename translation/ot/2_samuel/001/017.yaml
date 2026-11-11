@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יְקֹנֵ֣ן דָּוִ֔ד אֶת הַ/קִּינָ֖ה הַ/זֹּ֑את עַל שָׁא֖וּל וְ/עַל יְהוֹנָתָ֥ן בְּנֽ/וֹ־־־׃
 translation:
-  text: Then David sang this lament over Saul and over Jonathan his son,[a]
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'lamented with this lament'; the Hebrew verb and noun form a formal expression for taking up a funeral lament.
-    reason: lexical_alternative
+  text: Then David took up this lament over Saul and his son Jonathan,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיְקֹנֵן
   chosen: sang this lament
@@ -77,14 +73,20 @@ revisions:
   from: Then David sang this lament over Saul and over Jonathan his son,
   to: Then David lamented with this lament over Saul and over Jonathan his son,
   rationale: Replaced 'sang' with 'lamented' to reflect the verb more accurately and avoid adding the idea of singing not explicit in the source.
-
 - timestamp: '2026-05-17T05:06:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David lamented with this lament over Saul and over Jonathan his son,[a]'
-  to: 'Then David sang this lament over Saul and over Jonathan his son,[a]'
+  from: Then David lamented with this lament over Saul and over Jonathan his son,[a]
+  to: Then David sang this lament over Saul and over Jonathan his son,[a]
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sang this lament''].'
+- timestamp: '2026-11-09T17:27:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David sang this lament over Saul and over Jonathan his son,[a]
+  to: Then David took up this lament over Saul and his son Jonathan,
+  rationale: The earlier review rightly questioned whether “sang” was more specific than the verb requires. I preserve that insight without adopting its awkward cognate repetition; the later automated revert supplies no additional meaning-based reason against it.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -104,3 +106,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/001/017.job-45785.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:38Z'
+  change_level: refined
+  confidence: high
+  meaning: David formally voices the following lament for Saul and Saul’s son Jonathan.
+  meaning_decisions:
+  - source_phrase: וַיְקֹנֵן דָּוִד אֶת הַקִּינָה הַזֹּאת
+    prior_rendering: Then David sang this lament
+    new_rendering: Then David took up this lament
+    rationale: The verb describes performing a formal lament without specifying how it was musically delivered.
+  footnote_kinds: {}
+  history_weighed: The earlier review rightly questioned whether “sang” was more specific than the verb requires. I preserve that insight without adopting its awkward cognate repetition; the later automated revert supplies no additional meaning-based reason against it.

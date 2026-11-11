@@ -22,11 +22,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”
-  philosophy: optimal-equivalence
+  text: They said to one another, “Let us restore our people and the sanctuary[a] from ruin.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “restore the downfall of our people and of the holy things.” The Greek combines a verb meaning “raise up” with a noun for “ruin/downfall,” expressing restoration from devastation.
+    text: The Greek expression can encompass the temple’s holy precincts and consecrated things.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἕκαστος πρὸς τὸν πλησίον αὐτοῦ
@@ -101,14 +101,20 @@ revisions:
   from: And each said to his neighbor, “Let us raise up the ruin of our people and of the holy places.”
   to: And each said to his neighbor, “Let us raise up the ruin of our people and of the holy places.”
   rationale: Changed 'raise up' to 'restore' for more natural and accurate rendering of ἀναστήσωμεν with 'the ruin/destruction' in context; retained 'holy places' for τῶν ἁγίων.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”'
-  to: 'And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”'
+  from: And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”
+  to: And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Let us raise up''].'
+- timestamp: '2026-11-09T18:52:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And each said to his neighbor[a], “Let us restore the ruin of our people and of the holy places.”
+  to: They said to one another, “Let us restore our people and the sanctuary[a] from ruin.”
+  rationale: The recorded rationale recognizes restoration from devastation, but neither “raise up the ruin” nor “restore the ruin” conveys that clearly in English. I preserve the restorative gain while placing the people and sanctuary, rather than their ruin, as the objects of restoration.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +134,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/003/043.job-48128.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:52:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: They urge one another to restore their devastated people and sanctuary.
+  meaning_decisions:
+  - source_phrase: ἕκαστος πρὸς τὸν πλησίον αὐτοῦ
+    prior_rendering: each said to his neighbor
+    new_rendering: They said to one another
+    rationale: The distributive expression describes mutual encouragement, not a particular neighbor relationship.
+  - source_phrase: Ἀναστήσωμεν τὴν καθαίρεσιν τοῦ λαοῦ ἡμῶν καὶ τῶν ἁγίων
+    prior_rendering: Let us restore the ruin of our people and of the holy places
+    new_rendering: Let us restore our people and the sanctuary from ruin
+    rationale: They intend to reverse devastation, not restore ruin itself; the sanctuary denotes the temple sancta, with its breadth explained in a note.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The recorded rationale recognizes restoration from devastation, but neither “raise up the ruin” nor “restore the ruin” conveys that clearly in English. I preserve the restorative gain while placing the people and sanctuary, rather than their ruin, as the objects of restoration.

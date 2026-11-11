@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/עַתָּ֣ה שָׁמַ֔עְתִּי כִּ֥י גֹזְזִ֖ים לָ֑/ךְ עַתָּ֗ה הָ/רֹעִ֤ים אֲשֶׁר לְ/ךָ֙ הָי֣וּ עִמָּ֔/נוּ לֹ֣א הֶכְלַמְנ֗וּ/ם וְ/לֹֽא נִפְקַ֤ד לָ/הֶם֙ מְא֔וּמָה כָּל יְמֵ֖י הֱיוֹתָ֥/ם בַּ/כַּרְמֶֽל־־־׃
 translation:
-  text: And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not mistreat, and nothing of theirs was missing all the days they were in Carmel.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'we did not shame them.' The Hebrew can denote causing disgrace; in context it refers to not harming or abusing Nabal's shepherds.
-    reason: lexical_alternative
+  text: Now I have heard that your sheep are being shorn. Your shepherds were with us, and we did not mistreat them; nothing of theirs went missing the whole time they were in Carmel.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְעַתָּה
   chosen: And now
@@ -106,14 +102,20 @@ revisions:
   from: And now I have heard that you have shearers. Now your shepherds, who were with us, we did not mistreat, and nothing of theirs was missing all the days they were in Carmel.
   to: And now I have heard that you have shearers. Now your shepherds, who were with us, we did not dishonor them, and nothing was missing to them all the days they were in Carmel.
   rationale: Revised 'mistreat' to 'dishonor' to more closely reflect the Hebrew verb, and adjusted 'nothing of theirs was missing' to 'nothing was missing to them' for closer correspondence to the source wording.
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not dishonor them, and nothing was missing to them all the days they were in Carmel.'
-  to: 'And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not mistreat, and nothing of theirs was missing all the days they were in Carmel.'
-  rationale: 'Azure substituted ''dishonor'' for drafter''s chosen ''mistreat'' (Hiphil כלם — drafter rejected disgrace-domain words for practical-harm framing in pastoral-protection context) and ''nothing was missing to them'' for ''nothing of theirs was missing'' (drafter chose possessive clarity over dative construction).'
+  from: And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not dishonor them, and nothing was missing to them all the days they were in Carmel.
+  to: And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not mistreat, and nothing of theirs was missing all the days they were in Carmel.
+  rationale: Azure substituted 'dishonor' for drafter's chosen 'mistreat' (Hiphil כלם — drafter rejected disgrace-domain words for practical-harm framing in pastoral-protection context) and 'nothing was missing to them' for 'nothing of theirs was missing' (drafter chose possessive clarity over dative construction).
+- timestamp: '2026-11-09T17:24:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And now I have heard that you have shearers. Now your shepherds[a], who were with us, we did not mistreat, and nothing of theirs was missing all the days they were in Carmel.
+  to: Now I have heard that your sheep are being shorn. Your shepherds were with us, and we did not mistreat them; nothing of theirs went missing the whole time they were in Carmel.
+  rationale: The history records a source-transparent change to “dishonor” and “nothing was missing to them,” followed by restoration of the practical mistreatment and loss senses. Those contextual gains are retained while the syntax and sheep-shearing reference are clarified.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -133,3 +135,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/007.job-59378.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:12Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David reminds Nabal that his shepherds were with David’s men without suffering mistreatment or losing anything throughout their time in Carmel.
+  meaning_decisions:
+  - source_phrase: גֹזְזִים לָךְ
+    prior_rendering: you have shearers
+    new_rendering: your sheep are being shorn
+    rationale: The participle reports an activity currently underway, not merely Nabal’s possession or employment of shearers.
+  - source_phrase: עַתָּה הָרֹעִים אֲשֶׁר לְךָ הָיוּ עִמָּנוּ לֹא הֶכְלַמְנוּם
+    prior_rendering: Now your shepherds, who were with us, we did not mistreat
+    new_rendering: Your shepherds were with us, and we did not mistreat them
+    rationale: Natural English clauses convey the association and absence of mistreatment without the source-shaped topical construction.
+  - source_phrase: וְלֹא נִפְקַד לָהֶם מְאוּמָה כָּל יְמֵי הֱיוֹתָם
+    prior_rendering: and nothing of theirs was missing all the days they were
+    new_rendering: nothing of theirs went missing the whole time they were
+    rationale: This expresses the absence of losses over the entire period rather than sounding like a statement about an inventory at one moment.
+  footnote_kinds: {}
+  history_weighed: The history records a source-transparent change to “dishonor” and “nothing was missing to them,” followed by restoration of the practical mistreatment and loss senses. Those contextual gains are retained while the syntax and sheep-shearing reference are clarified.

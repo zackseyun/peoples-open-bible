@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ὁ ⸂τοῦ πατρὸς ἡμῶν⸃ διὰ ⸂πνεύματος ἁγίου⸃ στόματος Δαυὶδ παιδός σου εἰπών· Ἱνατί ἐφρύαξαν ἔθνη καὶ λαοὶ ἐμελέτησαν κενά;
 translation:
-  text: 'who[a], through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage[b], and the peoples devise vain things?’'
-  philosophy: optimal-equivalence
+  text: 'You spoke by the Holy Spirit through our ancestor David, your servant: ‘Why did the nations rage, and the peoples plot in vain[a]?'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Some manuscripts read “our father David your servant,” making the introduction: “who through the Holy Spirit, by the mouth of our father David your servant, said.”'
-    reason: textual_variant
-  - marker: b
-    text: Or “meditated on vain things.” The Greek verb can mean “meditate” or, in context, “plot/devise.”
-    reason: lexical_alternative
+    text: The quotation in verses 25–26 is from Psalm 2:1–2.
+    reason: cross_reference
 lexical_decisions:
 - source_word: ὁ τοῦ πατρὸς ἡμῶν
   chosen: who
@@ -121,7 +118,6 @@ revisions:
   from: 'who, through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage, and the peoples plot futile things?’'
   to: 'who, through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage, and the peoples plot futile things?’'
   rationale: Revised “plot futile things” to “devise vain things” for closer lexical alignment with ἐμελέτησαν κενά and to echo the Psalm citation more formally.
-
 - timestamp: '2026-05-18T03:00:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -129,6 +125,13 @@ revisions:
   from: 'who[a], through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage[b], and the peoples devise vain things?’'
   to: 'who[a], through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage[b], and the peoples devise vain things?’'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''futile things''].'
+- timestamp: '2026-11-09T17:05:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'who[a], through the Holy Spirit, by the mouth of David your servant, said: ‘Why did the nations rage[b], and the peoples devise vain things?’'
+  to: 'You spoke by the Holy Spirit through our ancestor David, your servant: ‘Why did the nations rage, and the peoples plot in vain[a]?'
+  rationale: The earlier rationale acknowledged 'our father David' but omitted words present in the supplied SBLGNT; I restore them as 'our ancestor David.' The draft's 'plot futile things' expressed the hostile, unsuccessful plotting clearly, and that gain is carried into 'plot in vain.'
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -148,3 +151,26 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/004/025.job-47069.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The believers recall God's Spirit-given words through David questioning the nations' rage and futile plotting.
+  meaning_decisions:
+  - source_phrase: ὁ τοῦ πατρὸς ἡμῶν διὰ πνεύματος ἁγίου στόματος Δαυὶδ παιδός σου εἰπών
+    prior_rendering: who, through the Holy Spirit, by the mouth of David your servant, said
+    new_rendering: You spoke by the Holy Spirit through our ancestor David, your servant
+    rationale: The supplied source includes 'our father,' identifying David as their ancestor; the new wording restores that content and naturally expresses God's speech through the Spirit and David.
+  - source_phrase: λαοὶ ἐμελέτησαν κενά
+    prior_rendering: the peoples devise vain things
+    new_rendering: the peoples plot in vain
+    rationale: The context concerns hostile plotting whose efforts are futile, not vanity in the modern sense of self-importance; the new wording preserves the compressed poetic force.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier rationale acknowledged 'our father David' but omitted words present in the supplied SBLGNT; I restore them as 'our ancestor David.' The draft's 'plot futile things' expressed the hostile, unsuccessful plotting clearly, and that gain is carried into 'plot in vain.'

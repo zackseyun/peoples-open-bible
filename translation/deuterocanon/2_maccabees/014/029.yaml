@@ -24,12 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'he kept watching for a favorable moment to accomplish it by a stratagem.' The Greek leaves the object of 'accomplish' implicit.
-    reason: lexical_alternative
+  text: Since he could not oppose the king, he kept watching for an opportunity to carry out the order by a stratagem.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπεὶ δὲ
   chosen: But since
@@ -120,14 +116,20 @@ revisions:
   from: But since it was not possible to oppose the king openly, he kept watching for an opportunity to carry out his plan by a stratagem.
   to: But since it was not possible to oppose the king openly, he kept watching for an opportunity to carry out his plan by a stratagem.
   rationale: Removed 'openly,' which is not expressed in the Greek; simplified 'carry out his plan' to 'accomplish it' to reflect the infinitive more directly without adding 'his plan.'
-
 - timestamp: '2026-05-18T02:59:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.'
-  to: 'But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.'
+  from: But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.
+  to: But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to carry out his plan''].'
+- timestamp: '2026-11-09T18:56:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But since it was not possible to oppose the king[a], he kept watching for an opportunity to accomplish it by a stratagem.
+  to: Since he could not oppose the king, he kept watching for an opportunity to carry out the order by a stratagem.
+  rationale: The review rightly removed “openly,” which could imply that covert opposition to the king remained Nicanor’s aim. The new wording retains that correction while making the implicit object clearer than either “his plan” or “it.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -147,3 +149,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/014/029.job-49417.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:56:08Z'
+  change_level: refined
+  confidence: high
+  meaning: Unable to oppose the king, Nicanor watched for an opportunity to fulfill the arrest order through a stratagem.
+  meaning_decisions:
+  - source_phrase: τῷ βασιλεῖ ἀντιπρᾶξαι οὐκ ἦν
+    prior_rendering: it was not possible to oppose the king
+    new_rendering: he could not oppose the king
+    rationale: The impersonal construction concerns Nicanor’s inability to resist the king and is naturally expressed with its understood subject.
+  - source_phrase: τοῦ ἐπιτελέσαι
+    prior_rendering: to accomplish it
+    new_rendering: to carry out the order
+    rationale: The implicit object is the king’s command to arrest and send Judas, not an unexplained plan of Nicanor’s own.
+  footnote_kinds: {}
+  history_weighed: The review rightly removed “openly,” which could imply that covert opposition to the king remained Nicanor’s aim. The new wording retains that correction while making the implicit object clearer than either “his plan” or “it.”

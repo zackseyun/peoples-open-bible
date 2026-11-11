@@ -10,11 +10,11 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’
-  philosophy: optimal-equivalence
+  text: 'And say: “Righteousness belongs to the Lord our God, but shame[a] belongs to us, as this day shows—to the people of Judah and the inhabitants of Jerusalem,'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or ''justice'': ''To the Lord our God belongs justice.'' The Greek δικαιοσύνη can denote either righteousness or justice; here ''righteousness'' was chosen for the penitential contrast.'
+    text: Literally, 'shame of faces,' an expression for visible shame or public disgrace.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐρεῖτε
@@ -106,14 +106,20 @@ revisions:
   from: And you shall say, ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the men of Judah and to the inhabitants of Jerusalem,’
   to: And you shall say, ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the men of Judah and to the inhabitants of Jerusalem,’
   rationale: Changed ‘the men of Judah’ to ‘the people of Judah’ to reflect the collective singular ἀνθρώπῳ Ἰούδα more naturally in English while preserving the formal sense. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T02:59:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’'
-  to: 'And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’'
+  from: And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’
+  to: And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the men of Judah''].'
+- timestamp: '2026-11-09T18:59:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you shall say[a], ‘To the Lord our God belongs righteousness, but to us shame of face, as it is this day—to the people of Judah and to the inhabitants of Jerusalem,’
+  to: 'And say: “Righteousness belongs to the Lord our God, but shame[a] belongs to us, as this day shows—to the people of Judah and the inhabitants of Jerusalem,'
+  rationale: I retain the current collective 'people of Judah' and the documented choice of 'righteousness,' which preserves the confession's moral weight. The face idiom is clarified, and the quotation remains open because the confession continues.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -133,3 +139,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/001/015.job-50328.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The confession acknowledges that righteousness belongs to God while the people of Judah and Jerusalem bear evident shame.
+  meaning_decisions:
+  - source_phrase: αἰσχύνη τῶν προσώπων
+    prior_rendering: shame of face
+    new_rendering: shame
+    rationale: The compressed expression denotes shame and disgrace, not a separate kind of shame belonging to the face; the visible image is preserved in a note.
+  - source_phrase: ὡς ἡ ἡμέρα αὕτη
+    prior_rendering: as it is this day
+    new_rendering: as this day shows
+    rationale: The formula points to the people's present circumstances as evidence of their shame.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the current collective 'people of Judah' and the documented choice of 'righteousness,' which preserves the confession's moral weight. The face idiom is clarified, and the quotation remains open because the confession continues.

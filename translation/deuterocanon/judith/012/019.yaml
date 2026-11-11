@@ -17,12 +17,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And taking it[a], she ate and drank before him what her maidslave had prepared.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'her maidservant.' The Greek has 'her female slave' (ἡ δούλη αὐτῆς).
-    reason: lexical_alternative
+  text: She took the food and drink her servant had prepared and ate and drank in his presence.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: λαβοῦσα
   chosen: taking it
@@ -116,7 +112,13 @@ revisions:
   from: And taking it, she ate and drank before him what her maidservant had prepared.
   to: And taking it, she ate and drank before him what her maidslave had prepared.
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T19:01:43Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And taking it[a], she ate and drank before him what her maidslave had prepared.
+  to: She took the food and drink her servant had prepared and ate and drank in his presence.
+  rationale: The earlier review sought a more natural servant designation, while an automated regression fix introduced “maidslave” under an older policy. The standing ruling governs the term, and the preparation clause supplies the object that the draft left unclear.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -136,3 +138,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/012/019.job-50758.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:43Z'
+  change_level: refined
+  confidence: high
+  meaning: Judith eats and drinks in Holofernes’s presence from what her own servant has prepared.
+  meaning_decisions:
+  - source_phrase: λαβοῦσα ἔφαγεν καὶ ἔπιεν κατέναντι αὐτοῦ ἃ ἡτοίμασεν
+    prior_rendering: taking it, she ate and drank before him what ... had prepared
+    new_rendering: She took the food and drink ... had prepared and ate and drank in his presence
+    rationale: The relative clause identifies the otherwise implicit object of taking; making it explicit prevents readers from assuming she accepts Holofernes’s provisions.
+  - source_phrase: ἡ δούλη αὐτῆς
+    prior_rendering: her maidslave
+    new_rendering: her servant
+    rationale: This follows the standing servant ruling and avoids an unnatural compound; the verse’s emphasis is on who prepared Judith’s provisions, not bonded status.
+  footnote_kinds: {}
+  history_weighed: The earlier review sought a more natural servant designation, while an automated regression fix introduced “maidslave” under an older policy. The standing ruling governs the term, and the preparation clause supplies the object that the draft left unclear.

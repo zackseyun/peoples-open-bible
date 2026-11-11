@@ -16,12 +16,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 15:10
 translation:
-  text: Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.
-  philosophy: optimal-equivalence
+  text: Praise comes from the mouth of the wise, and one who masters it will teach it[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek parallel reads, 'and the Lord will prosper him' (or 'it'), differing substantially from the surviving Hebrew second line.
-    reason: alternative_reading
+    text: 'Greek: ''and the Lord will make it prosper,'' or ''will make him prosper.'''
+    reason: textual_variant
 lexical_decisions:
 - source_word: בְּפֶה
   chosen: by the mouth of
@@ -116,14 +116,20 @@ revisions:
   from: Praise is spoken by the mouth of the wise, and one who rules it will teach it.
   to: Praise is spoken by the mouth of the wise, and one who rules it will teach it.
   rationale: Changed 'rules it' to 'masters it' for a more natural and contextually fitting rendering of וּמשֵׁל בָּהּ, while preserving the verse's formal tone and structure.
-
 - timestamp: '2026-05-18T02:58:53Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.'
-  to: 'Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.'
+  from: Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.
+  to: Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''one who rules''].'
+- timestamp: '2026-11-09T19:04:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Praise is spoken by the mouth of the wise[a], and one who masters it will teach it.
+  to: Praise comes from the mouth of the wise, and one who masters it will teach it[a].
+  rationale: The current 'masters it' carries the earlier review's useful clarification of 'rules it,' and I retain it without forcing the uncertain pronoun's referent. The surviving Hebrew governs the main text, while the substantially different Greek second clause remains in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -143,3 +149,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/015/010.job-51362.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:53Z'
+  change_level: refined
+  confidence: medium
+  meaning: The wise speak praise, and whoever masters it will teach it.
+  meaning_decisions:
+  - source_phrase: בְּפֶה חָכָם תֵּאָמֵר תְּהִלָּה
+    prior_rendering: Praise is spoken by the mouth of the wise
+    new_rendering: Praise comes from the mouth of the wise
+    rationale: This conveys praise being voiced by the wise in natural English while preserving the mouth image that links the verse to verse 9.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The current 'masters it' carries the earlier review's useful clarification of 'rules it,' and I retain it without forcing the uncertain pronoun's referent. The surviving Hebrew governs the main text, while the substantially different Greek second clause remains in a correctly placed note.

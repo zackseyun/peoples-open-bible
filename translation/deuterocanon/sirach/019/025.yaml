@@ -21,12 +21,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'from the meeting of the face.' The phrase likely refers to what a person's face shows in an encounter.
-    reason: lexical_alternative
+  text: A man's appearance reveals what he is like, and a man of understanding is recognized by the expression of his face when you meet him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀπὸ ὁράσεως
   lemma: ἀπό
@@ -99,14 +95,20 @@ revisions:
   from: A man is recognized by his appearance, and a man of understanding is recognized by the expression of his face when he meets you.
   to: A man is recognized by his appearance, and a man of understanding is recognized by the expression of his face when he meets you.
   rationale: Removed 'when he meets you,' which is not in the Greek. Kept the parallel structure and formal register while rendering ἀπαντήσεως προσώπου naturally as 'the expression of his face.'
-
 - timestamp: '2026-05-18T02:58:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.'
-  to: 'A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.'
+  from: A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.
+  to: A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by the expression of his face when he meets you''].'
+- timestamp: '2026-11-09T20:12:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: A man is recognized by his appearance[a], and a man of understanding is recognized by the expression of his face.
+  to: A man's appearance reveals what he is like, and a man of understanding is recognized by the expression of his face when you meet him.
+  rationale: The revision records disagree about retaining the encounter clause, and there is no maintainer ruling. I preserve the established rendering “a man of understanding” and restore the first draft's encounter setting because ἀπάντησις supports it, despite the automated review's objection.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +128,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/019/025.job-51492.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:12:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man's appearance reveals what he is like, and his facial expression when encountered can show that he has understanding.
+  meaning_decisions:
+  - source_phrase: ἀπὸ ὁράσεως ἐπιγνωσθήσεται ἀνήρ
+    prior_rendering: A man is recognized by his appearance
+    new_rendering: A man's appearance reveals what he is like
+    rationale: In this wisdom context, recognition concerns discerning what someone is like, not merely identifying a familiar person; the new wording makes that distinction clear.
+  - source_phrase: ἀπὸ ἀπαντήσεως προσώπου
+    prior_rendering: by the expression of his face
+    new_rendering: by the expression of his face when you meet him
+    rationale: ἀπάντησις denotes an encounter, so the added clause conveys an element present in the Greek rather than supplying commentary; the main text now carries the point of the earlier footnote.
+  footnote_kinds: {}
+  history_weighed: The revision records disagree about retaining the encounter clause, and there is no maintainer ruling. I preserve the established rendering “a man of understanding” and restore the first draft's encounter setting because ἀπάντησις supports it, despite the automated review's objection.

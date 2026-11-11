@@ -8,21 +8,15 @@ source:
   - 789
   validation: swete_direct
 translation:
-  text: Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],
-  philosophy: optimal-equivalence
+  text: Their iniquities were exposed in broad daylight[a], just as they themselves used to commit them[b]; the daughters of Jerusalem were defiled according to your judgment.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'before the sun'—that is, openly and publicly.
+    text: Literally, “before the sun.”
     reason: lexical_alternative
   - marker: b
-    text: Or 'were defiled according to your judgment.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'As they did,'.
-    reason: previous_rendering
-  - marker: d
-    text: Or 'injustices'.
-    reason: previous_rendering
+    text: Or, “Just as they themselves used to do, they displayed their own iniquities in broad daylight”; the Greek leaves the subjects and pronoun references implicit.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: καθά
   chosen: As
@@ -113,9 +107,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],'
-  to: 'Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],'
+  from: Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],
+  to: Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in broad daylight''].'
+- timestamp: '2026-11-09T19:03:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Just as they themselves used to do[a], they displayed their iniquities before the sun, and the daughters of Jerusalem were profane according to your judgment[d][c][b],
+  to: Their iniquities were exposed in broad daylight[a], just as they themselves used to commit them[b]; the daughters of Jerusalem were defiled according to your judgment.
+  rationale: The reviews’ gains in preserving habitual action, the emphatic “themselves,” and the weighty “iniquities” are retained. The public-exposure reading best fits the surrounding judgment language, but the ambiguity over who displays whose sins is acknowledged rather than silently eliminated.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:59:21Z'
@@ -140,3 +141,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/002/014.job-73032.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:39Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jerusalem’s iniquities were exposed in public humiliation mirroring its people’s own conduct, and its daughters were defiled under God’s judgment.
+  meaning_decisions:
+  - source_phrase: καθὰ ἐποίουν αὐτοί ... παρεδειγμάτισαν ἀδικίας αὐτῶν
+    prior_rendering: Just as they themselves used to do, they displayed their iniquities
+    new_rendering: Their iniquities were exposed ... just as they themselves used to commit them[b]
+    rationale: The context connects public humiliation with the exposure of the judged people’s sins. The passive avoids assigning the unstated exposing subject too precisely, while the comparison retains their emphatic, habitual wrongdoing; the self-display reading remains in a note.
+  - source_phrase: ἀπέναντι τοῦ ἡλίου
+    prior_rendering: before the sun
+    new_rendering: in broad daylight[a]
+    rationale: This carries the sense of public exposure and preserves the verbal link with verse 13; the source’s solar image is recorded in a note.
+  - source_phrase: θυγατέρες Ἱερουσαλὴμ βέβηλοι
+    prior_rendering: the daughters of Jerusalem were profane
+    new_rendering: the daughters of Jerusalem were defiled
+    rationale: The adjective describes a desecrated condition, not irreverent speech or disposition; “defiled” makes that sense clear and prepares for the explanation in verse 15.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The reviews’ gains in preserving habitual action, the emphatic “themselves,” and the weighty “iniquities” are retained. The public-exposure reading best fits the surrounding judgment language, but the ambiguity over who displays whose sins is acknowledged rather than silently eliminated.

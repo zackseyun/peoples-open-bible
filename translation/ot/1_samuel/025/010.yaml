@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּ֨עַן נָבָ֜ל אֶת עַבְדֵ֤י דָוִד֙ וַ/יֹּ֔אמֶר מִ֥י דָוִ֖ד וּ/מִ֣י בֶן יִשָׁ֑י הַ/יּוֹם֙ רַבּ֣וּ עֲבָדִ֔ים הַ/מִּתְפָּ֣רְצִ֔ים אִ֖ישׁ מִ/פְּנֵ֥י אֲדֹנָֽי/ו־־׃
 translation:
-  text: Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? These days many servants are breaking away, each man from before his master.”
-  philosophy: optimal-equivalence
+  text: Nabal answered David’s servants, “Who is David? Who is the son of Jesse? These days many servants[a] are breaking away from their masters.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “Nowadays many servants have multiplied who are breaking away, each one from his master.”
-    reason: lexical_alternative
+    text: Or “slaves.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיַּעַן
   chosen: answered
@@ -92,14 +92,20 @@ revisions:
   from: Nabal answered David’s servants and said, “Who is David? And who is the son of Jesse? These days many servants are breaking away, each man from before his master.”
   to: Nabal answered David’s servants and said, “Who is David? And who is the son of Jesse? Nowadays many servants are breaking away, each man from his master.”
   rationale: Changed 'These days' to 'Nowadays' for more natural formal English, and revised 'from before his master' to 'from his master' to reflect the idiomatic sense more naturally.
-
 - timestamp: '2026-05-16T04:55:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? Nowadays many servants are breaking away, each man from his master.”'
-  to: 'Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? These days many servants are breaking away, each man from before his master.”'
-  rationale: 'Azure substituted ''Nowadays'' (drafter''s rejected alt for הַיּוֹם; drafter chose ''These days'') and ''from his master'' (drafter chose ''from before his master'' to preserve מִפְּנֵי Hebrew spatial idiom and contemptuous social framing).'
+  from: Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? Nowadays many servants are breaking away, each man from his master.”
+  to: Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? These days many servants are breaking away, each man from before his master.”
+  rationale: Azure substituted 'Nowadays' (drafter's rejected alt for הַיּוֹם; drafter chose 'These days') and 'from his master' (drafter chose 'from before his master' to preserve מִפְּנֵי Hebrew spatial idiom and contemptuous social framing).
+- timestamp: '2026-11-09T17:24:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Nabal answered David’s servants and said[a], “Who is David? And who is the son of Jesse? These days many servants are breaking away, each man from before his master.”
+  to: Nabal answered David’s servants, “Who is David? Who is the son of Jesse? These days many servants[a] are breaking away from their masters.
+  rationale: I retained “These days,” “servants,” and the repeated contemptuous questions. Although the automated revert defended “from before” as preserving Hebrew form, the earlier revision’s idiomatic “from” better conveys the actual departure without losing the master-servant relationship.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -119,3 +125,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/025/010.job-59381.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Nabal contemptuously dismisses David as no more than a servant who has deserted his master.
+  meaning_decisions:
+  - source_phrase: אִישׁ מִפְּנֵי אֲדֹנָיו
+    prior_rendering: each man from before his master
+    new_rendering: from their masters
+    rationale: The phrase means departure from one’s master; the English plural preserves its distributive sense without an unnatural spatial construction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retained “These days,” “servants,” and the repeated contemptuous questions. Although the automated revert defended “from before” as preserving Hebrew form, the earlier revision’s idiomatic “from” better conveys the actual departure without losing the master-servant relationship.

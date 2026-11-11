@@ -4,14 +4,14 @@ source:
   edition: SBLGNT
   text: τοῦ ὁρισθέντος υἱοῦ θεοῦ ἐν δυνάμει κατὰ πνεῦμα ἁγιωσύνης ἐξ ἀναστάσεως νεκρῶν, Ἰησοῦ Χριστοῦ τοῦ κυρίου ἡμῶν,
 translation:
-  text: and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus Christ our Lord[b][a],
-  philosophy: optimal-equivalence
+  text: and who, according to the Holy Spirit[a], was appointed Son of God in power[b] through his resurrection from the dead—Jesus Christ our Lord,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'declared' or 'designated' Son of God in power.
-    reason: lexical_alternative
+    text: Literally, 'according to the spirit of holiness'; alternatively, this may refer to Jesus' own holy spirit.
+    reason: alternative_reading
   - marker: b
-    text: Or 'according to the Holy Spirit.'
+    text: Or, 'declared to be the Son of God in power.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: ὁρισθέντος
@@ -104,11 +104,17 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus Messiah our Lord,"
-  to: "and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus the Messiah our Lord,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus Messiah our Lord,
+  to: and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus the Messiah our Lord,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:17:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and who was declared to be the Son of God in power according to the Spirit of holiness by the resurrection from the dead—Jesus Christ our Lord[b][a],
+  to: and who, according to the Holy Spirit[a], was appointed Son of God in power[b] through his resurrection from the dead—Jesus Christ our Lord,
+  rationale: The first draft and lexical discussion support 'appointed,' whereas the later 'declared' can obscure the resurrection's inauguration of sonship in power. I render the likely Spirit referent directly while retaining the disputed alternatives, and follow the standing ruling for 'Jesus Christ.'
 status: revised
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -131,3 +137,31 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/high_scrutiny/nt/romans/001/004.job-7644.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:55Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Through his resurrection from the dead, Jesus Christ our Lord was appointed Son of God in power according to the Holy Spirit.
+  meaning_decisions:
+  - source_phrase: τοῦ ὁρισθέντος υἱοῦ θεοῦ ἐν δυνάμει
+    prior_rendering: who was declared to be the Son of God in power
+    new_rendering: who ... was appointed Son of God in power
+    rationale: The verb ordinarily means appoint or designate, not merely announce an existing fact. Since verse 3 already identifies him as God's Son, 'in power' belongs closely with the title and describes the resurrection-related appointment.
+  - source_phrase: κατὰ πνεῦμα ἁγιωσύνης
+    prior_rendering: according to the Spirit of holiness
+    new_rendering: according to the Holy Spirit
+    rationale: The unusual expression most likely refers to the Holy Spirit. Its literal wording and the serious alternative reference to Jesus' own holy spirit remain in a note.
+  - source_phrase: ἐξ ἀναστάσεως νεκρῶν
+    prior_rendering: by the resurrection from the dead
+    new_rendering: through his resurrection from the dead
+    rationale: The context identifies Jesus' resurrection as the basis of this appointment; making the possessive explicit removes an unnecessary uncertainty for English readers.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The first draft and lexical discussion support 'appointed,' whereas the later 'declared' can obscure the resurrection's inauguration of sonship in power. I render the likely Spirit referent directly while retaining the disputed alternatives, and follow the standing ruling for 'Jesus Christ.'

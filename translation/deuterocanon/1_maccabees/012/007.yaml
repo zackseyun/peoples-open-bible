@@ -27,11 +27,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Even earlier[a], letters were sent to Onias the high priest from Areus, who was ruling among you, saying, ‘You are our brothers,’ as the copy laid out here shows.
-  philosophy: optimal-equivalence
+  text: Some time ago, Areus, who was your king, sent a letter[a] to Onias the high priest stating that you are our brothers, as the copy below shows.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'as the copy below shows.' The Greek expression indicates that a copy of the earlier letter is being presented or appended.
+    text: Greek, “letters,” referring here to the earlier communication reproduced below.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔτι πρότερον
@@ -112,14 +112,20 @@ revisions:
   from: Even earlier, letters were sent to Onias the high priest from Areus, who was ruling among you, that you are our brothers, as the copy laid out here shows.
   to: Even earlier, letters were sent to Onias the high priest from Areus, who was reigning among you, saying, ‘You are our brothers,’ as the copy appended here shows.
   rationale: 'Refined wording for accuracy and formality: changed ''ruling'' to ''reigning'' for βασιλεύοντος, added ''saying'' to represent ὅτι more naturally, punctuated the quoted content, and revised ''laid out here'' to ''appended here'' to better reflect ὑπόκειται.'
-
 - timestamp: '2026-05-15T14:24:26Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Even earlier[a], letters were sent to Onias the high priest from Areus, who was reigning among you, saying, ‘You are our brothers,’ as the copy appended here shows.'
-  to: 'Even earlier[a], letters were sent to Onias the high priest from Areus, who was ruling among you, saying, ‘You are our brothers,’ as the copy laid out here shows.'
-  rationale: 'Restored 2 chosen renderings; kept azure''s direct-speech rendering of ὅτι recitativum.'
+  from: Even earlier[a], letters were sent to Onias the high priest from Areus, who was reigning among you, saying, ‘You are our brothers,’ as the copy appended here shows.
+  to: Even earlier[a], letters were sent to Onias the high priest from Areus, who was ruling among you, saying, ‘You are our brothers,’ as the copy laid out here shows.
+  rationale: Restored 2 chosen renderings; kept azure's direct-speech rendering of ὅτι recitativum.
+- timestamp: '2026-11-09T18:53:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Even earlier[a], letters were sent to Onias the high priest from Areus, who was ruling among you, saying, ‘You are our brothers,’ as the copy laid out here shows.
+  to: Some time ago, Areus, who was your king, sent a letter[a] to Onias the high priest stating that you are our brothers, as the copy below shows.
+  rationale: The review rightly clarified the statement and the appended-document idiom, although its direct quotation obscures the pronoun perspective. I retain those gains in indirect speech and give explicit royal wording rather than the reverted generic 'ruling.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +145,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/007.job-48678.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:14Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jonathan recalls an earlier letter from Sparta's king Areus to Onias declaring brotherhood between the two peoples and points to its appended copy.
+  meaning_decisions:
+  - source_phrase: ἔτι πρότερον ἀπεστάλησαν ἐπιστολαὶ ... παρὰ δʼ Ἀρείου
+    prior_rendering: Even earlier, letters were sent ... from Areus
+    new_rendering: Some time ago, Areus ... sent a letter
+    rationale: Natural English identifies the sender directly and treats the appended communication as a letter rather than implying several separate documents.
+  - source_phrase: τοῦ βασιλεύοντος ἐν ὑμῖν
+    prior_rendering: who was ruling among you
+    new_rendering: who was your king
+    rationale: The participle specifically denotes kingship, not unspecified governing authority.
+  - source_phrase: ὅτι ἐστὲ ἀδελφοὶ ἡμῶν
+    prior_rendering: saying, ‘You are our brothers,’
+    new_rendering: stating that you are our brothers
+    rationale: Indirect speech preserves the current Jewish letter's perspective on its Spartan addressees without introducing a confusing change of speakers through quotation marks.
+  - source_phrase: ὡς τὸ ἀντίγραφον ὑπόκειται
+    prior_rendering: as the copy laid out here shows
+    new_rendering: as the copy below shows
+    rationale: The expression points forward to the reproduced document, rather than describing its physical placement vaguely.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review rightly clarified the statement and the appended-document idiom, although its direct quotation obscures the pronoun perspective. I retain those gains in indirect speech and give explicit royal wording rather than the reverted generic 'ruling.'

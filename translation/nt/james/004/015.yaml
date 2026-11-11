@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἀντὶ τοῦ λέγειν ὑμᾶς· Ἐὰν ὁ κύριος ⸀θελήσῃ, καὶ ⸀ζήσομεν καὶ ⸀ποιήσομεν τοῦτο ἢ ἐκεῖνο.
 translation:
-  text: Instead, you ought to say[a], “If the Lord wills, we will live and also do this or that.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “instead of your saying.”
-    reason: lexical_alternative
+  text: Instead, you ought to say, “If the Lord wills, we will live and do this or that.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀντὶ τοῦ λέγειν ὑμᾶς
   chosen: Instead, you ought to say
@@ -88,13 +84,12 @@ revisions:
   from: Instead, you ought to say, “If the Lord wills, we will live and also do this or that.”
   to: Instead, you ought to say, “If the Lord wills, we will live and do this or that.”
   rationale: Removed 'also' for a more natural rendering; the Greek conjunctions are adequately represented by 'and' without adding emphasis. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Instead[a], you ought to say, “If the Lord wills, we will live and do this or that.”'
-  to: 'Instead, you ought to say, “If the Lord wills, we will live and also do this or that.”'
+  from: Instead[a], you ought to say, “If the Lord wills, we will live and do this or that.”
+  to: Instead, you ought to say, “If the Lord wills, we will live and also do this or that.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and also do''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -104,6 +99,13 @@ revisions:
   from: Instead, you ought to say, “If the Lord wills, we will live and also do this or that.”
   to: Instead, you ought to say[a], “If the Lord wills, we will live and also do this or that.”
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Instead, you ought to say') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:10:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Instead, you ought to say[a], “If the Lord wills, we will live and also do this or that.”
+  to: Instead, you ought to say, “If the Lord wills, we will live and do this or that.”
+  rationale: The review's removal of “also” improved fluency without losing the dependence of both living and acting on the Lord's will. The subsequent automated revert offers no meaning-based reason to retain the extra conjunction, so I adopt that small improvement.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -123,3 +125,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/james/004/015.job-46349.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The readers should acknowledge that both their continued life and their intended actions depend on the Lord's will.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The review's removal of “also” improved fluency without losing the dependence of both living and acting on the Lord's will. The subsequent automated revert offers no meaning-based reason to retain the extra conjunction, so I adopt that small improvement.

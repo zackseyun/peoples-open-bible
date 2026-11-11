@@ -8,18 +8,12 @@ source:
   - 805
   validation: swete_direct
 translation:
-  text: Direct the works of my hands in your place[c][a], and guard my steps[b] in the remembrance of you.
-  philosophy: optimal-equivalence
+  text: Direct the work of my hands in your presence[a], and guard my steps as I remember you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “in your presence” for “in your place.”
+    text: Literally, 'in your place,' possibly referring to God's dwelling place.
     reason: lexical_alternative
-  - marker: b
-    text: Or “preserve my steps in your memory.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'in your remembrance'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: κατεύθυνον
   chosen: Direct
@@ -111,8 +105,8 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Direct the works of my hands in your presence[c][b][a], and guard my steps in your remembrance.'
-  to: 'Direct the works of my hands in your place, and guard my steps in the remembrance of you.'
+  from: Direct the works of my hands in your presence[c][b][a], and guard my steps in your remembrance.
+  to: Direct the works of my hands in your place, and guard my steps in the remembrance of you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in your place''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +116,13 @@ revisions:
   from: Direct the works of my hands in your place, and guard my steps in the remembrance of you.
   to: Direct the works of my hands in your place[c][a], and guard my steps[b] in the remembrance of you.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in your place') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('my steps') because the note names that rendering; [c] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:05:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Direct the works of my hands in your place[c][a], and guard my steps[b] in the remembrance of you.
+  to: Direct the work of my hands in your presence[a], and guard my steps as I remember you.
+  rationale: I preserve the earlier review's objective understanding of remembrance, which the later 'your remembrance' obscured. I adopt the documented presence interpretation for clarity but retain the source's place imagery in a note.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:09:44Z'
@@ -146,3 +147,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/016/009.job-73270.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:33Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The psalmist asks God to direct his actions and protect his course of life as he remains mindful of God.
+  meaning_decisions:
+  - source_phrase: ἐν τόπῳ σου
+    prior_rendering: in your place
+    new_rendering: in your presence
+    rationale: '''In your place'' can suggest acting instead of God in contemporary English; ''in your presence'' conveys the prayer''s relational setting, with the spatial wording retained in a note.'
+  - source_phrase: ἐν τῇ μνήμῃ σου
+    prior_rendering: in the remembrance of you
+    new_rendering: as I remember you
+    rationale: The remembrance is the psalmist's mindfulness of God, parallel to verse 6; the explicit subject prevents confusion with God's remembrance of the psalmist.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I preserve the earlier review's objective understanding of remembrance, which the later 'your remembrance' obscured. I adopt the documented presence interpretation for clarity but retain the source's place imagery in a note.

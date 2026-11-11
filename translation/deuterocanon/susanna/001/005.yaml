@@ -28,14 +28,11 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: 'And in that year two elders from the people were appointed as judges[a], concerning whom the Master had spoken: “Lawlessness came out from Babylon, from elders who were judges[b], who seemed to govern the people.”'
-  philosophy: optimal-equivalence
+  text: 'That year two elders from among the people were appointed as judges. The Sovereign Lord had spoken of them: “Lawlessness came out of Babylon, from elders serving as judges who seemed to govern the people[a].”'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “the Lord” or “the Sovereign” for Greek δεσπότης; the main text uses “the Master” to preserve the distinction from κύριος.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek wording is syntactically compressed at the end of the verse; “who seemed to govern the people” may also be understood as “who were thought to govern the people.”
+    text: Or, “who were thought to govern the people.”
     reason: alternative_reading
 lexical_decisions:
 - source_word: ἀπεδείχθησαν
@@ -129,7 +126,13 @@ revisions:
   from: 'And in that year two elders from the people were appointed as judges, concerning whom the Master had spoken: “Lawlessness came out from Babylon, from elder judges who seemed to govern the people.”'
   to: 'And in that year two elders from the people were appointed as judges, concerning whom the Master had spoken: “Lawlessness came out from Babylon, from elders who were judges, who seemed to govern the people.”'
   rationale: Adjusted 'elder judges' to 'elders who were judges' to reflect both πρεσβυτέρων and κριτῶν more naturally and clearly in English while preserving the source structure.
-
+- timestamp: '2026-11-09T19:09:35Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And in that year two elders from the people were appointed as judges[a], concerning whom the Master had spoken: “Lawlessness came out from Babylon, from elders who were judges[b], who seemed to govern the people.”'
+  to: 'That year two elders from among the people were appointed as judges. The Sovereign Lord had spoken of them: “Lawlessness came out of Babylon, from elders serving as judges who seemed to govern the people[a].”'
+  rationale: The recorded review rightly distinguished their standing as elders from their judicial office, and I preserve both. I go beyond the earlier preference for 'Master' because 'Sovereign Lord' communicates the divine speaker's identity and authority more clearly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -149,3 +152,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/005.job-52422.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:35Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Two elders were appointed as judges that year, and the narrative identifies them with the corrupt rulers condemned in a divine saying about Babylon.
+  meaning_decisions:
+  - source_phrase: ὁ δεσπότης
+    prior_rendering: the Master
+    new_rendering: The Sovereign Lord
+    rationale: The title identifies God as the supreme ruler; 'Sovereign Lord' conveys that authority and makes the divine referent clearer than the unexplained 'Master.'
+  - source_phrase: ἐκ πρεσβυτέρων κριτῶν
+    prior_rendering: from elders who were judges
+    new_rendering: from elders serving as judges
+    rationale: This preserves both their community standing and their judicial function without stacking relative clauses.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded review rightly distinguished their standing as elders from their judicial office, and I preserve both. I go beyond the earlier preference for 'Master' because 'Sovereign Lord' communicates the divine speaker's identity and authority more clearly.

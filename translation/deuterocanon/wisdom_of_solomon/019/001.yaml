@@ -19,15 +19,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: But for the ungodly[a], merciless wrath came upon them to the very end; for he knew beforehand[b] both them and what was going to happen,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the impious' for 'the ungodly.'
-    reason: lexical_alternative
-  - marker: b
-    text: The subject of 'knew beforehand' is implicit in Greek; context most naturally points to God.
-    reason: alternative_reading
+  text: 'But merciless wrath came upon the ungodly and lasted to the very end, for God knew beforehand even what they would do next:'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀσεβέσιν
   chosen: the ungodly
@@ -114,13 +107,12 @@ revisions:
   from: But for the ungodly, merciless wrath came upon them to the very end; for he knew beforehand both them and what was going to happen,
   to: But for the ungodly, merciless wrath came upon them to the very end; for he knew beforehand both them and what was to come,
   rationale: Replaced 'what was going to happen' with the more formal and concise 'what was to come' to better match the register and the Greek τὰ μέλλοντα. Kept the rest unchanged as accurate and complete.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But for the ungodly[a], merciless wrath came upon them to the very end; for he knew beforehand both them and what was to come[b],'
-  to: 'But for the ungodly, merciless wrath came upon them to the very end; for he knew beforehand both them and what was going to happen,'
+  from: But for the ungodly[a], merciless wrath came upon them to the very end; for he knew beforehand both them and what was to come[b],
+  to: But for the ungodly, merciless wrath came upon them to the very end; for he knew beforehand both them and what was going to happen,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''what was going to happen''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -130,6 +122,13 @@ revisions:
   from: But for the ungodly, merciless wrath came upon them to the very end; for he knew beforehand both them and what was going to happen,
   to: But for the ungodly[a], merciless wrath came upon them to the very end; for he knew beforehand[b] both them and what was going to happen,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the ungodly') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('knew beforehand') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:14:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But for the ungodly[a], merciless wrath came upon them to the very end; for he knew beforehand[b] both them and what was going to happen,
+  to: 'But merciless wrath came upon the ungodly and lasted to the very end, for God knew beforehand even what they would do next:'
+  rationale: The earlier revision only shortened the future expression, and its automated revert carries little meaning-based weight. I retain the established language of ungodliness, merciless wrath, and the very end, while clarifying the construction describing God's knowledge.
 cross_check:
   status: needs_review
   agreement: 0.7
@@ -149,3 +148,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/001.job-39498.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:14:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The ungodly Egyptians faced merciless wrath through to their end because God foresaw what they would do next.
+  meaning_decisions:
+  - source_phrase: μέχρι τέλους ἀνελεήμων θυμὸς ἐπέστη
+    prior_rendering: merciless wrath came upon them to the very end
+    new_rendering: merciless wrath came upon the ungodly and lasted to the very end
+    rationale: Making the duration explicit avoids attaching 'to the very end' awkwardly to the moment when wrath came upon them.
+  - source_phrase: προῄδει γὰρ αὐτῶν καὶ τὰ μέλλοντα
+    prior_rendering: for he knew beforehand both them and what was going to happen
+    new_rendering: for God knew beforehand even what they would do next
+    rationale: The genitive αὐτῶν identifies whose future actions were known; it is not a separate object meaning 'them.' God is the understood subject, and verse 2 specifies the anticipated actions.
+  footnote_kinds: {}
+  history_weighed: The earlier revision only shortened the future expression, and its automated revert carries little meaning-based weight. I retain the established language of ungodliness, merciless wrath, and the very end, while clarifying the construction describing God's knowledge.

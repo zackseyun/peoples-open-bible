@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: כֹּ֣ה אָמַ֣ר יְהוָ֗ה כַּ/אֲשֶׁ֨ר יִמָּצֵ֤א הַ/תִּירוֹשׁ֙ בָּֽ/אֶשְׁכּ֔וֹל וְ/אָמַר֙ אַל תַּשְׁחִיתֵ֔/הוּ כִּ֥י בְרָכָ֖ה בּ֑/וֹ כֵּ֤ן אֶֽעֱשֶׂה֙ לְמַ֣עַן עֲבָדַ֔/י לְ/בִלְתִּ֖י הַֽשְׁחִ֥ית הַ/כֹּֽל׀־׃
 translation:
-  text: 'Thus says Yahweh: As when new wine is found in a cluster[a], and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants[b], so as not to destroy all of them.'
-  philosophy: optimal-equivalence
+  text: 'Thus says Yahweh: When a cluster of grapes can yield new wine[a], someone says, ‘Do not destroy it, for there is a blessing in it.’ In the same way, I will act for the sake of my servants, so as not to destroy the whole nation.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'wine' or 'fresh wine'; Hebrew תִּירוֹשׁ refers specifically to new wine.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'not to destroy all'; the Hebrew leaves the object implicit.
+    text: Literally, ‘new wine is found in a cluster.’
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יְהוָה
@@ -121,7 +118,6 @@ revisions:
   from: 'Thus says the LORD: As when new wine is found in a cluster, and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants, so as not to destroy them all.'
   to: 'Thus says the LORD: As when new wine is found in a cluster, and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants, so as not to destroy them all.'
   rationale: Changed ‘them all’ to ‘all of them’ to reflect the Hebrew word order more naturally while preserving the sense that not all will be destroyed.
-
 - timestamp: '2026-05-17T17:36:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -129,6 +125,13 @@ revisions:
   from: 'Thus says Yahweh: As when new wine is found in a cluster[a], and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants[b], so as not to destroy all of them.'
   to: 'Thus says Yahweh: As when new wine is found in a cluster[a], and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants[b], so as not to destroy all of them.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so as not to destroy them all''].'
+- timestamp: '2026-11-09T17:54:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Thus says Yahweh: As when new wine is found in a cluster[a], and one says, ‘Do not destroy it, for there is a blessing in it,’ so I will act for the sake of my servants[b], so as not to destroy all of them.'
+  to: 'Thus says Yahweh: When a cluster of grapes can yield new wine[a], someone says, ‘Do not destroy it, for there is a blessing in it.’ In the same way, I will act for the sake of my servants, so as not to destroy the whole nation.'
+  rationale: The history's changes between ‘them all’ and ‘all of them’ do not resolve the referent and carry little meaning-based weight. I retain the blessing, the grape-cluster comparison, and the servants as the reason for preservation, while clarifying the wine image and the implied whole.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -150,3 +153,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/065/008.job-67068.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:54:03Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Just as a grape cluster is spared because it contains a blessing, Yahweh will preserve part of his people for the sake of his servants.
+  meaning_decisions:
+  - source_phrase: כַּאֲשֶׁר יִמָּצֵא הַתִּירוֹשׁ בָּאֶשְׁכּוֹל
+    prior_rendering: As when new wine is found in a cluster
+    new_rendering: When a cluster of grapes can yield new wine
+    rationale: The wine is the potential yield of the grapes, not finished wine inexplicably located inside a cluster; the agricultural image remains intact.
+  - source_phrase: לְבִלְתִּי הַשְׁחִית הַכֹּל
+    prior_rendering: so as not to destroy all of them
+    new_rendering: so as not to destroy the whole nation
+    rationale: The implied whole is the people under judgment, not the servants alone; naming the collective prevents an ambiguous pronoun from obscuring the promise of preservation.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history's changes between ‘them all’ and ‘all of them’ do not resolve the referent and carry little meaning-based weight. I retain the blessing, the grape-cluster comparison, and the servants as the reason for preservation, while clarifying the wine image and the implied whole.

@@ -4,19 +4,19 @@ source:
   edition: SBLGNT
   text: Αὐτὸς δὲ ὁ κύριος ἡμῶν Ἰησοῦς Χριστὸς καὶ ⸀θεὸς ⸀ὁ πατὴρ ἡμῶν, ὁ ἀγαπήσας ἡμᾶς καὶ δοὺς παράκλησιν αἰωνίαν καὶ ἐλπίδα ἀγαθὴν ἐν χάριτι,
 translation:
-  text: May our Lord Jesus Christ himself[a], and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
-  philosophy: optimal-equivalence
+  text: May our Lord Jesus Christ himself and God our Father, who loved us and gave us eternal encouragement[a] and good hope by grace,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'comfort' or 'consolation' for 'encouragement' (παράκλησιν).
-    reason: lexical_alternative
+    text: Or 'eternal comfort.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: Αὐτὸς
   chosen: himself
   alternatives:
   - he himself
   lexicon: BDAG
-  rationale: "Intensive use of αὐτός emphasizes the personal agency of the coordinated subjects in the wish-prayer. 'Himself' preserves that emphasis naturally in English. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Intensive use of αὐτός emphasizes the personal agency of the coordinated subjects in the wish-prayer. ''Himself'' preserves that emphasis naturally in English. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now
   alternatives:
@@ -116,12 +116,11 @@ revisions:
   rationale: Changed 'the Messiah' to 'Christ' for consistency with formal register and standard rendering of Χριστός in this context. No other changes needed.
 - timestamp: '2026-04-23T12:00:00Z'
   adjudicator: claude-sonnet-4-6-regression-fix
-  reviewer_model:
+  reviewer_model: null
   category: regression_fix
   from: Now may our Lord Jesus Christ himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
   to: Now may our Lord Jesus Messiah himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
-
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
   reviewer_model: codex
@@ -133,9 +132,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "May our Lord Jesus Messiah himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,"
-  to: "May our Lord Jesus the Messiah himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: May our Lord Jesus Messiah himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
+  to: May our Lord Jesus the Messiah himself, and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:04:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: May our Lord Jesus Christ himself[a], and God our Father, who loved us and gave us eternal encouragement and good hope by grace,
+  to: May our Lord Jesus Christ himself and God our Father, who loved us and gave us eternal encouragement[a] and good hope by grace,
+  rationale: The current wording conveys the prayer's personal emphasis, enduring encouragement, hope, and grace well, so it stands apart from punctuation and repair of the note's placement. The automated naming reversals do not outweigh the standing 'Jesus Christ' ruling, and the relative clause remains unexpanded rather than forcing a theological resolution of its syntax.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -157,3 +163,18 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/2_thessalonians/002/016.job-53706.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:04:37Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul begins a prayer to the Lord Jesus Christ and God the Father, recalling the love and grace through which God gave believers eternal encouragement and good hope.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current wording conveys the prayer's personal emphasis, enduring encouragement, hope, and grace well, so it stands apart from punctuation and repair of the note's placement. The automated naming reversals do not outweigh the standing 'Jesus Christ' ruling, and the relative clause remains unexpanded rather than forcing a theological resolution of its syntax.

@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: When a sieve is shaken[a], the refuse remains; so a person's filth is revealed in his thoughts.
-  philosophy: optimal-equivalence
+  text: When a sieve is shaken, the refuse remains; so a person's speech[a] reveals the filth within.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'refuse' or 'rubbish' for 'filth'; the Greek term can denote waste or excrement, and the proverb uses coarse material left behind in sifting as an image for what a person's inner reasoning reveals.
-    reason: lexical_alternative
+    text: Or, 'reasoning.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐν σείσματι
   chosen: When ... is shaken
@@ -111,17 +111,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'When a sieve is shaken, the refuse remains; so a man''s filth appears in his thinking.'
-  to: 'When a sieve is shaken, the refuse remains; so a man''s filth appears in his thinking.'
+  from: When a sieve is shaken, the refuse remains; so a man's filth appears in his thinking.
+  to: When a sieve is shaken, the refuse remains; so a man's filth appears in his thinking.
   rationale: Adjusted 'appears in his thinking' to 'is revealed in his thoughts' for more natural formal English and closer correspondence to the Greek λογισμῷ ('thought/thoughts, reasoning'). Also changed 'man's' to 'person's' for natural generic usage.
-
 - timestamp: '2026-05-18T02:57:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When a sieve is shaken[a], the refuse remains; so a person''s filth is revealed in his thoughts.'
-  to: 'When a sieve is shaken[a], the refuse remains; so a person''s filth is revealed in his thoughts.'
+  from: When a sieve is shaken[a], the refuse remains; so a person's filth is revealed in his thoughts.
+  to: When a sieve is shaken[a], the refuse remains; so a person's filth is revealed in his thoughts.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in his thinking''].'
+- timestamp: '2026-11-09T19:06:50Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When a sieve is shaken[a], the refuse remains; so a person's filth is revealed in his thoughts.
+  to: When a sieve is shaken, the refuse remains; so a person's speech[a] reveals the filth within.
+  rationale: The earlier revisions improve the generic reference to a person and retain the forceful waste imagery. Their preference for 'thoughts' is reconsidered in light of the sequence culminating in hearing someone speak in verse 7.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -141,3 +147,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/027/004.job-51698.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:50Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A person's speech exposes moral filth just as shaking a sieve leaves its refuse visible.
+  meaning_decisions:
+  - source_phrase: οὕτως σκύβαλα ἀνθρώπου ἐν λογισμῷ αὐτοῦ
+    prior_rendering: so a person's filth is revealed in his thoughts
+    new_rendering: so a person's speech reveals the filth within
+    rationale: Verses 4–7 concern assessing people through the expression of their thinking; private thoughts alone would not expose their character to a listener. The refuse-and-filth image is preserved.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier revisions improve the generic reference to a person and retain the forceful waste imagery. Their preference for 'thoughts' is reconsidered in light of the sequence culminating in hearing someone speak in verse 7.

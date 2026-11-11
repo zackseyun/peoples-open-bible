@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יִּתֵּ֣ן דָּוִ֣יד לִ/שְׁלֹמֹ֣ה בְנ֡/וֹ אֶת תַּבְנִ֣ית הָ/אוּלָם֩ וְֽ/אֶת בָּ֨תָּ֜י/ו וְ/גַנְזַכָּ֧י/ו וַ/עֲלִיֹּתָ֛י/ו וַ/חֲדָרָ֥י/ו הַ/פְּנִימִ֖ים וּ/בֵ֥ית הַ/כַּפֹּֽרֶת־־׃
 translation:
-  text: Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
-  philosophy: optimal-equivalence
+  text: 'Then David gave his son Solomon the plan for the temple: its portico, its buildings, its treasuries, its upper rooms, its inner chambers, and the room housing the mercy seat[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the atonement cover' for 'the mercy seat.' The Hebrew כַּפֹּרֶת refers to the cover of the ark in the Most Holy Place.
-    reason: lexical_alternative
+    text: The mercy seat was the cover of the ark, kept in the Most Holy Place.
+    reason: cultural_note
 lexical_decisions:
 - source_word: תַּבְנִית
   chosen: plan
@@ -95,14 +95,20 @@ revisions:
   from: Then David gave to Solomon his son the plan of the portico, its buildings, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
   to: Then David gave to Solomon his son the plan of the portico, its buildings, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
   rationale: Changed 'buildings' to 'houses' for closer lexical correspondence to בָּתָּיו while retaining natural formal English. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.'
-  to: 'Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.'
+  from: Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
+  to: Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''its buildings''].'
+- timestamp: '2026-11-09T17:21:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then David gave to Solomon his son the plan of the portico[a], its houses, its treasuries, its upper rooms, its inner chambers, and the house of the mercy seat.
+  to: 'Then David gave his son Solomon the plan for the temple: its portico, its buildings, its treasuries, its upper rooms, its inner chambers, and the room housing the mercy seat[a].'
+  rationale: The first draft’s “buildings” and its lexical rationale better convey the architectural setting than the source-transparent revision to “houses.” I retain the established term “mercy seat” while clarifying the room that contains it and the temple as the scope of the plan.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -122,3 +128,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/1_chronicles/028/011.job-44817.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:21:03Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: David gave Solomon the architectural plan for the temple’s structures and chambers, including the room housing the mercy seat.
+  meaning_decisions:
+  - source_phrase: תַּבְנִית הָאוּלָם
+    prior_rendering: the plan of the portico
+    new_rendering: 'the plan for the temple: its portico'
+    rationale: The temple is the understood whole whose parts are listed; making it explicit prevents the following structures from seeming to belong to the portico alone.
+  - source_phrase: בָּתָּיו
+    prior_rendering: its houses
+    new_rendering: its buildings
+    rationale: These are architectural units of the temple complex, not domestic houses.
+  - source_phrase: בֵית הַכַּפֹּרֶת
+    prior_rendering: the house of the mercy seat
+    new_rendering: the room housing the mercy seat
+    rationale: The phrase identifies the chamber containing the ark’s cover, not another independent house.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The first draft’s “buildings” and its lexical rationale better convey the architectural setting than the source-transparent revision to “houses.” I retain the established term “mercy seat” while clarifying the room that contains it and the temple as the scope of the plan.

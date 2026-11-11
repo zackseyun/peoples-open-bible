@@ -4,15 +4,15 @@ source:
   edition: SBLGNT
   text: λέγω γὰρ ὑμῖν ⸀ὅτι τοῦτο τὸ γεγραμμένον δεῖ τελεσθῆναι ἐν ἐμοί, τό· Καὶ μετὰ ἀνόμων ἐλογίσθη· καὶ γὰρ ⸀τὸ περὶ ἐμοῦ τέλος ἔχει.
 translation:
-  text: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me has its fulfillment[a][b].'
-  philosophy: optimal-equivalence
+  text: 'For I tell you, this Scripture must be fulfilled in me: ‘And he was counted among the lawless[a].’ For what is written about me is coming to fulfillment[b].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more traditionally, “And he was numbered with transgressors” (Isa 53:12).
-    reason: alternative_reading
+    text: Isaiah 53:12.
+    reason: cross_reference
   - marker: b
-    text: Or “what concerns me has fulfillment / is coming to completion.”
-    reason: lexical_alternative
+    text: Or, “For what concerns me is reaching its end.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: λέγω γὰρ ὑμῖν
   chosen: For I tell you
@@ -106,7 +106,6 @@ revisions:
   from: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me is reaching its end.'
   to: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me is reaching its end.'
   rationale: Revised the final clause from 'is reaching its end' to 'has its fulfillment' to reflect τέλος ἔχει more accurately in context. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:01:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -114,6 +113,13 @@ revisions:
   from: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me has its fulfillment[a][b].'
   to: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me has its fulfillment[a][b].'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is reaching its end''].'
+- timestamp: '2026-11-09T17:12:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'For I tell you that this which is written must be fulfilled in me: ‘And he was counted with the lawless.’ For what concerns me has its fulfillment[a][b].'
+  to: 'For I tell you, this Scripture must be fulfilled in me: ‘And he was counted among the lawless[a].’ For what is written about me is coming to fulfillment[b].'
+  rationale: The recorded discussion contrasts an approaching end with fulfillment; the Scripture citation favors fulfillment in the main text. I preserve the current wording’s gain while clarifying its referent and retaining the serious alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -135,3 +141,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/luke/022/037.job-38927.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jesus explains that the Scripture counting him among the lawless must be fulfilled as what is written about him reaches fulfillment.
+  meaning_decisions:
+  - source_phrase: τοῦτο τὸ γεγραμμένον
+    prior_rendering: this which is written
+    new_rendering: this Scripture
+    rationale: The following quotation identifies the writing as Scripture; naming it directly conveys what the first hearers would have understood.
+  - source_phrase: τὸ περὶ ἐμοῦ τέλος ἔχει
+    prior_rendering: what concerns me has its fulfillment
+    new_rendering: what is written about me is coming to fulfillment
+    rationale: The preceding Scripture quotation supplies the likely referent, and the new wording makes the movement toward fulfillment intelligible; the broader sense of reaching an end remains in a footnote.
+  footnote_kinds:
+    a: cross_reference
+    b: alternative_meaning
+  history_weighed: The recorded discussion contrasts an approaching end with fulfillment; the Scripture citation favors fulfillment in the main text. I preserve the current wording’s gain while clarifying its referent and retaining the serious alternative.

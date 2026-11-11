@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὁ δὲ εἶπεν αὐτοῖς· Οὐκ ἀνέγνωτε τί ἐποίησεν Δαυὶδ ὅτε ⸀ἐπείνασεν καὶ οἱ μετ’ αὐτοῦ;
 translation:
-  text: But he said to them[a], “Have you not read what David and those with him did when they were hungry?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “Did you not read what David did when he and those with him were hungry?” The Greek can be understood with the hunger applying to both David and those with him, though the singular verb explicitly refers to David.
-    reason: lexical_alternative
+  text: He replied, “Have you not read what David did when he and those with him were hungry—
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὁ δὲ
   chosen: But he
@@ -76,7 +72,6 @@ revisions:
   from: But he said to them, “Have you not read what David did when he was hungry, and those with him?”
   to: But he said to them, “Have you not read what David did when he was hungry, and those with him were hungry?”
   rationale: Added 'were hungry' to account for the implied verb applying to 'those with him,' making the sentence complete and natural in English.
-
 - timestamp: '2026-08-27T21:09:17Z'
   adjudicator: source-audit
   reviewer_model: gpt-5.6-sol
@@ -86,6 +81,13 @@ revisions:
   from: But he said to them[a], “Have you not read what David did when he was hungry, and those with him were hungry?”
   to: But he said to them[a], “Have you not read what David and those with him did when they were hungry?”
   rationale: The literal word order creates an awkward English clause that could momentarily be misread as 'what David did... and [what] those with him [did].' Reordering to a compound subject ('when he and those with him were hungry') provides a much more natural English reading without losing the source meaning. The literal phrasing can be relegated to a footnote if desired.
+- timestamp: '2026-11-09T17:14:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But he said to them[a], “Have you not read what David and those with him did when they were hungry?”
+  to: He replied, “Have you not read what David did when he and those with him were hungry—
+  rationale: The later revision successfully removed the first draft’s awkward hunger clause. I preserve that clarity while restoring the source’s focus on what David did, with the question continuing into verse 4.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -108,3 +110,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/012/003.job-56930.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus challenged the Pharisees to recall what David did when he and those accompanying him were hungry.
+  meaning_decisions:
+  - source_phrase: τί ἐποίησεν Δαυὶδ ὅτε ἐπείνασεν καὶ οἱ μετ’ αὐτοῦ
+    prior_rendering: what David and those with him did when they were hungry
+    new_rendering: what David did when he and those with him were hungry
+    rationale: The source makes David the subject of the action while extending the hunger to those accompanying him; this ordering conveys both points clearly.
+  footnote_kinds: {}
+  history_weighed: The later revision successfully removed the first draft’s awkward hunger clause. I preserve that clarity while restoring the source’s focus on what David did, with the question continuing into verse 4.

@@ -17,15 +17,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.
-  philosophy: optimal-equivalence
+  text: When dawn breaks and the sun rises over the earth, each of you must take up your weapons of war, and every man fit for battle must go outside the city. Appoint a leader over them and make it look as though you are going down to the plain to attack the Assyrian advance guard[a], but do not go down.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to the outpost of the Assyrians.' The Greek literally reads 'to/against the προφυλακή of the sons of Asshur,' where προφυλακή can mean an advance guard, outpost, or forward watch.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Sons of Asshur'' is a literal rendering of the Greek expression; it refers to the Assyrians.'
-    reason: cultural_note
+    text: Or, “outpost.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: διαφαύσῃ ὁ ὄρθρος
   chosen: dawn breaks
@@ -127,14 +124,20 @@ revisions:
   from: And it shall be, when dawn breaks and the sun comes out upon the earth, each of you shall take up your weapons of war, and every strong man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur; but you shall not go down.
   to: And it shall be, when dawn breaks and the sun comes out upon the earth, each of you shall take up your weapons of war, and every strong man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur; but you shall not go down.
   rationale: Changed 'comes out' to 'rises' for more natural rendering of the sun, and 'strong man' to 'mighty man' for a more formal and fitting rendering of ἀνὴρ ἰσχύων. Kept the rest unchanged.
-
 - timestamp: '2026-05-16T17:37:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.'
-  to: 'And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.'
-  rationale: 'Restored drafter ''the sun comes out upon the earth'' (preserving the chosen explicit motion idiom) and ''every strong man'' (preserving the chosen rendering of ἀνὴρ ἰσχύων) per chosen renderings.'
+  from: And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.
+  to: And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.
+  rationale: Restored drafter 'the sun comes out upon the earth' (preserving the chosen explicit motion idiom) and 'every strong man' (preserving the chosen rendering of ἀνὴρ ἰσχύων) per chosen renderings.
+- timestamp: '2026-11-09T19:02:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it shall be[a], when dawn breaks and the sun rises upon the earth, each of you shall take up your weapons of war, and every mighty man shall go out beyond the city. You shall appoint a leader over them, as though going down to the plain against the advance guard of the sons of Asshur[b]; but you shall not go down.
+  to: When dawn breaks and the sun rises over the earth, each of you must take up your weapons of war, and every man fit for battle must go outside the city. Appoint a leader over them and make it look as though you are going down to the plain to attack the Assyrian advance guard[a], but do not go down.
+  rationale: I retain the current wording’s natural “sun rises”; the automated reversion’s preference for the source-shaped “comes out” does not improve the meaning. The lexical rationale correctly identifies military capability and a feigned descent, which I state directly.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -154,3 +157,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/014/002.job-50781.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:01Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judith orders the men to arm themselves at daybreak and stage an apparent attack on the Assyrian advance guard without actually descending to the plain.
+  meaning_decisions:
+  - source_phrase: καὶ ἔσται ... ἀναλήμψεσθε ... ἐξελεύσεσθε ... οὐ καταβήσεσθε
+    prior_rendering: And it shall be ... shall take up ... shall go out ... you shall not go down
+    new_rendering: When ... must take up ... must go outside ... do not go down
+    rationale: These futures give instructions, not merely predictions; direct commands make their force clear in contemporary English.
+  - source_phrase: πᾶς ἀνὴρ ἰσχύων
+    prior_rendering: every mighty man
+    new_rendering: every man fit for battle
+    rationale: The phrase identifies men capable of military service, rather than a special class of heroic warriors.
+  - source_phrase: ὡς καταβαίνοντες ἐπὶ τὸ πεδίον εἰς τὴν προφυλακήν
+    prior_rendering: as though going down to the plain against the advance guard
+    new_rendering: make it look as though you are going down to the plain to attack the ... advance guard
+    rationale: The contrast with the prohibition on descending establishes a feigned attack; the English makes that tactical purpose explicit.
+  - source_phrase: υἱῶν Ἀσσούρ
+    prior_rendering: of the sons of Asshur
+    new_rendering: Assyrian
+    rationale: This expression names the Assyrians, not literal sons of an individual named Asshur.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current wording’s natural “sun rises”; the automated reversion’s preference for the source-shaped “comes out” does not improve the meaning. The lexical rationale correctly identifies military capability and a feigned descent, which I state directly.

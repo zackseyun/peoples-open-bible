@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: כִּֽי אֲנִ֞י חָשַׂ֣פְתִּי אֶת עֵשָׂ֗ו גִּלֵּ֨יתִי֙ אֶת מִסְתָּרָ֔י/ו וְ/נֶחְבָּ֖ה לֹ֣א יוּכָ֑ל שֻׁדַּ֥ד זַרְע֛/וֹ וְ/אֶחָ֥י/ו וּ/שְׁכֵנָ֖י/ו וְ/אֵינֶֽ/נּוּ־־־׃
 translation:
-  text: For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew 'Esau,' used here for the nation descended from Esau, that is, Edom.
-    reason: cross_reference
-  - marker: b
-    text: Or 'is plundered' / 'is devastated' for 'is destroyed.'
-    reason: lexical_alternative
+  text: But I have stripped Esau bare; I have uncovered his hiding places, so he cannot hide. His offspring, his brothers, and his neighbors are destroyed, and he is no more.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: חָשַׂפְתִּי
   chosen: have stripped ... bare
@@ -119,14 +112,20 @@ revisions:
   from: For I have stripped Esau bare; I have uncovered his hiding places, and he will not be able to hide himself. His offspring is destroyed, and his brothers and his neighbors—and he is no more.
   to: For I have stripped Esau bare; I have uncovered his hiding places, and he will not be able to hide himself. His offspring is destroyed, and his brothers and his neighbors—and he is no more.
   rationale: Reordered the final clause to reflect the Hebrew more closely by making 'are destroyed' govern 'his offspring, his brothers, and his neighbors' together. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.'
-  to: 'For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.'
+  from: For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.
+  to: For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''is destroyed''].'
+- timestamp: '2026-11-09T18:01:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For I have stripped Esau bare[a]; I have uncovered his hiding places, and he will not be able to hide himself. His offspring, his brothers, and his neighbors are destroyed[b], and he is no more.
+  to: But I have stripped Esau bare; I have uncovered his hiding places, so he cannot hide. His offspring, his brothers, and his neighbors are destroyed, and he is no more.
+  rationale: I retain the current gain of making “destroyed” govern offspring, brothers, and neighbors together, despite the automated revert’s conflicting rationale. The comparison in verse 9 favors an explicit contrast, and the exposure imagery remains intact.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +145,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/049/010.job-68178.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:01:16Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh has completely exposed Edom and devastated its descendants, kin, and neighbors, leaving it unable to hide or survive.
+  meaning_decisions:
+  - source_phrase: כִּי אֲנִי
+    prior_rendering: For I
+    new_rendering: But I
+    rationale: The emphatic divine subject contrasts Yahweh’s complete devastation with the limited harvesting and theft described in verse 9.
+  - source_phrase: גִּלֵּיתִי אֶת מִסְתָּרָיו וְנֶחְבָּה לֹא יוּכָל
+    prior_rendering: I have uncovered his hiding places, and he will not be able to hide himself
+    new_rendering: I have uncovered his hiding places, so he cannot hide
+    rationale: Uncovering the hiding places makes concealment impossible; the causal connection and shorter expression convey that result naturally.
+  footnote_kinds: {}
+  history_weighed: I retain the current gain of making “destroyed” govern offspring, brothers, and neighbors together, despite the automated revert’s conflicting rationale. The comparison in verse 9 favors an explicit contrast, and the exposure imagery remains intact.

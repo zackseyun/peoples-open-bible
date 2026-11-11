@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וְ/עַתָּ֕ה זֶ֣ה הַ/דָּבָ֔ר אֲשֶׁ֥ר נַעֲשֶׂ֖ה לַ/גִּבְעָ֑ה עָלֶ֖י/הָ בְּ/גוֹרָֽל׃
 translation:
-  text: 'But now this is what we will do to Gibeah: against it by lot[a].'
-  philosophy: optimal-equivalence
+  text: 'Now this is what we will do to Gibeah: we will attack it as determined by casting lots[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'we will act against it by casting lots.' The Hebrew is concise and may imply the army's action against Gibeah will be ordered or assigned by lot.
+    text: Literally, “against it by lot.” The compressed Hebrew does not specify what aspect of the action is to be decided by lot.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְעַתָּה
@@ -82,7 +82,6 @@ revisions:
   from: 'But now this is what we will do to Gibeah: we will go up against it by lot.'
   to: 'But now this is what we will do to Gibeah: we will go up against it by lot.'
   rationale: Removed 'we will go up' because the Hebrew does not include a verb of going up here; retained the terse elliptical construction 'against it by lot' to reflect the source more accurately.
-
 - timestamp: '2026-05-18T02:55:11Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -90,6 +89,13 @@ revisions:
   from: 'But now this is what we will do to Gibeah: against it by lot[a].'
   to: 'But now this is what we will do to Gibeah: against it by lot[a].'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''we will go up against it by lot''].'
+- timestamp: '2026-11-09T20:30:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'But now this is what we will do to Gibeah: against it by lot[a].'
+  to: 'Now this is what we will do to Gibeah: we will attack it as determined by casting lots[a].'
+  rationale: The first draft and lexical discussion recognize implied military action, while the later review correctly observes that no verb meaning “go up” is written. With no MAINTAINER revision recorded, I make the action explicit without adding ascent or specifying what the lot assigns.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +115,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/020/009.job-69361.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Israelites announce their plan to attack Gibeah, with the action determined by casting lots.
+  meaning_decisions:
+  - source_phrase: וְעַתָּה
+    prior_rendering: But now
+    new_rendering: Now
+    rationale: The phrase introduces the assembly’s next step; English does not need an additional adversative conjunction here.
+  - source_phrase: עָלֶיהָ בְּגוֹרָל
+    prior_rendering: against it by lot
+    new_rendering: we will attack it as determined by casting lots
+    rationale: The context supplies the military action omitted in the compressed Hebrew. Making that action explicit produces an intelligible English plan while leaving unspecified whether the lot determines participants, order, or another aspect of the attack.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft and lexical discussion recognize implied military action, while the later review correctly observes that no verb meaning “go up” is written. With no MAINTAINER revision recorded, I make the action explicit without adding ascent or specifying what the lot assigns.

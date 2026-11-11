@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: παρεγένετο δὲ ὁ πρῶτος λέγων· Κύριε, ἡ μνᾶ σου ⸂δέκα προσηργάσατο⸃ μνᾶς.
 translation:
-  text: Then the first came, saying, ‘Lord[a], your mina has earned ten minas.’
-  philosophy: optimal-equivalence
+  text: Then the first servant came and said, ‘Lord[a], your mina has earned ten more minas.’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “Master.” The Greek title κύριε can be a respectful address to a superior as well as “Lord.”
-    reason: alternative_reading
+    text: Here “Lord” is a servant's respectful address to the nobleman as his master.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: παρεγένετο
   lemma: παραγίνομαι
@@ -89,13 +89,12 @@ revisions:
   from: Then the first came, saying, ‘Lord, your mina has earned ten minas.’
   to: Then the first came, saying, ‘Lord, your mina has made ten minas more.’
   rationale: Revised ‘has earned ten minas’ to ‘has made ten minas more’ to reflect προσηργάσατο more directly and to preserve the sense that the original mina produced an additional ten minas.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then the first came[a], saying, ‘Lord, your mina has made ten minas more.’'
-  to: 'Then the first came, saying, ‘Lord, your mina has earned ten minas.’'
+  from: Then the first came[a], saying, ‘Lord, your mina has made ten minas more.’
+  to: Then the first came, saying, ‘Lord, your mina has earned ten minas.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has earned ten minas''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -105,6 +104,13 @@ revisions:
   from: Then the first came, saying, ‘Lord, your mina has earned ten minas.’
   to: Then the first came, saying, ‘Lord[a], your mina has earned ten minas.’
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('Lord') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then the first came, saying, ‘Lord[a], your mina has earned ten minas.’
+  to: Then the first servant came and said, ‘Lord[a], your mina has earned ten more minas.’
+  rationale: The automated revision recognized the additional-earnings sense, and its later wholesale revert was not a maintainer judgment against that meaning. The rendering keeps the restored, natural verb 'earned' while recovering that clarification; the address 'Lord' is retained with its contextual sense explained.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -127,3 +133,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/019/016.job-27770.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:25Z'
+  change_level: refined
+  confidence: high
+  meaning: The first servant reported that the nobleman's original mina had earned ten additional minas.
+  meaning_decisions:
+  - source_phrase: ὁ πρῶτος
+    prior_rendering: the first
+    new_rendering: the first servant
+    rationale: Supplies the understood noun so the reporting sequence is immediately clear.
+  - source_phrase: δέκα προσηργάσατο μνᾶς
+    prior_rendering: has earned ten minas
+    new_rendering: has earned ten more minas
+    rationale: Makes explicit that the ten minas are earnings in addition to the original mina, as the compound verb indicates.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The automated revision recognized the additional-earnings sense, and its later wholesale revert was not a maintainer judgment against that meaning. The rendering keeps the restored, natural verb 'earned' while recovering that clarification; the address 'Lord' is retained with its contextual sense explained.

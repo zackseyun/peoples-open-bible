@@ -4,21 +4,15 @@ source:
   edition: WLC
   text: אָסֵ֨ף אָדָ֜ם וּ/בְהֵמָ֗ה אָסֵ֤ף עוֹף הַ/שָּׁמַ֨יִם֙ וּ/דְגֵ֣י הַ/יָּ֔ם וְ/הַ/מַּכְשֵׁל֖וֹת אֶת הָ/רְשָׁעִ֑ים וְ/הִכְרַתִּ֣י אֶת הָ/אָדָ֗ם מֵ/עַ֛ל פְּנֵ֥י הָ/אֲדָמָ֖ה נְאֻם יְהוָֽה־־־־׃
 translation:
-  text: I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.
-  philosophy: optimal-equivalence
+  text: I will sweep away humanity and beasts; I will sweep away the birds of the sky and the fish of the sea, and the things that lead people into sin[a] along with the wicked[b]. I will cut off humanity from the face of the earth, declares Yahweh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'humankind.' Hebrew 'man' (אָדָם) is used here in a collective sense for humanity.
+    text: Literally, “the stumbling blocks,” possibly referring especially to idols.
     reason: lexical_alternative
   - marker: b
-    text: Or 'the birds of the sky.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'the causes of stumbling' for 'the stumbling blocks.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'from the face of the earth.' Hebrew 'ground' may intentionally echo earlier judgment language.
-    reason: lexical_alternative
+    text: Another possible understanding of the preceding phrase is “the ruins along with the wicked.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: אָסֵף
   chosen: I will sweep away
@@ -127,14 +121,20 @@ revisions:
   from: I will sweep away man and beast; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks along with the wicked. And I will cut off man from the face of the ground,” declares the LORD.
   to: I will sweep away man and beast; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks along with the wicked. And I will cut off man from the face of the ground,” declares the LORD.
   rationale: Changed 'along with' to 'with' for a more formal, concise rendering closer to the Hebrew. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:01Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.'
-  to: 'I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.'
+  from: I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.
+  to: I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''along with the wicked''].'
+- timestamp: '2026-11-09T18:49:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: I will sweep away man and beast[a]; I will sweep away the birds of the heavens and the fish of the sea, and the stumbling blocks with the wicked[d][c][b]. And I will cut off man from the face of the ground,” declares Yahweh.
+  to: I will sweep away humanity and beasts; I will sweep away the birds of the sky and the fish of the sea, and the things that lead people into sin[a] along with the wicked[b]. I will cut off humanity from the face of the earth, declares Yahweh.
+  rationale: The automated review and revert debated only “with” versus “along with,” not the difficult noun’s meaning. I build on the earlier understanding of causes of stumbling, clarify its moral sense, and preserve the significant alternative in a note.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -156,3 +156,35 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/zephaniah/001/003.job-17905.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh’s sweeping judgment encompasses humanity, land animals, birds, fish, and the wicked together with the things that lead people into sin.
+  meaning_decisions:
+  - source_phrase: אָדָם / הָאָדָם
+    prior_rendering: man
+    new_rendering: humanity
+    rationale: Both occurrences refer collectively to the human race, not to an individual man or to males alone.
+  - source_phrase: עוֹף הַשָּׁמַיִם
+    prior_rendering: the birds of the heavens
+    new_rendering: the birds of the sky
+    rationale: The phrase identifies the airborne creatures within the land-air-sea sequence; “sky” communicates that setting naturally.
+  - source_phrase: וְהַמַּכְשֵׁלוֹת אֶת הָרְשָׁעִים
+    prior_rendering: and the stumbling blocks with the wicked
+    new_rendering: and the things that lead people into sin along with the wicked
+    rationale: Following the recorded lexical judgment and the ensuing condemnation of idolatry, the wording makes moral stumbling intelligible without restricting the phrase exclusively to idols; the serious alternative is footnoted.
+  - source_phrase: מֵעַל פְּנֵי הָאֲדָמָה
+    prior_rendering: from the face of the ground
+    new_rendering: from the face of the earth
+    rationale: This repeats the expression in verse 2 and its comprehensive judgment scope; “earth” preserves the creation-and-destruction resonance.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The automated review and revert debated only “with” versus “along with,” not the difficult noun’s meaning. I build on the earlier understanding of causes of stumbling, clarify its moral sense, and preserve the significant alternative in a note.

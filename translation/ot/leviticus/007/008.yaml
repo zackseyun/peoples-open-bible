@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/הַ֨/כֹּהֵ֔ן הַ/מַּקְרִ֖יב אֶת עֹ֣לַת אִ֑ישׁ ע֤וֹר הָֽ/עֹלָה֙ אֲשֶׁ֣ר הִקְרִ֔יב לַ/כֹּהֵ֖ן ל֥/וֹ יִהְיֶֽה־׃
 translation:
-  text: And the priest who presents a man's burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the hide.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'a man's burnt offering'; the singular masculine is preserved rather than generalized.
-    reason: lexical_alternative
+  text: The priest who presents a person's burnt offering shall have the hide of that offering for himself.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הַכֹּהֵן
   chosen: the priest
@@ -92,17 +85,23 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'And the priest who presents a man''s burnt offering—the skin of the burnt offering that he has presented—shall have it for himself.'
-  to: 'And the priest who presents a man''s burnt offering—the skin of the burnt offering that he has presented—shall have it for himself.'
+  from: And the priest who presents a man's burnt offering—the skin of the burnt offering that he has presented—shall have it for himself.
+  to: And the priest who presents a man's burnt offering—the skin of the burnt offering that he has presented—shall have it for himself.
   rationale: Reordered the sentence for more natural English while preserving all source elements; removed the em dash interruption and kept 'for himself' with the main clause.
-
 - timestamp: '2026-05-18T02:57:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest who presents a man''s burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].'
-  to: 'And the priest who presents a man''s burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].'
+  from: And the priest who presents a man's burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].
+  to: And the priest who presents a man's burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''shall have it for himself''].'
+- timestamp: '2026-11-09T20:31:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest who presents a man's burnt offering shall have for himself the skin of the burnt offering that he has presented[a][b].
+  to: The priest who presents a person's burnt offering shall have the hide of that offering for himself.
+  rationale: The earlier wording correctly preserves the officiating priest's personal entitlement, which remains explicit here; no maintainer revision is recorded. The earlier insistence on 'a man' rests on preserving the Hebrew masculine form rather than evidence of a male-only restriction in this context.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -124,3 +123,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/leviticus/007/008.job-69420.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:31:56Z'
+  change_level: refined
+  confidence: high
+  meaning: The priest who presents a person's burnt offering is entitled to the animal's hide as his own.
+  meaning_decisions:
+  - source_phrase: עֹלַת אִישׁ
+    prior_rendering: a man's burnt offering
+    new_rendering: a person's burnt offering
+    rationale: In these sacrificial instructions, אִישׁ identifies an individual offerer rather than establishing a restriction to men; 'a person's' conveys that meaning without implying such a restriction.
+  - source_phrase: עֹור
+    prior_rendering: the skin
+    new_rendering: the hide
+    rationale: '''Hide'' clearly identifies the animal skin that becomes the priest''s property, making the earlier alternative footnote unnecessary.'
+  footnote_kinds: {}
+  history_weighed: The earlier wording correctly preserves the officiating priest's personal entitlement, which remains explicit here; no maintainer revision is recorded. The earlier insistence on 'a man' rests on preserving the Hebrew masculine form rather than evidence of a male-only restriction in this context.

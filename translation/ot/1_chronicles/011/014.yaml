@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יִּֽתְיַצְּב֤וּ בְ/תוֹךְ הַ/חֶלְקָה֙ וַ/יַּצִּיל֔וּ/הָ וַ/יַּכּ֖וּ אֶת פְּלִשְׁתִּ֑ים וַ/יּ֥וֹשַׁע יְהוָ֖ה תְּשׁוּעָ֥ה גְדוֹלָֽה־־׃
 translation:
-  text: And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the LORD brought about a great deliverance' or 'the LORD gave a great victory.'
-    reason: lexical_alternative
+  text: But they took their stand in the middle of the plot, saved it from capture, and struck down the Philistines. Yahweh saved them by giving them a great victory.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיִּתְיַצְּבוּ
   chosen: they took their stand
@@ -89,14 +85,20 @@ revisions:
   from: And they took their stand in the middle of the plot and delivered it, and they struck down the Philistines, and the LORD saved them by a great victory.
   to: And they took their stand in the middle of the plot and delivered it, and they struck down the Philistines, and the LORD saved them by a great victory.
   rationale: Removed 'them' after 'saved' because it is not present in the source; otherwise retained the draft's accurate wording and formal register.
-
 - timestamp: '2026-05-18T02:58:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.'
-  to: 'And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.'
+  from: And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.
+  to: And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the LORD saved them''].'
+- timestamp: '2026-11-09T17:19:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they took their stand in the middle of the plot and delivered it[a], and they struck down the Philistines, and Yahweh saved by a great victory.
+  to: But they took their stand in the middle of the plot, saved it from capture, and struck down the Philistines. Yahweh saved them by giving them a great victory.
+  rationale: The review removed “them” because Hebrew leaves the object implicit, although the draft and lexical rationale correctly supplied it from context. I restore that clarity, retain the saving force of the verb, and make the rescue of the land intelligible in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -118,3 +120,29 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_chronicles/011/014.job-28087.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Those who stand their ground save the barley plot and strike down the Philistines, while Yahweh grants them a great saving victory.
+  meaning_decisions:
+  - source_phrase: וַיִּתְיַצְּבוּ בְתוֹךְ הַחֶלְקָה
+    prior_rendering: And they took their stand in the middle of the plot
+    new_rendering: But they took their stand in the middle of the plot
+    rationale: The conjunction contrasts their firm stand with the troops’ flight in the preceding verse.
+  - source_phrase: וַיַּצִּילוּהָ
+    prior_rendering: delivered it
+    new_rendering: saved it from capture
+    rationale: The object is the cultivated plot, so the rescue consists in preventing the enemy from taking it.
+  - source_phrase: וַיּוֹשַׁע יְהוָה תְּשׁוּעָה גְדוֹלָה
+    prior_rendering: Yahweh saved by a great victory
+    new_rendering: Yahweh saved them by giving them a great victory
+    rationale: The English needs the understood beneficiaries of the deliverance; the wording retains both rescue and the concrete military victory.
+  footnote_kinds: {}
+  history_weighed: The review removed “them” because Hebrew leaves the object implicit, although the draft and lexical rationale correctly supplied it from context. I restore that clarity, retain the saving force of the verb, and make the rescue of the land intelligible in English.

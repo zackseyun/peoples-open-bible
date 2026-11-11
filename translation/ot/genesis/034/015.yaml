@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: אַךְ בְּ/זֹ֖את נֵא֣וֹת לָ/כֶ֑ם אִ֚ם תִּהְי֣וּ כָמֹ֔/נוּ לְ/הִמֹּ֥ל לָ/כֶ֖ם כָּל זָכָֽר־־׃
 translation:
-  text: 'Only on this condition will we agree with you: if you become like us[b][a], by circumcising every male among you.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'Only in this will we consent to you.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'by every male among you being circumcised'.
-    reason: previous_rendering
+  text: 'We will agree to this on one condition only: that you become like us by having every male among you circumcised.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אַךְ
   chosen: Only
@@ -96,12 +89,18 @@ revisions:
   from: 'Only on this condition will we agree with you: if you become like us, by the circumcision of every male among you.'
   to: 'Only on this condition will we agree with you: if you become like us, by circumcising every male among you.'
   rationale: Replaced 'by the circumcision of every male among you' with 'by circumcising every male among you' to more directly and naturally reflect the infinitive 'to be circumcised/circumcising' while preserving the formal sense.
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: 'Only on this condition will we agree with you: if you become like us[b][a], by circumcising every male among you.'
+  to: 'We will agree to this on one condition only: that you become like us by having every male among you circumcised.'
+  rationale: Earlier passes smoothed the infinitive clause; I keep their gain and the condition-first structure, and drop footnotes that only restated literal alternatives.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:14Z'
   unchanged: false
   changes_summary: Replaced 'by the circumcision of every male among you' with 'by circumcising every male among you' to more directly and naturally reflect the infinitive 'to be circumcised/circumcising' while preserving the formal sense.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +123,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/034/015.job-37865.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: high
+  meaning: 'The brothers set one condition: every male of Shechem''s people must be circumcised so that they become like Jacob''s family.'
+  meaning_decisions:
+  - source_phrase: לְהִמֹּל לָכֶם כָּל זָכָר
+    prior_rendering: by circumcising every male among you
+    new_rendering: by having every male among you circumcised
+    rationale: The Hebrew verb is passive, describing every male being circumcised; 'having ... circumcised' keeps that and reads naturally.
+  footnote_kinds: {}
+  history_weighed: Earlier passes smoothed the infinitive clause; I keep their gain and the condition-first structure, and drop footnotes that only restated literal alternatives.

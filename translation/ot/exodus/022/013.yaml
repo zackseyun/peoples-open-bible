@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/כִֽי יִשְׁאַ֥ל אִ֛ישׁ מֵ/עִ֥ם רֵעֵ֖/הוּ וְ/נִשְׁבַּ֣ר אוֹ מֵ֑ת בְּעָלָ֥י/ו אֵין עִמּ֖/וֹ שַׁלֵּ֥ם יְשַׁלֵּֽם־־־׃
 translation:
-  text: And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.
-  philosophy: optimal-equivalence
+  text: If a man borrows an animal[a] from his neighbor and it is injured or dies while its owner is not present, the borrower must make restitution.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'it is broken.' The Hebrew can refer either to damage to a borrowed item or injury to a borrowed animal.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'he shall surely pay'; that is, he must make full restitution.
-    reason: lexical_alternative
+    text: The Hebrew does not name what is borrowed; “is broken or dies” can also cover damage to borrowed items.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְכִי
   chosen: And if
@@ -98,14 +95,20 @@ revisions:
   from: And if a man borrows from his neighbor, and it is injured or dies, if its owner is not with it, he must surely make restitution.
   to: And if a man borrows from his neighbor, and it is injured or dies, if its owner is not with it, he must surely make restitution.
   rationale: Changed 'must surely make restitution' to 'shall surely make restitution' for a more formal translation register; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:55:46Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.'
-  to: 'And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.'
+  from: And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.
+  to: And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he must surely make restitution''].'
+- timestamp: '2026-11-09T17:36:09Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And if a man borrows from his neighbor[a], and it is injured or dies, if its owner is not with it[b], he shall surely make restitution.
+  to: If a man borrows an animal[a] from his neighbor and it is injured or dies while its owner is not present, the borrower must make restitution.
+  rationale: The history's change between 'must surely' and 'shall surely' concerned register rather than meaning; 'must' states the requirement clearly. I retain the established animal reading while preserving the lexical discussion's possible application to damaged items in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -125,3 +128,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/022/013.job-62822.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:09Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A borrower must compensate for a borrowed animal's injury or death when its owner is not present.
+  meaning_decisions:
+  - source_phrase: יִשְׁאַל אִישׁ מֵעִם רֵעֵהוּ
+    prior_rendering: a man borrows from his neighbor
+    new_rendering: a man borrows an animal from his neighbor
+    rationale: The preceding livestock laws and the possibility of death identify the immediate example as an animal; the possible broader scope is noted.
+  - source_phrase: בְּעָלָיו אֵין עִמּוֹ
+    prior_rendering: if its owner is not with it
+    new_rendering: while its owner is not present
+    rationale: The condition concerns the owner's presence when the injury or death occurs, without unnecessarily fixing the pronoun's reference to the animal rather than the borrower.
+  - source_phrase: שַׁלֵּם יְשַׁלֵּם
+    prior_rendering: he shall surely make restitution
+    new_rendering: the borrower must make restitution
+    rationale: Naming the borrower resolves the subject, and 'must' conveys the emphatic obligation naturally.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history's change between 'must surely' and 'shall surely' concerned register rather than meaning; 'must' states the requirement clearly. I retain the established animal reading while preserving the lexical discussion's possible application to damaged items in a note.

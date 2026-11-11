@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: רְאוּבֵ֖ן בְּכ֣וֹר יִשְׂרָאֵ֑ל בְּנֵ֣י רְאוּבֵ֗ן חֲנוֹךְ֙ מִשְׁפַּ֣חַת הַ/חֲנֹכִ֔י לְ/פַלּ֕וּא מִשְׁפַּ֖חַת הַ/פַּלֻּאִֽי׃
 translation:
-  text: 'Reuben[a], the firstborn of Israel: the sons of Reuben: of Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites.'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: 'Or, more formally, ''the sons of Reuben: Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites.'''
-    reason: lexical_alternative
+  text: 'Reuben was Israel’s firstborn. His descendants were grouped into these clans: from Hanoch came the clan of the Hanochites; from Pallu, the clan of the Palluites.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּכֹר
   chosen: the firstborn
@@ -79,7 +75,6 @@ revisions:
   from: 'Reuben, the firstborn of Israel: the sons of Reuben were Hanoch, from whom came the clan of the Hanochites; of Pallu, the clan of the Palluites.'
   to: 'Reuben, the firstborn of Israel: the sons of Reuben were Hanoch, from whom came the clan of the Hanochites; of Pallu, the clan of the Palluites.'
   rationale: Removed 'were' and 'from whom came' to more closely reflect the terse genealogical structure of the source, while preserving natural formal English. Kept the repeated 'of ... the clan of ...' pattern for consistency.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -87,6 +82,13 @@ revisions:
   from: 'Reuben[a], the firstborn of Israel: the sons of Reuben: of Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites.'
   to: 'Reuben[a], the firstborn of Israel: the sons of Reuben: of Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the sons of Reuben were''].'
+- timestamp: '2026-11-09T18:31:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Reuben[a], the firstborn of Israel: the sons of Reuben: of Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites.'
+  to: 'Reuben was Israel’s firstborn. His descendants were grouped into these clans: from Hanoch came the clan of the Hanochites; from Pallu, the clan of the Palluites.'
+  rationale: The first draft explicitly expressed clan descent, but the automated review removed that wording to preserve Hebrew terseness. The genealogical meaning supports restoring the explicit relationship while retaining all names and Reuben’s firstborn status.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -106,3 +108,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/026/005.job-41758.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:31:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Reuben was Israel’s firstborn, and the clans descended from Hanoch and Pallu belong to his lineage.
+  meaning_decisions:
+  - source_phrase: רְאוּבֵן בְּכוֹר יִשְׂרָאֵל בְּנֵי רְאוּבֵן
+    prior_rendering: 'Reuben, the firstborn of Israel: the sons of Reuben:'
+    new_rendering: 'Reuben was Israel’s firstborn. His descendants were grouped into these clans:'
+    rationale: The census concerns Reuben’s continuing lineage, not merely his immediate children; complete sentences make the transition from ancestor to clan register clear.
+  - source_phrase: חֲנוֹךְ מִשְׁפַּחַת הַחֲנֹכִי לְפַלּוּא מִשְׁפַּחַת הַפַּלֻּאִי
+    prior_rendering: of Hanoch, the clan of the Hanochites; of Pallu, the clan of the Palluites
+    new_rendering: from Hanoch came the clan of the Hanochites; from Pallu, the clan of the Palluites
+    rationale: The supplied verb expresses the genealogical relationship between each named ancestor and his clan.
+  footnote_kinds: {}
+  history_weighed: The first draft explicitly expressed clan descent, but the automated review removed that wording to preserve Hebrew terseness. The genealogical meaning supports restoring the explicit relationship while retaining all names and Reuben’s firstborn status.

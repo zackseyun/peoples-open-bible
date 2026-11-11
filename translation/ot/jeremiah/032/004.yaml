@@ -4,14 +4,14 @@ source:
   edition: WLC
   text: וְ/צִדְקִיָּ֨הוּ֙ מֶ֣לֶךְ יְהוּדָ֔ה לֹ֥א יִמָּלֵ֖ט מִ/יַּ֣ד הַ/כַּשְׂדִּ֑ים כִּ֣י הִנָּתֹ֤ן יִנָּתֵן֙ בְּ/יַ֣ד מֶֽלֶךְ בָּבֶ֔ל וְ/דִבֶּר פִּ֣י/ו עִם פִּ֔י/ו וְ/עֵינָ֖י/ו אֶת עינ/ו תִּרְאֶֽינָה־־־־׃
 translation:
-  text: And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.
-  philosophy: optimal-equivalence
+  text: Zedekiah king of Judah will not escape the Chaldeans[a]; he will certainly be handed over to the king of Babylon, speak with him face to face, and see him with his own eyes[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more idiomatically, 'he will speak with him mouth to mouth,' that is, in direct personal encounter.
+    text: Here, the Babylonian forces.
     reason: lexical_alternative
   - marker: b
-    text: Or more idiomatically, 'his eyes will see his eyes,' that is, he will see him directly, eye to eye.
+    text: Literally, “his mouth will speak with his mouth, and his eyes will see his eyes.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: יִמָּלֵט
@@ -86,14 +86,20 @@ revisions:
   from: And Zedekiah king of Judah will not escape from the hand of the Chaldeans, for he will surely be given into the hand of the king of Babylon, and his mouth will speak with his mouth, and his eyes will see his eyes.
   to: And Zedekiah king of Judah will not escape from the hand of the Chaldeans, for he will surely be given into the hand of the king of Babylon, and his mouth will speak with his mouth, and his eyes will see his eyes.
   rationale: 'Revised the final clauses for more natural and accurate English: changed ''his mouth will speak with his mouth'' to ''he will speak mouth to mouth with him,'' preserving the idiom without awkward literalism. Kept the final clause essentially literal while maintaining readability.'
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.'
-  to: 'And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.'
+  from: And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.
+  to: And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and his mouth will speak with his mouth''].'
+- timestamp: '2026-11-09T17:57:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Zedekiah king of Judah will not escape from the hand of the Chaldeans[a], for he will surely be given into the hand of the king of Babylon, and he will speak mouth to mouth with him[b], and his eyes will see his eyes.
+  to: Zedekiah king of Judah will not escape the Chaldeans[a]; he will certainly be handed over to the king of Babylon, speak with him face to face, and see him with his own eyes[b].
+  rationale: The automated review recognized the awkwardness of the mouth expression, while the earlier lexical rationale explained both bodily expressions as direct personal encounter. I carry that meaning into English rather than retain the literal forms favored by the drafting and revert rationales.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -113,3 +119,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/032/004.job-67810.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:57:56Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Zedekiah will certainly be captured and brought into a direct personal encounter with Babylon’s king.
+  meaning_decisions:
+  - source_phrase: לֹא יִמָּלֵט מִיַּד הַכַּשְׂדִּים ... הִנָּתֹן יִנָּתֵן בְּיַד מֶלֶךְ בָּבֶל
+    prior_rendering: will not escape from the hand of the Chaldeans, for he will surely be given into the hand of the king of Babylon
+    new_rendering: will not escape the Chaldeans; he will certainly be handed over to the king of Babylon
+    rationale: Renders capture and transfer into royal custody directly, preserving the emphatic certainty of the Hebrew repetition.
+  - source_phrase: וְדִבֶּר פִּיו עִם פִּיו וְעֵינָיו אֶת עֵינוֹ תִּרְאֶינָה
+    prior_rendering: he will speak mouth to mouth with him, and his eyes will see his eyes
+    new_rendering: speak with him face to face, and see him with his own eyes
+    rationale: The paired expressions describe an unavoidable personal encounter, not agreement or an unusual manner of speaking; explicit sight is retained, and the source imagery is noted.
+  footnote_kinds:
+    a: name_or_term
+    b: literal_wording
+  history_weighed: The automated review recognized the awkwardness of the mouth expression, while the earlier lexical rationale explained both bodily expressions as direct personal encounter. I carry that meaning into English rather than retain the literal forms favored by the drafting and revert rationales.

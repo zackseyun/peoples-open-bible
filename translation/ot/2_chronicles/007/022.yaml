@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/אָמְר֗וּ עַל֩ אֲשֶׁ֨ר עָֽזְב֜וּ אֶת יְהוָ֣ה אֱלֹהֵ֣י אֲבֹתֵי/הֶ֗ם אֲשֶׁ֣ר הוֹצִיאָ/ם֮ מֵ/אֶ֣רֶץ מִצְרַיִם֒ וַֽ/יַּחֲזִ֨יקוּ֙ בֵּ/אלֹהִ֣ים אֲחֵרִ֔ים וַ/יִּשְׁתַּחֲו֥וּ לָ/הֶ֖ם וַ/יַּֽעַבְד֑וּ/ם עַל כֵּן֙ הֵבִ֣יא עֲלֵי/הֶ֔ם אֵ֥ת כָּל הָ/רָעָ֖ה הַ/זֹּֽאת־׀־־׃פ
 translation:
-  text: And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “clung to other gods” or “embraced other gods.” The Hebrew verb literally means “took hold of,” expressing deliberate attachment to foreign gods.
-    reason: lexical_alternative
-  - marker: b
-    text: “All this disaster” refers to calamity/judgment, not moral evil.
-    reason: lexical_alternative
+  text: They will answer, ‘They forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, bowing down to them and serving them. That is why he has brought all this disaster on them.’
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְאָמְרוּ
   chosen: And they will say
@@ -125,14 +118,20 @@ revisions:
   from: And they will say, ‘Because they forsook the LORD, the God of their fathers, who brought them out of the land of Egypt, and took hold of other gods, and bowed down to them and served them, therefore he has brought all this disaster on them.’
   to: And they will say, ‘Because they forsook the LORD, the God of their fathers, who brought them out of the land of Egypt, and took hold of other gods, and bowed down to them and served them, therefore he has brought all this disaster on them.’
   rationale: Changed ‘took hold of other gods’ to ‘embraced other gods’ for more natural English while preserving the sense of clinging to/holding fast to other gods. No other changes needed.
-
 - timestamp: '2026-05-17T01:21:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’'
-  to: 'And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’'
+  from: And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’
+  to: And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and took hold of other gods''].'
+- timestamp: '2026-11-09T20:34:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they will say[a], ‘Because they forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, and bowed down to them and served them[b], therefore he has brought all this disaster on them.’
+  to: They will answer, ‘They forsook Yahweh, the God of their fathers, who brought them out of the land of Egypt, and embraced other gods, bowing down to them and serving them. That is why he has brought all this disaster on them.’
+  rationale: I retain the current wording’s ‘forsook,’ ‘embraced other gods,’ and ‘disaster’; the automated revert and the earlier preference for ‘took hold of’ offer no meaning-based reason to reverse those gains. No maintainer revision is recorded, and both existing footnotes are unnecessary because the main text already conveys their points.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -154,3 +153,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/007/022.job-59662.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:34:55Z'
+  change_level: refined
+  confidence: high
+  meaning: People will explain that Yahweh brought this disaster on his people because they abandoned their ancestral God and deliverer to worship and serve other gods.
+  meaning_decisions:
+  - source_phrase: וְאָמְרוּ
+    prior_rendering: And they will say
+    new_rendering: They will answer
+    rationale: In context, these words answer the preceding verse’s question about why Yahweh devastated the land and temple.
+  - source_phrase: עַל אֲשֶׁר ... עַל כֵּן
+    prior_rendering: Because ... therefore
+    new_rendering: They forsook ... . That is why
+    rationale: Two sentences carry the full causal explanation without the cumbersome English construction ‘because ... therefore.’
+  - source_phrase: וַיִּשְׁתַּחֲווּ לָהֶם וַיַּעַבְדוּם
+    prior_rendering: and bowed down to them and served them
+    new_rendering: bowing down to them and serving them
+    rationale: The participial construction naturally connects these acts of worship and service with the people’s embrace of other gods, while retaining both distinct actions.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s ‘forsook,’ ‘embraced other gods,’ and ‘disaster’; the automated revert and the earlier preference for ‘took hold of’ offer no meaning-based reason to reverse those gains. No maintainer revision is recorded, and both existing footnotes are unnecessary because the main text already conveys their points.

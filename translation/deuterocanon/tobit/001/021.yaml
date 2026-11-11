@@ -13,15 +13,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And before fifty days had passed[a], his two sons killed him and fled to the mountains of Ararat. And Sacherdonos his son reigned in his place, and he appointed Achiacharos, the son of Anael, my brother's son[b], over all the accounts of his kingdom and over the whole administration.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Sacherdonos is the Greek form of the Assyrian royal name more commonly rendered in English as Esarhaddon.
-    reason: lexical_alternative
-  - marker: b
-    text: Achiacharos is the Greek form of the name often rendered Ahikar.
-    reason: lexical_alternative
+  text: Before fifty days had passed, two of the king’s sons killed him and fled to the mountains of Ararat. His son Esarhaddon succeeded him as king and appointed Ahikar, the son of my brother Anael, to oversee all the accounts of his kingdom and its entire administration.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οὐ διῆλθον ἡμέραι πεντήκοντα ἕως οὗ
   chosen: before fifty days had passed
@@ -118,7 +111,13 @@ revisions:
   from: And before fifty days had passed, his two sons killed him and fled to the mountains of Ararat. And Sacherdonos his son reigned in his place, and he appointed Achiacharos, the son of Anael my brother, over all the accounts of his kingdom and over the whole administration.
   to: And before fifty days had passed, his two sons killed him and fled to the mountains of Ararat. And Sacherdonos his son reigned in his place, and he appointed Achiacharos, the son of Anael, my brother's son, over all the accounts of his kingdom and over the whole administration.
   rationale: 'Clarified the genealogy in the final clause: the Greek means ''Achiacharos, son of Anael, the son of my brother,'' not ''the son of Anael my brother.'''
-
+- timestamp: '2026-11-09T19:10:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And before fifty days had passed[a], his two sons killed him and fled to the mountains of Ararat. And Sacherdonos his son reigned in his place, and he appointed Achiacharos, the son of Anael, my brother's son[b], over all the accounts of his kingdom and over the whole administration.
+  to: Before fifty days had passed, two of the king’s sons killed him and fled to the mountains of Ararat. His son Esarhaddon succeeded him as king and appointed Ahikar, the son of my brother Anael, to oversee all the accounts of his kingdom and its entire administration.
+  rationale: I weighed the later genealogical revision but returned to the first draft’s identification of Anael as Tobit’s brother because “son” describes Ahikar in the Greek construction. The former source-form naming policy is replaced here by recognizable English names.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +137,37 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/001/021.job-39045.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:32Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Within fifty days the king was killed by two of his sons, and his successor Esarhaddon appointed Tobit’s nephew Ahikar to oversee the kingdom’s accounts and administration.
+  meaning_decisions:
+  - source_phrase: οἱ δύο υἱοὶ αὐτοῦ
+    prior_rendering: his two sons
+    new_rendering: two of the king’s sons
+    rationale: The number identifies the two assassins, not the total number of the king’s sons; the following succession makes that distinction important.
+  - source_phrase: Σαχερδονὸς ... Ἀχιάχαρον
+    prior_rendering: Sacherdonos ... Achiacharos
+    new_rendering: Esarhaddon ... Ahikar
+    rationale: Use recognizable English forms and a consistent name for Ahikar across verses 21 and 22.
+  - source_phrase: Ἀχιάχαρον τὸν Ἀναὴλ υἱὸν τοῦ ἀδελφοῦ μου
+    prior_rendering: Achiacharos, the son of Anael, my brother’s son
+    new_rendering: Ahikar, the son of my brother Anael
+    rationale: The compressed Greek identifies Ahikar as the brother’s son, with the indeclinable name Anael naming that brother; it does not require an additional generation.
+  - source_phrase: ἐβασίλευσεν ... ἀντʼ αὐτοῦ
+    prior_rendering: reigned in his place
+    new_rendering: succeeded him as king
+    rationale: The narrative concerns accession after the king’s death rather than simply the duration of the successor’s reign.
+  - source_phrase: ἐπὶ πᾶσαν τὴν ἐκλογιστείαν ... καὶ ἐπὶ πᾶσαν τὴν διοίκησιν
+    prior_rendering: over all the accounts ... and over the whole administration
+    new_rendering: to oversee all the accounts ... and its entire administration
+    rationale: The construction describes comprehensive responsibility for financial accounting and general administration.
+  footnote_kinds: {}
+  history_weighed: I weighed the later genealogical revision but returned to the first draft’s identification of Anael as Tobit’s brother because “son” describes Ahikar in the Greek construction. The former source-form naming policy is replaced here by recognizable English names.

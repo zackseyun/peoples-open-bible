@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר יְהוֹנָתָ֜ן אֶל דָּוִ֗ד יְהוָ֞ה אֱלֹהֵ֤י יִשְׂרָאֵל֙ כִּֽי אֶחְקֹ֣ר אֶת אָבִ֗/י כָּ/עֵ֤ת מָחָר֙ הַ/שְּׁלִשִׁ֔ית וְ/הִנֵּה ט֖וֹב אֶל דָּוִ֑ד וְ/לֹֽא אָז֙ אֶשְׁלַ֣ח אֵלֶ֔י/ךָ וְ/גָלִ֖יתִי אֶת אָזְנֶֽ/ךָ־־־׀־־־־׃
 translation:
-  text: And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I sound out my father about this time tomorrow, or the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and uncover your ear?"
-  philosophy: optimal-equivalence
+  text: 'And Jonathan said to David, “I swear by Yahweh, the God of Israel: I will sound out my father about this time tomorrow or on the third day[a]. If he is favorably disposed toward you, I will certainly send word to let you know.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, “and uncover your ear,” an idiom meaning “tell you” or “disclose it to you.”
-    reason: lexical_alternative
-  - marker: b
-    text: The Hebrew wording is elliptical and difficult; the sense is a solemn oath or pledge invoking the LORD as witness.
-    reason: textual_variant
-  - marker: c
-    text: Or “about this time tomorrow, on the third day”; the Hebrew temporal expression is compressed.
+    text: Or, “about this time tomorrow, on the third day.” The Hebrew time expression is uncertain.
     reason: alternative_reading
 lexical_decisions:
 - source_word: יְהוָה
@@ -121,14 +115,20 @@ revisions:
   from: And Jonathan said to David, “As the LORD, the God of Israel, lives, when I sound out my father about this time tomorrow, or the third day, and behold, if it is favorable toward David, shall I not then send to you and uncover your ear?”
   to: And Jonathan said to David, “As the LORD, the God of Israel, lives, when I have sounded out my father about this time tomorrow, or on the third day, and behold, if it is favorable toward David, shall I not then send to you and disclose it to you?"
   rationale: Adjusted the verb tense to 'have sounded out' for smoother English, added 'on' before 'the third day,' and replaced the idiom 'uncover your ear' with the clearer formal equivalent 'disclose it to you.'
-
 - timestamp: '2026-05-15T11:24:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I have sounded out my father about this time tomorrow, or on the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and disclose it to you?"'
-  to: 'And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I sound out my father about this time tomorrow, or the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and uncover your ear?"'
-  rationale: 'Restored 3 chosen renderings (present-future tense, no ''on'', Hebrew idiom in main text).'
+  from: And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I have sounded out my father about this time tomorrow, or on the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and disclose it to you?"
+  to: And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I sound out my father about this time tomorrow, or the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and uncover your ear?"
+  rationale: Restored 3 chosen renderings (present-future tense, no 'on', Hebrew idiom in main text).
+- timestamp: '2026-11-09T17:24:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Jonathan said to David[a], “As Yahweh, the God of Israel, lives, when I sound out my father about this time tomorrow, or the third day, and behold, if it is favorable toward David[c][b], shall I not then send to you and uncover your ear?"
+  to: 'And Jonathan said to David, “I swear by Yahweh, the God of Israel: I will sound out my father about this time tomorrow or on the third day[a]. If he is favorably disposed toward you, I will certainly send word to let you know.'
+  rationale: The earlier review correctly recognized the need to translate “uncover your ear,” although the automated revert restored it. The record’s oath and favorable-report interpretation are retained, the promise is clarified, and the unresolved timing is footnoted.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -151,3 +151,34 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/ot/1_samuel/020/012.job-28163.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:24:41Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Jonathan swears by Yahweh that he will discover his father’s attitude toward David and send David news if that attitude is favorable.
+  meaning_decisions:
+  - source_phrase: יְהוָה אֱלֹהֵי יִשְׂרָאֵל
+    prior_rendering: As Yahweh, the God of Israel, lives
+    new_rendering: I swear by Yahweh, the God of Israel
+    rationale: The abbreviated divine invocation introduces an oath; this supplies its force without inserting a verb about living that is absent from this verse.
+  - source_phrase: כִּי אֶחְקֹר אֶת אָבִי כָּעֵת מָחָר הַשְּׁלִשִׁית
+    prior_rendering: when I sound out my father about this time tomorrow, or the third day
+    new_rendering: I will sound out my father about this time tomorrow or on the third day
+    rationale: An independent promise replaces the tangled subordinate construction while retaining the uncertain timing and noting its alternative.
+  - source_phrase: וְהִנֵּה טוֹב אֶל דָּוִד
+    prior_rendering: and behold, if it is favorable toward David
+    new_rendering: If he is favorably disposed toward you
+    rationale: The favorable disposition belongs to Saul, and David is the person Jonathan is addressing.
+  - source_phrase: וְלֹא אָז אֶשְׁלַח אֵלֶיךָ וְגָלִיתִי אֶת אָזְנֶךָ
+    prior_rendering: shall I not then send to you and uncover your ear
+    new_rendering: I will certainly send word to let you know
+    rationale: The rhetorical oath assures David that Jonathan will communicate the news; the ear idiom means informing him.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review correctly recognized the need to translate “uncover your ear,” although the automated revert restored it. The record’s oath and favorable-report interpretation are retained, the promise is clarified, and the unresolved timing is footnoted.

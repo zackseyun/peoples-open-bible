@@ -28,14 +28,11 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.
-  philosophy: optimal-equivalence
+  text: Anyone who failed to appear within two or three days, as the presiding elders had ruled, would have their livestock confiscated[a] and be excluded from the community of returned exiles.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more interpretively, 'their property will be forfeited.' The Greek says 'will be devoted,' which may carry confiscatory force in this legal setting.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'from the community of the exiles.'
+    text: Literally, 'their livestock will be devoted,' implying forfeiture for sacred use.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἀπαντήσωσιν
@@ -137,14 +134,20 @@ revisions:
   from: And whoever does not appear within two or three days, according to the judgment of the elders who preside, their livestock will be devoted, and he himself will be excluded from the assembly of the captivity.
   to: And whoever does not appear within two or three days, according to the judgment of the elders who preside, their livestock will be devoted, and he himself will be excluded from the assembly of the captivity.
   rationale: Changed 'the elders who preside' to 'the presiding elders' for more natural formal English. Retained 'devoted' for ἀνιερωθήσονται and 'assembly of the captivity' as a close rendering of τοῦ πλήθους τῆς αἰχμαλωσίας.
-
 - timestamp: '2026-05-18T02:58:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.'
-  to: 'And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.'
+  from: And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.
+  to: And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of the elders who preside''].'
+- timestamp: '2026-11-09T18:50:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And whoever does not appear within two or three days[a], according to the judgment of the presiding elders, their livestock will be devoted[b], and he himself will be excluded from the assembly of the captivity.
+  to: Anyone who failed to appear within two or three days, as the presiding elders had ruled, would have their livestock confiscated[a] and be excluded from the community of returned exiles.
+  rationale: Earlier deliberation established both confiscatory force and a sacred nuance but left the practical penalty in a footnote. I reverse that arrangement while retaining livestock rather than broadening the Greek to all property.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -164,3 +167,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/009/004.job-47900.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Under the elders' ruling, anyone who fails to attend within the stated deadline faces confiscation of livestock and exclusion from the returned-exile community.
+  meaning_decisions:
+  - source_phrase: κατὰ τὸ κρῖμα τῶν προκαθημένων πρεσβυτέρων
+    prior_rendering: according to the judgment of the presiding elders
+    new_rendering: as the presiding elders had ruled
+    rationale: This is an authoritative ruling establishing the sanction, not merely an opinion or assessment.
+  - source_phrase: ἀνιερωθήσονται τὰ κτήνη αὐτῶν
+    prior_rendering: their livestock will be devoted
+    new_rendering: would have their livestock confiscated
+    rationale: The practical meaning is punitive forfeiture; 'devoted' alone does not communicate that to modern readers, so its sacred nuance is retained in a footnote.
+  - source_phrase: ἀπὸ τοῦ πλήθους τῆς αἰχμαλωσίας
+    prior_rendering: from the assembly of the captivity
+    new_rendering: from the community of returned exiles
+    rationale: The penalty concerns exclusion from communal membership, not simply removal from a meeting.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: Earlier deliberation established both confiscatory force and a sacred nuance but left the practical penalty in a footnote. I reverse that arrangement while retaining livestock rather than broadening the Greek to all property.

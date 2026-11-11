@@ -19,14 +19,14 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.
-  philosophy: optimal-equivalence
+  text: For the inescapable fate they deserved[a] dragged them to this end and made them forget what had happened, so that they would suffer in full the punishment still lacking after their torments[b],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the necessity they deserved' or 'a fitting necessity.' The Greek combines moral fitness/desert (ἀξία) with compulsion (ἀνάγκη).
+    text: Literally, 'the deserved necessity,' personified as a force driving them to their end.
     reason: lexical_alternative
   - marker: b
-    text: Or 'the remaining punishment'—that is, the penalty still not yet completed by their previous torments.
+    text: Literally, 'complete beforehand the punishment lacking in their torments.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: εἷλκεν
@@ -123,14 +123,20 @@ revisions:
   from: For a deserved necessity dragged them to this end, and cast upon them forgetfulness of what had happened, so that they might complete beforehand the punishment lacking in their torments.
   to: For a deserved necessity dragged them to this end, and cast upon them forgetfulness of what had happened, so that they might complete beforehand the punishment lacking in their torments.
   rationale: 'Adjusted word order for more natural English: changed ''cast upon them forgetfulness'' to ''cast forgetfulness ... upon them'' and ''complete beforehand'' to ''beforehand complete.'''
-
 - timestamp: '2026-05-16T17:37:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.'
-  to: 'For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.'
-  rationale: 'Restored drafter ''cast upon them forgetfulness'' (preserving the chosen verb-object-recipient order) and ''might complete beforehand'' (preserving the chosen English word order) per chosen renderings.'
+  from: For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.
+  to: For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.
+  rationale: Restored drafter 'cast upon them forgetfulness' (preserving the chosen verb-object-recipient order) and 'might complete beforehand' (preserving the chosen English word order) per chosen renderings.
+- timestamp: '2026-11-09T19:14:01Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For a deserved necessity dragged them to this end[a], and cast forgetfulness of what had happened upon them[b], so that they might beforehand complete the punishment lacking in their torments.
+  to: For the inescapable fate they deserved[a] dragged them to this end and made them forget what had happened, so that they would suffer in full the punishment still lacking after their torments[b],
+  rationale: The history adjusted word order but preserved literal expressions that remained obscure in English. I retain the morally deserved, personified compulsion without naming its agent, and clarify the unfinished punishment.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -150,3 +156,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/019/004.job-39508.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:14:01Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A deserved, inescapable compulsion drove the Egyptians toward their end and made them forget earlier events so that their remaining punishment would be completed.
+  meaning_decisions:
+  - source_phrase: ἡ ἀξία ... ἀνάγκη
+    prior_rendering: a deserved necessity
+    new_rendering: the inescapable fate they deserved
+    rationale: This conveys both moral desert and constraining inevitability in intelligible English, while retaining the personification and leaving its ultimate agency unnamed.
+  - source_phrase: τῶν συμβεβηκότων ἀμνηστίαν ἐνέβαλεν
+    prior_rendering: cast forgetfulness of what had happened upon them
+    new_rendering: made them forget what had happened
+    rationale: The construction means that the same compelling force caused forgetfulness; natural English carries that causal sense directly.
+  - source_phrase: ἵνα τὴν λείπουσαν ταῖς βασάνοις προαναπληρώσωσιν κόλασιν
+    prior_rendering: so that they might beforehand complete the punishment lacking in their torments
+    new_rendering: so that they would suffer in full the punishment still lacking after their torments
+    rationale: Their previous torments had not exhausted their punishment, and the clause states the purpose of their renewed course. The difficult 'beforehand' nuance remains in a literal note rather than receiving an unsupported chronological explanation.
+  footnote_kinds:
+    a: literal_wording
+    b: literal_wording
+  history_weighed: The history adjusted word order but preserved literal expressions that remained obscure in English. I retain the morally deserved, personified compulsion without naming its agent, and clarify the unfinished punishment.

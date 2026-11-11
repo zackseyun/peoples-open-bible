@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: כִּ֣י שַׂ֤מְתָּ מֵ/עִיר֙ לַ/גָּ֔ל קִרְיָ֥ה בְצוּרָ֖ה לְ/מַפֵּלָ֑ה אַרְמ֤וֹן זָרִים֙ מֵ/עִ֔יר לְ/עוֹלָ֖ם לֹ֥א יִבָּנֶֽה׃
 translation:
-  text: For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.
-  philosophy: optimal-equivalence
+  text: For you have reduced the city to a heap of rubble, the fortified town to ruins; the foreigners’ citadel[a] is a city no more and will never be rebuilt.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the palace of foreigners is no longer a city.' The Hebrew phrase is compressed and may mean that the foreigners’ stronghold has ceased to have city-status.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'for eternity it will not be built'; the sense in context is 'it will never be rebuilt.'
-    reason: lexical_alternative
+    text: Or, “palace.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: שַׂמְתָּ
   lemma: שׂוּם
@@ -99,14 +96,20 @@ revisions:
   from: For you have made the city a heap, the fortified town a ruin; the foreigners’ palace is no city, it will never be rebuilt.
   to: For you have made the city a heap, the fortified town a ruin; the foreigners’ palace is no city, it will never be rebuilt.
   rationale: Changed 'foreigners’ palace' to 'palace of foreigners' for more natural formal English while preserving the genitive sense. No other changes needed.
-
 - timestamp: '2026-05-17T17:06:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.'
-  to: 'For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.'
+  from: For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.
+  to: For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''foreigners’''].'
+- timestamp: '2026-11-09T17:50:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For you have made the city a heap[a], the fortified town a ruin; the palace of foreigners is no city[b], it will never be rebuilt.
+  to: For you have reduced the city to a heap of rubble, the fortified town to ruins; the foreigners’ citadel[a] is a city no more and will never be rebuilt.
+  rationale: The recorded review changed only the possessive construction and left the compressed final clause unresolved. I preserve its understanding of irreversible destruction, but clarify the rubble and fortified seat of foreign power; “palace” remains available in the footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +129,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/025/002.job-66367.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:50:36Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh has destroyed the fortified city of foreign power so completely that it will never be rebuilt.
+  meaning_decisions:
+  - source_phrase: שַׂמְתָּ מֵעִיר לַגָּל קִרְיָה בְצוּרָה לְמַפֵּלָה
+    prior_rendering: you have made the city a heap, the fortified town a ruin
+    new_rendering: you have reduced the city to a heap of rubble, the fortified town to ruins
+    rationale: The heap is the wreckage of a demolished city, not an unspecified mound; “reduced” expresses the destructive transformation naturally.
+  - source_phrase: אַרְמוֹן זָרִים מֵעִיר
+    prior_rendering: the palace of foreigners is no city
+    new_rendering: the foreigners’ citadel is a city no more
+    rationale: In this fortified-city context, the noun denotes a palace stronghold or citadel; the concluding phrase describes the disappearance of the city it represents.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded review changed only the possessive construction and left the compressed final clause unresolved. I preserve its understanding of irreversible destruction, but clarify the rubble and fortified seat of foreign power; “palace” remains available in the footnote.

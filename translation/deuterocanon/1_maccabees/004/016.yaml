@@ -25,8 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Judas and the force turned back from pursuing after them,
-  philosophy: optimal-equivalence
+  text: Then Judas and his force turned back from pursuing them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέστρεψεν
   chosen: turned back
@@ -34,34 +34,27 @@ lexical_decisions:
   - returned
   - turned around
   lexicon: BDAG
-  rationale: The aorist of ἐπιστρέφω here denotes a change of direction in the course
-    of action. 'Turned back' fits the military movement context better than the more
-    neutral 'returned' and preserves the concrete sense.
+  rationale: The aorist of ἐπιστρέφω here denotes a change of direction in the course of action. 'Turned back' fits the military movement context better than the more neutral 'returned' and preserves the concrete sense.
 - source_word: ἡ δύναμις
   chosen: the force
   alternatives:
   - the army
   - the troops
   lexicon: LSJ
-  rationale: δύναμις in military narrative can denote an armed force or body of troops.
-    'The force' stays close to the Greek while remaining natural English; 'army' may
-    sound more formalized than the context requires.
+  rationale: δύναμις in military narrative can denote an armed force or body of troops. 'The force' stays close to the Greek while remaining natural English; 'army' may sound more formalized than the context requires.
 - source_word: ἀπὸ τοῦ διώκειν
   chosen: from pursuing
   alternatives:
   - from the pursuit
   - from continuing to pursue
   lexicon: BDAG
-  rationale: The construction ἀπό + articular infinitive expresses cessation or withdrawal
-    from an activity. 'From pursuing' renders the idiom clearly and compactly in English.
+  rationale: The construction ἀπό + articular infinitive expresses cessation or withdrawal from an activity. 'From pursuing' renders the idiom clearly and compactly in English.
 - source_word: ὀπίσθεν αὐτῶν
   chosen: after them
   alternatives:
   - behind them
   lexicon: LSJ
-  rationale: In context of pursuit, ὀπίσθεν αὐτῶν means following after the fleeing
-    enemy. 'After them' is the most idiomatic English in this military setting, while
-    'behind them' is more spatially literal but less natural.
+  rationale: In context of pursuit, ὀπίσθεν αὐτῶν means following after the fleeing enemy. 'After them' is the most idiomatic English in this military setting, while 'behind them' is more spatially literal but less natural.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -90,16 +83,21 @@ revisions:
   category: revision_pass
   from: And Judas and the force turned back from pursuing after them,
   to: And Judas and the force turned back from pursuing them,
-  rationale: Removed the redundant 'after' to make the English more natural while
-    preserving the sense of ὀπίσθεν αὐτῶν ('them' after 'pursuing').
-
+  rationale: Removed the redundant 'after' to make the English more natural while preserving the sense of ὀπίσθεν αὐτῶν ('them' after 'pursuing').
 - timestamp: '2026-05-18T02:58:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Judas and the force turned back from pursuing them,'
-  to: 'And Judas and the force turned back from pursuing after them,'
+  from: And Judas and the force turned back from pursuing them,
+  to: And Judas and the force turned back from pursuing after them,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after them''].'
+- timestamp: '2026-11-09T18:51:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Judas and the force turned back from pursuing after them,
+  to: Then Judas and his force turned back from pursuing them.
+  rationale: The earlier review correctly removed the redundant 'after' from 'pursuing after them'; the later automated revert supplies no meaning-based reason to restore it. The action of turning back is preserved.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -119,3 +117,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/016.job-48161.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:33Z'
+  change_level: refined
+  confidence: high
+  meaning: Judas and his force turn back after pursuing the defeated enemy.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly removed the redundant 'after' from 'pursuing after them'; the later automated revert supplies no meaning-based reason to restore it. The action of turning back is preserved.

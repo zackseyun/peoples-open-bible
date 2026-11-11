@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
-  philosophy: optimal-equivalence
+  text: Some also belonged to Hyrcanus son of Tobias, a man of very high standing. The facts were not as the ungodly Simon had maliciously reported. The total was four hundred talents[a] of silver and two hundred talents of gold.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'two hundred of gold'; 'talents' is understood from the preceding phrase.
-    reason: lexical_alternative
+    text: A talent was a large unit of weight used to measure precious metals.
+    reason: cultural_note
 lexical_decisions:
 - source_word: τινὰ
   chosen: some
@@ -115,14 +115,20 @@ revisions:
   from: and some also belonging to Hyrcanus son of Tobias, a man holding a very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
   to: and some also belonging to Hyrcanus son of Tobias, a man holding a very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
   rationale: Changed 'a man holding a very high position' to 'a man of very high position' for more natural formal English while preserving the sense of ἐν ὑπεροχῇ κειμένου. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:59:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.'
-  to: 'and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.'
+  from: and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
+  to: and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''a man holding a very high position''].'
+- timestamp: '2026-11-09T18:53:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and some also belonging to Hyrcanus son of Tobias[a], a man of very high position. The ungodly Simon was not slandering to that extent. Altogether there were four hundred talents of silver and two hundred of gold.
+  to: Some also belonged to Hyrcanus son of Tobias, a man of very high standing. The facts were not as the ungodly Simon had maliciously reported. The total was four hundred talents[a] of silver and two hundred talents of gold.
+  rationale: I retain the history’s recognition of Hyrcanus’s prominence and Simon’s impiety. Its explanation of 'not slandering to that extent' does not adequately account for the contrast with Simon’s claim, so I render the elliptical clause as a rejection of his malicious report.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +148,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/003/011.job-48997.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:54Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Some deposits belonged to the prominent Hyrcanus, and the actual holdings contradicted Simon’s malicious report, totaling four hundred talents of silver and two hundred of gold.
+  meaning_decisions:
+  - source_phrase: ἀνδρὸς ἐν ὑπεροχῇ κειμένου
+    prior_rendering: a man of very high position
+    new_rendering: a man of very high standing
+    rationale: The phrase describes prominence or social rank without necessarily identifying a particular official position.
+  - source_phrase: οὐχ οὕτως διαβάλλων ὁ δυσσεβὴς Σίμων
+    prior_rendering: The ungodly Simon was not slandering to that extent.
+    new_rendering: The facts were not as the ungodly Simon had maliciously reported.
+    rationale: In context, the clause contrasts the actual deposits and totals with Simon’s allegation in verse 6; it rejects his misrepresentation rather than minimizing the extent of his slander.
+  - source_phrase: χρυσίου δὲ διακόσια
+    prior_rendering: two hundred of gold
+    new_rendering: two hundred talents of gold
+    rationale: The unit is understood from the preceding phrase and should be stated in English for clarity.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: I retain the history’s recognition of Hyrcanus’s prominence and Simon’s impiety. Its explanation of 'not slandering to that extent' does not adequately account for the contrast with Simon’s claim, so I render the elliptical clause as a rejection of his malicious report.

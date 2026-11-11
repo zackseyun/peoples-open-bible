@@ -10,12 +10,12 @@ source:
   validation: normalized_direct_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: to the neighbor[a], to do according to the law of Moses; and they put them to death. And innocent blood was spared on that day.
-  philosophy: optimal-equivalence
+  text: to do to their neighbor. In accordance with the law of Moses[a], they put them to death, and innocent blood was spared that day.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically from the sentence flow, 'to do to their neighbor according to the law of Moses.' The Greek wording here is syntactically tied to the previous verse.
-    reason: lexical_alternative
+    text: Deuteronomy 19:16–21 requires false witnesses to receive the punishment they intended for the accused.
+    reason: cross_reference
 lexical_decisions:
 - source_word: τῷ πλησίον
   chosen: to the neighbor
@@ -106,7 +106,6 @@ revision_pass:
   timestamp: '2026-04-23T15:47:00Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -126,3 +125,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/062.job-52479.json
+revisions:
+- timestamp: '2026-11-09T19:10:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: to the neighbor[a], to do according to the law of Moses; and they put them to death. And innocent blood was spared on that day.
+  to: to do to their neighbor. In accordance with the law of Moses[a], they put them to death, and innocent blood was spared that day.
+  rationale: The earlier footnote correctly recognizes the dependence on verse 61 but leaves the text awkward and potentially misleading about what accords with the law. I preserve the neighbor, execution, and sparing of innocent blood in this verse while clarifying the legal connection.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The elders receive the death they intended for their neighbor, in accordance with the law of Moses, and innocent blood is spared.
+  meaning_decisions:
+  - source_phrase: τῷ πλησίον, ποιῆσαι
+    prior_rendering: to the neighbor, to do
+    new_rendering: to do to their neighbor
+    rationale: Reordering these words within the verse makes the continuation of the elders' wicked plan grammatical in English without moving the neighbor into verse 61.
+  - source_phrase: κατὰ τὸν νόμον Μωϋσῆ, καὶ ἀπέκτειναν αὐτούς
+    prior_rendering: according to the law of Moses; and they put them to death
+    new_rendering: In accordance with the law of Moses, they put them to death
+    rationale: The legal phrase describes the assembly's execution of the false witnesses, not the elders' earlier plot; the sentence structure makes that attachment clear.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The earlier footnote correctly recognizes the dependence on verse 61 but leaves the text awkward and potentially misleading about what accords with the law. I preserve the neighbor, execution, and sparing of innocent blood in this verse while clarifying the legal connection.

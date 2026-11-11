@@ -23,12 +23,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'do not be afraid.' The Greek verb can denote fear or caution, but the context favors not giving up hope because reconciliation remains possible.
-    reason: lexical_alternative
+  text: If you speak against a friend, do not be afraid, for reconciliation is possible—except in cases of insult, arrogance, the disclosure of a secret, or a treacherous blow; these will drive every friend away.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπὶ φίλον
   chosen: against a friend
@@ -139,14 +135,20 @@ revisions:
   from: If you open your mouth against a friend, do not despair, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
   to: If you open your mouth against a friend, do not despair, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
   rationale: Changed 'do not despair' to 'do not be afraid' to more closely reflect μὴ εὐλαβηθῇς. Kept the rest essentially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.'
-  to: 'If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.'
+  from: If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
+  to: If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''do not despair''].'
+- timestamp: '2026-11-09T19:06:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you open your mouth against a friend[a], do not be afraid, for there can be reconciliation—except in the case of insult and arrogance and the revealing of a secret and a treacherous blow; in these things every friend will flee.
+  to: If you speak against a friend, do not be afraid, for reconciliation is possible—except in cases of insult, arrogance, the disclosure of a secret, or a treacherous blow; these will drive every friend away.
+  rationale: I retain the current “do not be afraid,” which preserves the distinction from “do not despair” in the preceding verse and is supported by the earlier review. The recorded interpretation of the exceptions and the treacherous blow remains intact.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -166,3 +168,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/022/022.job-51578.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:06:19Z'
+  change_level: refined
+  confidence: high
+  meaning: Reconciliation remains possible after hostile words, but insult, arrogance, betrayed confidence, and treacherous injury drive friends away.
+  meaning_decisions:
+  - source_phrase: ἐπὶ φίλον ἐὰν ἀνοίξῃς στόμα
+    prior_rendering: If you open your mouth against a friend
+    new_rendering: If you speak against a friend
+    rationale: This renders the speech idiom directly while preserving its hostile direction.
+  - source_phrase: ἔστιν γὰρ διαλλαγή
+    prior_rendering: for there can be reconciliation
+    new_rendering: for reconciliation is possible
+    rationale: The clause offers the possibility of restored relations, not a promise that restoration will occur.
+  - source_phrase: ἐν τούτοις ἀποφεύξεται πᾶς φίλος
+    prior_rendering: in these things every friend will flee
+    new_rendering: these will drive every friend away
+    rationale: The offenses are what provoke a friend’s withdrawal; the new wording makes that connection explicit.
+  footnote_kinds: {}
+  history_weighed: I retain the current “do not be afraid,” which preserves the distinction from “do not despair” in the preceding verse and is supported by the earlier review. The recorded interpretation of the exceptions and the treacherous blow remains intact.

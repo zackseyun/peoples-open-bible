@@ -4,15 +4,15 @@ source:
   edition: WLC
   text: הַ/יֹּֽשְׁבִים֙ בַּ/קְּבָרִ֔ים וּ/בַ/נְּצוּרִ֖ים יָלִ֑ינוּ הָ/אֹֽכְלִים֙ בְּשַׂ֣ר הַ/חֲזִ֔יר ו/פרק פִּגֻּלִ֖ים כְּלֵי/הֶֽם׃
 translation:
-  text: who sit among the graves and spend the night in hidden places[a], who eat pig's flesh, and broth of unclean things is in their vessels[b];
-  philosophy: optimal-equivalence
+  text: They sit among the graves[a] and spend the night in hidden places[b]; they eat pig’s flesh, and their vessels hold broth made from unclean food.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'in hidden places'; the Hebrew term is difficult and has also been understood as 'in guarded places' or, less likely in context, 'in besieged places.'
-    reason: lexical_alternative
+    text: Sitting among graves here likely refers to rituals for consulting the dead.
+    reason: cultural_note
   - marker: b
-    text: Or 'soup' or 'stew' of unclean/abominable things.
-    reason: lexical_alternative
+    text: Or, ‘guarded places’; the Hebrew term is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הַיֹּשְׁבִים
   chosen: who sit
@@ -107,14 +107,20 @@ revisions:
   from: who sit among the graves and spend the night in secret places, who eat pig's flesh, and broth of unclean things is in their vessels;
   to: who sit among the graves and spend the night in secret places, who eat pig's flesh, and broth of unclean things is in their vessels;
   rationale: Changed 'secret places' to 'hidden places' for a more natural and lexically fitting rendering of the Hebrew term, while preserving the rest of the verse.
-
 - timestamp: '2026-05-17T17:36:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'who sit among the graves and spend the night in hidden places[a], who eat pig''s flesh, and broth of unclean things is in their vessels[b];'
-  to: 'who sit among the graves and spend the night in hidden places[a], who eat pig''s flesh, and broth of unclean things is in their vessels[b];'
+  from: who sit among the graves and spend the night in hidden places[a], who eat pig's flesh, and broth of unclean things is in their vessels[b];
+  to: who sit among the graves and spend the night in hidden places[a], who eat pig's flesh, and broth of unclean things is in their vessels[b];
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in secret places''].'
+- timestamp: '2026-11-09T17:54:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: who sit among the graves and spend the night in hidden places[a], who eat pig's flesh, and broth of unclean things is in their vessels[b];
+  to: They sit among the graves[a] and spend the night in hidden places[b]; they eat pig’s flesh, and their vessels hold broth made from unclean food.
+  rationale: The automated history alternates between ‘secret’ and ‘hidden’ without resolving the rare Hebrew term, so I retain the current ‘hidden’ and acknowledge the uncertainty. I preserve the concrete forbidden-food imagery while clarifying the inverted vessel clause.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +140,23 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/065/004.job-67065.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:54:03Z'
+  change_level: refined
+  confidence: medium
+  meaning: The people's practices among graves, their secret overnight rituals, and their consumption of forbidden food reveal the impurity of their worship.
+  meaning_decisions:
+  - source_phrase: וּמְרַק פִּגֻּלִים כְּלֵיהֶם
+    prior_rendering: and broth of unclean things is in their vessels
+    new_rendering: and their vessels hold broth made from unclean food
+    rationale: The food context establishes that the ritually defiled things are ingredients of the broth; the new clause expresses that relationship in natural English.
+  footnote_kinds:
+    a: cultural_background
+    b: alternative_meaning
+  history_weighed: The automated history alternates between ‘secret’ and ‘hidden’ without resolving the rare Hebrew term, so I retain the current ‘hidden’ and acknowledge the uncertainty. I preserve the concrete forbidden-food imagery while clarifying the inverted vessel clause.

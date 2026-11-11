@@ -4,18 +4,12 @@ source:
   edition: WLC
   text: וּ/לְ/שַׁ֨עַר הֶֽ/חָצֵ֜ר מָסָ֣ךְ עֶשְׂרִ֣ים אַמָּ֗ה תְּכֵ֨לֶת וְ/אַרְגָּמָ֜ן וְ/תוֹלַ֧עַת שָׁנִ֛י וְ/שֵׁ֥שׁ מָשְׁזָ֖ר מַעֲשֵׂ֣ה רֹקֵ֑ם עַמֻּֽדֵי/הֶם֙ אַרְבָּעָ֔ה וְ/אַדְנֵי/הֶ֖ם אַרְבָּעָֽה׀׃
 translation:
-  text: And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with their four pillars and their four bases.
-  philosophy: optimal-equivalence
+  text: For the courtyard entrance there shall be an embroidered screen[a] twenty cubits wide, made of blue, purple, and scarlet yarn and fine twisted linen, with four pillars and four bases.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a curtain' or 'a hanging' for the entrance covering.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'twenty cubits'; 'long' is supplied in English for clarity in the architectural description.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'their four sockets' instead of 'their four bases.'
-    reason: lexical_alternative
+    text: Or, 'a screen woven with colored patterns.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וּלְשַׁעַר
   chosen: And for the gate
@@ -111,14 +105,20 @@ revisions:
   from: And for the gate of the courtyard there shall be a screen twenty cubits long, of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer, with their four pillars and their four bases.
   to: And for the gate of the courtyard there shall be a screen twenty cubits long, of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer, with four pillars and four bases.
   rationale: Removed the repeated possessive pronouns before 'four pillars' and 'four bases' for more natural formal English while preserving the Hebrew sense; otherwise retained the draft.
-
 - timestamp: '2026-05-16T03:24:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with four pillars and four bases.'
-  to: 'And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with their four pillars and their four bases.'
-  rationale: 'Azure dropped 3mp possessive suffixes (עַמֻּדֵיהֶם / וְאַדְנֵיהֶם morphologically explicit הֶם). Drafter''s lexical decision retains ''their''; azure''s stylistic shortening has no Hebrew basis.'
+  from: And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with four pillars and four bases.
+  to: And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with their four pillars and their four bases.
+  rationale: Azure dropped 3mp possessive suffixes (עַמֻּדֵיהֶם / וְאַדְנֵיהֶם morphologically explicit הֶם). Drafter's lexical decision retains 'their'; azure's stylistic shortening has no Hebrew basis.
+- timestamp: '2026-11-09T17:35:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And for the gate of the courtyard there shall be a screen twenty cubits long[a], of blue, purple, and scarlet yarn, and fine twined linen, the work of an embroiderer[c][b], with their four pillars and their four bases.
+  to: For the courtyard entrance there shall be an embroidered screen[a] twenty cubits wide, made of blue, purple, and scarlet yarn and fine twisted linen, with four pillars and four bases.
+  rationale: The earlier review's removal of repeated possessives improves English without changing which structure has the supports. The automated revert defended morphological transparency rather than identifying missing meaning, so I retain the clearer construction while preserving every material and count.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +138,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/027/016.job-62976.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:47Z'
+  change_level: refined
+  confidence: high
+  meaning: The courtyard entrance is to have a twenty-cubit embroidered screen made from the specified colored yarns and fine twisted linen, with four pillars and four bases.
+  meaning_decisions:
+  - source_phrase: עֶשְׂרִים אַמָּה
+    prior_rendering: twenty cubits long
+    new_rendering: twenty cubits wide
+    rationale: The measurement describes the screen's horizontal span across the entrance; 'wide' prevents confusion with its vertical dimension.
+  - source_phrase: מַעֲשֵׂה רֹקֵם
+    prior_rendering: the work of an embroiderer
+    new_rendering: an embroidered screen
+    rationale: The phrase specifies the screen's patterned craftsmanship, which the adjective conveys naturally; the serious alternative concerning the textile technique is retained in a note.
+  - source_phrase: עַמֻּדֵיהֶם אַרְבָּעָה וְאַדְנֵיהֶם אַרְבָּעָה
+    prior_rendering: with their four pillars and their four bases
+    new_rendering: with four pillars and four bases
+    rationale: The construction with 'with' already assigns the pillars and bases to the entrance screen, avoiding an unclear plural antecedent without losing the relationship expressed by the Hebrew suffixes.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review's removal of repeated possessives improves English without changing which structure has the supports. The automated revert defended morphological transparency rather than identifying missing meaning, so I retain the clearer construction while preserving every material and count.

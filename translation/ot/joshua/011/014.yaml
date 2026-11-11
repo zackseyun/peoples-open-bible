@@ -4,21 +4,8 @@ source:
   edition: WLC
   text: וְ֠/כֹל שְׁלַ֞ל הֶ/עָרִ֤ים הָ/אֵ֨לֶּה֙ וְ/הַ/בְּהֵמָ֔ה בָּזְז֥וּ לָ/הֶ֖ם בְּנֵ֣י יִשְׂרָאֵ֑ל רַ֣ק אֶֽת כָּל הָ/אָדָ֞ם הִכּ֣וּ לְ/פִי חֶ֗רֶב עַד הִשְׁמִדָ/ם֙ אוֹתָ֔/ם לֹ֥א הִשְׁאִ֖ירוּ כָּל נְשָׁמָֽה־־־־־׃
 translation:
-  text: And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the Israelites.' The Hebrew is literally 'the sons of Israel.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'all the people.' Hebrew 'every man' uses אָדָם here for the human population in contrast with the livestock.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'with the mouth of the sword,' a Hebrew idiom meaning 'with the edge of the sword.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'they left no one breathing' / 'they left alive nothing that breathed.'
-    reason: lexical_alternative
+  text: The Israelites took all the spoil of these cities and the livestock for themselves, but they put all the people to the sword until they had destroyed them. They left no one alive.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: שְׁלַל
   chosen: spoil
@@ -126,14 +113,20 @@ revisions:
   from: And all the spoil of these cities, along with the livestock, the sons of Israel plundered for themselves; only every man they struck with the edge of the sword until they had destroyed them. They left no breathing thing.
   to: And all the spoil of these cities, along with the livestock, the sons of Israel plundered for themselves; only every man they struck with the edge of the sword until they had destroyed them. They left no breathing thing.
   rationale: Changed 'every man' to 'all the people' to better reflect כָּל־הָאָדָם collectively rather than individually and to avoid excluding women and children. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-17T07:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.'
-  to: 'And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.'
+  from: And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.
+  to: And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''every man''].'
+- timestamp: '2026-11-09T18:09:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And all the spoil of these cities[a], along with the livestock, the sons of Israel plundered for themselves; only all the people they struck with the edge of the sword until they had destroyed them[d][c][b]. They left no breathing thing.
+  to: The Israelites took all the spoil of these cities and the livestock for themselves, but they put all the people to the sword until they had destroyed them. They left no one alive.
+  rationale: The recorded review correctly recognized that אָדָם denotes the whole human population, a gain already present in the current text despite the automated revert rationale. I retain 'all the people' and replace the source-shaped syntax and misleading breadth of 'no breathing thing' with their contextual meaning.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -153,3 +146,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/011/014.job-68680.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:09:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The Israelites kept the captured goods and livestock but killed the entire human population, leaving no survivors.
+  meaning_decisions:
+  - source_phrase: בְּנֵי יִשְׂרָאֵל
+    prior_rendering: the sons of Israel
+    new_rendering: The Israelites
+    rationale: The expression identifies the national community here, rather than distinguishing male descendants from other Israelites.
+  - source_phrase: וְכֹל שְׁלַל הֶעָרִים הָאֵלֶּה וְהַבְּהֵמָה בָּזְזוּ לָהֶם
+    prior_rendering: And all the spoil of these cities, along with the livestock, ... plundered for themselves
+    new_rendering: took all the spoil of these cities and the livestock for themselves
+    rationale: Natural subject–verb–object order makes clear that both the goods and the livestock were retained as plunder.
+  - source_phrase: רַק אֶת כָּל הָאָדָם הִכּוּ לְפִי חֶרֶב
+    prior_rendering: only all the people they struck with the edge of the sword
+    new_rendering: but they put all the people to the sword
+    rationale: The clause contrasts the killing of people with the preservation of property and livestock; 'put to the sword' conveys the killing idiom directly.
+  - source_phrase: לֹא הִשְׁאִירוּ כָּל נְשָׁמָה
+    prior_rendering: They left no breathing thing
+    new_rendering: They left no one alive
+    rationale: The phrase means that no human survivor remained; the previous clause explicitly says that livestock were spared.
+  footnote_kinds: {}
+  history_weighed: The recorded review correctly recognized that אָדָם denotes the whole human population, a gain already present in the current text despite the automated revert rationale. I retain 'all the people' and replace the source-shaped syntax and misleading breadth of 'no breathing thing' with their contextual meaning.

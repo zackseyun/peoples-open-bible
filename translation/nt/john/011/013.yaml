@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: εἰρήκει δὲ ὁ Ἰησοῦς περὶ τοῦ θανάτου αὐτοῦ. ἐκεῖνοι δὲ ἔδοξαν ὅτι περὶ τῆς κοιμήσεως τοῦ ὕπνου λέγει.
 translation:
-  text: Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, 'about the sleep of sleep,' that is, about literal sleep rather than death.
-    reason: lexical_alternative
+  text: Jesus had spoken about Lazarus’s death, but they thought he meant ordinary sleep.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἰρήκει
   chosen: had spoken
@@ -17,7 +13,7 @@ lexical_decisions:
   - had said
   - was speaking
   lexicon: BDAG
-  rationale: "Pluperfect form indicates prior speech relative to the disciples' misunderstanding. 'Had spoken' is natural English and preserves the temporal sense better than a simple past. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Pluperfect form indicates prior speech relative to the disciples'' misunderstanding. ''Had spoken'' is natural English and preserves the temporal sense better than a simple past. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: δὲ
   chosen: Now / but
   alternatives:
@@ -97,13 +93,12 @@ revisions:
   from: Now Jesus had spoken about his death, but they thought that he was speaking about the sleep of ordinary rest.
   to: Now Jesus had spoken about his death, but they thought that he was speaking about the sleep of ordinary rest.
   rationale: Removed 'ordinary' because it is not represented in the Greek. Kept 'the sleep of rest' to reflect the genitive construction without unnecessary expansion.
-
 - timestamp: '2026-05-18T02:59:52Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.'
-  to: 'Now Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.'
+  from: Now Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
+  to: Now Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''of ordinary rest''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -112,6 +107,13 @@ revisions:
   from: Now Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
   to: Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:10:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Jesus had spoken about his death[a], but they thought that he was speaking about the sleep of rest.
+  to: Jesus had spoken about Lazarus’s death, but they thought he meant ordinary sleep.
+  rationale: The recorded rationales dispute “ordinary” on word-for-word grounds, but the lexical discussion correctly recognizes that the phrase specifies literal sleep. I preserve that meaning and clarify the referent of death, without adding any claim about the state of the dead.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -133,3 +135,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/john/011/013.job-27846.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:10:21Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jesus had meant Lazarus’s death, but the disciples thought he meant ordinary sleep.
+  meaning_decisions:
+  - source_phrase: περὶ τοῦ θανάτου αὐτοῦ
+    prior_rendering: about his death
+    new_rendering: about Lazarus’s death
+    rationale: Naming Lazarus prevents English readers from taking “his death” to mean Jesus’ own death.
+  - source_phrase: περὶ τῆς κοιμήσεως τοῦ ὕπνου λέγει
+    prior_rendering: he was speaking about the sleep of rest
+    new_rendering: he meant ordinary sleep
+    rationale: The genitive construction distinguishes actual sleep from the figurative sleep of death; “ordinary sleep” conveys that distinction rather than reproducing its redundant form.
+  footnote_kinds: {}
+  history_weighed: The recorded rationales dispute “ordinary” on word-for-word grounds, but the lexical discussion correctly recognizes that the phrase specifies literal sleep. I preserve that meaning and clarify the referent of death, without adding any claim about the state of the dead.

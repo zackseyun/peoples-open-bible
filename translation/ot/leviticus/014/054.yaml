@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: זֹ֖את הַ/תּוֹרָ֑ה לְ/כָל נֶ֥גַע הַ/צָּרַ֖עַת וְ/לַ/נָּֽתֶק־׃
 translation:
-  text: This is the law for every case of leprous disease and for an itch[a].
-  philosophy: optimal-equivalence
+  text: This is the law for every case of defiling skin disease[a] and for an eruption on the scalp or beard.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'and for a scaly eruption,' traditionally 'and for scall.' The Hebrew term refers to a specific skin condition, especially of the scalp or beard, but its exact medical equivalent is uncertain.
+    text: Hebrew tsaraʿat, a category of conditions causing ritual uncleanness, not a single identifiable modern disease; the term also applies to affected garments and houses.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: זֹאת
@@ -76,14 +76,20 @@ revisions:
   from: This is the law for every case of skin disease and for an itch.
   to: This is the law for every case of skin disease and for an itch.
   rationale: Replaced 'skin disease' with 'leprous disease' to more closely reflect צָרַעַת and maintain formal consistency; retained 'itch' for נֶתֶק.
-
 - timestamp: '2026-05-18T02:57:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'This is the law for every case of leprous disease and for an itch[a].'
-  to: 'This is the law for every case of leprous disease and for an itch[a].'
+  from: This is the law for every case of leprous disease and for an itch[a].
+  to: This is the law for every case of leprous disease and for an itch[a].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''skin disease''].'
+- timestamp: '2026-11-09T20:30:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: This is the law for every case of leprous disease and for an itch[a].
+  to: This is the law for every case of defiling skin disease[a] and for an eruption on the scalp or beard.
+  rationale: No maintainer revision is recorded, and the automated history is inconsistent about “skin disease” versus “leprous disease”; the lexical discussion supports avoiding identification with modern leprosy. I retain “law” and “case,” while bringing the scalp-or-beard meaning from the earlier footnote into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -103,3 +109,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/leviticus/014/054.job-15761.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:05Z'
+  change_level: retranslated
+  confidence: high
+  meaning: These laws govern every case of defiling skin disease and eruptions on the scalp or beard.
+  meaning_decisions:
+  - source_phrase: הַצָּרַעַת
+    prior_rendering: leprous disease
+    new_rendering: defiling skin disease
+    rationale: “Leprous” misleadingly suggests modern leprosy. The surrounding laws concern conditions that cause ritual uncleanness; “defiling” conveys that significance, while the footnote explains the term’s broader scope.
+  - source_phrase: וְלַנָּתֶק
+    prior_rendering: and for an itch
+    new_rendering: and for an eruption on the scalp or beard
+    rationale: The term refers to the scalp-or-beard condition described in Leviticus 13:29–37, not merely the sensation of itching. The new wording identifies its location without claiming a precise modern diagnosis.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: No maintainer revision is recorded, and the automated history is inconsistent about “skin disease” versus “leprous disease”; the lexical discussion supports avoiding identification with modern leprosy. I retain “law” and “case,” while bringing the scalp-or-beard meaning from the earlier footnote into the text.

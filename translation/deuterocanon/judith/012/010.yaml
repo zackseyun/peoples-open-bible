@@ -17,14 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And on the fourth day[a], Holofernes gave a banquet for his servants alone[b], and he did not invite any of those in attendance.
-  philosophy: optimal-equivalence
+  text: On the fourth day, Holofernes held a drinking feast for his servants[a] alone and did not invite any of those on official duty.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for his servants alone.' The Greek uses doulos, which can mean either 'slave' or 'servant' depending on context; here 'slaves' was chosen to preserve the bonded status implied by the term.
-    reason: lexical_alternative
-  - marker: b
-    text: The final clause likely refers to those occupied with practical service or official duties; the Greek expression is somewhat idiomatic.
+    text: Literally, “slaves.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐγένετο ἐν τῇ ἡμέρᾳ τῇ τετάρτῃ
@@ -114,7 +111,13 @@ revisions:
   from: And on the fourth day, Holofernes gave a banquet for his servants alone, and he did not invite any of those in attendance.
   to: And on the fourth day, Holofernes gave a banquet for his slaves alone, and he did not invite any of those in attendance.
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T19:02:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And on the fourth day[a], Holofernes gave a banquet for his servants alone[b], and he did not invite any of those in attendance.
+  to: On the fourth day, Holofernes held a drinking feast for his servants[a] alone and did not invite any of those on official duty.
+  rationale: The earlier revision made the duty phrase more fluent, but 'those in attendance' obscures the distinction between invited servants and excluded personnel. I retain 'servants' under the standing ruling, note the bonded-status sense, and restore the reference to duties without specifying a rank.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -134,3 +137,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/012/010.job-50749.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:02:21Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: On the fourth day, Holofernes holds a private drinking feast for his servants, excluding those occupied with official duties.
+  meaning_decisions:
+  - source_phrase: ἐποίησεν Ὁλοφέρνης πότον
+    prior_rendering: Holofernes gave a banquet
+    new_rendering: Holofernes held a drinking feast
+    rationale: The noun specifically identifies a drinking occasion, an important feature of the ensuing narrative.
+  - source_phrase: οὐδένα τῶν πρὸς ταῖς χρείαις
+    prior_rendering: any of those in attendance
+    new_rendering: any of those on official duty
+    rationale: The expression identifies personnel occupied with duties, not simply people already attending; the precise offices or ranks remain unspecified.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier revision made the duty phrase more fluent, but 'those in attendance' obscures the distinction between invited servants and excluded personnel. I retain 'servants' under the standing ruling, note the bonded-status sense, and restore the reference to duties without specifying a rank.

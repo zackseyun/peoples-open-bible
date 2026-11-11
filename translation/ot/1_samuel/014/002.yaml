@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/שָׁא֗וּל יוֹשֵׁב֙ בִּ/קְצֵ֣ה הַ/גִּבְעָ֔ה תַּ֥חַת הָ/רִמּ֖וֹן אֲשֶׁ֣ר בְּ/מִגְר֑וֹן וְ/הָ/עָם֙ אֲשֶׁ֣ר עִמּ֔/וֹ כְּ/שֵׁ֥שׁ מֵא֖וֹת אִֽישׁ׃
 translation:
-  text: Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'was sitting at the edge of Gibeah.' The Hebrew participle can denote sitting or remaining/staying in a place.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'under the pomegranate'; 'tree' is supplied in English for clarity.
-    reason: lexical_alternative
+  text: Saul was staying on the outskirts of Gibeah, under the pomegranate tree at Migron, with about six hundred men.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: יוֹשֵׁב
   chosen: was staying
@@ -21,7 +14,7 @@ lexical_decisions:
   - was dwelling
   - remained
   lexicon: HALOT
-  rationale: "The participle of ישׁב can denote sitting, dwelling, or remaining/staying. In this military narrative context, 'was staying' communicates Saul's continued location without implying merely posture. 'Was sitting' is possible but can sound overly literal and less idiomatic in English here. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'The participle of ישׁב can denote sitting, dwelling, or remaining/staying. In this military narrative context, ''was staying'' communicates Saul''s continued location without implying merely posture. ''Was sitting'' is possible but can sound overly literal and less idiomatic in English here. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: בִּקְצֵה
   chosen: at the edge of
   alternatives:
@@ -86,13 +79,12 @@ revisions:
   from: Now Saul was staying at the edge of Gibeah, under the pomegranate tree that is at Migron, and the people who were with him were about six hundred men.
   to: Now Saul was staying at the edge of Gibeah, under the pomegranate tree that is at Migron, and the people who were with him were about six hundred men.
   rationale: Changed 'edge' to 'outskirts' for a more natural rendering of 'at the extremity/border' of Gibeah. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.'
-  to: 'Now Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.'
+  from: Now Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
+  to: Now Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''at the edge of''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -101,6 +93,13 @@ revisions:
   from: Now Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
   to: Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:23:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Saul was staying at the outskirts of Gibeah[a], under the pomegranate tree that is at Migron[b], and the people who were with him were about six hundred men.
+  to: Saul was staying on the outskirts of Gibeah, under the pomegranate tree at Migron, with about six hundred men.
+  rationale: The recorded preference for “staying” correctly avoids reducing the description to Saul’s posture, and “outskirts” clearly expresses the location. Both gains are retained while the surrounding English is tightened.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +119,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/014/002.job-59042.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:27Z'
+  change_level: refined
+  confidence: high
+  meaning: Saul remains near Gibeah under the pomegranate tree at Migron with approximately six hundred men.
+  meaning_decisions:
+  - source_phrase: וְהָעָם אֲשֶׁר עִמּוֹ כְּשֵׁשׁ מֵאוֹת אִישׁ
+    prior_rendering: and the people who were with him were about six hundred men
+    new_rendering: with about six hundred men
+    rationale: The clause describes Saul’s accompanying force, not a separate civilian population; the shorter construction conveys the same information directly.
+  footnote_kinds: {}
+  history_weighed: The recorded preference for “staying” correctly avoids reducing the description to Saul’s posture, and “outskirts” clearly expresses the location. Both gains are retained while the surrounding English is tightened.

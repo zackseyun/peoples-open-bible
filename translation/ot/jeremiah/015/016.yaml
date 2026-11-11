@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: נִמְצְא֤וּ דְבָרֶ֨י/ךָ֙ וָ/אֹ֣כְלֵ֔/ם וַ/יְהִ֤י דברי/ך לִ֔/י לְ/שָׂשׂ֖וֹן וּ/לְ/שִׂמְחַ֣ת לְבָבִ֑/י כִּֽי נִקְרָ֤א שִׁמְ/ךָ֙ עָלַ֔/י יְהוָ֖ה אֱלֹהֵ֥י צְבָאֽוֹת־׃ס
 translation:
-  text: Your words were found[a], and I ate them, and your words became for me a joy and the delight of my heart, for your name is called over me, O Yahweh, God of hosts.
-  philosophy: optimal-equivalence
+  text: When your words came to me, I ate them; your words became my joy and the delight of my heart, for I bear your name[a], O Yahweh, God of hosts.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more idiomatically, “I am called by your name.”
+    text: Literally, “your name is called over me,” an expression marking belonging.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נִמְצְאוּ
@@ -123,14 +123,20 @@ revisions:
   from: Your words were found, and I ate them, and your words became for me a joy and the delight of my heart, for your name is called over me, O LORD, God of hosts.
   to: Your words were found, and I ate them, and your words became to me a joy and the gladness of my heart, for your name is called upon me, O LORD, God of hosts.
   rationale: Adjusted 'for me' to 'to me' for more natural formal English, changed 'the delight of my heart' to 'the gladness of my heart' to reflect שִׂמְחַת more directly, and revised 'called over me' to 'called upon me' for the idiomatic sense of נִקְרָא שִׁמְךָ עָלַי.
-
 - timestamp: '2026-05-16T07:25:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Your words were found[a], and I ate them, and your words became to me a joy and the gladness of my heart, for your name is called upon me, O Yahweh, God of hosts.'
-  to: 'Your words were found[a], and I ate them, and your words became for me a joy and the delight of my heart, for your name is called over me, O Yahweh, God of hosts.'
+  from: Your words were found[a], and I ate them, and your words became to me a joy and the gladness of my heart, for your name is called upon me, O Yahweh, God of hosts.
+  to: Your words were found[a], and I ate them, and your words became for me a joy and the delight of my heart, for your name is called over me, O Yahweh, God of hosts.
   rationale: 'Azure substituted THREE documented rejected_alternatives: ''to me'' (rejected for לִי — drafter chose ''for me'' for experiential force), ''gladness of my heart'' (rejected for שִׂמְחַת — drafter chose ''delight'' to avoid wooden ''joy...joy'' repetition), and ''called upon me'' (drafter chose ''called over me'' to preserve covenantal spatial idiom per theological_decisions; idiomatic ''called by your name'' preserved in footnote).'
+- timestamp: '2026-11-09T17:56:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Your words were found[a], and I ate them, and your words became for me a joy and the delight of my heart, for your name is called over me, O Yahweh, God of hosts.
+  to: When your words came to me, I ate them; your words became my joy and the delight of my heart, for I bear your name[a], O Yahweh, God of hosts.
+  rationale: The recorded revert defended passive and spatially literal wording, but its rationale identifies encounter and belonging as the intended meanings. I express those meanings directly while retaining the eating image, “delight of my heart,” and the title “God of hosts.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +159,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/015/016.job-67443.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:56:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jeremiah received Yahweh's words with heartfelt joy because he belongs to Yahweh and bears his name.
+  meaning_decisions:
+  - source_phrase: נִמְצְאוּ דְבָרֶיךָ
+    prior_rendering: Your words were found
+    new_rendering: When your words came to me
+    rationale: The clause describes Jeremiah's encounter with God's words, not a search conducted by an unnamed person. The new wording conveys their reception without specifying how they were delivered.
+  - source_phrase: נִקְרָא שִׁמְךָ עָלַי
+    prior_rendering: your name is called over me
+    new_rendering: I bear your name
+    rationale: The Hebrew idiom expresses belonging and identification with Yahweh. Natural English can convey that meaning while retaining the important image of bearing his name.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The recorded revert defended passive and spatially literal wording, but its rationale identifies encounter and belonging as the intended meanings. I express those meanings directly while retaining the eating image, “delight of my heart,” and the title “God of hosts.”

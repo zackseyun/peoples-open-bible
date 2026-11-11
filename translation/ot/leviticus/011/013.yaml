@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: וְ/אֶת אֵ֨לֶּה֙ תְּשַׁקְּצ֣וּ מִן הָ/ע֔וֹף לֹ֥א יֵאָכְל֖וּ שֶׁ֣קֶץ הֵ֑ם אֶת הַ/נֶּ֨שֶׁר֙ וְ/אֶת הַ/פֶּ֔רֶס וְ/אֵ֖ת הָ/עָזְנִיָּֽה־־־־׃
 translation:
-  text: 'And these from among the birds you shall regard as detestable[a]; they shall not be eaten; they are detestable: the eagle, the vulture[c][b], and the black vulture.'
-  philosophy: optimal-equivalence
+  text: 'Among the flying creatures, you shall regard these as detestable; they shall not be eaten, for they are detestable: the eagle[a], the bearded vulture, and the black vulture[b],'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew bird names in this list are not always identifiable with certainty. 'The eagle' may refer more broadly to a large raptor or even a vulture.
-    reason: lexical_alternative
+    text: Or “griffon vulture”; the Hebrew name can refer to large eagles or vultures.
+    reason: alternative_reading
   - marker: b
-    text: Or 'lammergeier' for 'bearded vulture.' Older English versions often have 'ossifrage.'
-    reason: lexical_alternative
-  - marker: c
-    text: The identification of this bird is uncertain. Older translations often read 'osprey'; some suggest a kind of eagle or vulture.
-    reason: lexical_alternative
+    text: The identification is uncertain; possibly an osprey or a sea eagle.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: תְּשַׁקְּצוּ
   chosen: you shall regard as detestable
@@ -91,7 +88,6 @@ revisions:
   from: 'And these from among the birds you shall regard as detestable; they shall not be eaten; they are detestable: the eagle, the bearded vulture, and the black vulture.'
   to: 'And these from among the birds you shall regard as detestable; they shall not be eaten; they are detestable: the eagle, the bearded vulture, and the black vulture.'
   rationale: Replaced 'bearded vulture' with the more general 'vulture' for פֶּרֶס, avoiding an overly specific identification not required by the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:57:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -99,6 +95,13 @@ revisions:
   from: 'And these from among the birds you shall regard as detestable[a]; they shall not be eaten; they are detestable: the eagle, the vulture[c][b], and the black vulture.'
   to: 'And these from among the birds you shall regard as detestable[a]; they shall not be eaten; they are detestable: the eagle, the vulture[c][b], and the black vulture.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the bearded vulture''].'
+- timestamp: '2026-11-09T19:19:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And these from among the birds you shall regard as detestable[a]; they shall not be eaten; they are detestable: the eagle, the vulture[c][b], and the black vulture.'
+  to: 'Among the flying creatures, you shall regard these as detestable; they shall not be eaten, for they are detestable: the eagle[a], the bearded vulture, and the black vulture[b],'
+  rationale: The first draft and lexical review identify peres as the bearded vulture; the automated generalization to “vulture” weakens the distinction among the three names. That identification is restored, while uncertainty in the other two names remains in correctly placed notes.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -118,3 +121,31 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/011/013.job-45426.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:19:34Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Israel must regard the listed flying creatures as detestable and must not eat them, beginning with three large birds.
+  meaning_decisions:
+  - source_phrase: מִן הָעוֹף
+    prior_rendering: from among the birds
+    new_rendering: Among the flying creatures
+    rationale: The Hebrew category is broader than modern “birds,” as the inclusion of the bat in verse 19 makes clear.
+  - source_phrase: לֹא יֵאָכְלוּ שֶׁקֶץ הֵם
+    prior_rendering: they shall not be eaten; they are detestable
+    new_rendering: they shall not be eaten, for they are detestable
+    rationale: The second clause supplies the classification underlying the prohibition, which “for” makes explicit.
+  - source_phrase: הַפֶּרֶס
+    prior_rendering: the vulture
+    new_rendering: the bearded vulture
+    rationale: This is the well-supported identification recorded in the first draft and lexical review and better distinguishes this named bird from the others.
+  footnote_kinds:
+    a: alternative_meaning
+    b: alternative_meaning
+  history_weighed: The first draft and lexical review identify peres as the bearded vulture; the automated generalization to “vulture” weakens the distinction among the three names. That identification is restored, while uncertainty in the other two names remains in correctly placed notes.

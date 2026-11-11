@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: נֶ֣גַע צָרַ֔עַת כִּ֥י תִהְיֶ֖ה בְּ/אָדָ֑ם וְ/הוּבָ֖א אֶל הַ/כֹּהֵֽן־׃
 translation:
-  text: When an infection of leprosy is in a person[a], then he shall be brought to the priest.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew צָרַעַת traditionally rendered 'leprosy'; the term likely covers a broader range of serious skin conditions rather than specifically modern leprosy.
-    reason: lexical_alternative
+  text: When someone has a patch of skin disease, they must be brought to the priest.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: נֶגַע
   chosen: infection
@@ -90,14 +86,20 @@ revisions:
   from: When an infection of skin disease is in a man, then he shall be brought to the priest.
   to: When an infection of skin disease is in a man, then he shall be brought to the priest.
   rationale: Replaced 'skin disease' with 'leprosy' to reflect צָרַעַת more directly and consistently; replaced 'man' with 'person' for the generic בְּאָדָם. Kept the formal structure and completeness of the clause.
-
 - timestamp: '2026-05-16T08:55:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When an infection of leprosy is in a person[a], then he shall be brought to the priest.'
-  to: 'When an infection of leprosy is in a person[a], then he shall be brought to the priest.'
-  rationale: 'Azure substituted ''leprosy'' (drafter''s rejected alt — drafter chose ''skin disease'' to avoid misleading modern medical specificity) and ''person'' for ''man'' (drafter''s explicit rejected alt — drafter chose gender-accurate ''man'' per DOCTRINE.md).'
+  from: When an infection of leprosy is in a person[a], then he shall be brought to the priest.
+  to: When an infection of leprosy is in a person[a], then he shall be brought to the priest.
+  rationale: Azure substituted 'leprosy' (drafter's rejected alt — drafter chose 'skin disease' to avoid misleading modern medical specificity) and 'person' for 'man' (drafter's explicit rejected alt — drafter chose gender-accurate 'man' per DOCTRINE.md).
+- timestamp: '2026-11-09T18:18:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When an infection of leprosy is in a person[a], then he shall be brought to the priest.
+  to: When someone has a patch of skin disease, they must be brought to the priest.
+  rationale: The recorded lexical reasoning favors 'skin disease' over the current 'leprosy,' even though the revision entries conflict about what was restored. I preserve the current wording's generic human scope, which the source supports, rather than the earlier preference for source-shaped 'man.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +119,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/009.job-45143.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A person with a patch of skin disease must be brought to the priest.
+  meaning_decisions:
+  - source_phrase: נֶגַע צָרַעַת כִּי תִהְיֶה בְאָדָם
+    prior_rendering: When an infection of leprosy is in a person
+    new_rendering: When someone has a patch of skin disease
+    rationale: The source describes an affected area in a person without identifying an infectious cause or modern leprosy; the revised construction states that condition naturally.
+  footnote_kinds: {}
+  history_weighed: The recorded lexical reasoning favors 'skin disease' over the current 'leprosy,' even though the revision entries conflict about what was restored. I preserve the current wording's generic human scope, which the source supports, rather than the earlier preference for source-shaped 'man.'

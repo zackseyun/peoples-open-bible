@@ -28,12 +28,15 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 7:34
 translation:
-  text: Give a gift before every living person[a], and do not withhold kindness even from the dead.
-  philosophy: optimal-equivalence
+  text: Give gifts to every living person[a], and do not withhold kindness even from the dead[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek reads, 'Do not fail those who weep, and mourn with those who mourn.' This reflects a substantially different textual tradition for this verse.
-    reason: textual_variant
+    text: Literally, 'give a gift before every living person.'
+    reason: lexical_alternative
+  - marker: b
+    text: This includes care for the burial of the dead.
+    reason: cultural_note
 lexical_decisions:
 - source_word: תֵּן
   chosen: Give
@@ -128,14 +131,20 @@ revisions:
   from: Give a gift in the presence of every living person, and do not withhold kindness even from the dead.
   to: Give a gift in the presence of every living person, and do not withhold kindness even from the dead.
   rationale: Changed 'in the presence of' to 'before' for a closer rendering of לִפְנֵי while keeping natural formal English; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T02:57:49Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Give a gift before every living person[a], and do not withhold kindness even from the dead.'
-  to: 'Give a gift before every living person[a], and do not withhold kindness even from the dead.'
+  from: Give a gift before every living person[a], and do not withhold kindness even from the dead.
+  to: Give a gift before every living person[a], and do not withhold kindness even from the dead.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the presence of every living person''].'
+- timestamp: '2026-11-09T19:05:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Give a gift before every living person[a], and do not withhold kindness even from the dead.
+  to: Give gifts to every living person[a], and do not withhold kindness even from the dead[b].
+  rationale: The earlier preference for 'before' or 'in the presence of' preserved the preposition but could suggest public display rather than gifts offered to people. The matching Greek instruction is Greek 7:33; the older note mistook a numbering offset for a variant.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +164,23 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/007/034.job-51175.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:42Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Giving and kindness should extend to all living people and should not cease when someone dies.
+  meaning_decisions:
+  - source_phrase: תֵּן מַתָּן לִפְנֵי כָל חָי
+    prior_rendering: Give a gift before every living person
+    new_rendering: Give gifts to every living person
+    rationale: The instruction concerns offering gifts to people, not displaying a gift publicly before an audience; the contrast with kindness to the dead confirms its recipients.
+  footnote_kinds:
+    a: literal_wording
+    b: cultural_background
+  history_weighed: The earlier preference for 'before' or 'in the presence of' preserved the preposition but could suggest public display rather than gifts offered to people. The matching Greek instruction is Greek 7:33; the older note mistook a numbering offset for a variant.

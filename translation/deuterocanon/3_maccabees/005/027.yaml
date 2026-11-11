@@ -9,15 +9,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when he had accepted it and was struck with astonishment at the lawless outcome[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.
-  philosophy: optimal-equivalence
+  text: But when the king received Hermon, he was astonished at the summons to set out on this lawless mission. Completely at a loss, he kept asking what order had been carried out so urgently for him[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the lawless result' or 'the unlawful issue'; the Greek phrase uses ἔξοδος in a context where 'departure' is possible lexically but unlikely in English.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'what had been written down' or 'the issued order'; the Greek can refer specifically to a written decree.
-    reason: lexical_alternative
+    text: Or, “whether what had been decreed had already been carried out so urgently for him.” The wording of the question is difficult.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀποδεξαμένου
   chosen: had accepted
@@ -123,14 +120,20 @@ revisions:
   from: But when he had accepted it and was struck with astonishment at the lawless outcome, being in every way overcome by ignorance, he kept asking whether what had been decreed had indeed been carried out for him with urgency.
   to: But when he had received it and was struck with astonishment at the lawless departure, being in every way overcome by ignorance, he kept asking whether what had been decreed had indeed been carried out for him with urgency.
   rationale: Changed 'accepted it' to 'received it' for a more direct rendering of ἀποδεξαμένου, and 'outcome' to 'departure' to reflect ἐξόδῳ more literally. Retained the rest with minor smoothing.
-
 - timestamp: '2026-05-16T19:52:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when he had received it and was struck with astonishment at the lawless departure[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.'
-  to: 'But when he had accepted it and was struck with astonishment at the lawless outcome[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.'
-  rationale: 'Restored drafter ''had accepted it'' (preserving the chosen rendering of ἀποδεξαμένου) and ''lawless outcome'' (preserving the chosen ''outcome'' rendering for ἐξόδῳ) per chosen renderings.'
+  from: But when he had received it and was struck with astonishment at the lawless departure[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.
+  to: But when he had accepted it and was struck with astonishment at the lawless outcome[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.
+  rationale: Restored drafter 'had accepted it' (preserving the chosen rendering of ἀποδεξαμένου) and 'lawless outcome' (preserving the chosen 'outcome' rendering for ἐξόδῳ) per chosen renderings.
+- timestamp: '2026-11-09T18:57:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when he had accepted it and was struck with astonishment at the lawless outcome[a], being in every way overcome by ignorance[b], he kept asking whether what had been decreed had indeed been carried out for him with urgency.
+  to: But when the king received Hermon, he was astonished at the summons to set out on this lawless mission. Completely at a loss, he kept asking what order had been carried out so urgently for him[a].
+  rationale: The review’s move toward “received” and “departure” better fits the surrounding action than the automated restoration of the draft. I retain the recorded repeated inquiry but reconsider its content in light of the forgetfulness explained next.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -150,3 +153,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/027.job-49618.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:31Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king receives Hermon but, completely bewildered, is astonished at the proposed departure and repeatedly asks about the order so urgently carried out for him.
+  meaning_decisions:
+  - source_phrase: τοῦ δὲ ἀποδεξαμένου
+    prior_rendering: But when he had accepted it
+    new_rendering: But when the king received Hermon
+    rationale: Hermon has just approached the king, so receiving him is the natural contextual sense; “accepted it” can misleadingly suggest approval of the murderous plan.
+  - source_phrase: καταπλαγέντος ἐπὶ τῇ ἀνόμῳ ἐξόδῳ
+    prior_rendering: was struck with astonishment at the lawless outcome
+    new_rendering: was astonished at the summons to set out on this lawless mission
+    rationale: The preceding verse concerns departure for the execution, not a completed outcome; the rendering makes that narrative connection explicit.
+  - source_phrase: κατὰ πάντα ἀγνωσίᾳ κεκρατημένος
+    prior_rendering: being in every way overcome by ignorance
+    new_rendering: Completely at a loss
+    rationale: The phrase describes bewilderment caused by the loss of recollection explained in verse 28, rather than ignorance as a character defect.
+  - source_phrase: ἐπυνθάνετο, ὅτι τὸ διαγραμμένον ἔτι αὐτῷ μετὰ σπουδῆς τετέλεσται
+    prior_rendering: he kept asking whether what had been decreed had indeed been carried out for him with urgency
+    new_rendering: he kept asking what order had been carried out so urgently for him
+    rationale: The king’s inability to remember his plan favors an inquiry about the order itself; the serious alternative reading is retained in a note.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The review’s move toward “received” and “departure” better fits the surrounding action than the automated restoration of the draft. I retain the recorded repeated inquiry but reconsider its content in light of the forgetfulness explained next.

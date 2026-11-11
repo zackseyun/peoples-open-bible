@@ -16,15 +16,12 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was narrow enough for all the men to go two abreast.
-  philosophy: optimal-equivalence
+  text: He told them to take control of the mountain passes, since these were the way into Judea. The enemy could easily be held back as they advanced uphill, because the approach was so narrow that men could pass only two abreast[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'the ascents of the mountainous region,' referring to the uphill routes or passes through the hill country.
+    text: Literally, 'for two men in all'; the final Greek phrase is compressed.
     reason: lexical_alternative
-  - marker: b
-    text: The final Greek phrase is terse and difficult; the translation takes it to mean that the route was narrow enough for men to advance only two abreast.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: διακατασχεῖν
   chosen: to seize
@@ -115,14 +112,20 @@ revisions:
   from: telling them to seize the mountain passes, because through them was the entrance into Judea; and it was easy to hold them back as they came up, since the approach was narrow enough for all the men to go two abreast.
   to: telling them to seize the mountain passes, because through them was the entrance into Judea; and it was easy to hold them back as they came up, since the approach was so narrow that all the men could go only two abreast.
   rationale: 'Refined the final clause for more natural and precise English: changed ''narrow enough for all the men to go two abreast'' to ''so narrow that all the men could go only two abreast,'' better reflecting the Greek sense of restricted access.'
-
 - timestamp: '2026-05-16T18:22:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was so narrow that all the men could go only two abreast.'
-  to: 'telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was narrow enough for all the men to go two abreast.'
-  rationale: 'Restored drafter ''since the approach was narrow enough for all the men to go two abreast'' (preserving the chosen rendering with ''narrow enough'' + infinitive of result) per chosen renderings.'
+  from: telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was so narrow that all the men could go only two abreast.
+  to: telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was narrow enough for all the men to go two abreast.
+  rationale: Restored drafter 'since the approach was narrow enough for all the men to go two abreast' (preserving the chosen rendering with 'narrow enough' + infinitive of result) per chosen renderings.
+- timestamp: '2026-11-09T19:01:56Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: telling them to seize the mountain passes[a], because through them was the entrance into Judea; and it was easy to hold them back as they came up[b], since the approach was narrow enough for all the men to go two abreast.
+  to: He told them to take control of the mountain passes, since these were the way into Judea. The enemy could easily be held back as they advanced uphill, because the approach was so narrow that men could pass only two abreast[a].
+  rationale: The April review's 'so narrow' and 'only two abreast' clarified the actual restriction, and the later automated revert offered no meaning-based reason to undo it. I restore that gain while acknowledging the compressed final Greek phrase.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -142,3 +145,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/004/008.job-50558.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:56Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Joakim orders them to control the narrow mountain routes into Judea, where the advancing enemy can readily be stopped.
+  meaning_decisions:
+  - source_phrase: διακατασχεῖν
+    prior_rendering: to seize
+    new_rendering: to take control of
+    rationale: The instruction concerns securing and holding the routes, not merely capturing them in a momentary action.
+  - source_phrase: διακωλῦσαι αὐτοὺς προσβαίνοντας
+    prior_rendering: to hold them back as they came up
+    new_rendering: The enemy could ... be held back as they advanced uphill
+    rationale: The pronoun refers to the invading force, not the recipients of Joakim's letter; the new wording makes that distinction explicit and retains the uphill movement.
+  - source_phrase: στενῆς τῆς προσβάσεως οὔσης, ἐπʼ ἄνδρας τοὺς πάντας δύο
+    prior_rendering: the approach was narrow enough for all the men to go two abreast
+    new_rendering: the approach was so narrow that men could pass only two abreast
+    rationale: The point is a restriction on the enemy's frontage, not sufficient room for two men; 'only' conveys the defensive advantage.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The April review's 'so narrow' and 'only two abreast' clarified the actual restriction, and the later automated revert offered no meaning-based reason to undo it. I restore that gain while acknowledging the compressed final Greek phrase.

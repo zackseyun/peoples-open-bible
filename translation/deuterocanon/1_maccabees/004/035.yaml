@@ -25,15 +25,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'the boldness of Judas'; the sense in context is the courage of Judas's side or forces, since the next clause uses the plural 'they were ready.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'recruited mercenaries.' The Greek verb emphasizes enlisting foreigners; whether they are specifically mercenaries is an interpretive refinement.
-    reason: alternative_reading
+  text: When Lysias saw that his own force had been routed and that Judas’s men had gained courage and were ready to live or die nobly, he withdrew to Antioch. There he recruited foreign troops, intending to return to Judea with a larger army.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: τροπή
   chosen: rout
@@ -127,14 +120,20 @@ revisions:
   from: But when Lysias saw the rout that had happened to his own formation, and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number, to come again into Judea.
   to: But when Lysias saw the rout that had happened to his own formation, and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number, to come again into Judea.
   rationale: Changed 'formation' to 'force' for a more natural rendering of σύνταξις in context. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.'
-  to: 'But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.'
+  from: But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.
+  to: But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''formation''].'
+- timestamp: '2026-11-09T18:51:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when Lysias saw the rout that had happened to his own force[a], and the boldness that had arisen in Judas’s men, and how they were ready either to live or to die nobly, he departed for Antioch, and recruited foreign troops, intending, after becoming stronger in number[b], to come again into Judea.
+  to: When Lysias saw that his own force had been routed and that Judas’s men had gained courage and were ready to live or die nobly, he withdrew to Antioch. There he recruited foreign troops, intending to return to Judea with a larger army.
+  rationale: I preserve the current force rather than the earlier formation, and retain the historically justified collective reference to Judas’s men. The recruitment remains foreign troops, while the intended increase is expressed directly as a larger army.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -154,3 +153,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/035.job-48180.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Recognizing his army’s rout and the resolve of Judas’s men, Lysias withdrew to Antioch to recruit a larger force for another campaign.
+  meaning_decisions:
+  - source_phrase: τὴν γενομένην τροπὴν τῆς αὐτοῦ συντάξεως
+    prior_rendering: the rout that had happened to his own force
+    new_rendering: that his own force had been routed
+    rationale: A direct verbal clause expresses the battlefield result without a cumbersome nominal construction.
+  - source_phrase: τῆς δὲ Ἰούδα τὸ γεγενημένον θάρσος
+    prior_rendering: the boldness that had arisen in Judas’s men
+    new_rendering: that Judas’s men had gained courage
+    rationale: The phrase concerns the courage acquired by Judas’s force, as confirmed by the following plural subject.
+  - source_phrase: ἀπῆρεν ... καὶ πλεοναστὸν πάλιν γενηθέντα παραγίνεσθαι
+    prior_rendering: he departed ... intending, after becoming stronger in number, to come again
+    new_rendering: he withdrew ... intending to return ... with a larger army
+    rationale: The narrative describes retreat followed by recruitment for a renewed campaign; the numerical increase belongs to his army, not to Lysias personally.
+  footnote_kinds: {}
+  history_weighed: I preserve the current force rather than the earlier formation, and retain the historically justified collective reference to Judas’s men. The recruitment remains foreign troops, while the intended increase is expressed directly as a larger army.

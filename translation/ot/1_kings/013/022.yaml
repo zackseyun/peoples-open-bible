@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/תָּ֗שָׁב וַ/תֹּ֤אכַל לֶ֨חֶם֙ וַ/תֵּ֣שְׁתְּ מַ֔יִם בַּ/מָּקוֹם֙ אֲשֶׁ֣ר דִּבֶּ֣ר אֵלֶ֔י/ךָ אַל תֹּ֥אכַל לֶ֖חֶם וְ/אַל תֵּ֣שְׁתְּ מָ֑יִם לֹֽא תָב֥וֹא נִבְלָתְ/ךָ֖ אֶל קֶ֥בֶר אֲבֹתֶֽי/ךָ־־־־׃
 translation:
-  text: but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
-  philosophy: optimal-equivalence
+  text: but you came back and ate food and drank water in the place about which he told you, ‘Do not eat food or drink water’—your corpse will not be buried in your ancestral tomb[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'your corpse shall not enter the grave of your fathers.' The Hebrew literally says 'shall not come to the tomb of your fathers.'
+    text: Literally, “your corpse will not come to the tomb of your fathers.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַתָּשָׁב
@@ -90,14 +90,20 @@ revisions:
   from: but you came back and ate bread and drank water in the place of which he said to you, ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
   to: but you came back and ate bread and drank water in the place of which he said to you, ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
   rationale: Changed 'of which' to the more natural 'about which' for the relative phrase referring to the place, while preserving the meaning and formal register.
-
 - timestamp: '2026-05-18T02:56:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.'
-  to: 'but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.'
+  from: but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
+  to: but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the place of which he said to you''].'
+- timestamp: '2026-11-09T17:22:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: but you came back and ate bread and drank water in the place about which he said to you[a], ‘Do not eat bread, and do not drink water’—your corpse shall not come to the tomb of your fathers.
+  to: but you came back and ate food and drank water in the place about which he told you, ‘Do not eat food or drink water’—your corpse will not be buried in your ancestral tomb[a].”
+  rationale: The review’s “about which” correctly indicates that the command concerned the place, not that it was delivered there, and that gain is retained. The earlier preference for “come to” gives way to the concrete burial meaning, with the literal wording noted.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -117,3 +123,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/013/022.job-58449.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Because the man of God returned and ate and drank where Yahweh forbade it, his corpse will not receive burial in his ancestral tomb.
+  meaning_decisions:
+  - source_phrase: וַתֹּאכַל לֶחֶם ... אַל תֹּאכַל לֶחֶם
+    prior_rendering: ate bread ... Do not eat bread
+    new_rendering: ate food ... Do not eat food
+    rationale: Both occurrences express eating generally; repeating “food” preserves the correspondence between the forbidden act and its violation.
+  - source_phrase: לֹא תָבוֹא נִבְלָתְךָ אֶל קֶבֶר אֲבֹתֶיךָ
+    prior_rendering: your corpse shall not come to the tomb of your fathers
+    new_rendering: your corpse will not be buried in your ancestral tomb
+    rationale: The judgment concerns exclusion from family burial, not a corpse’s movement; “ancestral tomb” makes the familial burial place clear.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The review’s “about which” correctly indicates that the command concerned the place, not that it was delivered there, and that gain is retained. The earlier preference for “come to” gives way to the concrete burial meaning, with the literal wording noted.

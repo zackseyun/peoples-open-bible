@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: אַ֣ךְ רָח֣וֹק יִהְיֶ֗ה בֵּֽינֵי/כֶם֙ ו/בינ/ו כְּ/אַלְפַּ֥יִם אַמָּ֖ה בַּ/מִּדָּ֑ה אַֽל תִּקְרְב֣וּ אֵלָ֗י/ו לְמַ֤עַן אֲשֶׁר תֵּֽדְעוּ֙ אֶת הַ/דֶּ֨רֶךְ֙ אֲשֶׁ֣ר תֵּֽלְכוּ בָ֔/הּ כִּ֣י לֹ֧א עֲבַרְתֶּ֛ם בַּ/דֶּ֖רֶךְ מִ/תְּמ֥וֹל שִׁלְשֽׁוֹם׀־־־־׃ס
 translation:
-  text: Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.
-  philosophy: optimal-equivalence
+  text: But keep a distance of about two thousand cubits[a] between you and the ark. Do not go near it, so that you will know which way to go, for you have never been this way before.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'from yesterday and the day before yesterday,' an idiom meaning 'previously' or 'before now.'
-    reason: lexical_alternative
-  - marker: b
-    text: A cubit was a standard ancient unit of length, roughly the length of a forearm.
+    text: Two thousand cubits is roughly 3,000 feet (900 meters).
     reason: cultural_note
 lexical_decisions:
 - source_word: אַךְ
@@ -105,14 +102,20 @@ revisions:
   from: Yet there shall be a distance between you and it, about two thousand cubits by measure. Do not come near it, so that you may know the way by which you must go, for you have not passed this way before.
   to: Yet there shall be a distance between you and it, about two thousand cubits by measure. Do not come near it, so that you may know the way by which you must go, for you have not passed this way before.
   rationale: Changed 'must go' to 'shall go' for a more direct and formal rendering of the Hebrew without adding modal force not explicit in the source. Kept the rest unchanged.
-
 - timestamp: '2026-05-17T07:36:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.'
-  to: 'Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.'
+  from: Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.
+  to: Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the way by which you must go''].'
+- timestamp: '2026-11-09T18:08:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Yet there shall be a distance between you and it[a], about two thousand cubits by measure. Do not come near it, so that you may know the way by which you shall go[b], for you have not passed this way before.
+  to: But keep a distance of about two thousand cubits[a] between you and the ark. Do not go near it, so that you will know which way to go, for you have never been this way before.”
+  rationale: The recorded debate over 'must' and 'shall' did not establish an additional modal meaning, so 'which way to go' carries the guidance naturally. I retain the approximate ancient measurement, explain its scale in a correctly placed note, and drop the note about an idiom already translated by 'before.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +135,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/003/004.job-68547.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:08:27Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The people must remain well behind the ark so that they can follow its guidance along a route they have never traveled.
+  meaning_decisions:
+  - source_phrase: אַךְ רָחוֹק יִהְיֶה בֵּינֵיכֶם וּבֵינוֹ כְּאַלְפַּיִם אַמָּה בַּמִּדָּה
+    prior_rendering: Yet there shall be a distance between you and it, about two thousand cubits by measure
+    new_rendering: But keep a distance of about two thousand cubits between you and the ark
+    rationale: In this instruction, the prescribed separation functions as a command; the measured distance is fully conveyed by the number and unit, and the explicit referent clarifies 'it.'
+  - source_phrase: לְמַעַן אֲשֶׁר תֵּדְעוּ אֶת הַדֶּרֶךְ אֲשֶׁר תֵּלְכוּ בָהּ
+    prior_rendering: so that you may know the way by which you shall go
+    new_rendering: so that you will know which way to go
+    rationale: The purpose is practical guidance along an unfamiliar route, not an additional assertion of obligation conveyed by 'must.'
+  - source_phrase: כִּי לֹא עֲבַרְתֶּם בַּדֶּרֶךְ מִתְּמוֹל שִׁלְשׁוֹם
+    prior_rendering: for you have not passed this way before
+    new_rendering: for you have never been this way before
+    rationale: The temporal idiom refers to their previous experience generally, not specifically to yesterday or the preceding day.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded debate over 'must' and 'shall' did not establish an additional modal meaning, so 'which way to go' carries the guidance naturally. I retain the approximate ancient measurement, explain its scale in a correctly placed note, and drop the note about an idiom already translated by 'before.'

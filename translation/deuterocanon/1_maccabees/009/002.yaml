@@ -25,15 +25,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.
-  philosophy: optimal-equivalence
+  text: They marched along the road to Galgala and encamped against Mesaloth in Arbela. They captured the town[a] and killed many people.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek verb rendered 'took it beforehand' (προκατελίβοντο) is uncommon and difficult; it may also be understood as 'seized it first' or more generally 'overran it.'
-    reason: lexical_alternative
-  - marker: b
-    text: Greek literally, 'destroyed many lives of men,' an idiom meaning that many people were killed.
-    reason: lexical_alternative
+    text: Possibly, “seized it in advance”; the precise force of the uncommon Greek verb is uncertain.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐπορεύθησαν
   chosen: traveled
@@ -117,14 +114,20 @@ revisions:
   from: And they traveled on the road to Galgala, and encamped against Mesaloth in Arbela, and took it beforehand, and destroyed many lives of men.
   to: And they traveled on the road to Galgala, and encamped against Mesaloth in Arbela, and took it beforehand, and destroyed many lives of men.
   rationale: Replaced 'took it beforehand' with 'captured it' for natural and accurate rendering of the verb; replaced 'destroyed many lives of men' with 'destroyed many people' to reflect the Greek idiom naturally in formal English. Kept place names and overall structure.
-
 - timestamp: '2026-05-16T14:22:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.'
-  to: 'And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.'
-  rationale: 'Restored drafter ''took it beforehand'' (preserving the chosen προκατελάβετο preemptive-capture sense) and ''destroyed many lives of men'' (preserving the explicit Greek phrasing) per chosen renderings.'
+  from: And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.
+  to: And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.
+  rationale: Restored drafter 'took it beforehand' (preserving the chosen προκατελάβετο preemptive-capture sense) and 'destroyed many lives of men' (preserving the explicit Greek phrasing) per chosen renderings.
+- timestamp: '2026-11-09T18:53:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they traveled on the road to Galgala[a], and encamped against Mesaloth in Arbela, and captured it[b], and destroyed many people.
+  to: They marched along the road to Galgala and encamped against Mesaloth in Arbela. They captured the town[a] and killed many people.
+  rationale: The current 'captured' communicates the action better than the draft’s obscure 'took it beforehand,' while the possible anticipatory nuance is retained in a correctly placed note. The history’s recognition that 'lives of men' means people killed supports the explicit wording.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -144,3 +147,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/002.job-48421.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:19Z'
+  change_level: refined
+  confidence: high
+  meaning: The invading army follows the Galgala road, captures Mesaloth in Arbela, and kills many people.
+  meaning_decisions:
+  - source_phrase: ἐπορεύθησαν ὁδὸν τὴν εἰς Γάλγαλα
+    prior_rendering: they traveled on the road to Galgala
+    new_rendering: They marched along the road to Galgala
+    rationale: The context identifies this journey as the movement of an invading army.
+  - source_phrase: ἀπώλεσεν ψυχὰς ἀνθρώπων πολλὰς
+    prior_rendering: destroyed many people
+    new_rendering: killed many people
+    rationale: The expression concerns the taking of human lives, not an unspecified kind of destruction.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The current 'captured' communicates the action better than the draft’s obscure 'took it beforehand,' while the possible anticipatory nuance is retained in a correctly placed note. The history’s recognition that 'lives of men' means people killed supports the explicit wording.

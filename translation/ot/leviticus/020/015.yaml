@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/אִ֗ישׁ אֲשֶׁ֨ר יִתֵּ֧ן שְׁכָבְתּ֛/וֹ בִּ/בְהֵמָ֖ה מ֣וֹת יוּמָ֑ת וְ/אֶת הַ/בְּהֵמָ֖ה תַּהֲרֹֽגוּ־׃
 translation:
-  text: If a man has sexual intercourse with an animal[a], he must surely be put to death, and you shall kill the animal.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'gives his lying with an animal,' a Hebrew idiom for sexual intercourse.
-    reason: lexical_alternative
+  text: If a man has sexual intercourse with an animal, he must be put to death, and you must kill the animal.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: אִישׁ
   chosen: a man
@@ -81,13 +77,12 @@ revisions:
   from: If a man has sexual intercourse with an animal, he must surely be put to death, and you shall kill the animal.
   to: If a man lies with an animal, he must surely be put to death, and you shall kill the animal.
   rationale: Replaced interpretive 'has sexual intercourse with' with the more formally equivalent 'lies with' to better reflect the Hebrew expression while preserving natural English. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If a man lies with an animal[a], he must surely be put to death, and you shall kill the animal.'
-  to: 'If a man has sexual intercourse with an animal, he must surely be put to death, and you shall kill the animal.'
+  from: If a man lies with an animal[a], he must surely be put to death, and you shall kill the animal.
+  to: If a man has sexual intercourse with an animal, he must surely be put to death, and you shall kill the animal.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has sexual intercourse''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -97,6 +92,13 @@ revisions:
   from: If a man has sexual intercourse with an animal, he must surely be put to death, and you shall kill the animal.
   to: If a man has sexual intercourse with an animal[a], he must surely be put to death, and you shall kill the animal.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('with an animal') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:21:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If a man has sexual intercourse with an animal[a], he must surely be put to death, and you shall kill the animal.
+  to: If a man has sexual intercourse with an animal, he must be put to death, and you must kill the animal.
+  rationale: The first draft and current wording communicate the sexual act clearly. The intervening preference for 'lies with' was based on formal correspondence, not a gain in meaning, so I retain the explicit wording and drop its unnecessary literal-wording note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -116,3 +118,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/020/015.job-45331.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:36Z'
+  change_level: refined
+  confidence: high
+  meaning: A man who has sexual intercourse with an animal must be put to death, and the animal must also be killed.
+  meaning_decisions:
+  - source_phrase: מוֹת יוּמָת וְאֶת הַבְּהֵמָה תַּהֲרֹגוּ
+    prior_rendering: he must surely be put to death, and you shall kill the animal
+    new_rendering: he must be put to death, and you must kill the animal
+    rationale: The categorical legal requirement is conveyed naturally by 'must'; 'must surely' adds awkwardness rather than further force.
+  footnote_kinds: {}
+  history_weighed: The first draft and current wording communicate the sexual act clearly. The intervening preference for 'lies with' was based on formal correspondence, not a gain in meaning, so I retain the explicit wording and drop its unnecessary literal-wording note.

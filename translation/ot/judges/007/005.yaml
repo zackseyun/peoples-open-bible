@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יּ֥וֹרֶד אֶת הָ/עָ֖ם אֶל הַ/מָּ֑יִם וַ/יֹּ֨אמֶר יְהוָ֜ה אֶל גִּדְע֗וֹן כֹּ֣ל אֲשֶׁר יָלֹק֩ בִּ/לְשׁוֹנ֨/וֹ מִן הַ/מַּ֜יִם כַּ/אֲשֶׁ֧ר יָלֹ֣ק הַ/כֶּ֗לֶב תַּצִּ֤יג אוֹת/וֹ֙ לְ/בָ֔ד וְ/כֹ֛ל אֲשֶׁר יִכְרַ֥ע עַל בִּרְכָּ֖י/ו לִ/שְׁתּֽוֹת־־ס־־־־־׃
 translation:
-  text: So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, “you shall place him by himself”; the verb can mean to set or station someone separately.
-    reason: lexical_alternative
+  text: So Gideon brought the troops down to the water, and Yahweh said to him, “Put in one group those who lap the water with their tongues like a dog, and in another those who kneel down to drink.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיּוֹרֶד
   chosen: brought ... down
@@ -108,14 +104,20 @@ revisions:
   from: So he brought the people down to the water, and the LORD said to Gideon, “Everyone who laps some of the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
   to: So he brought the people down to the water, and the LORD said to Gideon, “Everyone who laps some of the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
   rationale: Removed 'some of' before 'the water' for closer lexical accuracy to the source while preserving natural English. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”'
-  to: 'So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”'
+  from: So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
+  to: So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''some of the water''].'
+- timestamp: '2026-11-09T18:13:08Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he brought the people down to the water[a], and Yahweh said to Gideon, “Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink.”
+  to: So Gideon brought the troops down to the water, and Yahweh said to him, “Put in one group those who lap the water with their tongues like a dog, and in another those who kneel down to drink.”
+  rationale: I retain the earlier gains of 'Yahweh' and the uncomplicated 'the water,' despite contradictory automated records. The documented rationale identifies a sorting action, which the new wording makes explicit without adding an explanation of why either group was selected.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -135,3 +137,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/judges/007/005.job-15465.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:08Z'
+  change_level: retranslated
+  confidence: high
+  meaning: At the water, Yahweh tells Gideon to separate the men who lap like dogs from those who kneel to drink.
+  meaning_decisions:
+  - source_phrase: וַיּוֹרֶד אֶת הָעָם אֶל הַמָּיִם וַיֹּאמֶר יְהוָה אֶל גִּדְעוֹן
+    prior_rendering: So he brought the people down to the water, and Yahweh said to Gideon
+    new_rendering: So Gideon brought the troops down to the water, and Yahweh said to him
+    rationale: Naming Gideon at the action and identifying the people as troops makes the narrative reference clearer.
+  - source_phrase: כֹּל אֲשֶׁר יָלֹק בִּלְשׁוֹנוֹ מִן הַמַּיִם כַּאֲשֶׁר יָלֹק הַכֶּלֶב תַּצִּיג אוֹתוֹ לְבָד וְכֹל אֲשֶׁר יִכְרַע עַל בִּרְכָּיו לִשְׁתּוֹת
+    prior_rendering: Everyone who laps the water with his tongue, as a dog laps, you shall set apart by himself; likewise everyone who kneels on his knees to drink
+    new_rendering: Put in one group those who lap the water with their tongues like a dog, and in another those who kneel down to drink
+    rationale: The command sorts the men into two groups rather than isolating every individual; the following verses confirm this. The dog comparison remains, while the redundant English 'kneels on his knees' is shortened.
+  footnote_kinds: {}
+  history_weighed: I retain the earlier gains of 'Yahweh' and the uncomplicated 'the water,' despite contradictory automated records. The documented rationale identifies a sorting action, which the new wording makes explicit without adding an explanation of why either group was selected.

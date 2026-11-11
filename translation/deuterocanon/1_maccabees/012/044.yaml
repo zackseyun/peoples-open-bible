@@ -27,12 +27,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'Why have you cut off all this people, with war not being present to us?' The wording is somewhat abrupt in Greek; the translation smooths the idiom but preserves the sense.
-    reason: lexical_alternative
+  text: He said to Jonathan, “Why have you put all these men to such trouble when no war threatens us?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔκοψας
   chosen: have you cut off
@@ -97,14 +93,20 @@ revisions:
   from: And he said to Jonathan, “Why have you cut off all this people, when no war is pressing upon us?”
   to: And he said to Jonathan, “Why have you cut off all this people, when no war is pressing upon us?”
   rationale: Changed 'cut off' to 'cut down' to better fit the likely sense of striking down/slaughtering people in context, while keeping the wording formal and close to the Greek.
-
 - timestamp: '2026-05-18T02:59:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”'
-  to: 'And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”'
+  from: And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”
+  to: And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have you cut off''].'
+- timestamp: '2026-11-09T18:53:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said to Jonathan[a], “Why have you cut down all this people, when no war is pressing upon us?”
+  to: He said to Jonathan, “Why have you put all these men to such trouble when no war threatens us?
+  rationale: Both the first draft's 'cut off' and the later 'cut down' misread the verb in this context; the subsequent automated revert does not strengthen either interpretation. The living troops whom Tryphon tells Jonathan to dismiss in verse 45 decisively establish the sense of troubling or wearying them.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -124,3 +126,25 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/044.job-48715.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Tryphon questioned why Jonathan had burdened so many men with military service when, he claimed, no war threatened them.
+  meaning_decisions:
+  - source_phrase: Τίνα τί ἔκοψας πάντα τὸν λαὸν τοῦτον
+    prior_rendering: Why have you cut down all this people
+    new_rendering: Why have you put all these men to such trouble
+    rationale: 'Here κόπτω concerns wearying or troubling the assembled men through mobilization, not slaughtering them: Tryphon immediately proposes sending these same men home.'
+  - source_phrase: πολέμου μὴ ἐνεστῶτος ἡμῖν
+    prior_rendering: when no war is pressing upon us
+    new_rendering: when no war threatens us
+    rationale: The construction means that no war presently confronts them; the new wording conveys Tryphon's claim naturally.
+  footnote_kinds: {}
+  history_weighed: Both the first draft's 'cut off' and the later 'cut down' misread the verb in this context; the subsequent automated revert does not strengthen either interpretation. The living troops whom Tryphon tells Jonathan to dismiss in verse 45 decisively establish the sense of troubling or wearying them.

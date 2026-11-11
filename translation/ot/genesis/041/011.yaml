@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: וַ/נַּֽחַלְמָ֥/ה חֲל֛וֹם בְּ/לַ֥יְלָה אֶחָ֖ד אֲנִ֣י וָ/ה֑וּא אִ֛ישׁ כְּ/פִתְר֥וֹן חֲלֹמ֖/וֹ חָלָֽמְנוּ׃
 translation:
-  text: And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.
-  philosophy: optimal-equivalence
+  text: He and I each had a dream on the same night, and each dream had its own meaning[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'we dreamed a dream on the same night, he and I; each man according to the interpretation of his dream we dreamed.'
+    text: Literally, 'each according to the interpretation of his dream we dreamed.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַנַּחַלְמָה
@@ -81,14 +81,20 @@ revisions:
   from: And we dreamed a dream on the same night, he and I; each man dreamed according to the interpretation of his dream.
   to: And we dreamed a dream in one night, I and he; each man dreamed according to the interpretation of his dream.
   rationale: Adjusted 'on the same night, he and I' to the more literal 'in one night, I and he' to reflect the source wording and order more closely; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-15T21:39:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.'
-  to: 'And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.'
-  rationale: 'Drafter chose ''on the same night'' for בְּלַיְלָה אֶחָד (capturing the temporal-coincidence narrative point) and ''he and I'' for אֲנִי וָהוּא (natural English idiom). Azure substituted literal ''in one night'' / ''I and he'' on bare ''reflect source order more closely'' grounds, ignoring both documented rationales.'
+  from: And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.
+  to: And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.
+  rationale: Drafter chose 'on the same night' for בְּלַיְלָה אֶחָד (capturing the temporal-coincidence narrative point) and 'he and I' for אֲנִי וָהוּא (natural English idiom). Azure substituted literal 'in one night' / 'I and he' on bare 'reflect source order more closely' grounds, ignoring both documented rationales.
+- timestamp: '2026-11-09T17:45:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And we dreamed a dream in one night[a], I and he; each man dreamed according to the interpretation of his dream.
+  to: He and I each had a dream on the same night, and each dream had its own meaning[a].
+  rationale: The earlier draft and the later policy rationale correctly identified 'on the same night' and 'he and I' as the intended meaning and natural English, despite the current wording’s literalizing revision. I restore those gains and explain the compressed correspondence with interpretation in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -111,3 +117,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/041/011.job-65534.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The cupbearer and baker each dreamed on the same night, with a distinct meaning for each dream.
+  meaning_decisions:
+  - source_phrase: וַנַּחַלְמָה חֲלוֹם בְּלַיְלָה אֶחָד אֲנִי וָהוּא
+    prior_rendering: And we dreamed a dream in one night, I and he
+    new_rendering: He and I each had a dream on the same night
+    rationale: The point is that both men dreamed during the same night, not that their dreaming took only one night; the reordered participants and distributed dream noun are natural English.
+  - source_phrase: אִישׁ כְּפִתְרוֹן חֲלֹמוֹ חָלָמְנוּ
+    prior_rendering: each man dreamed according to the interpretation of his dream
+    new_rendering: each dream had its own meaning
+    rationale: The clause distinguishes the meaning belonging to each man’s dream; it does not say they already knew the interpretations while dreaming.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier draft and the later policy rationale correctly identified 'on the same night' and 'he and I' as the intended meaning and natural English, despite the current wording’s literalizing revision. I restore those gains and explain the compressed correspondence with interpretation in a note.

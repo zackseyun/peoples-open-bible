@@ -24,15 +24,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: But when Philip saw that the man was gradually making progress and advancing all the more often in successes[a], he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king[b]’s cause.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: That is, Judas Maccabeus, the figure under discussion in the surrounding context.
-    reason: cross_reference
-  - marker: b
-    text: Or 'the king’s interests' or 'the king’s affairs.' The Greek phrase can denote the royal cause more broadly than a single military action.
-    reason: lexical_alternative
+  text: When Philip saw that Judas was making steady progress and succeeding more and more often, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, asking him to come to the aid of the king’s cause.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Συνιδὼν
   chosen: when ... saw
@@ -135,13 +128,12 @@ revisions:
   from: But when Philip saw that the man was gradually making progress and advancing all the more often in successes, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king’s cause.
   to: But when Philip saw that the man was gradually making progress and advancing even more in successes, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king’s cause.
   rationale: Changed 'all the more often' to 'even more' because πυκνότερον here is better rendered as increased degree/intensity rather than frequency in English. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when Philip saw that the man was gradually making progress and advancing even more in successes[a], he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia[b], to come to the aid of the king’s cause.'
-  to: 'But when Philip saw that the man was gradually making progress and advancing all the more often in successes, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king’s cause.'
+  from: But when Philip saw that the man was gradually making progress and advancing even more in successes[a], he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia[b], to come to the aid of the king’s cause.
+  to: But when Philip saw that the man was gradually making progress and advancing all the more often in successes, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king’s cause.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''all the more often''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -151,6 +143,13 @@ revisions:
   from: But when Philip saw that the man was gradually making progress and advancing all the more often in successes, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king’s cause.
   to: But when Philip saw that the man was gradually making progress and advancing all the more often in successes[a], he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king[b]’s cause.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('the king') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:54:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when Philip saw that the man was gradually making progress and advancing all the more often in successes[a], he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, to come to the aid of the king[b]’s cause.
+  to: When Philip saw that Judas was making steady progress and succeeding more and more often, he wrote to Ptolemy, the governor of Coele-Syria and Phoenicia, asking him to come to the aid of the king’s cause.
+  rationale: The earlier review questioned frequency in favor of degree, but the lexical record and context support increasingly frequent successes. I express that reading naturally and retain the established meanings of Ptolemy's office and the king's cause.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -170,3 +169,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/2_maccabees/008/008.job-49184.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Seeing Judas's steady progress and increasingly frequent successes, Philip asks the regional governor to support the king's cause.
+  meaning_decisions:
+  - source_phrase: τὸν ἄνδρα
+    prior_rendering: the man
+    new_rendering: Judas
+    rationale: The referent is clear to the original audience; naming him avoids an unnecessary interruption for modern readers and absorbs the former footnote.
+  - source_phrase: κατὰ μικρὸν εἰς προκοπὴν ἐρχόμενον ... πυκνότερον δὲ ἐν ταῖς εὐημερίαις προβαίνοντα
+    prior_rendering: was gradually making progress and advancing all the more often in successes
+    new_rendering: was making steady progress and succeeding more and more often
+    rationale: The paired expressions describe growing momentum and increasingly frequent favorable outcomes; the new wording expresses both without awkward abstraction.
+  - source_phrase: ἔγραφεν ἐπιβοηθεῖν
+    prior_rendering: he wrote ... to come to the aid
+    new_rendering: he wrote ... asking him to come to the aid
+    rationale: The infinitive gives the request contained in Philip's letter, not Philip's own purpose in writing.
+  footnote_kinds: {}
+  history_weighed: The earlier review questioned frequency in favor of degree, but the lexical record and context support increasingly frequent successes. I express that reading naturally and retain the established meanings of Ptolemy's office and the king's cause.

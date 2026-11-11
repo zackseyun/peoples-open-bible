@@ -16,12 +16,8 @@ source:
     note: NOT an ancient Hebrew witness. Neubauer's 1878 Hebrew is a back-translation from an Aramaic Munich MS. The actual ancient evidence is Qumran 4Q196-200 (Aramaic), published in DJD XIX (not redistributable). Use for translation reference only; do not treat as Vorlage.
     reference: TOB 2:7
 translation:
-  text: And I wept. And when the sun had set[a], I went and dug and buried him.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'having dug, I buried him.' The object 'a grave' is implied by the burial context and made explicit in English for clarity.
-    reason: lexical_alternative
+  text: I wept. When the sun had set, I went out, dug a grave, and buried him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔκλαυσα
   chosen: I wept
@@ -92,14 +88,20 @@ revisions:
   from: And I wept. And when the sun had set, I went and dug a grave and buried him.
   to: And I wept. And when the sun had set, I went and dug a grave and buried him.
   rationale: Removed 'a grave,' which is not explicit in the Greek; retained the sequence 'dug and buried him' for closer lexical accuracy while keeping natural English.
-
 - timestamp: '2026-05-18T02:59:21Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And I wept. And when the sun had set[a], I went and dug and buried him.'
-  to: 'And I wept. And when the sun had set[a], I went and dug and buried him.'
+  from: And I wept. And when the sun had set[a], I went and dug and buried him.
+  to: And I wept. And when the sun had set[a], I went and dug and buried him.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''dug a grave''].'
+- timestamp: '2026-11-09T19:10:12Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And I wept. And when the sun had set[a], I went and dug and buried him.
+  to: I wept. When the sun had set, I went out, dug a grave, and buried him.
+  rationale: The first draft and lexical rationale supplied “a grave,” while an automated review removed it solely because it was implicit. I restore that clear contextual meaning and retain the repeated statement of weeping because it appears in this verse's supplied source.
 cross_check:
   status: high_agreement
   agreement: 0.98
@@ -119,3 +121,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/002/007.job-39146.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:12Z'
+  change_level: refined
+  confidence: high
+  meaning: Tobit wept and, after sunset, went out to dig a grave and bury the dead man.
+  meaning_decisions:
+  - source_phrase: ὀρύξας
+    prior_rendering: dug
+    new_rendering: dug a grave
+    rationale: The burial context supplies the object of digging, which natural English should make explicit.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale supplied “a grave,” while an automated review removed it solely because it was implicit. I restore that clear contextual meaning and retain the repeated statement of weeping because it appears in this verse's supplied source.

@@ -4,14 +4,11 @@ source:
   edition: SBLGNT
   text: ἐν ἐκείνῃ τῇ ἡμέρᾳ ὃς ἔσται ἐπὶ τοῦ δώματος καὶ τὰ σκεύη αὐτοῦ ἐν τῇ οἰκίᾳ, μὴ καταβάτω ἆραι αὐτά, καὶ ὁ ⸀ἐν ἀγρῷ ὁμοίως μὴ ἐπιστρεψάτω εἰς τὰ ὀπίσω.
 translation:
-  text: On that day, whoever is on the housetop[b], with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back[a] to the things behind.
-  philosophy: optimal-equivalence
+  text: On that day, whoever is on the housetop[a], with his belongings in the house, must not go down to retrieve them; likewise, whoever is in the field must not turn back.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or more smoothly, 'must not turn back for what was left behind.'
-    reason: lexical_alternative
-  - marker: b
-    text: The 'housetop' refers to the flat roof of a house, which in that setting was commonly accessible and usable space.
+    text: Houses commonly had flat roofs used as additional living space.
     reason: cultural_note
 lexical_decisions:
 - source_word: ἐν ἐκείνῃ τῇ ἡμέρᾳ
@@ -113,13 +110,12 @@ revisions:
   from: On that day, whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back to the things behind.
   to: On that day, whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back.
   rationale: Removed 'to the things behind' as an overly literal and unnatural rendering of εἰς τὰ ὀπίσω here; translated it naturally as 'turn back.'
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'On that day[a], whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise[b], the one in the field must not turn back.'
-  to: 'On that day, whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back to the things behind.'
+  from: On that day[a], whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise[b], the one in the field must not turn back.
+  to: On that day, whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back to the things behind.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the things behind''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -129,6 +125,13 @@ revisions:
   from: On that day, whoever is on the housetop, with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back to the things behind.
   to: On that day, whoever is on the housetop[b], with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back[a] to the things behind.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('must not turn back') because the note names that rendering; [b] anchored to ('housetop') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: On that day, whoever is on the housetop[b], with his belongings in the house, must not go down to take them away; and likewise, the one in the field must not turn back[a] to the things behind.
+  to: On that day, whoever is on the housetop[a], with his belongings in the house, must not go down to retrieve them; likewise, whoever is in the field must not turn back.
+  rationale: The earlier review correctly recognized “to the things behind” as an unnatural rendering of the directional idiom; its automatic reversal carries little meaning-based weight. I adopt that correction while preserving the concrete scenes, urgent prohibitions, and useful housetop background.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +153,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/017/031.job-55798.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: On that day, people must not interrupt their departure to retrieve possessions or turn back from the field.
+  meaning_decisions:
+  - source_phrase: ἆραι αὐτά
+    prior_rendering: to take them away
+    new_rendering: to retrieve them
+    rationale: Identifies the intended action as collecting possessions from inside the house.
+  - source_phrase: μὴ ἐπιστρεψάτω εἰς τὰ ὀπίσω
+    prior_rendering: must not turn back to the things behind
+    new_rendering: must not turn back
+    rationale: The expression is directional here; treating “the things behind” as a separate object makes the English awkward and unnecessarily narrows the prohibition.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier review correctly recognized “to the things behind” as an unnatural rendering of the directional idiom; its automatic reversal carries little meaning-based weight. I adopt that correction while preserving the concrete scenes, urgent prohibitions, and useful housetop background.

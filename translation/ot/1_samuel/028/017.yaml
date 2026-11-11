@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יַּ֤עַשׂ יְהוָה֙ ל֔/וֹ כַּ/אֲשֶׁ֖ר דִּבֶּ֣ר בְּ/יָדִ֑/י וַ/יִּקְרַ֨ע יְהוָ֤ה אֶת הַ/מַּמְלָכָה֙ מִ/יָּדֶ֔/ךָ וַֽ/יִּתְּנָ֖/הּ לְ/רֵעֲ/ךָ֥ לְ/דָוִֽד־׃
 translation:
-  text: 'And Yahweh has done for you just as he spoke by my hand: Yahweh has torn the kingdom out of your hand and given it to your neighbor[b][a], to David.'
-  philosophy: optimal-equivalence
+  text: 'Yahweh has done this to you[a], just as he said through me: Yahweh has torn the kingdom out of your hand and given it to your neighbor, David.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew: ''has done for himself.'' Many translations read ''has done to you'' or ''for you,'' smoothing the sense toward Saul; the Masoretic Text here reads ''for him/for himself.'''
-    reason: alternative_reading
-  - marker: b
-    text: Or 'just as he spoke through me.'
-    reason: lexical_alternative
+    text: The Hebrew reads “to him” or “for himself”; some ancient versions read “to you.”
+    reason: textual_variant
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -104,7 +101,6 @@ revisions:
   from: 'And the LORD has done for himself just as he spoke by my hand: the LORD has torn the kingdom out of your hand and given it to your neighbor, to David.'
   to: 'And the LORD has done for himself just as he spoke by my hand: the LORD has torn the kingdom out of your hand and given it to your neighbor, to David.'
   rationale: Changed 'for himself' to 'for you' for lexical accuracy; the Hebrew/Greek sense is that the LORD has acted toward Saul as spoken through Samuel.
-
 - timestamp: '2026-05-18T02:56:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -112,6 +108,13 @@ revisions:
   from: 'And Yahweh has done for you just as he spoke by my hand: Yahweh has torn the kingdom out of your hand and given it to your neighbor[b][a], to David.'
   to: 'And Yahweh has done for you just as he spoke by my hand: Yahweh has torn the kingdom out of your hand and given it to your neighbor[b][a], to David.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''has done for himself''].'
+- timestamp: '2026-11-09T17:23:53Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And Yahweh has done for you just as he spoke by my hand: Yahweh has torn the kingdom out of your hand and given it to your neighbor[b][a], to David.'
+  to: 'Yahweh has done this to you[a], just as he said through me: Yahweh has torn the kingdom out of your hand and given it to your neighbor, David.'
+  rationale: The draft’s ‘for himself’ correctly recognized the Hebrew third-person pronoun, while the later ‘for you’ recognized that the announcement concerns Saul. I render the contextual force as ‘to you’ rather than a benefit to Saul and preserve the textual difficulty in a note.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -134,3 +137,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/028/017.job-59461.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:53Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Samuel tells Saul that Yahweh has fulfilled his earlier announcement by taking Saul’s kingdom and giving it to David.
+  meaning_decisions:
+  - source_phrase: וַיַּעַשׂ יְהוָה לוֹ
+    prior_rendering: And Yahweh has done for you
+    new_rendering: Yahweh has done this to you[a]
+    rationale: The surrounding speech concerns judgment inflicted on Saul, not something done for his benefit. The main text follows that contextual understanding, while the note preserves the Hebrew third-person pronoun and its possible reflexive sense.
+  - source_phrase: כַּאֲשֶׁר דִּבֶּר בְּיָדִי
+    prior_rendering: just as he spoke by my hand
+    new_rendering: just as he said through me
+    rationale: The hand construction expresses prophetic mediation, not a physical action performed by Samuel’s hand.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The draft’s ‘for himself’ correctly recognized the Hebrew third-person pronoun, while the later ‘for you’ recognized that the announcement concerns Saul. I render the contextual force as ‘to you’ rather than a benefit to Saul and preserve the textual difficulty in a note.

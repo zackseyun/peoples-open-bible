@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: σὺ οὖν μὴ πεισθῇς αὐτοῖς, ἐνεδρεύουσιν γὰρ αὐτὸν ἐξ αὐτῶν ἄνδρες πλείους τεσσεράκοντα, οἵτινες ἀνεθεμάτισαν ἑαυτοὺς μήτε φαγεῖν μήτε πιεῖν ἕως οὗ ἀνέλωσιν αὐτόν, καὶ νῦν ⸂εἰσιν ἕτοιμοι⸃ προσδεχόμενοι τὴν ἀπὸ σοῦ ἐπαγγελίαν.
 translation:
-  text: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse[a] neither to eat nor to drink until they have killed him. And now they are ready, waiting[b] for the promise from you.
-  philosophy: optimal-equivalence
+  text: So do not agree to their request, for more than forty men from among them are lying in ambush for him. They have bound themselves under a curse[a] not to eat or drink until they have killed him. They are ready now, waiting for your agreement.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'have put themselves under an oath'; the Greek expression includes the idea of invoking a curse upon themselves if they fail.
-    reason: lexical_alternative
-  - marker: b
-    text: That is, they are waiting for your agreement or authorization.
-    reason: lexical_alternative
+    text: Their oath invoked a curse on them if they broke it.
+    reason: cultural_note
 lexical_decisions:
 - source_word: πεισθῇς
   chosen: be persuaded
@@ -111,13 +108,12 @@ revisions:
   from: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready, waiting for the promise from you.
   to: So do not be persuaded by them, for more than forty men among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready, waiting for the promise from you.
   rationale: Changed 'from among them' to 'among them' for more natural English while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:23Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So do not be persuaded by them[a], for more than forty men among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready[b], waiting for the promise from you.'
-  to: 'So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready, waiting for the promise from you.'
+  from: So do not be persuaded by them[a], for more than forty men among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready[b], waiting for the promise from you.
+  to: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready, waiting for the promise from you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from among them''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +123,13 @@ revisions:
   from: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse neither to eat nor to drink until they have killed him. And now they are ready, waiting for the promise from you.
   to: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse[a] neither to eat nor to drink until they have killed him. And now they are ready, waiting[b] for the promise from you.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('have bound themselves under a curse') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('waiting') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:08:20Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So do not be persuaded by them, for more than forty men from among them are lying in ambush for him, who have bound themselves under a curse[a] neither to eat nor to drink until they have killed him. And now they are ready, waiting[b] for the promise from you.
+  to: So do not agree to their request, for more than forty men from among them are lying in ambush for him. They have bound themselves under a curse[a] not to eat or drink until they have killed him. They are ready now, waiting for your agreement.”
+  rationale: The recorded review and revert concerned only “from among them,” which I retain. The lexical discussion and existing footnote establish that the expected “promise” means the commander’s agreement, while the curse-bearing oath remains explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -146,3 +149,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/023/021.job-46411.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:20Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The young man urges the commander to refuse the request because more than forty sworn conspirators are ready to ambush Paul once the commander agrees.
+  meaning_decisions:
+  - source_phrase: σὺ οὖν μὴ πεισθῇς αὐτοῖς
+    prior_rendering: So do not be persuaded by them
+    new_rendering: So do not agree to their request
+    rationale: In context, being persuaded means granting the request to bring Paul to the council, not merely believing what the petitioners say.
+  - source_phrase: τὴν ἀπὸ σοῦ ἐπαγγελίαν
+    prior_rendering: the promise from you
+    new_rendering: your agreement
+    rationale: The expected promise is the commander’s agreement to their request, not a promise he has already made; the earlier footnote’s explanation now belongs in the main text.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded review and revert concerned only “from among them,” which I retain. The lexical discussion and existing footnote establish that the expected “promise” means the commander’s agreement, while the curse-bearing oath remains explicit.

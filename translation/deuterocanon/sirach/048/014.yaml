@@ -16,12 +16,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 48:14
 translation:
-  text: In his life he did wonders, and in his death[a] his works were marvelous.
-  philosophy: optimal-equivalence
+  text: During his life he did wonders; even in death[a] his works were marvelous.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, following the Greek more closely, 'and at his end his works were marvelous.' The Hebrew reads 'and in his death,' with a slightly difficult form in the final clause; the Greek confirms the sense of wondrous deeds associated with his death.
-    reason: alternative_reading
+    text: An allusion to 2 Kings 13:20–21, where a dead man came to life after touching Elisha’s bones.
+    reason: cross_reference
 lexical_decisions:
 - source_word: בחייו
   chosen: In his life
@@ -106,13 +106,12 @@ revisions:
   from: In his life he did wonders, and in his death his works were marvelous.
   to: In his life he did wonders, and in his death his deeds were marvelous.
   rationale: Changed 'works' to 'deeds' for a more natural and contextually fitting rendering of מעשה while preserving the parallelism and formal register.
-
 - timestamp: '2026-05-18T03:09:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In his life he did wonders[a], and in his death his deeds were marvelous.'
-  to: 'In his life he did wonders, and in his death his works were marvelous.'
+  from: In his life he did wonders[a], and in his death his deeds were marvelous.
+  to: In his life he did wonders, and in his death his works were marvelous.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''his works''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -122,6 +121,13 @@ revisions:
   from: In his life he did wonders, and in his death his works were marvelous.
   to: In his life he did wonders, and in his death[a] his works were marvelous.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('and in his death') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:10:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In his life he did wonders, and in his death[a] his works were marvelous.
+  to: During his life he did wonders; even in death[a] his works were marvelous.
+  rationale: Retained 'wonders' and 'his works'; the recorded works/deeds exchange was stylistic rather than a change in meaning. The earlier death/end note is replaced with the biblical allusion that clarifies the contrast.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +147,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/048/014.job-52331.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Elisha performed wonders during his lifetime, and wondrous works were associated with him even after his death.
+  meaning_decisions:
+  - source_phrase: ובמותו
+    prior_rendering: and in his death
+    new_rendering: even in death
+    rationale: The context concerns Elisha’s continuing wonders after death, not merely something occurring at the moment he died.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: Retained 'wonders' and 'his works'; the recorded works/deeds exchange was stylistic rather than a change in meaning. The earlier death/end note is replaced with the biblical allusion that clarifies the contrast.

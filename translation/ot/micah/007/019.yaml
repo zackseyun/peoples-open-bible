@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: יָשׁ֣וּב יְרַֽחֲמֵ֔/נוּ יִכְבֹּ֖שׁ עֲוֺֽנֹתֵ֑י/נוּ וְ/תַשְׁלִ֛יךְ בִּ/מְצֻל֥וֹת יָ֖ם כָּל חַטֹּאותָֽ/ם־׃
 translation:
-  text: He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.
-  philosophy: optimal-equivalence
+  text: He will again have compassion on us; he will subdue our iniquities. You will cast all their sins[a] into the depths of the sea.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew shifts unexpectedly from 'He will' to direct address, 'You will cast.' Some ancient witnesses and translations smooth this to 'and he will cast.'
-    reason: alternative_reading
-  - marker: b
-    text: Hebrew reads 'their sins'; many translations render 'our sins' to harmonize with the earlier 'our iniquities.'
+    text: Some ancient versions read “our sins”; Hebrew has “their sins,” referring to God’s people.
     reason: textual_variant
 lexical_decisions:
 - source_word: יָשׁוּב
@@ -97,14 +94,20 @@ revisions:
   from: He will again have compassion on us; he will subdue our iniquities. You will cast all their sins into the depths of the sea.
   to: He will again have compassion on us; he will subdue our iniquities. You will cast all their sins into the depths of the sea.
   rationale: Changed 'You will cast' to 'He will cast' for consistency with the Hebrew verb form and the surrounding third-person verbs.
-
 - timestamp: '2026-05-17T21:56:29Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.'
-  to: 'He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.'
+  from: He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.
+  to: He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''You will cast''].'
+- timestamp: '2026-11-09T18:24:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He will again have compassion on us[a]; he will subdue our iniquities[b]. He will cast all their sins into the depths of the sea.
+  to: He will again have compassion on us; he will subdue our iniquities. You will cast all their sins[a] into the depths of the sea.
+  rationale: The first draft and documented decisions correctly preserve “You will cast,” whereas the automated review mistakenly treated the verb as third person. I restore the source’s direct address and retain “their sins,” with a note identifying the referent and the ancient alternative.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -124,3 +127,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/micah/007/019.job-39947.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:24:11Z'
+  change_level: refined
+  confidence: high
+  meaning: God will renew his compassion, conquer his people’s iniquities, and remove their sins completely.
+  meaning_decisions:
+  - source_phrase: וְתַשְׁלִיךְ
+    prior_rendering: He will cast
+    new_rendering: You will cast
+    rationale: The Hebrew addresses God directly here; restoring “you” also leads naturally into the direct address of verse 20.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The first draft and documented decisions correctly preserve “You will cast,” whereas the automated review mistakenly treated the verb as third person. I restore the source’s direct address and retain “their sins,” with a note identifying the referent and the ancient alternative.

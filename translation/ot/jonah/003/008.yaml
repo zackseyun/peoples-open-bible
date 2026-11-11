@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וְ/יִתְכַּסּ֣וּ שַׂקִּ֗ים הָֽ/אָדָם֙ וְ/הַ/בְּהֵמָ֔ה וְ/יִקְרְא֥וּ אֶל אֱלֹהִ֖ים בְּ/חָזְקָ֑ה וְ/יָשֻׁ֗בוּ אִ֚ישׁ מִ/דַּרְכּ֣/וֹ הָֽ/רָעָ֔ה וּ/מִן הֶ/חָמָ֖ס אֲשֶׁ֥ר בְּ/כַפֵּי/הֶֽם־־׃
 translation:
-  text: Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each man turn from his evil way and from the violence that is in their hands.
-  philosophy: optimal-equivalence
+  text: Let people and animals alike be covered with sackcloth, and let them cry out with all their strength to God. Let everyone repent of their evil ways and abandon the violence they commit[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'cry out earnestly to God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'each man'; the expression is distributive and refers to every person among the people.
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'from his wicked way.'
+    text: Literally, “the violence that is in their hands.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְיִתְכַּסּוּ
@@ -133,14 +127,20 @@ revisions:
   from: Let both man and beast be covered with sackcloth, and let them call out mightily to God, and let each man turn from his evil way and from the violence that is in their hands.
   to: Let both man and beast be covered with sackcloth, and let them call out mightily to God, and let each turn from his evil way and from the violence that is in his hands.
   rationale: Removed the second 'man' after 'each' for more natural English while preserving the distributive sense of אִישׁ; changed 'their hands' to 'his hands' for number consistency with 'each' and the singular Hebrew expression.
-
 - timestamp: '2026-05-16T03:39:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each turn from his evil way and from the violence that is in his hands.'
-  to: 'Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each man turn from his evil way and from the violence that is in their hands.'
-  rationale: 'Azure stripped ''man'' from drafter''s chosen ''each man'' (DOCTRINE.md gender-accurate policy for אִישׁ) and singularized ''their hands'' to ''his hands'' (כַּפֵּיהֶם is 3mp plural with collective antecedent).'
+  from: Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each turn from his evil way and from the violence that is in his hands.
+  to: Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each man turn from his evil way and from the violence that is in their hands.
+  rationale: Azure stripped 'man' from drafter's chosen 'each man' (DOCTRINE.md gender-accurate policy for אִישׁ) and singularized 'their hands' to 'his hands' (כַּפֵּיהֶם is 3mp plural with collective antecedent).
+- timestamp: '2026-11-09T18:07:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Let both man and beast be covered with sackcloth[a], and let them call out mightily to God[c][b], and let each man turn from his evil way and from the violence that is in their hands.
+  to: Let people and animals alike be covered with sackcloth, and let them cry out with all their strength to God. Let everyone repent of their evil ways and abandon the violence they commit[a].
+  rationale: The revert correctly identifies 'their hands' as plural; the new wording preserves that collective reference rather than adopting the review's singularization. The earlier preference for 'turn' prioritized source transparency, whereas this explicit moral appeal calls for 'repent' under the standing ruling.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -160,3 +160,34 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/jonah/003/008.job-15187.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:48Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The decree calls for people and animals to wear sackcloth and cry urgently to God, and for everyone to repent and abandon violence.
+  meaning_decisions:
+  - source_phrase: הָאָדָם וְהַבְּהֵמָה
+    prior_rendering: both man and beast
+    new_rendering: people and animals alike
+    rationale: These collective terms encompass the human population and its animals, continuing the comprehensive scope of the decree.
+  - source_phrase: וְיִקְרְאוּ אֶל אֱלֹהִים בְּחָזְקָה
+    prior_rendering: let them call out mightily to God
+    new_rendering: let them cry out with all their strength to God
+    rationale: The wording preserves the force and urgency of the appeal without the dated adverb 'mightily.'
+  - source_phrase: וְיָשֻׁבוּ אִישׁ מִדַּרְכּוֹ הָרָעָה
+    prior_rendering: let each man turn from his evil way
+    new_rendering: Let everyone repent of their evil ways
+    rationale: This is an explicitly moral and spiritual turning, so 'repent' follows the standing ruling; the distributive expression requires every person to respond.
+  - source_phrase: וּמִן הֶחָמָס אֲשֶׁר בְּכַפֵּיהֶם
+    prior_rendering: and from the violence that is in their hands
+    new_rendering: and abandon the violence they commit[a]
+    rationale: The hands represent the violence they practice, not merely something within their control; 'abandon' makes the required cessation clear, and the note preserves the image.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revert correctly identifies 'their hands' as plural; the new wording preserves that collective reference rather than adopting the review's singularization. The earlier preference for 'turn' prioritized source transparency, whereas this explicit moral appeal calls for 'repent' under the standing ruling.

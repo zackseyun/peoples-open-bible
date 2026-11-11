@@ -25,15 +25,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.
-  philosophy: optimal-equivalence
+  text: In the second month of the one hundred and fifty-third year[a], Alcimus ordered the wall of the sanctuary’s inner court to be torn down. He tore down the structures associated with the prophets[b] and began the demolition.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, “the inner court of the sanctuary.”
-    reason: lexical_alternative
+    text: The year is counted according to the Seleucid era, used throughout this book.
+    reason: cultural_note
   - marker: b
-    text: The phrase “the works of the prophets” is literal; it may refer to structures or restorations associated with the prophets, but the Greek does not specify.
-    reason: alternative_reading
+    text: Literally, “the works of the prophets”; the particular structures and their connection with the prophets are not specified.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐν ἔτει τρίτῳ καὶ πεντηκοστῷ καὶ ἑκατοστῷ
   chosen: in the one hundred and fifty-third year
@@ -140,14 +140,20 @@ revisions:
   from: And in the one hundred and fifty-third year, in the second month, Alcimus ordered the wall of the inner court of the holy place to be torn down, and he tore down the works of the prophets, and began tearing it down.
   to: And in the one hundred and fifty-third year, in the second month, Alcimus ordered the wall of the inner court of the holy place to be torn down, and he tore down the works of the prophets, and began tearing it down.
   rationale: Changed 'holy place' to 'sanctuary' for a more natural and accurate rendering of τῶν ἁγίων; adjusted the final clause to 'began to tear it down' for smoother formal English while preserving the Greek.
-
 - timestamp: '2026-05-16T14:37:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.'
-  to: 'And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.'
-  rationale: 'Restored drafter ''of the inner court of the holy place'' (preserving τῶν ἁγίων as holy place) and ''began tearing it down'' (preserving the chosen progressive participle) per chosen renderings.'
+  from: And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.
+  to: And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.
+  rationale: Restored drafter 'of the inner court of the holy place' (preserving τῶν ἁγίων as holy place) and 'began tearing it down' (preserving the chosen progressive participle) per chosen renderings.
+- timestamp: '2026-11-09T18:53:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And in the one hundred and fifty-third year[a], in the second month, Alcimus ordered the wall of the inner court of the sanctuary to be torn down, and he tore down the works of the prophets[b], and began to tear it down.
+  to: In the second month of the one hundred and fifty-third year[a], Alcimus ordered the wall of the sanctuary’s inner court to be torn down. He tore down the structures associated with the prophets[b] and began the demolition.
+  rationale: I retain the current “sanctuary,” which clearly expresses the sacred precinct, and the earlier caution about the unidentified prophetic works. I go further only to clarify their physical character, preserving the uncertainty in a literal-wording note rather than supplying a historical reconstruction.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -167,3 +173,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/009/054.job-48473.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:05Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: In the second month of year 153, Alcimus orders the sanctuary’s inner-court wall demolished, tears down structures associated with the prophets, and begins the demolition.
+  meaning_decisions:
+  - source_phrase: τὸ τεῖχος τῆς αὐλῆς τῶν ἁγίων τῆς ἐσωτέρας
+    prior_rendering: the wall of the inner court of the sanctuary
+    new_rendering: the wall of the sanctuary’s inner court
+    rationale: The reordered possessive makes the relationship between sanctuary, court, and wall immediately clear.
+  - source_phrase: τὰ ἔργα τῶν προφητῶν
+    prior_rendering: the works of the prophets
+    new_rendering: the structures associated with the prophets
+    rationale: The demolition context identifies physical construction rather than writings or deeds; “associated with” avoids claiming that the prophets personally built the unidentified structures.
+  - source_phrase: ἐνήρξατο τοῦ καθαιρεῖν
+    prior_rendering: began to tear it down
+    new_rendering: began the demolition
+    rationale: This conveys the beginning of the activity without assigning the supplied pronoun to an uncertain antecedent.
+  footnote_kinds:
+    a: cultural_background
+    b: literal_wording
+  history_weighed: I retain the current “sanctuary,” which clearly expresses the sacred precinct, and the earlier caution about the unidentified prophetic works. I go further only to clarify their physical character, preserving the uncertainty in a literal-wording note rather than supplying a historical reconstruction.

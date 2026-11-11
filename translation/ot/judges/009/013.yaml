@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וַ/תֹּ֤אמֶר לָ/הֶם֙ הַ/גֶּ֔פֶן הֶ/חֳדַ֨לְתִּי֙ אֶת תִּ֣ירוֹשִׁ֔/י הַֽ/מְשַׂמֵּ֥חַ אֱלֹהִ֖ים וַ/אֲנָשִׁ֑ים וְ/הָ֣לַכְתִּ֔י לָ/נ֖וּעַ עַל הָ/עֵצִֽים־־׃
 translation:
-  text: But the vine said to them[a], ‘Should I stop producing my new wine, which gladdens gods and men, and go to sway over the trees?’
-  philosophy: optimal-equivalence
+  text: But the vine said to them, ‘Should I give up my new wine, which gladdens gods[a] and men, and go and hold sway over the trees[b]?’
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'which gladdens God and men.'
+    text: Or “God.”
     reason: alternative_reading
+  - marker: b
+    text: Literally, “go to sway over the trees,” retaining the image of a tree moving to and fro above the others.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: הַגֶּפֶן
   chosen: the vine
@@ -98,14 +101,20 @@ revisions:
   from: But the vine said to them, ‘Should I stop producing my new wine, which gladdens gods and men, and go to sway over the trees?’
   to: But the vine said to them, ‘Should I stop my new wine, which gladdens God and men, and go to sway over the trees?’
   rationale: Replaced ‘producing my new wine’ with the more literal ‘my new wine’ to avoid adding a verb not explicit in the source. Changed ‘gods’ to ‘God’ to reflect the singular Hebrew/Greek wording in this verse.
-
 - timestamp: '2026-05-16T03:54:04Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the vine said to them[a], ‘Should I stop my new wine, which gladdens God and men, and go to sway over the trees?’'
-  to: 'But the vine said to them[a], ‘Should I stop producing my new wine, which gladdens gods and men, and go to sway over the trees?’'
-  rationale: 'Azure singularized ''gods'' to ''God'' — but אֱלֹהִים is morphologically plural and drafter explicitly chose ''gods'' for the ANE fable context per documented theological_decisions. Also dropped ''producing'' from drafter''s chosen rendering of הֶחֳדַלְתִּי.'
+  from: But the vine said to them[a], ‘Should I stop my new wine, which gladdens God and men, and go to sway over the trees?’
+  to: But the vine said to them[a], ‘Should I stop producing my new wine, which gladdens gods and men, and go to sway over the trees?’
+  rationale: Azure singularized 'gods' to 'God' — but אֱלֹהִים is morphologically plural and drafter explicitly chose 'gods' for the ANE fable context per documented theological_decisions. Also dropped 'producing' from drafter's chosen rendering of הֶחֳדַלְתִּי.
+- timestamp: '2026-11-09T18:13:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the vine said to them[a], ‘Should I stop producing my new wine, which gladdens gods and men, and go to sway over the trees?’
+  to: But the vine said to them, ‘Should I give up my new wine, which gladdens gods[a] and men, and go and hold sway over the trees[b]?’
+  rationale: The later revert restored 'producing' and 'gods'; I retain the sense of productive contribution and the contextual plural reading, with the serious singular alternative noted. The new refrain expresses that contribution naturally rather than adopting the intervening review’s awkward 'stop my new wine.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -125,3 +134,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/judges/009/013.job-15482.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:13:31Z'
+  change_level: refined
+  confidence: medium
+  meaning: The vine rejects kingship rather than abandon its new wine, which brings gladness to divine and human recipients.
+  meaning_decisions:
+  - source_phrase: הֶחֳדַלְתִּי אֶת תִּירוֹשִׁי
+    prior_rendering: Should I stop producing my new wine
+    new_rendering: Should I give up my new wine
+    rationale: This expresses abandoning the vine’s valued contribution in exchange for kingship and maintains the refrain shared with the olive and fig trees.
+  - source_phrase: וְהָלַכְתִּי לָנוּעַ עַל הָעֵצִים
+    prior_rendering: and go to sway over the trees
+    new_rendering: and go and hold sway over the trees
+    rationale: The English idiom clarifies kingship, while the literal note preserves the fable’s image of movement above the trees.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The later revert restored 'producing' and 'gods'; I retain the sense of productive contribution and the contextual plural reading, with the serious singular alternative noted. The new refrain expresses that contribution naturally rather than adopting the intervening review’s awkward 'stop my new wine.'

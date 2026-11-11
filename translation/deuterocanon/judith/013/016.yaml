@@ -17,11 +17,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And as the Lord lives, who guarded me on the way by which I went, my face deceived him[a] to his destruction, and he did not commit sin with me, resulting in defilement and shame.
-  philosophy: optimal-equivalence
+  text: As the Lord lives, who kept me safe on my journey, my appearance deceived him[a] and led to his destruction, but he did not commit sexual sin with me, which would have brought defilement and shame.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Literally, 'my face deceived him'; the phrase refers to Judith's outward appearance misleading Holofernes.
+    text: Literally, “my face deceived him.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ζῇ Κύριος
@@ -116,13 +116,12 @@ revisions:
   from: And as the Lord lives, who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me, resulting in defilement and shame.
   to: And as the Lord lives, who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me for defilement and shame.
   rationale: Replaced 'resulting in' with 'for' to more directly reflect εἰς and avoid interpretive expansion. Kept the rest of the draft, which accurately and naturally represents the Greek.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as the Lord lives[a], who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me for defilement and shame.'
-  to: 'And as the Lord lives, who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me, resulting in defilement and shame.'
+  from: And as the Lord lives[a], who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me for defilement and shame.
+  to: And as the Lord lives, who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me, resulting in defilement and shame.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''resulting in defilement and shame''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -132,6 +131,13 @@ revisions:
   from: And as the Lord lives, who guarded me on the way by which I went, my face deceived him to his destruction, and he did not commit sin with me, resulting in defilement and shame.
   to: And as the Lord lives, who guarded me on the way by which I went, my face deceived him[a] to his destruction, and he did not commit sin with me, resulting in defilement and shame.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('my face deceived him') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:01:51Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as the Lord lives, who guarded me on the way by which I went, my face deceived him[a] to his destruction, and he did not commit sin with me, resulting in defilement and shame.
+  to: As the Lord lives, who kept me safe on my journey, my appearance deceived him[a] and led to his destruction, but he did not commit sexual sin with me, which would have brought defilement and shame.
+  rationale: The earlier review and revert focused on whether εἰς should be represented by “for” or “resulting in,” but neither clarified that the consequences were prevented. I depart from the recorded preference for general “sin” because the sexual reference is established by the context, while retaining the explicit moral term and the solemn oath.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -151,3 +157,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/013/016.job-50775.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:51Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judith swears that God protected her, that her appearance deceived Holofernes to his destruction, and that he did not have sexual relations with her.
+  meaning_decisions:
+  - source_phrase: ἐν τῇ ὁδῷ μου ᾗ ἐπορεύθην
+    prior_rendering: on the way by which I went
+    new_rendering: on my journey
+    rationale: The construction identifies the journey during which God protected her; repeating the motion in English adds no further meaning.
+  - source_phrase: ἠπάτησεν αὐτὸν τὸ πρόσωπόν μου εἰς ἀπώλειαν αὐτοῦ
+    prior_rendering: my face deceived him to his destruction
+    new_rendering: my appearance deceived him and led to his destruction
+    rationale: Her face stands for the outward appearance that misled him; the new wording conveys that sense while the footnote preserves the concrete source image.
+  - source_phrase: οὐκ ἐποίησεν ἁμάρτημα μετʼ ἐμοῦ
+    prior_rendering: he did not commit sin with me
+    new_rendering: he did not commit sexual sin with me
+    rationale: The encounter with Holofernes and the accompanying language of defilement and shame make the sexual reference clear to the first hearers; leaving it entirely general obscures Judith’s assurance.
+  - source_phrase: εἰς μίασμα καὶ αἰσχύνην
+    prior_rendering: resulting in defilement and shame
+    new_rendering: which would have brought defilement and shame
+    rationale: These are the consequences of the sin she denies occurred, not actual consequences of the encounter; the counterfactual wording correctly places them within that denial.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review and revert focused on whether εἰς should be represented by “for” or “resulting in,” but neither clarified that the consequences were prevented. I depart from the recorded preference for general “sin” because the sexual reference is established by the context, while retaining the explicit moral term and the solemn oath.

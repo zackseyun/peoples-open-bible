@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: כִּֽי כוֹכְבֵ֤י הַ/שָּׁמַ֨יִם֙ וּ/כְסִ֣ילֵי/הֶ֔ם לֹ֥א יָהֵ֖לּוּ אוֹרָ֑/ם חָשַׁ֤ךְ הַ/שֶּׁ֨מֶשׁ֙ בְּ/צֵאת֔/וֹ וְ/יָרֵ֖חַ לֹֽא יַגִּ֥יהַ אוֹרֽ/וֹ־־׃
 translation:
-  text: For the stars of the heavens and their constellations will not give their light; the sun is darkened at its rising[a], and the moon will not make its light shine.
-  philosophy: optimal-equivalence
+  text: For the stars of the heavens and their constellations[a] will give no light; the sun will be dark when it rises, and the moon will not shine.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'and their Orions.' The Hebrew term can refer specifically to Orion, but here may function more broadly for the constellations.
+    text: The Hebrew uses a plural form of the term elsewhere understood as Orion, here understood more broadly as 'constellations.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כִּי
@@ -94,14 +94,20 @@ revisions:
   from: For the stars of the heavens and their constellations will not give their light; the sun is darkened at its rising, and the moon will not make its light shine.
   to: For the stars of the heavens and their constellations will not give their light; the sun will be darkened at its rising, and the moon will not cause its light to shine.
   rationale: 'Adjusted verb tenses to better reflect the Hebrew imperfects: changed ''is darkened'' to ''will be darkened'' and ''make its light shine'' to ''cause its light to shine'' for slightly more formal, literal rendering.'
-
 - timestamp: '2026-05-15T09:53:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the stars of the heavens and their constellations will not give their light; the sun will be darkened at its rising[a], and the moon will not cause its light to shine.'
-  to: 'For the stars of the heavens and their constellations will not give their light; the sun is darkened at its rising[a], and the moon will not make its light shine.'
-  rationale: 'Restored prophetic perfect ''is darkened'' and Hiphil ''make its light shine''.'
+  from: For the stars of the heavens and their constellations will not give their light; the sun will be darkened at its rising[a], and the moon will not cause its light to shine.
+  to: For the stars of the heavens and their constellations will not give their light; the sun is darkened at its rising[a], and the moon will not make its light shine.
+  rationale: Restored prophetic perfect 'is darkened' and Hiphil 'make its light shine'.
+- timestamp: '2026-11-09T17:48:27Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the stars of the heavens and their constellations will not give their light; the sun is darkened at its rising[a], and the moon will not make its light shine.
+  to: For the stars of the heavens and their constellations[a] will give no light; the sun will be dark when it rises, and the moon will not shine.
+  rationale: The review and automated revert disagreed about English tense and causative wording, not the cosmic imagery. I retain that imagery without deciding between literal and figurative interpretation, while expressing the future scene and the moon’s shining naturally.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +127,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/isaiah/013/010.job-66176.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:48:27Z'
+  change_level: refined
+  confidence: high
+  meaning: The coming judgment is portrayed through stars, sun, and moon failing to give their light.
+  meaning_decisions:
+  - source_phrase: חָשַׁךְ הַשֶּׁמֶשׁ בְּצֵאתוֹ
+    prior_rendering: the sun is darkened at its rising
+    new_rendering: the sun will be dark when it rises
+    rationale: The perfect presents the coming darkness as certain; English future wording keeps the announced day’s time frame clear, while 'be dark' naturally expresses the Hebrew verb.
+  - source_phrase: לֹא יַגִּיהַ אוֹרוֹ
+    prior_rendering: will not make its light shine
+    new_rendering: will not shine
+    rationale: The construction means that the moon will emit no light; reproducing its causative form adds awkwardness without conveying an additional distinction in English.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The review and automated revert disagreed about English tense and causative wording, not the cosmic imagery. I retain that imagery without deciding between literal and figurative interpretation, while expressing the future scene and the moon’s shining naturally.

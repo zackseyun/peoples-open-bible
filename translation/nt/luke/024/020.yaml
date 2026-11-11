@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: ὅπως τε παρέδωκαν αὐτὸν οἱ ἀρχιερεῖς καὶ οἱ ἄρχοντες ἡμῶν εἰς κρίμα θανάτου καὶ ἐσταύρωσαν αὐτόν.
 translation:
-  text: and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to a death sentence' or 'for condemnation to death.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'had him crucified,' making explicit that the leaders were responsible for the execution though Roman authorities carried it out.
-    reason: lexical_alternative
+  text: and how our chief priests and rulers handed him over to be condemned to death and had him crucified.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅπως τε
   chosen: and how
@@ -85,14 +78,20 @@ revisions:
   from: and how our chief priests and rulers handed him over for a sentence of death and crucified him.
   to: and how our chief priests and rulers handed him over for a sentence of death and crucified him.
   rationale: Changed 'for a sentence of death' to 'to a sentence of death' for more natural English while preserving the sense of εἰς κρίμα θανάτου.
-
 - timestamp: '2026-05-18T03:01:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].'
-  to: 'and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].'
+  from: and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].
+  to: and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for a sentence of death''].'
+- timestamp: '2026-11-09T17:13:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and how our chief priests and rulers handed him over to a sentence of death and crucified him[a][b].
+  to: and how our chief priests and rulers handed him over to be condemned to death and had him crucified.
+  rationale: The recorded discussion rightly preserved the leaders’ responsibility for Jesus’ execution. I make their mediated agency explicit, as the existing footnote already allowed, and bring the judicial explanation into the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -115,3 +114,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/024/020.job-56066.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The disciples attribute Jesus’ condemnation and crucifixion to their chief priests and rulers.
+  meaning_decisions:
+  - source_phrase: εἰς κρίμα θανάτου
+    prior_rendering: to a sentence of death
+    new_rendering: to be condemned to death
+    rationale: The phrase describes the judicial purpose of handing Jesus over, which this construction expresses naturally.
+  - source_phrase: ἐσταύρωσαν αὐτόν
+    prior_rendering: crucified him
+    new_rendering: had him crucified
+    rationale: The leaders caused the execution rather than personally carrying it out; this conveys the agency understood from Luke’s preceding narrative while retaining their responsibility.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion rightly preserved the leaders’ responsibility for Jesus’ execution. I make their mediated agency explicit, as the existing footnote already allowed, and bring the judicial explanation into the text.

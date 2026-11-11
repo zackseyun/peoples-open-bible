@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כִּ/מְעַ֞ט יַעֲבֹ֧ר עַבְדְּ/ךָ֛ אֶת הַ/יַּרְדֵּ֖ן אֶת הַ/מֶּ֑לֶךְ וְ/לָ֨/מָּה֙ יִגְמְלֵ֣/נִי הַ/מֶּ֔לֶךְ הַ/גְּמוּלָ֖ה הַ/זֹּֽאת־־׃
 translation:
-  text: For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'reward me with this recompense.' The Hebrew uses a verb and cognate noun from the same root (גמל), emphasizing repayment or recompense.
-    reason: lexical_alternative
+  text: Your servant will accompany the king just across the Jordan. Why should the king give me such a reward?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּ/מְעַט
   chosen: For ... only go a little way
@@ -88,14 +84,20 @@ revisions:
   from: For your servant would only go a little way across the Jordan with the king; why should the king repay me with this reward?
   to: For your servant would only go a little way across the Jordan with the king; why should the king repay me with this reward?
   rationale: Changed 'go a little way across the Jordan' to 'cross the Jordan a little way' for closer alignment with the source and more natural English.
-
 - timestamp: '2026-05-17T05:36:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?'
-  to: 'For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?'
+  from: For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?
+  to: For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''across the Jordan''].'
+- timestamp: '2026-11-09T17:28:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For your servant would only cross the Jordan a little way with the king[a]; why should the king repay me with this reward?
+  to: Your servant will accompany the king just across the Jordan. Why should the king give me such a reward?
+  rationale: The recorded passes alternate between “go a little way across” and “cross the Jordan a little way,” both of which can suggest an incomplete crossing. The revised wording retains the limited accompaniment and recompense identified in the lexical notes while expressing them more clearly.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/019/037.job-45939.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Barzillai intends to accompany the king only a short distance across the Jordan and questions receiving such a reward.
+  meaning_decisions:
+  - source_phrase: כִּמְעַט יַעֲבֹר עַבְדְּךָ אֶת הַיַּרְדֵּן אֶת הַמֶּלֶךְ
+    prior_rendering: For your servant would only cross the Jordan a little way with the king
+    new_rendering: Your servant will accompany the king just across the Jordan
+    rationale: The phrase limits the extent of his escort, rather than describing a partial river crossing; כִּמְעַט functions adverbially and does not require a separate causal “for.”
+  - source_phrase: וְלָמָּה יִגְמְלֵנִי הַמֶּלֶךְ הַגְּמוּלָה הַזֹּאת
+    prior_rendering: why should the king repay me with this reward?
+    new_rendering: Why should the king give me such a reward?
+    rationale: The cognate verb and noun express recompense naturally in Hebrew; English “give me such a reward” conveys the same question without redundant wording.
+  footnote_kinds: {}
+  history_weighed: The recorded passes alternate between “go a little way across” and “cross the Jordan a little way,” both of which can suggest an incomplete crossing. The revised wording retains the limited accompaniment and recompense identified in the lexical notes while expressing them more clearly.

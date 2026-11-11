@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/רָאָ֣ה הַ/כֹּהֵ֗ן וְ/הִנֵּ֤ה שְׂאֵת לְבָנָה֙ בָּ/ע֔וֹר וְ/הִ֕יא הָפְכָ֖ה שֵׂעָ֣ר לָבָ֑ן וּ/מִֽחְיַ֛ת בָּשָׂ֥ר חַ֖י בַּ/שְׂאֵֽת־׃
 translation:
-  text: and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],
-  philosophy: optimal-equivalence
+  text: The priest must examine the person. If there is a white swelling on the skin that has turned the hair white and has an area of raw flesh[a] within it,
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'a raised spot' for 'swelling' (Hebrew שְׂאֵת), a technical term in this chapter for an elevated skin lesion.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'living flesh'; the phrase refers to raw, live tissue appearing within the lesion.
-    reason: lexical_alternative
+    text: Literally, 'an area of living flesh'; alternatively understood as 'an area of healthy flesh.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְרָאָה
   chosen: examines
@@ -93,14 +90,20 @@ revisions:
   from: and the priest examines him, and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw living flesh in the swelling,
   to: and the priest examines him, and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw living flesh in the swelling,
   rationale: Removed 'living' from 'raw living flesh' to avoid an awkwardly literal rendering; 'raw flesh' naturally conveys מִחְיַת בָּשָׂר חַי here while preserving the sense.
-
 - timestamp: '2026-05-18T02:57:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],'
-  to: 'and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],'
+  from: and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],
+  to: and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and there is raw living flesh''].'
+- timestamp: '2026-11-09T18:18:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and the priest examines him[a], and behold, there is a white swelling in the skin, and it has turned the hair white, and there is raw flesh in the swelling[b],
+  to: The priest must examine the person. If there is a white swelling on the skin that has turned the hair white and has an area of raw flesh[a] within it,
+  rationale: The history debates 'raw flesh' versus 'raw living flesh' without a maintainer ruling. I retain the current, more intelligible 'raw flesh,' restore the localized area expressed by the source, and acknowledge the alternative understanding in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +123,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/010.job-45097.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:55Z'
+  change_level: refined
+  confidence: medium
+  meaning: The priest must look for a white swelling that has whitened the hair and contains an area of raw flesh.
+  meaning_decisions:
+  - source_phrase: וְרָאָה הַכֹּהֵן וְהִנֵּה
+    prior_rendering: and the priest examines him, and behold
+    new_rendering: The priest must examine the person. If
+    rationale: The priest's inspection introduces the diagnostic condition whose ruling follows in verse 11; explicit conditional English preserves that connection.
+  - source_phrase: וּמִחְיַת בָּשָׂר חַי
+    prior_rendering: there is raw flesh
+    new_rendering: has an area of raw flesh
+    rationale: The phrase specifies a localized area within the swelling; the note preserves the literal wording and the serious alternative understanding of the tissue described.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history debates 'raw flesh' versus 'raw living flesh' without a maintainer ruling. I retain the current, more intelligible 'raw flesh,' restore the localized area expressed by the source, and acknowledge the alternative understanding in a note.

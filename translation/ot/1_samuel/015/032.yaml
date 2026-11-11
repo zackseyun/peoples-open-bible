@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר שְׁמוּאֵ֗ל הַגִּ֤ישׁוּ אֵלַ/י֙ אֶת אֲגַג֙ מֶ֣לֶךְ עֲמָלֵ֔ק וַ/יֵּ֣לֶךְ אֵלָ֔י/ו אֲגַ֖ג מַעֲדַנֹּ֑ת וַ/יֹּ֣אמֶר אֲגָ֔ג אָכֵ֖ן סָ֥ר מַר הַ/מָּֽוֶת־־׃ס
 translation:
-  text: Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”
-  philosophy: optimal-equivalence
+  text: Then Samuel said, “Bring Agag, king of Amalek, to me.” Agag came to him confidently[a] and said, “Surely the bitter threat of death has passed[b].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “delicately”; the Hebrew word מַעֲדַנֹּת is uncertain. Some understand it to mean Agag came in a pleasant or confident manner; others, following a different interpretation, render “in chains.”
+    text: The Hebrew word is uncertain; other renderings include 'delicately,' 'trembling,' and 'in chains.'
+    reason: alternative_reading
+  - marker: b
+    text: Literally, 'the bitterness of death has departed.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: הַגִּישׁוּ
@@ -80,14 +83,20 @@ revisions:
   from: Then Samuel said, “Bring Agag king of Amalek to me.” And Agag came to him cheerfully, and Agag said, “Surely the bitterness of death has turned aside.”
   to: Then Samuel said, “Bring Agag king of Amalek to me.” And Agag came to him cheerfully, and Agag said, “Surely the bitterness of death has turned aside.”
   rationale: Changed 'cheerfully' to 'trembling' to better reflect the likely sense of מַעֲדַנֹּת in context. Kept the rest essentially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:55:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”'
-  to: 'Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”'
+  from: Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”
+  to: Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''cheerfully''].'
+- timestamp: '2026-11-09T17:22:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Samuel said[a], “Bring Agag king of Amalek to me.” And Agag came to him trembling, and Agag said, “Surely the bitterness of death has turned aside.”
+  to: Then Samuel said, “Bring Agag, king of Amalek, to me.” Agag came to him confidently[a] and said, “Surely the bitter threat of death has passed[b].”
+  rationale: The records conflict about whether 'cheerfully' or 'trembling' was retained, and neither position has maintainer weight. I favor confidence on lexical and contextual grounds, without the excessive brightness of 'cheerfully,' and preserve the serious alternatives in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -107,3 +116,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/015/032.job-59121.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:59Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Samuel summons Agag, who approaches believing that the danger of death has passed.
+  meaning_decisions:
+  - source_phrase: מַעֲדַנֹּת
+    prior_rendering: trembling
+    new_rendering: confidently
+    rationale: The word’s association with delight and Agag’s following assertion favor an assured manner, though the word remains uncertain.
+  - source_phrase: אָכֵן סָר מַר הַמָּוֶת
+    prior_rendering: Surely the bitterness of death has turned aside
+    new_rendering: Surely the bitter threat of death has passed
+    rationale: Agag believes he has escaped death; 'threat' clarifies the reference while preserving bitterness and the statement’s tragic irony.
+  footnote_kinds:
+    a: alternative_meaning
+    b: literal_wording
+  history_weighed: The records conflict about whether 'cheerfully' or 'trembling' was retained, and neither position has maintainer weight. I favor confidence on lexical and contextual grounds, without the excessive brightness of 'cheerfully,' and preserve the serious alternatives in a note.

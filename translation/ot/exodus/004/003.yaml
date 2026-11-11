@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֨אמֶר֙ הַשְׁלִיכֵ֣/הוּ אַ֔רְצָ/ה וַ/יַּשְׁלִיכֵ֥/הוּ אַ֖רְצָ/ה וַ/יְהִ֣י לְ/נָחָ֑שׁ וַ/יָּ֥נָס מֹשֶׁ֖ה מִ/פָּנָֽי/ו׃
 translation:
-  text: And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew literally, 'from before it' (or 'from before him'), an idiom meaning 'away from it' or 'from its presence.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'serpent' for 'snake.'
-    reason: lexical_alternative
+  text: He said, “Throw it on the ground.” So Moses threw it on the ground, and it became a snake. Moses fled from it.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And he said
@@ -82,14 +75,20 @@ revisions:
   from: And he said, “Throw it on the ground.” So he threw it on the ground, and it became a snake, and Moses fled from before it.
   to: And he said, “Throw it on the ground.” So he threw it on the ground, and it became a snake, and Moses fled from before it.
   rationale: Changed 'fled from before it' to 'fled from it' for more natural English while preserving the sense of the Hebrew.
-
 - timestamp: '2026-05-18T02:55:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.'
-  to: 'And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.'
+  from: And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.
+  to: And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''from before it''].'
+- timestamp: '2026-11-09T17:34:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “Throw it on the ground.” So he threw it on the ground, and it became a snake[b], and Moses fled from it.
+  to: He said, “Throw it on the ground.” So Moses threw it on the ground, and it became a snake. Moses fled from it.
+  rationale: The earlier review recognized that “fled from it” conveys the Hebrew naturally, and that gain is retained despite the automated revert rationale. Naming Moses as the one who throws the staff and dividing the narrative into sentences clarify the action without changing it.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -109,3 +108,17 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/004/003.job-62345.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:05Z'
+  change_level: refined
+  confidence: high
+  meaning: At Yahweh’s command, Moses throws down his staff, which becomes a snake that he flees from.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized that “fled from it” conveys the Hebrew naturally, and that gain is retained despite the automated revert rationale. Naming Moses as the one who throws the staff and dividing the narrative into sentences clarify the action without changing it.

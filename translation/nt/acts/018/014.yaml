@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: μέλλοντος δὲ τοῦ Παύλου ἀνοίγειν τὸ στόμα εἶπεν ὁ Γαλλίων πρὸς τοὺς Ἰουδαίους· Εἰ ⸀μὲν ἦν ἀδίκημά τι ἢ ῥᾳδιούργημα πονηρόν, ὦ Ἰουδαῖοι, κατὰ λόγον ἂν ἀνεσχόμην ὑμῶν·
 translation:
-  text: But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “as Paul was about to speak.” The Greek literally says “to open the mouth,” an idiom for beginning to speak.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “a wicked crime” or “a malicious offense.” The Greek phrase combines a term for criminal misconduct with an adjective meaning “evil” or “wicked.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or “I would reasonably bear with you.” The expression means Gallio would have good reason to tolerate hearing their complaint if it concerned an actual civil wrong or crime.
-    reason: lexical_alternative
+  text: But as Paul was about to speak, Gallio said to the Jews, “If this were a matter of wrongdoing or a wicked crime, you Jews, I would have good reason to hear you out.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μέλλοντος ... ἀνοίγειν τὸ στόμα
   chosen: as Paul was about to open his mouth
@@ -105,14 +95,20 @@ revisions:
   from: But as Paul was about to open his mouth, Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews, I would have reason to put up with you.
   to: But as Paul was about to open his mouth, Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews, I would have reason to put up with you.
   rationale: Changed 'I would have reason to put up with you' to 'I would reasonably put up with you' to reflect κατὰ λόγον more naturally and accurately as 'reasonably'/'with good reason' rather than implying merely having a reason.
-
 - timestamp: '2026-05-18T03:01:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.'
-  to: 'But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.'
+  from: But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.
+  to: But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''have reason to''].'
+- timestamp: '2026-11-09T20:30:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But as Paul was about to open his mouth[a], Gallio said to the Jews, “If it were some wrongdoing or a serious crime, O Jews[c][b], I would reasonably put up with you.
+  to: But as Paul was about to speak, Gallio said to the Jews, “If this were a matter of wrongdoing or a wicked crime, you Jews, I would have good reason to hear you out.
+  rationale: The automated history alternates between 'have reason to' and 'reasonably,' with no maintainer ruling; both express that a genuine legal offense would warrant a hearing. The lexical discussion supports the contextual sense of hearing the complaint and identifies the moral force of 'wicked,' which the revised wording makes explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +128,37 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/018/014.job-46791.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:46Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Before Paul can speak, Gallio tells the Jewish accusers that he would have good reason to hear them out if their complaint concerned wrongdoing or a wicked crime.
+  meaning_decisions:
+  - source_phrase: μέλλοντος δὲ τοῦ Παύλου ἀνοίγειν τὸ στόμα
+    prior_rendering: But as Paul was about to open his mouth
+    new_rendering: But as Paul was about to speak
+    rationale: The idiom describes Paul's imminent attempt to speak, not a physical gesture; the new wording conveys that directly.
+  - source_phrase: Εἰ μὲν ἦν ἀδίκημά τι
+    prior_rendering: If it were some wrongdoing
+    new_rendering: If this were a matter of wrongdoing
+    rationale: The explicit reference to the matter before Gallio makes the judicial condition natural and clear in English.
+  - source_phrase: ῥᾳδιούργημα πονηρόν
+    prior_rendering: a serious crime
+    new_rendering: a wicked crime
+    rationale: The adjective characterizes the act as evil, not merely serious; the new wording preserves that moral characterization.
+  - source_phrase: ὦ Ἰουδαῖοι
+    prior_rendering: O Jews
+    new_rendering: you Jews
+    rationale: This retains Gallio's pointed direct address without the archaic English vocative particle.
+  - source_phrase: κατὰ λόγον ἂν ἀνεσχόμην ὑμῶν
+    prior_rendering: I would reasonably put up with you
+    new_rendering: I would have good reason to hear you out
+    rationale: In this judicial setting, bearing with the accusers means tolerating them long enough to hear their complaint; 'hear you out' conveys that sense while retaining Gallio's impatient tone.
+  footnote_kinds: {}
+  history_weighed: The automated history alternates between 'have reason to' and 'reasonably,' with no maintainer ruling; both express that a genuine legal offense would warrant a hearing. The lexical discussion supports the contextual sense of hearing the complaint and identifies the moral force of 'wicked,' which the revised wording makes explicit.

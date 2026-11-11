@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וְ/קָרַ֨ב אֹתָ֜/ם אֶחָ֧ד אֶל אֶחָ֛ד לְ/ךָ֖ לְ/עֵ֣ץ אֶחָ֑ד וְ/הָי֥וּ לַ/אֲחָדִ֖ים בְּ/יָדֶֽ/ךָ־׃
 translation:
-  text: Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'as one stick.' The Hebrew phrase can express either the result 'into one stick' or the state 'as one stick.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'and they shall be for ones in your hand,' an idiom meaning that they become one.
-    reason: lexical_alternative
+  text: Join them together into one stick, so that they become one in your hand.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְקָרַב
   chosen: Then bring ... near
@@ -95,14 +88,20 @@ revisions:
   from: Then bring them near to each other for yourself into one stick, so that they may become one in your hand.
   to: Then bring them near to each other for yourself into one stick, so that they may become one in your hand.
   rationale: Changed 'into one stick' to 'as one stick' for more natural and accurate rendering of לְעֵץ אֶחָד; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:54:36Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.'
-  to: 'Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.'
+  from: Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.
+  to: Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''into one stick''].'
+- timestamp: '2026-11-09T17:39:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then bring them near to each other for yourself as one stick[b][a], so that they may become one in your hand.
+  to: Join them together into one stick, so that they become one in your hand.
+  rationale: Earlier passes debated “as” and “into,” chiefly on grounds of source transparency. I retained their recognition that the sticks become one, but expressed the action directly without specifying how the joining occurs.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -122,3 +121,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/037/017.job-64239.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Ezekiel must join the two sticks into one in his hand as a visible sign of unity.
+  meaning_decisions:
+  - source_phrase: וְקָרַב אֹתָם אֶחָד אֶל אֶחָד לְךָ לְעֵץ אֶחָד
+    prior_rendering: Then bring them near to each other for yourself as one stick
+    new_rendering: Join them together into one stick
+    rationale: The commanded action aims at joining, not merely bringing the sticks into proximity; the resultative phrase explicitly makes them one stick.
+  footnote_kinds: {}
+  history_weighed: Earlier passes debated “as” and “into,” chiefly on grounds of source transparency. I retained their recognition that the sticks become one, but expressed the action directly without specifying how the joining occurs.

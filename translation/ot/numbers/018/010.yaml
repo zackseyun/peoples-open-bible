@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: בְּ/קֹ֥דֶשׁ הַ/קֳּדָשִׁ֖ים תֹּאכֲלֶ֑/נּוּ כָּל זָכָר֙ יֹאכַ֣ל אֹת֔/וֹ קֹ֖דֶשׁ יִֽהְיֶה לָּֽ/ךְ־־׃
 translation:
-  text: You shall eat it in a most holy place[a]; every male may eat it. It shall be holy to you.
-  philosophy: optimal-equivalence
+  text: You shall eat it as a most holy offering[a]; every male among you may eat it. It shall be holy to you.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Hebrew literally, 'in the holy of holies.' The phrase here denotes eating it in the designated most holy area.
-    reason: lexical_alternative
+    text: Or, “You shall eat it in a most holy place,” meaning the sanctuary courtyard.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: בְּקֹדֶשׁ הַקֳּדָשִׁים
   chosen: in a most holy place
@@ -73,13 +73,12 @@ revisions:
   from: You shall eat it in a most holy place; every male may eat it. It shall be holy to you.
   to: You shall eat it in the most holy place; every male may eat it. It shall be holy to you.
   rationale: Changed 'a most holy place' to 'the most holy place' for lexical accuracy and natural rendering of the Hebrew construction.
-
 - timestamp: '2026-05-18T03:09:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You shall eat it in the most holy place; every male may eat it[a]. It shall be holy to you.'
-  to: 'You shall eat it in a most holy place; every male may eat it. It shall be holy to you.'
+  from: You shall eat it in the most holy place; every male may eat it[a]. It shall be holy to you.
+  to: You shall eat it in a most holy place; every male may eat it. It shall be holy to you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in a most holy place''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -89,6 +88,13 @@ revisions:
   from: You shall eat it in a most holy place; every male may eat it. It shall be holy to you.
   to: You shall eat it in a most holy place[a]; every male may eat it. It shall be holy to you.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in a most holy place') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:30:48Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You shall eat it in a most holy place[a]; every male may eat it. It shall be holy to you.
+  to: You shall eat it as a most holy offering[a]; every male among you may eat it. It shall be holy to you.
+  rationale: Earlier revisions debated 'a' versus 'the' most holy place, but neither addressed the possible misunderstanding that eating occurs behind the veil. I render the phrase as a holiness classification and retain the locative interpretation as an alternative rather than treating the disputed construction as settled.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -109,3 +115,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/full_coverage_priority/ot/numbers/018/010.job-41484.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:30:48Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: These portions must be eaten with the status and restrictions of most holy offerings, and the eligible eaters are the males of Aaron’s priestly family.
+  meaning_decisions:
+  - source_phrase: בְּקֹדֶשׁ הַקֳּדָשִׁים תֹּאכֲלֶנּוּ
+    prior_rendering: You shall eat it in a most holy place
+    new_rendering: You shall eat it as a most holy offering
+    rationale: In the immediate context the phrase can describe the offering’s holiness classification and the manner of consuming it. This reading avoids suggesting that meals occur in the inner sanctuary, while the serious locative reading remains in a note.
+  - source_phrase: כָּל זָכָר
+    prior_rendering: every male
+    new_rendering: every male among you
+    rationale: The permission applies within the priestly group identified in the preceding verse, not to every male Israelite.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier revisions debated 'a' versus 'the' most holy place, but neither addressed the possible misunderstanding that eating occurs behind the veil. I render the phrase as a holiness classification and retain the locative interpretation as an alternative rather than treating the disputed construction as settled.

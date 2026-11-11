@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐπέστρεψεν τὸ πνεῦμα αὐτῆς, καὶ ἀνέστη παραχρῆμα, καὶ διέταξεν αὐτῇ δοθῆναι φαγεῖν.
 translation:
-  text: And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'that she be given something to eat.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'her breath returned.'
-    reason: alternative_reading
+  text: Her spirit returned, and she rose immediately. He directed that she be given something to eat.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέστρεψεν
   chosen: returned
@@ -92,14 +85,20 @@ revisions:
   from: And her spirit returned, and she got up immediately, and he directed that food be given to her.
   to: And her spirit returned, and she got up immediately, and he directed that food be given to her.
   rationale: Changed 'got up' to 'rose' for a slightly more formal register and closer correspondence to the Greek ἀνέστη. No other changes needed.
-
 - timestamp: '2026-05-18T03:01:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.'
-  to: 'And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.'
+  from: And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.
+  to: And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''she got up''].'
+- timestamp: '2026-11-09T17:11:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And her spirit returned[a], and she rose immediately[b], and he directed that food be given to her.
+  to: Her spirit returned, and she rose immediately. He directed that she be given something to eat.
+  rationale: I retain 'her spirit returned,' which the lexical discussion rightly prefers to reducing the event to respiration, and keep the current 'rose.' The earlier alternative 'something to eat' now carries the instruction directly in the main text, making its note unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +121,21 @@ cross_check:
   verdict_counts:
     minor-issues: 3
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/008/055.job-55497.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:22Z'
+  change_level: refined
+  confidence: high
+  meaning: The girl's spirit returns, she rises immediately, and Jesus directs that she be given something to eat.
+  meaning_decisions:
+  - source_phrase: αὐτῇ δοθῆναι φαγεῖν
+    prior_rendering: that food be given to her
+    new_rendering: that she be given something to eat
+    rationale: This naturally expresses the practical instruction and carries the explicit reference to eating in φαγεῖν.
+  footnote_kinds: {}
+  history_weighed: I retain 'her spirit returned,' which the lexical discussion rightly prefers to reducing the event to respiration, and keep the current 'rose.' The earlier alternative 'something to eat' now carries the instruction directly in the main text, making its note unnecessary.

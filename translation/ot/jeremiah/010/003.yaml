@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: כִּֽי חֻקּ֥וֹת הָֽ/עַמִּ֖ים הֶ֣בֶל ה֑וּא כִּֽי עֵץ֙ מִ/יַּ֣עַר כְּרָת֔/וֹ מַעֲשֵׂ֥ה יְדֵ֥י חָרָ֖שׁ בַּֽ/מַּעֲצָֽד־־־׃
 translation:
-  text: For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.
-  philosophy: optimal-equivalence
+  text: 'For the religious customs of the peoples are futile[a]: a tree is cut from the forest and shaped into an idol by a craftsman’s hands with an axe[b].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with an adze'; the Hebrew term refers to a wood-cutting/shaping tool, and the exact implement is uncertain.
+    text: Literally, “a breath,” an image of emptiness and futility.
     reason: lexical_alternative
+  - marker: b
+    text: Or, “an adze,” a tool for shaping wood.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: חֻקּוֹת
   chosen: customs
@@ -110,14 +113,20 @@ revisions:
   from: 'For the customs of the peoples are vanity: a tree is cut from the forest, the work of a craftsman''s hands with an axe.'
   to: 'For the customs of the peoples are vanity: a tree is cut from the forest, the work of a craftsman''s hands with an axe.'
   rationale: Replaced the colon with 'for' to reflect the repeated כִּי, and adjusted 'a craftsman's hands' to 'the hands of a craftsman' for more natural and formally precise rendering of the construct phrase.
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.'
-  to: 'For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.'
+  from: For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.
+  to: For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["the work of a craftsman''s hands"].'
+- timestamp: '2026-11-09T17:54:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For the customs of the peoples are vanity[a], for a tree is cut from the forest, the work of the hands of a craftsman with an axe.
+  to: 'For the religious customs of the peoples are futile[a]: a tree is cut from the forest and shaped into an idol by a craftsman’s hands with an axe[b].'
+  rationale: The recorded decisions correctly identify religious customs, the futility of idols, and the emphasis on human manufacture. The automated discussion of repeated “for” and construct-chain wording carries less weight than making those relationships intelligible in English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -137,3 +146,31 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/010/003.job-67331.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:54:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The peoples’ religious customs are futile because their idols are merely forest wood shaped by human craftsmanship.
+  meaning_decisions:
+  - source_phrase: חֻקּוֹת הָעַמִּים
+    prior_rendering: the customs of the peoples
+    new_rendering: the religious customs of the peoples
+    rationale: The surrounding description concerns worship practices, not every custom of other peoples.
+  - source_phrase: הֶבֶל הוּא
+    prior_rendering: are vanity
+    new_rendering: are futile
+    rationale: The contextual sense is ineffectiveness and emptiness, not self-admiration; the underlying breath-image is retained in a note.
+  - source_phrase: כִּי עֵץ מִיַּעַר כְּרָתוֹ מַעֲשֵׂה יְדֵי חָרָשׁ בַּמַּעֲצָד
+    prior_rendering: for a tree is cut from the forest, the work of the hands of a craftsman with an axe
+    new_rendering: a tree is cut from the forest and shaped into an idol by a craftsman’s hands with an axe
+    rationale: The compressed description is made into a coherent account of idol manufacture, explicitly identifying the object already understood from context while preserving the tree and hands imagery.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The recorded decisions correctly identify religious customs, the futility of idols, and the emphasis on human manufacture. The automated discussion of repeated “for” and construct-chain wording carries less weight than making those relationships intelligible in English.

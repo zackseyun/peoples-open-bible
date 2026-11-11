@@ -9,12 +9,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he ceased fighting against them on the earth[a], and their kings were crushed in those days.
-  philosophy: optimal-equivalence
+  text: No one remained in the land to wage war against them, and the kings of their enemies[a] were crushed in those days.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'stopped making war against them in the land.' The Greek participial construction can be rendered more explicitly with 'making war.'
-    reason: lexical_alternative
+    text: Or, 'the kings who had ruled over them.'
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἐξέλιπεν
   chosen: ceased
@@ -92,14 +92,20 @@ revisions:
   from: And he ceased fighting against them in the land, and their kings were crushed in those days.
   to: And he ceased fighting against them in the land, and their kings were crushed in those days.
   rationale: Changed 'in the land' to 'on the earth' for closer lexical correspondence to ἐπὶ τῆς γῆς; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he ceased fighting against them on the earth[a], and their kings were crushed in those days.'
-  to: 'And he ceased fighting against them on the earth[a], and their kings were crushed in those days.'
+  from: And he ceased fighting against them on the earth[a], and their kings were crushed in those days.
+  to: And he ceased fighting against them on the earth[a], and their kings were crushed in those days.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in the land''].'
+- timestamp: '2026-11-09T18:53:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he ceased fighting against them on the earth[a], and their kings were crushed in those days.
+  to: No one remained in the land to wage war against them, and the kings of their enemies[a] were crushed in those days.
+  rationale: The recorded territorial rationale supports 'in the land,' but the earlier treatment of the participle as Simon's continued action conflicts with the paragraph's meaning. I therefore correct the subject construction while retaining the strong image 'were crushed' and acknowledging the ambiguity in the kings' relationship to Israel.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -119,3 +125,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/014/013.job-48790.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: No adversary remained in the land to wage war against Israel, and hostile kings were crushed during that period.
+  meaning_decisions:
+  - source_phrase: ἐξέλιπεν πολεμῶν αὐτοὺς
+    prior_rendering: he ceased fighting against them
+    new_rendering: No one remained ... to wage war against them
+    rationale: The participle is best understood substantivally as an adversary making war, whose presence has ceased; the surrounding celebration of Israel's security does not say that Simon stopped fighting against his own people.
+  - source_phrase: ἐπὶ τῆς γῆς
+    prior_rendering: on the earth
+    new_rendering: in the land
+    rationale: The setting is Israel's territory, as in the neighboring verses, rather than the entire earth.
+  - source_phrase: οἱ βασιλεῖς αὐτῶν
+    prior_rendering: their kings
+    new_rendering: the kings of their enemies
+    rationale: The kings belong to the hostile powers in this historical context; making that reference explicit avoids suggesting that Israel's own leaders were crushed, while a note preserves the alternative reference to foreign overlords.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded territorial rationale supports 'in the land,' but the earlier treatment of the participle as Simon's continued action conflicts with the paragraph's meaning. I therefore correct the subject construction while retaining the strong image 'were crushed' and acknowledging the ambiguity in the kings' relationship to Israel.

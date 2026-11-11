@@ -19,14 +19,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.
-  philosophy: optimal-equivalence
+  text: Our name will be forgotten in time, and no one will remember our works; our life will pass away like the trace of a cloud and disperse like mist, driven off by the sun’s rays and overcome by its heat[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the trace of a cloud' for ἴχνη νεφέλης; the image is of a fleeting mark that quickly vanishes.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'pass away' for παρελεύσεται, though 'pass by' better preserves the movement imagery of the Greek simile.
+    text: Literally, “weighed down by its heat.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐπιλησθήσεται
@@ -149,14 +146,20 @@ revisions:
   from: and our name will be forgotten in time, and no one will remember our works; and our life will pass by like the tracks of a cloud, and will be scattered like mist, driven off by the sun’s rays and weighed down by its heat.
   to: and our name will be forgotten in time, and no one will remember our works; and our life will pass by like the tracks of a cloud, and will be scattered like mist, driven off by the sun’s rays and weighed down by its heat.
   rationale: Changed 'tracks of a cloud' to 'the trace of a cloud' for more natural English and closer singular correspondence to ἴχνη in this simile; otherwise retained the draft.
-
 - timestamp: '2026-05-18T02:59:14Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.'
-  to: 'and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.'
+  from: and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.
+  to: and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the tracks of a cloud''].'
+- timestamp: '2026-11-09T19:11:02Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: and our name will be forgotten in time[a], and no one will remember our works; and our life will pass by like the trace of a cloud, and will be scattered like mist[b], driven off by the sun’s rays and weighed down by its heat.
+  to: Our name will be forgotten in time, and no one will remember our works; our life will pass away like the trace of a cloud and disperse like mist, driven off by the sun’s rays and overcome by its heat[a].
+  rationale: The history's move from 'tracks' to 'trace' makes the fleeting cloud image more natural, so I retain that gain. The lexical notes favor physical weight imagery, but the context supports 'overcome' as its force here rather than a description of increasing weight.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -176,3 +179,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/002/004.job-39595.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:02Z'
+  change_level: refined
+  confidence: high
+  meaning: They expect their names, works, and lives to disappear completely, like cloud traces and mist dispersed by the sun.
+  meaning_decisions:
+  - source_phrase: παρελεύσεται ὁ βίος ἡμῶν
+    prior_rendering: our life will pass by
+    new_rendering: our life will pass away
+    rationale: The cloud and mist comparisons concern disappearance, not merely movement past an observer.
+  - source_phrase: ὑπὸ θερμότητος αὐτοῦ βαρυνθεῖσα
+    prior_rendering: weighed down by its heat
+    new_rendering: overcome by its heat
+    rationale: This preserves the mist's personified defeat under the sun without suggesting that heat literally makes mist heavier; the weight image is retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history's move from 'tracks' to 'trace' makes the fleeting cloud image more natural, so I retain that gain. The lexical notes favor physical weight imagery, but the context supports 'overcome' as its force here rather than a description of increasing weight.

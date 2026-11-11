@@ -29,12 +29,15 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: 'And those who had come from the captivity offered sacrifices to the Lord[a], the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
-  philosophy: optimal-equivalence
+  text: 'Those who had returned from captivity offered sacrifices to the Lord, the God of Israel: ninety-six rams[a], seventy-six lambs, and twelve male goats as a peace offering[b]. All were offered as a sacrifice to the Lord.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'for well-being,' 'for salvation,' or 'for deliverance.' The Greek says literally 'for salvation/deliverance,' but here it appears in a sacrificial context.
+    text: The Greek reads “to the God of Israel, the Lord, ninety-six,” without naming an animal; “rams” is supplied.
     reason: lexical_alternative
+  - marker: b
+    text: Or, “for deliverance” or “for well-being.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: οἱ δὲ παραγενόμενοι ἐκ τῆς αἰχμαλωσίας
   chosen: those who had come from the captivity
@@ -138,7 +141,6 @@ revisions:
   from: 'And those who had come from the captivity offered sacrifices to the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
   to: 'And those who had come from the captivity offered sacrifices to the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
   rationale: 'Adjusted the word order to reflect the Greek more closely: ''to the Lord, the God of Israel'' rather than ''to the God of Israel.'' The rest of the draft is accurate and natural.'
-
 - timestamp: '2026-05-18T02:58:45Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -146,6 +148,13 @@ revisions:
   from: 'And those who had come from the captivity offered sacrifices to the Lord[a], the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
   to: 'And those who had come from the captivity offered sacrifices to the Lord[a], the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the God of Israel''].'
+- timestamp: '2026-11-09T18:51:21Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And those who had come from the captivity offered sacrifices to the Lord[a], the God of Israel: ninety-six rams, seventy-six lambs, and twelve male goats for a peace offering; all of them as a sacrifice to the Lord.'
+  to: 'Those who had returned from captivity offered sacrifices to the Lord, the God of Israel: ninety-six rams[a], seventy-six lambs, and twelve male goats as a peace offering[b]. All were offered as a sacrifice to the Lord.'
+  rationale: The active wording preserves both divine designations and the sacrificial interpretation of σωτήριον, despite an earlier automated revert. I retain these gains, move the offering note to its proper phrase, and explicitly acknowledge that “rams” is supplied where the given Greek lacks an animal noun.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -165,3 +174,31 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/008/063.job-47867.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:21Z'
+  change_level: refined
+  confidence: medium
+  meaning: The returnees from captivity offered the listed animals as sacrifices to the Lord, the God of Israel.
+  meaning_decisions:
+  - source_phrase: οἱ δὲ παραγενόμενοι ἐκ τῆς αἰχμαλωσίας
+    prior_rendering: And those who had come from the captivity
+    new_rendering: Those who had returned from captivity
+    rationale: The narrative concerns arrival back in Jerusalem after captivity, which “returned” conveys directly.
+  - source_phrase: Κυρίῳ ἐνενήκοντα ἕξ
+    prior_rendering: the Lord … ninety-six rams
+    new_rendering: the Lord … ninety-six rams[a]
+    rationale: The supplied Greek contains no animal noun with this number. The current contextual supplement is retained, but its status is now made explicit rather than presented as an unqualified source reading.
+  - source_phrase: ἅπαντα θυσίαν τῷ κυρίῳ
+    prior_rendering: all of them as a sacrifice to the Lord
+    new_rendering: All were offered as a sacrifice to the Lord
+    rationale: The complete sentence supplies the understood act of offering and preserves the collective summary of the sacrifices.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The active wording preserves both divine designations and the sacrificial interpretation of σωτήριον, despite an earlier automated revert. I retain these gains, move the offering note to its proper phrase, and explicitly acknowledge that “rams” is supplied where the given Greek lacks an animal noun.

@@ -28,17 +28,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 31:24
 translation:
-  text: Pain and sleepless wandering[a], and retching and choking[c][b], and a turned face with a foolish man.
-  philosophy: optimal-equivalence
+  text: Pain and sleeplessness, retching and choking, and a contorted face[a] are the lot of a foolish man.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Hebrew text of this line is difficult, especially the middle symptoms and the phrase 'a turned face.' The Greek parallel for this verse is entirely different, indicating a major textual divergence in the tradition.
-    reason: textual_variant
-  - marker: b
-    text: Or 'restless sleep,' 'wakeful tossing.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'an averted face' or 'a distorted expression.'
+    text: Literally, “a turned face”; the expression is uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: מכאוב
@@ -118,14 +112,20 @@ revisions:
   from: Pain and sleepless wandering, and retching and choking, and a turned face with a foolish man.
   to: Pain and wakeful wandering, and vomiting and choking, and a distorted face with a foolish man.
   rationale: Revised 'sleepless wandering' to 'wakeful wandering' for a more direct rendering of the Hebrew, changed 'retching' to 'vomiting' for clearer lexical accuracy, and adjusted 'a turned face' to 'a distorted face' to better reflect the sense of פני הפוכות in natural formal English.
-
 - timestamp: '2026-05-15T13:10:17Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Pain and wakeful wandering[a], and vomiting and choking[c][b], and a distorted face with a foolish man.'
-  to: 'Pain and sleepless wandering[a], and retching and choking[c][b], and a turned face with a foolish man.'
-  rationale: 'Restored 3 chosen renderings preserving נדד-image, lexical conservatism, and literal הפוכות.'
+  from: Pain and wakeful wandering[a], and vomiting and choking[c][b], and a distorted face with a foolish man.
+  to: Pain and sleepless wandering[a], and retching and choking[c][b], and a turned face with a foolish man.
+  rationale: Restored 3 chosen renderings preserving נדד-image, lexical conservatism, and literal הפוכות.
+- timestamp: '2026-11-09T19:07:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Pain and sleepless wandering[a], and retching and choking[c][b], and a turned face with a foolish man.
+  to: Pain and sleeplessness, retching and choking, and a contorted face[a] are the lot of a foolish man.
+  rationale: The earlier review correctly recognized that the face needs an intelligible description, while the automated revert chiefly defended literal form. I retain the more cautious “retching” but express the sleep disturbance and the fool's experience clearly.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -145,3 +145,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/031/024.job-51842.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The foolish eater suffers pain, sleeplessness, gastric distress, and a visibly distorted expression.
+  meaning_decisions:
+  - source_phrase: ונדד ישנה
+    prior_rendering: and sleepless wandering
+    new_rendering: and sleeplessness
+    rationale: The phrase describes sleep fleeing or being disturbed, not a sleepless person wandering about.
+  - source_phrase: ופני הפוכות
+    prior_rendering: and a turned face
+    new_rendering: and a contorted face
+    rationale: The image concerns an altered countenance amid bodily distress; “turned face” does not communicate that meaning clearly.
+  - source_phrase: עם איש כסיל
+    prior_rendering: with a foolish man
+    new_rendering: are the lot of a foolish man
+    rationale: The symptoms belong to the foolish man; the phrase does not describe another person's suffering while in his company.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review correctly recognized that the face needs an intelligible description, while the automated revert chiefly defended literal form. I retain the more cautious “retching” but express the sleep disturbance and the fool's experience clearly.

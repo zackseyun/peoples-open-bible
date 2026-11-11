@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὁ δὲ Πιλᾶτος ἐθαύμασεν εἰ ἤδη τέθνηκεν, καὶ προσκαλεσάμενος τὸν κεντυρίωνα ἐπηρώτησεν αὐτὸν εἰ ⸀πάλαι ἀπέθανεν·
 translation:
-  text: But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “whether he had been dead for some time.”
-    reason: lexical_alternative
+  text: Pilate was surprised to hear that Jesus was already dead, so he summoned the centurion and asked him whether Jesus had been dead for some time.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐθαύμασεν
   chosen: was amazed
@@ -75,14 +71,20 @@ revisions:
   from: But Pilate was amazed that he had already died, and summoning the centurion, he asked him whether he had died some time ago.
   to: But Pilate was amazed that he had already died, and summoning the centurion, he asked him whether he had died some time ago.
   rationale: Replaced 'some time ago' with 'already' to reflect πάλαι more naturally in this context and avoid implying a longer interval than the Greek requires.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.'
-  to: 'But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.'
+  from: But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.
+  to: But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''whether he had died some time ago''].'
+- timestamp: '2026-11-09T17:19:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Pilate was amazed that he had already died[a], and summoning the centurion, he asked him whether he had died already.
+  to: Pilate was surprised to hear that Jesus was already dead, so he summoned the centurion and asked him whether Jesus had been dead for some time.
+  rationale: The automated revision preferred “already” to avoid implying a long interval, but the first draft and lexical deliberation preserve the distinct question about elapsed time. “For some time” keeps that distinction while addressing the revision's concern.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -104,3 +106,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/mark/015/044.job-27674.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:19:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Surprised by the report of Jesus's early death, Pilate summoned the centurion to ask whether Jesus had been dead for some time.
+  meaning_decisions:
+  - source_phrase: ἐθαύμασεν εἰ ἤδη τέθνηκεν
+    prior_rendering: was amazed that he had already died
+    new_rendering: was surprised to hear that Jesus was already dead
+    rationale: This expresses Pilate's surprise at the reported speed of death while allowing for the verification that follows; the Greek perfect describes Jesus's resulting state.
+  - source_phrase: εἰ πάλαι ἀπέθανεν
+    prior_rendering: whether he had died already
+    new_rendering: whether Jesus had been dead for some time
+    rationale: This preserves the duration expressed by πάλαι instead of repeating the earlier “already,” without suggesting that the death occurred in the distant past.
+  footnote_kinds: {}
+  history_weighed: The automated revision preferred “already” to avoid implying a long interval, but the first draft and lexical deliberation preserve the distinct question about elapsed time. “For some time” keeps that distinction while addressing the revision's concern.

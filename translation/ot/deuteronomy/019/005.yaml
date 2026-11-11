@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/אֲשֶׁר֩ יָבֹ֨א אֶת רֵעֵ֥/הוּ בַ/יַּעַר֮ לַ/חְטֹ֣ב עֵצִים֒ וְ/נִדְּחָ֨ה יָד֤/וֹ בַ/גַּרְזֶן֙ לִ/כְרֹ֣ת הָ/עֵ֔ץ וְ/נָשַׁ֤ל הַ/בַּרְזֶל֙ מִן הָ/עֵ֔ץ וּ/מָצָ֥א אֶת רֵעֵ֖/הוּ וָ/מֵ֑ת ה֗וּא יָנ֛וּס אֶל אַחַ֥ת הֶ/עָרִים הָ/אֵ֖לֶּה וָ/חָֽי־־־־־׃
 translation:
-  text: But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'the iron slips off from the wood.' Here 'the iron' refers to the axe-head, and 'the wood' refers to the wooden handle.
-    reason: lexical_alternative
+  text: For example, if a man goes with his neighbor into the forest to cut wood and, as he swings the axe to cut down a tree, the iron head slips from the handle and strikes his neighbor so that he dies, that man may flee to one of these cities and live.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַאֲשֶׁר
   chosen: But if
@@ -128,14 +124,20 @@ revisions:
   from: But if a man goes with his neighbor into the forest to cut wood, and his hand swings the axe to cut down the tree, and the iron head slips off the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
   to: But if a man goes with his neighbor into the forest to cut wood, and his hand swings the axe to cut down the tree, and the iron head slips off the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
   rationale: Changed 'slips off the handle' to 'slips from the handle' for slightly more formal, natural wording while preserving the sense. No other changes needed.
-
 - timestamp: '2026-05-18T02:56:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.'
-  to: 'But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.'
+  from: But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
+  to: But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the iron head slips off''].'
+- timestamp: '2026-11-09T17:31:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But if a man goes with his neighbor into the forest to cut wood[a], and his hand swings the axe to cut down the tree, and the iron head slips from the handle and strikes his neighbor so that he dies, he may flee to one of these cities and live.
+  to: For example, if a man goes with his neighbor into the forest to cut wood and, as he swings the axe to cut down a tree, the iron head slips from the handle and strikes his neighbor so that he dies, that man may flee to one of these cities and live.
+  rationale: The recorded revisions concern only 'slips off' versus 'slips from,' and I retain the current wording. The earlier clarification of iron as the axe head and wood as the handle remains in the text, making its literal-wording note unnecessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -155,3 +157,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/019/005.job-61681.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:29Z'
+  change_level: refined
+  confidence: high
+  meaning: An accidental death caused by an axe head coming loose during woodcutting is an example of killing for which refuge preserves the killer’s life.
+  meaning_decisions:
+  - source_phrase: וַאֲשֶׁר
+    prior_rendering: But if
+    new_rendering: For example, if
+    rationale: This case illustrates the preceding rule about unintended killing rather than contrasting with it.
+  - source_phrase: וְנִדְּחָה יָדוֹ בַגַּרְזֶן
+    prior_rendering: his hand swings the axe
+    new_rendering: as he swings the axe
+    rationale: Natural English identifies the man as the one swinging the axe and makes the accident’s timing clear without retaining the bodily metonymy.
+  footnote_kinds: {}
+  history_weighed: The recorded revisions concern only 'slips off' versus 'slips from,' and I retain the current wording. The earlier clarification of iron as the axe head and wood as the handle remains in the text, making its literal-wording note unnecessary.

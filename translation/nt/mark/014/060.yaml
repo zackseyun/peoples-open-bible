@@ -4,18 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἀναστὰς ὁ ἀρχιερεὺς εἰς μέσον ἐπηρώτησεν τὸν Ἰησοῦν λέγων· Οὐκ ἀποκρίνῃ οὐδέν; τί οὗτοί σου καταμαρτυροῦσιν;
 translation:
-  text: And the high priest stood up in the middle and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “into the midst.” The phrase indicates that the high priest took a central position before the assembly.
-    reason: lexical_alternative
-  - marker: b
-    text: Or “Do you make no answer?”
-    reason: lexical_alternative
-  - marker: c
-    text: Literally “these men”; Greek has a masculine plural demonstrative referring to the witnesses present.
-    reason: lexical_alternative
+  text: 'Then the high priest stood up in the middle of the assembly and questioned Jesus: “Do you have no answer? What is this testimony these men are bringing against you?”'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀναστὰς
   chosen: stood up
@@ -102,14 +92,20 @@ revisions:
   from: And the high priest stood up in the middle and questioned Jesus, saying, “Do you answer nothing? What is it that these men are testifying against you?”
   to: And the high priest stood up in the midst and questioned Jesus, saying, “Do you answer nothing? What are these men testifying against you?”
   rationale: Changed 'in the middle' to 'in the midst' for a more formal and natural rendering of εἰς μέσον, and simplified 'What is it that these men are testifying against you?' to 'What are these men testifying against you?' for closer alignment with the Greek and smoother English.
-
 - timestamp: '2026-05-15T16:54:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the high priest stood up in the midst and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”'
-  to: 'And the high priest stood up in the middle and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”'
-  rationale: 'Restored anti-archaic ''in the middle''; kept azure''s removal of cleft ''What is it that'' (closer to Greek τί).'
+  from: And the high priest stood up in the midst and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”
+  to: And the high priest stood up in the middle and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”
+  rationale: Restored anti-archaic 'in the middle'; kept azure's removal of cleft 'What is it that' (closer to Greek τί).
+- timestamp: '2026-11-09T17:14:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the high priest stood up in the middle and questioned Jesus[a], saying[c][b], “Do you answer nothing? What are these men testifying against you?”
+  to: 'Then the high priest stood up in the middle of the assembly and questioned Jesus: “Do you have no answer? What is this testimony these men are bringing against you?”'
+  rationale: The earlier review sought a shorter second question, but the retained wording remained awkward in English. I preserve its focus on the testimony and use the lexical record’s explanation of the high priest’s central position.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -131,3 +127,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/mark/014/060.job-27667.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:14:47Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The high priest takes a central position before the assembly and challenges Jesus to respond to the witnesses’ accusations.
+  meaning_decisions:
+  - source_phrase: ἀναστὰς ὁ ἀρχιερεὺς εἰς μέσον
+    prior_rendering: the high priest stood up in the middle
+    new_rendering: the high priest stood up in the middle of the assembly
+    rationale: The assembly is the understood spatial reference; supplying it prevents “in the middle” from sounding incomplete.
+  - source_phrase: Οὐκ ἀποκρίνῃ οὐδέν; τί οὗτοί σου καταμαρτυροῦσιν;
+    prior_rendering: Do you answer nothing? What are these men testifying against you?
+    new_rendering: Do you have no answer? What is this testimony these men are bringing against you?
+    rationale: These are pressing challenges about Jesus’ silence and the testimony against him, expressed here as complete, idiomatic English questions.
+  footnote_kinds: {}
+  history_weighed: The earlier review sought a shorter second question, but the retained wording remained awkward in English. I preserve its focus on the testimony and use the lexical record’s explanation of the high priest’s central position.

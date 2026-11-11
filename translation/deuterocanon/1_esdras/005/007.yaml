@@ -30,15 +30,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: These are the ones from Judea who came up from the captivity of the exile[a], whom Nebuchadnezzar king of Babylon had carried away to Babylon[b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The Hebrew parallel in Ezra 2:1 reads 'the sons of the province' rather than 'the ones from Judea.' This draft follows the Greek text of 1 Esdras as the primary source.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'whom Nebuchadnezzar king of Babylon had deported to Babylon.'
-    reason: lexical_alternative
+  text: These are the people from Judea who returned from captivity in exile, whom Nebuchadnezzar king of Babylon had deported to Babylon.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: εἰσὶν δὲ οὗτοι
   chosen: These are
@@ -47,7 +40,7 @@ lexical_decisions:
   - These are
   - Now these are
   lexicon: BDAG
-  rationale: "δὲ is lightly connective; 'Now' preserves the discourse transition in readable English without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'δὲ is lightly connective; ''Now'' preserves the discourse transition in readable English without overstating contrast. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: οἱ ἐκ τῆς Ἰουδαίας
   chosen: the ones from Judea
   alternatives:
@@ -118,7 +111,6 @@ revision_pass:
   timestamp: '2026-04-23T15:28:51Z'
   unchanged: true
   changes_summary: No changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +138,36 @@ revisions:
   from: Now these are the ones from Judea who came up from the captivity of the exile[a], whom Nebuchadnezzar king of Babylon had carried away to Babylon[b],
   to: These are the ones from Judea who came up from the captivity of the exile[a], whom Nebuchadnezzar king of Babylon had carried away to Babylon[b],
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T18:50:22Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: These are the ones from Judea who came up from the captivity of the exile[a], whom Nebuchadnezzar king of Babylon had carried away to Babylon[b],
+  to: These are the people from Judea who returned from captivity in exile, whom Nebuchadnezzar king of Babylon had deported to Babylon.
+  rationale: The earlier decisions correctly followed the Greek's explicit 'Judea' rather than replacing it with the Hebrew parallel's 'province.' I retain that distinction and the cleaned-up opening while removing the source-shaped genitive chain and redundant alternative notes.
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:22Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The register concerns people from Judea returning from the Babylonian captivity imposed by Nebuchadnezzar.
+  meaning_decisions:
+  - source_phrase: οἱ ἐκ τῆς Ἰουδαίας
+    prior_rendering: the ones from Judea
+    new_rendering: the people from Judea
+    rationale: The substantival construction identifies a returning community; 'people' expresses that directly.
+  - source_phrase: οἱ ἀναβάντες ἐκ τῆς αἰχμαλωσίας τῆς παροικίας
+    prior_rendering: who came up from the captivity of the exile
+    new_rendering: who returned from captivity in exile
+    rationale: The ascent idiom concerns their return, and the genitive chain describes captivity lived away from their homeland rather than one abstraction possessing another.
+  - source_phrase: οὓς μετῴκισεν
+    prior_rendering: whom ... had carried away
+    new_rendering: whom ... had deported
+    rationale: The verb denotes forced removal and resettlement, which 'deported' makes explicit.
+  footnote_kinds: {}
+  history_weighed: The earlier decisions correctly followed the Greek's explicit 'Judea' rather than replacing it with the Hebrew parallel's 'province.' I retain that distinction and the cleaned-up opening while removing the source-shaped genitive chain and redundant alternative notes.

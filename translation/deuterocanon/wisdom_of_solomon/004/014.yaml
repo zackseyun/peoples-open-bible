@@ -20,12 +20,12 @@ source:
   validation: minor_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people[a]s, seeing and not understanding, nor taking such a thing to heart,
-  philosophy: optimal-equivalence
+  text: 'For his soul was pleasing to the Lord, so the Lord quickly took him away from the midst of wickedness[a]. But the people saw this and did not understand or take this truth to heart:'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'he hurried him out of the midst of evil.' The Greek verb emphasizes haste, and 'wickedness/evil' are both possible renderings of πονηρία here.
-    reason: lexical_alternative
+    text: Or, “so he hastened away from the midst of wickedness,” with the righteous man as the subject.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀρεστή
   chosen: pleasing
@@ -124,13 +124,12 @@ revisions:
   from: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the peoples, seeing and not understanding, nor taking such a thing to heart,
   to: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people, seeing and not understanding, nor taking such a thing to heart,
   rationale: Changed 'the peoples' to 'the people' for more natural English and better fit for λαοὶ in this context; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people[a], seeing and not understanding, nor taking such a thing to heart,'
-  to: 'For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the peoples, seeing and not understanding, nor taking such a thing to heart,'
+  from: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people[a], seeing and not understanding, nor taking such a thing to heart,
+  to: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the peoples, seeing and not understanding, nor taking such a thing to heart,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the peoples''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -140,6 +139,13 @@ revisions:
   from: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the peoples, seeing and not understanding, nor taking such a thing to heart,
   to: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people[a]s, seeing and not understanding, nor taking such a thing to heart,
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:10:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For his soul was pleasing to the Lord; therefore he hastened him out of the midst of wickedness. But the people[a]s, seeing and not understanding, nor taking such a thing to heart,
+  to: 'For his soul was pleasing to the Lord, so the Lord quickly took him away from the midst of wickedness[a]. But the people saw this and did not understand or take this truth to heart:'
+  rationale: The earlier interpretation of the Lord as the agent fits the surrounding account of divine removal, though the Greek permits another subject. The recorded revision to collective 'people' improves contextual clarity; the later automated revert offers no meaning-based reason to reject it.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -159,3 +165,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/004/014.job-39540.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:54Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Because the righteous man's soul pleased the Lord, the Lord quickly removed him from wickedness, but the observers failed to understand the truth behind this.
+  meaning_decisions:
+  - source_phrase: διὰ τοῦτο ἔσπευσεν ἐκ μέσου πονηρίας
+    prior_rendering: therefore he hastened him out of the midst of wickedness
+    new_rendering: so the Lord quickly took him away from the midst of wickedness
+    rationale: Makes the understood divine subject explicit and expresses swift removal naturally; the serious alternative subject is noted.
+  - source_phrase: οἱ δὲ λαοὶ ἰδόντες καὶ μὴ νοήσαντες
+    prior_rendering: But the peoples, seeing and not understanding
+    new_rendering: But the people saw this and did not understand
+    rationale: The context concerns human observers, not a contrast between nations; a collective English noun and finite verbs convey that meaning clearly.
+  - source_phrase: μηδὲ θέντες ἐπὶ διανοίᾳ τὸ τοιοῦτο
+    prior_rendering: nor taking such a thing to heart
+    new_rendering: 'or take this truth to heart:'
+    rationale: Preserves the idiom of inward consideration and prepares for the truth stated in the following verse.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier interpretation of the Lord as the agent fits the surrounding account of divine removal, though the Greek permits another subject. The recorded revision to collective 'people' improves contextual clarity; the later automated revert offers no meaning-based reason to reject it.

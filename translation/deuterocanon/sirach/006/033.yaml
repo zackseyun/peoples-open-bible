@@ -28,15 +28,12 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 6:33
 translation:
-  text: If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.
-  philosophy: optimal-equivalence
+  text: If you love to listen, you will receive instruction; if you incline your ear, you will become wise[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The surviving Hebrew for this verse is difficult and appears shorter than the Greek. The Greek parallel reads, 'If you love to listen, you will receive instruction, and if you incline your ear, you will be wise.' The translation follows the Hebrew as primary while using the Greek to clarify the sense and preserve the fuller parallelism.
+    text: The surviving Hebrew is shorter and difficult; the full two-part saying follows the Greek.
     reason: textual_variant
-  - marker: b
-    text: Or 'receive instruction' for 'learn discipline.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: אִם תּוֹבֵא לִשְׁמֹעַ
   chosen: If you are willing to listen
@@ -102,14 +99,20 @@ revisions:
   from: If you are willing to listen, you will learn discipline; if you incline your ear, you will become wise.
   to: If you are willing to listen, you will learn discipline; if you incline your ear, you will become wise.
   rationale: Changed 'learn discipline' to 'receive instruction' to more directly reflect תִּוָּסֵר ('you will be instructed/disciplined') in natural formal English. Kept the second clause unchanged.
-
 - timestamp: '2026-05-18T02:57:57Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.'
-  to: 'If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.'
+  from: If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.
+  to: If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you will learn discipline''].'
+- timestamp: '2026-11-09T19:05:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you are willing to listen[a], you will receive instruction; if you incline your ear[b], you will become wise.
+  to: If you love to listen, you will receive instruction; if you incline your ear, you will become wise[a].
+  rationale: I retain the current 'receive instruction,' which accurately conveys receptive learning despite the history's competing 'learn discipline.' The difficult Hebrew and fuller Greek support preserving the parallel structure while giving the Greek's stronger sense of loving to listen.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -129,3 +132,22 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/006/033.job-51137.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:05:19Z'
+  change_level: refined
+  confidence: medium
+  meaning: A love of listening and attentive receptiveness lead to instruction and wisdom.
+  meaning_decisions:
+  - source_phrase: ἐὰν ἀγαπήσῃς ἀκούειν
+    prior_rendering: If you are willing to listen
+    new_rendering: If you love to listen
+    rationale: The Greek clarification expresses positive delight in listening, not merely willingness to tolerate it.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: I retain the current 'receive instruction,' which accurately conveys receptive learning despite the history's competing 'learn discipline.' The difficult Hebrew and fuller Greek support preserving the parallel structure while giving the Greek's stronger sense of loving to listen.

@@ -16,17 +16,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: Because of godliness Isaac endured[a]. And each one, while looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our lives—and let us use our bodies to keep watch over the law.”
-  philosophy: optimal-equivalence
+  text: Isaac endured it for the sake of godliness.” Cheerful and very courageous, they all looked at one another, and each said, “Let us dedicate ourselves with all our heart to God, who gave us our lives, and use our bodies to uphold the law[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'Because of piety Isaac endured.' The Greek εὐσέβεια can be rendered 'godliness' or 'piety.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'to the one who gave [us] the souls/lives.' Greek ψυχή can mean either 'soul' or 'life'; here the sense is likely 'life.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'let us use our bodies for guarding the law.' The Greek keeps the imagery of watchful guarding rather than using a simpler term like 'obey.'
+    text: Literally, “use our bodies for guarding the law.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: διὰ τὴν εὐσέβειαν
@@ -141,14 +135,20 @@ revisions:
   from: Because of godliness Isaac endured. And each one, while looking at the others, all together cheerful and very courageous, said, “Let us dedicate ourselves to God with our whole heart—to the one who gave us our lives—and let us use our bodies to keep watch over the law.”
   to: Because of godliness Isaac endured. And each one, looking at the others, all together cheerful and very courageous, said, “Let us dedicate ourselves to God with our whole heart—to the one who gave us our souls—and let us employ our bodies in guarding the law.”
   rationale: 'Adjusted phrasing for naturalness and lexical accuracy: removed ''while'' for smoother syntax; changed ''our lives'' to ''our souls'' to reflect ψυχάς more closely; and revised ''use our bodies to keep watch over the law'' to ''employ our bodies in guarding the law'' to better represent χρήσωμεν ... φυλακῇ.'
-
 - timestamp: '2026-05-15T15:39:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Because of godliness Isaac endured[a]. And each one, looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our souls—and let us employ our bodies in guarding the law.”'
-  to: 'Because of godliness Isaac endured[a]. And each one, while looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our lives—and let us use our bodies to keep watch over the law.”'
-  rationale: 'Restored 4 chosen renderings; azure changed ''lives'' to ''souls'' against documented theological_decision.'
+  from: Because of godliness Isaac endured[a]. And each one, looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our souls—and let us employ our bodies in guarding the law.”
+  to: Because of godliness Isaac endured[a]. And each one, while looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our lives—and let us use our bodies to keep watch over the law.”
+  rationale: Restored 4 chosen renderings; azure changed 'lives' to 'souls' against documented theological_decision.
+- timestamp: '2026-11-09T18:58:59Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Because of godliness Isaac endured[a]. And each one, while looking at the others, all together cheerful and very courageous, said[c][b], “Let us dedicate ourselves to God with our whole heart—to the one who gave us our lives—and let us use our bodies to keep watch over the law.”
+  to: Isaac endured it for the sake of godliness.” Cheerful and very courageous, they all looked at one another, and each said, “Let us dedicate ourselves with all our heart to God, who gave us our lives, and use our bodies to uphold the law[a].
+  rationale: The documented choice of “lives” rightly avoids making the phrase a narrower claim about souls, and I retain it. The earlier insistence on guarding identifies a real image, but “keep watch over the law” obscures its meaning, so the main text clarifies it and the footnote preserves the image.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -168,3 +168,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/013/013.job-50058.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:59Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Isaac’s godly endurance supplies an ancestral example, and the cheerful, courageous brothers dedicate themselves and their bodies to the God who gave them life.
+  meaning_decisions:
+  - source_phrase: διὰ τὴν εὐσέβειαν ὑπέμεινεν ὁ Ἰσαάκ
+    prior_rendering: Because of godliness Isaac endured
+    new_rendering: Isaac endured it for the sake of godliness
+    rationale: This completes the recollection of sacrifice begun in verse 12; “it” links Isaac’s endurance to that ordeal without repeating content assigned to the preceding verse.
+  - source_phrase: εἷς δὲ ἕκαστος … ὁμοῦ πάντες ἐφορῶντες φαιδροὶ καὶ μάλα θαρραλέοι … ἔλεγον
+    prior_rendering: And each one, while looking at the others, all together cheerful and very courageous, said
+    new_rendering: Cheerful and very courageous, they all looked at one another, and each said
+    rationale: The reordered clauses clearly preserve both their collective mutual regard and each brother’s participation in the exhortation.
+  - source_phrase: χρήσωμεν τῇ περὶ τὸν νόμον φυλακῇ τὰ σώματα
+    prior_rendering: let us use our bodies to keep watch over the law
+    new_rendering: use our bodies to uphold the law
+    rationale: Their bodies serve faithful observance and defense of the law, not surveillance of it; the guarding image is preserved in a literal-wording note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The documented choice of “lives” rightly avoids making the phrase a narrower claim about souls, and I retain it. The earlier insistence on guarding identifies a real image, but “keep watch over the law” obscures its meaning, so the main text clarifies it and the footnote preserves the image.

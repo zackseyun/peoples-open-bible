@@ -4,18 +4,8 @@ source:
   edition: WLC
   text: כִּֽי יִהְיֶ֨ה לָ/הֶ֤ם דָּבָר֙ בָּ֣א אֵלַ֔/י וְ/שָׁ֣פַטְתִּ֔י בֵּ֥ין אִ֖ישׁ וּ/בֵ֣ין רֵעֵ֑/הוּ וְ/הוֹדַעְתִּ֛י אֶת חֻקֵּ֥י הָ/אֱלֹהִ֖ים וְ/אֶת תּוֹרֹתָֽי/ו־־־׃
 translation:
-  text: When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'they have a case' for 'they have a matter.'
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'between a man and his neighbor,' a representative singular expression.
-    reason: cultural_note
-  - marker: c
-    text: Or 'his instructions' for 'his laws.' The Hebrew term can denote instruction more broadly, though here it is used in a legal setting.
-    reason: lexical_alternative
+  text: When they have a dispute, the case comes to me. I judge between a man and his neighbor and make God's statutes and laws known to them.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: When
@@ -110,14 +100,20 @@ revisions:
   from: When they have a matter, they come to me, and I judge between a man and his neighbor, and I make known the statutes of God and his laws.
   to: When they have a matter, they come to me, and I judge between a man and his neighbor, and I make known the statutes of God and his laws.
   rationale: Changed 'they come to me' to 'it comes to me' to reflect the singular 'matter' as the subject in the source more accurately.
-
 - timestamp: '2026-05-18T02:55:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.'
-  to: 'When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.'
+  from: When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.
+  to: When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they come to me''].'
+- timestamp: '2026-11-09T17:35:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When they have a matter[a], it comes to me, and I judge between a man and his neighbor[c][b], and I make known the statutes of God and his laws.
+  to: When they have a dispute, the case comes to me. I judge between a man and his neighbor and make God's statutes and laws known to them.”
+  rationale: The automated history alternated between the parties coming and the matter coming; the rendering retains the current case-as-subject understanding. The documented legal sense supports 'dispute' and 'case,' while the representative wording and the distinction between statutes and laws are retained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -139,3 +135,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/ot/exodus/018/016.job-28434.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:35:07Z'
+  change_level: refined
+  confidence: high
+  meaning: Moses hears the people's disputes, judges between them, and makes God's statutes and laws known to them.
+  meaning_decisions:
+  - source_phrase: כִּי יִהְיֶה לָהֶם דָּבָר בָּא אֵלַי
+    prior_rendering: When they have a matter, it comes to me
+    new_rendering: When they have a dispute, the case comes to me
+    rationale: Identifies the judicial meaning of 'matter' and makes the subject of 'comes' clear.
+  - source_phrase: וְהוֹדַעְתִּי אֶת חֻקֵּי הָאֱלֹהִים וְאֶת תּוֹרֹתָיו
+    prior_rendering: I make known the statutes of God and his laws
+    new_rendering: make God's statutes and laws known to them
+    rationale: Makes the understood recipients explicit and expresses the possessive construction naturally.
+  footnote_kinds: {}
+  history_weighed: The automated history alternated between the parties coming and the matter coming; the rendering retains the current case-as-subject understanding. The documented legal sense supports 'dispute' and 'case,' while the representative wording and the distinction between statutes and laws are retained.

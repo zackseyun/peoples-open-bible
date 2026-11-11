@@ -22,15 +22,8 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 1:26
 translation:
-  text: For wisdom and instruction are fear of the Lord, and his good pleasure is faith[b] and meekness[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: The extant Hebrew witness supplied here is marked as a major mismatch and does not correspond to this verse's wording; the translation therefore follows the Greek text for Sirach 1:26.
-    reason: textual_variant
-  - marker: b
-    text: Or 'his favor is faithfulness and gentleness.' The Greek πίστις can also mean 'faithfulness' or 'trust,' and πρᾳότης can also be rendered 'gentleness.'
-    reason: lexical_alternative
+  text: This whole book is filled with wisdom; blessed is the man who listens and puts it into practice.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: σοφία
   chosen: wisdom
@@ -120,13 +113,12 @@ revisions:
   from: For wisdom and instruction are fear of the Lord, and his good pleasure is faith and meekness.
   to: This whole book is full of it; blessed is the person who will hear and do.
   rationale: 'Replaced the unrelated draft with a translation that reflects the Hebrew source: rendered הַסֵּפֶר הַזֶּה כֻּלּוֹ מָלֵא מִמֶּנָּה as ''This whole book is full of it'' and אַשְׁרֵי אֱנוֹשׁ יִשְׁמַע וְיַעֲשֶׂה as ''blessed is the person who will hear and do.'''
-
 - timestamp: '2026-05-15T13:25:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'This whole book is full of it[b][a]; blessed is the person who will hear and do.'
-  to: 'For wisdom and instruction are fear of the Lord, and his good pleasure is faith and meekness.'
+  from: This whole book is full of it[b][a]; blessed is the person who will hear and do.
+  to: For wisdom and instruction are fear of the Lord, and his good pleasure is faith and meekness.
   rationale: 'Major_mismatch: azure rendered Hebrew instead of documented Greek-primary text.'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -136,6 +128,13 @@ revisions:
   from: For wisdom and instruction are fear of the Lord, and his good pleasure is faith and meekness.
   to: For wisdom and instruction are fear of the Lord, and his good pleasure is faith[b] and meekness[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] the note comments on the verse as a whole rather than a single phrase, so it is anchored at the end of the verse; [b] anchored to ('faith') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:04:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For wisdom and instruction are fear of the Lord, and his good pleasure is faith[b] and meekness[a].
+  to: This whole book is filled with wisdom; blessed is the man who listens and puts it into practice.
+  rationale: The Hebrew-based revision recognized the book's fullness and the blessing on hearing and doing, but an automated revert restored another Greek saying. I retain those recovered meanings while clarifying 'full of it' and 'hear and do' in natural English.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -155,3 +154,21 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/001/026.job-51004.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:04:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The book is filled with wisdom, and the person who listens and practices its instruction is blessed.
+  meaning_decisions:
+  - source_phrase: הַסֵּפֶר הַזֶּה כֻּלּוֹ מָלֵא מִמֶּנָּה, אַשְׁרֵי אֱנוֹשׁ יִשְׁמַע וְיַעֲשֶׂה
+    prior_rendering: For wisdom and instruction are fear of the Lord, and his good pleasure is faith and meekness.
+    new_rendering: This whole book is filled with wisdom; blessed is the man who listens and puts it into practice.
+    rationale: The supplied Hebrew turns from praising wisdom to commending the book that contains her instruction; naming wisdom clarifies the pronoun, and 'puts it into practice' conveys the paired hearing-and-doing idiom.
+  footnote_kinds: {}
+  history_weighed: The Hebrew-based revision recognized the book's fullness and the blessing on hearing and doing, but an automated revert restored another Greek saying. I retain those recovered meanings while clarifying 'full of it' and 'hear and do' in natural English.

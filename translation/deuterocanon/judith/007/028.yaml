@@ -19,15 +19,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.
-  philosophy: optimal-equivalence
+  text: We call heaven and earth and our God, the Lord of our fathers, to witness against you—he who punishes us according to our sins and the sins of our fathers—so that he may not bring upon us this very day what we have described[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'we testify to you'; the Greek likely has the sense of formally invoking heaven, earth, and God as witnesses against them.
-    reason: lexical_alternative
-  - marker: b
-    text: The clause 'he who avenges us according to our sins' expresses divine retribution or repayment in view of sin; it could also be rendered 'he who punishes us for our sins.'
-    reason: lexical_alternative
+    text: The closing clause is difficult; it is also understood as an urgent demand that the leaders carry out the people’s proposal to surrender today.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: μαρτυρόμεθα
   lemma: μαρτυρέω
@@ -133,14 +130,20 @@ revisions:
   from: We call heaven and earth and our God and the Lord of our fathers to witness against you, he who avenges us according to our sins and according to the sins of our fathers, so that he may not act according to these words today.
   to: We call heaven and earth and our God and the Lord of our fathers to witness against you, he who avenges us according to our sins and according to the sins of our fathers, so that he may not act according to these words today.
   rationale: Removed the second article-driven 'the' before 'Lord' for a more natural appositional rendering ('our God and Lord of our fathers'), and changed 'he who avenges' to 'who avenges' for smoother English while preserving the Greek relative clause. Kept 'against you' and 'that he may not act according to these words today' as faithful to the source.
-
 - timestamp: '2026-05-16T17:52:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.'
-  to: 'We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.'
-  rationale: 'Restored drafter ''our God and the Lord of our fathers'' (preserving the chosen repeated article) and ''so that he may not act'' (preserving the chosen purpose-clause) per chosen renderings.'
+  from: We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.
+  to: We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.
+  rationale: Restored drafter 'our God and the Lord of our fathers' (preserving the chosen repeated article) and 'so that he may not act' (preserving the chosen purpose-clause) per chosen renderings.
+- timestamp: '2026-11-09T19:01:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: We call heaven and earth and our God and Lord of our fathers to witness against you[a], who avenges us according to our sins and according to the sins of our fathers[b], that he may not act according to these words today.
+  to: We call heaven and earth and our God, the Lord of our fathers, to witness against you—he who punishes us according to our sins and the sins of our fathers—so that he may not bring upon us this very day what we have described[a].”
+  rationale: Earlier revisions smoothed the syntax without correcting the misleading English “avenges us,” although the recorded rationale itself identifies punishment. I preserve the difficult negative clause with God as its subject rather than silently replacing it with a command to the leaders, and acknowledge the alternative understanding in a footnote.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -160,3 +163,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/007/028.job-50639.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:47Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The people solemnly invoke heaven, earth, and God against their leaders, acknowledge punishment for their own and their fathers’ sins, and appeal to be spared the calamity they have described.
+  meaning_decisions:
+  - source_phrase: τὸν θεὸν ἡμῶν καὶ κύριον τῶν πατέρων ἡμῶν
+    prior_rendering: our God and Lord of our fathers
+    new_rendering: our God, the Lord of our fathers
+    rationale: The coordinated titles identify the same God; English apposition makes that relationship clear.
+  - source_phrase: ὃς ἐκδικεῖ ἡμᾶς κατὰ τὰς ἁμαρτίας ἡμῶν
+    prior_rendering: who avenges us according to our sins
+    new_rendering: he who punishes us according to our sins
+    rationale: “Avenges us” normally means vindicating us against others in English, whereas the reference to their sins establishes punitive judgment upon them.
+  - source_phrase: ἵνα μὴ ποιήσῃ κατὰ τὰ ῥήματα ταῦτα ἐν τῇ ἡμέρᾳ τῇ σήμερον
+    prior_rendering: that he may not act according to these words today
+    new_rendering: so that he may not bring upon us this very day what we have described
+    rationale: The supplied Greek has a negative clause with a singular subject, most naturally God; the rendering makes its apparent reference to the threatened calamity intelligible while noting the serious alternative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Earlier revisions smoothed the syntax without correcting the misleading English “avenges us,” although the recorded rationale itself identifies punishment. I preserve the difficult negative clause with God as its subject rather than silently replacing it with a command to the leaders, and acknowledge the alternative understanding in a footnote.

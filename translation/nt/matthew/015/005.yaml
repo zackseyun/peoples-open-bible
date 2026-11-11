@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ὑμεῖς δὲ λέγετε· Ὃς ἂν εἴπῃ τῷ πατρὶ ἢ τῇ μητρί· Δῶρον ὃ ἐὰν ἐξ ἐμοῦ ὠφεληθῇς,
 translation:
-  text: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift to God,”’
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “an offering.” The sense is that what might have been used to support one's parents is declared dedicated to God; compare Mark 7:11, which uses the term “Corban.”
-    reason: lexical_alternative
+  text: But you say, ‘If anyone tells his father or mother, “Whatever I could use to help you is a gift dedicated to God,”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὑμεῖς δὲ λέγετε
   chosen: But you say
@@ -77,13 +73,12 @@ revisions:
   from: But you say, ‘Whoever says to his father or his mother, “Whatever from me would have benefited you is a gift,”’
   to: But you say, ‘Whoever says to his father or his mother, “Whatever from me would have benefited you is a gift,”’
   rationale: Improved English word order by changing “Whatever from me would have benefited you” to “Whatever you would have benefited from me,” while preserving the sense of the Greek. No content omitted.
-
 - timestamp: '2026-05-18T02:59:52Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift,”’'
-  to: 'But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift,”’'
+  from: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift,”’
+  to: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift,”’
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''Whatever from me would have benefited you''].'
 - timestamp: '2026-08-27T21:08:39Z'
   adjudicator: source-audit
@@ -94,6 +89,13 @@ revisions:
   from: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift,”’
   to: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift to God,”’
   rationale: While 'a gift' is the literal translation of Δῶρον, in modern English saying 'Whatever would have benefited you is a gift' to one's parents strongly implies giving the item to them. This conveys the exact opposite of the Greek meaning (that the support is withheld from the parents because it is dedicated to God). The cultic context must be explicit in the text (e.g., 'a gift to God' or 'an offering') to avoid completely misleading the reader, regardless of the footnote.
+- timestamp: '2026-11-09T17:15:42Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But you say[a], ‘Whoever says to his father or his mother, “Whatever you would have benefited from me is a gift to God,”’
+  to: But you say, ‘If anyone tells his father or mother, “Whatever I could use to help you is a gift dedicated to God,”
+  rationale: The latest source-audit correction rightly made the divine destination of the gift explicit, reversing a potentially misleading reading. I preserve that gain, improve the support clause, and let the quoted ruling continue into verse 6 rather than closing it prematurely.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -116,3 +118,25 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/015/005.job-57062.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:42Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus contrasts God's command with their ruling about declaring resources that could help a parent dedicated to God.
+  meaning_decisions:
+  - source_phrase: Ὃς ἂν εἴπῃ
+    prior_rendering: Whoever says
+    new_rendering: If anyone tells
+    rationale: This is a general conditional ruling whose consequence follows in verse 6; the conditional form makes that connection clear.
+  - source_phrase: Δῶρον ὃ ἐὰν ἐξ ἐμοῦ ὠφεληθῇς
+    prior_rendering: Whatever you would have benefited from me is a gift to God
+    new_rendering: Whatever I could use to help you is a gift dedicated to God
+    rationale: The declaration concerns resources otherwise available for parental support; explicit dedication prevents readers from mistaking it for a gift offered to the parent.
+  footnote_kinds: {}
+  history_weighed: The latest source-audit correction rightly made the divine destination of the gift explicit, reversing a potentially misleading reading. I preserve that gain, improve the support clause, and let the quoted ruling continue into verse 6 rather than closing it prematurely.

@@ -4,14 +4,11 @@ source:
   edition: WLC
   text: וְ֠/עַתָּה כֹּֽה תֹאמַ֞ר לְ/עַבְדִּ֣/י לְ/דָוִ֗ד כֹּ֤ה אָמַר֙ יְהוָ֣ה צְבָא֔וֹת אֲנִ֤י לְקַחְתִּ֨י/ךָ֙ מִן הַ/נָּוֶ֔ה מֵ/אַחַ֖ר הַ/צֹּ֑אן לִֽ/הְי֣וֹת נָגִ֔יד עַל עַמִּ֖/י עַל יִשְׂרָאֵֽל־־־־׃
 translation:
-  text: 'Now therefore[a], this is what you shall say to my servant David: This is what Yahweh of hosts says: I took you from the pasture, from following the flock[b], to be ruler over my people, over Israel.'
-  philosophy: optimal-equivalence
+  text: 'Now tell my servant David: This is what Yahweh of hosts[a] says: I took you from the pasture, from tending the flock, to be ruler over my people Israel.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'from the sheepfold.' The Hebrew noun can refer to a pastureland or a place where flocks dwell.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'leader' or 'prince' for 'ruler.' The Hebrew term denotes one appointed to govern, not necessarily using the specific title 'king.'
+    text: “Hosts” means armies.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וְעַתָּה
@@ -137,14 +134,20 @@ revisions:
   from: 'Now therefore, this is what you shall say to my servant, to David: This is what the LORD of hosts says: I took you from the pasture, from following the flock, to be ruler over my people, over Israel.'
   to: 'Now therefore, this is what you shall say to my servant David: This is what the LORD of hosts says: I took you from the pasture, from following the flock, to be ruler over my people Israel.'
   rationale: Removed repeated prepositions before proper names for more natural English ('to my servant David'); streamlined the final phrase to 'my people Israel' while preserving the Hebrew sense. No substantive lexical change.
-
 - timestamp: '2026-05-15T20:39:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
   from: 'Now therefore[a], this is what you shall say to my servant David: This is what Yahweh of hosts says: I took you from the pasture, from following the flock[b], to be ruler over my people Israel.'
   to: 'Now therefore[a], this is what you shall say to my servant David: This is what Yahweh of hosts says: I took you from the pasture, from following the flock[b], to be ruler over my people, over Israel.'
-  rationale: 'Drafter preserved the repeated עַל in עַל עַמִּי עַל יִשְׂרָאֵל (''over my people, over Israel'') for the rhetorical emphasis and cadence characteristic of Hebrew narrative. Azure flattened to ''my people Israel'' citing only ''natural English'' — pure stylistic smoothing of a documented structural-fidelity choice.'
+  rationale: Drafter preserved the repeated עַל in עַל עַמִּי עַל יִשְׂרָאֵל ('over my people, over Israel') for the rhetorical emphasis and cadence characteristic of Hebrew narrative. Azure flattened to 'my people Israel' citing only 'natural English' — pure stylistic smoothing of a documented structural-fidelity choice.
+- timestamp: '2026-11-09T17:29:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Now therefore[a], this is what you shall say to my servant David: This is what Yahweh of hosts says: I took you from the pasture, from following the flock[b], to be ruler over my people, over Israel.'
+  to: 'Now tell my servant David: This is what Yahweh of hosts[a] says: I took you from the pasture, from tending the flock, to be ruler over my people Israel.'
+  rationale: I retain the revised “my servant David” and the established title “Yahweh of hosts.” Although an automated revert restored the repeated “over” for structural fidelity, its appositional meaning is clearer without the repetition; the shepherding idiom likewise needs its understood activity made explicit.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -166,3 +169,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_samuel/007/008.job-60971.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Yahweh tells Nathan to remind David that God himself took him from shepherding sheep to rule Israel.
+  meaning_decisions:
+  - source_phrase: מֵאַחַר הַצֹּאן
+    prior_rendering: from following the flock
+    new_rendering: from tending the flock
+    rationale: The phrase describes David’s work as a shepherd. “Following the flock” can suggest that the sheep led him rather than that he cared for them.
+  - source_phrase: עַל עַמִּי עַל יִשְׂרָאֵל
+    prior_rendering: over my people, over Israel
+    new_rendering: over my people Israel
+    rationale: The repeated preposition identifies Israel as Yahweh’s people; it does not describe two separate jurisdictions. The English apposition carries that identification directly.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: I retain the revised “my servant David” and the established title “Yahweh of hosts.” Although an automated revert restored the repeated “over” for structural fidelity, its appositional meaning is clearer without the repetition; the shepherding idiom likewise needs its understood activity made explicit.

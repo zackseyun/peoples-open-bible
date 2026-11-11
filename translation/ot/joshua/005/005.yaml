@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: כִּֽי מֻלִ֣ים הָי֔וּ כָּל הָ/עָ֖ם הַ/יֹּֽצְאִ֑ים וְ/כָל הָ֠/עָם הַ/יִּלֹּדִ֨ים בַּ/מִּדְבָּ֥ר בַּ/דֶּ֛רֶךְ בְּ/צֵאתָ֥/ם מִ/מִּצְרַ֖יִם לֹא מָֽלוּ־־־־׃
 translation:
-  text: For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more formally, 'all the people born in the wilderness along the way as they came out from Egypt had not been circumcised.'
-    reason: lexical_alternative
+  text: For all the male Israelites who had come out of Egypt had been circumcised, but none of those born in the wilderness during the journey from Egypt had been circumcised.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: כִּי
   chosen: For
@@ -101,14 +97,20 @@ revisions:
   from: For all the people who came out had been circumcised, but all the people born in the wilderness on the way, after they came out from Egypt, had not been circumcised.
   to: For all the people who came out had been circumcised, but all the people born in the wilderness on the way, after they came out from Egypt, had not been circumcised.
   rationale: Removed the comma after 'way' and changed 'after they came out from Egypt' to 'as they came out from Egypt' for a more natural rendering of the Hebrew while preserving the sense.
-
 - timestamp: '2026-05-17T07:51:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.'
-  to: 'For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.'
+  from: For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.
+  to: For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after they came out from Egypt''].'
+- timestamp: '2026-11-09T18:07:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For all the people who came out had been circumcised[a], but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised.
+  to: For all the male Israelites who had come out of Egypt had been circumcised, but none of those born in the wilderness during the journey from Egypt had been circumcised.
+  rationale: The first draft and lexical rationale locate these births after the departure from Egypt, whereas the current “as they came out” can suggest a much narrower time. I preserve the historical distinction between the two generations and remove the earlier redundant footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +130,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/joshua/005/005.job-68568.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:39Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The males who left Egypt had been circumcised, but those born during the wilderness journey had not.
+  meaning_decisions:
+  - source_phrase: כָּל הָעָם הַיֹּצְאִים
+    prior_rendering: all the people who came out
+    new_rendering: all the male Israelites who had come out of Egypt
+    rationale: The preceding verse and the subject of circumcision establish that the males are in view; naming that understood referent prevents a misleading claim about every Israelite.
+  - source_phrase: וְכָל הָעָם הַיִּלֹּדִים בַּמִּדְבָּר בַּדֶּרֶךְ בְּצֵאתָם מִמִּצְרַיִם לֹא מָלוּ
+    prior_rendering: but all the people born in the wilderness on the way as they came out from Egypt had not been circumcised
+    new_rendering: but none of those born in the wilderness during the journey from Egypt had been circumcised
+    rationale: “None” expresses the comprehensive negative naturally, and the journey wording makes clear that these births occurred during the wilderness period, not only while Israel was leaving Egypt.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale locate these births after the departure from Egypt, whereas the current “as they came out” can suggest a much narrower time. I preserve the historical distinction between the two generations and remove the earlier redundant footnote.

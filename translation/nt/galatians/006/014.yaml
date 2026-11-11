@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: ἐμοὶ δὲ μὴ γένοιτο καυχᾶσθαι εἰ μὴ ἐν τῷ σταυρῷ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, δι’ οὗ ἐμοὶ κόσμος ἐσταύρωται ⸀κἀγὼ κόσμῳ.
 translation:
-  text: But far be it from me to boast except in the cross of our Lord Jesus Christ[a], through which the world has been crucified to me[b], and I to the world.
-  philosophy: optimal-equivalence
+  text: But far be it from me to boast except in the cross of our Lord Jesus Christ, through which[a] the world has been crucified to me, and I to the world.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'through whom,' if the relative pronoun is taken to refer to the Lord Jesus the Messiah rather than to 'the cross.'
+    text: Or “through whom,” referring to Jesus Christ rather than to the cross.
     reason: alternative_reading
-  - marker: b
-    text: The Greek title Christos means ‘Messiah’; here it appears in the conventional English personal-name form.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: μὴ γένοιτο
   chosen: far be it from me
@@ -123,10 +120,16 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "But far be it from me to boast except in the cross of our Lord Jesus Messiah, through which the world has been crucified to me, and I to the world."
-  to: "But far be it from me to boast except in the cross of our Lord Jesus the Messiah, through which the world has been crucified to me, and I to the world."
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
-
+  from: But far be it from me to boast except in the cross of our Lord Jesus Messiah, through which the world has been crucified to me, and I to the world.
+  to: But far be it from me to boast except in the cross of our Lord Jesus the Messiah, through which the world has been crucified to me, and I to the world.
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:08:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But far be it from me to boast except in the cross of our Lord Jesus Christ[a], through which the world has been crucified to me[b], and I to the world.
+  to: But far be it from me to boast except in the cross of our Lord Jesus Christ, through which[a] the world has been crucified to me, and I to the world.
+  rationale: The automated history alternated between “Christ” and “the Messiah”; the standing ruling for name constructions supports the current “Jesus Christ.” I retain the forceful repudiation and reciprocal crucifixion image, with the alternative antecedent explained at the phrase it concerns.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -148,3 +151,18 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/galatians/006/014.job-54339.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:08:10Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul boasts only in Jesus Christ’s cross, through which he and the world are dead to one another.
+  meaning_decisions: []
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated history alternated between “Christ” and “the Messiah”; the standing ruling for name constructions supports the current “Jesus Christ.” I retain the forceful repudiation and reciprocal crucifixion image, with the alternative antecedent explained at the phrase it concerns.

@@ -13,18 +13,12 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.
-  philosophy: optimal-equivalence
+  text: He was fifty-eight years old when he lost his sight, and he regained it eight years later. He continued to do acts of mercy[a] and to fear God.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'he lost the sights' and later 'looked up/saw again,' an idiom for losing and recovering sight.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'he gave alms'; the Greek term can refer specifically to almsgiving or more broadly to deeds of mercy.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek says only 'continued to fear'; 'God' is implied by the pious context and supplied for clear English.
-    reason: lexical_alternative
+    text: Or, "to give alms."
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἦν ἐτῶν πεντήκοντα ὀκτὼ
   chosen: he was fifty-eight years old
@@ -109,14 +103,20 @@ revisions:
   from: And he was fifty-eight years old when he lost his sight, and after eight years he regained it; and he kept doing acts of mercy, and he continued to fear God.
   to: And he was fifty-eight years old when he lost his sight, and after eight years he regained it; and he kept doing acts of mercy, and he continued to fear God.
   rationale: Changed 'kept doing acts of mercy' to 'did acts of mercy' for a more direct rendering of ἐποίει while preserving natural formal English. The rest is accurate and complete.
-
 - timestamp: '2026-05-18T02:59:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.'
-  to: 'And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.'
+  from: And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.
+  to: And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he kept doing acts of mercy''].'
+- timestamp: '2026-11-09T19:11:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he was fifty-eight years old when he lost his sight[a], and after eight years he regained it; and he did acts of mercy[c][b], and he continued to fear God.
+  to: He was fifty-eight years old when he lost his sight, and he regained it eight years later. He continued to do acts of mercy[a] and to fear God.
+  rationale: The first draft and lexical deliberation preserve the continuing character of his merciful conduct, which the current wording underexpresses. I retain the well-supported supply of God as the object of his fear and remove notes explaining ordinary sight idioms.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +136,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/014/002.job-52605.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Tobit lost his sight at fifty-eight, recovered it eight years later, and continued his merciful conduct and fear of God.
+  meaning_decisions:
+  - source_phrase: ἐποίει ἐλεημοσύνας
+    prior_rendering: he did acts of mercy
+    new_rendering: He continued to do acts of mercy
+    rationale: The imperfect describes his continuing practice, not an isolated action.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical deliberation preserve the continuing character of his merciful conduct, which the current wording underexpresses. I retain the well-supported supply of God as the object of his fear and remove notes explaining ordinary sight idioms.

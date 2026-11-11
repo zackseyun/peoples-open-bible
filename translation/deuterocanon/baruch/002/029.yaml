@@ -8,14 +8,11 @@ source:
   confidence: high
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; kept canonical Baruch 1:1-5:9 only, with Letter of Jeremiah handled separately as LJE.
 translation:
-  text: If you do not listen to my voice[b][a], surely this great and vast multitude will be reduced to a few among the nations where I will scatter them there.
-  philosophy: optimal-equivalence
+  text: “If you do not heed my voice, surely this great and vast multitude[a] will be reduced to a few among the nations where I will scatter them.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek ἡ βόμβησις literally can denote a buzzing, roar, or tumult. Here it is rendered 'multitude' because the following phrase 'to a few among the nations' points to the people as a large population being diminished.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek ends with a redundant locative expression, literally 'where I will scatter them there.' This translation preserves the emphasis with 'there,' though English would normally omit it.
+    text: Literally, “roar” or “tumult,” here referring to a large throng of people.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Ἐὰν μὴ ἀκούσητε
@@ -112,14 +109,20 @@ revisions:
   from: If you do not listen to my voice, surely this great and vast multitude will be reduced to a few among the nations where I will scatter them there.
   to: If you do not listen to my voice, surely this great and numerous multitude will be reduced to a few among the nations where I will scatter them.
   rationale: Replaced 'vast' with 'numerous' for a more natural rendering of ἡ πολλή, and removed the redundant final 'there' since the location is already expressed by 'where I will scatter them.'
-
 - timestamp: '2026-05-16T20:07:35Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'If you do not listen to my voice[b][a], surely this great and numerous multitude will be reduced to a few among the nations where I will scatter them.'
-  to: 'If you do not listen to my voice[b][a], surely this great and vast multitude will be reduced to a few among the nations where I will scatter them there.'
-  rationale: 'Restored drafter ''this great and vast multitude'' (preserving the chosen ''vast'' rendering of πολλή) and ''where I will scatter them there'' (preserving the chosen redundant ''there'' reflecting Hebrew idiom) per chosen renderings.'
+  from: If you do not listen to my voice[b][a], surely this great and numerous multitude will be reduced to a few among the nations where I will scatter them.
+  to: If you do not listen to my voice[b][a], surely this great and vast multitude will be reduced to a few among the nations where I will scatter them there.
+  rationale: Restored drafter 'this great and vast multitude' (preserving the chosen 'vast' rendering of πολλή) and 'where I will scatter them there' (preserving the chosen redundant 'there' reflecting Hebrew idiom) per chosen renderings.
+- timestamp: '2026-11-09T19:00:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If you do not listen to my voice[b][a], surely this great and vast multitude will be reduced to a few among the nations where I will scatter them there.
+  to: “If you do not heed my voice, surely this great and vast multitude[a] will be reduced to a few among the nations where I will scatter them.
+  rationale: I retain the contextual interpretation of the unusual noun as a multitude and the emphatic description of its size. The earlier review correctly removed the redundant “there”; the automated revert defended source form rather than an additional meaning.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -139,3 +142,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/baruch/002/029.job-50364.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:32Z'
+  change_level: refined
+  confidence: high
+  meaning: God warned that refusal to obey him would reduce Israel's vast population to a few scattered among foreign nations.
+  meaning_decisions:
+  - source_phrase: μὴ ἀκούσητε τῆς φωνῆς μου
+    prior_rendering: do not listen to my voice
+    new_rendering: do not heed my voice
+    rationale: The warning concerns obedience to God's instruction, while the voice image remains intact.
+  - source_phrase: οὗ διασπερῶ αὐτοὺς ἐκεῖ
+    prior_rendering: where I will scatter them there
+    new_rendering: where I will scatter them
+    rationale: The doubled location is a source-language construction, not an additional location or meaningful emphasis requiring repetition in English.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retain the contextual interpretation of the unusual noun as a multitude and the emphatic description of its size. The earlier review correctly removed the redundant “there”; the automated revert defended source form rather than an additional meaning.

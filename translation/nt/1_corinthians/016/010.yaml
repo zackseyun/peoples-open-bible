@@ -4,15 +4,8 @@ source:
   edition: SBLGNT
   text: Ἐὰν δὲ ἔλθῃ Τιμόθεος, βλέπετε ἵνα ἀφόβως γένηται πρὸς ὑμᾶς, τὸ γὰρ ἔργον κυρίου ἐργάζεται ὡς ⸀κἀγώ·
 translation:
-  text: If Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'see that he may be among you without fear.' The Greek expression can emphasize Timothy’s being present among them in a state free from fear.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'for he works the work of the Lord, as I also do.'
-    reason: lexical_alternative
+  text: If Timothy comes, see to it that he has nothing to fear while he is with you, for he is doing the Lord’s work, just as I am.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: Ἐὰν δὲ
   chosen: If
@@ -21,7 +14,7 @@ lexical_decisions:
   - If then
   - Now if
   lexicon: BDAG
-  rationale: "Renders the conditional particle ἐάν with δέ as a natural transition in English. 'Now if' preserves both the conditional sense and the mild discourse shift without sounding overly adversative. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'Renders the conditional particle ἐάν with δέ as a natural transition in English. ''Now if'' preserves both the conditional sense and the mild discourse shift without sounding overly adversative. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: ἔλθῃ Τιμόθεος
   chosen: Timothy comes
   alternatives:
@@ -107,13 +100,12 @@ revisions:
   from: Now if Timothy comes, see that he is with you without fear, for he is doing the Lord’s work, as I also am.
   to: Now if Timothy comes, see that he is with you without fear, for he is doing the Lord’s work, as I also am.
   rationale: Changed 'he is with you' to 'he may be with you' to better reflect the Greek construction with ἵνα and γένηται, while preserving the formal tone and meaning.
-
 - timestamp: '2026-05-18T03:01:58Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now if Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.'
-  to: 'Now if Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.'
+  from: Now if Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
+  to: Now if Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he is with you without fear''].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -122,6 +114,13 @@ revisions:
   from: Now if Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
   to: If Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T17:05:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: If Timothy comes[a], see that he may be with you without fear, for he is doing the Lord’s work[b], as I also am.
+  to: If Timothy comes, see to it that he has nothing to fear while he is with you, for he is doing the Lord’s work, just as I am.
+  rationale: The recorded discussion of 'is' versus 'may be' focused on reproducing the Greek construction, but its contextual force is an instruction about Timothy's reception. I retain the later discourse-marker cleanup and the unexpanded designation 'the Lord.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -141,3 +140,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/1_corinthians/016/010.job-53016.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:14Z'
+  change_level: refined
+  confidence: high
+  meaning: The Corinthians must ensure that Timothy can be among them without fear because he is engaged in the Lord's work just as Paul is.
+  meaning_decisions:
+  - source_phrase: βλέπετε ἵνα ἀφόβως γένηται πρὸς ὑμᾶς
+    prior_rendering: see that he may be with you without fear
+    new_rendering: see to it that he has nothing to fear while he is with you
+    rationale: The construction charges the Corinthians with ensuring Timothy's freedom from fear; it does not merely express the possibility of his being present without fear.
+  footnote_kinds: {}
+  history_weighed: The recorded discussion of 'is' versus 'may be' focused on reproducing the Greek construction, but its contextual force is an instruction about Timothy's reception. I retain the later discourse-marker cleanup and the unexpanded designation 'the Lord.'

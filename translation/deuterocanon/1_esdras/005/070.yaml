@@ -30,15 +30,8 @@ source:
     note: MT parallel is APPROXIMATE -- 1 Esdras sometimes expands, conflates, or reorders the Hebrew. Use the MT hebrew as a sanity check on proper names and phrasing; the Greek remains the primary source text.
     reference: ''
 translation:
-  text: And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'throughout the lifetime of King Cyrus.' The Greek phrase is literally 'all the time of the life of King Cyrus.'
-    reason: lexical_alternative
-  - marker: b
-    text: 'The final clause may also be understood more impersonally: ''the building was stopped for two years, until the reign of Darius.'''
-    reason: alternative_reading
+  text: By plotting, stirring up the crowds, and forming factions, they prevented the building from being completed for the rest of King Cyrus’s life. The builders were kept from their work for two years, until the reign of Darius.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: βουλάς
   chosen: plots
@@ -151,14 +144,20 @@ revisions:
   from: And by plots and by stirring up the crowds and by forming factions, they hindered the building from being completed all the time of the life of King Cyrus; and they were stopped from building for two years, until the reign of Darius.
   to: And by plots and by stirring up the crowds and by forming factions, they hindered the building from being completed all the time of the life of King Cyrus; and they were stopped from building for two years, until the reign of Darius.
   rationale: 'Revised the final clause to reflect the Greek more naturally and accurately: changed ''they were stopped from building'' to ''the building was halted,'' matching the passive sense without implying an unspecified agent acting directly on ''they.'''
-
 - timestamp: '2026-05-18T02:58:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.'
-  to: 'And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.'
+  from: And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.
+  to: And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they were stopped from building''].'
+- timestamp: '2026-11-09T18:50:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And by plots and by stirring up the crowds and by forming factions[a], they hindered the building from being completed all the time of the life of King Cyrus; and the building was halted for two years[b], until the reign of Darius.
+  to: By plotting, stirring up the crowds, and forming factions, they prevented the building from being completed for the rest of King Cyrus’s life. The builders were kept from their work for two years, until the reign of Darius.
+  rationale: The first draft and the documented grammatical rationale correctly identify the final passive as referring to the builders, despite the current impersonal wording. I restore that gain and retain the source’s two years and endpoint at Darius’s reign without harmonizing its chronology to another account.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -178,3 +177,33 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/005/070.job-47755.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:50:55Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Organized opposition prevented completion during the remainder of Cyrus’s life, and the builders were stopped for two years until Darius’s reign.
+  meaning_decisions:
+  - source_phrase: βουλὰς καὶ δημαγωγοῦντες καὶ συστάσεις ποιούμενοι
+    prior_rendering: by plots and by stirring up the crowds and by forming factions
+    new_rendering: By plotting, stirring up the crowds, and forming factions
+    rationale: Parallel English actions clearly convey the coordinated methods of obstruction without the source-shaped mixture of nouns and participles.
+  - source_phrase: ἀπεκώλυσαν τοῦ ἀποτελεσθῆναι τὴν οἰκοδομήν
+    prior_rendering: they hindered the building from being completed
+    new_rendering: they prevented the building from being completed
+    rationale: Here the verb describes successful prevention of completion during the stated period, not merely interference that slowed the work.
+  - source_phrase: πάντα τὸν χρόνον τῆς ζωῆς τοῦ βασιλέως Κύρου
+    prior_rendering: all the time of the life of King Cyrus
+    new_rendering: for the rest of King Cyrus’s life
+    rationale: Within this sequence, the duration runs from the opposition just described through the remainder of Cyrus’s life, not through years before the rebuilding began.
+  - source_phrase: εἰρχθησαν τῆς οἰκοδομῆς
+    prior_rendering: the building was halted
+    new_rendering: The builders were kept from their work
+    rationale: The Greek passive has a plural personal subject; explicitly identifying the builders preserves that grammar and avoids confusing them with the opponents.
+  footnote_kinds: {}
+  history_weighed: The first draft and the documented grammatical rationale correctly identify the final passive as referring to the builders, despite the current impersonal wording. I restore that gain and retain the source’s two years and endpoint at Darius’s reign without harmonizing its chronology to another account.

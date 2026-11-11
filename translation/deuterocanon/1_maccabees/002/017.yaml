@@ -21,15 +21,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'those from the king,' that is, the king's representatives.
-    reason: lexical_alternative
-  - marker: b
-    text: Or, 'established with sons and brothers.' The Greek may emphasize either Mattathias's family support or his firmly established standing through his family.
-    reason: lexical_alternative
+  text: The king’s agents said to Mattathias, “You are an honored and influential leader in this city, supported by your sons and brothers.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ παρὰ τοῦ βασιλέως
   chosen: those sent by the king
@@ -116,14 +109,20 @@ revisions:
   from: And those sent by the king answered and said to Mattathias, saying, “You are a ruler, honored and great in this city, and supported by sons and brothers.”
   to: And those sent by the king answered and said to Mattathias, saying, “You are a ruler, honored and great in this city, and supported by sons and brothers.”
   rationale: Changed 'those sent by the king' to 'those from the king' to more directly reflect οἱ παρὰ τοῦ βασιλέως ('those from the king'). No other changes needed.
-
 - timestamp: '2026-05-18T02:59:44Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”'
-  to: 'And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”'
+  from: And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”
+  to: And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''those sent by the king''].'
+- timestamp: '2026-11-09T18:51:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And those from the king answered and said to Mattathias[a], saying, “You are a ruler, honored and great in this city[b], and supported by sons and brothers.”
+  to: The king’s agents said to Mattathias, “You are an honored and influential leader in this city, supported by your sons and brothers.
+  rationale: I retain the lexical judgments that these are royal representatives and that Mattathias’s family strengthens his standing. The recorded passes favor literal speech formulas, but no maintainer ruling requires those formulas over natural English.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -143,3 +142,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/002/017.job-48032.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king’s agents acknowledge Mattathias as an honored local leader with strong family support.
+  meaning_decisions:
+  - source_phrase: ἀπεκρίθησαν οἱ παρὰ τοῦ βασιλέως καὶ εἶπαν ... λέγοντες
+    prior_rendering: those from the king answered and said ... saying
+    new_rendering: The king’s agents said
+    rationale: The royal representatives address Mattathias; the repeated speech formula adds no separate action that English needs to reproduce.
+  - source_phrase: Ἄρχων καὶ ἔνδοξος καὶ μέγας
+    prior_rendering: a ruler, honored and great
+    new_rendering: an honored and influential leader
+    rationale: The appeal concerns recognized local leadership, public esteem, and substantial standing; it does not require a specific governmental office.
+  - source_phrase: ἐστηριγμένος ἐν υἱοῖς καὶ ἀδελφοῖς
+    prior_rendering: supported by sons and brothers
+    new_rendering: supported by your sons and brothers
+    rationale: The understood possessive makes clear that his own family provides the support.
+  footnote_kinds: {}
+  history_weighed: I retain the lexical judgments that these are royal representatives and that Mattathias’s family strengthens his standing. The recorded passes favor literal speech formulas, but no maintainer ruling requires those formulas over natural English.

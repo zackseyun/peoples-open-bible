@@ -18,18 +18,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the persuasions' or 'the enticements.' The Greek term refers to attempts to win them over before or alongside threats.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'terrible things'; in context this refers to the tortures or horrors set before them.
-    reason: lexical_alternative
-  - marker: c
-    text: The Greek says 'philosophized against the tyrant,' preserving the book's emphasis on reasoned philosophical resistance.
-    reason: lexical_alternative
+  text: But when they heard his inducements and saw the dreadful instruments of torture, they not only remained unafraid but even countered the tyrant with philosophical arguments.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπαγωγὰς
   chosen: the inducements
@@ -106,14 +96,20 @@ revisions:
   from: But when they heard the inducements and saw the tortures, they not only were not afraid, but even argued philosophy against the tyrant,
   to: But when they heard the inducements and saw the tortures, they not only were not afraid, but even argued philosophy against the tyrant,
   rationale: Revised 'argued philosophy against the tyrant' to 'reasoned philosophically with the tyrant' for more natural English and a closer rendering of ἀντεφιλοσόφησαν, while preserving the adversative sense without awkward phrasing.
-
 - timestamp: '2026-05-18T03:00:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],'
-  to: 'But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],'
+  from: But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],
+  to: But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''argued philosophy against''].'
+- timestamp: '2026-11-09T18:58:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But when they heard the inducements and saw the tortures[a], they not only were not afraid, but even reasoned philosophically with the tyrant[c][b],
+  to: But when they heard his inducements and saw the dreadful instruments of torture, they not only remained unafraid but even countered the tyrant with philosophical arguments.
+  rationale: The first draft and lexical notes preserve philosophical resistance more clearly than the current “with the tyrant.” I retain that resistance in natural English and incorporate the useful footnote distinctions directly into the text.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +129,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/008/015.job-49924.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:33Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The brothers were not frightened by the tyrant’s inducements or displayed terrors, but actively opposed him with philosophical arguments.
+  meaning_decisions:
+  - source_phrase: ὁρῶντες δεινά
+    prior_rendering: saw the tortures
+    new_rendering: saw the dreadful instruments of torture
+    rationale: They see the terrifying apparatus displayed before them, not tortures already being inflicted on them; “dreadful” also preserves the source’s characterization.
+  - source_phrase: ἀντεφιλοσόφησαν τῷ τυράννῳ
+    prior_rendering: reasoned philosophically with the tyrant
+    new_rendering: countered the tyrant with philosophical arguments
+    rationale: The compound expresses philosophical opposition, not a cooperative discussion; the explicit philosophical terminology remains essential to the author’s argument.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical notes preserve philosophical resistance more clearly than the current “with the tyrant.” I retain that resistance in natural English and incorporate the useful footnote distinctions directly into the text.

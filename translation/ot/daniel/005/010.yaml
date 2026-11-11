@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: מַלְכְּתָ֕/א לָ/קֳבֵ֨ל מִלֵּ֤י מַלְכָּ/א֙ וְ/רַבְרְבָנ֔וֹ/הִי לְ/בֵ֥ית מִשְׁתְּיָ֖/א עללת עֲנָ֨ת מַלְכְּתָ֜/א וַ/אֲמֶ֗רֶת מַלְכָּ/א֙ לְ/עָלְמִ֣ין חֱיִ֔י אַֽל יְבַהֲלוּ/ךְ֙ רַעְיוֹנָ֔/ךְ וְ/זִיוָ֖י/ךְ אַל יִשְׁתַּנּֽוֹ־־׃
 translation:
-  text: Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your face grow pale.”
-  philosophy: optimal-equivalence
+  text: When the queen[a] heard the words of the king and his nobles, she entered the banquet hall. She said, “O king, live forever! Do not let your thoughts terrify you, and do not let your face grow pale.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'answered and said.' The Aramaic idiom can introduce speech either as a response or simply as the beginning of a statement.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'your brightnesses do not change,' an idiom referring to the appearance of the face; compare the similar expression in this chapter for a face changing color from fear.
-    reason: lexical_alternative
+    text: The title may refer to the queen mother; the Aramaic does not specify her relationship to the king.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: לָ/קֳבֵל
   chosen: Because of
@@ -110,14 +107,20 @@ revisions:
   from: Because of the words of the king and his nobles, the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you, and do not let your face grow pale.”
   to: Because of the words of the king and his nobles, the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you, and do not let your countenance change.”
   rationale: Replaced 'face grow pale' with 'countenance change' to more closely reflect the Aramaic 'your splendor/appearance not change' without interpretive narrowing. Kept the rest unchanged.
-
 - timestamp: '2026-05-16T04:26:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your countenance change.”'
-  to: 'Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your face grow pale.”'
-  rationale: 'Azure substituted ''countenance change'' — both words are documented rejected_alternatives (drafter chose ''face'' for זִיוָיָךְ and ''grow pale'' for יִשְׁתַּנּוֹ to make the facial-color idiom explicit per DOCTRINE.md §5).'
+  from: Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your countenance change.”
+  to: Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your face grow pale.”
+  rationale: Azure substituted 'countenance change' — both words are documented rejected_alternatives (drafter chose 'face' for זִיוָיָךְ and 'grow pale' for יִשְׁתַּנּוֹ to make the facial-color idiom explicit per DOCTRINE.md §5).
+- timestamp: '2026-11-09T17:29:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Because of the words of the king and his nobles[a], the queen entered the banquet hall. The queen spoke and said, “O king, live forever! Do not let your thoughts terrify you[b], and do not let your face grow pale.”
+  to: When the queen[a] heard the words of the king and his nobles, she entered the banquet hall. She said, “O king, live forever! Do not let your thoughts terrify you, and do not let your face grow pale.
+  rationale: The recorded change to 'countenance change' sought lexical closeness but obscured the fear-induced pallor conveyed by the current wording. I keep 'face grow pale' and simplify the speech formula without resolving the queen’s uncertain identity.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +140,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/daniel/005/010.job-44256.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:29:46Z'
+  change_level: refined
+  confidence: high
+  meaning: The queen hears the distressed conversation, enters the banquet hall, and urges the king not to be terrified.
+  meaning_decisions:
+  - source_phrase: מַלְכְּתָא לָקֳבֵל מִלֵּי מַלְכָּא וְרַבְרְבָנוֹהִי
+    prior_rendering: Because of the words of the king and his nobles, the queen
+    new_rendering: When the queen heard the words of the king and his nobles, she
+    rationale: Her hearing their words is the understood occasion for entering; making that connection explicit avoids an opaque causal expression.
+  - source_phrase: עֲנָת מַלְכְּתָא וַאֲמֶרֶת
+    prior_rendering: The queen spoke and said
+    new_rendering: She said
+    rationale: The paired verbs introduce one speech, not two distinct acts.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded change to 'countenance change' sought lexical closeness but obscured the fear-induced pallor conveyed by the current wording. I keep 'face grow pale' and simplify the speech formula without resolving the queen’s uncertain identity.

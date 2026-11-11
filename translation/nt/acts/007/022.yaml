@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐπαιδεύθη ⸀Μωϋσῆς πάσῃ σοφίᾳ Αἰγυπτίων, ἦν δὲ δυνατὸς ἐν λόγοις καὶ ἔργοις ⸀αὐτοῦ.
 translation:
-  text: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds[a].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'in speech and actions.'
-    reason: lexical_alternative
+  text: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπαιδεύθη
   chosen: was educated
@@ -75,13 +71,12 @@ revisions:
   from: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.
   to: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in words and deeds.
   rationale: Removed 'his' before 'words' to reflect the Greek more naturally and accurately; retained the rest of the wording.
-
 - timestamp: '2026-05-18T03:10:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Moses was educated in all the wisdom of the Egyptians[a], and he was mighty in words and deeds.'
-  to: 'And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.'
+  from: And Moses was educated in all the wisdom of the Egyptians[a], and he was mighty in words and deeds.
+  to: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in his words and deeds''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -91,6 +86,13 @@ revisions:
   from: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.
   to: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds[a].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('in his words and deeds') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:06:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds[a].
+  to: And Moses was educated in all the wisdom of the Egyptians, and he was mighty in his words and deeds.
+  rationale: The recorded review and automated revert differ only over 'his,' which the supplied source explicitly supports. The current wording conveys Stephen’s description without harmonizing it with Moses’ statement about his speech in Exodus; the synonym note adds nothing necessary.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +112,17 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/007/022.job-46607.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:06:40Z'
+  change_level: kept
+  confidence: high
+  meaning: Moses received a comprehensive Egyptian education and was mighty in what he said and did.
+  meaning_decisions: []
+  footnote_kinds: {}
+  history_weighed: The recorded review and automated revert differ only over 'his,' which the supplied source explicitly supports. The current wording conveys Stephen’s description without harmonizing it with Moses’ statement about his speech in Exodus; the synonym note adds nothing necessary.

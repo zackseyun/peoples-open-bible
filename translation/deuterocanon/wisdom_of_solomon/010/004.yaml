@@ -10,11 +10,11 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.
-  philosophy: optimal-equivalence
+  text: When the earth was flooded because of him, wisdom saved it again by guiding the righteous man in a humble wooden vessel[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'through a humble/insignificant piece of wood.' The phrase refers to the ark and emphasizes the lowly material means by which wisdom preserved the righteous man.
+    text: Literally, 'through a humble piece of wood,' referring to Noah's ark.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: δι' ὃν
@@ -118,14 +118,20 @@ revisions:
   from: Because of him, when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a cheap piece of wood.
   to: Because of him, when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a cheap piece of wood.
   rationale: Replaced 'cheap piece of wood' with 'humble piece of wood' to better reflect εὐτελοῦς without the misleading modern connotation of poor quality. Retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:39Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.'
-  to: 'Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.'
+  from: Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.
+  to: Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by means of a cheap piece of wood''].'
+- timestamp: '2026-11-09T19:12:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Because of him[a], when the earth was being flooded, wisdom again saved it, steering the righteous man by means of a humble piece of wood.
+  to: When the earth was flooded because of him, wisdom saved it again by guiding the righteous man in a humble wooden vessel[a].
+  rationale: I retained the current 'humble' rather than the first draft's 'cheap,' preserving the review's gain against a misleading suggestion of poor workmanship. The wood imagery remains in the text and footnote, but its reference to the ark is clarified.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -145,3 +151,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/010/004.job-39486.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:58Z'
+  change_level: retranslated
+  confidence: high
+  meaning: When the earth was flooded because of the unrighteous man, wisdom preserved it by guiding Noah in the ark.
+  meaning_decisions:
+  - source_phrase: δι' ὃν κατακλυζομένην γῆν πάλιν διέσωσεν σοφία
+    prior_rendering: Because of him, when the earth was being flooded, wisdom again saved it
+    new_rendering: When the earth was flooded because of him, wisdom saved it again
+    rationale: The reordered sentence makes clear that 'because of him' explains the flooding, while retaining the connection to the preceding unrighteous man without explaining it beyond the source.
+  - source_phrase: δι' εὐτελοῦς ξύλου τὸν δίκαιον κυβερνήσασα
+    prior_rendering: steering the righteous man by means of a humble piece of wood
+    new_rendering: by guiding the righteous man in a humble wooden vessel
+    rationale: Wood stands for the ark, not an isolated plank. The vessel makes the nautical setting intelligible while retaining the contrast between wisdom's saving power and the humble material means she used.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: I retained the current 'humble' rather than the first draft's 'cheap,' preserving the review's gain against a misleading suggestion of poor workmanship. The wood imagery remains in the text and footnote, but its reference to the ark is clarified.

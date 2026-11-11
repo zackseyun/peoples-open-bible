@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: וְ/אֶת הַ/מִּשְׁתַּחֲוִ֥ים עַל הַ/גַּגּ֖וֹת לִ/צְבָ֣א הַ/שָּׁמָ֑יִם וְ/אֶת הַ/מִּֽשְׁתַּחֲוִים֙ הַ/נִּשְׁבָּעִ֣ים לַֽ/יהוָ֔ה וְ/הַ/נִּשְׁבָּעִ֖ים בְּ/מַלְכָּֽ/ם־־־׃
 translation:
-  text: those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.
-  philosophy: optimal-equivalence
+  text: those who bow down on the rooftops to the sun, moon, and stars[a], and those who bow down to Yahweh and swear allegiance to him, yet also swear by Milcom[b],
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'by their king'; some understand the name here as 'Molech.'
+    text: Literally, “the host of heaven,” meaning the heavenly bodies.
+    reason: lexical_alternative
+  - marker: b
+    text: Or, “by their king”; some understand the name as Molech.
     reason: alternative_reading
 lexical_decisions:
 - source_word: הַמִּשְׁתַּחֲוִים
@@ -82,14 +85,20 @@ revisions:
   from: those who bow down on the rooftops to the host of the heavens, and those who bow down, who swear by the LORD and swear by Milcom.
   to: those who bow down on the rooftops to the host of the heavens, and those who bow down, who swear by the LORD and swear by Milcom.
   rationale: Changed 'the host of the heavens' to 'the host of heaven' for more natural English and closer alignment with standard rendering of the Hebrew phrase. No other changes needed.
-
 - timestamp: '2026-05-18T02:58:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.'
-  to: 'those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.'
+  from: those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.
+  to: those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to the host of the heavens''].'
+- timestamp: '2026-11-09T18:49:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: those who bow down on the rooftops to the host of heaven[a], and those who bow down, who swear by Yahweh and swear by Milcom.
+  to: those who bow down on the rooftops to the sun, moon, and stars[a], and those who bow down to Yahweh and swear allegiance to him, yet also swear by Milcom[b],
+  rationale: The review history changed only the form of “host of heaven”; the lexical rationale usefully identifies astral worship rather than angels. I carry that identification into the text and retain Milcom with the recorded alternatives.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -110,3 +119,27 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/weighted_vocab/ot/zephaniah/001/005.job-17906.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:49:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh will cut off both those who worship heavenly bodies and those who profess allegiance to him while also invoking Milcom.
+  meaning_decisions:
+  - source_phrase: לִצְבָא הַשָּׁמַיִם
+    prior_rendering: to the host of heaven
+    new_rendering: to the sun, moon, and stars
+    rationale: The phrase denotes the celestial bodies worshiped as astral powers, not an angelic host; the literal collective image is retained in a note.
+  - source_phrase: הַמִּשְׁתַּחֲוִים הַנִּשְׁבָּעִים לַיהוָה וְהַנִּשְׁבָּעִים בְּמַלְכָּם
+    prior_rendering: those who bow down, who swear by Yahweh and swear by Milcom
+    new_rendering: those who bow down to Yahweh and swear allegiance to him, yet also swear by Milcom
+    rationale: The implied object of their professed worship is made explicit, the oath to Yahweh expresses allegiance, and “yet also” conveys the condemned division of loyalty.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The review history changed only the form of “host of heaven”; the lexical rationale usefully identifies astral worship rather than angels. I carry that identification into the text and retain Milcom with the recorded alternatives.

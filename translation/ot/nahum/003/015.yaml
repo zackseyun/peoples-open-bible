@@ -4,11 +4,14 @@ source:
   edition: WLC
   text: שָׁ֚ם תֹּאכְלֵ֣/ךְ אֵ֔שׁ תַּכְרִיתֵ֣/ךְ חֶ֔רֶב תֹּאכְלֵ֖/ךְ כַּ/יָּ֑לֶק הִתְכַּבֵּ֣ד כַּ/יֶּ֔לֶק הִֽתְכַּבְּדִ֖י כָּ/אַרְבֶּֽה׃
 translation:
-  text: There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Multiply yourself like the locust; multiply yourself like the swarming locust.
-  philosophy: optimal-equivalence
+  text: There fire will devour you; the sword will cut you down; it will devour you like a locust[a]. Multiply like locusts; multiply like swarming locusts[b]!
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Hebrew uses two related insect terms here: one often rendered a kind or stage of locust (יֶלֶק), and another the common term for locust (אַרְבֶּה). The main text renders them as ''locust'' and ''swarming locust'' for clarity.'
+    text: Or, 'it will devour you as locusts are devoured.'
+    reason: alternative_reading
+  - marker: b
+    text: Two different Hebrew locust terms occur here; their precise kinds or stages are uncertain.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: שָׁם
@@ -94,14 +97,20 @@ revisions:
   from: There the fire will devour you; the sword will cut you off; it will devour you like the locust. Multiply yourself like the locust; multiply yourself like the swarming locust.
   to: There the fire will devour you; the sword will cut you off; it will devour you like the locust. Make yourself many like the locust; make yourself many like the swarming locust.
   rationale: Revised the final two imperatives from 'Multiply yourself' to 'Make yourself many' to more directly reflect the Hebrew imperative of becoming numerous, while keeping the formal tone and imagery.
-
 - timestamp: '2026-05-16T00:38:56Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Make yourself many like the locust; make yourself many like the swarming locust.'
-  to: 'There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Multiply yourself like the locust; multiply yourself like the swarming locust.'
-  rationale: 'Azure substituted ''Make yourself many'' (twice) — drafter''s explicit rejected alternative for הִתְכַּבֵּד. Drafter chose ''Multiply yourself'' as idiomatic English; azure offered no lexical argument.'
+  from: There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Make yourself many like the locust; make yourself many like the swarming locust.
+  to: There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Multiply yourself like the locust; multiply yourself like the swarming locust.
+  rationale: Azure substituted 'Make yourself many' (twice) — drafter's explicit rejected alternative for הִתְכַּבֵּד. Drafter chose 'Multiply yourself' as idiomatic English; azure offered no lexical argument.
+- timestamp: '2026-11-09T18:25:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: There the fire will devour you; the sword will cut you off; it will devour you like the locust[a]. Multiply yourself like the locust; multiply yourself like the swarming locust.
+  to: There fire will devour you; the sword will cut you down; it will devour you like a locust[a]. Multiply like locusts; multiply like swarming locusts[b]!
+  rationale: The review and automated revert debated 'Multiply yourself' versus 'Make yourself many'; 'multiply' retains the more idiomatic gain without the reflexive. The inherited devouring comparison remains, but a note acknowledges the serious alternative in which the locusts themselves are devoured.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -121,3 +130,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/nahum/003/015.job-42825.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:25:44Z'
+  change_level: refined
+  confidence: medium
+  meaning: Fire and sword will destroy Nineveh in the very place it prepares to defend, however numerous it becomes like locusts.
+  meaning_decisions:
+  - source_phrase: תַּכְרִיתֵךְ חֶרֶב
+    prior_rendering: the sword will cut you off
+    new_rendering: the sword will cut you down
+    rationale: The English expression clearly conveys destruction by the sword without suggesting merely interrupted contact or an unspecified separation.
+  - source_phrase: הִתְכַּבֵּד כַּיֶּלֶק הִתְכַּבְּדִי כָּאַרְבֶּה
+    prior_rendering: Multiply yourself like the locust; multiply yourself like the swarming locust
+    new_rendering: Multiply like locusts; multiply like swarming locusts
+    rationale: The imperatives taunt Nineveh to become numerous; English 'multiply' expresses that sense without an unnatural reflexive object.
+  footnote_kinds:
+    a: alternative_meaning
+    b: name_or_term
+  history_weighed: The review and automated revert debated 'Multiply yourself' versus 'Make yourself many'; 'multiply' retains the more idiomatic gain without the reflexive. The inherited devouring comparison remains, but a note acknowledges the serious alternative in which the locusts themselves are devoured.

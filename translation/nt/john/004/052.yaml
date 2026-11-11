@@ -4,12 +4,12 @@ source:
   edition: SBLGNT
   text: ἐπύθετο οὖν ⸂τὴν ὥραν παρ’ αὐτῶν⸃ ἐν ᾗ κομψότερον ἔσχεν· ⸂εἶπαν οὖν⸃ αὐτῷ ὅτι ⸀Ἐχθὲς ὥραν ἑβδόμην ἀφῆκεν αὐτὸν ὁ πυρετός.
 translation:
-  text: So he asked them the hour in which he got better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”
-  philosophy: optimal-equivalence
+  text: So he asked them at what hour his son had improved. They replied, “Yesterday at the seventh hour[a] the fever left him.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'at one o’clock,' if the hour is reckoned from sunrise; some understand John's timekeeping differently.
-    reason: alternative_reading
+    text: About one in the afternoon if counted from sunrise; some understand John’s time reckoning differently.
+    reason: cultural_note
 lexical_decisions:
 - source_word: ἐπύθετο
   chosen: he asked
@@ -106,14 +106,20 @@ revisions:
   from: So he asked them the hour in which he got better. Then they said to him, “Yesterday at the seventh hour the fever left him.”
   to: So he asked them the hour at which he began to get better. Then they said to him, “Yesterday at the seventh hour the fever left him.”
   rationale: Revised 'in which he got better' to 'at which he began to get better' for more natural English and to better reflect the sense of the improvement beginning at that hour.
-
 - timestamp: '2026-05-16T20:22:37Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So he asked them the hour at which he began to get better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”'
-  to: 'So he asked them the hour in which he got better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”'
-  rationale: 'Restored drafter ''the hour in which he got better'' (preserving the chosen ''in which'' relative and simple ''got better'') per chosen renderings.'
+  from: So he asked them the hour at which he began to get better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”
+  to: So he asked them the hour in which he got better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”
+  rationale: Restored drafter 'the hour in which he got better' (preserving the chosen 'in which' relative and simple 'got better') per chosen renderings.
+- timestamp: '2026-11-09T17:09:58Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So he asked them the hour in which he got better. Then they said to him[a], “Yesterday at the seventh hour the fever left him.”
+  to: So he asked them at what hour his son had improved. They replied, “Yesterday at the seventh hour[a] the fever left him.”
+  rationale: The earlier revision added “began,” while the automated revert restored the source-shaped “hour in which.” I express the health idiom and temporal question naturally without requiring a gradual recovery, and retain the disputed hour designation with an explanatory note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -135,3 +141,22 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/nt/john/004/052.job-54781.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:09:58Z'
+  change_level: refined
+  confidence: high
+  meaning: The official asks when his son improved and learns that the fever left him at the seventh hour the previous day.
+  meaning_decisions:
+  - source_phrase: τὴν ὥραν παρ’ αὐτῶν ἐν ᾗ κομψότερον ἔσχεν
+    prior_rendering: them the hour in which he got better
+    new_rendering: them at what hour his son had improved
+    rationale: The idiom describes improvement in health; the new wording makes the inquiry natural, identifies its subject, and locates the improvement before the question.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier revision added “began,” while the automated revert restored the source-shaped “hour in which.” I express the health idiom and temporal question naturally without requiring a gradual recovery, and retain the disputed hour designation with an explanatory note.

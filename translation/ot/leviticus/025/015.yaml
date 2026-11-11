@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בְּ/מִסְפַּ֤ר שָׁנִים֙ אַחַ֣ר הַ/יּוֹבֵ֔ל תִּקְנֶ֖ה מֵ/אֵ֣ת עֲמִיתֶ֑/ךָ בְּ/מִסְפַּ֥ר שְׁנֵֽי תְבוּאֹ֖ת יִמְכָּר לָֽ/ךְ־־׃
 translation:
-  text: According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Literally, 'according to the number of years of produce/harvests.' The point is that the sale price is based on the number of crop-bearing years remaining until the next Jubilee, not on a permanent transfer of the land.
-    reason: lexical_alternative
+  text: When you buy land from your neighbor, you shall base the price on the number of years since the Jubilee; he shall sell it to you according to the number of harvest years remaining until the next Jubilee.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּמִסְפַּר
   chosen: according to the number of
@@ -76,14 +72,20 @@ revisions:
   from: According to the number of years after the Jubilee, you shall buy from your fellow; according to the number of harvest years he shall sell to you.
   to: According to the number of years after the Jubilee, you shall buy from your fellow; according to the number of harvest years he shall sell to you.
   rationale: Replaced 'harvest years' with 'years of crops' to reflect שְׁנֵי תְבוּאֹת more accurately and naturally, while preserving the formal structure of the verse.
-
 - timestamp: '2026-05-18T02:57:28Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.'
-  to: 'According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.'
+  from: According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.
+  to: According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''harvest years''].'
+- timestamp: '2026-11-09T18:21:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: According to the number of years after the Jubilee[a], you shall buy from your fellow; according to the number of years of crops he shall sell to you.
+  to: When you buy land from your neighbor, you shall base the price on the number of years since the Jubilee; he shall sell it to you according to the number of harvest years remaining until the next Jubilee.
+  rationale: The history alternates between 'harvest years' and 'years of crops,' but its lexical reasoning consistently identifies productive years before the next Jubilee. I retain that economic meaning while preserving the source’s explicit reckoning from the preceding Jubilee; no maintainer revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -103,3 +105,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/025/015.job-45226.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:21:25Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Both buyer and seller must value the land according to its place in the Jubilee cycle and the harvest years remaining before it returns to its original holder.
+  meaning_decisions:
+  - source_phrase: בְּמִסְפַּר שָׁנִים אַחַר הַיּוֹבֵל תִּקְנֶה מֵאֵת עֲמִיתֶךָ
+    prior_rendering: According to the number of years after the Jubilee, you shall buy from your fellow
+    new_rendering: When you buy land from your neighbor, you shall base the price on the number of years since the Jubilee
+    rationale: The surrounding land-sale instructions establish both the object being bought and the pricing function of the year count; making these explicit clarifies the legal instruction.
+  - source_phrase: בְּמִסְפַּר שְׁנֵי תְבוּאֹת יִמְכָּר לָךְ
+    prior_rendering: according to the number of years of crops he shall sell to you
+    new_rendering: he shall sell it to you according to the number of harvest years remaining until the next Jubilee
+    rationale: The sale concerns the remaining productive years, not permanent ownership; this meaning now appears in the text rather than in a misplaced footnote.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'harvest years' and 'years of crops,' but its lexical reasoning consistently identifies productive years before the next Jubilee. I retain that economic meaning while preserving the source’s explicit reckoning from the preceding Jubilee; no maintainer revision is recorded.

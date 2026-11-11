@@ -25,14 +25,11 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when he saw that the camp was strong[a], he prayed and said, “Blessed are you, O Savior of Israel, who crushed the assault of the mighty one by the hand of your servant David[b], and gave the camp of the foreigners into the hands of Jonathan son of Saul and of the one who carried his armor.”
-  philosophy: optimal-equivalence
+  text: 'When Judas saw how strong the enemy army was, he prayed: “Blessed are you, O Savior of Israel, who crushed the mighty warrior’s assault through your servant David and delivered the Philistine army into the hands of Jonathan son of Saul and his armor-bearer[a].'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'your servant David.' The Greek word is δοῦλος, which can mean either 'slave' or 'servant' depending on context.
-    reason: lexical_alternative
-  - marker: b
-    text: The prayer alludes to the story of David and Goliath, and to Jonathan with his armor-bearer in battle; the Greek here says 'the mighty man' and 'the foreigners' rather than naming them explicitly.
+    text: The prayer recalls David’s defeat of Goliath in 1 Samuel 17 and Jonathan’s victory with his armor-bearer in 1 Samuel 14:1–23.
     reason: cross_reference
 lexical_decisions:
 - source_word: παρεμβολή
@@ -155,7 +152,13 @@ revisions:
   from: And when he saw that the camp was strong, he prayed and said, “Blessed are you, O Savior of Israel, who crushed the assault of the mighty one by the hand of your servant David, and gave the camp of the foreigners into the hands of Jonathan son of Saul and of the one who carried his armor.”
   to: And when he saw that the camp was strong, he prayed and said, “Blessed are you, O Savior of Israel, who crushed the assault of the mighty one by the hand of your slave David, and gave the camp of the foreigners into the hands of Jonathan son of Saul and of the one who carried his armor.”
   rationale: slave restored (revision_pass had changed δοῦλος → servant against DOCTRINE.md policy)
-
+- timestamp: '2026-11-09T18:51:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he saw that the camp was strong[a], he prayed and said, “Blessed are you, O Savior of Israel, who crushed the assault of the mighty one by the hand of your servant David[b], and gave the camp of the foreigners into the hands of Jonathan son of Saul and of the one who carried his armor.”
+  to: 'When Judas saw how strong the enemy army was, he prayed: “Blessed are you, O Savior of Israel, who crushed the mighty warrior’s assault through your servant David and delivered the Philistine army into the hands of Jonathan son of Saul and his armor-bearer[a].'
+  rationale: I retain Savior and servant, following the current text and the standing servant ruling rather than the older automated restoration of slave. The earlier insistence on generic foreigners obscures a definite historical reference, so I name the Philistines and preserve both scriptural allusions in one note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -175,3 +178,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/004/030.job-48175.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:51:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Seeing the enemy’s strength, Judas praised Israel’s Savior for the victories he had previously granted through David and Jonathan.
+  meaning_decisions:
+  - source_phrase: ἰδὼν τὴν παρεμβολὴν ἰσχυράν
+    prior_rendering: when he saw that the camp was strong
+    new_rendering: When Judas saw how strong the enemy army was
+    rationale: The camp stands for the encamped army, whose military strength prompts the prayer.
+  - source_phrase: τοῦ δυνατοῦ ἐν χειρὶ τοῦ δούλου σου Δαυείδ
+    prior_rendering: of the mighty one by the hand of your servant David
+    new_rendering: the mighty warrior’s ... through your servant David
+    rationale: Warrior identifies the human opponent recalled in the David narrative, while through expresses David’s instrumental role.
+  - source_phrase: τὴν παρεμβολὴν τῶν ἀλλοφύλων
+    prior_rendering: the camp of the foreigners
+    new_rendering: the Philistine army
+    rationale: Jonathan’s named victory identifies these opponents as Philistines; army conveys the force God delivered into his power.
+  - source_phrase: τοῦ αἰρόντος τὰ σκεύη αὐτοῦ
+    prior_rendering: the one who carried his armor
+    new_rendering: his armor-bearer
+    rationale: This is the recognized military role described by the participial phrase.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: I retain Savior and servant, following the current text and the standing servant ruling rather than the older automated restoration of slave. The earlier insistence on generic foreigners obscures a definite historical reference, so I name the Philistines and preserve both scriptural allusions in one note.

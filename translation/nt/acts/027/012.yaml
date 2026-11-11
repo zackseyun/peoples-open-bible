@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: ἀνευθέτου δὲ τοῦ λιμένος ὑπάρχοντος πρὸς παραχειμασίαν οἱ πλείονες ἔθεντο βουλὴν ἀναχθῆναι ⸀ἐκεῖθεν, εἴ πως δύναιντο καταντήσαντες εἰς Φοίνικα παραχειμάσαι, λιμένα τῆς Κρήτης βλέποντα κατὰ λίβα καὶ κατὰ χῶρον.
 translation:
-  text: And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
-  philosophy: optimal-equivalence
+  text: Because the harbor was unsuitable for wintering, the majority decided to set sail from there in the hope of reaching Phoenix and spending the winter there. Phoenix was a harbor on Crete facing southwest and northwest[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to set sail from there.' The Greek verb is a nautical term for putting out to sea.
-    reason: lexical_alternative
-  - marker: b
-    text: Phoenix was a harbor on Crete. Older English versions often give the name as 'Phenice.'
-    reason: cultural_note
-  - marker: c
-    text: The final directional phrase is difficult. Traditionally it is rendered 'facing southwest and northwest'; some understand the second term more specifically as 'west-northwest.'
-    reason: lexical_alternative
+    text: Some understand this as “facing northeast and southeast,” taking the directions to describe where the southwest and northwest winds blow rather than where they come from.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀνευθέτου
   chosen: unsuitable
@@ -135,14 +129,20 @@ revisions:
   from: And because the harbor was unsuitable for spending the winter, the majority decided to put out from there, if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
   to: And because the harbor was unsuitable for spending the winter, the majority decided to put out from there, if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
   rationale: Replaced 'for spending the winter' with the more natural and concise 'for wintering,' which more directly reflects παραχειμασίαν. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:06Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.'
-  to: 'And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.'
+  from: And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
+  to: And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for spending the winter''].'
+- timestamp: '2026-11-09T18:07:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And because the harbor was unsuitable for wintering[a], the majority decided to put out from there[c][b], if somehow they might reach Phoenix and spend the winter there—a harbor of Crete facing southwest and northwest.
+  to: Because the harbor was unsuitable for wintering, the majority decided to set sail from there in the hope of reaching Phoenix and spending the winter there. Phoenix was a harbor on Crete facing southwest and northwest[a].
+  rationale: I retain the current concise “wintering” and the traditional southwest–northwest orientation. The recorded discussion acknowledges difficulty in the directional phrase; the note preserves the substantial alternative interpretation without silently changing the geography.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -162,3 +162,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/027/012.job-46777.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:37Z'
+  change_level: refined
+  confidence: medium
+  meaning: Because their present harbor is unsuitable for wintering, most favor attempting to reach Phoenix and remain there through the winter.
+  meaning_decisions:
+  - source_phrase: εἴ πως δύναιντο καταντήσαντες εἰς Φοίνικα παραχειμάσαι
+    prior_rendering: if somehow they might reach Phoenix and spend the winter there
+    new_rendering: in the hope of reaching Phoenix and spending the winter there
+    rationale: Expresses the purpose and uncertainty of their proposed departure without the awkward conditional attachment.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: I retain the current concise “wintering” and the traditional southwest–northwest orientation. The recorded discussion acknowledges difficulty in the directional phrase; the note preserves the substantial alternative interpretation without silently changing the geography.

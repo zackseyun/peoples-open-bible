@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: καὶ ἐπέθηκεν αὐτῇ τὰς χεῖρας· καὶ παραχρῆμα ἀνωρθώθη, καὶ ἐδόξαζεν τὸν θεόν.
 translation:
-  text: And he laid his hands on her[a], and immediately she was made straight again, and she glorified God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'she stood upright' or 'she was straightened.'
-    reason: lexical_alternative
+  text: He laid his hands on her, and immediately she was straightened and glorified God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐπέθηκεν
   chosen: laid
@@ -86,13 +82,12 @@ revisions:
   from: And he laid his hands on her, and immediately she was made straight again, and she glorified God.
   to: And he laid his hands on her, and immediately she was made straight, and she glorified God.
   rationale: Removed 'again' because it is not explicit in the Greek; otherwise retained the accurate and natural rendering.
-
 - timestamp: '2026-05-18T03:10:38Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he laid his hands on her[a], and immediately she was made straight, and she glorified God.'
-  to: 'And he laid his hands on her, and immediately she was made straight again, and she glorified God.'
+  from: And he laid his hands on her[a], and immediately she was made straight, and she glorified God.
+  to: And he laid his hands on her, and immediately she was made straight again, and she glorified God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was made straight again''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -102,6 +97,13 @@ revisions:
   from: And he laid his hands on her, and immediately she was made straight again, and she glorified God.
   to: And he laid his hands on her[a], and immediately she was made straight again, and she glorified God.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:12:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he laid his hands on her[a], and immediately she was made straight again, and she glorified God.
+  to: He laid his hands on her, and immediately she was straightened and glorified God.
+  rationale: The earlier review removed 'again,' while the later automated revert restored it; neither was a MAINTAINER decision. 'Was straightened' preserves the restorative meaning identified in the lexical discussion, and the redundant alternative footnote is dropped.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -124,3 +126,21 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/luke/013/013.job-55680.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:12:31Z'
+  change_level: refined
+  confidence: high
+  meaning: Jesus lays his hands on the woman, who is immediately straightened and glorifies God.
+  meaning_decisions:
+  - source_phrase: ἀνωρθώθη
+    prior_rendering: was made straight again
+    new_rendering: was straightened
+    rationale: This expresses the bodily restoration and passive action directly; the reversal of her bent condition is clear without adding 'again.'
+  footnote_kinds: {}
+  history_weighed: The earlier review removed 'again,' while the later automated revert restored it; neither was a MAINTAINER decision. 'Was straightened' preserves the restorative meaning identified in the lexical discussion, and the redundant alternative footnote is dropped.

@@ -18,14 +18,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne[a] and live the blessed age[b].
-  philosophy: optimal-equivalence
+  text: Indeed, even the tyrant himself and the entire council marveled at their endurance. Because of that endurance, the martyrs now stand before God’s throne and live a blessed life forever[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'stand before the divine throne.' The Greek verb and dative phrase can be understood as attendance in the presence of the throne or close station beside it.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally, 'live the blessed age'; this likely refers to a blessed eternal state.
+    text: Literally, “live the blessed age.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: Αὐτός γέ τοι
@@ -137,13 +134,12 @@ revisions:
   from: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne and live the blessed age.
   to: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand before the divine throne and live the blessed age.
   rationale: Changed 'beside the divine throne' to 'before the divine throne' for a more accurate rendering of παρεστήκασιν with dative ('stand before/in the presence of').
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Indeed[a], the tyrant himself and all their council marveled at their endurance[b], because of which they now stand before the divine throne and live the blessed age.'
-  to: 'Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne and live the blessed age.'
+  from: Indeed[a], the tyrant himself and all their council marveled at their endurance[b], because of which they now stand before the divine throne and live the blessed age.
+  to: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne and live the blessed age.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''stand beside''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -153,6 +149,13 @@ revisions:
   from: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne and live the blessed age.
   to: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne[a] and live the blessed age[b].
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the divine throne') because the note names that rendering; [b] anchored to ('live the blessed age') because the note quotes that phrase from the rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:59:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Indeed, the tyrant himself and all their council marveled at their endurance, because of which they now stand beside the divine throne[a] and live the blessed age[b].
+  to: Indeed, even the tyrant himself and the entire council marveled at their endurance. Because of that endurance, the martyrs now stand before God’s throne and live a blessed life forever[a].
+  rationale: The earlier review’s “before the divine throne” better conveys attendance in God’s presence than the restored “beside.” The lexical deliberation already recognized the blessed eternal state, which the main text now expresses rather than leaving it only in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -172,3 +175,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/017/017.job-50178.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Even the tyrant and his council admired the martyrs’ endurance, through which the martyrs now enjoy honor before God and blessed life forever.
+  meaning_decisions:
+  - source_phrase: Αὐτός γέ τοι ὁ τύραννος καὶ ὅλον τὸ συνέδριον αὐτῶν
+    prior_rendering: Indeed, the tyrant himself and all their council
+    new_rendering: Indeed, even the tyrant himself and the entire council
+    rationale: The emphatic particles stress that even the persecutor was impressed, while the council is the assembled council in the tyrant’s court.
+  - source_phrase: διʼ ἣν καὶ τῷ θείῳ νῦν παρεστήκασιν θρόνῳ
+    prior_rendering: because of which they now stand beside the divine throne
+    new_rendering: Because of that endurance, the martyrs now stand before God’s throne
+    rationale: Naming the martyrs prevents the English pronoun from appearing to refer to the tyrant and council; standing before the throne conveys honored attendance in God’s presence.
+  - source_phrase: καὶ τὸν μακάριον βιοῦσιν αἰῶνα
+    prior_rendering: and live the blessed age
+    new_rendering: and live a blessed life forever
+    rationale: The phrase describes their enduring blessed life beyond death, not the act of living an unspecified historical age.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review’s “before the divine throne” better conveys attendance in God’s presence than the restored “beside.” The lexical deliberation already recognized the blessed eternal state, which the main text now expresses rather than leaving it only in a note.

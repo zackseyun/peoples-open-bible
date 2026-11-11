@@ -4,17 +4,60 @@ source:
   edition: WLC
   text: וַ/יָּ֗סַר אֵ֚ת אֹפַ֣ן מַרְכְּבֹתָ֔י/ו וַֽ/יְנַהֲגֵ֖/הוּ בִּ/כְבֵדֻ֑ת וַ/יֹּ֣אמֶר מִצְרַ֗יִם אָנ֨וּסָה֙ מִ/פְּנֵ֣י יִשְׂרָאֵ֔ל כִּ֣י יְהוָ֔ה נִלְחָ֥ם לָ/הֶ֖ם בְּ/מִצְרָֽיִםפ
 translation:
-  text: 'And he removed the wheels from his chariots, and drove them with difficulty. And Egypt said, “Let me flee from before Israel, for the LORD is fighting for them against Egypt.”'
+  text: He removed the wheels[a] from their chariots, making them difficult to drive. The Egyptians said, “Let us flee from Israel, for Yahweh is fighting for them against Egypt!”
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: The Samaritan Pentateuch and some ancient versions support ‘jammed their chariot wheels’ instead of ‘removed the wheels.’
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T03:59:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he removed the wheels from their chariots[a], and drove them with difficulty. And Egypt said, “Let us flee from before Israel[b], for Yahweh is fighting for them against Egypt.”'
-  to: 'And he removed the wheels from his chariots, and drove them with difficulty. And Egypt said, “Let me flee from before Israel, for the LORD is fighting for them against Egypt.”'
+  from: And he removed the wheels from their chariots[a], and drove them with difficulty. And Egypt said, “Let us flee from before Israel[b], for Yahweh is fighting for them against Egypt.”
+  to: And he removed the wheels from his chariots, and drove them with difficulty. And Egypt said, “Let me flee from before Israel, for the LORD is fighting for them against Egypt.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the wheels from his chariots'', ''Let me flee'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T17:34:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he removed the wheels from his chariots, and drove them with difficulty. And Egypt said, “Let me flee from before Israel, for the LORD is fighting for them against Egypt.”
+  to: He removed the wheels[a] from their chariots, making them difficult to drive. The Egyptians said, “Let us flee from Israel, for Yahweh is fighting for them against Egypt!”
+  rationale: The first recorded draft correctly used ‘their chariots,’ ‘Let us flee,’ and ‘Yahweh’; the automated revert introduced no meaning-based reason to abandon them. I restore those gains and clarify the difficulty of driving while retaining the supplied Hebrew’s wheel-removal reading.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T03:59:18Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Exodus 14:25 wholesale revert (2 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the wheels from his chariots'', ''Let me flee'']. Applied via definitive_apply (fuzzy fingerprint '
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:34:38Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Yahweh disables the Egyptian chariots, and the Egyptians urge one another to flee because they recognize that he is fighting against them for Israel.
+  meaning_decisions:
+  - source_phrase: אֹפַן מַרְכְּבֹתָיו
+    prior_rendering: the wheels from his chariots
+    new_rendering: the wheels from their chariots
+    rationale: The singular possessive refers to Egypt collectively, not to Yahweh; English plural possession makes the referent clear.
+  - source_phrase: וַיְנַהֲגֵהוּ בִּכְבֵדֻת
+    prior_rendering: and drove them with difficulty
+    new_rendering: making them difficult to drive
+    rationale: The clause describes Yahweh causing the Egyptian chariots to move with difficulty, not personally driving them.
+  - source_phrase: וַיֹּאמֶר מִצְרַיִם אָנֻסָה מִפְּנֵי יִשְׂרָאֵל
+    prior_rendering: And Egypt said, ‘Let me flee from before Israel’
+    new_rendering: The Egyptians said, ‘Let us flee from Israel’
+    rationale: Egypt speaks as a collective people; plural English expresses their shared call to flee.
+  - source_phrase: יְהוָה
+    prior_rendering: the LORD
+    new_rendering: Yahweh
+    rationale: The standing maintainer ruling requires the divine name in Old Testament text.
+  footnote_kinds:
+    a: textual_variant
+  history_weighed: The first recorded draft correctly used ‘their chariots,’ ‘Let us flee,’ and ‘Yahweh’; the automated revert introduced no meaning-based reason to abandon them. I restore those gains and clarify the difficulty of driving while retaining the supplied Hebrew’s wheel-removal reading.

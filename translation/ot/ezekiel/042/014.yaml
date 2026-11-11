@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: בְּ/בֹאָ֣/ם הַ/כֹּהֲנִ֗ים וְ/לֹֽא יֵצְא֤וּ מֵ/הַ/קֹּ֨דֶשׁ֙ אֶל הֶ/חָצֵ֣ר הַ/חִיצוֹנָ֔ה וְ/שָׁ֞ם יַנִּ֧יחוּ בִגְדֵי/הֶ֛ם אֲשֶׁר יְשָׁרְת֥וּ בָ/הֶ֖ן כִּֽי קֹ֣דֶשׁ הֵ֑נָּה ילבשו בְּגָדִ֣ים אֲחֵרִ֔ים וְ/קָרְב֖וּ אֶל אֲשֶׁ֥ר לָ/עָֽם־־־־־׃
 translation:
-  text: When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for they are holy. They shall put on other garments, and then approach what belongs to the people.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'that which is for the people'; the Hebrew expression is elliptical and may refer to the area accessible to the people.
-    reason: alternative_reading
+  text: Once the priests have entered the holy area, they shall not go out into the outer court without leaving in these chambers the garments in which they minister, for those garments are holy. They shall put on other garments before approaching the area open to the people.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: בְּבֹאָם
   chosen: When ... enter
@@ -120,14 +116,20 @@ revisions:
   from: When the priests enter, they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for they are holy. They shall put on other garments, and then approach what belongs to the people.
   to: When the priests enter, they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for these are holy. They shall put on other garments, and then approach that which is for the people.
   rationale: Adjusted 'for they are holy' to 'for these are holy' to clarify that the garments are in view, and revised 'what belongs to the people' to the more literal and formal 'that which is for the people.'
-
 - timestamp: '2026-05-16T02:13:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for these are holy. They shall put on other garments, and then approach that which is for the people.'
-  to: 'When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for they are holy. They shall put on other garments, and then approach what belongs to the people.'
-  rationale: 'Azure substituted ''these are holy'' (drafter''s rejected alternative — drafter chose ''they'' for feminine plural pronoun referring to garments) and ''that which is for the people'' (rejected for chosen ''what belongs to the people'' — drafter''s terseness rationale).'
+  from: When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for these are holy. They shall put on other garments, and then approach that which is for the people.
+  to: When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for they are holy. They shall put on other garments, and then approach what belongs to the people.
+  rationale: Azure substituted 'these are holy' (drafter's rejected alternative — drafter chose 'they' for feminine plural pronoun referring to garments) and 'that which is for the people' (rejected for chosen 'what belongs to the people' — drafter's terseness rationale).
+- timestamp: '2026-11-09T17:39:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: When the priests enter[a], they shall not go out from the holy place into the outer court, but there they shall leave their garments in which they minister, for they are holy. They shall put on other garments, and then approach what belongs to the people.
+  to: Once the priests have entered the holy area, they shall not go out into the outer court without leaving in these chambers the garments in which they minister, for those garments are holy. They shall put on other garments before approaching the area open to the people.
+  rationale: The automated review correctly identified the garments as the referent of 'they,' although the later automated revert restored the ambiguity; neither was a maintainer decision. I preserve that clarification more explicitly and replace the source-shaped ending with the spatial meaning recognized in both the lexical record and the existing footnote.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +152,29 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/ezekiel/042/014.job-64379.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:39:34Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Priests must leave their holy ministry garments in the chambers and change clothing before returning to the area open to the people.
+  meaning_decisions:
+  - source_phrase: בְּבֹאָם הַכֹּהֲנִים וְלֹא יֵצְאוּ מֵהַקֹּדֶשׁ ... וְשָׁם יַנִּיחוּ
+    prior_rendering: When the priests enter, they shall not go out from the holy place into the outer court, but there they shall leave
+    new_rendering: Once the priests have entered the holy area, they shall not go out into the outer court without leaving in these chambers
+    rationale: The prohibition is conditional on leaving the sacred garments behind, not an absolute ban on leaving the holy area; 'these chambers' identifies the location supplied by the preceding verse.
+  - source_phrase: כִּי קֹדֶשׁ הֵנָּה
+    prior_rendering: for they are holy
+    new_rendering: for those garments are holy
+    rationale: The pronoun refers to the garments, and naming them prevents an English reader from taking the priests as its referent.
+  - source_phrase: וְקָרְבוּ אֶל אֲשֶׁר לָעָם
+    prior_rendering: and then approach what belongs to the people
+    new_rendering: before approaching the area open to the people
+    rationale: The elliptical expression concerns access to the people's area after changing garments, not approaching their possessions.
+  footnote_kinds: {}
+  history_weighed: The automated review correctly identified the garments as the referent of 'they,' although the later automated revert restored the ambiguity; neither was a maintainer decision. I preserve that clarification more explicitly and replace the source-shaped ending with the spatial meaning recognized in both the lexical record and the existing footnote.

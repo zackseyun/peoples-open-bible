@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֹּ֗אמֶר קָ֠רָאתִי מִ/צָּ֥רָה לִ֛/י אֶל יְהוָ֖ה וַֽ/יַּעֲנֵ֑/נִי מִ/בֶּ֧טֶן שְׁא֛וֹל שִׁוַּ֖עְתִּי שָׁמַ֥עְתָּ קוֹלִֽ/י־׃
 translation:
-  text: And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”
-  philosophy: optimal-equivalence
+  text: He said, “In my distress I called to Yahweh, and he answered me. From the belly of Sheol[a] I cried for help; you heard my voice.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'From the womb of Sheol'; the Hebrew word can mean 'belly' or 'womb.'
+    text: Sheol is the Hebrew name for the realm of the dead.
     reason: lexical_alternative
-  - marker: b
-    text: Sheol is the Hebrew term for the realm of the dead; alternatively, 'the grave' in a more interpretive rendering.
-    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: And he said
@@ -118,14 +115,20 @@ revisions:
   from: And he said, “I called to the LORD out of my distress, and he answered me. From the belly of Sheol I cried for help; you heard my voice.”
   to: And he said, “I called to the LORD out of my distress, and he answered me. From the belly of Sheol I cried for help; you heard my voice.”
   rationale: Changed 'cried for help' to 'cried out' to more directly reflect the Hebrew verb without adding interpretive expansion. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:56:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”'
-  to: 'And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”'
+  from: And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”
+  to: And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''I cried for help''].'
+- timestamp: '2026-11-09T18:07:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he said[a], “I called to Yahweh out of my distress, and he answered me. From the belly of Sheol I cried out[b]; you heard my voice.”
+  to: He said, “In my distress I called to Yahweh, and he answered me. From the belly of Sheol[a] I cried for help; you heard my voice.
+  rationale: The first draft and lexical rationale support “cried for help” as the specific sense of the verb, despite the later automated preference for “cried out.” I retain the belly image linking Sheol with the fish and explain Sheol rather than replacing it with “hell” or “grave.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -145,3 +148,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/weighted_vocab/ot/jonah/002/003.job-15179.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:47Z'
+  change_level: refined
+  confidence: high
+  meaning: Jonah recalls how Yahweh heard his cry for help when distress brought him to the brink of death.
+  meaning_decisions:
+  - source_phrase: שִׁוַּעְתִּי
+    prior_rendering: I cried out
+    new_rendering: I cried for help
+    rationale: The verb specifically denotes an appeal for aid, not merely a loud cry.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The first draft and lexical rationale support “cried for help” as the specific sense of the verb, despite the later automated preference for “cried out.” I retain the belly image linking Sheol with the fish and explain Sheol rather than replacing it with “hell” or “grave.”

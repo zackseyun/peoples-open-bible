@@ -20,15 +20,12 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.
-  philosophy: optimal-equivalence
+  text: For they had mockingly rejected the one who had been abandoned as an infant long ago[a]; but when these events had run their course, they marveled, for their thirst had been unlike that of the righteous.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: That is, the child once exposed and cast out—an allusion to Moses.
+    text: This is Moses, who was left among the reeds beside the Nile as an infant; see Exodus 2:3.
     reason: cross_reference
-  - marker: b
-    text: Or "at the end of the outcomes"; the Greek may refer to the final result of the events that had unfolded.
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: ἐν ἐκθέσει
   chosen: at his exposure
@@ -132,14 +129,20 @@ revisions:
   from: For the one who had long ago been cast out at his exposure they rejected with mockery; but at the end of those events they marveled, having thirsted in a way unlike the righteous.
   to: For the one who had long ago been cast out at his exposure they rejected with mockery; but at the end of those events they marveled, having thirsted in a way unlike the righteous.
   rationale: Reordered the first clause for clearer English while preserving the Greek emphasis, changed 'cast out' placement to modify 'the one' more naturally, and simplified 'in a way unlike the righteous' to the more formal and direct 'unlike the righteous.'
-
 - timestamp: '2026-05-18T03:00:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.'
-  to: 'For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.'
+  from: For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.
+  to: For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in a way unlike the righteous''].'
+- timestamp: '2026-11-09T19:12:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For they rejected with mockery the one who had long ago been cast out at his exposure[a]; but at the end of those events they marveled[b], having thirsted unlike the righteous.
+  to: For they had mockingly rejected the one who had been abandoned as an infant long ago[a]; but when these events had run their course, they marveled, for their thirst had been unlike that of the righteous.
+  rationale: The history correctly identifies infant exposure and the contrast with Israel's thirst, but its source-transparent constructions obscure both in English. I retain the indirect description of Moses and the unresolved breadth of their astonishment.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -159,3 +162,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/011/014.job-39399.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:28Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The Egyptians who had mocked and rejected Moses eventually marveled at the outcome, having experienced thirst unlike that of the righteous.
+  meaning_decisions:
+  - source_phrase: τὸν γὰρ ἐν ἐκθέσει πάλαι ῥιφέντα ἀπεῖπον χλευάζοντες
+    prior_rendering: For they rejected with mockery the one who had long ago been cast out at his exposure
+    new_rendering: For they had mockingly rejected the one who had been abandoned as an infant long ago
+    rationale: Exposure here means the setting out or abandonment of an infant, not public disclosure; the revised wording makes the historical description intelligible while retaining the unnamed referent.
+  - source_phrase: ἐπὶ τέλει τῶν ἐκβάσεων ἐθαύμασαν
+    prior_rendering: at the end of those events they marveled
+    new_rendering: when these events had run their course, they marveled
+    rationale: The phrase concerns the culmination of the events and their outcome, which the natural English idiom conveys without an abstract explanation.
+  - source_phrase: οὐχ ὅμοια δικαίοις διψήσαντες
+    prior_rendering: having thirsted unlike the righteous
+    new_rendering: for their thirst had been unlike that of the righteous
+    rationale: The participle explains their astonishment through the contrast between their punitive thirst and the righteous people's experience.
+  footnote_kinds:
+    a: cross_reference
+  history_weighed: The history correctly identifies infant exposure and the contrast with Israel's thirst, but its source-transparent constructions obscure both in English. I retain the indirect description of Moses and the unresolved breadth of their astonishment.

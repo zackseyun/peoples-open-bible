@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֧אמְרוּ ל֣/וֹ עֲבָדָ֗י/ו יְבַקְשׁ֞וּ לַ/אדֹנִ֤/י הַ/מֶּ֨לֶךְ֙ נַעֲרָ֣ה בְתוּלָ֔ה וְ/עָֽמְדָה֙ לִ/פְנֵ֣י הַ/מֶּ֔לֶךְ וּ/תְהִי ל֖/וֹ סֹכֶ֑נֶת וְ/שָׁכְבָ֣ה בְ/חֵיקֶ֔/ךָ וְ/חַ֖ם לַ/אדֹנִ֥/י הַ/מֶּֽלֶךְ־׃
 translation:
-  text: So his servants said to him[a], “Let them seek for my lord the king a young virgin woman, and let her attend the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”
-  philosophy: optimal-equivalence
+  text: So his servants said to him, “Let a young woman who is a virgin be found for my lord the king. Let her attend the king and care for him, and let her lie in your arms[a], so that my lord the king may be warm.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'let her stand before the king'; the Hebrew idiom can mean to attend or wait on someone in service.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'attendant' or 'nurse' for 'caregiver'; the Hebrew term is rare and denotes one who ministers to or cares for another.
-    reason: lexical_alternative
-  - marker: c
-    text: Literally 'in your bosom.'
+    text: Literally, “in your bosom.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: עֲבָדָיו
@@ -95,14 +89,20 @@ revisions:
   from: So his servants said to him, “Let them seek for my lord the king a young virgin woman, and let her attend the king and be his caregiver, and let her lie in your bosom, so that my lord the king may be warm.”
   to: So his servants said to him, “Let them seek for my lord the king a young virgin, and let her stand before the king and be his caregiver, and let her lie in your bosom, so that my lord the king may be warm.”
   rationale: Removed 'woman' for a more natural rendering of 'young virgin' and changed 'attend the king' to 'stand before the king' to more closely reflect the source wording while retaining formal register.
-
 - timestamp: '2026-05-16T06:54:47Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So his servants said to him[a], “Let them seek for my lord the king a young virgin, and let her stand before the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”'
-  to: 'So his servants said to him[a], “Let them seek for my lord the king a young virgin woman, and let her attend the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”'
-  rationale: 'Azure dropped ''woman'' from drafter''s chosen ''young virgin woman'' (drafter preserved both Hebrew nouns נַעֲרָה and בְתוּלָה) and substituted ''stand before the king'' — drafter''s explicit rejected_alternative for וְעָמְדָה לִפְנֵי (drafter chose ''attend'' for courtly-service idiom).'
+  from: So his servants said to him[a], “Let them seek for my lord the king a young virgin, and let her stand before the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”
+  to: So his servants said to him[a], “Let them seek for my lord the king a young virgin woman, and let her attend the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”
+  rationale: Azure dropped 'woman' from drafter's chosen 'young virgin woman' (drafter preserved both Hebrew nouns נַעֲרָה and בְתוּלָה) and substituted 'stand before the king' — drafter's explicit rejected_alternative for וְעָמְדָה לִפְנֵי (drafter chose 'attend' for courtly-service idiom).
+- timestamp: '2026-11-09T17:22:16Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So his servants said to him[a], “Let them seek for my lord the king a young virgin woman, and let her attend the king and be his caregiver, and let her lie in your bosom[c][b], so that my lord the king may be warm.”
+  to: So his servants said to him, “Let a young woman who is a virgin be found for my lord the king. Let her attend the king and care for him, and let her lie in your arms[a], so that my lord the king may be warm.”
+  rationale: The history rightly recognizes 'stand before' as an attendance idiom, so I retain 'attend' rather than the more literal revision. The automated revert’s insistence on 'young virgin woman' does not require that awkward English construction when both meanings remain explicit.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -122,3 +122,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/001/002.job-57987.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:16Z'
+  change_level: retranslated
+  confidence: high
+  meaning: David’s servants proposed finding a young virgin to attend him, care for him, and warm him through close bodily contact.
+  meaning_decisions:
+  - source_phrase: יְבַקְשׁוּ לַאדֹנִי הַמֶּלֶךְ נַעֲרָה בְתוּלָה
+    prior_rendering: Let them seek for my lord the king a young virgin woman
+    new_rendering: Let a young woman who is a virgin be found for my lord the king
+    rationale: The passive proposal avoids an unexplained 'them' while retaining both her youth and virginity.
+  - source_phrase: וְעָמְדָה לִפְנֵי הַמֶּלֶךְ וּתְהִי לוֹ סֹכֶנֶת
+    prior_rendering: let her attend the king and be his caregiver
+    new_rendering: Let her attend the king and care for him
+    rationale: The wording preserves courtly attendance and personal care without making the rare term sound like a modern professional designation.
+  - source_phrase: וְשָׁכְבָה בְחֵיקֶךָ
+    prior_rendering: let her lie in your bosom
+    new_rendering: let her lie in your arms
+    rationale: The image describes intimate bodily closeness for warmth; 'in your arms' conveys that naturally, with the source wording retained in a note.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The history rightly recognizes 'stand before' as an attendance idiom, so I retain 'attend' rather than the more literal revision. The automated revert’s insistence on 'young virgin woman' does not require that awkward English construction when both meanings remain explicit.

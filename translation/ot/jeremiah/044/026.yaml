@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: לָ/כֵן֙ שִׁמְע֣וּ דְבַר יְהוָ֔ה כָּל יְהוּדָ֕ה הַ/יֹּשְׁבִ֖ים בְּ/אֶ֣רֶץ מִצְרָ֑יִם הִנְ/נִ֨י נִשְׁבַּ֜עְתִּי בִּ/שְׁמִ֤/י הַ/גָּדוֹל֙ אָמַ֣ר יְהוָ֔ה אִם יִהְיֶה֩ ע֨וֹד שְׁמִ֜/י נִקְרָ֣א בְּ/פִ֣י כָּל אִ֣ישׁ יְהוּדָ֗ה אֹמֵ֛ר חַי אֲדֹנָ֥/י יְהוִ֖ה בְּ/כָל אֶ֥רֶץ מִצְרָֽיִם־־־׀׀־־־׃
 translation:
-  text: 'Therefore hear the word of Yahweh[a], all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that my name shall no longer be called upon by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, 'my name shall no longer be on the lips of any man of Judah.' The Hebrew idiom literally speaks of God's name being 'called in the mouth' of someone, referring here to invoking it in an oath.
-    reason: lexical_alternative
+  text: 'Therefore hear the word of Yahweh, all you Judeans living in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that no Judean anywhere in the land of Egypt will ever again invoke my name by saying, ‘As the Lord Yahweh lives.’'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: לָכֵן
   chosen: Therefore
@@ -137,7 +133,6 @@ revisions:
   from: 'Therefore hear the word of the LORD, all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says the LORD, that my name shall no longer be invoked by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
   to: 'Therefore hear the word of the LORD, all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says the LORD, that my name shall no longer be invoked by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
   rationale: Changed 'be invoked' to 'be called upon' to more directly reflect the Hebrew idiom 'my name be called in the mouth of.'
-
 - timestamp: '2026-05-18T02:56:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -145,6 +140,13 @@ revisions:
   from: 'Therefore hear the word of Yahweh[a], all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that my name shall no longer be called upon by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
   to: 'Therefore hear the word of Yahweh[a], all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that my name shall no longer be called upon by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''my name shall no longer be invoked by the mouth of''].'
+- timestamp: '2026-11-09T18:00:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'Therefore hear the word of Yahweh[a], all Judah who dwell in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that my name shall no longer be called upon by the mouth of any man of Judah in all the land of Egypt, saying, ‘As the Lord GOD lives.’'
+  to: 'Therefore hear the word of Yahweh, all you Judeans living in the land of Egypt: Behold, I have sworn by my great name, says Yahweh, that no Judean anywhere in the land of Egypt will ever again invoke my name by saying, ‘As the Lord Yahweh lives.’'
+  rationale: The first draft’s “invoked” and the lexical note correctly identify an oath, whereas “called upon by the mouth of” obscures that sense. The clearer verb is restored, and Yahweh is applied consistently, including within the oath formula.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -166,3 +168,29 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/jeremiah/044/026.job-68084.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:00:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Yahweh swears by his great name that no Judean in Egypt will ever again invoke him in an oath.
+  meaning_decisions:
+  - source_phrase: כָּל יְהוּדָה הַיֹּשְׁבִים בְּאֶרֶץ מִצְרָיִם
+    prior_rendering: all Judah who dwell in the land of Egypt
+    new_rendering: all you Judeans living in the land of Egypt
+    rationale: The phrase addresses the resident Judean community, not Judah as a geographical entity.
+  - source_phrase: אִם יִהְיֶה עוֹד שְׁמִי נִקְרָא בְּפִי כָּל אִישׁ יְהוּדָה אֹמֵר ... בְּכָל אֶרֶץ מִצְרָיִם
+    prior_rendering: my name shall no longer be called upon by the mouth of any man of Judah in all the land of Egypt, saying
+    new_rendering: no Judean anywhere in the land of Egypt will ever again invoke my name by saying
+    rationale: The oath construction emphatically denies future invocation, and the oral expression specifically concerns swearing by Yahweh; the distributive masculine represents members of the community rather than restricting the statement to males.
+  - source_phrase: חַי אֲדֹנָי יְהוִה
+    prior_rendering: As the Lord GOD lives
+    new_rendering: As the Lord Yahweh lives
+    rationale: The source combines the title Lord with the divine name Yahweh, which must remain explicit under the standing ruling.
+  footnote_kinds: {}
+  history_weighed: The first draft’s “invoked” and the lexical note correctly identify an oath, whereas “called upon by the mouth of” obscures that sense. The clearer verb is restored, and Yahweh is applied consistently, including within the oath formula.

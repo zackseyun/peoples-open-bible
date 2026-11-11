@@ -4,12 +4,15 @@ source:
   edition: WLC
   text: וְ/אֶת עַבְדֵי/כֶם֩ וְֽ/אֶת שִׁפְח֨וֹתֵי/כֶ֜ם וְ/אֶת בַּחוּרֵי/כֶ֧ם הַ/טּוֹבִ֛ים וְ/אֶת חֲמוֹרֵי/כֶ֖ם יִקָּ֑ח וְ/עָשָׂ֖ה לִ/מְלַאכְתּֽ/וֹ־־־־׃
 translation:
-  text: He will take your male servants[a], your female servants, your best young men, and your donkeys, and use them for his work.
-  philosophy: optimal-equivalence
+  text: He will take your male servants[a], your female servants, your best young men[b], and your donkeys, and use them for his work.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'your servants ... your maidservants.' The Hebrew terms can denote servants more broadly, but here the coercive royal seizure context favors 'slaves.'
+    text: The Hebrew terms for male and female servants here refer to household slaves.
     reason: lexical_alternative
+  - marker: b
+    text: The Septuagint reads 'your best cattle' instead of 'your best young men.'
+    reason: textual_variant
 lexical_decisions:
 - source_word: עַבְדֵיכֶם
   chosen: your male slaves
@@ -76,14 +79,20 @@ revisions:
   from: He will take your male slaves, your female slaves, your best young men, and your donkeys, and put them to his work.
   to: He will take your male slaves, your female slaves, your best young men, and your donkeys, and put them to his work.
   rationale: Changed 'put them to his work' to 'use them for his work' for more natural English while preserving the sense of the Hebrew.
-
 - timestamp: '2026-05-18T02:56:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He will take your male slaves[a], your female slaves, your best young men, and your donkeys, and use them for his work.'
-  to: 'He will take your male slaves[a], your female slaves, your best young men, and your donkeys, and use them for his work.'
+  from: He will take your male slaves[a], your female slaves, your best young men, and your donkeys, and use them for his work.
+  to: He will take your male slaves[a], your female slaves, your best young men, and your donkeys, and use them for his work.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''and put them to his work''].'
+- timestamp: '2026-11-09T17:22:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He will take your male servants[a], your female servants, your best young men, and your donkeys, and use them for his work.
+  to: He will take your male servants[a], your female servants, your best young men[b], and your donkeys, and use them for his work.
+  rationale: The recorded review supports 'use them for his work' as natural English, while the automated revert adds no meaning-based objection. I retain the current main text, clarify the bonded-status note, and add the significant Septuagint reading; no maintainer revision is recorded.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -103,3 +112,19 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/008/016.job-58919.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:15Z'
+  change_level: kept
+  confidence: high
+  meaning: The king will commandeer their servants, finest young men, and donkeys for his own work.
+  meaning_decisions: []
+  footnote_kinds:
+    a: name_or_term
+    b: textual_variant
+  history_weighed: The recorded review supports 'use them for his work' as natural English, while the automated revert adds no meaning-based objection. I retain the current main text, clarify the bonded-status note, and add the significant Septuagint reading; no maintainer revision is recorded.

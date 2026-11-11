@@ -20,15 +20,8 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek ὁ σωζόμενος could also be rendered 'the one being saved' or more idiomatically 'the survivor.' The context favors the sense of one who has escaped only to face further judgment.
-    reason: lexical_alternative
-  - marker: b
-    text: The source witness supplied for this verse is marked as a major mismatch against expected verse alignment in Sirach. This translation therefore follows the provided Greek text directly rather than harmonizing to another tradition.
-    reason: textual_variant
+  text: Let the survivor be consumed by fiery wrath, and may those who wrong your people meet destruction.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐν ὀργῇ πυρὸς
   chosen: In the wrath of fire
@@ -110,14 +103,20 @@ revisions:
   from: In the wrath of fire, let the one who escapes be consumed, and let those who wrong your people find destruction.
   to: In the wrath of fire, let the one who escapes be consumed, and let those who wrong your people find destruction.
   rationale: Changed 'the one who escapes' to 'the one who is saved' to more directly reflect ὁ σωζόμενος; otherwise retained the draft's structure and sense.
-
 - timestamp: '2026-05-18T02:59:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.'
-  to: 'In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.'
+  from: In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.
+  to: In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one who escapes''].'
+- timestamp: '2026-11-09T19:07:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the wrath of fire[a], let the one who is saved be consumed[b], and let those who wrong your people find destruction.
+  to: Let the survivor be consumed by fiery wrath, and may those who wrong your people meet destruction.
+  rationale: The first draft and lexical rationale correctly identified an escapee, while a later automated change favored the more formally literal 'is saved.' I retain the earlier contextual gain through 'survivor' and remove the misleading implication of salvation.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -137,3 +136,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/033/011.job-51886.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:07:40Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The prayer asks that surviving enemies be consumed by fiery wrath and that those who wrong God's people meet destruction.
+  meaning_decisions:
+  - source_phrase: ἐν ὀργῇ πυρὸς
+    prior_rendering: In the wrath of fire
+    new_rendering: by fiery wrath
+    rationale: The compressed Greek expression portrays consuming wrath through fire; the adjective carries that image naturally in English.
+  - source_phrase: ὁ σωζόμενος
+    prior_rendering: the one who is saved
+    new_rendering: the survivor
+    rationale: Within the judgment petition, the participle denotes someone who has escaped destruction, not a person receiving spiritual salvation.
+  - source_phrase: εὕροισαν ἀπώλειαν
+    prior_rendering: let those who wrong your people find destruction
+    new_rendering: may those who wrong your people meet destruction
+    rationale: This is a wish that destruction overtake the wrongdoers, not that they discover or seek it.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale correctly identified an escapee, while a later automated change favored the more formally literal 'is saved.' I retain the earlier contextual gain through 'survivor' and remove the misleading implication of salvation.

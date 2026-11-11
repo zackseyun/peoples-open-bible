@@ -16,12 +16,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more contextually, 'to eating forbidden meat' or 'to eating defiled food.' The Greek term itself is literally 'meat-eating,' but in this episode it refers to meat prohibited under the Jewish law.
-    reason: lexical_alternative
+  text: For you have been unable to sway our reasoned judgment or force us to eat defiling food—is that not your defeat?
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μὴ δυνηθῆναί
   chosen: not being able
@@ -113,14 +109,20 @@ revisions:
   from: For your not being able to persuade our reason, nor to compel us to meat-eating—is that not your defeat?
   to: For your not being able to persuade our reason, nor to compel us to meat-eating—is that not your defeat?
   rationale: Replaced 'meat-eating' with 'to eat defiled food' to reflect μεμοφαγίαν more accurately; retained the rest of the structure with only minor smoothing.
-
 - timestamp: '2026-05-18T03:00:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?'
-  to: 'For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?'
+  from: For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?
+  to: For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to meat-eating''].'
+- timestamp: '2026-11-09T19:00:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For your not being able to persuade our reason[a], nor to compel us to eat defiled food—is that not your defeat?
+  to: For you have been unable to sway our reasoned judgment or force us to eat defiling food—is that not your defeat?
+  rationale: The recorded review rightly made the food's defiling character explicit, despite conflicting revert notes. I preserve that gain and the emphasis on reason while replacing the Greek-shaped construction with a direct challenge.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -140,3 +142,29 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/011/025.job-50023.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The tyrant's inability to sway the brothers' reasoned convictions or force them to eat defiling food proves his defeat.
+  meaning_decisions:
+  - source_phrase: τὸ γὰρ μὴ δυνηθῆναί σε
+    prior_rendering: For your not being able
+    new_rendering: For you have been unable
+    rationale: A direct clause conveys the tyrant's demonstrated inability without reproducing the Greek nominal construction.
+  - source_phrase: μεταπεῖσαι τὸν λογισμὸν ἡμῶν
+    prior_rendering: to persuade our reason
+    new_rendering: to sway our reasoned judgment
+    rationale: This conveys persuasion aimed at changing their rational moral judgment, while preserving the book's emphasis on reason rather than reducing the object to mere stubborn resolve.
+  - source_phrase: πρὸς τὴν μεμοφαγίαν
+    prior_rendering: to eat defiled food
+    new_rendering: to eat defiling food
+    rationale: The issue is food whose consumption would defile the brothers under the law, not simply food already described as tainted.
+  footnote_kinds: {}
+  history_weighed: The recorded review rightly made the food's defiling character explicit, despite conflicting revert notes. I preserve that gain and the emphasis on reason while replacing the Greek-shaped construction with a direct challenge.

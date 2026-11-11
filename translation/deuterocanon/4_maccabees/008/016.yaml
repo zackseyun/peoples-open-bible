@@ -18,14 +18,11 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: 'And through their blessed courage they brought down his tyranny[a]. Yet let us consider this: if some among them had been fainthearted and unmanly[b], what words would they have used? Would it not have been these?'
-  philosophy: optimal-equivalence
+  text: 'And through their sound reasoning they defeated his tyranny. Yet let us consider this: if any of them had been fainthearted and cowardly[a], what would they have said? Would they not have said this?'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'through their nobility,' 'through their blessedness,' or possibly 'through the excellence for which they were blessed.' The Greek term is rare and may denote a praiseworthy quality rather than a spoken blessing.
-    reason: lexical_alternative
-  - marker: b
-    text: Greek 'unmanly,' a gendered term in the source used in the book's virtue rhetoric; alternatively, 'without courage' or 'cowardly.'
+    text: Literally, “unmanly,” using the ancient association of courage with manliness.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: διὰ τῆς εὐλογιστίας
@@ -122,7 +119,6 @@ revisions:
   from: 'And through their blessed courage they brought down his tyranny. Yet let us consider this: if some among them had been fainthearted and unmanly, what words would they have used? Would it not have been these?'
   to: 'And through their blessedness they brought down his tyranny. Yet let us consider this: if some among them had been fainthearted and unmanly, what words would they have used? Would it not have been these?'
   rationale: Changed 'blessed courage' to 'blessedness' to more directly reflect εὐλογιστία without adding an interpretive noun not in the Greek. The rest is accurate and natural.
-
 - timestamp: '2026-05-18T03:10:10Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -138,6 +134,13 @@ revisions:
   from: 'And through their blessed courage they brought down his tyranny. Yet let us consider this: if some among them had been fainthearted and unmanly, what words would they have used? Would it not have been these?'
   to: 'And through their blessed courage they brought down his tyranny[a]. Yet let us consider this: if some among them had been fainthearted and unmanly[b], what words would they have used? Would it not have been these?'
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it; [b] anchored to ('unmanly') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:58:54Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'And through their blessed courage they brought down his tyranny[a]. Yet let us consider this: if some among them had been fainthearted and unmanly[b], what words would they have used? Would it not have been these?'
+  to: 'And through their sound reasoning they defeated his tyranny. Yet let us consider this: if any of them had been fainthearted and cowardly[a], what would they have said? Would they not have said this?'
+  rationale: The earlier debate focused on “blessedness” versus “blessed courage,” but the source word and the preceding verse favor sound reasoning. I retain the rhetorical thought experiment while making the courage term clear.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -157,3 +160,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/4_maccabees/008/016.job-49925.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:58:54Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Their sound reasoning defeated the tyrant’s power, and the narrator asks what they might have said had they been cowardly.
+  meaning_decisions:
+  - source_phrase: διὰ τῆς εὐλογιστίας
+    prior_rendering: through their blessed courage
+    new_rendering: through their sound reasoning
+    rationale: Εὐλογιστία denotes sound reasoning or good judgment, not blessedness; this directly continues the philosophical reasoning described in verse 15.
+  - source_phrase: τὴν τυραννίδα αὐτοῦ κατέλυσαν
+    prior_rendering: they brought down his tyranny
+    new_rendering: they defeated his tyranny
+    rationale: The victory is over his coercive power, not a literal overthrow of his government.
+  - source_phrase: ἄνανδροι
+    prior_rendering: unmanly
+    new_rendering: cowardly[a]
+    rationale: The intended accusation is lack of courage; the footnote preserves the source’s gendered expression of that accusation.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier debate focused on “blessedness” versus “blessed courage,” but the source word and the preceding verse favor sound reasoning. I retain the rhetorical thought experiment while making the courage term clear.

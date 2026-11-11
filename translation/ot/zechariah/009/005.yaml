@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: תֵּרֶ֨א אַשְׁקְל֜וֹן וְ/תִירָ֗א וְ/עַזָּה֙ וְ/תָחִ֣יל מְאֹ֔ד וְ/עֶקְר֖וֹן כִּֽי הֹבִ֣ישׁ מֶבָּטָ֑/הּ וְ/אָ֤בַד מֶ֨לֶךְ֙ מֵֽ/עַזָּ֔ה וְ/אַשְׁקְל֖וֹן לֹ֥א תֵשֵֽׁב־׃
 translation:
-  text: Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.
-  philosophy: optimal-equivalence
+  text: Ashkelon will see this and be afraid; Gaza will writhe in great anguish, and so will Ekron, for her hope has been shattered[a]. Gaza will lose her king, and Ashkelon will be uninhabited.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'because her expectation has been disappointed.'
+    text: Literally, “her hope has been put to shame.”
     reason: lexical_alternative
-  - marker: b
-    text: Or 'Gaza will writhe greatly'; the Hebrew sequence may be read with Gaza as the subject of 'will writhe greatly.'
-    reason: alternative_reading
 lexical_decisions:
 - source_word: תֵּרֶא
   chosen: will see it
@@ -87,14 +84,20 @@ revisions:
   from: Ashkelon will see it and fear; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza, and Ashkelon will not be inhabited.
   to: Ashkelon will see it and fear; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza, and Ashkelon will not be inhabited.
   rationale: Removed 'it' after 'see' because the Hebrew does not supply an explicit object here; otherwise retained the draft as accurate and natural.
-
 - timestamp: '2026-05-17T03:36:32Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.'
-  to: 'Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.'
+  from: Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.
+  to: Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''will see it''].'
+- timestamp: '2026-11-09T18:48:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Ashkelon will see and fear[a]; Gaza also will writhe greatly, and Ekron, because her hope has been put to shame. A king will perish from Gaza[b], and Ashkelon will not be inhabited.
+  to: Ashkelon will see this and be afraid; Gaza will writhe in great anguish, and so will Ekron, for her hope has been shattered[a]. Gaza will lose her king, and Ashkelon will be uninhabited.
+  rationale: The first draft supplied the understood object after “see,” while the later review removed it solely because it was not explicit in Hebrew; the meaning-based priority supports restoring it. I retain the recorded force of writhing anguish and disappointed hope, while clarifying the coordinated cities and Gaza's loss.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -114,3 +117,34 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/zechariah/009/005.job-39803.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:48:32Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Tyre's fall will terrify the Philistine cities, shatter Ekron's hopes, cost Gaza her king, and leave Ashkelon uninhabited.
+  meaning_decisions:
+  - source_phrase: תֵּרֶא אַשְׁקְלוֹן וְתִירָא
+    prior_rendering: Ashkelon will see and fear
+    new_rendering: Ashkelon will see this and be afraid
+    rationale: The object of seeing is understood from Tyre's destruction; supplying it makes the English complete without adding an event.
+  - source_phrase: וְעַזָּה וְתָחִיל מְאֹד וְעֶקְרוֹן
+    prior_rendering: Gaza also will writhe greatly, and Ekron
+    new_rendering: Gaza will writhe in great anguish, and so will Ekron
+    rationale: The wording makes the intense anguish explicit and clearly applies the same reaction to Ekron.
+  - source_phrase: כִּי הֹבִישׁ מֶבָּטָהּ
+    prior_rendering: because her hope has been put to shame
+    new_rendering: for her hope has been shattered
+    rationale: The idiom describes the collapse of Ekron's expectation of security; the note preserves its shame imagery.
+  - source_phrase: וְאָבַד מֶלֶךְ מֵעַזָּה
+    prior_rendering: A king will perish from Gaza
+    new_rendering: Gaza will lose her king
+    rationale: The Hebrew describes the loss of Gaza's ruler, not the departure or death of an unidentified king originating there.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The first draft supplied the understood object after “see,” while the later review removed it solely because it was not explicit in Hebrew; the meaning-based priority supports restoring it. I retain the recorded force of writhing anguish and disappointed hope, while clarifying the coordinated cities and Gaza's loss.

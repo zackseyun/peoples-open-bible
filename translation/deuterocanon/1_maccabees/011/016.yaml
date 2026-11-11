@@ -29,15 +29,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'to be sheltered there,' 'to be hidden there,' or 'to be protected there.' The Greek purpose expression can suggest refuge, concealment, or protection.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'was elevated' or 'became powerful.' The Greek more literally says 'was exalted.'
-    reason: lexical_alternative
+  text: Alexander fled to Arabia to find shelter there, but King Ptolemy was exalted.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἔφυγεν
   chosen: fled
@@ -109,14 +102,20 @@ revisions:
   from: And Alexander fled to Arabia, so that he might find shelter there; but King Ptolemy was exalted.
   to: And Alexander fled to Arabia, so that he might find shelter there; but King Ptolemy was exalted.
   rationale: Revised 'so that he might find shelter there' to 'that he might be sheltered there' to more closely reflect the passive infinitive τοῦ σκεπασθῆναι. Kept the rest unchanged.
-
 - timestamp: '2026-05-18T02:59:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.'
-  to: 'And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.'
+  from: And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.
+  to: And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that he might find shelter there''].'
+- timestamp: '2026-11-09T18:53:38Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And Alexander fled to Arabia[a], that he might be sheltered there[b]; but King Ptolemy was exalted.
+  to: Alexander fled to Arabia to find shelter there, but King Ptolemy was exalted.
+  rationale: The first draft’s 'find shelter' conveyed the purpose more naturally than the later passive wording. I retain 'was exalted,' following the lexical and theological decisions that preserve the contrast without specifying an agent or reducing it to military power.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -136,3 +135,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/016.job-48613.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:38Z'
+  change_level: refined
+  confidence: high
+  meaning: Alexander fled to Arabia for protection while Ptolemy rose to an exalted position.
+  meaning_decisions:
+  - source_phrase: τοῦ σκεπασθῆναι αὐτὸν ἐκεῖ
+    prior_rendering: that he might be sheltered there
+    new_rendering: to find shelter there
+    rationale: This naturally expresses the purpose of his flight without forcing the Greek passive into English or claiming that he actually obtained protection.
+  footnote_kinds: {}
+  history_weighed: The first draft’s 'find shelter' conveyed the purpose more naturally than the later passive wording. I retain 'was exalted,' following the lexical and theological decisions that preserve the contrast without specifying an agent or reducing it to military power.

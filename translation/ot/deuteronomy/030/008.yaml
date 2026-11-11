@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/אַתָּ֣ה תָשׁ֔וּב וְ/שָׁמַעְתָּ֖ בְּ/ק֣וֹל יְהוָ֑ה וְ/עָשִׂ֨יתָ֙ אֶת כָּל מִצְוֺתָ֔י/ו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּ/ךָ֖ הַ/יּֽוֹם־־׃
 translation:
-  text: And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.
-  philosophy: optimal-equivalence
+  text: And you will again obey the voice of Yahweh[a] and keep all his commandments that I command you today.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or "turn back"; in context this can also carry the sense of covenantal repentance.
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew "listen to the voice of the LORD"; the idiom often implies obedience.
-    reason: lexical_alternative
+    text: Or, “return in repentance and obey the voice of Yahweh.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: תָשׁוּב
   chosen: shall return
@@ -97,14 +94,20 @@ revisions:
   from: And you shall return and listen to the voice of the LORD, and you shall do all his commandments that I am commanding you today.
   to: And you shall return and listen to the voice of the LORD, and you shall do all his commandments that I am commanding you today.
   rationale: Changed 'listen to the voice' to 'obey the voice' to reflect שָׁמַע בְּקוֹל as covenantal obedience rather than mere hearing; retained the rest with natural formal wording.
-
 - timestamp: '2026-05-18T02:56:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.'
-  to: 'And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.'
+  from: And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.
+  to: And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''listen to the voice of the LORD''].'
+- timestamp: '2026-11-09T17:32:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And you shall return and obey the voice of Yahweh[b][a], and you shall do all his commandments that I am commanding you today.
+  to: And you will again obey the voice of Yahweh[a] and keep all his commandments that I command you today.
+  rationale: The earlier review’s move from mere listening to obedience is retained despite the automated revert record. I understand “return” here as “again” in light of the parallel constructions and restoration sequence, while noting the serious alternative of an explicit return in repentance.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -126,3 +129,26 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/030/008.job-61946.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:32:32Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Restored Israel will once again obey Yahweh and carry out all the commandments Moses gives it.
+  meaning_decisions:
+  - source_phrase: וְאַתָּה תָשׁוּב וְשָׁמַעְתָּ בְּקוֹל יְהוָה
+    prior_rendering: And you shall return and obey the voice of Yahweh
+    new_rendering: And you will again obey the voice of Yahweh
+    rationale: As in verses 3 and 9, “return” can express renewed action; here the promise concerns Israel’s renewed obedience after inward restoration, rather than another geographical return.
+  - source_phrase: וְעָשִׂיתָ אֶת כָּל מִצְוֹתָיו
+    prior_rendering: and you shall do all his commandments
+    new_rendering: and keep all his commandments
+    rationale: “Keep commandments” naturally expresses carrying them out, and “will” maintains the surrounding promise rather than suggesting a separate imperative.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review’s move from mere listening to obedience is retained despite the automated revert record. I understand “return” here as “again” in light of the parallel constructions and restoration sequence, while noting the serious alternative of an explicit return in repentance.

@@ -18,12 +18,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Do not value silver against silver[a], but let it become refuse for our child.
-  philosophy: optimal-equivalence
+  text: Do not seek more money[a], but let it be refuse compared with our child[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek literally, ''Do not let silver get ahead of silver, but let it become offscouring of our child.'' The line is idiomatic: the sense is that money should be treated as worthless compared with the child.'
+    text: Literally, “May silver not get ahead of silver.” This compressed expression is difficult; it is traditionally understood as a warning against adding money to money.
     reason: lexical_alternative
+  - marker: b
+    text: Or, “let it be a ransom for our child.” The Greek term can denote refuse or something given up to avert harm.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἀργύριον
   chosen: silver
@@ -117,14 +120,20 @@ revisions:
   from: Do not count silver against silver, but let it become refuse compared with our child.
   to: Do not count silver against silver, but let it become refuse compared with our child.
   rationale: Revised 'count' to 'value' for better sense of the idiom, and changed 'compared with our child' to 'for our child' to reflect the Greek genitive more naturally and accurately.
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Do not value silver against silver[a], but let it become refuse for our child.'
-  to: 'Do not value silver against silver[a], but let it become refuse for our child.'
+  from: Do not value silver against silver[a], but let it become refuse for our child.
+  to: Do not value silver against silver[a], but let it become refuse for our child.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''compared with our child''].'
+- timestamp: '2026-11-09T19:10:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Do not value silver against silver[a], but let it become refuse for our child.
+  to: Do not seek more money[a], but let it be refuse compared with our child[b].
+  rationale: The first draft’s “compared with our child” and the documented rationale expressed Anna’s point more clearly than the current “for our child.” The history also recognizes the first clause’s difficulty, so the rendering follows its contextual sense while preserving the uncertain wording and a serious alternative in notes.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -144,3 +153,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/tobit/005/019.job-39134.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:46Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Anna urges Tobit not to pursue money at the expense of their child, beside whom the money is worthless.
+  meaning_decisions:
+  - source_phrase: ἀργύριον τῷ ἀργυρίῳ μὴ φθάσαι
+    prior_rendering: Do not value silver against silver
+    new_rendering: Do not seek more money
+    rationale: In Anna’s protest the difficult expression warns against pursuing additional wealth; the obscure source wording is preserved in a footnote rather than reproduced as an unintelligible comparison.
+  - source_phrase: περίψημα τοῦ παιδίου ἡμῶν γένοιτο
+    prior_rendering: let it become refuse for our child
+    new_rendering: let it be refuse compared with our child
+    rationale: The context and the recorded rationale favor the child’s overriding value as the point of comparison. The serious alternative sense of something surrendered as a ransom is acknowledged in a footnote.
+  footnote_kinds:
+    a: literal_wording
+    b: alternative_meaning
+  history_weighed: The first draft’s “compared with our child” and the documented rationale expressed Anna’s point more clearly than the current “for our child.” The history also recognizes the first clause’s difficulty, so the rendering follows its contextual sense while preserving the uncertain wording and a serious alternative in notes.

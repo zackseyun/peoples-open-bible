@@ -7,15 +7,8 @@ source:
   pages: []
   confidence: high
 translation:
-  text: He had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “his son and his son's sons”; that is, his son and grandsons.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek says, more literally, “I am toward departing from living,” an idiomatic way of saying that death is near.
-    reason: lexical_alternative
+  text: He had grown very old. He called his son and grandsons and said to his son, “My child, take your sons with you. Look, I have grown old and am about to depart this life.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: μεγάλως
   chosen: very
@@ -23,7 +16,7 @@ lexical_decisions:
   - greatly
   - exceedingly
   lexicon: LSJ
-  rationale: "With ἐγήρασεν it intensifies the extent of aging rather than adding a separate idea of greatness; 'very old' is natural modern English and preserves the force. Cleanup note: the reader-facing rendering no longer begins with 'Now' because this source expression does not contain an explicit temporal 'now'; any connective force is carried by the surrounding English clause or context."
+  rationale: 'With ἐγήρασεν it intensifies the extent of aging rather than adding a separate idea of greatness; ''very old'' is natural modern English and preserves the force. Cleanup note: the reader-facing rendering no longer begins with ''Now'' because this source expression does not contain an explicit temporal ''now''; any connective force is carried by the surrounding English clause or context.'
 - source_word: ἐγήρασεν
   chosen: had grown ... old
   alternatives:
@@ -113,16 +106,15 @@ revisions:
   adjudicator: azure-gpt-5.4-revision-pass
   reviewer_model: gpt-5.4
   category: revision_pass
-  from: 'Now he had grown very old; and he called his son and his son''s sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”'
-  to: 'Now he had grown very old; and he called his son and his son''s sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”'
+  from: Now he had grown very old; and he called his son and his son's sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”
+  to: Now he had grown very old; and he called his son and his son's sons, and said to him, “Child, take your sons. Look, I have grown old, and I am about to depart from life.”
   rationale: Replaced 'his son's sons' with the more natural 'his grandsons' while preserving the meaning. No other changes needed.
-
 - timestamp: '2026-05-18T02:59:19Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”'
-  to: 'Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”'
+  from: Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
+  to: Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: ["his son''s sons"].'
 - timestamp: '2026-06-22T17:10:00Z'
   adjudicator: codex-leading-now-cleanup
@@ -131,6 +123,13 @@ revisions:
   from: Now he had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
   to: He had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
   rationale: Removed a leading English 'Now' that was functioning as a discourse marker rather than translating an explicit source-language now-word.
+- timestamp: '2026-11-09T19:11:03Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He had grown very old[a]; and he called his son and his grandsons, and said to him, “Child, take your sons. Look, I have grown old[b], and I am about to depart from life.”
+  to: He had grown very old. He called his son and grandsons and said to his son, “My child, take your sons with you. Look, I have grown old and am about to depart this life.
+  rationale: I retain the review's clarification of the descendants as grandsons and the earlier decision to preserve Tobit's softened expression for death. The added 'with you' follows the departure instruction that immediately continues his speech.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -150,3 +149,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/tobit/014/003.job-52606.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:11:03Z'
+  change_level: refined
+  confidence: high
+  meaning: Knowing that death is near, Tobit summons his son and grandsons and begins instructing his son to take his children with him.
+  meaning_decisions:
+  - source_phrase: καὶ εἶπεν αὐτῷ
+    prior_rendering: and said to him
+    new_rendering: and said to his son
+    rationale: Naming the recipient makes clear which of the summoned family members Tobit addresses.
+  - source_phrase: Τέκνον, λάβε τοὺς υἱούς σου
+    prior_rendering: Child, take your sons
+    new_rendering: My child, take your sons with you
+    rationale: The affectionate address and the following instruction to leave for Media make the intended accompaniment clear.
+  footnote_kinds: {}
+  history_weighed: I retain the review's clarification of the descendants as grandsons and the earlier decision to preserve Tobit's softened expression for death. The added 'with you' follows the departure instruction that immediately continues his speech.

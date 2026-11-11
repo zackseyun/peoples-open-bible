@@ -4,15 +4,12 @@ source:
   edition: SBLGNT
   text: καὶ μεταβὰς ἐκεῖθεν ⸀εἰσῆλθεν εἰς οἰκίαν τινὸς ὀνόματι ⸀Τιτίου Ἰούστου σεβομένου τὸν θεόν, οὗ ἡ οἰκία ἦν συνομοροῦσα τῇ συναγωγῇ.
 translation:
-  text: And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.
-  philosophy: optimal-equivalence
+  text: Then Paul left the synagogue and entered the house of a man named Titius Justus, who worshiped God[a]. His house was next to the synagogue.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'who feared God' or 'a worshiper of God.' The Greek describes a Gentile devoted to the God of Israel.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'was adjoining' or 'shared a boundary with' the synagogue.
-    reason: lexical_alternative
+    text: The Greek expression commonly describes a Gentile who worshiped the God of Israel.
+    reason: cultural_note
 lexical_decisions:
 - source_word: μεταβὰς
   chosen: after leaving
@@ -109,14 +106,20 @@ revisions:
   from: And after leaving there, he entered the house of a man named Titius Justus, who worshiped God, whose house was next door to the synagogue.
   to: And after leaving there, he entered the house of a man named Titius Justus, who worshiped God, whose house was next door to the synagogue.
   rationale: Changed 'next door to' to 'next to' for a slightly more formal register while preserving the meaning of συνομοροῦσα. No other changes needed.
-
 - timestamp: '2026-05-18T03:00:15Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.'
-  to: 'And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.'
+  from: And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.
+  to: And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''was next door to''].'
+- timestamp: '2026-11-09T20:30:46Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And after leaving there[a], he entered the house of a man named Titius Justus, who worshiped God[b], whose house was next to the synagogue.
+  to: Then Paul left the synagogue and entered the house of a man named Titius Justus, who worshiped God[a]. His house was next to the synagogue.
+  rationale: The recorded revisions chiefly concern 'next door to' versus 'next to' and contain no maintainer ruling; I retain the current 'next to' and the descriptive 'who worshiped God.' I split the repeated relative clauses for clarity and retain the useful cultural note at the phrase it explains.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -136,3 +139,22 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/acts/018/007.job-46785.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T20:30:46Z'
+  change_level: refined
+  confidence: high
+  meaning: Paul left the synagogue and entered the neighboring house of Titius Justus, a worshiper of Israel’s God.
+  meaning_decisions:
+  - source_phrase: καὶ μεταβὰς ἐκεῖθεν εἰσῆλθεν
+    prior_rendering: And after leaving there, he entered
+    new_rendering: Then Paul left the synagogue and entered
+    rationale: The preceding verses identify Paul as the subject and the synagogue as the place he leaves; making both explicit conveys the narrative transition naturally.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The recorded revisions chiefly concern 'next door to' versus 'next to' and contain no maintainer ruling; I retain the current 'next to' and the descriptive 'who worshiped God.' I split the repeated relative clauses for clarity and retain the useful cultural note at the phrase it explains.

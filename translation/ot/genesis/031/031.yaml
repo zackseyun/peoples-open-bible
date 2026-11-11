@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יַּ֥עַן יַעֲקֹ֖ב וַ/יֹּ֣אמֶר לְ/לָבָ֑ן כִּ֣י יָרֵ֔אתִי כִּ֣י אָמַ֔רְתִּי פֶּן תִּגְזֹ֥ל אֶת בְּנוֹתֶ֖י/ךָ מֵ/עִמִּֽ/י־־׃
 translation:
-  text: Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more literally, “lest you rob/snatch your daughters from me.” The Hebrew verb carries a stronger sense of wrongful seizure than the smoother English 'take away.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'for I said'.
-    reason: previous_rendering
+  text: Then Jacob answered Laban, “I was afraid. I thought you might take your daughters from me by force.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיַּעַן
   chosen: answered
@@ -107,9 +100,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”'
-  to: 'Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”'
+  from: Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”
+  to: Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''away from me''].'
+- timestamp: '2026-11-09T17:44:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Then Jacob answered and said to Laban[a], “Because I was afraid, for I said[b], ‘Lest you take your daughters from me by force.’”
+  to: Then Jacob answered Laban, “I was afraid. I thought you might take your daughters from me by force.
+  rationale: The earlier readability review correctly identified 'I thought' as the sense of Jacob's inward speech. I restore that gain while retaining 'by force,' which already carries the stronger seizure meaning noted in the record.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-17T09:41:11Z'
@@ -138,3 +138,25 @@ cross_check:
     major-issues: 1
     minor-issues: 3
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/031/031.job-37701.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:44:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Jacob explained that fear of Laban forcibly taking his daughters back had prompted his secret departure.
+  meaning_decisions:
+  - source_phrase: וַיַּעַן יַעֲקֹב וַיֹּאמֶר לְלָבָן
+    prior_rendering: Then Jacob answered and said to Laban
+    new_rendering: Then Jacob answered Laban
+    rationale: The paired Hebrew speech verbs introduce one response; a single English verb conveys the full function naturally.
+  - source_phrase: כִּי אָמַרְתִּי פֶּן תִּגְזֹל
+    prior_rendering: for I said, ‘Lest you take ... by force’
+    new_rendering: I thought you might take ... by force
+    rationale: This is Jacob's internal apprehension, not a report of words spoken aloud; 'might' expresses the feared possibility.
+  footnote_kinds: {}
+  history_weighed: The earlier readability review correctly identified 'I thought' as the sense of Jacob's inward speech. I restore that gain while retaining 'by force,' which already carries the stronger seizure meaning noted in the record.

@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: Μὴ οὖν ἐπαισχυνθῇς τὸ μαρτύριον τοῦ κυρίου ἡμῶν μηδὲ ἐμὲ τὸν δέσμιον αὐτοῦ, ἀλλὰ συγκακοπάθησον τῷ εὐαγγελίῳ κατὰ δύναμιν θεοῦ,
 translation:
-  text: Therefore, do not be ashamed of the testimony[a] about our Lord, nor of me, his prisoner, but suffer hardship with the gospel[b] according to the power of God[c],
-  philosophy: optimal-equivalence
+  text: Therefore, do not be ashamed of the testimony about our Lord[a] or of me, his prisoner, but share in suffering for the gospel by the power of God.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, 'the testimony of our Lord.' The Greek genitive could be read that way, but here it likely means the testimony about the Lord.
+    text: Or, 'the testimony given by our Lord.'
     reason: alternative_reading
-  - marker: b
-    text: Or, 'share in suffering for the gospel.' The Greek verb includes the idea of joining with others in suffering hardship.
-    reason: lexical_alternative
-  - marker: c
-    text: Or, 'by the power of God.'
-    reason: lexical_alternative
 lexical_decisions:
 - source_word: Μὴ οὖν
   chosen: Therefore, do not
@@ -109,13 +103,12 @@ revisions:
   from: Therefore, do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship with the gospel according to the power of God,
   to: Therefore, do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship for the gospel according to the power of God,
   rationale: Changed 'with the gospel' to 'for the gospel' to better reflect the sense of συγκακοπάθησον τῷ εὐαγγελίῳ in natural English while preserving the formal register.
-
 - timestamp: '2026-05-18T03:10:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Therefore[a], do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship for the gospel according to the power of God[c][b],'
-  to: 'Therefore, do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship with the gospel according to the power of God,'
+  from: Therefore[a], do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship for the gospel according to the power of God[c][b],
+  to: Therefore, do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship with the gospel according to the power of God,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''suffer hardship with''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -125,6 +118,13 @@ revisions:
   from: Therefore, do not be ashamed of the testimony about our Lord, nor of me, his prisoner, but suffer hardship with the gospel according to the power of God,
   to: Therefore, do not be ashamed of the testimony[a] about our Lord, nor of me, his prisoner, but suffer hardship with the gospel[b] according to the power of God[c],
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('the testimony') because the note names that rendering; [b] anchored to ('the gospel') because the note names that rendering; [c] anchored to ('according to the power of God') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:05:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Therefore, do not be ashamed of the testimony[a] about our Lord, nor of me, his prisoner, but suffer hardship with the gospel[b] according to the power of God[c],
+  to: Therefore, do not be ashamed of the testimony about our Lord[a] or of me, his prisoner, but share in suffering for the gospel by the power of God.
+  rationale: The April revision's 'for the gospel' improved the meaning of the compressed Greek; the later wholesale automated revert supplies no contrary exegetical reason. I recover that gain and also make the verb's shared suffering and God's enabling power explicit.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -147,3 +147,26 @@ cross_check:
     major-issues: 1
     minor-issues: 1
   source_review: state/reviews/gemini/low_agreement_recheck/nt/2_timothy/001/008.job-28881.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:05:52Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Paul urges Timothy not to be ashamed of the testimony about the Lord or of Paul's imprisonment, but to share in suffering for the gospel through God's power.
+  meaning_decisions:
+  - source_phrase: συγκακοπάθησον τῷ εὐαγγελίῳ
+    prior_rendering: suffer hardship with the gospel
+    new_rendering: share in suffering for the gospel
+    rationale: The compound verb calls Timothy to participate in suffering with others, while the gospel is the cause served by that suffering; the prior wording obscures both relationships.
+  - source_phrase: κατὰ δύναμιν θεοῦ
+    prior_rendering: according to the power of God
+    new_rendering: by the power of God
+    rationale: Makes clear that God's power enables Timothy to endure suffering, rather than leaving the relationship as an unexplained standard or measure.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The April revision's 'for the gospel' improved the meaning of the compressed Greek; the later wholesale automated revert supplies no contrary exegetical reason. I recover that gain and also make the verb's shared suffering and God's enabling power explicit.

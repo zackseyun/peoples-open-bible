@@ -27,12 +27,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'might not allow him.' The object is left implicit in the Greek; the translation supplies 'it' for clear English.
-    reason: lexical_alternative
+  text: Tryphon feared that Jonathan might prevent him from carrying out his plan and make war against him. So he sought a way to seize Jonathan and kill him, and he set out and came to Beth-shan.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ηὐλαβήθη
   chosen: became afraid
@@ -111,14 +107,20 @@ revisions:
   from: And he became afraid that Jonathan might not allow it and might make war against him, and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
   to: And he became afraid that Jonathan might not allow it and might make war against him, and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
   rationale: Changed 'allow it' to 'permit him' to reflect the Greek object αὐτόν more accurately; retained the rest as natural and faithful.
-
 - timestamp: '2026-05-18T02:59:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.'
-  to: 'And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.'
+  from: And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
+  to: And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''might not allow it''].'
+- timestamp: '2026-11-09T18:53:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he became afraid that Jonathan might not permit him and might make war against him[a], and he was seeking a way to seize him and kill him; and he set out and came to Beth-shan.
+  to: Tryphon feared that Jonathan might prevent him from carrying out his plan and make war against him. So he sought a way to seize Jonathan and kill him, and he set out and came to Beth-shan.
+  rationale: The history alternates between 'allow it' and 'permit him,' showing the difficulty of expressing the elliptical Greek construction. I preserve the concern behind both choices by stating the intended action explicitly rather than retaining an incomplete English phrase.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -138,3 +140,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/040.job-48711.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:06Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Fearing that Jonathan would obstruct his royal ambitions and fight him, Tryphon sought to capture and kill him and traveled to Beth-shan.
+  meaning_decisions:
+  - source_phrase: μὴ ποτε οὐκ ἐάσῃ αὐτὸν Ἰωναθὰν
+    prior_rendering: that Jonathan might not permit him
+    new_rendering: that Jonathan might prevent him from carrying out his plan
+    rationale: 'English needs the action left implicit in Greek: Jonathan might prevent Tryphon from pursuing the ambitions described in the preceding verse.'
+  - source_phrase: καὶ ἐζήτει πόρον τοῦ συλλαβεῖν αὐτὸν τοῦ ἀποκτεῖναι
+    prior_rendering: and he was seeking a way to seize him and kill him
+    new_rendering: So he sought a way to seize Jonathan and kill him
+    rationale: The causal connection and Jonathan's identity are clear in context but obscured by the prior sequence of pronouns.
+  footnote_kinds: {}
+  history_weighed: The history alternates between 'allow it' and 'permit him,' showing the difficulty of expressing the elliptical Greek construction. I preserve the concern behind both choices by stating the intended action explicitly rather than retaining an incomplete English phrase.

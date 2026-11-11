@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: זֶ֣ה יִתְּנ֗וּ כָּל הָ/עֹבֵר֙ עַל הַ/פְּקֻדִ֔ים מַחֲצִ֥ית הַ/שֶּׁ֖קֶל בְּ/שֶׁ֣קֶל הַ/קֹּ֑דֶשׁ עֶשְׂרִ֤ים גֵּרָה֙ הַ/שֶּׁ֔קֶל מַחֲצִ֣ית הַ/שֶּׁ֔קֶל תְּרוּמָ֖ה לַֽ/יהוָֽה׀־־׃
 translation:
-  text: 'This is what everyone who passes over to those who are numbered shall give: half a shekel according to the sanctuary shekel (the shekel is twenty gerahs)[a], half a shekel as an offering to Yahweh.'
-  philosophy: optimal-equivalence
+  text: Everyone counted in the census shall give half a shekel[a], measured by the sanctuary standard (a shekel is twenty gerahs). This half-shekel shall be a contribution to Yahweh.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'everyone who passes among those registered'; the Hebrew expression is a census idiom for those entering the official count.
-    reason: lexical_alternative
+    text: The shekel was a unit of weight, not a coin; this payment was made in silver.
+    reason: cultural_note
 lexical_decisions:
 - source_word: זֶה
   chosen: This is what
@@ -98,7 +98,6 @@ revisions:
   from: 'This is what everyone who is counted among those registered shall give: half a shekel, according to the sanctuary shekel (the shekel is twenty gerahs), half a shekel as an offering to the LORD.'
   to: 'This is what everyone who is counted among those registered shall give: half a shekel, according to the sanctuary shekel (the shekel is twenty gerahs), half a shekel as an offering to the LORD.'
   rationale: Revised 'is counted among those registered' to 'passes over to those who are numbered' to more closely reflect the Hebrew wording עֹבֵר עַל הַפְּקֻדִים while keeping formal register. Removed one comma for smoother English.
-
 - timestamp: '2026-05-18T02:56:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -106,6 +105,13 @@ revisions:
   from: 'This is what everyone who passes over to those who are numbered shall give: half a shekel according to the sanctuary shekel (the shekel is twenty gerahs)[a], half a shekel as an offering to Yahweh.'
   to: 'This is what everyone who passes over to those who are numbered shall give: half a shekel according to the sanctuary shekel (the shekel is twenty gerahs)[a], half a shekel as an offering to Yahweh.'
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''everyone who is counted among those registered''].'
+- timestamp: '2026-11-09T17:36:15Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'This is what everyone who passes over to those who are numbered shall give: half a shekel according to the sanctuary shekel (the shekel is twenty gerahs)[a], half a shekel as an offering to Yahweh.'
+  to: Everyone counted in the census shall give half a shekel[a], measured by the sanctuary standard (a shekel is twenty gerahs). This half-shekel shall be a contribution to Yahweh.
+  rationale: The earlier draft and lexical rationale already understood the 'passing over' expression as census registration; the source-transparency revision obscured that gain. I restore its clear meaning, preserve the repeated half-shekel emphasis, and clarify the sanctuary weight standard.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -128,3 +134,30 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/exodus/030/013.job-63070.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:36:15Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Each person counted must contribute half a shekel to Yahweh, using the sanctuary’s weight standard of twenty gerahs per shekel.
+  meaning_decisions:
+  - source_phrase: כָּל הָעֹבֵר עַל הַפְּקֻדִים
+    prior_rendering: everyone who passes over to those who are numbered
+    new_rendering: Everyone counted in the census
+    rationale: The expression identifies those entering the official count; literal movement language leaves modern readers uncertain about who must pay.
+  - source_phrase: בְּשֶׁקֶל הַקֹּדֶשׁ
+    prior_rendering: according to the sanctuary shekel
+    new_rendering: measured by the sanctuary standard
+    rationale: The phrase specifies the authoritative weight standard, not a special coin or a different kind of payment.
+  - source_phrase: תְּרוּמָה לַיהוָה
+    prior_rendering: as an offering to Yahweh
+    new_rendering: shall be a contribution to Yahweh
+    rationale: This is a payment set apart for sacred use; 'contribution' states its function accurately and consistently with the following verses.
+  footnote_kinds:
+    a: cultural_background
+  history_weighed: The earlier draft and lexical rationale already understood the 'passing over' expression as census registration; the source-transparency revision obscured that gain. I restore its clear meaning, preserve the repeated half-shekel emphasis, and clarify the sanctuary weight standard.

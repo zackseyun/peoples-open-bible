@@ -23,14 +23,11 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.
-  philosophy: optimal-equivalence
+  text: He sets his heart on completing the pottery’s finish[a], and he stays awake to clean out the kiln.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the kiln.' In the pottery context of the surrounding lines, κάμινος may refer specifically to a kiln rather than a furnace in general.
-    reason: lexical_alternative
-  - marker: b
-    text: The Greek wording here is somewhat difficult, especially τὸ χάρισμα. The translation understands it as the pottery's finished coating or decorative finish ('glazing') in light of the surrounding context.
+    text: Or, more specifically, “the glazing”; the precise technical sense of the Greek term is uncertain.
     reason: alternative_reading
 lexical_decisions:
 - source_word: καρδίαν ἐπιδώσει
@@ -108,14 +105,20 @@ revisions:
   from: He will apply his heart to complete the glazing, and his wakefulness is to cleanse the furnace.
   to: He will apply his heart to complete the glazing, and his wakefulness is to cleanse the furnace.
   rationale: Changed 'glazing' to 'glaze' for a more natural rendering of τὸ χάρισμα here, while retaining the structure and sense of the verse.
-
 - timestamp: '2026-05-18T02:59:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.'
-  to: 'He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.'
+  from: He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.
+  to: He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the glazing''].'
+- timestamp: '2026-11-09T19:08:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He will apply his heart to complete the glaze[b][a], and his wakefulness is to cleanse the furnace.
+  to: He sets his heart on completing the pottery’s finish[a], and he stays awake to clean out the kiln.
+  rationale: The record treats “glaze” as a contextual interpretation of an uncertain Greek term, not a secure technical equivalent. I use the broader “pottery’s finish,” retain glazing in a note, and identify the furnace as a kiln from the immediate setting.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -135,3 +138,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/038/033.job-52076.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:08:49Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The potter concentrates on completing the pottery's finish and stays awake attending to the kiln's cleaning.
+  meaning_decisions:
+  - source_phrase: τὸ χάρισμα
+    prior_rendering: the glaze
+    new_rendering: the pottery’s finish
+    rationale: The term is uncertain in this setting; the broader finish-language carries the contextual meaning without presenting glazing as a securely established technical equivalent.
+  - source_phrase: καρδίαν ἐπιδώσει ... καὶ ἡ ἀγρυπνία αὐτοῦ
+    prior_rendering: He will apply his heart ... and his wakefulness is
+    new_rendering: He sets his heart ... and he stays awake
+    rationale: These natural English constructions express focused commitment and wakeful labor, matching the parallel description of the smith.
+  - source_phrase: καθαρίσαι κάμινον
+    prior_rendering: to cleanse the furnace
+    new_rendering: to clean out the kiln
+    rationale: The pottery setting identifies the furnace as a kiln, and the cleaning is practical maintenance rather than ritual cleansing.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The record treats “glaze” as a contextual interpretation of an uncertain Greek term, not a secure technical equivalent. I use the broader “pottery’s finish,” retain glazing in a note, and identify the furnace as a kiln from the immediate setting.

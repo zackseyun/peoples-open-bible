@@ -19,18 +19,15 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And she said[a], “O Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance against foreigners, who loosed a virgin’s womb for defilement and bared the thigh for shame and profaned the womb for disgrace—though you said, ‘It shall not be so’[c][b]; but they did it.”
-  philosophy: optimal-equivalence
+  text: She said, “O Lord, God of my forefather Simeon[a], you put a sword in his hand so he could take vengeance on foreigners who raped a virgin, defiling her, stripped her bare, shaming her, and profaned her womb, disgracing her[b]. You had said, ‘This must not be done,’ yet they did it.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more explicitly, “who violated the virgin’s womb.” The Greek expression is euphemistic but clearly refers to sexual violation.
-    reason: lexical_alternative
-  - marker: b
-    text: “Bared the thigh” is a sexual-shame idiom; compare similar biblical uses of uncovering nakedness or thigh imagery for humiliation and violation.
-    reason: cultural_note
-  - marker: c
-    text: The prayer alludes to the Simeon-Dinah episode in Genesis 34, interpreting Simeon’s violence as vengeance for the outrage committed.
+    text: See Genesis 34, where Simeon and Levi avenge the violation of their sister Dinah.
     reason: cross_reference
+  - marker: b
+    text: Literally, “who loosed a virgin’s womb for defilement, bared the thigh for shame, and profaned the womb for disgrace.”
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: Κύριε
   chosen: Lord
@@ -158,7 +155,6 @@ revisions:
   from: And she said, “Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance on foreigners, who loosened the virgin’s womb for defilement and bared the thigh for shame and profaned the womb for disgrace—yet you said, ‘It shall not be so’; but they did it.”
   to: And she said, “O Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance against foreigners, who loosed a virgin’s womb for defilement and bared her thigh for shame and profaned her womb for disgrace—though you said, ‘It shall not be so’; yet they did it.”
   rationale: Added 'O' for natural vocative address; changed 'on foreigners' to 'against foreigners' for more natural English; changed 'the virgin’s womb' to 'a virgin’s womb' for closer Greek sense; supplied pronouns in 'bared her thigh' and 'profaned her womb' for clarity and completeness; adjusted 'but' to 'though... yet' to better reflect the contrast.
-
 - timestamp: '2026-05-14T00:00:00Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
@@ -166,6 +162,13 @@ revisions:
   from: And she said, “O Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance against foreigners, who loosed a virgin’s womb for defilement and bared her thigh for shame and profaned her womb for disgrace—though you said, ‘It shall not be so’; yet they did it.”
   to: And she said, “Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance on foreigners, who loosened the virgin’s womb for defilement and bared the thigh for shame and profaned the womb for disgrace—yet you said, ‘It shall not be so’; but they did it.”
   rationale: Restored 'loosened' (ἔλυσαν metaphor), bare 'the thigh'/'the womb' (drafter's documented no-pronoun definiteness), and 'yet...but' (adversative force) — all explicit drafter rationales bypassed.
+- timestamp: '2026-11-09T19:01:37Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And she said[a], “O Lord, God of my father Simeon, to whom you gave a sword in his hand for vengeance against foreigners, who loosed a virgin’s womb for defilement and bared the thigh for shame and profaned the womb for disgrace—though you said, ‘It shall not be so’[c][b]; but they did it.”
+  to: She said, “O Lord, God of my forefather Simeon[a], you put a sword in his hand so he could take vengeance on foreigners who raped a virgin, defiling her, stripped her bare, shaming her, and profaned her womb, disgracing her[b]. You had said, ‘This must not be done,’ yet they did it.
+  rationale: The review usefully clarified that all three expressions concern the same woman, while the automated revert chiefly defended literal wording. I preserve the history’s insistence on the threefold accusation but make its sexual violence and ancestral reference explicit.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -185,3 +188,35 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/judith/009/002.job-50681.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:01:37Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Judith addresses the God of her forefather Simeon, recalling how he armed Simeon to avenge sexual violence committed by foreigners in defiance of God’s command.
+  meaning_decisions:
+  - source_phrase: τοῦ πατρὸς μου Συμεών
+    prior_rendering: my father Simeon
+    new_rendering: my forefather Simeon
+    rationale: Simeon is the ancestral patriarch, not Judith’s immediate father; “forefather” preserves the familial claim without misleading a modern reader.
+  - source_phrase: ᾧ ἔδωκας ἐν χειρὶ ῥομφαίαν εἰς ἐκδίκησιν ἀλλογενῶν
+    prior_rendering: to whom you gave a sword in his hand for vengeance against foreigners
+    new_rendering: you put a sword in his hand so he could take vengeance on foreigners
+    rationale: A direct clause makes clear that God supplied the weapon and Simeon carried out the vengeance, while retaining the sword-in-hand image.
+  - source_phrase: οἳ ἔλυσαν μήτραν παρθένου εἰς μίασμα καὶ ἐγύμνωσαν μηρὸν εἰς αἰσχύνην καὶ ἐβεβήλωσαν μήτραν εἰς ὄνειδος
+    prior_rendering: who loosed a virgin’s womb for defilement and bared the thigh for shame and profaned the womb for disgrace
+    new_rendering: who raped a virgin, defiling her, stripped her bare, shaming her, and profaned her womb, disgracing her
+    rationale: The first two expressions are sexual-violation idioms that literal English obscures. The translation makes their meaning explicit while preserving the threefold accusation and the final image of profanation.
+  - source_phrase: εἶπας γὰρ Οὐχ οὕτως ἔσται· καὶ ἐποίησαν
+    prior_rendering: though you said, ‘It shall not be so’; but they did it
+    new_rendering: You had said, ‘This must not be done,’ yet they did it
+    rationale: In this recollection of Genesis 34:7, the saying expresses a prohibition, not a prediction that the violation would never occur.
+  footnote_kinds:
+    a: cross_reference
+    b: literal_wording
+  history_weighed: The review usefully clarified that all three expressions concern the same woman, while the automated revert chiefly defended literal wording. I preserve the history’s insistence on the threefold accusation but make its sexual violence and ancestral reference explicit.

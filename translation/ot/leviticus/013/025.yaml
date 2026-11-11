@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וְ/רָאָ֣ה אֹתָ֣/הּ הַ/כֹּהֵ֡ן וְ/הִנֵּ֣ה נֶהְפַּךְ֩ שֵׂעָ֨ר לָבָ֜ן בַּ/בַּהֶ֗רֶת וּ/מַרְאֶ֨/הָ֙ עָמֹ֣ק מִן הָ/ע֔וֹר צָרַ֣עַת הִ֔וא בַּ/מִּכְוָ֖ה פָּרָ֑חָה וְ/טִמֵּ֤א אֹת/וֹ֙ הַ/כֹּהֵ֔ן נֶ֥גַע צָרַ֖עַת הִֽוא־׃
 translation:
-  text: And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a skin disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of skin disease.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Hebrew tsaraʿat, a broad term for a serious skin affliction; traditionally rendered 'leprosy.'
-    reason: lexical_alternative
+  text: The priest shall examine it. If the hair in the bright spot has turned white and the spot appears deeper than the surrounding skin, it is a skin disease that has broken out in the burned area. The priest shall pronounce him unclean; it is an outbreak of skin disease.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: רָאָה
   chosen: shall examine
@@ -105,14 +101,20 @@ revisions:
   from: And the priest shall examine it, and if the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a skin disease that has broken out in the burn scar; the priest shall pronounce him unclean. It is an infection of skin disease.
   to: And the priest shall examine it, and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a leprous disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of leprous disease.
   rationale: Replaced 'if' with 'behold' to reflect וְהִנֵּה more accurately, and changed 'skin disease' to 'leprous disease' for closer lexical consistency with צָרַעַת.
-
 - timestamp: '2026-05-16T08:55:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a leprous disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of leprous disease.'
-  to: 'And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a skin disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of skin disease.'
-  rationale: 'Azure substituted ''leprous disease'' (functionally equivalent to rejected ''leprosy'' — imports Hansen''s disease connotation drafter explicitly declined for צָרַעַת). The if→behold change is a legitimate Hebrew particle fix for וְהִנֵּה and is retained.'
+  from: And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a leprous disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of leprous disease.
+  to: And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a skin disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of skin disease.
+  rationale: Azure substituted 'leprous disease' (functionally equivalent to rejected 'leprosy' — imports Hansen's disease connotation drafter explicitly declined for צָרַעַת). The if→behold change is a legitimate Hebrew particle fix for וְהִנֵּה and is retained.
+- timestamp: '2026-11-09T18:18:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the priest shall examine it[a], and behold, the hair in the bright spot has turned white and its appearance is deeper than the skin, it is a skin disease that has broken out in the burn scar; and the priest shall pronounce him unclean. It is an infection of skin disease.
+  to: The priest shall examine it. If the hair in the bright spot has turned white and the spot appears deeper than the surrounding skin, it is a skin disease that has broken out in the burned area. The priest shall pronounce him unclean; it is an outbreak of skin disease.
+  rationale: The history correctly preserves 'skin disease' against an overly specific leprosy rendering. Although an earlier review restored 'behold' for formal correspondence, the case-law context supports an explicit conditional; I also avoid the unstated healing implied by 'burn scar.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -132,3 +134,33 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/leviticus/013/025.job-45146.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:18:28Z'
+  change_level: retranslated
+  confidence: high
+  meaning: White hair and a deeper appearance identify skin disease in the burned area, and the priest must pronounce the person unclean.
+  meaning_decisions:
+  - source_phrase: וְרָאָה אֹתָהּ הַכֹּהֵן וְהִנֵּה
+    prior_rendering: And the priest shall examine it, and behold
+    new_rendering: The priest shall examine it. If
+    rationale: The observed signs form the condition for identifying the affliction; splitting the sentence makes that logic clear without a comma splice.
+  - source_phrase: וּמַרְאֶהָ עָמֹק מִן הָעוֹר
+    prior_rendering: its appearance is deeper than the skin
+    new_rendering: the spot appears deeper than the surrounding skin
+    rationale: The criterion is the spot's visible appearance relative to neighboring skin, not an assertion of medically measured penetration.
+  - source_phrase: בַּמִּכְוָה
+    prior_rendering: in the burn scar
+    new_rendering: in the burned area
+    rationale: The noun identifies the burn or its site; unlike the boil case, this case has not stated that the injury has healed into a scar.
+  - source_phrase: נֶגַע צָרַעַת הִוא
+    prior_rendering: It is an infection of skin disease.
+    new_rendering: it is an outbreak of skin disease
+    rationale: The construct identifies the affliction as an instance of the skin-disease category without asserting an infectious cause.
+  footnote_kinds: {}
+  history_weighed: The history correctly preserves 'skin disease' against an overly specific leprosy rendering. Although an earlier review restored 'behold' for formal correspondence, the case-law context supports an explicit conditional; I also avoid the unstated healing implied by 'burn scar.'

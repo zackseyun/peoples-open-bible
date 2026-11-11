@@ -27,12 +27,12 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And when the pursuers saw that it was a matter of life and death for them[a], they turned back.
-  philosophy: optimal-equivalence
+  text: When the pursuers saw that Jonathan's men would fight for their lives[a], they turned back.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Greek literally, 'that it is concerning life for them,' an idiom meaning that their lives were at stake.
-    reason: lexical_alternative
+    text: Alternatively, 'that their own lives were at stake,' referring to the pursuers.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: ἰδὼν
   chosen: when ... saw
@@ -97,14 +97,20 @@ revisions:
   from: And when the pursuers saw that it was a matter of life for them, they turned back.
   to: And when the pursuers saw that it was a matter of life for them, they turned back.
   rationale: Revised 'a matter of life for them' to the more natural and idiomatic 'a matter of life and death for them' to reflect περὶ ψυχῆς ἐστιν αὐτοῖς accurately in formal English.
-
 - timestamp: '2026-05-18T02:58:31Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when the pursuers saw that it was a matter of life and death for them[a], they turned back.'
-  to: 'And when the pursuers saw that it was a matter of life and death for them[a], they turned back.'
+  from: And when the pursuers saw that it was a matter of life and death for them[a], they turned back.
+  to: And when the pursuers saw that it was a matter of life and death for them[a], they turned back.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that it was a matter of life for them''].'
+- timestamp: '2026-11-09T18:53:06Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when the pursuers saw that it was a matter of life and death for them[a], they turned back.
+  to: When the pursuers saw that Jonathan's men would fight for their lives[a], they turned back.
+  rationale: The earlier review rightly made the expression a matter of 'life and death,' preserving its mortal seriousness. I retain that gain while identifying the threatened men, with the serious alternative pronoun reference preserved in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -124,3 +130,22 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/012/051.job-48722.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:06Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The pursuers withdrew when they recognized that Jonathan's men would fight to preserve their lives.
+  meaning_decisions:
+  - source_phrase: ὅτι περὶ ψυχῆς ἐστιν αὐτοῖς
+    prior_rendering: that it was a matter of life and death for them
+    new_rendering: that Jonathan's men would fight for their lives
+    rationale: In the flow from the preceding verse, the pursuers recognize the threatened men's determination to resist; the prior pronoun leaves unclear whose lives are at stake.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The earlier review rightly made the expression a matter of 'life and death,' preserving its mortal seriousness. I retain that gain while identifying the threatened men, with the serious alternative pronoun reference preserved in a note.

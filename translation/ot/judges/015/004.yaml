@@ -4,12 +4,12 @@ source:
   edition: WLC
   text: וַ/יֵּ֣לֶךְ שִׁמְשׁ֔וֹן וַ/יִּלְכֹּ֖ד שְׁלֹשׁ מֵא֣וֹת שׁוּעָלִ֑ים וַ/יִּקַּ֣ח לַפִּדִ֗ים וַ/יֶּ֤פֶן זָנָב֙ אֶל זָנָ֔ב וַ/יָּ֨שֶׂם לַפִּ֥יד אֶחָ֛ד בֵּין שְׁנֵ֥י הַ/זְּנָב֖וֹת בַּ/תָּֽוֶךְ־־־׃
 translation:
-  text: So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.
-  philosophy: optimal-equivalence
+  text: So Samson went and caught three hundred foxes[a]. He took torches, arranged the foxes in pairs, tail to tail, and placed a torch between each pair of tails.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'jackals.' The Hebrew שׁוּעָלִים can refer to foxes or similar canids; 'foxes' is retained as the main rendering because it is the most common sense and fits the narrative tradition.
-    reason: lexical_alternative
+    text: Or, “jackals.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וַיֵּלֶךְ
   chosen: went
@@ -94,14 +94,20 @@ revisions:
   from: So Shimshon went and caught three hundred foxes, and he took torches and turned tail to tail, and put one torch between each pair of tails, in the middle.
   to: So Shimshon went and caught three hundred foxes, and he took torches and turned tail to tail, and put one torch between each pair of tails, in the middle.
   rationale: Added 'them' after 'turned' to make the object explicit in natural English while preserving the source meaning.
-
 - timestamp: '2026-05-18T02:55:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.'
-  to: 'So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.'
+  from: So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.
+  to: So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''turned tail to tail''].'
+- timestamp: '2026-11-09T18:14:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So Shimshon went and caught three hundred foxes[a], and he took torches and turned them tail to tail, and put one torch between each pair of tails, in the middle.
+  to: So Samson went and caught three hundred foxes[a]. He took torches, arranged the foxes in pairs, tail to tail, and placed a torch between each pair of tails.
+  rationale: The recorded review sought to clarify the object of 'turned,' and the lexical record correctly avoided stating an explicit tying action. I make the pairing and its object clear, retain foxes with jackals as an alternative, and use the required recognizable name.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -121,3 +127,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/judges/015/004.job-69254.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:14:49Z'
+  change_level: refined
+  confidence: high
+  meaning: Samson prepares three hundred foxes in tail-to-tail pairs, placing a torch between the tails of each pair.
+  meaning_decisions:
+  - source_phrase: שִׁמְשׁוֹן
+    prior_rendering: Shimshon
+    new_rendering: Samson
+    rationale: The recognizable English name follows the standing naming instruction and matches the surrounding verses.
+  - source_phrase: וַיֶּפֶן זָנָב אֶל זָנָב
+    prior_rendering: turned them tail to tail
+    new_rendering: arranged the foxes in pairs, tail to tail
+    rationale: The following reference to two tails establishes the pairing; identifying the animals avoids making 'them' appear to refer to the torches.
+  - source_phrase: בֵּין שְׁנֵי הַזְּנָבוֹת בַּתָּוֶךְ
+    prior_rendering: between each pair of tails, in the middle
+    new_rendering: between each pair of tails
+    rationale: The placement is fully conveyed by 'between'; the additional phrase repeats rather than adds spatial information in English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The recorded review sought to clarify the object of 'turned,' and the lexical record correctly avoided stating an explicit tying action. I make the pairing and its object clear, retain foxes with jackals as an alternative, and use the required recognizable name.

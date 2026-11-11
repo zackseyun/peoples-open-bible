@@ -4,11 +4,11 @@ source:
   edition: WLC
   text: כַּפֵּר֩ לְ/עַמְּ/ךָ֨ יִשְׂרָאֵ֤ל אֲשֶׁר פָּדִ֨יתָ֙ יְהוָ֔ה וְ/אַל תִּתֵּן֙ דָּ֣ם נָקִ֔י בְּ/קֶ֖רֶב עַמְּ/ךָ֣ יִשְׂרָאֵ֑ל וְ/נִכַּפֵּ֥ר לָ/הֶ֖ם הַ/דָּֽם־־׃
 translation:
-  text: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.
-  philosophy: optimal-equivalence
+  text: Make atonement for your people Israel, whom you redeemed, O Yahweh, and do not let the guilt of shedding innocent blood remain among your people Israel[a].” Then their bloodguilt will be atoned for.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or, more literally, 'and the blood will be atoned for them.' The Hebrew uses 'the blood' as a legal expression for liability arising from bloodshed.
+    text: Literally, 'do not place innocent blood among your people Israel.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: כַּפֵּר
@@ -102,14 +102,20 @@ revisions:
   from: Make atonement for your people Israel, whom you redeemed, O LORD, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.
   to: Make atonement for your people Israel, whom you redeemed, O LORD, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.
   rationale: Replaced 'let innocent blood remain among' with the more literal 'set innocent blood in the midst of' to reflect תִּתֵּן and בְּקֶרֶב more closely, while keeping the rest of the verse unchanged.
-
 - timestamp: '2026-05-16T06:09:51Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.'
-  to: 'Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.'
+  from: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not set innocent blood in the midst of your people Israel. Then the bloodguilt will be atoned for them.
+  to: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.
   rationale: 'Azure substituted BOTH documented rejected_alternatives: ''do not set'' (rejected for תִּתֵּן — drafter chose ''do not let'' for idiomatic guilt-not-remaining sense) and ''in the midst of'' (rejected for בְּקֶרֶב — drafter chose ''among'' for idiomatic modern English).'
+- timestamp: '2026-11-09T17:31:44Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Make atonement for your people Israel[a], whom you redeemed, O Yahweh, and do not let innocent blood remain among your people Israel. Then the bloodguilt will be atoned for them.
+  to: Make atonement for your people Israel, whom you redeemed, O Yahweh, and do not let the guilt of shedding innocent blood remain among your people Israel[a].” Then their bloodguilt will be atoned for.
+  rationale: The revert rightly rejected 'set innocent blood in the midst of' as opaque English. I preserve its return to 'let ... remain' while explicitly identifying the guilt at issue and retaining the weighty terms 'atonement' and 'redeemed.'
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +138,22 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/deuteronomy/021/008.job-61717.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:31:44Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The elders ask Yahweh to make atonement for his redeemed people and remove their liability for the innocent bloodshed, after which their bloodguilt will be atoned for.
+  meaning_decisions:
+  - source_phrase: וְאַל תִּתֵּן דָּם נָקִי בְּקֶרֶב עַמְּךָ יִשְׂרָאֵל
+    prior_rendering: and do not let innocent blood remain among your people Israel
+    new_rendering: and do not let the guilt of shedding innocent blood remain among your people Israel
+    rationale: The prayer concerns communal liability for an innocent person’s death, not the continued physical presence of blood; the addition makes explicit the legal meaning already established by the rite.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The revert rightly rejected 'set innocent blood in the midst of' as opaque English. I preserve its return to 'let ... remain' while explicitly identifying the guilt at issue and retaining the weighty terms 'atonement' and 'redeemed.'

@@ -12,14 +12,11 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 5 = Addition E, segmented from Swete pages 790-792 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: And often[a], by madness, she has made many of those appointed to positions of authority, trusted to manage affairs as friends, sharers in innocent blood, and has engulfed them in disasters beyond remedy[b],
-  philosophy: optimal-equivalence
+  text: Often, too, many appointed to positions of authority have been made complicit in shedding innocent blood and engulfed in disasters beyond remedy through the madness of friends entrusted with managing affairs[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: The Greek has a feminine singular subject ('she has made ... she has engulfed'), but the immediate referent is not explicitly named in this verse.
-    reason: alternative_reading
-  - marker: b
-    text: Or 'participants in the blood of the innocent.' The expression refers to complicity in shedding innocent blood.
+    text: 'The Greek construction is difficult: it uses a feminine participle, “having made,” without a clearly expressed subject; the friends’ madness is understood as the cause.'
     reason: lexical_alternative
 lexical_decisions:
 - source_word: πολλάκις
@@ -136,14 +133,20 @@ revisions:
   from: And often, by madness, she has made many of those appointed to positions of authority, trusted to manage affairs as friends, sharers in innocent blood, and has engulfed them in disasters beyond remedy,
   to: And often, through madness, she has made many of those appointed to positions of authority, trusted friends set over affairs, partners in innocent blood, and has engulfed them in irreparable disasters,
   rationale: 'Revised phrasing for accuracy and naturalness: changed ''by madness'' to ''through madness''; rendered τῶν πιστευθέντων χειρίζειν φίλων τὰ πράγματα more naturally as ''trusted friends set over affairs''; changed ''sharers in innocent blood'' to ''partners in innocent blood''; and refined ''disasters beyond remedy'' to ''irreparable disasters'' for a more formal register.'
-
 - timestamp: '2026-05-15T14:54:24Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And often[a], through madness, she has made many of those appointed to positions of authority, trusted friends set over affairs, partners in innocent blood, and has engulfed them in irreparable disasters[b],'
-  to: 'And often[a], by madness, she has made many of those appointed to positions of authority, trusted to manage affairs as friends, sharers in innocent blood, and has engulfed them in disasters beyond remedy[b],'
-  rationale: 'Restored 4 chosen renderings (instrumental dative, χειρίζειν infinitive, μετόχους as ''sharers'', accessible English).'
+  from: And often[a], through madness, she has made many of those appointed to positions of authority, trusted friends set over affairs, partners in innocent blood, and has engulfed them in irreparable disasters[b],
+  to: And often[a], by madness, she has made many of those appointed to positions of authority, trusted to manage affairs as friends, sharers in innocent blood, and has engulfed them in disasters beyond remedy[b],
+  rationale: Restored 4 chosen renderings (instrumental dative, χειρίζειν infinitive, μετόχους as 'sharers', accessible English).
+- timestamp: '2026-11-09T19:00:40Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And often[a], by madness, she has made many of those appointed to positions of authority, trusted to manage affairs as friends, sharers in innocent blood, and has engulfed them in disasters beyond remedy[b],
+  to: Often, too, many appointed to positions of authority have been made complicit in shedding innocent blood and engulfed in disasters beyond remedy through the madness of friends entrusted with managing affairs[a].
+  rationale: The earlier review improved the description of the trusted friends, though an automated revert restored the more awkward wording. Reading the genitive phrases together with verse 6 clarifies their role and avoids retaining the unexplained “she.”
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -163,3 +166,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/005/005.job-50283.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:40Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The madness of trusted advisers has often made rulers complicit in innocent bloodshed and brought them into irreparable disasters.
+  meaning_decisions:
+  - source_phrase: τῶν πιστευθέντων χειρίζειν φίλων τὰ πράγματα παρανοίᾳ
+    prior_rendering: by madness ... trusted to manage affairs as friends
+    new_rendering: through the madness of friends entrusted with managing affairs
+    rationale: The trusted friends are the source of the destructive madness, while the people appointed to authority are its victims; verse 6 continues by describing these friends’ deception.
+  - source_phrase: καταστῆσα περιέβαλε
+    prior_rendering: she has made ... and has engulfed
+    new_rendering: have been made ... and engulfed
+    rationale: A passive construction conveys the causal relationship without inventing an unidentified female actor from grammatical gender.
+  - source_phrase: μετόχους αἱμάτων ἀθώων
+    prior_rendering: sharers in innocent blood
+    new_rendering: complicit in shedding innocent blood
+    rationale: The expression means participation in killing innocent people, not sharing blood as a substance.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review improved the description of the trusted friends, though an automated revert restored the more awkward wording. Reading the genitive phrases together with verse 6 clarifies their role and avoids retaining the unexplained “she.”

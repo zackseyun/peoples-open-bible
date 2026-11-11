@@ -8,24 +8,12 @@ source:
   - 800
   validation: swete_direct
 translation:
-  text: Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.
-  philosophy: optimal-equivalence
+  text: Blessed is the man whom the Lord has remembered with rebuke and turned from an evil path[a] with a scourge, to cleanse him from sin and keep it from increasing.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'with reproof' for 'with rebuke.'
+    text: Literally, “was encircled,” here describing being kept from an evil path.
     reason: lexical_alternative
-  - marker: b
-    text: Literally 'was encircled'; the sense is that he was constrained or fenced off from an evil way.
-    reason: lexical_alternative
-  - marker: c
-    text: The final clause may also be understood as 'so as not to increase [sin]' or 'so that he might not multiply it.'
-    reason: alternative_reading
-  - marker: d
-    text: Or 'was hemmed in from'.
-    reason: previous_rendering
-  - marker: e
-    text: Or 'by a scourge'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: Μακάριος
   chosen: Blessed
@@ -143,9 +131,16 @@ revisions:
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.'
-  to: 'Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.'
+  from: Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.
+  to: Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''so that it might not multiply''].'
+- timestamp: '2026-11-09T19:03:41Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Blessed is the man whom the Lord remembered with rebuke[a], and who was turned away from an evil way by a scourge, to be cleansed from sin[e][d][c][b], so that it might not increase.
+  to: Blessed is the man whom the Lord has remembered with rebuke and turned from an evil path[a] with a scourge, to cleanse him from sin and keep it from increasing.
+  rationale: The earlier review’s change from “hemmed in” to “turned away” clarifies the corrective movement away from evil, and that gain is retained. The conflicting scourge/whip revisions chiefly concern consistency, so “scourge” remains here and in verse 2, with only the meaningful source image noted.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T02:59:21Z'
@@ -170,3 +165,26 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/010/001.job-73204.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:41Z'
+  change_level: retranslated
+  confidence: high
+  meaning: A man is blessed when the Lord’s corrective discipline turns him from evil and cleanses him from sin so that it does not increase.
+  meaning_decisions:
+  - source_phrase: οὗ ὁ κύριος ἐμνήσθη ἐν ἐλεγμῷ, καὶ ἐκυκλώθη ἀπὸ ὁδοῦ πονηρᾶς ἐν μάστιγι
+    prior_rendering: whom the Lord remembered with rebuke, and who was turned away from an evil way by a scourge
+    new_rendering: whom the Lord has remembered with rebuke and turned from an evil path with a scourge
+    rationale: The active construction makes explicit that the Lord’s corrective action turns the man from evil; the path and scourge images remain intact.
+  - source_phrase: καθαρισθῆναι ἀπὸ ἁμαρτίας, τοῦ μὴ πληθῦναι
+    prior_rendering: to be cleansed from sin, so that it might not increase
+    new_rendering: to cleanse him from sin and keep it from increasing
+    rationale: The connected purpose clauses clearly identify the man as the one being cleansed and sin as what must not increase.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The earlier review’s change from “hemmed in” to “turned away” clarifies the corrective movement away from evil, and that gain is retained. The conflicting scourge/whip revisions chiefly concern consistency, so “scourge” remains here and in verse 2, with only the meaningful source image noted.

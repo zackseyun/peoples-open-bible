@@ -4,21 +4,8 @@ source:
   edition: SBLGNT
   text: ὅτι ὑμῖν ἐχαρίσθη τὸ ὑπὲρ Χριστοῦ, οὐ μόνον τὸ εἰς αὐτὸν πιστεύειν ἀλλὰ καὶ τὸ ὑπὲρ αὐτοῦ πάσχειν),
 translation:
-  text: For it has been graciously granted to you on behalf of Messiah not only to believe in him[a], but also to suffer for him[d][c][b],
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'Christ.' The Greek title Χριστός is rendered 'Messiah' here because it functions as a title rather than a name.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'to trust in him.'
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'for his sake' / 'on his behalf.'
-    reason: lexical_alternative
-  - marker: d
-    text: Or 'it has been graciously granted to you, for the sake of Messiah,'.
-    reason: previous_rendering
+  text: 'For God has graciously granted you this for the Messiah''s sake: not only to believe in him, but also to suffer for him.'
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ὅτι
   chosen: For
@@ -98,12 +85,18 @@ revisions:
   from: For it has been graciously granted to you on behalf of Christ not only to believe in him, but also to suffer for him,
   to: For it has been graciously granted to you on behalf of Messiah not only to believe in him, but also to suffer for him,
   rationale: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)
+- timestamp: '2026-11-09T17:16:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For it has been graciously granted to you on behalf of Messiah not only to believe in him[a], but also to suffer for him[d][c][b],
+  to: 'For God has graciously granted you this for the Messiah''s sake: not only to believe in him, but also to suffer for him.'
+  rationale: The earlier revision correctly recognized that the introductory phrase encompasses both believing and suffering, though its rearrangement remained cumbersome. I retain the recorded gift language and its full scope, without softening suffering into mere permission.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T09:58:42Z'
   unchanged: false
   changes_summary: 'Reordered the opening for natural English and replaced ''Messiah'' with ''Christ'' to match the Greek Χριστοῦ in this verse''s register. Preserved ''graciously granted,'' ''believe in him,'' and ''suffer for him'' as accurate renderings. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -125,3 +118,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/philippians/001/029.job-38496.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:16:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: God has graciously granted the Philippians both believing in the Messiah and suffering for his sake.
+  meaning_decisions:
+  - source_phrase: ὑμῖν ἐχαρίσθη
+    prior_rendering: it has been graciously granted to you
+    new_rendering: God has graciously granted you this
+    rationale: The preceding verse identifies God as the source, allowing the understood agent to be explicit in natural active English.
+  - source_phrase: τὸ ὑπὲρ Χριστοῦ
+    prior_rendering: on behalf of Messiah
+    new_rendering: 'this for the Messiah''s sake:'
+    rationale: The heading encompasses both following infinitives; the colon makes that scope clear, and 'for the Messiah's sake' avoids suggesting that the grant is merely delegated on his behalf.
+  footnote_kinds: {}
+  history_weighed: The earlier revision correctly recognized that the introductory phrase encompasses both believing and suffering, though its rearrangement remained cumbersome. I retain the recorded gift language and its full scope, without softening suffering into mere permission.

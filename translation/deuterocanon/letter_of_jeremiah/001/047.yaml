@@ -14,15 +14,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the things made by them.' The Greek participle can denote things constructed or fashioned by human makers.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'How then will the things made by them last?' The Greek wording is rhetorical and questions the lasting power of these man-made objects.
-    reason: alternative_reading
+  text: How then can the things they made endure? For they have left behind lies and disgrace for later generations.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πῶς
   chosen: How
@@ -122,14 +115,20 @@ revisions:
   from: How then can the things prepared by them endure? For they have left behind lies and disgrace for those who come after.
   to: How then can the things prepared by them endure? For they have left behind lies and disgrace for those who come after.
   rationale: Changed 'prepared' to 'made' for a more direct rendering of κατασκευασθέντα; retained the rest as accurate and natural.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].'
-  to: 'How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].'
+  from: How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].
+  to: How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the things prepared by them''].'
+- timestamp: '2026-11-09T19:03:14Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: How then can the things made by them endure? For they have left behind lies and disgrace for those who come after[a][b].
+  to: How then can the things they made endure? For they have left behind lies and disgrace for later generations.
+  rationale: I retain the current 'made,' which conveys construction more clearly than the first draft’s 'prepared,' regardless of the automated reversal rationale. The earlier explanations rightly identify a legacy of lies and disgrace; the redundant notes have been dropped.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -149,3 +148,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/letter_of_jeremiah/001/047.job-50886.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:03:14Z'
+  change_level: refined
+  confidence: high
+  meaning: The products of short-lived makers cannot be trusted to endure, and the makers leave later generations a legacy of lies and disgrace.
+  meaning_decisions:
+  - source_phrase: τὰ ὑπʼ αὐτῶν κατασκευασθέντα
+    prior_rendering: the things made by them
+    new_rendering: the things they made
+    rationale: The active relative clause expresses the same human manufacture more naturally and keeps the connection with the makers in verse 46.
+  - source_phrase: τοῖς ἐπιγινομένοις
+    prior_rendering: for those who come after
+    new_rendering: for later generations
+    rationale: The phrase concerns the legacy inherited by subsequent generations, rather than people simply arriving afterward.
+  footnote_kinds: {}
+  history_weighed: I retain the current 'made,' which conveys construction more clearly than the first draft’s 'prepared,' regardless of the automated reversal rationale. The earlier explanations rightly identify a legacy of lies and disgrace; the redundant notes have been dropped.

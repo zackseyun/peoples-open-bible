@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/אֶל עַמִּ֖/י יַדּ֣וּ גוֹרָ֑ל וַ/יִּתְּנ֤וּ הַ/יֶּ֨לֶד֙ בַּ/זּוֹנָ֔ה וְ/הַ/יַּלְדָּ֛ה מָכְר֥וּ בַ/יַּ֖יִן וַ/יִּשְׁתּֽוּ־׃
 translation:
-  text: And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.
-  philosophy: optimal-equivalence
+  text: They cast lots to divide up my people; they traded a boy for a prostitute’s services[a] and sold a girl for wine, which they drank.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'they gave a boy to a prostitute.' The Hebrew verb is literally 'gave,' but in context it describes an exploitative exchange.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'they cast lots over my people.' The Hebrew idiom refers to dividing people as spoil by lot.
-    reason: lexical_alternative
+    text: Or, “gave a boy to a prostitute.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְאֶל
   chosen: for
@@ -105,14 +102,20 @@ revisions:
   from: And they cast lots for my people; they traded a boy for a prostitute, and sold a girl for wine, and drank it.
   to: And they cast lots for my people; they traded a boy for a prostitute, and sold a girl for wine, and drank it.
   rationale: Changed 'traded' to 'gave' to more directly reflect the source verb, while retaining the rest of the verse as accurate and natural.
-
 - timestamp: '2026-05-18T02:57:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.'
-  to: 'And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.'
+  from: And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.
+  to: And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''they traded''].'
+- timestamp: '2026-11-09T18:07:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And they cast lots for my people[a]; they gave a boy for a prostitute, and sold a girl for wine[b], and drank it.
+  to: They cast lots to divide up my people; they traded a boy for a prostitute’s services[a] and sold a girl for wine, which they drank.
+  rationale: The first draft and lexical rationale recognized a transaction, while the later review rationale preferred “gave” for verbal transparency. I retain the transactional understanding and clarify what was obtained, preserving the directional alternative in a footnote.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +137,30 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/joel/004/003.job-68486.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:07:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The nations treated Yahweh's people as disposable spoil, exchanging children for sexual services and wine.
+  meaning_decisions:
+  - source_phrase: וְאֶל עַמִּי יַדּוּ גוֹרָל
+    prior_rendering: And they cast lots for my people
+    new_rendering: They cast lots to divide up my people
+    rationale: Makes clear that lots allocated captive people as spoil, rather than being cast for their benefit.
+  - source_phrase: וַיִּתְּנוּ הַיֶּלֶד בַּזּוֹנָה
+    prior_rendering: they gave a boy for a prostitute
+    new_rendering: they traded a boy for a prostitute’s services
+    rationale: Expresses the exchange understood in context and avoids suggesting that the prostitute herself was purchased.
+  - source_phrase: וְהַיַּלְדָּה מָכְרוּ בַיַּיִן וַיִּשְׁתּוּ
+    prior_rendering: and sold a girl for wine, and drank it
+    new_rendering: and sold a girl for wine, which they drank
+    rationale: Connects the sale directly to the consumption of its proceeds while preserving the accusation's starkness.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale recognized a transaction, while the later review rationale preferred “gave” for verbal transparency. I retain the transactional understanding and clarify what was obtained, preserving the directional alternative in a footnote.

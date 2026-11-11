@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/כָל הַ/פְּתָחִ֥ים וְ/הַ/מְּזוּז֖וֹת רְבֻעִ֣ים שָׁ֑קֶף וּ/מ֧וּל מֶחֱזָ֛ה אֶל מֶחֱזָ֖ה שָׁלֹ֥שׁ פְּעָמִֽים־־׃
 translation:
-  text: All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.
-  philosophy: optimal-equivalence
+  text: All the doorways, with their doorposts, had rectangular frames[a], and the windows were opposite one another in all three rows.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'All the openings and the doorposts had square lintels'; the Hebrew architectural term may refer more specifically to the upper frame or lintel.
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'window opposite window, three times'; that is, corresponding windows arranged in three tiers or rows.
-    reason: lexical_alternative
+    text: Or 'square frames'; the Hebrew term for the framing may refer specifically to the lintels.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: פְּתָחִים
   chosen: doorways
@@ -94,14 +91,20 @@ revisions:
   from: All the doorways and the doorposts had square frames, and window faced window in three rows.
   to: All the doorways and the doorposts had square frames, and window faced window in three rows.
   rationale: Revised the final clause from 'in three rows' to 'three times' to more closely reflect the Hebrew/Greek wording about repeated alignment/opposition. Also adjusted 'faced' to 'was opposite' for a more formal and literal rendering.
-
 - timestamp: '2026-05-18T02:56:03Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.'
-  to: 'All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.'
+  from: All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.
+  to: All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in three rows''].'
+- timestamp: '2026-11-09T17:22:04Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: All the doorways and the doorposts had square frames[b][a], and window was opposite window three times.
+  to: All the doorways, with their doorposts, had rectangular frames[a], and the windows were opposite one another in all three rows.
+  rationale: The first draft and lexical rationale already understood the final phrase as 'in three rows'; later automated wording favored literal 'three times.' I restore the spatial meaning and retain the recorded uncertainty about frames versus lintels.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +124,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_kings/007/005.job-58199.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:22:04Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The doorways had four-sided framing, and the windows corresponded across all three rows.
+  meaning_decisions:
+  - source_phrase: וְכָל הַפְּתָחִים וְהַמְּזוּזוֹת רְבֻעִים שָׁקֶף
+    prior_rendering: All the doorways and the doorposts had square frames
+    new_rendering: All the doorways, with their doorposts, had rectangular frames
+    rationale: The adjective describes four-sided framing without necessarily requiring equal sides, and the doorposts belong to the doorways being described.
+  - source_phrase: וּמוּל מֶחֱזָה אֶל מֶחֱזָה שָׁלֹשׁ פְּעָמִים
+    prior_rendering: and window was opposite window three times
+    new_rendering: and the windows were opposite one another in all three rows
+    rationale: The surrounding description establishes a repeated spatial arrangement in three rows.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The first draft and lexical rationale already understood the final phrase as 'in three rows'; later automated wording favored literal 'three times.' I restore the spatial meaning and retain the recorded uncertainty about frames versus lintels.

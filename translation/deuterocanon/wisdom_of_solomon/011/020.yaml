@@ -20,15 +20,8 @@ source:
   validation: agree
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Translation-ready override derived from final_corpus_adjudicated; dropped duplicate chapter 20 and spillover beyond Wisdom 19:22.
 translation:
-  text: And even apart from these things, they could have fallen by a single breath[a], pursued by justice and winnowed by the breath of your power[b]; but you have arranged all things by measure and number and weight.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'by one spirit' or 'by a single wind'; Greek πνεῦμα can mean 'breath,' 'wind,' or 'spirit.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'pursued by punishment' or 'driven by judgment'; Greek δίκη can denote justice, judgment, or penalty.
-    reason: lexical_alternative
+  text: Even without these, they could have perished at a single breath, pursued by justice and scattered like chaff by the breath of your power. But you have ordered all things by measure and number and weight.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: χωρὶς δὲ τούτων
   chosen: even apart from these things
@@ -130,13 +123,12 @@ revisions:
   from: And even apart from these things, they could have fallen by a single breath, pursued by justice and winnowed by the breath of your power; but you have arranged all things by measure and number and weight.
   to: And even apart from these things, they could have fallen by one breath, pursued by justice and winnowed by the breath of your power; but you have arranged all things by measure and number and weight.
   rationale: Changed 'a single breath' to 'one breath' for a more direct rendering of ἐνὶ πνεύματι. No other changes needed.
-
 - timestamp: '2026-05-18T03:10:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And even apart from these things[a], they could have fallen by one breath, pursued by justice and winnowed by the breath of your power[b]; but you have arranged all things by measure and number and weight.'
-  to: 'And even apart from these things, they could have fallen by a single breath, pursued by justice and winnowed by the breath of your power; but you have arranged all things by measure and number and weight.'
+  from: And even apart from these things[a], they could have fallen by one breath, pursued by justice and winnowed by the breath of your power[b]; but you have arranged all things by measure and number and weight.
+  to: And even apart from these things, they could have fallen by a single breath, pursued by justice and winnowed by the breath of your power; but you have arranged all things by measure and number and weight.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''by a single breath''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -146,6 +138,13 @@ revisions:
   from: And even apart from these things, they could have fallen by a single breath, pursued by justice and winnowed by the breath of your power; but you have arranged all things by measure and number and weight.
   to: And even apart from these things, they could have fallen by a single breath[a], pursued by justice and winnowed by the breath of your power[b]; but you have arranged all things by measure and number and weight.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('by a single breath') because the note's quoted alternative matches the lexical decision rendered there; [b] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:12:28Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And even apart from these things, they could have fallen by a single breath[a], pursued by justice and winnowed by the breath of your power[b]; but you have arranged all things by measure and number and weight.
+  to: Even without these, they could have perished at a single breath, pursued by justice and scattered like chaff by the breath of your power. But you have ordered all things by measure and number and weight.
+  rationale: I retain the history's well-supported choices of 'a single breath,' personified justice, and the measure-number-weight triad. The winnowing image is clarified rather than discarded, and the redundant synonym notes are dropped.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -165,3 +164,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/deuterocanon/wisdom_of_solomon/011/020.job-39395.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:12:28Z'
+  change_level: refined
+  confidence: high
+  meaning: God could have destroyed the Egyptians with a single breath, but instead governs everything with measured order.
+  meaning_decisions:
+  - source_phrase: καὶ χωρὶς δὲ τούτων ἐνὶ πνεύματι πεσεῖν ἐδύναντο
+    prior_rendering: And even apart from these things, they could have fallen by a single breath
+    new_rendering: Even without these, they could have perished at a single breath
+    rationale: The point is that none of the previously described agents was necessary for their destruction; 'perished' clarifies what falling means here.
+  - source_phrase: λικμηθέντες
+    prior_rendering: winnowed
+    new_rendering: scattered like chaff
+    rationale: The revised wording makes the destructive agricultural image immediately intelligible while retaining its essential comparison.
+  - source_phrase: ἀλλὰ πάντα ... διέταξας
+    prior_rendering: but you have arranged all things
+    new_rendering: But you have ordered all things
+    rationale: '''Ordered'' conveys deliberate governance as well as arrangement, linking the measured punishment to the wider order of creation.'
+  footnote_kinds: {}
+  history_weighed: I retain the history's well-supported choices of 'a single breath,' personified justice, and the measure-number-weight triad. The winnowing image is clarified rather than discarded, and the redundant synonym notes are dropped.

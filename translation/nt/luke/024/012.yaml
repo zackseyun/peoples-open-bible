@@ -4,17 +4,60 @@ source:
   edition: SBLGNT
   text: ⸂Ὁ δὲ Πέτρος ἀναστὰς ἔδραμεν ἐπὶ τὸ μνημεῖον· καὶ παρακύψας βλέπει τὰ ⸀ὀθόνια μόνα· καὶ ἀπῆλθεν πρὸς ⸀αὑτὸν θαυμάζων τὸ γεγονός.⸃
 translation:
-  text: 'But Peter got up and ran to the tomb; and stooping to look in, he sees the linen cloths alone, and he went away to himself, marveling at what had happened.'
+  text: But Peter got up and ran to the tomb. Stooping to look in, he saw only the linen burial cloths. Then he went home[a], marveling at what had happened[b].
+  philosophy: dynamic
+  footnotes:
+  - marker: a
+    text: Or “he went away, wondering to himself at what had happened.”
+    reason: alternative_reading
+  - marker: b
+    text: Some ancient manuscripts omit this verse.
+    reason: textual_variant
 revisions:
 - timestamp: '2026-05-18T04:00:43Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But Peter got up and ran to the tomb[a]; and stooping to look in, he saw the linen cloths alone, and he went away to himself[b], marveling at what had happened.'
-  to: 'But Peter got up and ran to the tomb; and stooping to look in, he sees the linen cloths alone, and he went away to himself, marveling at what had happened.'
+  from: But Peter got up and ran to the tomb[a]; and stooping to look in, he saw the linen cloths alone, and he went away to himself[b], marveling at what had happened.
+  to: But Peter got up and ran to the tomb; and stooping to look in, he sees the linen cloths alone, and he went away to himself, marveling at what had happened.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he sees'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote markers, and quote normalization).'
+- timestamp: '2026-11-09T17:13:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But Peter got up and ran to the tomb; and stooping to look in, he sees the linen cloths alone, and he went away to himself, marveling at what had happened.
+  to: But Peter got up and ran to the tomb. Stooping to look in, he saw only the linen burial cloths. Then he went home[a], marveling at what had happened[b].
+  rationale: The automated revert restored “he sees,” but it supplies no maintainer judgment requiring an English tense shift; the earlier past-tense rendering is more natural. The unexplained “to himself” construction requires an intelligible main reading and a note preserving the serious alternative.
 revision_pass:
   model: doctrine-realignment
   timestamp: '2026-05-18T04:00:43Z'
   unchanged: false
   changes_summary: 'doctrine_realignment: Luke 24:12 wholesale revert (1 override) [post-swarm tail]. Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''he sees'']. Applied via definitive_apply (fuzzy fingerprint match handling LORD/Yahweh, footnote'
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Peter ran to the tomb, saw only the linen burial cloths, and went home marveling at what had happened.
+  meaning_decisions:
+  - source_phrase: παρακύψας βλέπει
+    prior_rendering: stooping to look in, he sees
+    new_rendering: Stooping to look in, he saw
+    rationale: The Greek historical present makes the past event vivid; English past tense carries the same event without an unexplained narrative tense switch.
+  - source_phrase: τὰ ὀθόνια μόνα
+    prior_rendering: the linen cloths alone
+    new_rendering: only the linen burial cloths
+    rationale: The context identifies these as burial wrappings, and “only” clearly states that the cloths remained without the body.
+  - source_phrase: ἀπῆλθεν πρὸς αὑτὸν θαυμάζων τὸ γεγονός
+    prior_rendering: he went away to himself, marveling at what had happened
+    new_rendering: he went home, marveling at what had happened
+    rationale: The phrase “to himself” can indicate return to one’s own place; “went home” makes that likely directional meaning intelligible, while the alternative connection with his wondering is noted.
+  footnote_kinds:
+    a: alternative_meaning
+    b: textual_variant
+  history_weighed: The automated revert restored “he sees,” but it supplies no maintainer judgment requiring an English tense shift; the earlier past-tense rendering is more natural. The unexplained “to himself” construction requires an intelligible main reading and a note preserving the serious alternative.

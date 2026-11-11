@@ -2,11 +2,10 @@ id: 2KI.10.36
 reference: 2 Kings 10:36
 source:
   edition: WLC
-  text: וְ/הַ/יָּמִ֗ים אֲשֶׁ֨ר מָלַ֤ךְ יֵהוּא֙ עַל יִשְׂרָאֵ֔ל עֶשְׂרִ֥ים וּ/שְׁמֹנֶֽה
-    שָׁנָ֖ה בְּ/שֹׁמְרֽוֹן־־׃פ
+  text: וְ/הַ/יָּמִ֗ים אֲשֶׁ֨ר מָלַ֤ךְ יֵהוּא֙ עַל יִשְׂרָאֵ֔ל עֶשְׂרִ֥ים וּ/שְׁמֹנֶֽה שָׁנָ֖ה בְּ/שֹׁמְרֽוֹן־־׃פ
 translation:
-  text: The time that Jehu reigned over Israel was twenty-eight years in Samaria.
-  philosophy: optimal-equivalence
+  text: Jehu reigned over Israel from Samaria for twenty-eight years.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וְהַיָּמִים
   chosen: The time
@@ -14,25 +13,21 @@ lexical_decisions:
   - The days
   - The period
   lexicon: HALOT
-  rationale: Although literally 'the days,' this idiom introduces the duration of
-    a reign. 'The time' communicates the idiomatic sense in natural English without
-    obscuring the temporal reference.
+  rationale: Although literally 'the days,' this idiom introduces the duration of a reign. 'The time' communicates the idiomatic sense in natural English without obscuring the temporal reference.
 - source_word: אֲשֶׁר
   chosen: that
   alternatives:
   - which
   - during which
   lexicon: HALOT
-  rationale: A simple relative pronoun best fits the Hebrew construction linking 'the
-    time' with Jehu's reign.
+  rationale: A simple relative pronoun best fits the Hebrew construction linking 'the time' with Jehu's reign.
 - source_word: מָלַךְ
   chosen: reigned
   alternatives:
   - was king
   - ruled
   lexicon: HALOT
-  rationale: The standard rendering of מלך in royal summary formulas is 'reigned.'
-    It preserves the monarchical sense more precisely than the broader 'ruled.'
+  rationale: The standard rendering of מלך in royal summary formulas is 'reigned.' It preserves the monarchical sense more precisely than the broader 'ruled.'
 - source_word: יֵהוּא
   chosen: Jehu
   rationale: Personal names are transliterated by standard English convention.
@@ -42,24 +37,19 @@ lexical_decisions:
   alternatives:
   - in Israel
   lexicon: HALOT
-  rationale: The preposition עַל with מלך commonly indicates rule over a people or
-    kingdom. 'Over Israel' is the most direct and idiomatic rendering.
+  rationale: The preposition עַל with מלך commonly indicates rule over a people or kingdom. 'Over Israel' is the most direct and idiomatic rendering.
 - source_word: עֶשְׂרִים וּשְׁמֹנֶה שָׁנָה
   chosen: twenty-eight years
   alternatives:
   - twenty and eight years
   lexicon: HALOT
-  rationale: This is the straightforward cardinal-number expression for the length
-    of Jehu's reign. Modern English contracts the number naturally as 'twenty-eight
-    years.'
+  rationale: This is the straightforward cardinal-number expression for the length of Jehu's reign. Modern English contracts the number naturally as 'twenty-eight years.'
 - source_word: בְּשֹׁמְרוֹן
   chosen: in Samaria
   alternatives:
   - at Samaria
   lexicon: HALOT
-  rationale: The phrase identifies the location of Jehu's reign, that is, his royal
-    seat/capital. 'In Samaria' is the normal English rendering for the place name
-    with בְּ.
+  rationale: The phrase identifies the location of Jehu's reign, that is, his royal seat/capital. 'In Samaria' is the normal English rendering for the place name with בְּ.
 ai_draft:
   model_id: gpt-5.4
   model_version: gpt-5.4-2026-03-05
@@ -81,16 +71,21 @@ revisions:
   category: revision_pass
   from: The time that Jehu reigned over Israel was twenty-eight years in Samaria.
   to: Now the days that Jehu reigned over Israel in Samaria were twenty-eight years.
-  rationale: Revised 'The time' to the more literal 'the days,' and moved 'in Samaria'
-    to modify Jehu's reign more naturally and in line with the source order.
-
+  rationale: Revised 'The time' to the more literal 'the days,' and moved 'in Samaria' to modify Jehu's reign more naturally and in line with the source order.
 - timestamp: '2026-05-18T02:58:18Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now the days that Jehu reigned over Israel in Samaria were twenty-eight years.'
-  to: 'The time that Jehu reigned over Israel was twenty-eight years in Samaria.'
+  from: Now the days that Jehu reigned over Israel in Samaria were twenty-eight years.
+  to: The time that Jehu reigned over Israel was twenty-eight years in Samaria.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''The time''].'
+- timestamp: '2026-11-09T17:26:05Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The time that Jehu reigned over Israel was twenty-eight years in Samaria.
+  to: Jehu reigned over Israel from Samaria for twenty-eight years.
+  rationale: The review usefully sought to attach Samaria to the reign, though its more literal days construction was later reverted. I retain the agreed duration and geographical meaning while avoiding both versions' cumbersome introductory construction.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -110,3 +105,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_kings/010/036.job-60543.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:26:05Z'
+  change_level: refined
+  confidence: high
+  meaning: Jehu ruled Israel for twenty-eight years with his royal seat in Samaria.
+  meaning_decisions:
+  - source_phrase: וְהַיָּמִים אֲשֶׁר מָלַךְ יֵהוּא עַל יִשְׂרָאֵל עֶשְׂרִים וּשְׁמֹנֶה שָׁנָה בְּשֹׁמְרוֹן
+    prior_rendering: The time that Jehu reigned over Israel was twenty-eight years in Samaria
+    new_rendering: Jehu reigned over Israel from Samaria for twenty-eight years
+    rationale: A direct sentence naturally states the reign's duration, and from Samaria identifies the royal seat rather than leaving the place awkwardly attached to twenty-eight years.
+  footnote_kinds: {}
+  history_weighed: The review usefully sought to attach Samaria to the reign, though its more literal days construction was later reverted. I retain the agreed duration and geographical meaning while avoiding both versions' cumbersome introductory construction.

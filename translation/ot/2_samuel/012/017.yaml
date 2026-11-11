@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יָּקֻ֜מוּ זִקְנֵ֤י בֵית/וֹ֙ עָלָ֔י/ו לַ/הֲקִימ֖/וֹ מִן הָ/אָ֑רֶץ וְ/לֹ֣א אָבָ֔ה וְ/לֹֽא בָרָ֥א אִתָּ֖/ם לָֽחֶם־־׃
 translation:
-  text: The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the elders of his household.' The Hebrew literally says 'the elders of his house.'
-    reason: lexical_alternative
-  - marker: b
-    text: Literally 'eat bread with them,' a Hebrew expression for taking food.
-    reason: lexical_alternative
+  text: The elders of his household stood beside him to help him up from the ground, but he refused and would not eat with them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיָּקֻמוּ
   chosen: stood
@@ -85,14 +78,20 @@ revisions:
   from: The elders of his house stood over him to raise him up from the ground, but he was unwilling, and he would not eat bread with them.
   to: The elders of his house stood over him to raise him up from the ground, but he was unwilling, and he would not eat bread with them.
   rationale: Changed 'stood over him' to 'stood beside him' for more natural English and a better fit for the context; retained the rest as accurate and complete.
-
 - timestamp: '2026-05-17T04:21:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.'
-  to: 'The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.'
+  from: The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.
+  to: The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''over him''].'
+- timestamp: '2026-11-09T17:28:45Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: The elders of his house stood beside him to raise him up from the ground[a], but he was unwilling[b], and he would not eat bread with them.
+  to: The elders of his household stood beside him to help him up from the ground, but he refused and would not eat with them.
+  rationale: I retain the current wording’s natural description of the elders standing beside David and adopt the documented household sense. The earlier defense of 'eat bread' concerned source transparency; the main text now carries the idiom’s meaning, making the old notes unnecessary.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -112,3 +111,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/012/017.job-45644.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:45Z'
+  change_level: refined
+  confidence: high
+  meaning: David refuses his household elders’ attempts to help him rise and eat with them.
+  meaning_decisions:
+  - source_phrase: זִקְנֵי בֵיתוֹ
+    prior_rendering: the elders of his house
+    new_rendering: the elders of his household
+    rationale: The phrase identifies senior members of David’s royal household, not elders associated with a building.
+  - source_phrase: לַהֲקִימוֹ מִן הָאָרֶץ וְלֹא אָבָה
+    prior_rendering: to raise him up from the ground, but he was unwilling
+    new_rendering: to help him up from the ground, but he refused
+    rationale: The context describes an attempted physical assistance that David would not accept.
+  - source_phrase: וְלֹא בָרָא אִתָּם לָחֶם
+    prior_rendering: and he would not eat bread with them
+    new_rendering: and would not eat with them
+    rationale: Eating bread here means taking food; the point is David’s continued fasting, not his refusal of one particular food.
+  footnote_kinds: {}
+  history_weighed: I retain the current wording’s natural description of the elders standing beside David and adopt the documented household sense. The earlier defense of 'eat bread' concerned source transparency; the main text now carries the idiom’s meaning, making the old notes unnecessary.

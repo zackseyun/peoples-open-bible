@@ -29,15 +29,8 @@ source:
   confidence: high
   validation: minor_mismatch
 translation:
-  text: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege[a], but to meet him[b] for a conference in Ptolemais as quickly as possible.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Greek literally, 'not to sit around' or 'not to remain around'; in context this refers to maintaining the siege.
-    reason: lexical_alternative
-  - marker: b
-    text: 'The Greek clause about meeting is textually awkward (''to meet him, to come together with him''). The translation renders the apparent sense: Jonathan is summoned to meet for a conference in Ptolemais.'
-    reason: textual_variant
+  text: When the king heard the report, he became angry and immediately broke camp and went to Ptolemais. He wrote to Jonathan, ordering him to stop the siege and come to Ptolemais as quickly as possible to confer with him.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἀκούσας / ἤκουσεν
   chosen: when he heard it / as soon as he heard
@@ -143,13 +136,12 @@ revisions:
   from: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him for a conference in Ptolemais as quickly as possible.
   to: And when he heard it, he was angry. But as soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him in Ptolemais as quickly as possible, to confer with him.
   rationale: Adjusted the second clause to reflect δέ with 'But'; reordered the final infinitive phrase so that 'to confer with him' more directly represents αὐτὸν αὐτῷ συνμίσγειν, avoiding the interpretive expansion 'for a conference' while preserving the sense.
-
 - timestamp: '2026-05-18T03:09:50Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And when he heard it[a], he was angry. But as soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him in Ptolemais as quickly as possible[b], to confer with him.'
-  to: 'And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him for a conference in Ptolemais as quickly as possible.'
+  from: And when he heard it[a], he was angry. But as soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him in Ptolemais as quickly as possible[b], to confer with him.
+  to: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him for a conference in Ptolemais as quickly as possible.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for a conference''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -159,6 +151,13 @@ revisions:
   from: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege, but to meet him for a conference in Ptolemais as quickly as possible.
   to: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege[a], but to meet him[b] for a conference in Ptolemais as quickly as possible.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('not to continue the siege') because the note's quoted alternative matches the lexical decision rendered there; [b] anchored to ('to meet him') because the note names that rendering. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T18:54:10Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And when he heard it, he was angry. As soon as he heard, he immediately broke camp and came to Ptolemais, and he wrote to Jonathan not to continue the siege[a], but to meet him[b] for a conference in Ptolemais as quickly as possible.
+  to: When the king heard the report, he became angry and immediately broke camp and went to Ptolemais. He wrote to Jonathan, ordering him to stop the siege and come to Ptolemais as quickly as possible to confer with him.
+  rationale: The review and revert differed over the connective and the phrasing of the conference, not the substance of the summons. I retain the understood conference while carrying the urgency of the repeated hearing clauses into one natural English sequence.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -178,3 +177,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/011/022.job-48619.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:54:10Z'
+  change_level: retranslated
+  confidence: high
+  meaning: Angered by the report, the king immediately travels to Ptolemais and orders Jonathan to stop the siege and meet him there urgently.
+  meaning_decisions:
+  - source_phrase: ἀκούσας ὠργίσθη· ὡς δὲ ἤκουσεν, εὐθέως
+    prior_rendering: when he heard it, he was angry. As soon as he heard, he immediately
+    new_rendering: When the king heard the report, he became angry and immediately
+    rationale: The repeated hearing clauses emphasize the immediate response to one report, not two separate occasions of hearing.
+  - source_phrase: ἔγραψεν Ἰωναθὰν τοῦ μὴ περικαθῆσθαι
+    prior_rendering: he wrote to Jonathan not to continue the siege
+    new_rendering: He wrote to Jonathan, ordering him to stop the siege
+    rationale: The letter contains a royal directive, and the negative infinitive requires Jonathan to discontinue the siege already underway.
+  footnote_kinds: {}
+  history_weighed: The review and revert differed over the connective and the phrasing of the conference, not the substance of the summons. I retain the understood conference while carrying the urgency of the repeated hearing clauses into one natural English sequence.

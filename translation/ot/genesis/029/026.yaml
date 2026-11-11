@@ -4,17 +4,11 @@ source:
   edition: WLC
   text: וַ/יֹּ֣אמֶר לָבָ֔ן לֹא יֵעָשֶׂ֥ה כֵ֖ן בִּ/מְקוֹמֵ֑/נוּ לָ/תֵ֥ת הַ/צְּעִירָ֖ה לִ/פְנֵ֥י הַ/בְּכִירָֽה־׃
 translation:
-  text: Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”
-  philosophy: optimal-equivalence
+  text: Laban said, “It is not our custom here to give the younger daughter in marriage before the older daughter[a].”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “in our region” or “among us”; the Hebrew is literally “in our place,” referring to local custom.
-    reason: lexical_alternative
-  - marker: b
-    text: “To give” means to give in marriage; the Hebrew leaves “in marriage” implicit.
-    reason: lexical_alternative
-  - marker: c
-    text: Or “the older” or “the elder daughter”; “the firstborn” preserves the Hebrew emphasis on birth order.
+    text: Literally, “the firstborn.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: וַיֹּאמֶר
@@ -91,14 +85,20 @@ revisions:
   from: Laban said, “It is not done this way in our place, to give the younger before the firstborn.”
   to: Laban said, “It is not done this way in our place, to give the younger before the firstborn.”
   rationale: Replaced “the firstborn” with “the older” to reflect the comparative sense of הַבְּכִירָה more naturally in this context; retained the rest of the wording.
-
 - timestamp: '2026-05-17T10:51:09Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”'
-  to: 'Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”'
+  from: Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”
+  to: Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the firstborn''].'
+- timestamp: '2026-11-09T17:43:47Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Laban said[a], “It is not done this way in our place[c][b], to give the younger before the older.”
+  to: Laban said, “It is not our custom here to give the younger daughter in marriage before the older daughter[a].”
+  rationale: The current 'older' wording fits the comparison between the two daughters. The first draft and lexical record emphasize firstborn status, so that additional birth-order resonance is preserved in a note.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -120,3 +120,26 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/v31_full_coverage/ot/genesis/029/026.job-65221.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:43:47Z'
+  change_level: refined
+  confidence: high
+  meaning: Laban defends his action by appealing to the local custom of marrying the older daughter first.
+  meaning_decisions:
+  - source_phrase: לֹא יֵעָשֶׂה כֵן בִּמְקוֹמֵנוּ
+    prior_rendering: It is not done this way in our place
+    new_rendering: It is not our custom here
+    rationale: Laban is invoking accepted local practice, not describing what is physically done at a particular place.
+  - source_phrase: לָתֵת הַצְּעִירָה לִפְנֵי הַבְּכִירָה
+    prior_rendering: to give the younger before the older
+    new_rendering: to give the younger daughter in marriage before the older daughter
+    rationale: The daughters and the act of giving in marriage are understood in Hebrew but should be explicit in English.
+  footnote_kinds:
+    a: literal_wording
+  history_weighed: The current 'older' wording fits the comparison between the two daughters. The first draft and lexical record emphasize firstborn status, so that additional birth-order resonance is preserved in a note.

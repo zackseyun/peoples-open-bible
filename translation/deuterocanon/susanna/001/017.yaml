@@ -28,12 +28,8 @@ source:
   validation: major_mismatch
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: And it happened[a], while they were watching for an opportune day, that she once entered, as yesterday and the third day before, with only two young maids, and desired to bathe in the garden, because it was hot.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or, more idiomatically, 'as on the previous days.' The Greek phrase literally compares this visit with 'yesterday and the third day before.'
-    reason: lexical_alternative
+  text: One day, while they were watching for the right opportunity, she entered the garden as usual with only two servant girls. She wanted to bathe there because it was hot.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγένετο
   chosen: it happened
@@ -142,14 +138,20 @@ revisions:
   from: And it happened, while they were watching for an opportune day, that she once entered, as yesterday and the third day before, with only two young maids, and desired to bathe in the garden, because it was hot.
   to: And it happened, while they were watching for a suitable day, that she entered one day, as on the previous days, with only two young maids, and desired to bathe in the garden, because it was hot.
   rationale: 'Revised awkward literal phrases for natural formal English: changed ''an opportune day'' to ''a suitable day,'' ''once entered'' to ''entered one day,'' and clarified ''as yesterday and the third day before'' as ''as on the previous days.'' Kept all source elements and formal register.'
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And it happened[a], while they were watching for a suitable day, that she entered one day, as on the previous days, with only two young maids, and desired to bathe in the garden, because it was hot.'
-  to: 'And it happened[a], while they were watching for an opportune day, that she once entered, as yesterday and the third day before, with only two young maids, and desired to bathe in the garden, because it was hot.'
-  rationale: 'Restored drafter ''an opportune day'' (preserving the chosen English idiom for the appointed-time sense) and ''as yesterday and the third day before'' (preserving the Hebrew/Greek temporal-formula literal rendering) per chosen renderings.'
+  from: And it happened[a], while they were watching for a suitable day, that she entered one day, as on the previous days, with only two young maids, and desired to bathe in the garden, because it was hot.
+  to: And it happened[a], while they were watching for an opportune day, that she once entered, as yesterday and the third day before, with only two young maids, and desired to bathe in the garden, because it was hot.
+  rationale: Restored drafter 'an opportune day' (preserving the chosen English idiom for the appointed-time sense) and 'as yesterday and the third day before' (preserving the Hebrew/Greek temporal-formula literal rendering) per chosen renderings.
+- timestamp: '2026-11-09T19:09:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And it happened[a], while they were watching for an opportune day, that she once entered, as yesterday and the third day before, with only two young maids, and desired to bathe in the garden, because it was hot.
+  to: One day, while they were watching for the right opportunity, she entered the garden as usual with only two servant girls. She wanted to bathe there because it was hot.
+  rationale: The earlier review correctly recognized the customary-visit idiom and improved the narrative sequence. The subsequent automated restoration favored literal form rather than meaning, so its awkward temporal wording is not retained.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -169,3 +171,29 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/017.job-52434.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:36Z'
+  change_level: retranslated
+  confidence: high
+  meaning: While the elders watched for an opportunity, Susanna made her customary visit to the garden with two attendants and wanted to bathe because of the heat.
+  meaning_decisions:
+  - source_phrase: καὶ ἐγένετο ἐν τῷ παρατηρεῖν αὐτοὺς ἡμέραν εὔθετον εἰσῆλθέν ποτε
+    prior_rendering: And it happened, while they were watching for an opportune day, that she once entered
+    new_rendering: One day, while they were watching for the right opportunity, she entered the garden
+    rationale: The narrative formula introduces a particular occasion during their calculated surveillance; natural English carries that sequence without an empty introductory clause.
+  - source_phrase: καθὼς ἐχθὲς καὶ τρίτης ἡμέρας
+    prior_rendering: as yesterday and the third day before
+    new_rendering: as usual
+    rationale: This conventional expression identifies her customary practice, not a precise schedule of earlier visits.
+  - source_phrase: μετὰ δύο μόνων κορασίων, καὶ ἐπεθύμησε λούσασθαι
+    prior_rendering: with only two young maids, and desired to bathe
+    new_rendering: with only two servant girls. She wanted to bathe
+    rationale: The attendants' role is made consistent with the following verses, and the ordinary wish to bathe is distinguished from the elders' consuming desire.
+  footnote_kinds: {}
+  history_weighed: The earlier review correctly recognized the customary-visit idiom and improved the narrative sequence. The subsequent automated restoration favored literal form rather than meaning, so its awkward temporal wording is not retained.

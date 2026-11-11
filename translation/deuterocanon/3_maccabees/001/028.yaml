@@ -13,12 +13,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'from the cry of the crowds, thick and strained as it rose, there was an indescribable uproar.' The Greek piles up near-synonyms for loud public shouting.
-    reason: lexical_alternative
+  text: The crowds’ incessant, anguished cries swelled into an indescribable uproar.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: πυκνοτάτης
   chosen: very dense
@@ -110,14 +106,20 @@ revisions:
   from: And from the very dense and laborious cry being raised by the crowds, there was some indescribable outcry.
   to: And from the very dense and laborious cry being raised by the crowds, there was some indescribable outcry.
   rationale: Replaced 'laborious' with 'strenuous' for more natural rendering of ἐμπόνου in context, and changed 'some indescribable outcry' to 'an indescribable outcry' for more natural formal English while preserving the sense of τις.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.'
-  to: 'And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.'
+  from: And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.
+  to: And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''laborious''].'
+- timestamp: '2026-11-09T18:55:49Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And from the very dense and strenuous cry being raised by the crowds[a], there was an indescribable outcry.
+  to: The crowds’ incessant, anguished cries swelled into an indescribable uproar.
+  rationale: The earlier revision improved 'laborious' to 'strenuous' but still described the sound in source-shaped English. The lexical record’s emphasis on strain and voices gathering together informs the new wording, which also carries the former footnote’s point.
 cross_check:
   status: moderate_agreement
   agreement: 0.75
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/001/028.job-49502.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:55:49Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The crowds’ sustained and anguished cries combined into an overwhelming uproar.
+  meaning_decisions:
+  - source_phrase: τῆς πυκνοτάτης τε καὶ ἐμπόνου τῶν ὄχλων συναγομένης κραυγῆς
+    prior_rendering: the very dense and strenuous cry being raised by the crowds
+    new_rendering: The crowds’ incessant, anguished cries swelled
+    rationale: The dense succession of cries and their painful intensity are expressed naturally, while 'swelled' conveys many voices gathering into one overwhelming sound.
+  - source_phrase: ἀνείκαστός τις ἦν βοή
+    prior_rendering: there was an indescribable outcry
+    new_rendering: into an indescribable uproar
+    rationale: The collective uproar is the result of the crowds’ combined cries; the new construction makes that relationship direct.
+  footnote_kinds: {}
+  history_weighed: The earlier revision improved 'laborious' to 'strenuous' but still described the sound in source-shaped English. The lexical record’s emphasis on strain and voices gathering together informs the new wording, which also carries the former footnote’s point.

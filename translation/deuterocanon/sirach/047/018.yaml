@@ -29,11 +29,11 @@ source:
     note: Greek fallback / consistency check alongside the Hebrew Vorlage.
     reference: Sirach 47:18
 translation:
-  text: You were called by the honored name[a], the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
-  philosophy: optimal-equivalence
+  text: You bore the honored name invoked over Israel[a]; you amassed gold as plentiful as iron and silver as abundant as lead.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the name called over Israel.' The Hebrew idiom can denote a name invoked upon, belonging to, or resting over someone; the Greek parallel likewise supports this sense.
+    text: The name is God's name; having it called over someone expresses belonging to him.
     reason: lexical_alternative
 lexical_decisions:
 - source_word: נקראת בשם הנכבד
@@ -111,13 +111,12 @@ revisions:
   from: You were called by the honored name, the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
   to: You were called by the honored name, the one called over Israel; and you amassed gold like iron, and multiplied silver like lead.
   rationale: Changed 'invoked over Israel' to 'called over Israel' for closer lexical correspondence to the repeated Hebrew verb and improved consistency within the verse.
-
 - timestamp: '2026-05-18T03:09:34Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'You were called by the honored name[a], the one called over Israel; and you amassed gold like iron, and multiplied silver like lead.'
-  to: 'You were called by the honored name, the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.'
+  from: You were called by the honored name[a], the one called over Israel; and you amassed gold like iron, and multiplied silver like lead.
+  to: You were called by the honored name, the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''the one invoked over Israel''].'
 - timestamp: '2026-09-13T05:24:47Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -127,6 +126,13 @@ revisions:
   from: You were called by the honored name, the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
   to: You were called by the honored name[a], the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] restored to the position it held before an earlier revision pass dropped it. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T19:10:32Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: You were called by the honored name[a], the one invoked over Israel; and you amassed gold like iron, and multiplied silver like lead.
+  to: You bore the honored name invoked over Israel[a]; you amassed gold as plentiful as iron and silver as abundant as lead.
+  rationale: Retained 'honored' and 'invoked,' since the intervening preference for 'called over' chiefly pursued verbal correspondence rather than clearer meaning. The documented explanation of the metal comparisons governs their clarification, while the naming relationship remains allusive rather than doctrinally expanded.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -146,3 +152,26 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/sirach/047/018.job-52310.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:10:32Z'
+  change_level: refined
+  confidence: medium
+  meaning: Solomon bore the revered divine name associated with Israel and accumulated extraordinary quantities of gold and silver.
+  meaning_decisions:
+  - source_phrase: נקראת בשם הנכבד, הנקרא על ישראל
+    prior_rendering: You were called by the honored name, the one invoked over Israel
+    new_rendering: You bore the honored name invoked over Israel
+    rationale: '''Bore the name'' expresses the naming relationship more naturally while retaining the allusive language of the divine name invoked over Israel.'
+  - source_phrase: ותצבר כברזל זהב, וכעפרת הרבית כסף
+    prior_rendering: and you amassed gold like iron, and multiplied silver like lead
+    new_rendering: you amassed gold as plentiful as iron and silver as abundant as lead
+    rationale: The comparisons concern abundance, not the metals' appearance or properties; making that point explicit preserves the images and their force.
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: Retained 'honored' and 'invoked,' since the intervening preference for 'called over' chiefly pursued verbal correspondence rather than clearer meaning. The documented explanation of the metal comparisons governs their clarification, while the naming relationship remains allusive rather than doctrinally expanded.

@@ -4,15 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֕אמֶר הִנֵּ֣ה שָׁמַ֔עְתִּי כִּ֥י יֶשׁ שֶׁ֖בֶר בְּ/מִצְרָ֑יִם רְדוּ שָׁ֨מָּ/ה֙ וְ/שִׁבְרוּ לָ֣/נוּ מִ/שָּׁ֔ם וְ/נִחְיֶ֖ה וְ/לֹ֥א נָמֽוּת־־־׃
 translation:
-  text: He said[a], “Look, I have heard that there is grain in Egypt. Go down there and buy some for us from there[b], so that we may live and not die.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “buy grain for us from there.” The Hebrew verb in this context specifically refers to purchasing grain.
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'buy some for us from there'.
-    reason: previous_rendering
+  text: He said, “Look, I have heard that there is grain for sale in Egypt. Go down there and buy some for us, so that we may live and not die.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: הִנֵּה
   chosen: Look
@@ -105,12 +98,18 @@ revisions:
   from: He said, “Look, I have heard that there is grain in Egypt. Go down there and buy us some from there, so that we may live and not die.”
   to: He said, “Look, I have heard that there is grain in Egypt. Go down there and buy some for us from there, so that we may live and not die.”
   rationale: Adjusted word order from 'buy us some' to 'buy some for us' for more natural formal English while preserving the Hebrew sense. No other changes needed.
+- timestamp: '2026-11-09T17:45:25Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He said[a], “Look, I have heard that there is grain in Egypt. Go down there and buy some for us from there[b], so that we may live and not die.”
+  to: He said, “Look, I have heard that there is grain for sale in Egypt. Go down there and buy some for us, so that we may live and not die.”
+  rationale: The revisions alternated between two placements of “for us” without changing the meaning. I retain the current placement and the urgent “live and not die,” while removing the redundant second reference to Egypt.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:45:43Z'
   unchanged: false
   changes_summary: Adjusted word order from 'buy us some' to 'buy some for us' for more natural formal English while preserving the Hebrew sense. No other changes needed.
-
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -133,3 +132,25 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_recheck_applied/ot/genesis/042/002.job-37752.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:45:25Z'
+  change_level: refined
+  confidence: high
+  meaning: Jacob tells his sons to purchase grain in Egypt so that their household can survive.
+  meaning_decisions:
+  - source_phrase: כִּי יֶשׁ שֶׁבֶר בְּמִצְרָיִם
+    prior_rendering: that there is grain in Egypt
+    new_rendering: that there is grain for sale in Egypt
+    rationale: The phrase concerns grain available for purchase during the famine, as in verse 1.
+  - source_phrase: רְדוּ שָׁמָּה וְשִׁבְרוּ לָנוּ מִשָּׁם
+    prior_rendering: Go down there and buy some for us from there
+    new_rendering: Go down there and buy some for us
+    rationale: The direction and source are both clear from “Go down there”; repeating “from there” adds no meaning in English.
+  footnote_kinds: {}
+  history_weighed: The revisions alternated between two placements of “for us” without changing the meaning. I retain the current placement and the urgent “live and not die,” while removing the redundant second reference to Egypt.

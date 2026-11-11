@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: οἱ δὲ λοιποὶ κρατήσαντες τοὺς δούλους αὐτοῦ ὕβρισαν καὶ ἀπέκτειναν.
 translation:
-  text: But the rest[a], seizing his servants, mistreated them and killed them.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'his servants' (Greek doulous).
-    reason: lexical_alternative
+  text: But the rest seized his servants, mistreated them, and killed them.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ δὲ λοιποὶ
   chosen: But the rest
@@ -77,14 +73,20 @@ revisions:
   from: But the rest, after seizing his slaves, mistreated them and killed them.
   to: But the rest, after seizing his slaves, mistreated them and killed them.
   rationale: Removed 'after' to reflect the participle more directly and keep the wording tighter; otherwise retained the accurate rendering.
-
 - timestamp: '2026-05-18T03:00:27Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the rest[a], seizing his slaves, mistreated them and killed them.'
-  to: 'But the rest[a], seizing his slaves, mistreated them and killed them.'
+  from: But the rest[a], seizing his slaves, mistreated them and killed them.
+  to: But the rest[a], seizing his slaves, mistreated them and killed them.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''after seizing''].'
+- timestamp: '2026-11-09T17:15:29Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the rest[a], seizing his servants, mistreated them and killed them.
+  to: But the rest seized his servants, mistreated them, and killed them.
+  rationale: The earlier passes debated whether to include 'after' before 'seizing'; coordinated past-tense verbs express the same sequence clearly. I retain the current 'servants' and the broad sense of abusive treatment conveyed by 'mistreated.'
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -108,3 +110,21 @@ cross_check:
     agree: 2
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/nt/matthew/022/006.job-57271.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:15:29Z'
+  change_level: refined
+  confidence: high
+  meaning: The remaining guests seized the king’s servants, mistreated them, and killed them.
+  meaning_decisions:
+  - source_phrase: κρατήσαντες τοὺς δούλους αὐτοῦ ὕβρισαν καὶ ἀπέκτειναν
+    prior_rendering: seizing his servants, mistreated them and killed them
+    new_rendering: seized his servants, mistreated them, and killed them
+    rationale: Coordinated English verbs convey the sequence directly without the interruption of a participial clause.
+  footnote_kinds: {}
+  history_weighed: The earlier passes debated whether to include 'after' before 'seizing'; coordinated past-tense verbs express the same sequence clearly. I retain the current 'servants' and the broad sense of abusive treatment conveyed by 'mistreated.'

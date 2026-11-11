@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: οἱ δὲ ὀφθαλμοὶ ⸀αὐτοῦ φλὸξ πυρός, καὶ ἐπὶ τὴν κεφαλὴν αὐτοῦ διαδήματα πολλά, ⸀ἔχων ὄνομα γεγραμμένον ὃ οὐδεὶς οἶδεν εἰ μὴ αὐτός,
 translation:
-  text: His eyes were a flame of fire, and on his head were many crowns[a], and he had a name written that no one knows except himself.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'many diadems.' The Greek term refers specifically to royal crowns.
-    reason: lexical_alternative
+  text: His eyes were a flame of fire, and on his head were many royal crowns. He bore a written name that no one knows except himself.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: οἱ ... ὀφθαλμοὶ αὐτοῦ
   chosen: His eyes
@@ -99,13 +95,12 @@ revisions:
   from: His eyes were a flame of fire, and on his head were many crowns, and he had a name written that no one knows except himself.
   to: His eyes were like a flame of fire, and on his head were many diadems, and he had a name written that no one knows except himself.
   rationale: Added 'like' to reflect the verbless comparison more naturally, and changed 'crowns' to 'diadems' for more precise rendering of διαδήματα.
-
 - timestamp: '2026-05-18T03:10:20Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'His eyes were like a flame of fire[a], and on his head were many diadems, and he had a name written that no one knows except himself.'
-  to: 'His eyes were a flame of fire, and on his head were many crowns, and he had a name written that no one knows except himself.'
+  from: His eyes were like a flame of fire[a], and on his head were many diadems, and he had a name written that no one knows except himself.
+  to: His eyes were a flame of fire, and on his head were many crowns, and he had a name written that no one knows except himself.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''many crowns''].'
 - timestamp: '2026-09-13T05:09:53Z'
   adjudicator: claude-opus-5-footnote-marker-cleanup
@@ -115,6 +110,13 @@ revisions:
   from: His eyes were a flame of fire, and on his head were many crowns, and he had a name written that no one knows except himself.
   to: His eyes were a flame of fire, and on his head were many crowns[a], and he had a name written that no one knows except himself.
   rationale: Footnote marker(s) declared but absent from the rendering, so the note never reached the reader. [a] anchored to ('many crowns') because the note's quoted alternative matches the lexical decision rendered there. Rendering and footnote text unchanged.
+- timestamp: '2026-11-09T17:18:07Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: His eyes were a flame of fire, and on his head were many crowns[a], and he had a name written that no one knows except himself.
+  to: His eyes were a flame of fire, and on his head were many royal crowns. He bore a written name that no one knows except himself.
+  rationale: The earlier review recognized the royal specificity of the crowns, which I retain without requiring the technical word 'diadems.' I preserve the source’s direct flame image and leave the exclusive knowledge of the name unexplained.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -134,3 +136,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/nt/revelation/019/012.job-47376.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:18:07Z'
+  change_level: refined
+  confidence: high
+  meaning: The rider has fiery eyes and many royal crowns, and he bears a written name known only to himself.
+  meaning_decisions:
+  - source_phrase: διαδήματα πολλά
+    prior_rendering: many crowns[a]
+    new_rendering: many royal crowns
+    rationale: The crowns signify royal authority; making that distinction explicit carries the earlier footnote’s point into accessible English.
+  - source_phrase: ἔχων ὄνομα γεγραμμένον
+    prior_rendering: he had a name written
+    new_rendering: He bore a written name
+    rationale: This naturally describes the rider bearing an inscription without specifying where it was written.
+  footnote_kinds: {}
+  history_weighed: The earlier review recognized the royal specificity of the crowns, which I retain without requiring the technical word 'diadems.' I preserve the source’s direct flame image and leave the exclusive knowledge of the name unexplained.

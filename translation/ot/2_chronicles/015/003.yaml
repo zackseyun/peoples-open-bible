@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וְ/יָמִ֥ים רַבִּ֖ים לְ/יִשְׂרָאֵ֑ל לְ/לֹ֣א אֱלֹהֵ֣י אֱמֶ֗ת וּ/לְ/לֹ֛א כֹּהֵ֥ן מוֹרֶ֖ה וּ/לְ/לֹ֥א תוֹרָֽה׀׃
 translation:
-  text: For many days Israel was without the true God[a], without a teaching priest[b], and without the law.
-  philosophy: optimal-equivalence
+  text: For a long time Israel was without the true God, without a priest to teach them, and without the law[a].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'without a God of truth' or 'with no true God.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'without law' or 'without teaching'; Hebrew torah can mean 'instruction,' 'teaching,' or 'law' depending on context.
-    reason: lexical_alternative
+    text: Or, “without instruction”; the Hebrew term includes teaching as well as law.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: וְ/יָמִים רַבִּים
   chosen: For many days
@@ -102,14 +99,20 @@ revisions:
   from: For many days Israel was without the true God, without a teaching priest, and without instruction.
   to: For many days Israel was without the true God, without a teaching priest, and without instruction.
   rationale: Replaced 'instruction' with 'the law' to more directly reflect תוֹרָה and preserve lexical accuracy and formal register. Kept 'teaching priest' for כֹּהֵן מוֹרֶה.
-
 - timestamp: '2026-05-17T01:06:08Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'For many days Israel was without the true God[a], without a teaching priest[b], and without the law.'
-  to: 'For many days Israel was without the true God[a], without a teaching priest[b], and without the law.'
+  from: For many days Israel was without the true God[a], without a teaching priest[b], and without the law.
+  to: For many days Israel was without the true God[a], without a teaching priest[b], and without the law.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''without instruction''].'
+- timestamp: '2026-11-09T17:27:39Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: For many days Israel was without the true God[a], without a teaching priest[b], and without the law.
+  to: For a long time Israel was without the true God, without a priest to teach them, and without the law[a].
+  rationale: The history debates “law” and “instruction,” and the lexical notes rightly emphasize the breadth of torah. I retain the current “law” while preserving that broader understanding in a correctly placed note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -132,3 +135,26 @@ cross_check:
     agree: 1
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/2_chronicles/015/003.job-59799.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:27:39Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel experienced a prolonged period without the true God, priestly teaching, or the guidance of the law.
+  meaning_decisions:
+  - source_phrase: יָמִים רַבִּים
+    prior_rendering: For many days
+    new_rendering: For a long time
+    rationale: The expression describes an extended period, not a duration measured specifically in days.
+  - source_phrase: כֹּהֵן מוֹרֶה
+    prior_rendering: a teaching priest
+    new_rendering: a priest to teach them
+    rationale: This states the priest’s missing instructional function in natural English.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history debates “law” and “instruction,” and the lexical notes rightly emphasize the breadth of torah. I retain the current “law” while preserving that broader understanding in a correctly placed note.

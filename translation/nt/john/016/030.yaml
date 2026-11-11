@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: νῦν οἴδαμεν ὅτι οἶδας πάντα καὶ οὐ χρείαν ἔχεις ἵνα τίς σε ἐρωτᾷ· ἐν τούτῳ πιστεύομεν ὅτι ἀπὸ θεοῦ ἐξῆλθες.
 translation:
-  text: Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'for anyone to ask you.' The Greek verb can mean 'ask' or 'question'; 'question' is chosen here because the context concerns Jesus' knowledge and the disciples' unspoken thoughts.
-    reason: lexical_alternative
+  text: Now we know that you know all things and do not need anyone to voice their questions to you. This is why we believe that you came from God.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: νῦν
   chosen: Now
@@ -105,14 +101,20 @@ revisions:
   from: Now we know that you know all things and have no need for anyone to question you. By this we believe that you came from God.
   to: Now we know that you know all things and have no need for anyone to question you. By this we believe that you came from God.
   rationale: Revised 'have no need for anyone to question you' to 'have no need that anyone should question you' to more closely reflect the Greek construction while keeping formal, natural English.
-
 - timestamp: '2026-05-18T03:00:16Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.'
-  to: 'Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.'
+  from: Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.
+  to: Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''for anyone to question you''].'
+- timestamp: '2026-11-09T17:11:11Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Now we know that you know all things and have no need that anyone should question you[a]. By this we believe that you came from God.
+  to: Now we know that you know all things and do not need anyone to voice their questions to you. This is why we believe that you came from God.
+  rationale: The lexical rationale already recognized that Jesus does not need their questioning in order to know, but the formal revision obscured that point. I express the unspoken-question sense established by verse 19 while retaining the full breadth of “you know all things.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +136,25 @@ cross_check:
   verdict_counts:
     agree: 2
   source_review: state/reviews/gemini/high_scrutiny/nt/john/016/030.job-7473.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:11:11Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The disciples take Jesus' knowledge of their unspoken questions as evidence that he knows all things and has come from God.
+  meaning_decisions:
+  - source_phrase: οὐ χρείαν ἔχεις ἵνα τίς σε ἐρωτᾷ
+    prior_rendering: have no need that anyone should question you
+    new_rendering: do not need anyone to voice their questions to you
+    rationale: Jesus has addressed their intended question before they ask it; this wording conveys that recognition without suggesting that they mean challenging his authority.
+  - source_phrase: ἐν τούτῳ πιστεύομεν
+    prior_rendering: By this we believe
+    new_rendering: This is why we believe
+    rationale: The phrase identifies the evidence on which their belief rests.
+  footnote_kinds: {}
+  history_weighed: The lexical rationale already recognized that Jesus does not need their questioning in order to know, but the formal revision obscured that point. I express the unspoken-question sense established by verse 19 while retaining the full breadth of “you know all things.”

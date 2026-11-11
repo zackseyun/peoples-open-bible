@@ -4,18 +4,15 @@ source:
   edition: WLC
   text: יְהוָ֞ה נְתָנְ/ךָ֣ כֹהֵ֗ן תַּ֚חַת יְהוֹיָדָ֣ע הַ/כֹּהֵ֔ן לִֽ/הְי֤וֹת פְּקִדִים֙ בֵּ֣ית יְהוָ֔ה לְ/כָל אִ֥ישׁ מְשֻׁגָּ֖ע וּ/מִתְנַבֵּ֑א וְ/נָתַתָּ֥ה אֹת֛/וֹ אֶל הַ/מַּהְפֶּ֖כֶת וְ/אֶל הַ/צִּינֹֽק־־־׃
 translation:
-  text: Yahweh has made you priest in place of Jehoiada the priest[a], to be overseers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the neck iron.
-  philosophy: optimal-equivalence
+  text: “Yahweh has appointed you priest in place of Jehoiada the priest, to exercise oversight[a] in Yahweh’s house over every madman who acts as a prophet. You are to put such a man in the stocks and a neck iron[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'to be officers' or 'to be supervisors'; the Hebrew has a plural noun ('overseers/officers') even though the addressee is singular.
+    text: Literally, “to be overseers”; the Hebrew uses a plural title even though one priest is being addressed.
     reason: lexical_alternative
   - marker: b
-    text: Or 'prophesies'; the Hebrew participle can be rendered more neutrally, but the main text reflects the hostile tone of the speaker.
-    reason: alternative_reading
-  - marker: c
-    text: The exact meaning of 'the neck iron' is uncertain; it likely refers to an iron restraint or collar used with the stocks.
-    reason: cultural_note
+    text: The Hebrew term names a restraint of uncertain form, probably for the neck.
+    reason: lexical_alternative
 lexical_decisions:
 - source_word: יְהוָה
   chosen: Yahweh
@@ -135,14 +132,20 @@ revisions:
   from: The LORD has made you priest in place of Jehoiada the priest, to be overseers in the house of the LORD over every man who is mad and acts as a prophet, and you should put him into the stocks and the neck iron.
   to: The LORD has made you priest in place of Jehoiada the priest, to be officers in the house of the LORD over every man who is mad and acts as a prophet, and you should put him into the stocks and the iron collar.
   rationale: Changed 'overseers' to 'officers' for the plural פקידים, and 'the neck iron' to 'the iron collar' for more natural and accurate English.
-
 - timestamp: '2026-05-16T08:09:59Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Yahweh has made you priest in place of Jehoiada the priest[a], to be officers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the iron collar.'
-  to: 'Yahweh has made you priest in place of Jehoiada the priest[a], to be overseers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the neck iron.'
+  from: Yahweh has made you priest in place of Jehoiada the priest[a], to be officers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the iron collar.
+  to: Yahweh has made you priest in place of Jehoiada the priest[a], to be overseers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the neck iron.
   rationale: 'Azure substituted BOTH documented rejected_alternatives: ''officers'' (drafter chose ''overseers'' for supervisory temple responsibility over generic ''officers'') and ''the iron collar'' (drafter chose ''the neck iron'' to avoid overcommitting to specific instrument form for הַצִּינֹק).'
+- timestamp: '2026-11-09T18:59:19Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Yahweh has made you priest in place of Jehoiada the priest[a], to be overseers in the house of Yahweh over every man who is mad and acts as a prophet[c][b], and you should put him into the stocks and the neck iron.
+  to: “Yahweh has appointed you priest in place of Jehoiada the priest, to exercise oversight[a] in Yahweh’s house over every madman who acts as a prophet. You are to put such a man in the stocks and a neck iron[b].
+  rationale: The history rightly emphasizes supervisory responsibility and uncertainty about the restraint, which I retain. I do not reproduce the awkward number mismatch in English, but record the Hebrew plural in a note.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -166,3 +169,35 @@ cross_check:
     agree: 1
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/ot/jeremiah/029/026.job-38398.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:59:19Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: Shemaiah’s letter claims that Zephaniah’s priestly appointment obliges him to restrain anyone he regards as a madman acting as a prophet.
+  meaning_decisions:
+  - source_phrase: נתנך כהן
+    prior_rendering: has made you priest
+    new_rendering: has appointed you priest
+    rationale: The construction concerns appointment to an office.
+  - source_phrase: להיות פקדים בית יהוה
+    prior_rendering: to be overseers in the house of Yahweh
+    new_rendering: to exercise oversight in Yahweh’s house
+    rationale: A number-neutral expression conveys the supervisory function without reproducing the unexplained singular-address/plural-title mismatch.
+  - source_phrase: לכל איש משגע ומתנבא
+    prior_rendering: over every man who is mad and acts as a prophet
+    new_rendering: over every madman who acts as a prophet
+    rationale: '''Madman'' clearly conveys Shemaiah’s contemptuous accusation of insanity rather than allowing ''mad'' to suggest anger.'
+  - source_phrase: ונתתה אתו
+    prior_rendering: and you should put him
+    new_rendering: You are to put such a man
+    rationale: The letter demands official action; this is an asserted duty, not merely advice.
+  footnote_kinds:
+    a: literal_wording
+    b: name_or_term
+  history_weighed: The history rightly emphasizes supervisory responsibility and uncertainty about the restraint, which I retain. I do not reproduce the awkward number mismatch in English, but record the Hebrew plural in a note.

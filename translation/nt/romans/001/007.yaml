@@ -4,18 +4,12 @@ source:
   edition: SBLGNT
   text: πᾶσιν τοῖς οὖσιν ἐν Ῥώμῃ ἀγαπητοῖς θεοῦ, κλητοῖς ἁγίοις· χάρις ὑμῖν καὶ εἰρήνη ἀπὸ θεοῦ πατρὸς ἡμῶν καὶ κυρίου Ἰησοῦ Χριστοῦ.
 translation:
-  text: 'To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus Christ[a][b][c].'
-  philosophy: optimal-equivalence
+  text: 'To all those in Rome who are beloved by God and called to be saints[a]: Grace to you and peace from God our Father and the Lord Jesus Christ.'
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or “called holy ones”; traditionally, “called to be saints.”
+    text: Greek 'holy ones,' referring here to all the believers addressed.
     reason: lexical_alternative
-  - marker: b
-    text: Or “Christ.”
-    reason: lexical_alternative
-  - marker: c
-    text: Or 'who are beloved by God, called saints'.
-    reason: previous_rendering
 lexical_decisions:
 - source_word: πᾶσιν τοῖς οὖσιν ἐν Ῥώμῃ
   chosen: To all those in Rome
@@ -114,15 +108,21 @@ revisions:
   adjudicator: claude-opus-4-8-article-restoration
   reviewer_model: null
   category: regression_fix
-  from: "'To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus Messiah.'"
-  to: "'To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus the Messiah.'"
-  rationale: "Restored the definite article: 'Jesus Messiah' -> 'Jesus the Messiah'. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English)."
+  from: '''To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus Messiah.'''
+  to: '''To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus the Messiah.'''
+  rationale: 'Restored the definite article: ''Jesus Messiah'' -> ''Jesus the Messiah''. The bare form was a mechanical artifact of the 2026-04-23 regression-fix pass, which reverted Christos->Messiah but dropped the article. Standardized per DOCTRINE.md contested-terms policy (Christos -> Messiah, with the title carried in idiomatic English).'
+- timestamp: '2026-11-09T17:17:55Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: 'To all those in Rome who are beloved by God and called to be saints: Grace to you and peace from God our Father and the Lord Jesus Christ[a][b][c].'
+  to: 'To all those in Rome who are beloved by God and called to be saints[a]: Grace to you and peace from God our Father and the Lord Jesus Christ.'
+  rationale: The later revision's 'called to be saints' communicates divine calling more clearly than 'called saints,' which can sound like a label others give them. I retain the current greeting and explain the term 'saints' rather than preserving redundant alternatives or automated title reversions.
 revision_pass:
   model: gpt-5.4
   timestamp: '2026-04-23T10:00:30Z'
   unchanged: false
   changes_summary: 'Added ''who are'' for natural English, rendered κλητοῖς ἁγίοις as ''called to be saints'' for standard formal clarity, and changed ''the Messiah'' to ''Christ'' for appropriate register and consistency with conventional rendering of Χριστοῦ in this epistolary greeting. [Regression fix applied: Messiah restored (revision_pass had changed Χριστός → Christ against DOCTRINE.md policy)]'
-
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -147,3 +147,18 @@ cross_check:
     agree: 2
     minor-issues: 2
   source_review: state/reviews/gemini/v31_recheck_applied/nt/romans/001/007.job-38730.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:17:55Z'
+  change_level: kept
+  confidence: high
+  meaning: Paul addresses all the Roman believers as God's beloved and called saints, wishing them grace and peace from God the Father and the Lord Jesus Christ.
+  meaning_decisions: []
+  footnote_kinds:
+    a: name_or_term
+  history_weighed: The later revision's 'called to be saints' communicates divine calling more clearly than 'called saints,' which can sound like a label others give them. I retain the current greeting and explain the term 'saints' rather than preserving redundant alternatives or automated title reversions.

@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or 'the palace court' or 'the courtyard'; the Greek αὐλή can denote the court area of a royal residence.
-    reason: lexical_alternative
+  text: Around dawn, when the city was already packed with countless crowds at the racecourse, he entered the palace court and urged the king to proceed with the execution.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: περὶ τὴν ἕω
   chosen: Around dawn
@@ -88,14 +84,20 @@ revisions:
   from: Around dawn, when the city was already filled with innumerable crowds throughout the hippodrome, he entered the court and urged the king on in regard to the matter at hand.
   to: Around dawn, when the city was already filled with innumerable crowds throughout the hippodrome, he entered the court and urged the king on in regard to the matter at hand.
   rationale: Changed 'throughout the hippodrome' to 'at the hippodrome' for a more natural rendering of κατὰ τοῦ ἱπποδρόμου in context, while preserving the sense. Kept the rest substantially unchanged.
-
 - timestamp: '2026-05-18T03:00:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.'
-  to: 'Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.'
+  from: Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.
+  to: Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''in regard to the matter at hand''].'
+- timestamp: '2026-11-09T18:57:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: Around dawn[a], when the city was already filled with innumerable crowds at the hippodrome, he entered the court and urged the king on concerning the matter at hand.
+  to: Around dawn, when the city was already packed with countless crowds at the racecourse, he entered the palace court and urged the king to proceed with the execution.
+  rationale: The review’s “at the hippodrome” improves on the earlier spatial wording and is retained in meaning. The lexical record and palace-court footnote support clarifying the venue, royal location, and immediate purpose rather than preserving a vague “matter at hand.”
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -115,3 +117,29 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/3_maccabees/005/046.job-49637.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:57:24Z'
+  change_level: retranslated
+  confidence: high
+  meaning: At dawn, with crowds massing at the racecourse, the elephant-master presses the king to proceed with the planned killing.
+  meaning_decisions:
+  - source_phrase: τῆς πόλεως ἤδη πλήθεσιν ἀναριθμήτοις κατὰ τοῦ ἱπποδρόμου καταμεστωμένης
+    prior_rendering: when the city was already filled with innumerable crowds at the hippodrome
+    new_rendering: when the city was already packed with countless crowds at the racecourse
+    rationale: “Packed” preserves the intensity of the crowding, and “racecourse” communicates the venue without requiring knowledge of the Greek term.
+  - source_phrase: εἰς τὴν αὐλήν
+    prior_rendering: the court
+    new_rendering: the palace court
+    rationale: Makes the royal setting explicit and incorporates the useful clarification from the existing footnote.
+  - source_phrase: ἐπὶ τὸ προκείμενον ὤτρυνε τὸν βασιλέα
+    prior_rendering: urged the king on concerning the matter at hand
+    new_rendering: urged the king to proceed with the execution
+    rationale: The immediate business is the prepared killing of the Jews, which the first hearers would have understood without explanation.
+  footnote_kinds: {}
+  history_weighed: The review’s “at the hippodrome” improves on the earlier spatial wording and is retained in meaning. The lexical record and palace-court footnote support clarifying the venue, royal location, and immediate purpose rather than preserving a vague “matter at hand.”

@@ -9,12 +9,8 @@ source:
   confidence: high
   validation: agree
 translation:
-  text: And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “of the Judeans.” The Greek ethnonym can denote either the Jewish people broadly or the people of Judea more specifically.
-    reason: lexical_alternative
+  text: The people of Israel began dating their documents and contracts, “Year one under Simon, the great high priest, general, and leader of the Jews.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἤρξατο
   chosen: began
@@ -126,14 +122,20 @@ revisions:
   from: And the people of Israel began to write in documents and contracts, “Year one under Simon the great high priest and general and leader of the Jews.”
   to: And the people of Israel began to write in documents and contracts, “Year one under Simon the great high priest and general and leader of the Jews.”
   rationale: Changed “under Simon” to “of Simon” to more directly reflect ἐπὶ Σίμωνος in this dating formula. Kept the rest substantially unchanged as accurate and natural.
-
 - timestamp: '2026-05-18T02:59:30Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”'
-  to: 'And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”'
+  from: And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”
+  to: And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''under Simon''].'
+- timestamp: '2026-11-09T18:53:34Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And the people of Israel began to write in documents and contracts[a], “Year one of Simon, the great high priest and general and leader of the Jews.”
+  to: The people of Israel began dating their documents and contracts, “Year one under Simon, the great high priest, general, and leader of the Jews.”
+  rationale: The first draft and lexical rationale support 'under Simon' as the dating formula; the later preference for 'of Simon' was based on source transparency rather than clearer meaning. Simon’s full titles are retained, and the unnecessary ethnonym note is dropped.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -153,3 +155,25 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_maccabees/013/042.job-48766.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T18:53:34Z'
+  change_level: refined
+  confidence: high
+  meaning: Israel began dating official documents from Simon’s first year as high priest, general, and national leader.
+  meaning_decisions:
+  - source_phrase: γράφειν ἐν ταῖς συγγραφαῖς καὶ συναλλάγμασιν
+    prior_rendering: to write in documents and contracts
+    new_rendering: dating their documents and contracts
+    rationale: The quoted year formula shows that the new practice is dating documents by Simon’s administration, not beginning to write documents generally.
+  - source_phrase: Ἔτους πρώτου ἐπὶ Σίμωνος
+    prior_rendering: Year one of Simon
+    new_rendering: Year one under Simon
+    rationale: '''Under Simon'' expresses the administration used to reckon the year and avoids sounding like Simon’s age.'
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical rationale support 'under Simon' as the dating formula; the later preference for 'of Simon' was based on source transparency rather than clearer meaning. Simon’s full titles are retained, and the unnecessary ethnonym note is dropped.

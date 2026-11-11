@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֤אמֶר הַ/מֶּ֨לֶךְ֙ לְ/הֵֽעָשׂ֣וֹת כֵּ֔ן וַ/תִּנָּתֵ֥ן דָּ֖ת בְּ/שׁוּשָׁ֑ן וְ/אֵ֛ת עֲשֶׂ֥רֶת בְּנֵֽי הָמָ֖ן תָּלֽוּ־׃
 translation:
-  text: So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "were impaled"; the Hebrew verb can refer to hanging bodies on a stake or pole, not necessarily hanging by the neck in the modern sense.
-    reason: lexical_alternative
+  text: So the king ordered this to be done. A decree was issued in Susa, and the bodies of Haman’s ten sons were hung up.
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר
   chosen: said
@@ -74,14 +70,20 @@ revisions:
   from: So the king said that it should be done that way. A decree was issued in Susa, and the ten sons of Haman were hanged.
   to: So the king said that it should be done that way. A decree was issued in Susa, and the ten sons of Haman were hanged.
   rationale: Changed 'that way' to 'so' for a more formal and direct rendering of כֵּן; otherwise retained the draft as accurate and complete.
-
 - timestamp: '2026-05-17T21:21:13Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.'
-  to: 'So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.'
+  from: So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.
+  to: So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''that it should be done that way''].'
+- timestamp: '2026-11-09T17:33:31Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: So the king said that it should be done so. A decree was issued in Susa[a], and the ten sons of Haman were hanged.
+  to: So the king ordered this to be done. A decree was issued in Susa, and the bodies of Haman’s ten sons were hung up.
+  rationale: Earlier reviews chiefly debated 'so' versus 'that way'; I render the royal instruction directly as an order. The prior note recognized that this need not mean hanging by the neck, and the context’s distinction between killing and displaying bodies is now explicit in the text.
 cross_check:
   status: high_agreement
   agreement: 0.95
@@ -101,3 +103,25 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/esther/009/014.job-42150.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:33:31Z'
+  change_level: retranslated
+  confidence: high
+  meaning: The king authorized Esther’s request, a decree was issued in Susa, and the bodies of Haman’s sons were hung up.
+  meaning_decisions:
+  - source_phrase: וַיֹּאמֶר הַמֶּלֶךְ לְהֵעָשׂוֹת כֵּן
+    prior_rendering: the king said that it should be done so
+    new_rendering: the king ordered this to be done
+    rationale: The king’s statement directs that Esther’s request be carried out; 'ordered' naturally expresses the force of this royal instruction.
+  - source_phrase: וְאֵת עֲשֶׂרֶת בְּנֵי הָמָן תָּלוּ
+    prior_rendering: the ten sons of Haman were hanged
+    new_rendering: the bodies of Haman’s ten sons were hung up
+    rationale: This fulfills the request to display men already killed, rather than reporting another execution; 'hung up' does not specify suspension by the neck.
+  footnote_kinds: {}
+  history_weighed: Earlier reviews chiefly debated 'so' versus 'that way'; I render the royal instruction directly as an order. The prior note recognized that this need not mean hanging by the neck, and the context’s distinction between killing and displaying bodies is now explicit in the text.

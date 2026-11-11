@@ -11,14 +11,11 @@ source:
   validation: normalized_partition_extract
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone ESG chapter 6 = Addition F, segmented from Swete pages 796-797 with First1KGreek used only as a verse-anchor map.
 translation:
-  text: In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and a Levite, and Ptolemy his son, brought in the following letter of the Purim festival, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.
-  philosophy: optimal-equivalence
+  text: In the fourth year of the reign of Ptolemy and Cleopatra, Dositheus, who said he was a priest and a Levite, and his son Ptolemy brought this letter concerning the Purim festival. They said it was authentic[a] and had been translated by Lysimachus son of Ptolemy, a resident of Jerusalem.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Greek: ''of the Phrouraia,'' the Greek designation used here for the Jewish festival of Purim.'
-    reason: lexical_alternative
-  - marker: b
-    text: Or 'which they said was extant and had been translated by Lysimachus son of Ptolemy.' The Greek wording is terse and may emphasize the document's existence/availability rather than its authenticity.
+    text: Or, “was in existence”; the Greek says simply “was,” without an expressed complement.
     reason: alternative_reading
 lexical_decisions:
 - source_word: Ἔτους τετάρτου
@@ -143,14 +140,20 @@ revisions:
   from: In the fourth year of the reign of Ptolemy and Cleopatra, Dositheus, who said that he was a priest and a Levite, and Ptolemy his son, brought in the following letter of the Purim festival, which they said also existed and had been translated by Lysimachus son of Ptolemy, one of those in Jerusalem.
   to: In the fourth year of the reign of Ptolemy and Cleopatra, Dositheus, who said that he was a priest and Levite, and Ptolemy his son, brought in the following letter concerning Purim, which they said also existed and had been translated by Lysimachus son of Ptolemy, one of those in Jerusalem.
   rationale: Removed the second article before 'Levite' for smoother formal English, and revised 'of the Purim festival' to 'concerning Purim' to better reflect the Greek without adding 'festival,' which is not explicit in the source.
-
 - timestamp: '2026-05-16T15:37:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and Levite, and Ptolemy his son, brought in the following letter concerning Purim, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.'
-  to: 'In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and a Levite, and Ptolemy his son, brought in the following letter of the Purim festival, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.'
-  rationale: 'Restored drafter ''a priest and a Levite'' (preserving the chosen repeated article) and ''of the Purim festival'' (preserving the chosen rendering with explicit ''festival'' modifier) per chosen renderings.'
+  from: In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and Levite, and Ptolemy his son, brought in the following letter concerning Purim, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.
+  to: In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and a Levite, and Ptolemy his son, brought in the following letter of the Purim festival, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.
+  rationale: Restored drafter 'a priest and a Levite' (preserving the chosen repeated article) and 'of the Purim festival' (preserving the chosen rendering with explicit 'festival' modifier) per chosen renderings.
+- timestamp: '2026-11-09T19:00:33Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: In the fourth year of the reign of Ptolemy and Cleopatra[a], Dositheus, who said that he was a priest and a Levite, and Ptolemy his son, brought in the following letter of the Purim festival, which they said also existed and had been translated by Lysimachus son of Ptolemy[b], one of those in Jerusalem.
+  to: In the fourth year of the reign of Ptolemy and Cleopatra, Dositheus, who said he was a priest and a Levite, and his son Ptolemy brought this letter concerning the Purim festival. They said it was authentic[a] and had been translated by Lysimachus son of Ptolemy, a resident of Jerusalem.
+  rationale: The automated review improved the letter’s relation to Purim but left ‘following’ and ‘also existed’ unresolved. I use a neutral reference to the document presented here and prefer the certification reading ‘authentic,’ retaining the recorded existence reading in a note.
 cross_check:
   status: moderate_agreement
   agreement: 0.85
@@ -170,3 +173,30 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/additions_to_esther/006/011.job-50313.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:00:33Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: A documentary notice dates the letter’s arrival through Dositheus and his son, reports their assurance of its authenticity, and names its Jerusalem translator.
+  meaning_decisions:
+  - source_phrase: τὴν προκειμένην ἐπιστολὴν τῶν Φρουραίων
+    prior_rendering: the following letter of the Purim festival
+    new_rendering: this letter concerning the Purim festival
+    rationale: The phrase identifies the document placed before the reader; it does not require a following letter, especially in this concluding notice.
+  - source_phrase: ἣν ἔφασαν εἶναι καὶ ἑρμηνευκέναι Λυσίμαχον
+    prior_rendering: which they said also existed and had been translated by Lysimachus
+    new_rendering: They said it was authentic[a] and had been translated by Lysimachus
+    rationale: The certification context best supports an elliptical assurance that the document was genuine; merely asserting its existence is less informative, but remains a serious alternative in the note.
+  - source_phrase: τῶν ἐν Ἰερουσαλήμ
+    prior_rendering: one of those in Jerusalem
+    new_rendering: a resident of Jerusalem
+    rationale: This naturally expresses Lysimachus’s membership among the people living in Jerusalem.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The automated review improved the letter’s relation to Purim but left ‘following’ and ‘also existed’ unresolved. I use a neutral reference to the document presented here and prefer the certification reading ‘authentic,’ retaining the recorded existence reading in a note.

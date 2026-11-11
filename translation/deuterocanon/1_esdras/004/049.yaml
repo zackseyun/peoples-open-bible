@@ -21,17 +21,14 @@ source:
   confidence: high
   validation: major_mismatch
 translation:
-  text: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],
-  philosophy: optimal-equivalence
+  text: He wrote to all the Jews going up from the kingdom to Judea about their freedom[a], declaring that no official, satrap, district governor, or steward was to intrude on their homes[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'every authority' or 'every powerful man'; the Greek phrase πάντα δυνατὸν is difficult and may refer generally to anyone holding power.
-    reason: lexical_alternative
-  - marker: b
-    text: '''Toparch'' refers to a local district ruler; alternatively, ''local governor.'''
+    text: In royal decrees, 'freedom' could include privileges and exemptions from official demands.
     reason: cultural_note
-  - marker: c
-    text: The clause 'should not come against their doors' likely means they were not to intrude on them or press claims against them at their homes.
+  - marker: b
+    text: Literally, “come against their doors.”
     reason: lexical_alternative
 lexical_decisions:
 - source_word: ἔγραψεν
@@ -127,14 +124,20 @@ revisions:
   from: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom, that every official and satrap and toparch and steward should not come against their doors,
   to: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom, that every official and satrap and toparch and steward should not come against their doors,
   rationale: Changed 'every ... should not come against' to 'no ... should come to' for natural English and to reflect the Greek prohibition more clearly; replaced 'and' with 'or' in the list for smoother English.
-
 - timestamp: '2026-05-16T15:37:33Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],'
-  to: 'And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],'
-  rationale: 'Restored drafter ''that every official and satrap and toparch and steward should not come against their doors'' (preserving the chosen distributive ''every'' + ''and'' + ''against'') per chosen renderings.'
+  from: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],
+  to: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],
+  rationale: Restored drafter 'that every official and satrap and toparch and steward should not come against their doors' (preserving the chosen distributive 'every' + 'and' + 'against') per chosen renderings.
+- timestamp: '2026-11-09T19:51:24Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And he wrote to all the Jews who were going up from the kingdom to Judea concerning freedom[a], that no official or satrap or toparch or steward should come to their doors[c][b],
+  to: He wrote to all the Jews going up from the kingdom to Judea about their freedom[a], declaring that no official, satrap, district governor, or steward was to intrude on their homes[b].
+  rationale: The earlier review improved the prohibition to 'no ... should,' which I preserve despite the automated revert rationale. The documented explanation of intrusion at their homes supplies the meaning that the current doorway wording leaves unclear.
 cross_check:
   status: high_agreement
   agreement: 0.9
@@ -154,3 +157,27 @@ cross_check:
   verdict_counts:
     minor-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/1_esdras/004/049.job-47649.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:51:24Z'
+  change_level: retranslated
+  confidence: medium
+  meaning: The king’s written decree protects the Jews returning to Judea from intrusion by imperial officials.
+  meaning_decisions:
+  - source_phrase: τοπάρχην
+    prior_rendering: toparch
+    new_rendering: district governor
+    rationale: The translated title gives readers the official’s function without requiring knowledge of the Greek administrative term.
+  - source_phrase: μὴ ἐπελεύσεσθαι ἐπὶ τὰς θύρας αὐτῶν
+    prior_rendering: should come to their doors
+    new_rendering: was to intrude on their homes
+    rationale: The prohibition concerns official encroachment or harassment, not an ordinary visit to a doorway.
+  footnote_kinds:
+    a: cultural_background
+    b: literal_wording
+  history_weighed: The earlier review improved the prohibition to 'no ... should,' which I preserve despite the automated revert rationale. The documented explanation of intrusion at their homes supplies the meaning that the current doorway wording leaves unclear.

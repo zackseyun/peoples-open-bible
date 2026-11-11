@@ -8,14 +8,14 @@ source:
   - 802
   validation: swete_direct
 translation:
-  text: The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.
-  philosophy: optimal-equivalence
+  text: The arm of the Lord saved us from the sword sweeping through the land, from famine, and from the death[a] that sinners die[b].
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the sword passing through.'
-    reason: lexical_alternative
+    text: Death here probably means deadly plague, as often in the Greek Old Testament; with the wild beasts of verse 3 it completes the four judgments of Ezekiel 14:21.
+    reason: cross_reference
   - marker: b
-    text: Or possibly 'death for sinners' or 'death brought by sinners.'
+    text: Or death at the hands of sinners; the Greek says simply 'death of sinners.'
     reason: alternative_reading
 lexical_decisions:
 - source_word: βραχίων
@@ -107,14 +107,20 @@ revisions:
   from: The arm of the Lord saved us from the sword sweeping through, from famine and the death of sinners.
   to: The arm of the Lord saved us from the sword sweeping through, from famine and the death of sinners.
   rationale: Changed 'sweeping through' to 'passing through' for a more direct and formal rendering of διαπορευομένης while preserving the sense.
-
 - timestamp: '2026-05-18T02:58:55Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.'
-  to: 'The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.'
+  from: The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.
+  to: The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''sweeping through''].'
+- timestamp: '2026-11-09T22:10:11Z'
+  adjudicator: claude-opus-5.5-meaning-pass
+  reviewer_model: claude-opus-5-5
+  category: meaning_retranslation
+  from: The arm of the Lord saved us from the sword passing through[b][a], from famine and the death of sinners.
+  to: The arm of the Lord saved us from the sword sweeping through the land, from famine, and from the death[a] that sinners die[b].
+  rationale: The revision to 'passing through' was reverted in favor of the draft's 'sweeping through,' which I adopt; the theological decision left the genitive open, and I now resolve it by the context of verse 3 while footnoting the alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -134,3 +140,27 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/phase10_greek_apocrypha/deuterocanon/psalms_of_solomon/013/002.job-73231.json
+meaning_pass:
+  run: full-v4-opus
+  model: claude-opus-5-5
+  deployment: claude-code-subscription
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: null
+  timestamp: '2026-11-09T22:10:11Z'
+  change_level: refined
+  confidence: medium
+  meaning: The Lord's power rescued the faithful from war, famine, and the deadly plague that strikes down sinners.
+  meaning_decisions:
+  - source_phrase: ῥομφαίας διαπορευομένης
+    prior_rendering: the sword passing through
+    new_rendering: the sword sweeping through the land
+    rationale: The participle pictures war moving destructively through the country, echoing the sword that passes through the land in Ezekiel 14:17; the draft's 'sweeping through,' restored by the revert, carries that force.
+  - source_phrase: θανάτου ἁμαρτωλῶν
+    prior_rendering: the death of sinners
+    new_rendering: the death that sinners die
+    rationale: Verse 3 shows the judgments falling on 'them,' the sinners, while 'us' are spared, so the best-supported sense is the death that comes on sinners; the other reading is footnoted.
+  footnote_kinds:
+    a: cross_reference
+    b: alternative_meaning
+  history_weighed: The revision to 'passing through' was reverted in favor of the draft's 'sweeping through,' which I adopt; the theological decision left the genitive open, and I now resolve it by the context of verse 3 while footnoting the alternative.

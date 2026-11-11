@@ -28,15 +28,12 @@ source:
   validation: no_reference
   note: This verse is being loaded from the normalized translation-ready override layer derived from the adjudicated corpus. Standalone Susanna extraction currently follows the complete Theodotion stream in Swete, because that stream is the cleanest fully numbered extract available in the current corpus.
 translation:
-  text: But the lawless men turned back[a], threatening among themselves and lying in wait so that they might put her to death. And when they came to the assembly of the city, they did not stay away[b], and all the sons of Israel who were there gathered together.
-  philosophy: optimal-equivalence
+  text: The lawless men turned back, making threats among themselves and lying in wait to have her put to death. They attended the city assembly[a], and all the Israelites who were there gathered together.
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: 'Or, ''the Israelites.'' Greek: ''the sons of Israel.'''
-    reason: lexical_alternative
-  - marker: b
-    text: The clause rendered 'they did not stay away' is difficult; the Greek likely indicates that they were present at the city assembly rather than absent from it.
-    reason: textual_variant
+    text: The clause following 'city assembly' is uncertain; it may instead mean that the men did not reside in the city.
+    reason: alternative_reading
 lexical_decisions:
 - source_word: παράνομοι
   chosen: lawless
@@ -138,14 +135,20 @@ revisions:
   from: But the lawless men turned back, threatening among themselves and lying in wait so that they might put her to death. And when they came to the assembly of the city, they did not stay away, and all the sons of Israel who were there gathered together.
   to: But the lawless men turned back, threatening among themselves and lying in wait in order to put her to death. And when they came to the assembly of the city, they were not absent, and all the sons of Israel who were there gathered together.
   rationale: Changed 'so that they might put her to death' to 'in order to put her to death' for a more direct rendering of ἵνα θανατώσωσιν. Changed 'they did not stay away' to 'they were not absent' to more closely reflect οὐ παρῴκουν in formal register.
-
 - timestamp: '2026-05-16T14:07:25Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'But the lawless men turned back[a], threatening among themselves and lying in wait in order to put her to death. And when they came to the assembly of the city, they were not absent[b], and all the sons of Israel who were there gathered together.'
-  to: 'But the lawless men turned back[a], threatening among themselves and lying in wait so that they might put her to death. And when they came to the assembly of the city, they did not stay away[b], and all the sons of Israel who were there gathered together.'
-  rationale: 'Restored drafter ''so that they might put her to death'' (preserving the chosen purpose-clause force) and ''they did not stay away'' (preserving idiomatic English participation idiom) per chosen renderings.'
+  from: But the lawless men turned back[a], threatening among themselves and lying in wait in order to put her to death. And when they came to the assembly of the city, they were not absent[b], and all the sons of Israel who were there gathered together.
+  to: But the lawless men turned back[a], threatening among themselves and lying in wait so that they might put her to death. And when they came to the assembly of the city, they did not stay away[b], and all the sons of Israel who were there gathered together.
+  rationale: Restored drafter 'so that they might put her to death' (preserving the chosen purpose-clause force) and 'they did not stay away' (preserving idiomatic English participation idiom) per chosen renderings.
+- timestamp: '2026-11-09T19:09:36Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: But the lawless men turned back[a], threatening among themselves and lying in wait so that they might put her to death. And when they came to the assembly of the city, they did not stay away[b], and all the sons of Israel who were there gathered together.
+  to: The lawless men turned back, making threats among themselves and lying in wait to have her put to death. They attended the city assembly[a], and all the Israelites who were there gathered together.
+  rationale: Both the current text and the earlier review interpret the difficult clause as attendance rather than absence, but neither makes that interpretation secure. Their reading is followed cautiously, while the lawlessness and lying-in-wait image are retained.
 cross_check:
   status: needs_review
   agreement: 0.6
@@ -165,3 +168,30 @@ cross_check:
   verdict_counts:
     major-issues: 1
   source_review: state/reviews/gemini/v31_full_coverage/deuterocanon/susanna/001/028.job-52445.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T19:09:36Z'
+  change_level: retranslated
+  confidence: low
+  meaning: The lawless men continued their threats and deadly plotting, then attended a city assembly at which the local Israelites gathered.
+  meaning_decisions:
+  - source_phrase: ἀπειλοῦντες ἐν ἑαυτοῖς
+    prior_rendering: threatening among themselves
+    new_rendering: making threats among themselves
+    rationale: The threats are discussed privately between them, not necessarily directed against one another.
+  - source_phrase: ἐλθόντες ἐπὶ τὴν συναγωγὴν τῆς πόλεως οὐ παρῴκουν
+    prior_rendering: when they came to the assembly of the city, they did not stay away
+    new_rendering: They attended the city assembly[a]
+    rationale: This follows the history's attendance interpretation while removing its redundant English formulation; the uncertain residence-related clause is acknowledged in a note.
+  - source_phrase: πάντες οἱ υἱοὶ Ἰσραήλ
+    prior_rendering: all the sons of Israel
+    new_rendering: all the Israelites
+    rationale: The expression identifies members of Israel collectively rather than emphasizing literal sonship or establishing a contrast between men and women.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: Both the current text and the earlier review interpret the difficult clause as attendance rather than absence, but neither makes that interpretation secure. Their reading is followed cautiously, while the lawlessness and lying-in-wait image are retained.

@@ -4,12 +4,8 @@ source:
   edition: SBLGNT
   text: ἐγγίζοντος δὲ αὐτοῦ ἤδη πρὸς τῇ καταβάσει τοῦ Ὄρους τῶν Ἐλαιῶν ἤρξαντο ἅπαν τὸ πλῆθος τῶν μαθητῶν χαίροντες αἰνεῖν τὸν θεὸν φωνῇ μεγάλῃ περὶ ⸀πασῶν ὧν εἶδον δυνάμεων,
 translation:
-  text: And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or "miracles" or "mighty deeds"; the Greek says "works/powers" and emphasizes acts of divine power.
-    reason: lexical_alternative
+  text: As he was now approaching Jerusalem, on the downward slope of the Mount of Olives, the whole crowd of disciples began joyfully praising God in loud voices for all the mighty works they had seen,
+  philosophy: dynamic
 lexical_decisions:
 - source_word: ἐγγίζοντος ... αὐτοῦ
   chosen: as he was already drawing near
@@ -108,14 +104,20 @@ revisions:
   from: And as he was already drawing near, at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing to praise God with a loud voice for all the mighty works that they had seen,
   to: And as he was already drawing near, at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing to praise God with a loud voice for all the mighty works that they had seen,
   rationale: Changed 'began rejoicing to praise' to 'began rejoicing and praising' to better reflect the Greek participle construction and improve natural English while preserving the sense.
-
 - timestamp: '2026-05-18T03:01:05Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,'
-  to: 'And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,'
+  from: And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,
+  to: And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''to praise God''].'
+- timestamp: '2026-11-09T17:13:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: And as he was already drawing near[a], at the descent of the Mount of Olives, the whole multitude of the disciples began rejoicing and praising God with a loud voice for all the mighty works that they had seen,
+  to: As he was now approaching Jerusalem, on the downward slope of the Mount of Olives, the whole crowd of disciples began joyfully praising God in loud voices for all the mighty works they had seen,
+  rationale: The review history debated how to connect rejoicing with praise, but the automated reversion supplies no additional evidence about meaning. “Joyfully praising” expresses that relationship naturally, while “mighty works” preserves the established emphasis on divine power.
 cross_check:
   status: high_agreement
   agreement: 0.92
@@ -137,3 +139,25 @@ cross_check:
   verdict_counts:
     minor-issues: 2
   source_review: state/reviews/gemini/low_agreement_recheck/nt/luke/019/037.job-27772.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:13:30Z'
+  change_level: refined
+  confidence: high
+  meaning: As Jesus approached Jerusalem, the entire crowd of disciples joyfully praised God for the mighty works they had witnessed.
+  meaning_decisions:
+  - source_phrase: ἐγγίζοντος δὲ αὐτοῦ ἤδη πρὸς τῇ καταβάσει τοῦ Ὄρους τῶν Ἐλαιῶν
+    prior_rendering: And as he was already drawing near, at the descent of the Mount of Olives
+    new_rendering: As he was now approaching Jerusalem, on the downward slope of the Mount of Olives
+    rationale: Jerusalem is the understood destination in the narrative, while the descent identifies his location; the new wording makes both relationships clear.
+  - source_phrase: ἤρξαντο ... χαίροντες αἰνεῖν τὸν θεὸν
+    prior_rendering: began rejoicing and praising God
+    new_rendering: began joyfully praising God
+    rationale: The participle describes the rejoicing manner of their praise rather than requiring two separately coordinated actions.
+  footnote_kinds: {}
+  history_weighed: The review history debated how to connect rejoicing with praise, but the automated reversion supplies no additional evidence about meaning. “Joyfully praising” expresses that relationship naturally, while “mighty works” preserves the established emphasis on divine power.

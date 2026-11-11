@@ -4,12 +4,8 @@ source:
   edition: WLC
   text: וַ/יֹּ֥אמֶר ל֖/וֹ דָּוִ֑ד אִ֚ם עָבַ֣רְתָּ אִתִּ֔/י וְ/הָיִ֥תָ עָלַ֖/י לְ/מַשָּֽׂא׃
 translation:
-  text: David said to him[a], “If you pass on with me, you will be a burden to me.”
-  philosophy: optimal-equivalence
-  footnotes:
-  - marker: a
-    text: Or “If you cross over with me, you will be a burden to me.” The Hebrew verb can more literally mean “cross over” or “pass over.”
-    reason: lexical_alternative
+  text: David said to him, “If you go on with me, you will be a burden to me.”
+  philosophy: dynamic
 lexical_decisions:
 - source_word: וַיֹּאמֶר ... דָּוִד
   chosen: David said
@@ -75,14 +71,20 @@ revisions:
   from: David said to him, “If you go on with me, you will be a burden to me.”
   to: David said to him, “If you go on with me, you will be a burden to me.”
   rationale: Changed 'go on' to 'pass on' for closer lexical correspondence to עבר while keeping natural formal English. No other changes needed.
-
 - timestamp: '2026-05-17T04:06:12Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'David said to him[a], “If you pass on with me, you will be a burden to me.”'
-  to: 'David said to him[a], “If you pass on with me, you will be a burden to me.”'
+  from: David said to him[a], “If you pass on with me, you will be a burden to me.”
+  to: David said to him[a], “If you pass on with me, you will be a burden to me.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''you go on with me''].'
+- timestamp: '2026-11-09T17:28:30Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: David said to him[a], “If you pass on with me, you will be a burden to me.”
+  to: David said to him, “If you go on with me, you will be a burden to me.”
+  rationale: The first draft and lexical deliberation already supported “go on with me.” I return to that wording because the later preference for lexical correspondence made the English less clear without adding meaning.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -102,3 +104,21 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/full_coverage_priority/ot/2_samuel/015/033.job-45636.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:28:30Z'
+  change_level: refined
+  confidence: high
+  meaning: David tells Hushai that accompanying him farther would hinder rather than help him.
+  meaning_decisions:
+  - source_phrase: עָבַרְתָּ אִתִּי
+    prior_rendering: you pass on with me
+    new_rendering: you go on with me
+    rationale: The phrase means continuing with David; “pass on” is unnatural here and can misleadingly suggest death.
+  footnote_kinds: {}
+  history_weighed: The first draft and lexical deliberation already supported “go on with me.” I return to that wording because the later preference for lexical correspondence made the English less clear without adding meaning.

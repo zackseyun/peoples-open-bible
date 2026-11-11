@@ -4,15 +4,12 @@ source:
   edition: WLC
   text: וַ/יֵּ֨לֶךְ גַּם ה֜וּא הָ/רָמָ֗תָ/ה וַ/יָּבֹא֙ עַד בּ֤וֹר הַ/גָּדוֹל֙ אֲשֶׁ֣ר בַּ/שֶּׂ֔כוּ וַ/יִּשְׁאַ֣ל וַ/יֹּ֔אמֶר אֵיפֹ֥ה שְׁמוּאֵ֖ל וְ/דָוִ֑ד וַ/יֹּ֕אמֶר הִנֵּ֖ה ב/נוית בָּ/רָמָֽה־־׃
 translation:
-  text: He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”
-  philosophy: optimal-equivalence
+  text: Then Saul himself went to Ramah. When he reached the large cistern[a] at Seku, he asked, “Where are Samuel and David?” Someone replied, “Look, they are at Naioth in Ramah.”
+  philosophy: dynamic
   footnotes:
   - marker: a
-    text: Or 'the large cistern' or 'the great pit' for 'the great well' (בּוֹר הַגָּדוֹל).
-    reason: lexical_alternative
-  - marker: b
-    text: Hebrew 'And he said'; the subject of the reply is unspecified, so the translation supplies 'one' for clarity.
-    reason: lexical_alternative
+    text: Or, “large well.”
+    reason: alternative_reading
 lexical_decisions:
 - source_word: הָרָמָתָה
   chosen: to Ramah
@@ -94,14 +91,20 @@ revisions:
   from: He too went to Ramah, and he came as far as the great well that is at Seku. He asked, saying, “Where are Samuel and David?” And one said, “Look, they are at Naioth in Ramah.”
   to: He too went to Ramah, and he came as far as the great well that is at Seku. He asked, saying, “Where are Samuel and David?” And one said, “Look, they are at Naioth in Ramah.”
   rationale: Changed 'He asked, saying' to 'He asked and said' for closer correspondence to the Hebrew while keeping natural formal English. No other changes needed.
-
 - timestamp: '2026-05-18T02:55:40Z'
   adjudicator: doctrine-realignment
   reviewer_model: agentic-pilot-claude-sonnet-4-6
   category: doctrine_realignment
-  from: 'He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”'
-  to: 'He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”'
+  from: He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”
+  to: He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”
   rationale: 'Wholesale revert of azure-gpt-5.4 2026-04-23 pass: restores drafter text. Chosen renderings preserved: [''He asked, saying''].'
+- timestamp: '2026-11-09T17:23:52Z'
+  adjudicator: gpt-6.1-sol-meaning-pass
+  reviewer_model: gpt-6.1-sol-2026-09-29
+  category: meaning_retranslation
+  from: He too went to Ramah[a], and he came as far as the great well that is at Seku. He asked and said, “Where are Samuel and David?” And one said, “Look[b], they are at Naioth in Ramah.”
+  to: Then Saul himself went to Ramah. When he reached the large cistern[a] at Seku, he asked, “Where are Samuel and David?” Someone replied, “Look, they are at Naioth in Ramah.”
+  rationale: The history’s adjustments between “asked, saying” and “asked and said” concern source form rather than meaning, so I render the inquiry directly. I prefer “cistern” for בּוֹר on lexical grounds while preserving the earlier “well” as a serious alternative.
 cross_check:
   status: high_agreement
   agreement: 1.0
@@ -121,3 +124,30 @@ cross_check:
   verdict_counts:
     agree: 1
   source_review: state/reviews/gemini/v31_full_coverage/ot/1_samuel/019/022.job-59249.json
+meaning_pass:
+  run: full-v4
+  model: gpt-6.1-sol-2026-09-29
+  deployment: pob-meaning-gpt-6-1-sol
+  prompt_id: pob_meaning_first_v4
+  prompt_sha256: c4bb5645f7da625fe54171cc3a0391ecf3cbb30a37a71897a53575d81f428332
+  reasoning_effort: high
+  timestamp: '2026-11-09T17:23:52Z'
+  change_level: refined
+  confidence: medium
+  meaning: Saul goes to Ramah himself and learns at Seku that Samuel and David are at Naioth in Ramah.
+  meaning_decisions:
+  - source_phrase: בּוֹר הַגָּדוֹל
+    prior_rendering: the great well
+    new_rendering: the large cistern
+    rationale: The adjective describes size, and בּוֹר commonly denotes an excavated pit or water-storage cistern rather than a spring-fed well; the exact landmark remains uncertain, so “well” is retained as an alternative.
+  - source_phrase: וַיִּשְׁאַל וַיֹּאמֶר
+    prior_rendering: He asked and said
+    new_rendering: he asked
+    rationale: The paired Hebrew verbs introduce a single spoken inquiry, which English expresses naturally with one verb.
+  - source_phrase: וַיֹּאמֶר
+    prior_rendering: And one said
+    new_rendering: Someone replied
+    rationale: The unidentified speaker answers Saul’s question; the new wording preserves the anonymity and makes the exchange clear.
+  footnote_kinds:
+    a: alternative_meaning
+  history_weighed: The history’s adjustments between “asked, saying” and “asked and said” concern source form rather than meaning, so I render the inquiry directly. I prefer “cistern” for בּוֹר on lexical grounds while preserving the earlier “well” as a serious alternative.

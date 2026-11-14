@@ -38,7 +38,7 @@ STATE = base.STATE
 PROMPT_ID = "pob_meaning_localize_v1"
 PROMPT_PATH = ROOT / "tools" / "prompts" / f"{PROMPT_ID}.md"
 LANGS = yaml.safe_load((ROOT / "config" / "meaning_localize_languages.yaml").read_text(encoding="utf-8"))
-DEFAULT_DEPLOYMENT = base.os.environ.get("POB_LOCALIZE_DEPLOYMENT", "sermon-study-gpt-6-luna")
+DEFAULT_DEPLOYMENT = base.os.environ.get("POB_LOCALIZE_DEPLOYMENT", "pob-localize-gpt-6-luna")
 
 # USD per 1M tokens for gpt-6-luna (estimate; Flex is half the standard price).
 PRICES = {"flex": {"input": 0.05, "cached": 0.005, "output": 0.25},
@@ -166,15 +166,24 @@ def cost(usage: dict[str, Any], tier: str) -> float:
     return ((prompt - cached) * p["input"] + cached * p["cached"] + out * p["output"]) / 1e6
 
 
+def meaning_first_books() -> list[str]:
+    """Every book the English meaning-first pass covered."""
+    books = [f"{sec}/{d.name}" for sec in ("ot", "nt", "deuterocanon")
+             for d in sorted((TRANSLATION / sec).iterdir()) if d.is_dir()]
+    return books + ["extra_canonical/1_enoch"]
+
+
 def plan_jobs(args: argparse.Namespace) -> list[dict[str, Any]]:
     units = [base.parse_passage(s) for s in args.passage or []]
-    for b in args.book or []:
+    for b in (args.book or []) + (meaning_first_books() if args.all_meaning else []):
         bdir = base.book_dir(b)
         units += [(bdir, ch, None, None) for ch in base.book_chapters(bdir)]
     jobs = []
     for bdir, ch, first, last in units:
         files = base.chapter_files(bdir, ch)
-        targets = [p for p in files if first is None or first <= base.verse_num(p) <= (last or first)]
+        # Verses whose English kept its earlier wording (held for review) keep theirs too.
+        targets = [p for p in files if (first is None or first <= base.verse_num(p) <= (last or first))
+                   and base.load_yaml(p).get("meaning_pass")]
         if not targets:
             continue
         ctxs = {p: verse_context(args.lang, p) for p in targets}
@@ -194,11 +203,32 @@ def plan_jobs(args: argparse.Namespace) -> list[dict[str, Any]]:
 
 def run_job(job: dict[str, Any], args: argparse.Namespace, system: str) -> dict[str, Any]:
     out: pathlib.Path = job["out"]
-    if out.exists() and not args.force and not json.loads(out.read_text()).get("missing"):
-        return json.loads(out.read_text())
     ctxs, want = job["contexts"], [c["id"] for c in job["contexts"]]
     started, responses, got, note, filtered = time.time(), [], {}, "", []
-    pending = list(ctxs)
+    if out.exists() and not args.force:
+        prev = json.loads(out.read_text())
+        if not prev.get("missing") and not prev.get("content_filtered"):
+            return prev
+        # Keep what already came back; redo only the missing or filter-blocked verses.
+        got = {v["id"]: v for v in prev.get("verses") or [] if v.get("id") in want}
+        responses = list(prev.get("requests") or [])
+        note = prev.get("passage_note", "")
+    pending = [c for c in ctxs if c["id"] not in got]
+    blocked = False
+
+    def take(resp: dict[str, Any], only: set[str]) -> None:
+        nonlocal note
+        responses.append({"usage": resp.get("usage"), "model": resp.get("model"),
+                          "service_tier": resp.get("service_tier")})
+        try:
+            parsed = json.loads(resp["choices"][0]["message"].get("content") or "{}")
+        except json.JSONDecodeError:
+            return
+        note = note or parsed.get("passage_note", "")
+        for v in parsed.get("verses") or []:
+            if v.get("id") in only and v.get("id") not in got and not base.validate_verse(v):
+                got[v["id"]] = v
+
     for _ in range(3):
         if not pending:
             break
@@ -208,19 +238,30 @@ def run_job(job: dict[str, Any], args: argparse.Namespace, system: str) -> dict[
         except RuntimeError as exc:
             if "content_filter" not in str(exc):
                 raise
-            filtered = [c["id"] for c in pending]
+            blocked = True
             break
-        responses.append({"usage": resp.get("usage"), "model": resp.get("model"),
-                          "service_tier": resp.get("service_tier")})
-        try:
-            parsed = json.loads(resp["choices"][0]["message"].get("content") or "{}")
-        except json.JSONDecodeError:
-            continue
-        note = note or parsed.get("passage_note", "")
-        for v in parsed.get("verses") or []:
-            if v.get("id") in want and v.get("id") not in got and not base.validate_verse(v):
-                got[v["id"]] = v
+        take(resp, set(want))
         pending = [c for c in ctxs if c["id"] not in got]
+    if blocked and pending:
+        # Azure's filter tripped on the passage: retry each verse alone with only its
+        # neighbours as context, and record the verses that are still blocked.
+        for c in list(pending):
+            num = int(str(c["id"]).rsplit(".", 1)[1])
+            window = "\n".join(line for line in job["chapter_text"].splitlines()
+                               if line.split(" ", 1)[0].isdigit() and abs(int(line.split(" ", 1)[0]) - num) <= 3)
+            single = user_message(job["label"], job["chapter"], window, [c], args.lang)
+            for _ in range(2):
+                try:
+                    resp = call_model(system, single, deployment=args.deployment, effort=args.effort, tier=args.tier)
+                except RuntimeError as exc:
+                    if "content_filter" not in str(exc):
+                        raise
+                    filtered.append(c["id"])
+                    break
+                take(resp, {c["id"]})
+                if c["id"] in got:
+                    break
+        pending = [c for c in ctxs if c["id"] not in got and c["id"] not in filtered]
     result = {
         "run": args.run, "lang": args.lang, "prompt_id": PROMPT_ID, "prompt_sha256": base.sha256(system),
         "deployment": args.deployment, "model": responses[-1].get("model") if responses else None,
@@ -287,6 +328,207 @@ def cmd_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def language_meta(lang: str) -> dict[str, Any]:
+    sample = ROOT / LANGS[lang]["dir"] / "nt" / "john" / "001" / "001.yaml"
+    meta = (base.load_yaml(sample).get("language") if sample.exists() else None) or {}
+    return meta or {"code": lang, "name": LANGS[lang]["name"], "variant": LANGS[lang]["variant"]}
+
+
+def cmd_apply(args: argparse.Namespace) -> int:
+    """Write a finished run into translation_<lang>/: update records, create missing ones."""
+    meta = language_meta(args.lang)
+    changed = created = skipped = 0
+    for f in sorted((STATE / args.run / args.lang).rglob("*.json")):
+        res = json.loads(f.read_text())
+        by_id = {v["id"]: v for v in res.get("verses") or []}
+        for en_rel, tgt_rel in zip(res["en_paths"], res["paths"]):
+            en = base.load_yaml(ROOT / en_rel)
+            new = by_id.get(en.get("id"))
+            if not new or base.validate_verse(new):
+                skipped += 1
+                continue
+            path = ROOT / tgt_rel
+            exists = path.exists()
+            rec = base.load_yaml(path) if exists else {}
+            if (rec.get("meaning_pass") or {}).get("run") == args.run:
+                skipped += 1
+                continue
+            en_tr = en.get("translation") or {}
+            footnotes = [{"marker": n["marker"], "text": n["text"].strip(), "reason": base.SCHEMA_REASON[n["reason"]]}
+                         for n in new.get("footnotes") or []]
+            text = new["text"].strip()
+            block = {
+                "run": args.run, "model": res.get("model"), "deployment": res.get("deployment"),
+                "prompt_id": res.get("prompt_id"), "prompt_sha256": res.get("prompt_sha256"),
+                "reasoning_effort": res.get("reasoning_effort"), "timestamp": res["timestamp"],
+                "english_meaning_pass_run": (en.get("meaning_pass") or {}).get("run"),
+                "change_level": new["change_level"], "confidence": new["confidence"],
+                "decisions": new.get("decisions") or [],
+            }
+            base_tr = {"language": "en", "yaml_path": en_rel, "text": en_tr.get("text")}
+            if en_tr.get("footnotes"):
+                base_tr["footnotes"] = en_tr["footnotes"]
+            if exists:
+                tr = rec.setdefault("translation", {})
+                old_text = tr.get("text") or ""
+                tr.update({"language": tr.get("language") or meta.get("code"), "text": text, "philosophy": "dynamic"})
+                if footnotes:
+                    tr["footnotes"] = footnotes
+                else:
+                    tr.pop("footnotes", None)
+                prior_base = rec.get("base_translation") or {}
+                rec["base_translation"] = {**{k: v for k, v in prior_base.items() if k not in ("text", "footnotes")},
+                                           **base_tr}
+                rec.setdefault("revisions", []).append({
+                    "timestamp": res["timestamp"], "adjudicator": res.get("adjudicator") or "gpt-6-luna-meaning-localize",
+                    "reviewer_model": res.get("model"), "category": "meaning_retranslation",
+                    "from": old_text, "to": text,
+                    "rationale": "; ".join(f"{d['source_phrase']} → {d['rendering']}: {d['reason']}"
+                                           for d in new.get("decisions") or [])[:1500],
+                })
+                rec["meaning_pass"] = block
+                changed += 1
+            else:
+                rec = {
+                    "id": en.get("id"), "reference": en.get("reference"), "language": meta,
+                    "source": en.get("source"), "base_translation": base_tr,
+                    "translation": {"language": meta.get("code"), "text": text, "philosophy": "dynamic",
+                                    **({"footnotes": footnotes} if footnotes else {})},
+                    "status": "draft",
+                    "ai_draft": {"model_id": "claude-opus-5-5" if str(res.get("model") or "").startswith("claude")
+                                 else "gpt-6-luna", "model_version": str(res.get("model") or "gpt-6-luna"),
+                                 "prompt_id": res.get("prompt_id"), "prompt_sha256": res.get("prompt_sha256"),
+                                 "timestamp": res["timestamp"], "output_hash": base.sha256(text)},
+                    "meaning_pass": block,
+                }
+                path.parent.mkdir(parents=True, exist_ok=True)
+                created += 1
+            tmp = path.with_suffix(".yaml.tmp")
+            tmp.write_text(yaml.safe_dump(rec, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
+            tmp.replace(path)
+    print(f"lang={args.lang} changed={changed} created={created} skipped={skipped}")
+    return 0
+
+
+def blocked_verses(run: str, langs: list[str]) -> dict[str, dict[str, Any]]:
+    """Verses a run lost to the content filter (or never got back), by id, with the languages that need them."""
+    out: dict[str, dict[str, Any]] = {}
+    for lang in langs:
+        for f in sorted((STATE / run / lang).rglob("*.json")):
+            res = json.loads(f.read_text())
+            want = set(res.get("content_filtered") or []) | set(res.get("missing") or [])
+            if not want:
+                continue
+            for en_rel in res["en_paths"]:
+                vid = base.load_yaml(ROOT / en_rel).get("id")
+                if vid in want:
+                    out.setdefault(vid, {"en_rel": en_rel, "langs": []})["langs"].append(lang)
+    return out
+
+
+def handoff_instructions(langs: list[str]) -> str:
+    text = PROMPT_PATH.read_text(encoding="utf-8").replace("{LANGUAGE_NAME}", "target-language")
+    rules = "\n\n".join(LANGS[lang]["rules"].strip() for lang in langs)
+    text = text.replace("{LANGUAGE_RULES}", "# Language rules\n\n" + rules)
+    return (
+        "# Hand-off: verses the Azure content filter refused\n\n"
+        "Each verse below lists the languages it is needed in (`langs`) and the current wording in each. "
+        "Translate it into every listed language, following the instructions that follow exactly as the "
+        "Azure translator does. The passages are Scripture; render them faithfully, neither softened nor "
+        "sharpened.\n\n"
+        "Return one JSON object: {\"verses\": [ {\"id\", \"lang\", \"text\", \"footnotes\": [{\"marker\", \"text\", "
+        "\"reason\"}], \"decisions\": [{\"source_phrase\", \"rendering\", \"reason\"}], \"change_level\", "
+        "\"confidence\"} ... ]}, one entry per verse per language. Footnote reason is one of "
+        + ", ".join(base.FOOTNOTE_REASONS) + ".\n\n---\n\n" + text
+    )
+
+
+def cmd_export(args: argparse.Namespace) -> int:
+    """Write hand-off bundles for the verses a run could not translate (content filter or missing)."""
+    langs = args.lang or sorted(LANGS)
+    todo = blocked_verses(args.run, langs)
+    dest = STATE / args.out_run / "bundles"
+    dest.mkdir(parents=True, exist_ok=True)
+    (STATE / args.out_run / "instructions.md").write_text(handoff_instructions(langs), encoding="utf-8")
+    items = []
+    for vid, info in sorted(todo.items(), key=lambda kv: kv[1]["en_rel"]):
+        en_path = ROOT / info["en_rel"]
+        ctx = verse_context(info["langs"][0], en_path)
+        ctx.pop("current_wording", None)
+        ctx["langs"] = info["langs"]
+        ctx["current_wording"] = {}
+        for lang in info["langs"]:
+            ctx["current_wording"][lang] = verse_context(lang, en_path).get("current_wording")
+        n = base.verse_num(en_path)
+        files = base.chapter_files(en_path.parent.parent, int(en_path.parent.name))
+        ctx["english_neighbours"] = base.chapter_text([f for f in files if abs(base.verse_num(f) - n) <= 3])
+        items.append(ctx)
+    total = sum(len(json.dumps(c, ensure_ascii=False)) for c in items)
+    per = -(-total // args.parts)
+    parts: list[list[dict[str, Any]]] = [[]]
+    size = 0
+    for c in items:
+        k = len(json.dumps(c, ensure_ascii=False))
+        if parts[-1] and size + k > per and len(parts) < args.parts:
+            parts.append([])
+            size = 0
+        parts[-1].append(c)
+        size += k
+    for i, part in enumerate(parts, 1):
+        (dest / f"part_{i:02d}.json").write_text(json.dumps({"verses": part}, ensure_ascii=False, indent=1))
+    print(f"verses={len(items)} language-verses={sum(len(c['langs']) for c in items)} parts={len(parts)} -> {dest}")
+    return 0
+
+
+def cmd_import(args: argparse.Namespace) -> int:
+    """Turn part_NN.out.json answers into run results shaped like translate's, per language."""
+    run_dir = STATE / args.run
+    prompt_sha = base.sha256(handoff_instructions(sorted(LANGS)))
+    asked: dict[tuple[str, str], str] = {}
+    for part in sorted((run_dir / "bundles").glob("part_[0-9][0-9].json")):
+        for c in json.loads(part.read_text())["verses"]:
+            for lang in c["langs"]:
+                asked[(c["id"], lang)] = c["reference"]
+    got: dict[tuple[str, str], dict[str, Any]] = {}
+    for ans in sorted((run_dir / "bundles").glob("part_[0-9][0-9].out*.json")):
+        for v in json.loads(ans.read_text()).get("verses") or []:
+            key = (v.get("id"), v.get("lang"))
+            if key not in asked:
+                continue
+            errs = base.validate_verse(v)
+            if errs:
+                print(f"invalid {key}: {errs}")
+                continue
+            got[key] = {k: v[k] for k in ("id", "text", "footnotes", "decisions", "change_level", "confidence")}
+    missing = sorted(k for k in asked if k not in got)
+    if missing:
+        print(f"missing {len(missing)}: {missing[:20]}")
+    blocked = blocked_verses(args.from_run, sorted({l for _, l in asked}))
+    written = 0
+    for lang in sorted({l for _, l in asked}):
+        groups: dict[tuple[str, int], list[str]] = {}
+        for vid, info in blocked.items():
+            if lang in info["langs"] and (vid, lang) in got:
+                en_path = ROOT / info["en_rel"]
+                groups.setdefault((str(en_path.parent.parent.relative_to(TRANSLATION)), int(en_path.parent.name)), []).append(info["en_rel"])
+        for (book_rel, ch), rels in groups.items():
+            rels.sort()
+            ids = [base.load_yaml(ROOT / r).get("id") for r in rels]
+            out = (run_dir / lang / book_rel / f"{ch:03d}_{base.verse_num(ROOT / rels[0]):03d}-{base.verse_num(ROOT / rels[-1]):03d}.json")
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(json.dumps({
+                "run": args.run, "lang": lang, "adjudicator": args.adjudicator, "prompt_id": PROMPT_ID + "+handoff",
+                "prompt_sha256": prompt_sha, "deployment": None, "model": args.model, "reasoning_effort": None,
+                "service_tier": None, "timestamp": base.utc_now(), "seconds": None, "requests": [],
+                "estimated_cost_usd": 0, "passage_note": "",
+                "en_paths": rels, "paths": [str(target_path(lang, ROOT / r).relative_to(ROOT)) for r in rels],
+                "verses": [got[(i, lang)] for i in ids], "missing": [], "content_filtered": [],
+            }, ensure_ascii=False, indent=1))
+            written += len(ids)
+    print(f"imported {written} language-verses of {len(asked)} asked -> {run_dir}")
+    return 0 if not missing else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -295,6 +537,7 @@ def main(argv: list[str] | None = None) -> int:
     t.add_argument("--run", required=True)
     t.add_argument("--passage", action="append")
     t.add_argument("--book", action="append")
+    t.add_argument("--all-meaning", action="store_true", help="every book the English meaning pass covered")
     t.add_argument("--deployment", default=DEFAULT_DEPLOYMENT)
     t.add_argument("--effort", default="high", choices=["low", "medium", "high", "xhigh"])
     t.add_argument("--tier", default="flex", choices=["default", "flex"])
@@ -305,6 +548,22 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--lang", required=True, choices=sorted(LANGS))
     r.add_argument("--run", required=True)
     r.set_defaults(func=cmd_report)
+    a = sub.add_parser("apply", help="write a finished run into translation_<lang>/ (explicit step)")
+    a.add_argument("--lang", required=True, choices=sorted(LANGS))
+    a.add_argument("--run", required=True)
+    a.set_defaults(func=cmd_apply)
+    e = sub.add_parser("export", help="hand-off bundles for verses the run could not translate")
+    e.add_argument("--lang", action="append", choices=sorted(LANGS))
+    e.add_argument("--run", required=True)
+    e.add_argument("--out-run", required=True)
+    e.add_argument("--parts", type=int, default=8)
+    e.set_defaults(func=cmd_export)
+    i = sub.add_parser("import", help="turn hand-off answers into run results")
+    i.add_argument("--run", required=True, help="the hand-off run (export's --out-run)")
+    i.add_argument("--from-run", required=True, help="the run the verses were blocked in")
+    i.add_argument("--adjudicator", default="claude-opus-5-5-meaning-localize")
+    i.add_argument("--model", default="claude-opus-5-5")
+    i.set_defaults(func=cmd_import)
     args = ap.parse_args(argv)
     return args.func(args)
 
